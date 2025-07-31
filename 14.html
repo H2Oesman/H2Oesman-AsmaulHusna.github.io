@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99 Names of Allah - Al-Ghaffar</title>
+    <style>
+        :root {
+            --primary-color: #2E8B57;
+            --secondary-color: #3AA76D;
+            --light-color: #f8f8f8;
+            --text-color: #333;
+            --arabic-font-size: 24px;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h2 {
+            padding-left: 10px;
+            margin-top: 30px;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        h3 {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        
+        .arabic {
+            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial, sans-serif;
+            font-size: var(--arabic-font-size);
+            text-align: right;
+            direction: rtl;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+        
+        .transliteration {
+            font-style: italic;
+            color: var(--secondary-color);
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .name-header {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .toggle-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .toggle-btn {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .toggle-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-to-top:hover {
+            text-decoration: underline;
+        }
+        
+        .quran-ref {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .bonus {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 25px;
+            padding: 10px;
+            background-color: var(--light-color);
+            border-radius: 5px;
+        }
+        
+        .source {
+            font-size: 0.9em;
+            text-align: right;
+            margin-top: 30px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Language Toggle -->
+        <div class="toggle-container">
+            <button id="englishBtn" class="toggle-btn active">English</button>
+            <button id="indonesianBtn" class="toggle-btn">Bahasa Indonesia</button>
+        </div>
+        
+        <!-- Transliteration Toggle -->
+        <div class="toggle-container">
+            <button id="showTransliteration" class="toggle-btn">Show Transliteration</button>
+            <button id="hideTransliteration" class="toggle-btn active">Hide Transliteration</button>
+        </div>
+        
+        <!-- English Content -->
+        <div id="englishContent">
+            <h1>99 Names of Allah</h1>
+            
+            <div class="bonus">
+                Bonus audio recitation: <a href="https://qfatima.com/a99-audio" target="_blank">Listen to all 99 Names</a>
+            </div>
+            
+            <div class="name-header">
+                <h2>14. Al-Ghaffar (The Ever-Forgiving)</h2>
+                <div class="arabic">ٱلْغَفَّارُ</div>
+                <div class="transliteration">Al-Ghaffar</div>
+            </div>
+            
+            <div class="source">
+                Source: <a href="https://myislam.org/99-names-of-allah/al-ghaffar" target="_blank">https://myislam.org/99-names-of-allah/al-ghaffar</a>
+            </div>
+            <!-- Meaning Section -->
+            <div class="section">
+                <h3>Meaning and Significance</h3>
+                <p>Al-Ghaffar comes from the root gh-f-r which means to cover, conceal, and forgive. This beautiful name appears five times in the Quran, emphasizing Allah's infinite capacity to repeatedly forgive sins while concealing them.</p>
+                <p>Imam Al-Ghazali explains: "Al-Ghaffar is the One who forgives sins repeatedly, covering them from others' sight and from their consequences in this life and the next."</p>
+            </div>
+            
+            <!-- Quranic Verses Section -->
+            <div class="section">
+                <h3>Quranic References</h3>
+                
+                <div class="arabic">رَبُّ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَمَا بَيْنَهُمَا ٱلْعَزِيزُ ٱلْغَفَّـٰرُ</div>
+                <div class="transliteration">Rabbus-samāwāti wal-arḍi wa mā baynahumal-'azīzul-ghaffār</div>
+                <p><strong>Translation:</strong> "Lord of the heavens and the earth and whatever is between them, the Exalted in Might, the Perpetual Forgiver."</p>
+                <p class="quran-ref">Reference: <a href="https://quranwbw.com/38:66" target="_blank">Surah Sad 38:66</a></p>
+                <p><strong>Reflection:</strong> This verse beautifully connects Allah's absolute power with His forgiveness, showing that true might includes merciful forgiveness.</p>
+                
+                <div class="arabic">وَإِنِّى لَغَفَّـٰرٌۭ لِّمَن تَابَ وَءَامَنَ وَعَمِلَ صَـٰلِحًۭا ثُمَّ ٱهْتَدَىٰ</div>
+                <div class="transliteration">Wa innī laghaffārul liman tāba wa āmana wa 'amila ṣāliḥan thummah-tadā</div>
+                <p><strong>Translation:</strong> "And indeed, I am the Perpetual Forgiver of whoever repents, believes, and does righteousness and then continues in guidance."</p>
+                <p class="quran-ref">Reference: <a href="https://quranwbw.com/20:82" target="_blank">Surah Ta-Ha 20:82</a></p>
+                <p><strong>Reflection:</strong> This verse outlines the path to receiving Allah's forgiveness through sincere repentance, faith, good deeds, and steadfastness.</p>
+            </div>
+            
+            <!-- Tafsir Section -->
+            <div class="section">
+                <h3>Detailed Tafsir</h3>
+                <p><strong>Ibn Kathir's Explanation:</strong> In his tafsir of Surah Sad (38:66), Ibn Kathir emphasizes that Al-Ghaffar represents Allah's willingness to repeatedly forgive His servants. He notes this name often appears alongside Allah's creative power, showing that the same Lord who designed the universe is most forgiving.</p>
+                
+                <p><strong>Al-Qurtubi's Insight:</strong> The scholar explains that Allah's forgiveness through this name has three aspects: (1) covering sins from public view, (2) not punishing immediately, and (3) transforming sins into good deeds for the repentant.</p>
+            </div>
+            
+            <!-- Du'a Section -->
+            <div class="section">
+                <h3>Prophetic Supplications</h3>
+                
+                <div class="arabic">اَللّٰهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي</div>
+                <div class="transliteration">Allāhumma innaka 'afuwwun tuḥibbul-'afwa fa'fu 'annī</div>
+                <p><strong>Translation:</strong> "O Allah, You are Pardoning and love to pardon, so pardon me."</p>
+                <p><strong>Source:</strong> Sunan Ibn Majah | <strong>Virtue:</strong> The Prophet ﷺ would frequently recite this, especially during the last ten nights of Ramadan.</p>
+                
+                <div class="arabic">رَبَّنَا ٱغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّـَٔاتِنَا وَتَوَفَّنَا مَعَ ٱلْأَبْرَارِ</div>
+                <div class="transliteration">Rabbanagh-fir lanā dhunūbanā wa kaffir 'annā sayyi'ātinā wa tawaffanā ma'al-abrār</div>
+                <p><strong>Translation:</strong> "Our Lord, forgive us our sins and erase our misdeeds and cause us to die with the righteous."</p>
+                <p class="quran-ref">Reference: <a href="https://quranwbw.com/3:193" target="_blank">Surah Al-Imran 3:193</a></p>
+            </div>
+            
+            <!-- Amalan Section -->
+            <div class="section">
+                <h3>Practical Applications</h3>
+                
+                <h4>1. Night Prayer (Tahajjud) with Seeking Forgiveness</h4>
+                <p>The Prophet Muhammad ﷺ said: "Our Lord descends every night to the lowest heaven when the last third of the night remains and says: 'Who is calling upon Me that I may answer him? Who is asking from Me that I may give him? Who is seeking My forgiveness that I may forgive him?'" (Bukhari)</p>
+                <p><strong>Practice:</strong> Wake up during the last third of the night to perform at least 2 rak'ahs of prayer, then sincerely ask Allah for forgiveness.</p>
+                
+                <h4>2. Daily Istighfar Routine</h4>
+                <p>The Prophet ﷺ said: "Whoever says: 'I seek the forgiveness of Allah besides whom there is no deity, the Ever-Living, the Sustainer of existence, and I repent to Him' three times, Allah will forgive his sins." (Abu Dawud)</p>
+                <p><strong>Practice:</strong> Say this istighfar at least 100 times daily: <span class="arabic" style="font-size: 18px;">أَسْتَغْفِرُ ٱللَّٰهَ</span> (Astaghfirullah)</p>
+            </div>
+            
+            <!-- Reflection Section -->
+            <div class="section">
+                <h3>Reflections</h3>
+                <p>1. <strong>Divine Patience:</strong> Al-Ghaffar shows Allah's infinite patience. While humans might give up on repeat offenders, Allah continues to forgive as long as we repent sincerely.</p>
+                <p>2. <strong>Concealment of Faults:</strong> Part of Allah being Al-Ghaffar is that He conceals our sins from others. This should inspire us to likewise protect others' dignity.</p>
+                <p>3. <strong>Transformative Mercy:</strong> Allah's forgiveness through this name can transform our sins into good deeds when coupled with sincere repentance and reform.</p>
+            </div>
+            
+            <a href="#" class="back-to-top">Back to Top</a>
+            
+            <div class="source">
+                Source: <a href="https://myislam.org/99-names-of-allah/al-ghaffar" target="_blank">https://myislam.org/99-names-of-allah/al-ghaffar</a>
+            </div>
+        </div>
+        
+        <!-- Indonesian Content (initially hidden) -->
+        <div id="indonesianContent" class="hidden">
+            <h1>99 Nama Allah</h1>
+            
+            <div class="name-header">
+                <h2>14. Al-Ghaffar (Maha Pengampun)</h2>
+                <div class="arabic">ٱلْغَفَّارُ</div>
+                <div class="transliteration">Al-Ghaffar</div>
+            </div>
+            
+            <div class="source">
+                Sumber: <a href="https://myislam.org/99-names-of-allah/al-ghaffar" target="_blank">https://myislam.org/99-names-of-allah/al-ghaffar</a>
+            </div>
+            <!-- Meaning Section -->
+            <div class="section">
+                <h3>Makna dan Signifikansi</h3>
+                <p>Al-Ghaffar berasal dari akar kata gh-f-r yang berarti menutupi, menyembunyikan, dan mengampuni. Nama indah ini muncul lima kali dalam Al-Quran, menekankan kapasitas Allah yang tak terbatas untuk berulang kali mengampuni dosa sambil menyembunyikannya.</p>
+                <p>Imam Al-Ghazali menjelaskan: "Al-Ghaffar adalah Yang mengampuni dosa berulang kali, menutupinya dari pandangan orang lain dan dari konsekuensinya di dunia dan akhirat."</p>
+            </div>
+            
+            <!-- Quranic Verses Section -->
+            <div class="section">
+                <h3>Referensi Quran</h3>
+                
+                <div class="arabic">رَبُّ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَمَا بَيْنَهُمَا ٱلْعَزِيزُ ٱلْغَفَّـٰرُ</div>
+                <div class="transliteration">Rabbus-samāwāti wal-arḍi wa mā baynahumal-'azīzul-ghaffār</div>
+                <p><strong>Terjemahan:</strong> "Tuhan langit dan bumi dan apa yang ada di antara keduanya, Yang Maha Perkasa, Maha Pengampun."</p>
+                <p class="quran-ref">Referensi: <a href="https://quranwbw.com/38:66" target="_blank">Surah Sad 38:66</a></p>
+                <p><strong>Refleksi:</strong> Ayat ini dengan indah menghubungkan kekuasaan mutlak Allah dengan pengampunan-Nya, menunjukkan bahwa kekuatan sejati mencakup pengampunan yang penuh rahmat.</p>
+                
+                <div class="arabic">وَإِنِّى لَغَفَّـٰرٌۭ لِّمَن تَابَ وَءَامَنَ وَعَمِلَ صَـٰلِحًۭا ثُمَّ ٱهْتَدَىٰ</div>
+                <div class="transliteration">Wa innī laghaffārul liman tāba wa āmana wa 'amila ṣāliḥan thummah-tadā</div>
+                <p><strong>Terjemahan:</strong> "Dan sungguh, Aku Maha Pengampun bagi siapa yang bertobat, beriman, beramal saleh, kemudian tetap dalam petunjuk."</p>
+                <p class="quran-ref">Referensi: <a href="https://quranwbw.com/20:82" target="_blank">Surah Ta-Ha 20:82</a></p>
+                <p><strong>Refleksi:</strong> Ayat ini menguraikan jalan untuk menerima pengampunan Allah melalui tobat yang tulus, iman, amal saleh, dan keteguhan.</p>
+            </div>
+            
+            <!-- Tafsir Section -->
+            <div class="section">
+                <h3>Tafsir Mendalam</h3>
+                <p><strong>Penjelasan Ibn Kathir:</strong> Dalam tafsirnya tentang Surah Sad (38:66), Ibn Kathir menekankan bahwa Al-Ghaffar mewakili kesediaan Allah untuk berulang kali mengampuni hamba-hamba-Nya. Dia mencatat bahwa nama ini sering muncul bersama kekuatan kreatif Allah, menunjukkan bahwa Tuhan yang sama yang merancang alam semesta adalah Yang Maha Pengampun.</p>
+                
+                <p><strong>Wawasan Al-Qurtubi:</strong> Ulama ini menjelaskan bahwa pengampunan Allah melalui nama ini memiliki tiga aspek: (1) menutupi dosa dari pandangan publik, (2) tidak menghukum segera, dan (3) mengubah dosa menjadi kebaikan bagi yang bertobat.</p>
+            </div>
+            
+            <!-- Du'a Section -->
+            <div class="section">
+                <h3>Doa-Doa Nabi</h3>
+                
+                <div class="arabic">اَللّٰهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي</div>
+                <div class="transliteration">Allāhumma innaka 'afuwwun tuḥibbul-'afwa fa'fu 'annī</div>
+                <p><strong>Terjemahan:</strong> "Ya Allah, Engkau Maha Pemaaf dan mencintai pemaafan, maka maafkanlah aku."</p>
+                <p><strong>Sumber:</strong> Sunan Ibn Majah | <strong>Keutamaan:</strong> Nabi ﷺ sering membaca ini, terutama selama sepuluh malam terakhir Ramadan.</p>
+                
+                <div class="arabic">رَبَّنَا ٱغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّـَٔاتِنَا وَتَوَفَّنَا مَعَ ٱلْأَبْرَارِ</div>
+                <div class="transliteration">Rabbanagh-fir lanā dhunūbanā wa kaffir 'annā sayyi'ātinā wa tawaffanā ma'al-abrār</div>
+                <p><strong>Terjemahan:</strong> "Ya Tuhan kami, ampunilah dosa-dosa kami, hapuskanlah kesalahan-kesalahan kami, dan wafatkanlah kami bersama orang-orang yang saleh."</p>
+                <p class="quran-ref">Referensi: <a href="https://quranwbw.com/3:193" target="_blank">Surah Al-Imran 3:193</a></p>
+            </div>
+            
+            <!-- Amalan Section -->
+            <div class="section">
+                <h3>Aplikasi Praktis</h3>
+                
+                <h4>1. Shalat Malam (Tahajjud) dengan Memohon Ampunan</h4>
+                <p>Nabi Muhammad ﷺ bersabda: "Tuhan kita turun setiap malam ke langit terendah ketika sepertiga malam terakhir tersisa dan berkata: 'Siapa yang berdoa kepada-Ku sehingga Aku akan mengabulkannya? Siapa yang meminta kepada-Ku sehingga Aku akan memberinya? Siapa yang memohon ampunan-Ku sehingga Aku akan mengampuninya?'" (Bukhari)</p>
+                <p><strong>Amalan:</strong> Bangun selama sepertiga malam terakhir untuk melakukan minimal 2 rakaat shalat, kemudian dengan tulus memohon ampunan Allah.</p>
+                
+                <h4>2. Rutinitas Istighfar Harian</h4>
+                <p>Nabi ﷺ bersabda: "Barangsiapa mengucapkan: 'Aku memohon ampunan Allah yang tidak ada tuhan selain Dia, Yang Maha Hidup, Yang Maha Mengurus makhluk, dan aku bertobat kepada-Nya' tiga kali, Allah akan mengampuni dosanya." (Abu Dawud)</p>
+                <p><strong>Amalan:</strong> Ucapkan istighfar ini minimal 100 kali sehari: <span class="arabic" style="font-size: 18px;">أَسْتَغْفِرُ ٱللَّٰهَ</span> (Astaghfirullah)</p>
+            </div>
+            
+            <!-- Reflection Section -->
+            <div class="section">
+                <h3>Refleksi</h3>
+                <p>1. <strong>Kesabaran Ilahi:</strong> Al-Ghaffar menunjukkan kesabaran Allah yang tak terbatas. Sementara manusia mungkin menyerah pada pelanggar berulang, Allah terus mengampuni selama kita bertobat dengan tulus.</p>
+                <p>2. <strong>Penyembunyian Kesalahan:</strong> Bagian dari Allah sebagai Al-Ghaffar adalah bahwa Dia menyembunyikan dosa kita dari orang lain. Ini harus menginspirasi kita untuk juga melindungi martabat orang lain.</p>
+                <p>3. <strong>Rahmat Transformasional:</strong> Pengampunan Allah melalui nama ini dapat mengubah dosa kita menjadi kebaikan ketika disertai dengan tobat dan reformasi yang tulus.</p>
+            </div>
+            
+            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            
+            <div class="source">
+                Sumber: <a href="https://myislam.org/99-names-of-allah/al-ghaffar" target="_blank">https://myislam.org/99-names-of-allah/al-ghaffar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Language Toggle
+        const englishBtn = document.getElementById('englishBtn');
+        const indonesianBtn = document.getElementById('indonesianBtn');
+        const englishContent = document.getElementById('englishContent');
+        const indonesianContent = document.getElementById('indonesianContent');
+        
+        englishBtn.addEventListener('click', () => {
+            englishContent.classList.remove('hidden');
+            indonesianContent.classList.add('hidden');
+            englishBtn.classList.add('active');
+            indonesianBtn.classList.remove('active');
+        });
+        
+        indonesianBtn.addEventListener('click', () => {
+            indonesianContent.classList.remove('hidden');
+            englishContent.classList.add('hidden');
+            indonesianBtn.classList.add('active');
+            englishBtn.classList.remove('active');
+        });
+        
+        // Transliteration Toggle
+        const showTransBtn = document.getElementById('showTransliteration');
+        const hideTransBtn = document.getElementById('hideTransliteration');
+        const transliterations = document.querySelectorAll('.transliteration');
+        
+        showTransBtn.addEventListener('click', () => {
+            transliterations.forEach(el => el.style.display = 'block');
+            showTransBtn.classList.add('active');
+            hideTransBtn.classList.remove('active');
+        });
+        
+        hideTransBtn.addEventListener('click', () => {
+            transliterations.forEach(el => el.style.display = 'none');
+            hideTransBtn.classList.add('active');
+            showTransBtn.classList.remove('active');
+        });
+        
+        // Back to Top
+        const backToTopLinks = document.querySelectorAll('.back-to-top');
+        backToTopLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+    </script>
+</body>
+</html>
