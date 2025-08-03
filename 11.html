@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99 Names of Allah - Al-Khaliq</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .arabic {
+            font-size: 28px;
+            text-align: right;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+        }
+        .transliteration {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
+        }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .bonus {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
+        }
+        .hidden {
+            display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+
+        <!-- English Content -->
+        <div id="english-content">
+            <h1 class="name-title">11. Al-Khaliq (The Creator, The Maker)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-khaliq/" target="_blank">myislam.org/99-names-of-allah/al-khaliq/</a></div>
+            
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+            </div>
+
+            <div class="arabic">ٱلْخَالِقُ</div>
+            <div class="transliteration">Transliteration: Al-Khaliq</div>
+
+            <div class="section">
+                <h2 class="section-title">Meaning and Significance</h2>
+                <p>Al-Khaliq means The Creator, The Maker. The One who brings everything from non-existence into existence, giving each creation its perfect form and measure.</p>
+                <p><strong>Benefits:</strong> Reciting this name increases appreciation for Allah's creation, strengthens faith in divine wisdom, and helps recognize Allah's signs in all things.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/59:24" target="_blank">Surah Al-Hashr 59:24</a>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Huwa Allāhu al-Khāliqu al-Bāri'u al-Muṣawwiru, lahu al-asmā'u al-ḥusnā, yusabbiḥu lahu mā fī as-samāwāti wal-arḍ, wa huwa al-'Azīzu al-Ḥakīm</div>
+                    <p>"He is Allah, the Creator, the Inventor, the Fashioner; to Him belong the best names. Whatever is in the heavens and earth is exalting Him. And He is the Exalted in Might, the Wise."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Ibn Kathir explains that Al-Khaliq appears with Al-Bari' and Al-Musawwir showing three stages of creation: Al-Khaliq (The One who decrees creation), Al-Bari' (The One who brings into existence), and Al-Musawwir (The One who gives perfect form).
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/40:62" target="_blank">Surah Ghafir 40:62</a>
+                    <div class="arabic">ذَٰلِكُمُ ٱللَّهُ رَبُّكُمْ خَـٰلِقُ كُلِّ شَىْءٍۢ ۖ لَّآ إِلَـٰهَ إِلَّا هُوَ ۖ فَأَنَّىٰ تُؤْفَكُونَ</div>
+                    <div class="transliteration">Dhālikumu Allāhu rabbukum khāliqu kulli shay', lā ilāha illā huwa, fa-annā tu'fakūn</div>
+                    <p>"That is Allah, your Lord, Creator of all things; there is no deity except Him, so how are you deluded?"</p>
+                    <div class="tafsir-box">
+                        <strong>Connection:</strong> This verse connects Allah's creative power with the falsehood of worshipping others.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/54:49" target="_blank">Surah Al-Qamar 54:49</a>
+                    <div class="arabic">إِنَّا كُلَّ شَىْءٍ خَلَقْنَـٰهُ بِقَدَرٍۢ</div>
+                    <div class="transliteration">Innā kulla shay'in khalaqnāhu biqadar</div>
+                    <p>"Indeed, all things We created with predestination."</p>
+                    <div class="tafsir-box">
+                        <strong>Explanation:</strong> The name emphasizes Allah's perfect knowledge in creating everything in precise measure.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Divine Creation in Affairs</div>
+                    <div class="arabic">يَا خَالِقُ، أَبْدِعْ فِي حَالِي مَا تُحِبُّ وَتَرْضَىٰ</div>
+                    <div class="transliteration">Yā Khāliqu, abdi' fī ḥālī mā tuḥibbu wa tarḍā</div>
+                    <p><strong>Translation:</strong> "O Creator, innovate in my condition what You love and are pleased with."</p>
+                    <p><strong>When to Recite:</strong></p>
+                    <ul>
+                        <li>When seeking positive change in one's life</li>
+                        <li>After Fajr prayer (7 times)</li>
+                        <li>During times of stagnation or difficulty</li>
+                    </ul>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Recognizing Creation</div>
+                    <div class="arabic">سُبْحَانَ ٱلْخَالِقِ ٱلْبَارِئِ ٱلْمُصَوِّرِ</div>
+                    <div class="transliteration">Subḥāna al-Khāliqi al-Bāri'i al-Muṣawwir</div>
+                    <p><strong>Translation:</strong> "Glory be to the Creator, the Maker, the Fashioner."</p>
+                    <p><strong>Benefits:</strong> Recite 33 times while observing nature to increase appreciation of Allah's creation.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Creation Reflection</div>
+                    <p>To strengthen appreciation of Allah's creation:</p>
+                    <ol>
+                        <li>Recite "Subhanal-Khaliq" 33 times while observing nature</li>
+                        <li>Reflect on three creations each time (e.g., plants, animals, humans)</li>
+                        <li>Perform after sunrise (Dhuha time)</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice strengthens iman and helps recognize Allah's signs in creation.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Creative Problem-Solving</div>
+                    <p>For seeking divine inspiration in solving problems:</p>
+                    <ol>
+                        <li>Write "Bismillahil-Khaliq" on paper before brainstorming</li>
+                        <li>Recite "Yā Khaliq" 11 times while contemplating the problem</li>
+                        <li>Trust that Allah will inspire creative solutions</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> Early Muslims would combine dhikr with practical problem-solving, following the Quranic principle about Allah creating solutions after difficulties.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Khaliq through several dimensions:</p>
+                <ol>
+                    <li><strong>Three Aspects of Creation:</strong>
+                        <ul>
+                            <li>Al-Khaliq: The One who decrees creation</li>
+                            <li>Al-Bari': The One who brings into existence</li>
+                            <li>Al-Musawwir: The One who gives perfect form</li>
+                        </ul>
+                    </li>
+                    <li><strong>Perfect Design:</strong> Allah creates everything in precise measure (54:49)</li>
+                    <li><strong>Continuous Creation:</strong> Allah's creation is ongoing, not just initial (29:19-20)</li>
+                    <li><strong>Human Creation:</strong> The Quran frequently mentions human creation as a sign of Allah's power (23:12-14)</li>
+                </ol>
+                <p>The name Al-Khaliq reminds us that Allah is the ultimate source of all creation and innovation in the universe.</p>
+            </div>
+
+            <a href="#top" class="back-to-top">Back To Top</a>
+        </div>
+
+        <!-- Indonesian Content (Hidden by Default) -->
+        <div id="indonesian-content" class="hidden">
+            <h1 class="name-title">11. Al-Khaliq (Yang Maha Pencipta, Yang Maha Pembuat)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-khaliq/" target="_blank">myislam.org/99-names-of-allah/al-khaliq/</a></div>
+
+            <div class="arabic">ٱلْخَالِقُ</div>
+            <div class="transliteration">Transliterasi: Al-Khaliq</div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Khaliq berarti Yang Maha Pencipta, Yang Maha Pembuat. Yang mengadakan segala sesuatu dari tidak ada menjadi ada, memberikan setiap ciptaan bentuk dan ukuran yang sempurna.</p>
+                <p><strong>Manfaat:</strong> Membaca nama ini meningkatkan penghargaan terhadap ciptaan Allah, menguatkan iman akan hikmah ilahi, dan membantu mengenali tanda-tanda Allah dalam segala sesuatu.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/59:24" target="_blank">Surah Al-Hasyr 59:24</a>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Huwa Allāhu al-Khāliqu al-Bāri'u al-Muṣawwiru, lahu al-asmā'u al-ḥusnā, yusabbiḥu lahu mā fī as-samāwāti wal-arḍ, wa huwa al-'Azīzu al-Ḥakīm</div>
+                    <p>"Dialah Allah, Yang Menciptakan, Yang Mengadakan, Yang Membentuk Rupa, Dia memiliki nama-nama yang indah. Apa yang di langit dan di bumi bertasbih kepada-Nya. Dan Dialah Yang Maha Perkasa, Maha Bijaksana."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Ibn Kathir menjelaskan bahwa Al-Khaliq muncul bersama Al-Bari' dan Al-Musawwir menunjukkan tiga tahap penciptaan: Al-Khaliq (Yang menetapkan penciptaan), Al-Bari' (Yang mewujudkan), dan Al-Musawwir (Yang memberikan bentuk sempurna).
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/40:62" target="_blank">Surah Ghafir 40:62</a>
+                    <div class="arabic">ذَٰلِكُمُ ٱللَّهُ رَبُّكُمْ خَـٰلِقُ كُلِّ شَىْءٍۢ ۖ لَّآ إِلَـٰهَ إِلَّا هُوَ ۖ فَأَنَّىٰ تُؤْفَكُونَ</div>
+                    <div class="transliteration">Dhālikumu Allāhu rabbukum khāliqu kulli shay', lā ilāha illā huwa, fa-annā tu'fakūn</div>
+                    <p>"Itulah Allah Tuhanmu, Pencipta segala sesuatu; tidak ada tuhan selain Dia; maka bagaimana kamu dapat dipalingkan?"</p>
+                    <div class="tafsir-box">
+                        <strong>Koneksi:</strong> Ayat ini menghubungkan kekuatan penciptaan Allah dengan kepalsuan menyembah selain-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/54:49" target="_blank">Surah Al-Qamar 54:49</a>
+                    <div class="arabic">إِنَّا كُلَّ شَىْءٍ خَلَقْنَـٰهُ بِقَدَرٍۢ</div>
+                    <div class="transliteration">Innā kulla shay'in khalaqnāhu biqadar</div>
+                    <p>"Sesungguhnya Kami menciptakan segala sesuatu menurut ukuran."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan:</strong> Nama ini menekankan pengetahuan sempurna Allah dalam menciptakan segala sesuatu dengan ukuran tepat.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa (Permohonan)</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Penciptaan Ilahi dalam Urusan</div>
+                    <div class="arabic">يَا خَالِقُ، أَبْدِعْ فِي حَالِي مَا تُحِبُّ وَتَرْضَىٰ</div>
+                    <div class="transliteration">Yā Khāliqu, abdi' fī ḥālī mā tuḥibbu wa tarḍā</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Pencipta, ciptakanlah dalam keadaanku apa yang Engkau cintai dan ridhai."</p>
+                    <p><strong>Waktu Membaca:</strong></p>
+                    <ul>
+                        <li>Ketika menginginkan perubahan positif dalam hidup</li>
+                        <li>Setelah shalat Subuh (7 kali)</li>
+                        <li>Di saat stagnasi atau kesulitan</li>
+                    </ul>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Mengenali Ciptaan</div>
+                    <div class="arabic">سُبْحَانَ ٱلْخَالِقِ ٱلْبَارِئِ ٱلْمُصَوِّرِ</div>
+                    <div class="transliteration">Subḥāna al-Khāliqi al-Bāri'i al-Muṣawwir</div>
+                    <p><strong>Terjemahan:</strong> "Maha Suci Yang Menciptakan, Yang Mengadakan, Yang Membentuk."</p>
+                    <p><strong>Manfaat:</strong> Baca 33 kali sambil mengamati alam untuk meningkatkan penghargaan terhadap ciptaan Allah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan (Praktik)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Refleksi Ciptaan</div>
+                    <p>Untuk memperkuat penghargaan terhadap ciptaan Allah:</p>
+                    <ol>
+                        <li>Baca "Subhanal-Khaliq" 33 kali sambil mengamati alam</li>
+                        <li>Renungkan tiga ciptaan setiap kali (misal: tumbuhan, hewan, manusia)</li>
+                        <li>Lakukan setelah matahari terbit (waktu Dhuha)</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini memperkuat iman dan membantu mengenali tanda-tanda Allah dalam ciptaan.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Pemecahan Masalah Kreatif</div>
+                    <p>Untuk mencari inspirasi ilahi dalam memecahkan masalah:</p>
+                    <ol>
+                        <li>Tulis "Bismillahil-Khaliq" di kertas sebelum mencari solusi</li>
+                        <li>Baca "Yā Khaliq" 11 kali sambil merenungkan masalah</li>
+                        <li>Percayalah bahwa Allah akan mengilhami solusi kreatif</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Muslim awal menggabungkan dzikir dengan pemecahan masalah praktis, mengikuti prinsip Quran tentang Allah menciptakan solusi setelah kesulitan.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
+                <p>Ibn Kathir menjelaskan Al-Khaliq melalui beberapa dimensi:</p>
+                <ol>
+                    <li><strong>Tiga Aspek Penciptaan:</strong>
+                        <ul>
+                            <li>Al-Khaliq: Yang menetapkan penciptaan</li>
+                            <li>Al-Bari': Yang mewujudkan</li>
+                            <li>Al-Musawwir: Yang memberikan bentuk sempurna</li>
+                        </ul>
+                    </li>
+                    <li><strong>Desain Sempurna:</strong> Allah menciptakan segala sesuatu dengan ukuran tepat (54:49)</li>
+                    <li><strong>Penciptaan Terus Menerus:</strong> Ciptaan Allah berkelanjutan, bukan hanya awal (29:19-20)</li>
+                    <li><strong>Penciptaan Manusia:</strong> Quran sering menyebut penciptaan manusia sebagai tanda kekuasaan Allah (23:12-14)</li>
+                </ol>
+                <p>Nama Al-Khaliq mengingatkan kita bahwa Allah adalah sumber utama semua penciptaan dan inovasi di alam semesta.</p>
+            </div>
+
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+    </div>
+
+    <script>
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Hide Transliteration') {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+            }
+        });
+    </script>
+</body>
+</html>
