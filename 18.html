@@ -1,411 +1,435 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>99 Names of Allah - Al-Fattah</title>
+    <title>99 Names of Allah - Al-Fattah (18)</title>
     <style>
-        :root {
-            --primary-color: #2E8B57;
-            --secondary-color: #3AA76D;
-            --light-color: #f8f8f8;
-            --text-color: #333;
-            --arabic-font-size: 24px;
-        }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            line-height: 1.8;
             margin: 0;
-            padding: 0;
-            background-color: white;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
-        
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
-        
-        h1, h2, h3 {
-            color: var(--primary-color);
-        }
-        
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--primary-color);
-        }
-        
-        h2 {
-            padding-left: 10px;
-            margin-top: 30px;
-            border-left: 5px solid var(--primary-color);
-        }
-        
-        h3 {
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;
-        }
-        
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial, sans-serif;
-            font-size: var(--arabic-font-size);
+            font-size: 28px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            line-height: 1.8;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
-        
         .transliteration {
             font-style: italic;
-            color: var(--secondary-color);
-            margin: 10px 0;
+            color: #7f8c8d;
+            font-size: 18px;
             text-align: center;
+            margin: -15px 0 20px;
         }
-        
-        .section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: var(--light-color);
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .name-header {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
             text-align: center;
-            padding: 20px;
             margin-bottom: 25px;
-            background-color: var(--light-color);
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        
-        .toggle-container {
-            text-align: center;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
             margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        
-        .toggle-btn {
-            background-color: white;
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-            padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
-        
-        .toggle-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: var(--primary-color);
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
         }
-        
-        .back-to-top:hover {
-            text-decoration: underline;
-        }
-        
-        .quran-ref {
-            color: var(--secondary-color);
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
             font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            text-align: center;
-            font-style: italic;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
             margin-bottom: 25px;
-            padding: 10px;
-            background-color: var(--light-color);
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
-        
-        .source {
-            font-size: 0.9em;
-            text-align: right;
-            margin-top: 30px;
-            color: #666;
+        .hidden {
+            display: none;
         }
-        
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
         @media (max-width: 768px) {
             .arabic {
-                font-size: 20px;
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Toggle -->
-        <div class="toggle-container">
-            <button id="englishBtn" class="toggle-btn active">English</button>
-            <button id="indonesianBtn" class="toggle-btn">Bahasa Indonesia</button>
-        </div>
-        
-        <!-- Transliteration Toggle -->
-        <div class="toggle-container">
-            <button id="showTransliteration" class="toggle-btn">Show Transliteration</button>
-            <button id="hideTransliteration" class="toggle-btn active">Hide Transliteration</button>
-        </div>
-        
+        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+
         <!-- English Content -->
-        <div id="englishContent">
-            <h1>99 Names of Allah</h1>
+        <div id="english-content">
+            <h1 class="name-title">18. Al-Fattah (The Opener, The Judge)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-fattah/" target="_blank">myislam.org/99-names-of-allah/al-fattah/</a></div>
             
             <div class="bonus">
-                Bonus audio recitation: <a href="https://qfatima.com/a99-audio" target="_blank">Listen to all 99 Names</a>
+                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
             </div>
-            
-            <div class="name-header">
-                <h2>18. Al-Fattah (The Opener)</h2>
-                <div class="arabic">ٱلْفَتَّاحُ</div>
-                <div class="transliteration">Al-Fattah</div>
-            </div>
-            
-            <div class="source">
-                Source: <a href="https://myislam.org/99-names-of-allah/al-fattah" target="_blank">https://myislam.org/99-names-of-allah/al-fattah</a>
-            </div>
-            <!-- Meaning Section -->
+
+            <div class="arabic">ٱلْفَتَّاحُ</div>
+            <div class="transliteration">Transliteration: Al-Fattah</div>
+
             <div class="section">
-                <h3>Meaning and Significance</h3>
-                <p>Al-Fattah comes from the root f-t-h (ف-ت-ح) meaning "to open", "to grant", or "to judge". This profound name appears in Surah Saba (34:26), emphasizing Allah's role as the ultimate opener of all doors and solutions.</p>
-                <p>Ibn Al-Qayyim explains: "Al-Fattah is the One who opens what is closed, solves what is complicated, and provides relief after distress. He opens hearts to faith, the heavens with rain, and the earth with vegetation."</p>
+                <h2 class="section-title">Meaning and Significance</h2>
+                <p>Al-Fattah comes from the root f-t-h (ف-ت-ح) meaning "to open", "to grant", or "to judge". This majestic name appears in Surah Saba (34:26), emphasizing Allah's role as the ultimate opener of all doors and solutions.</p>
+                <p>Ibn Al-Qayyim explains: "Al-Fattah is the One who opens what is closed, solves what is complex, and makes clear what is obscure. He opens doors of mercy, provision, and knowledge to His servants when they are most in need."</p>
             </div>
-            
-            <!-- Quranic Verses Section -->
+
             <div class="section">
-                <h3>Quranic References</h3>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">قُلْ يَجْمَعُ بَيْنَنَا رَبُّنَا ثُمَّ يَفْتَحُ بَيْنَنَا بِٱلْحَقِّ وَهُوَ ٱلْفَتَّاحُ ٱلْعَلِيمُ</div>
-                <div class="transliteration">Qul yajma'u baynanā rabbunā thumma yaftaḥu baynanā bil-ḥaqqi wa huwa al-fatāḥu al-'alīm</div>
-                <p><strong>Translation:</strong> "Say, 'Our Lord will bring us together; then He will judge between us in truth. And He is the Knowing Judge.'"</p>
-                <p class="quran-ref">Reference: <a href="https://quranwbw.com/34:26" target="_blank">Surah Saba 34:26</a></p>
-                <p><strong>Exegesis:</strong> Ibn Kathir notes this verse demonstrates Al-Fattah's dual role as both opener of solutions and just judge. The pairing with "Al-Alim" (The All-Knowing) shows His judgments are based on perfect knowledge.</p>
-                
-                <div class="arabic">وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا۟ لِى وَلْيُؤْمِنُوا۟ بِى لَعَلَّهُمْ يَرْشُدُونَ</div>
-                <div class="transliteration">Wa idhā sa'alaka 'ibādī 'annī fa innī qarīb, ujību da'wata ad-dā'i idhā da'ān, fal yastajībū lī wal yu'minū bī la'allahum yarshudūn</div>
-                <p><strong>Translation:</strong> "And when My servants ask you concerning Me, indeed I am near. I respond to the invocation of the supplicant when he calls upon Me."</p>
-                <p class="quran-ref">Reference: <a href="https://quranwbw.com/2:186" target="_blank">Surah Al-Baqarah 2:186</a></p>
-                <p><strong>Exegesis:</strong> Al-Qurtubi connects this verse to Al-Fattah's attribute, explaining that Allah opens the doors of response to those who call upon Him with sincerity and faith.</p>
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/34:26" target="_blank">Surah Saba 34:26</a>
+                    <div class="arabic">قُلْ يَجْمَعُ بَيْنَنَا رَبُّنَا ثُمَّ يَفْتَحُ بَيْنَنَا بِٱلْحَقِّ وَهُوَ ٱلْفَتَّاحُ ٱلْعَلِيمُ</div>
+                    <div class="transliteration">Qul yajma'u baynanā rabbunā thumma yaftaḥu baynanā bil-ḥaqqi wa huwa l-Fattāḥu l-'Alīm</div>
+                    <p>"Say, 'Our Lord will bring us together; then He will judge between us in truth. And He is the Knowing Judge.'"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse connects Allah's attribute as Al-Fattah with His perfect knowledge, showing that His judgments are based on complete awareness of all matters. The name appears here in the context of divine justice.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/48:1" target="_blank">Surah Al-Fath 48:1</a>
+                    <div class="arabic">إِنَّا فَتَحْنَا لَكَ فَتْحًۭا مُّبِينًۭا</div>
+                    <div class="transliteration">Innā fataḥnā laka fatḥan mubīnā</div>
+                    <p>"Indeed, We have granted you a clear victory."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Al-Qurtubi:</strong> This opening verse of Surah Al-Fath demonstrates Allah's power to grant openings in both physical and spiritual matters. The "clear victory" refers to the Treaty of Hudaybiyyah which ultimately led to the conquest of Makkah.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> Sahih Muslim 2658
+                    <div class="arabic">إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الصَّلَاةُ فَيُفْتَحُ لِأَهْلِ الصَّلَاةِ</div>
+                    <div class="transliteration">Inna fil-jannati bāban yuqālu lahu ṣ-ṣalātu fayuftaḥu li-ahli ṣ-ṣalāti</div>
+                    <p>"Indeed in Paradise there is a gate called 'Prayer' which will be opened for those who are regular in prayer."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> The Prophet (ﷺ) described how Al-Fattah opens special gates in Paradise for different types of worshippers, showing the connection between our actions and divine openings.
+                    </div>
+                </div>
             </div>
-            
-            <!-- Tafsir Section -->
+
             <div class="section">
-                <h3>Detailed Tafsir</h3>
-                <p><strong>Ibn Kathir's Analysis:</strong> In his commentary on Surah Saba (34:26), Ibn Kathir explains that Al-Fattah manifests in three ways: (1) opening locked doors of provision, (2) opening closed hearts to guidance, and (3) opening the gates of mercy for repentant sinners. He cites how Allah opened the sea for Musa and solutions for Yunus in the fish's belly.</p>
-                
-                <p><strong>Al-Ghazali's Perspective:</strong> The scholar notes that Allah's opening occurs at perfect times - not too early to prevent lessons being learned, nor too late to cause despair. His timing reflects perfect wisdom in opening wombs, graves on Judgment Day, and the gates of Paradise.</p>
-                
-                <p><strong>Contemporary Understanding:</strong> Modern psychology confirms that breakthroughs often come after struggle. Dr. Jeffrey Lang observes that recognizing Al-Fattah helps believers maintain hope during difficulties, trusting in divine timing for solutions.</p>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Opening of Doors</div>
+                    <div class="arabic">يَا فَتَّاحُ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ وَارْزُقْنِي مِنْ فَضْلِكَ وَانْشُرْ عَلَيَّ مِنْ بَرَكَاتِكَ</div>
+                    <div class="transliteration">Yā Fattāḥu iftaḥ lī abwāba raḥmatika warzuqnī min faḍlika wan-shur 'alayya min barakātik</div>
+                    <p><strong>Translation:</strong> "O Opener, open for me the doors of Your mercy, provide me from Your bounty, and spread over me from Your blessings."</p>
+                    <p><strong>Benefits:</strong> This comprehensive du'a covers all aspects of divine openings - mercy, provision, and blessings. Recite it when facing difficulties or seeking new opportunities.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Decision Making</div>
+                    <div class="arabic">اللَّهُمَّ اخْتَرْ لِي وَاخْتَرْنِي وَافْتَحْ لِي مَا هُوَ خَيْرٌ لِي فِي دِينِي وَدُنْيَايَ</div>
+                    <div class="transliteration">Allāhumma khtur lī wakhturnī waftaḥ lī mā huwa khayrun lī fī dīnī wa dunyāy</div>
+                    <p><strong>Translation:</strong> "O Allah, choose for me and choose me, and open for me what is good for me in my religion and my worldly life."</p>
+                    <p><strong>Source:</strong> Inspired by the Prophet's (ﷺ) teachings on seeking Allah's choice in matters (Tirmidhi).</p>
+                </div>
             </div>
-            
-            <!-- Du'a Section -->
+
             <div class="section">
-                <h3>Prophetic Supplications</h3>
-                
-                <div class="arabic">اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ وَارْزُقْنِي مِنْ فَضْلِكَ الَّذِي لَا يَنْفَدُ</div>
-                <div class="transliteration">Allāhumma iftaḥ lī abwāba raḥmatika warzuqnī min faḍlika alladhī lā yanfad</div>
-                <p><strong>Translation:</strong> "O Allah, open for me the doors of Your mercy and provide me from Your bounty which never ceases."</p>
-                <p><strong>Source:</strong> Based on prophetic teachings about Allah's names | <strong>Virtue:</strong> This comprehensive du'a seeks both spiritual and material openings from Al-Fattah.</p>
-                
-                <div class="arabic">يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
-                <div class="transliteration">Yā ḥayyu yā qayyūmu biraḥmatika astaghīth, aṣliḥ lī sha'nī kullah, wa lā takilnī ilā nafsī ṭarfata 'ayn</div>
-                <p><strong>Translation:</strong> "O Ever-Living, O Sustainer, by Your mercy I seek help; rectify all my affairs and do not leave me to myself even for the blink of an eye."</p>
-                <p><strong>Source:</strong> Hisnul Muslim | <strong>When to recite:</strong> During times of difficulty when seeking divine solutions.</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Morning Opening Prayer</div>
+                    <p>The Prophet ﷺ taught: "Whoever says in the morning: 'Allahumma inni as'aluka min fadlika' (O Allah, I ask You from Your bounty), Allah will open for him doors of provision and mercy." (Ibn Majah)</p>
+                    <p><strong>Practice:</strong></p>
+                    <ol>
+                        <li>Recite this du'a after Fajr</li>
+                        <li>Combine it with the name Al-Fattah</li>
+                        <li>Have firm conviction that Allah will open the best doors</li>
+                    </ol>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Istighfar for Openings</div>
+                    <p>The Quran states: "Ask forgiveness of your Lord and repent to Him, He will send [rain from] the sky upon you in showers and increase you in strength" (<a href="https://quranwbw.com/11:52" target="_blank">11:52</a>).</p>
+                    <p><strong>Practice:</strong></p>
+                    <ol>
+                        <li>Recite "Astaghfirullah" 100 times daily</li>
+                        <li>Follow with "Yā Fattāḥu iftaḥ lanā" (O Opener, open for us)</li>
+                        <li>Observe how Allah opens unexpected solutions</li>
+                    </ol>
+                </div>
             </div>
-            
-            <!-- Amalan Section -->
+
             <div class="section">
-                <h3>Practical Applications</h3>
-                
-                <h4>1. Istikhara Prayer for Decisions</h4>
-                <p>The Prophet ﷺ taught: "When one of you is concerned about a decision, let him pray two rak'ahs then say: 'Allahumma inni astakhiruka bi'ilmik...' (O Allah, I seek Your choice through Your knowledge...)" (Bukhari)</p>
-                <p><strong>Practice:</strong> Perform Salat al-Istikhara when facing important decisions, trusting Al-Fattah to open the best path. Combine with practical research and consultation.</p>
-                
-                <h4>2. Morning Opening Du'a</h4>
-                <p>The Prophet ﷺ would say upon leaving home: "Bismillah, tawakkaltu 'alallah, la hawla wa la quwwata illa billah" (In Allah's name, I trust in Allah; there is no power except with Allah). He said this protects and opens blessings.</p>
-                <p><strong>Practice:</strong> Recite this when starting your day or new ventures, visualizing Al-Fattah opening doors of barakah in your endeavors.</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Fattah through three dimensions:</p>
+                <ol>
+                    <li><strong>Physical Openings:</strong>
+                        <ul>
+                            <li>Victories and conquests (<a href="https://quranwbw.com/48:1" target="_blank">48:1</a>)</li>
+                            <li>Solutions to worldly problems</li>
+                        </ul>
+                    </li>
+                    <li><strong>Spiritual Openings:</strong>
+                        <ul>
+                            <li>Enlightenment and understanding (<a href="https://quranwbw.com/6:125" target="_blank">6:125</a>)</li>
+                            <li>Acceptance of supplications</li>
+                        </ul>
+                    </li>
+                    <li><strong>Judicial Openings:</strong>
+                        <ul>
+                            <li>Divine judgment between people</li>
+                            <li>Resolution of disputes (<a href="https://quranwbw.com/34:26" target="_blank">34:26</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Al-A'raf (7:89), the believers prayed: "Our Lord, decide between us and our people in truth, and You are the best of those who give decision," showing the proper way to seek Al-Fattah's judgment.</p>
             </div>
-            
-            <!-- Reflection Section -->
-            <div class="section">
-                <h3>Contemporary Reflections</h3>
-                <p><strong>1. Problem-Solving Mindset:</strong> Recognizing Al-Fattah transforms how we approach challenges - not as dead-ends but as opportunities for divine solutions to manifest.</p>
-                
-                <p><strong>2. Divine Timing:</strong> Modern impatience conflicts with Al-Fattah's perfect timing. The story of Yusuf teaches that some doors open only after years of preparation.</p>
-                
-                <p><strong>3. Spiritual Openings:</strong> In an age of distraction, Al-Fattah opens hearts to faith through subtle signs - a Quran verse at the right moment, a pious encounter, or personal crisis leading to repentance.</p>
-                
-                <p><strong>4. Scientific Discoveries:</strong> Every scientific breakthrough reflects Al-Fattah's attribute - from medical cures to technological innovations, all ultimately from Allah opening human understanding.</p>
-            </div>
-            
-            <a href="#" class="back-to-top">Back to Top</a>
-            
-            <div class="source">
-                Source: <a href="https://myislam.org/99-names-of-allah/al-fattah" target="_blank">https://myislam.org/99-names-of-allah/al-fattah</a>
-            </div>
+
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
-        
-        <!-- Indonesian Content (initially hidden) -->
-        <div id="indonesianContent" class="hidden">
-            <h1>99 Nama Allah</h1>
-            
-            <div class="name-header">
-                <h2>18. Al-Fattah (Maha Pembuka)</h2>
-                <div class="arabic">ٱلْفَتَّاحُ</div>
-                <div class="transliteration">Al-Fattah</div>
-            </div>
-            
-            <div class="source">
-                Sumber: <a href="https://myislam.org/99-names-of-allah/al-fattah" target="_blank">https://myislam.org/99-names-of-allah/al-fattah</a>
-            </div>
-            <!-- Meaning Section -->
+
+        <!-- Indonesian Content (Hidden by Default) -->
+        <div id="indonesian-content" class="hidden">
+            <h1 class="name-title">18. Al-Fattah (Maha Pembuka, Maha Menetapkan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-fattah/" target="_blank">myislam.org/99-names-of-allah/al-fattah/</a></div>
+
+            <div class="arabic">ٱلْفَتَّاحُ</div>
+            <div class="transliteration">Transliterasi: Al-Fattah</div>
+
             <div class="section">
-                <h3>Makna dan Signifikansi</h3>
-                <p>Al-Fattah berasal dari akar kata f-t-h (ف-ت-ح) yang berarti "membuka", "menganugerahkan", atau "menghakimi". Nama agung ini muncul dalam Surah Saba (34:26), menekankan peran Allah sebagai pembuka segala pintu dan solusi yang utama.</p>
-                <p>Ibn Al-Qayyim menjelaskan: "Al-Fattah adalah Yang membuka apa yang tertutup, memecahkan apa yang rumit, dan memberikan kelegaan setelah kesulitan. Dia membuka hati untuk iman, langit dengan hujan, dan bumi dengan tumbuh-tumbuhan."</p>
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Fattah berasal dari akar kata f-t-h (ف-ت-ح) yang berarti "membuka", "menganugerahkan", atau "menetapkan". Nama agung ini muncul dalam Surah Saba (34:26), menekankan peran Allah sebagai pembuka segala pintu dan solusi.</p>
+                <p>Ibn Al-Qayyim menjelaskan: "Al-Fattah adalah Yang membuka yang tertutup, memecahkan yang rumit, dan menjelaskan yang samar. Dia membuka pintu rahmat, rezeki, dan ilmu untuk hamba-hamba-Nya ketika mereka paling membutuhkan."</p>
             </div>
-            
-            <!-- Quranic Verses Section -->
+
             <div class="section">
-                <h3>Referensi Quran</h3>
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
                 
-                <div class="arabic">قُلْ يَجْمَعُ بَيْنَنَا رَبُّنَا ثُمَّ يَفْتَحُ بَيْنَنَا بِٱلْحَقِّ وَهُوَ ٱلْفَتَّاحُ ٱلْعَلِيمُ</div>
-                <div class="transliteration">Qul yajma'u baynanā rabbunā thumma yaftaḥu baynanā bil-ḥaqqi wa huwa al-fatāḥu al-'alīm</div>
-                <p><strong>Terjemahan:</strong> "Katakanlah, 'Tuhan kita akan mengumpulkan kita semua, kemudian Dia akan memberi keputusan antara kita dengan benar. Dan Dialah Maha Pemberi keputusan lagi Maha Mengetahui.'"</p>
-                <p class="quran-ref">Referensi: <a href="https://quranwbw.com/34:26" target="_blank">Surah Saba 34:26</a></p>
-                <p><strong>Tafsir:</strong> Ibn Kathir mencatat bahwa ayat ini menunjukkan peran ganda Al-Fattah sebagai pembuka solusi dan hakim yang adil. Penyandingan dengan "Al-Alim" (Yang Maha Mengetahui) menunjukkan keputusan-Nya didasarkan pada pengetahuan sempurna.</p>
-                
-                <div class="arabic">وَإِذَا سَأَلَكَ عِبَادِى عَنِّى فَإِنِّى قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ ٱلدَّاعِ إِذَا دَعَانِ ۖ فَلْيَسْتَجِيبُوا۟ لِى وَلْيُؤْمِنُوا۟ بِى لَعَلَّهُمْ يَرْشُدُونَ</div>
-                <div class="transliteration">Wa idhā sa'alaka 'ibādī 'annī fa innī qarīb, ujību da'wata ad-dā'i idhā da'ān, fal yastajībū lī wal yu'minū bī la'allahum yarshudūn</div>
-                <p><strong>Terjemahan:</strong> "Dan apabila hamba-hamba-Ku bertanya kepadamu tentang Aku, maka sesungguhnya Aku dekat. Aku mengabulkan permohonan orang yang berdoa apabila dia berdoa kepada-Ku."</p>
-                <p class="quran-ref">Referensi: <a href="https://quranwbw.com/2:186" target="_blank">Surah Al-Baqarah 2:186</a></p>
-                <p><strong>Tafsir:</strong> Al-Qurtubi menghubungkan ayat ini dengan sifat Al-Fattah, menjelaskan bahwa Allah membuka pintu jawaban bagi mereka yang berseru kepada-Nya dengan keikhlasan dan iman.</p>
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/34:26" target="_blank">Surah Saba 34:26</a>
+                    <div class="arabic">قُلْ يَجْمَعُ بَيْنَنَا رَبُّنَا ثُمَّ يَفْتَحُ بَيْنَنَا بِٱلْحَقِّ وَهُوَ ٱلْفَتَّاحُ ٱلْعَلِيمُ</div>
+                    <div class="transliteration">Qul yajma'u baynanā rabbunā thumma yaftaḥu baynanā bil-ḥaqqi wa huwa l-Fattāḥu l-'Alīm</div>
+                    <p>"Katakanlah, 'Tuhan kita akan mengumpulkan kita semua, kemudian Dia memberi keputusan antara kita dengan benar. Dan Dialah Maha Pemberi Keputusan lagi Maha Mengetahui.'"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menghubungkan sifat Allah sebagai Al-Fattah dengan ilmu-Nya yang sempurna, menunjukkan bahwa keputusan-Nya didasarkan pada kesadaran penuh akan semua perkara. Nama ini muncul dalam konteks keadilan ilahi.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/48:1" target="_blank">Surah Al-Fath 48:1</a>
+                    <div class="arabic">إِنَّا فَتَحْنَا لَكَ فَتْحًۭا مُّبِينًۭا</div>
+                    <div class="transliteration">Innā fataḥnā laka fatḥan mubīnā</div>
+                    <p>"Sesungguhnya Kami telah memberikan kepadamu kemenangan yang nyata."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Al-Qurtubi:</strong> Ayat pembuka Surah Al-Fath ini menunjukkan kekuasaan Allah untuk memberikan pembukaan dalam hal fisik dan spiritual. "Kemenangan yang nyata" merujuk pada Perjanjian Hudaybiyyah yang akhirnya mengarah pada penaklukan Makkah.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> Sahih Muslim 2658
+                    <div class="arabic">إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الصَّلَاةُ فَيُفْتَحُ لِأَهْلِ الصَّلَاةِ</div>
+                    <div class="transliteration">Inna fil-jannati bāban yuqālu lahu ṣ-ṣalātu fayuftaḥu li-ahli ṣ-ṣalāti</div>
+                    <p>"Sesungguhnya di Surga ada pintu yang disebut 'Shalat' yang akan dibuka untuk mereka yang rajin shalat."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) menggambarkan bagaimana Al-Fattah membuka pintu-pintu khusus di Surga untuk berbagai jenis ahli ibadah, menunjukkan hubungan antara amalan kita dengan pembukaan ilahi.
+                    </div>
+                </div>
             </div>
-            
-            <!-- Tafsir Section -->
+
             <div class="section">
-                <h3>Tafsir Mendalam</h3>
-                <p><strong>Analisis Ibn Kathir:</strong> Dalam komentarnya tentang Surah Saba (34:26), Ibn Kathir menjelaskan bahwa Al-Fattah mewujud dalam tiga cara: (1) membuka pintu rezeki yang terkunci, (2) membuka hati yang tertutup untuk petunjuk, dan (3) membuka gerbang rahmat bagi pendosa yang bertobat. Dia mengutip bagaimana Allah membuka laut untuk Musa dan solusi untuk Yunus di perut ikan.</p>
-                
-                <p><strong>Perspektif Al-Ghazali:</strong> Ulama ini mencatat bahwa pembukaan Allah terjadi pada waktu yang sempurna - tidak terlalu awal untuk mencegah pelajaran dipelajari, juga tidak terlalu lambat untuk menyebabkan keputusasaan. Waktu-Nya mencerminkan hikmah sempurna dalam membuka rahim, kubur pada Hari Kiamat, dan gerbang Surga.</p>
-                
-                <p><strong>Pemahaman Kontemporer:</strong> Psikologi modern mengkonfirmasi bahwa terobosan sering datang setelah perjuangan. Dr. Jeffrey Lang mengamati bahwa mengenali Al-Fattah membantu orang beriman mempertahankan harapan selama kesulitan, percaya pada waktu ilahi untuk solusi.</p>
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Pembukaan Pintu</div>
+                    <div class="arabic">يَا فَتَّاحُ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ وَارْزُقْنِي مِنْ فَضْلِكَ وَانْشُرْ عَلَيَّ مِنْ بَرَكَاتِكَ</div>
+                    <div class="transliteration">Yā Fattāḥu iftaḥ lī abwāba raḥmatika warzuqnī min faḍlika wan-shur 'alayya min barakātik</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Membuka, bukakanlah untukku pintu-pintu rahmat-Mu, berilah aku dari karunia-Mu, dan tebarkanlah atasku dari berkah-Mu."</p>
+                    <p><strong>Manfaat:</strong> Doa komprehensif ini mencakup semua aspek pembukaan ilahi - rahmat, rezeki, dan berkah. Bacalah ketika menghadapi kesulitan atau mencari peluang baru.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Pengambilan Keputusan</div>
+                    <div class="arabic">اللَّهُمَّ اخْتَرْ لِي وَاخْتَرْنِي وَافْتَحْ لِي مَا هُوَ خَيْرٌ لِي فِي دِينِي وَدُنْيَايَ</div>
+                    <div class="transliteration">Allāhumma khtur lī wakhturnī waftaḥ lī mā huwa khayrun lī fī dīnī wa dunyāy</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, pilihlah untukku dan pilihlah aku, dan bukakanlah untukku apa yang baik bagiku dalam agamaku dan duniaku."</p>
+                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Nabi (ﷺ) tentang meminta pilihan Allah dalam berbagai perkara (Tirmidzi).</p>
+                </div>
             </div>
-            
-            <!-- Du'a Section -->
+
             <div class="section">
-                <h3>Doa-Doa Nabi</h3>
-                
-                <div class="arabic">اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ وَارْزُقْنِي مِنْ فَضْلِكَ الَّذِي لَا يَنْفَدُ</div>
-                <div class="transliteration">Allāhumma iftaḥ lī abwāba raḥmatika warzuqnī min faḍlika alladhī lā yanfad</div>
-                <p><strong>Terjemahan:</strong> "Ya Allah, bukakanlah untukku pintu-pintu rahmat-Mu dan berilah aku rezeki dari karunia-Mu yang tidak pernah habis."</p>
-                <p><strong>Sumber:</strong> Berdasarkan ajaran nabi tentang nama-nama Allah | <strong>Keutamaan:</strong> Doa komprehensif ini meminta pembukaan spiritual dan material dari Al-Fattah.</p>
-                
-                <div class="arabic">يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
-                <div class="transliteration">Yā ḥayyu yā qayyūmu biraḥmatika astaghīth, aṣliḥ lī sha'nī kullah, wa lā takilnī ilā nafsī ṭarfata 'ayn</div>
-                <p><strong>Terjemahan:</strong> "Wahai Yang Maha Hidup, Wahai Yang Maha Berdiri Sendiri, dengan rahmat-Mu aku minta pertolongan; perbaikilah segala urusanku dan jangan serahkan aku kepada diriku sendiri walau sekejap mata."</p>
-                <p><strong>Sumber:</strong> Hisnul Muslim | <strong>Saat membaca:</strong> Selama masa kesulitan ketika mencari solusi ilahi.</p>
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Doa Pembukaan Pagi Hari</div>
+                    <p>Nabi ﷺ mengajarkan: "Barangsiapa mengucapkan di pagi hari: 'Allahumma inni as'aluka min fadlika' (Ya Allah, aku meminta kepada-Mu dari karunia-Mu), Allah akan membukakan untuknya pintu rezeki dan rahmat." (Ibnu Majah)</p>
+                    <p><strong>Amalan:</strong></p>
+                    <ol>
+                        <li>Baca doa ini setelah Subuh</li>
+                        <li>Gabungkan dengan nama Al-Fattah</li>
+                        <li>Miliki keyakinan kuat bahwa Allah akan membuka pintu terbaik</li>
+                    </ol>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Istighfar untuk Pembukaan</div>
+                    <p>Al-Quran menyatakan: "Mohonlah ampun kepada Tuhanmu dan bertaubatlah kepada-Nya, niscaya Dia akan menurunkan hujan yang lebat dari langit dan menguatkanmu" (<a href="https://quranwbw.com/11:52" target="_blank">11:52</a>).</p>
+                    <p><strong>Amalan:</strong></p>
+                    <ol>
+                        <li>Baca "Astaghfirullah" 100 kali sehari</li>
+                        <li>Ikuti dengan "Yā Fattāḥu iftaḥ lanā" (Wahai Yang Maha Membuka, bukakanlah untuk kami)</li>
+                        <li>Amati bagaimana Allah membuka solusi tak terduga</li>
+                    </ol>
+                </div>
             </div>
-            
-            <!-- Amalan Section -->
+
             <div class="section">
-                <h3>Aplikasi Praktis</h3>
-                
-                <h4>1. Shalat Istikharah untuk Keputusan</h4>
-                <p>Nabi ﷺ mengajarkan: "Jika salah seorang dari kalian khawatir tentang suatu keputusan, hendaklah dia shalat dua rakaat kemudian berdoa: 'Allahumma inni astakhiruka bi'ilmik...' (Ya Allah, aku meminta pilihan-Mu dengan ilmu-Mu...)" (Bukhari)</p>
-                <p><strong>Amalan:</strong> Lakukan Salat al-Istikhara ketika menghadapi keputusan penting, percaya bahwa Al-Fattah akan membuka jalan terbaik. Gabungkan dengan penelitian praktis dan konsultasi.</p>
-                
-                <h4>2. Doa Pembuka Pagi Hari</h4>
-                <p>Nabi ﷺ biasa mengucapkan saat keluar rumah: "Bismillah, tawakkaltu 'alallah, la hawla wa la quwwata illa billah" (Dengan nama Allah, aku bertawakal kepada Allah; tidak ada daya dan kekuatan kecuali dengan Allah). Beliau bersabda ini melindungi dan membuka berkah.</p>
-                <p><strong>Amalan:</strong> Baca ini saat memulai hari atau usaha baru, bayangkan Al-Fattah membuka pintu barakah dalam usahamu.</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
+                <p>Ibn Kathir menjelaskan Al-Fattah melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Pembukaan Fisik:</strong>
+                        <ul>
+                            <li>Kemenangan dan penaklukan (<a href="https://quranwbw.com/48:1" target="_blank">48:1</a>)</li>
+                            <li>Solusi untuk masalah duniawi</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pembukaan Spiritual:</strong>
+                        <ul>
+                            <li>Pencerahan dan pemahaman (<a href="https://quranwbw.com/6:125" target="_blank">6:125</a>)</li>
+                            <li>Penerimaan doa</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pembukaan Yudisial:</strong>
+                        <ul>
+                            <li>Keputusan ilahi antara manusia</li>
+                            <li>Penyelesaian perselisihan (<a href="https://quranwbw.com/34:26" target="_blank">34:26</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-A'raf (7:89), orang-orang beriman berdoa: "Ya Tuhan kami, berilah keputusan antara kami dan kaum kami dengan hak (adil), dan Engkaulah Pemberi keputusan yang sebaik-baiknya," menunjukkan cara yang benar untuk memohon keputusan Al-Fattah.</p>
             </div>
-            
-            <!-- Reflection Section -->
-            <div class="section">
-                <h3>Refleksi Kontemporer</h3>
-                <p><strong>1. Pola Pikir Pemecahan Masalah:</strong> Mengenali Al-Fattah mengubah cara kita menghadapi tantangan - bukan sebagai jalan buntu tetapi sebagai peluang untuk solusi ilahi terwujud.</p>
-                
-                <p><strong>2. Waktu Ilahi:</strong> Ketidaksabaran modern bertentangan dengan waktu sempurna Al-Fattah. Kisah Yusuf mengajarkan bahwa beberapa pintu hanya terbuka setelah bertahun-tahun persiapan.</p>
-                
-                <p><strong>3. Pembukaan Spiritual:</strong> Di era penuh gangguan, Al-Fattah membuka hati untuk iman melalui tanda-tanda halus - ayat Quran di momen tepat, pertemuan dengan orang saleh, atau krisis pribadi yang mengarah pada pertobatan.</p>
-                
-                <p><strong>4. Penemuan Ilmiah:</strong> Setiap terobosan ilmiah mencerminkan sifat Al-Fattah - dari obat penyembuh hingga inovasi teknologi, semua pada akhirnya dari Allah yang membuka pemahaman manusia.</p>
-            </div>
-            
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
-            
-            <div class="source">
-                Sumber: <a href="https://myislam.org/99-names-of-allah/al-fattah" target="_blank">https://myislam.org/99-names-of-allah/al-fattah</a>
-            </div>
+
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
     <script>
         // Language Toggle
-        const englishBtn = document.getElementById('englishBtn');
-        const indonesianBtn = document.getElementById('indonesianBtn');
-        const englishContent = document.getElementById('englishContent');
-        const indonesianContent = document.getElementById('indonesianContent');
-        
-        englishBtn.addEventListener('click', () => {
-            englishContent.classList.remove('hidden');
-            indonesianContent.classList.add('hidden');
-            englishBtn.classList.add('active');
-            indonesianBtn.classList.remove('active');
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+            }
         });
-        
-        indonesianBtn.addEventListener('click', () => {
-            indonesianContent.classList.remove('hidden');
-            englishContent.classList.add('hidden');
-            indonesianBtn.classList.add('active');
-            englishBtn.classList.remove('active');
-        });
-        
+
         // Transliteration Toggle
-        const showTransBtn = document.getElementById('showTransliteration');
-        const hideTransBtn = document.getElementById('hideTransliteration');
-        const transliterations = document.querySelectorAll('.transliteration');
-        
-        showTransBtn.addEventListener('click', () => {
-            transliterations.forEach(el => el.style.display = 'block');
-            showTransBtn.classList.add('active');
-            hideTransBtn.classList.remove('active');
-        });
-        
-        hideTransBtn.addEventListener('click', () => {
-            transliterations.forEach(el => el.style.display = 'none');
-            hideTransBtn.classList.add('active');
-            showTransBtn.classList.remove('active');
-        });
-        
-        // Back to Top
-        const backToTopLinks = document.querySelectorAll('.back-to-top');
-        backToTopLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Hide Transliteration') {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+            }
         });
     </script>
 </body>
