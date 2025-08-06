@@ -7,311 +7,514 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            line-height: 1.8;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2e7d32;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', Arial, sans-serif;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
         }
         .section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn {
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-btn:hover {
-            background-color: #1b5e20;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 20px;
-            color: #2e7d32;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f5e9;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .dua-box {
-            background-color: #f1f8e9;
-            padding: 15px;
-            border-radius: 5px;
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
             margin: 15px 0;
         }
-        .source {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 30px;
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn" id="englishBtn">English</button>
-            <button class="toggle-btn" id="indonesianBtn">Indonesian</button>
-            <button class="toggle-btn" id="toggleTransliteration">Toggle Transliteration</button>
-        </div>
+        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
 
-        <!-- English Version -->
-        <div id="englishVersion">
-            <h1>21. Al-Basit (The Expander)</h1>
+        <!-- English Content -->
+        <div id="english-content">
+            <h1 class="name-title">21. Al-Basit (The Expander)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-basit/" target="_blank">myislam.org/99-names-of-allah/al-basit/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <div class="bonus">
-                <p>Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a></p>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <!-- Audio Player Added Here -->
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Name</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_21Qaabidh22Baasit.mp3?_=22" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">الْبَاسِطُ</div>
-            <p class="transliteration">Transliteration: Al-Basit</p>
-            <p><strong>Meaning:</strong> The Expander, The Reliever, The One who amplifies and extends</p>
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-basit" target="_blank">https://myislam.org/99-names-of-allah/al-basit</a></p>
+            <div class="transliteration">Transliteration: Al-Basit</div>
+
+            <!-- Audio Player Added Here -->
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/21.%20al-basit.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
             <div class="section">
-                <h2>Explanation</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Basit is the complementary name to Al-Qabid (The Withholder). It signifies Allah's attribute of expanding, relieving, and amplifying whatever He wills - whether it be provisions, mercy, opportunities, or even the chest (heart) of believers to receive faith and guidance.</p>
-                
                 <p>This name demonstrates Allah's boundless generosity and His ability to relieve difficulties. When Allah expands something, no one can restrict it, and His expansion is always filled with wisdom and mercy. The Prophet Muhammad (peace be upon him) would often pray for expansion in beneficial knowledge and lawful provision.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence)</h2>
-                <div class="arabic">وَاللَّهُ يَقْبِضُ وَيَبْسُطُ وَإِلَيْهِ تُرْجَعُونَ</div>
-                <p class="transliteration">Transliteration: WaAllahu yaqbidu wayabsutu wailayhi turjaAAoona</p>
-                <p><strong>Translation:</strong> "And it is Allah who withholds and grants abundance, and to Him you will be returned." (<a href="https://quranwbw.com/2:245" target="_blank">Surah Al-Baqarah 2:245</a>)</p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ</div>
-                <p class="transliteration">Transliteration: Alam nashrah laka sadrak</p>
-                <p><strong>Translation:</strong> "Did We not expand for you your breast?" (<a href="https://quranwbw.com/94:1" target="_blank">Surah Ash-Sharh 94:1</a>)</p>
-                
-                <div class="arabic">يَمْحَقُ اللَّهُ الرِّبَا وَيُرْبِي الصَّدَقَاتِ</div>
-                <p class="transliteration">Transliteration: Yamhaqu Allahu alrriba wayurbee alssadaqati</p>
-                <p><strong>Translation:</strong> "Allah destroys interest and gives increase for charities." (<a href="https://quranwbw.com/2:276" target="_blank">Surah Al-Baqarah 2:276</a>)</p>
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/2:245" target="_blank">Surah Al-Baqarah 2:245</a>
+                    <div class="arabic">وَاللَّهُ يَقْبِضُ وَيَبْسُطُ وَإِلَيْهِ تُرْجَعُونَ</div>
+                    <div class="transliteration">WaAllahu yaqbidu wayabsutu wailayhi turjaAAoona</div>
+                    <p>"And it is Allah who withholds and grants abundance, and to Him you will be returned."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/2/245/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibn Kathir explains that Allah alone has the power to restrict or expand provisions. He mentions that this verse came in the context of encouraging charity, showing that what appears to be giving away wealth actually leads to its expansion by Allah's will.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/94:1" target="_blank">Surah Ash-Sharh 94:1</a>
+                    <div class="arabic">أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ</div>
+                    <div class="transliteration">Alam nashrah laka sadrak</div>
+                    <p>"Did We not expand for you your breast?"</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/94/1/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibn Kathir states that this refers to Allah expanding the Prophet's chest to receive revelation, bear the message of Islam, and face the challenges of prophethood. This spiritual expansion is a special mercy Allah grants to His chosen servants.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/2:276" target="_blank">Surah Al-Baqarah 2:276</a>
+                    <div class="arabic">يَمْحَقُ اللَّهُ الرِّبَا وَيُرْبِي الصَّدَقَاتِ</div>
+                    <div class="transliteration">Yamhaqu Allahu alrriba wayurbee alssadaqati</div>
+                    <p>"Allah destroys interest and gives increase for charities."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This verse directly connects Allah's name Al-Basit with His ability to expand and multiply what is given in charity while diminishing unlawful gains. It shows that true expansion comes from righteous means.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2588" target="_blank">Sahih Muslim 2588</a>
+                    <div class="arabic">إِنَّ اللَّهَ هُوَ الْمُسَعِّرُ الْقَابِضُ الْبَاسِطُ الرَّازِقُ</div>
+                    <div class="transliteration">Inna Allaha huwa almusaAAiru alqabidu albasitu alrraziqu</div>
+                    <p>"Indeed, Allah is the One Who sets prices, the Withholder, the Extender, and the Provider."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> The Prophet (ﷺ) mentioned this in the context of rising prices, reminding people that Allah controls all provision and economic conditions. This hadith directly connects Allah's name Al-Basit with His control over worldly provisions.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his commentary on Surah Al-Baqarah (2:245), Ibn Kathir explains that Allah alone has the power to restrict or expand provisions. He mentions that this verse came in the context of encouraging charity, showing that what appears to be giving away wealth actually leads to its expansion by Allah's will.</p>
-                
-                <p>Regarding Surah Ash-Sharh (94:1), Ibn Kathir states that this refers to Allah expanding the Prophet's chest to receive revelation, bear the message of Islam, and face the challenges of prophethood. This spiritual expansion is a special mercy Allah grants to His chosen servants.</p>
-            </div>
-
-            <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Opening Doors of Mercy and Provision</div>
                     <div class="arabic">اللَّهُمَّ افْتَحْ عَلَيْنَا أَبْوَابَ رَحْمَتِكَ وَرِزْقِكَ</div>
-                    <p class="transliteration">Transliteration: Allahumma iftah AAalayna abwaba rahmatika warizqika</p>
+                    <div class="transliteration">Allahumma iftah AAalayna abwaba rahmatika warizqika</div>
                     <p><strong>Translation:</strong> "O Allah, open for us the doors of Your mercy and Your provision."</p>
                     <p><strong>Benefits:</strong> This du'a asks Allah Al-Basit to expand His mercy and provision. It's recommended to say when seeking lawful sustenance or relief from difficulties.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">For Comprehensive Goodness</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ فِعْلَ الْخَيْرَاتِ وَتَرْكَ الْمُنْكَرَاتِ وَحُبَّ الْمَسَاكِينِ وَأَنْ تَتَوَفَّانِي مُسْلِمًا وَأَنْ تُلْحِقَنِي بِالصَّالِحِينَ</div>
-                    <p class="transliteration">Transliteration: Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan tatawaffanee musliman waan tulhiqanee bialssaliheena</p>
-                    <p><strong>Translation:</strong> "O Allah, I ask You to enable me to do good deeds, abandon bad deeds, love the poor, and that You cause me to die as a Muslim and join me with the righteous." (Sunan At-Tirmidhi)</p>
-                    <p><strong>Benefits:</strong> This comprehensive supplication includes asking Allah to expand one's capacity for good deeds and righteous company, acknowledging that all expansion comes from Him.</p>
+                    <div class="transliteration">Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan tatawaffanee musliman waan tulhiqanee bialssaliheena</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You to enable me to do good deeds, abandon bad deeds, love the poor, and that You cause me to die as a Muslim and join me with the righteous."</p>
+                    <p><strong>Source:</strong> Sunan At-Tirmidhi. This comprehensive supplication includes asking Allah to expand one's capacity for good deeds and righteous company, acknowledging that all expansion comes from Him.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Giving Charity for Expansion of Provision</h3>
-                <p>The Prophet (peace be upon him) said: "Charity does not decrease wealth." (Sahih Muslim)</p>
-                <p><strong>Practice:</strong> Regularly give charity, especially when in need, as this is a means by which Allah expands provision. The more one gives for Allah's sake, the more Allah increases them.</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Giving Charity for Expansion of Provision</div>
+                    <p>The Prophet (ﷺ) said: "Charity does not decrease wealth." (Sahih Muslim)</p>
+                    <p><strong>Practice:</strong></p>
+                    <ol>
+                        <li>Make charity a regular habit, especially when in need</li>
+                        <li>Give from what you love, not just from surplus</li>
+                        <li>Trust that Allah will expand what you give</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice activates the blessings of Al-Basit, as the more one gives for Allah's sake, the more Allah increases them in ways beyond calculation.</p>
+                </div>
 
-                <h3>2. Seeking Knowledge for Chest Expansion</h3>
-                <p>Allah says: "So whoever Allah wants to guide - He expands his breast to Islam." (<a href="https://quranwbw.com/6:125" target="_blank">Surah Al-An'am 6:125</a>)</p>
-                <p><strong>Practice:</strong> Seek Islamic knowledge consistently, as this leads to the expansion of one's spiritual understanding and capacity to bear life's challenges with faith.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Seeking Knowledge for Chest Expansion</div>
+                    <p>Allah says: "So whoever Allah wants to guide - He expands his breast to Islam." (<a href="https://quranwbw.com/6:125" target="_blank">6:125</a>)</p>
+                    <p><strong>Practice:</strong></p>
+                    <ol>
+                        <li>Dedicate time daily to study Islamic knowledge</li>
+                        <li>Attend Islamic classes or circles</li>
+                        <li>Reflect on how knowledge expands spiritual capacity</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) would pray: "O Allah! Expand for me my chest." (Sahih Muslim). This practice connects us with the spiritual expansion that comes from divine knowledge.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Reflection</h2>
-                <p>Understanding Allah as Al-Basit should:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Basit through three key manifestations:</p>
                 <ol>
-                    <li>Increase our trust in Allah's provision when we are in need</li>
-                    <li>Encourage us to be generous, knowing Allah will expand what we give</li>
-                    <li>Help us seek spiritual expansion through worship and knowledge</li>
-                    <li>Remind us that all expansion comes by Allah's will and wisdom</li>
-                    <li>Teach us to ask Allah for expansion in all that is good</li>
+                    <li><strong>Material Expansion:</strong>
+                        <ul>
+                            <li>Allah expands provisions and wealth (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>)</li>
+                            <li>Multiplies rewards for good deeds (<a href="https://quranwbw.com/2:261" target="_blank">2:261</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Spiritual Expansion:</strong>
+                        <ul>
+                            <li>Opens hearts to receive guidance (<a href="https://quranwbw.com/6:125" target="_blank">6:125</a>)</li>
+                            <li>Grants capacity to bear challenges (<a href="https://quranwbw.com/94:1-3" target="_blank">94:1-3</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Relief from Difficulties:</strong>
+                        <ul>
+                            <li>Removes hardships after they serve their purpose (<a href="https://quranwbw.com/65:7" target="_blank">65:7</a>)</li>
+                            <li>Provides ease after difficulty (<a href="https://quranwbw.com/94:5" target="_blank">94:5</a>)</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>In Surah Ash-Sharh (<a href="https://quranwbw.com/94:1-8" target="_blank">94:1-8</a>), Allah pairs the expansion of the Prophet's chest with the removal of his burdens, showing how Al-Basit operates in both granting capacity and relieving difficulties. This name teaches us that true expansion comes from Allah alone.</p>
             </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-basit" target="_blank">https://myislam.org/99-names-of-allah/al-basit</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
 
-        <!-- Indonesian Version -->
-        <div id="indonesianVersion" class="hidden">
-            <h1>21. Al-Basit (Maha Melapangkan)</h1>
+        <!-- Indonesian Content (Hidden by Default) -->
+        <div id="indonesian-content" class="hidden">
+            <h1 class="name-title">21. Al-Basit (Maha Melapangkan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-basit/" target="_blank">myislam.org/99-names-of-allah/al-basit/</a></div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
 
             <div class="arabic">الْبَاسِطُ</div>
-            <p class="transliteration">Transliterasi: Al-Basit</p>
-            <p><strong>Arti:</strong> Yang Maha Melapangkan, Yang Maha Memberi Kelapangan, Yang memperluas dan memperpanjang</p>
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-basit" target="_blank">https://myislam.org/99-names-of-allah/al-basit</a></p>
+            <div class="transliteration">Transliterasi: Al-Basit</div>
+
+            <!-- Audio Player Added Here for Indonesian Content -->
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Nama Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/21.%20al-basit.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
             <div class="section">
-                <h2>Penjelasan</h2>
+                <h2 class="section-title">Makna</h2>
                 <p>Al-Basit adalah nama yang melengkapi Al-Qabid (Yang Menyempitkan). Nama ini menandakan sifat Allah dalam melapangkan, meringankan, dan memperluas apa yang Dia kehendaki - baik itu rezeki, rahmat, kesempatan, atau bahkan dada (hati) orang beriman untuk menerima iman dan petunjuk.</p>
-                
                 <p>Nama ini menunjukkan kemurahan hati Allah yang tak terbatas dan kemampuan-Nya untuk meringankan kesulitan. Ketika Allah melapangkan sesuatu, tidak ada yang dapat membatasinya, dan kelapangan-Nya selalu penuh dengan hikmah dan rahmat. Nabi Muhammad (shallallahu 'alaihi wasallam) sering berdoa meminta kelapangan dalam ilmu yang bermanfaat dan rezeki yang halal.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Bukti)</h2>
-                <div class="arabic">وَاللَّهُ يَقْبِضُ وَيَبْسُطُ وَإِلَيْهِ تُرْجَعُونَ</div>
-                <p class="transliteration">Transliterasi: WaAllahu yaqbidu wayabsutu wailayhi turjaAAoona</p>
-                <p><strong>Terjemahan:</strong> "Dan Allah yang menyempitkan dan melapangkan (rezeki), dan kepada-Nya lah kamu dikembalikan." (<a href="https://quranwbw.com/2:245" target="_blank">Surah Al-Baqarah 2:245</a>)</p>
+                <h2 class="section-title">Dalil (Bukti dari Quran & Hadits)</h2>
                 
-                <div class="arabic">أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ</div>
-                <p class="transliteration">Transliterasi: Alam nashrah laka sadrak</p>
-                <p><strong>Terjemahan:</strong> "Bukankah Kami telah melapangkan untukmu dadamu?" (<a href="https://quranwbw.com/94:1" target="_blank">Surah Ash-Sharh 94:1</a>)</p>
-                
-                <div class="arabic">يَمْحَقُ اللَّهُ الرِّبَا وَيُرْبِي الصَّدَقَاتِ</div>
-                <p class="transliteration">Transliterasi: Yamhaqu Allahu alrriba wayurbee alssadaqati</p>
-                <p><strong>Terjemahan:</strong> "Allah memusnahkan riba dan menyuburkan sedekah." (<a href="https://quranwbw.com/2:276" target="_blank">Surah Al-Baqarah 2:276</a>)</p>
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:245" target="_blank">Surah Al-Baqarah 2:245</a>
+                    <div class="arabic">وَاللَّهُ يَقْبِضُ وَيَبْسُطُ وَإِلَيْهِ تُرْجَعُونَ</div>
+                    <div class="transliteration">WaAllahu yaqbidu wayabsutu wailayhi turjaAAoona</div>
+                    <p>"Dan Allah yang menyempitkan dan melapangkan (rezeki), dan kepada-Nya lah kamu dikembalikan."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/2/245/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibnu Katsir menjelaskan bahwa hanya Allah yang memiliki kekuasaan untuk menyempitkan atau melapangkan rezeki. Beliau menyebutkan bahwa ayat ini datang dalam konteks mendorong sedekah, menunjukkan bahwa apa yang tampaknya memberikan harta sebenarnya mengarah pada perluasannya oleh kehendak Allah.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/94:1" target="_blank">Surah Ash-Sharh 94:1</a>
+                    <div class="arabic">أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ</div>
+                    <div class="transliteration">Alam nashrah laka sadrak</div>
+                    <p>"Bukankah Kami telah melapangkan untukmu dadamu?"</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/94/1/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibnu Katsir menyatakan bahwa ini merujuk pada Allah melapangkan dada Nabi untuk menerima wahyu, menanggung pesan Islam, dan menghadapi tantangan kenabian. Kelapangan spiritual ini adalah rahmat khusus yang Allah berikan kepada hamba-hamba pilihan-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:276" target="_blank">Surah Al-Baqarah 2:276</a>
+                    <div class="arabic">يَمْحَقُ اللَّهُ الرِّبَا وَيُرْبِي الصَّدَقَاتِ</div>
+                    <div class="transliteration">Yamhaqu Allahu alrriba wayurbee alssadaqati</div>
+                    <p>"Allah memusnahkan riba dan menyuburkan sedekah."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Ayat ini secara langsung menghubungkan nama Allah Al-Basit dengan kemampuan-Nya untuk memperluas dan melipatgandakan apa yang diberikan dalam sedekah sambil mengurangi keuntungan yang tidak halal. Ini menunjukkan bahwa kelapangan sejati datang dari cara yang benar.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2588" target="_blank">Sahih Muslim 2588</a>
+                    <div class="arabic">إِنَّ اللَّهَ هُوَ الْمُسَعِّرُ الْقَابِضُ الْبَاسِطُ الرَّازِقُ</div>
+                    <div class="transliteration">Inna Allaha huwa almusaAAiru alqabidu albasitu alrraziqu</div>
+                    <p>"Sesungguhnya Allah adalah Yang Menetapkan Harga, Yang Menyempitkan, Yang Melapangkan, dan Yang Memberi Rezeki."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) menyebutkan ini dalam konteks kenaikan harga, mengingatkan orang bahwa Allah mengendalikan semua rezeki dan kondisi ekonomi. Hadits ini secara langsung menghubungkan nama Allah Al-Basit dengan kendali-Nya atas rezeki duniawi.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Al-Baqarah (2:245), Ibnu Katsir menjelaskan bahwa hanya Allah yang memiliki kekuasaan untuk menyempitkan atau melapangkan rezeki. Beliau menyebutkan bahwa ayat ini datang dalam konteks mendorong sedekah, menunjukkan bahwa apa yang tampaknya memberikan harta sebenarnya mengarah pada perluasannya oleh kehendak Allah.</p>
-                
-                <p>Mengenai Surah Ash-Sharh (94:1), Ibnu Katsir menyatakan bahwa ini merujuk pada Allah melapangkan dada Nabi untuk menerima wahyu, menanggung pesan Islam, dan menghadapi tantangan kenabian. Kelapangan spiritual ini adalah rahmat khusus yang Allah berikan kepada hamba-hamba pilihan-Nya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa (Permohonan)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Doa (Permohonan)</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Membuka Pintu Rahmat dan Rezeki</div>
                     <div class="arabic">اللَّهُمَّ افْتَحْ عَلَيْنَا أَبْوَابَ رَحْمَتِكَ وَرِزْقِكَ</div>
-                    <p class="transliteration">Transliterasi: Allahumma iftah AAalayna abwaba rahmatika warizqika</p>
+                    <div class="transliteration">Allahumma iftah AAalayna abwaba rahmatika warizqika</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, bukakanlah untuk kami pintu-pintu rahmat-Mu dan rezeki-Mu."</p>
                     <p><strong>Manfaat:</strong> Doa ini meminta Allah Al-Basit untuk melapangkan rahmat dan rezeki-Nya. Dianjurkan untuk dibaca ketika mencari rezeki yang halal atau pertolongan dari kesulitan.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">Untuk Kebaikan yang Komprehensif</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ فِعْلَ الْخَيْرَاتِ وَتَرْكَ الْمُنْكَرَاتِ وَحُبَّ الْمَسَاكِينِ وَأَنْ تَتَوَفَّانِي مُسْلِمًا وَأَنْ تُلْحِقَنِي بِالصَّالِحِينَ</div>
-                    <p class="transliteration">Transliterasi: Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan tatawaffanee musliman waan tulhiqanee bialssaliheena</p>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu kemampuan untuk melakukan kebaikan, meninggalkan kemungkaran, mencintai orang-orang miskin, dan agar Engkau mewafatkan aku sebagai Muslim serta memasukkan aku ke dalam golongan orang-orang saleh." (Sunan At-Tirmidzi)</p>
-                    <p><strong>Manfaat:</strong> Doa komprehensif ini termasuk meminta Allah untuk meluaskan kemampuan seseorang dalam berbuat baik dan bergaul dengan orang saleh, mengakui bahwa semua kelapangan datang dari-Nya.</p>
+                    <div class="transliteration">Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan tatawaffanee musliman waan tulhiqanee bialssaliheena</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu kemampuan untuk melakukan kebaikan, meninggalkan kemungkaran, mencintai orang-orang miskin, dan agar Engkau mewafatkan aku sebagai Muslim serta memasukkan aku ke dalam golongan orang-orang saleh."</p>
+                    <p><strong>Sumber:</strong> Sunan At-Tirmidzi. Doa komprehensif ini termasuk meminta Allah untuk meluaskan kemampuan seseorang dalam berbuat baik dan bergaul dengan orang saleh, mengakui bahwa semua kelapangan datang dari-Nya.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Praktik)</h2>
-                <h3>1. Memberi Sedekah untuk Melapangkan Rezeki</h3>
-                <p>Nabi (shallallahu 'alaihi wasallam) bersabda: "Sedekah tidak mengurangi harta." (Sahih Muslim)</p>
-                <p><strong>Praktik:</strong> Rutinlah bersedekah, terutama saat membutuhkan, karena ini adalah sarana yang Allah gunakan untuk melapangkan rezeki. Semakin banyak seseorang memberi demi Allah, semakin Allah menambah mereka.</p>
+                <h2 class="section-title">Amalan (Praktik)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Memberi Sedekah untuk Melapangkan Rezeki</div>
+                    <p>Nabi (ﷺ) bersabda: "Sedekah tidak mengurangi harta." (Sahih Muslim)</p>
+                    <p><strong>Praktik:</strong></p>
+                    <ol>
+                        <li>Jadikan sedekah sebagai kebiasaan rutin, terutama saat membutuhkan</li>
+                        <li>Berikan dari apa yang kamu cintai, bukan hanya dari kelebihan</li>
+                        <li>Percayalah bahwa Allah akan melapangkan apa yang kamu berikan</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Praktik ini mengaktifkan berkah Al-Basit, karena semakin banyak seseorang memberi demi Allah, semakin Allah menambah mereka dengan cara yang melampaui perhitungan.</p>
+                </div>
 
-                <h3>2. Mencari Ilmu untuk Melapangkan Dada</h3>
-                <p>Allah berfirman: "Barangsiapa yang Allah kehendaki untuk diberi petunjuk, Dia melapangkan dadanya untuk Islam." (<a href="https://quranwbw.com/6:125" target="_blank">Surah Al-An'am 6:125</a>)</p>
-                <p><strong>Praktik:</strong> Carilah ilmu Islam secara konsisten, karena ini mengarah pada perluasan pemahaman spiritual dan kemampuan untuk menghadapi tantangan hidup dengan iman.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Mencari Ilmu untuk Melapangkan Dada</div>
+                    <p>Allah berfirman: "Barangsiapa yang Allah kehendaki untuk diberi petunjuk, Dia melapangkan dadanya untuk Islam." (<a href="https://quranwbw.com/6:125" target="_blank">6:125</a>)</p>
+                    <p><strong>Praktik:</strong></p>
+                    <ol>
+                        <li>Luangkan waktu setiap hari untuk mempelajari ilmu agama</li>
+                        <li>Hadiri kelas atau majelis ilmu</li>
+                        <li>Renungkan bagaimana ilmu meluaskan kapasitas spiritual</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Nabi (ﷺ) biasa berdoa: "Ya Allah! Lapangkanlah untukku dadaku." (Sahih Muslim). Praktik ini menghubungkan kita dengan kelapangan spiritual yang datang dari ilmu ilahi.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Renungan</h2>
-                <p>Memahami Allah sebagai Al-Basit seharusnya:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
+                <p>Ibnu Katsir menjelaskan Al-Basit melalui tiga manifestasi utama:</p>
                 <ol>
-                    <li>Meningkatkan kepercayaan kita pada rezeki Allah ketika kita membutuhkan</li>
-                    <li>Mendorong kita untuk menjadi dermawan, mengetahui Allah akan melapangkan apa yang kita berikan</li>
-                    <li>Membantu kita mencari kelapangan spiritual melalui ibadah dan ilmu</li>
-                    <li>Mengingatkan kita bahwa semua kelapangan datang dengan kehendak dan hikmah Allah</li>
-                    <li>Mengajarkan kita untuk meminta Allah kelapangan dalam segala yang baik</li>
+                    <li><strong>Kelapangan Material:</strong>
+                        <ul>
+                            <li>Allah melapangkan rezeki dan kekayaan (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>)</li>
+                            <li>Melipatgandakan pahala amal baik (<a href="https://quranwbw.com/2:261" target="_blank">2:261</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kelapangan Spiritual:</strong>
+                        <ul>
+                            <li>Membuka hati untuk menerima petunjuk (<a href="https://quranwbw.com/6:125" target="_blank">6:125</a>)</li>
+                            <li>Memberi kemampuan untuk menghadapi tantangan (<a href="https://quranwbw.com/94:1-3" target="_blank">94:1-3</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pelepasan dari Kesulitan:</strong>
+                        <ul>
+                            <li>Menghilangkan kesulitan setelah tujuannya tercapai (<a href="https://quranwbw.com/65:7" target="_blank">65:7</a>)</li>
+                            <li>Memberi kemudahan setelah kesulitan (<a href="https://quranwbw.com/94:5" target="_blank">94:5</a>)</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>Dalam Surah Ash-Sharh (<a href="https://quranwbw.com/94:1-8" target="_blank">94:1-8</a>), Allah memasangkan perluasan dada Nabi dengan penghilangan bebannya, menunjukkan bagaimana Al-Basit beroperasi dalam memberikan kapasitas dan meringankan kesulitan. Nama ini mengajarkan kita bahwa kelapangan sejati hanya datang dari Allah semata.</p>
             </div>
 
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
-
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-basit" target="_blank">https://myislam.org/99-names-of-allah/al-basit</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
         // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.remove('hidden');
-            document.getElementById('indonesianVersion').classList.add('hidden');
-        });
-        
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.add('hidden');
-            document.getElementById('indonesianVersion').classList.remove('hidden');
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+            }
         });
 
         // Transliteration Toggle
-        document.getElementById('toggleTransliteration').addEventListener('click', function() {
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(item => {
-                if (item.style.display === 'none') {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            
+            if (this.textContent === 'Hide Transliteration') {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+            }
         });
-
-        // Back to Top
-        const backToTopLinks = document.querySelectorAll('.back-to-top');
-        backToTopLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Set English as default
-        document.getElementById('englishVersion').classList.remove('hidden');
     </script>
 </body>
 </html>
