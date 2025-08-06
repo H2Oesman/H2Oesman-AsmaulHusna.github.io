@@ -7,303 +7,492 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            line-height: 1.8;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2e7d32;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', Arial, sans-serif;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
         }
         .section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn {
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-btn:hover {
-            background-color: #1b5e20;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 20px;
-            color: #2e7d32;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f5e9;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .dua-box {
-            background-color: #f1f8e9;
-            padding: 15px;
-            border-radius: 5px;
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
             margin: 15px 0;
         }
-        .source {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 30px;
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn" id="englishBtn">English</button>
-            <button class="toggle-btn" id="indonesianBtn">Indonesian</button>
-            <button class="toggle-btn" id="toggleTransliteration">Toggle Transliteration</button>
-        </div>
+        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
 
-        <!-- English Version -->
-        <div id="englishVersion">
-            <h1>20. Al-Qabid (The Withholder)</h1>
+        <!-- English Content -->
+        <div id="english-content">
+            <h1 class="name-title">20. Al-Qabid (The Withholder)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-qabid/" target="_blank">myislam.org/99-names-of-allah/al-qabid/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <div class="bonus">
-                <p>Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a></p>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <!-- Audio Player Added Here -->
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Name</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_21Qaabidh22Baasit.mp3?_=22" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">الْقَابِضُ</div>
-            <p class="transliteration">Transliteration: Al-Qabid</p>
-            <p><strong>Meaning:</strong> The Withholder, The Constrictor, The One who takes souls</p>
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-qabid" target="_blank">https://myislam.org/99-names-of-allah/al-qabid</a></p>
+            <div class="transliteration">Transliteration: Al-Qabid</div>
+
+            <!-- Audio Player Added Here -->
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/20.%20al-qabid.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
             <div class="section">
-                <h2>Explanation</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Qabid is one of Allah's names that demonstrates His absolute power over all things. It signifies that Allah has the power to withhold or constrict anything He wills - whether it be provisions, mercy, or even the souls of living beings at the time of death.</p>
-                
                 <p>This name appears in conjunction with Al-Basit (The Expander) in Islamic theology, showing the perfect balance in Allah's attributes. He withholds when it is wise to withhold and expands when it is wise to expand, all according to His perfect knowledge and wisdom.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence)</h2>
-                <div class="arabic">اللَّهُ يَبْسُطُ الرِّزْقَ لِمَنْ يَشَاءُ وَيَقْدِرُ ۚ وَفَرِحُوا بِالْحَيَاةِ الدُّنْيَا وَمَا الْحَيَاةُ الدُّنْيَا فِي الْآخِرَةِ إِلَّا مَتَاعٌ</div>
-                <p class="transliteration">Transliteration: Allahu yabsutu alrrizqa liman yashao wayaqdiru wafarihoo bialhayati alddunya wama alhayatu alddunya fee alakhirati illa mataAAun</p>
-                <p><strong>Translation:</strong> "Allah extends provision for whom He wills and restricts [it]. And they rejoice in the worldly life, while the worldly life is not, compared to the Hereafter, except [brief] enjoyment." (<a href="https://quranwbw.com/13:26" target="_blank">Surah Ar-Ra'd 13:26</a>)</p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">إِنَّا نَحْنُ نُحْيِي وَنُمِيتُ وَنَحْنُ الْوَارِثُونَ</div>
-                <p class="transliteration">Transliteration: Inna nahnu nuhyee wanumeetu wanahnu alwarithoona</p>
-                <p><strong>Translation:</strong> "Indeed, it is We who give life and cause death, and We are the Inheritor." (<a href="https://quranwbw.com/15:23" target="_blank">Surah Al-Hijr 15:23</a>)</p>
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/13:26" target="_blank">Surah Ar-Ra'd 13:26</a>
+                    <div class="arabic">اللَّهُ يَبْسُطُ الرِّزْقَ لِمَنْ يَشَاءُ وَيَقْدِرُ ۚ وَفَرِحُوا بِالْحَيَاةِ الدُّنْيَا وَمَا الْحَيَاةُ الدُّنْيَا فِي الْآخِرَةِ إِلَّا مَتَاعٌ</div>
+                    <div class="transliteration">Allahu yabsutu alrrizqa liman yashao wayaqdiru wafarihoo bialhayati alddunya wama alhayatu alddunya fee alakhirati illa mataAAun</div>
+                    <p>"Allah extends provision for whom He wills and restricts [it]. And they rejoice in the worldly life, while the worldly life is not, compared to the Hereafter, except [brief] enjoyment."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/13/26/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibn Kathir explains that Allah alone has the power to expand or restrict provisions according to His wisdom. Sometimes He withholds from His beloved servants as a test, and sometimes He gives abundantly to those He wishes to test with wealth. The true believer accepts both conditions with gratitude and patience.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/15:23" target="_blank">Surah Al-Hijr 15:23</a>
+                    <div class="arabic">إِنَّا نَحْنُ نُحْيِي وَنُمِيتُ وَنَحْنُ الْوَارِثُونَ</div>
+                    <div class="transliteration">Inna nahnu nuhyee wanumeetu wanahnu alwarithoona</div>
+                    <p>"Indeed, it is We who give life and cause death, and We are the Inheritor."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/15/23/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibn Kathir comments that Allah's attribute as Al-Qabid is manifested in His taking of souls. He decides the exact moment when each creature's life will end, demonstrating His complete control over life and death.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2999" target="_blank">Sahih Muslim 2999</a>
+                    <div class="arabic">إِنَّ اللَّهَ هُوَ الْمُسَعِّرُ الْقَابِضُ الْبَاسِطُ الرَّازِقُ</div>
+                    <div class="transliteration">Inna Allaha huwa almusaAAiru alqabidu albasitu alrraziqu</div>
+                    <p>"Indeed, Allah is the One Who sets prices, the Withholder, the Extender, and the Provider."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> The Prophet (ﷺ) mentioned this in the context of rising prices, reminding people that Allah controls all provision and economic conditions. This hadith directly connects Allah's name Al-Qabid with His control over worldly provisions.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his tafsir of Surah Ar-Ra'd (13:26), Ibn Kathir explains that Allah alone has the power to expand or restrict provisions according to His wisdom. Sometimes He withholds from His beloved servants as a test, and sometimes He gives abundantly to those He wishes to test with wealth. The true believer accepts both conditions with gratitude and patience.</p>
-                
-                <p>Regarding Surah Al-Hijr (15:23), Ibn Kathir comments that Allah's attribute as Al-Qabid is manifested in His taking of souls. He decides the exact moment when each creature's life will end, demonstrating His complete control over life and death.</p>
-            </div>
-
-            <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For a Merciful Taking</div>
                     <div class="arabic">اللَّهُمَّ اقْبِضْنِي إِلَيْكَ قَبْضًا رَحِيمًا</div>
-                    <p class="transliteration">Transliteration: Allahumma iqbidhnee ilayka qabdan raheema</p>
+                    <div class="transliteration">Allahumma iqbidhnee ilayka qabdan raheema</div>
                     <p><strong>Translation:</strong> "O Allah, take me to You in a merciful taking."</p>
                     <p><strong>Benefits:</strong> This du'a asks Allah to take one's soul in a state of mercy when the time comes. It acknowledges Allah as Al-Qabid while seeking His gentleness in that taking.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">For Protection from Trials</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ فِعْلَ الْخَيْرَاتِ وَتَرْكَ الْمُنْكَرَاتِ وَحُبَّ الْمَسَاكِينِ وَأَنْ تَغْفِرَ لِي وَتَرْحَمَنِي وَإِذَا أَرَدْتَ فِتْنَةَ قَوْمٍ فَتَوَفَّنِي غَيْرَ مَفْتُونٍ</div>
-                    <p class="transliteration">Transliteration: Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan taghfira lee watarhamanee waitha aradta fitnata qawmin fatawaffanee ghayra maftoonin</p>
-                    <p><strong>Translation:</strong> "O Allah, I ask You to enable me to do good deeds and abandon bad deeds, and to love the poor, and to forgive me and have mercy on me, and when You will trial for a people, take me to You without being afflicted by the trial." (Sunan At-Tirmidhi)</p>
-                    <p><strong>Benefits:</strong> This comprehensive supplication includes asking Allah (Al-Qabid) to take one's soul before being afflicted by trials, showing trust in Allah's perfect timing.</p>
+                    <div class="transliteration">Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan taghfira lee watarhamanee waitha aradta fitnata qawmin fatawaffanee ghayra maftoonin</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You to enable me to do good deeds and abandon bad deeds, and to love the poor, and to forgive me and have mercy on me, and when You will trial for a people, take me to You without being afflicted by the trial."</p>
+                    <p><strong>Source:</strong> Sunan At-Tirmidhi. This comprehensive supplication includes asking Allah (Al-Qabid) to take one's soul before being afflicted by trials, showing trust in Allah's perfect timing.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Contentment with Allah's Decree</h3>
-                <p>The Prophet Muhammad (peace be upon him) said: "How wonderful is the affair of the believer, for all his affairs are good. If something good happens to him, he is thankful, and that is good for him. If something bad happens to him, he bears it with patience, and that is good for him." (Sahih Muslim)</p>
-                <p><strong>Practice:</strong> When facing restrictions or withholdings in life (whether financial, health, or otherwise), practice contentment (qana'ah) and trust that Allah as Al-Qabid knows what is best for you.</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Contentment with Allah's Decree</div>
+                    <p>The Prophet Muhammad (ﷺ) said: "How wonderful is the affair of the believer, for all his affairs are good. If something good happens to him, he is thankful, and that is good for him. If something bad happens to him, he bears it with patience, and that is good for him." (Sahih Muslim)</p>
+                    <p><strong>Practice:</strong></p>
+                    <ol>
+                        <li>When facing restrictions in provisions or circumstances, remember Allah as Al-Qabid</li>
+                        <li>Practice gratitude when provisions are abundant</li>
+                        <li>Develop patience when facing constraints</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice cultivates complete trust in Allah's wisdom as the Withholder and Expander of all provision.</p>
+                </div>
 
-                <h3>2. Giving Charity in Times of Constriction</h3>
-                <p>Allah says: "The example of those who spend their wealth in the way of Allah is like a seed which grows seven spikes; in each spike is a hundred grains. And Allah multiplies for whom He wills." (<a href="https://quranwbw.com/2:261" target="_blank">Surah Al-Baqarah 2:261</a>)</p>
-                <p><strong>Practice:</strong> When experiencing financial difficulty, increase in charity as this demonstrates trust that Allah can expand provision after having restricted it.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Giving Charity in Times of Constriction</div>
+                    <p>Allah says: "The example of those who spend their wealth in the way of Allah is like a seed which grows seven spikes; in each spike is a hundred grains. And Allah multiplies for whom He wills." (<a href="https://quranwbw.com/2:261" target="_blank">2:261</a>)</p>
+                    <p><strong>Practice:</strong></p>
+                    <ol>
+                        <li>Increase charity when experiencing financial difficulty</li>
+                        <li>Give from what you love, even if it's small</li>
+                        <li>Trust that Allah will replace what you give</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The companions would often give more charity when facing hardship, knowing that Allah as Al-Qabid could transform their situation through their trust in Him.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Reflection</h2>
-                <p>Understanding Allah as Al-Qabid should:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Qabid through three key manifestations:</p>
                 <ol>
-                    <li>Help us accept restrictions in life as part of divine wisdom</li>
-                    <li>Increase our gratitude when provisions are expanded (by Al-Basit)</li>
-                    <li>Remind us of our mortality and prepare for the day when Allah will take our souls</li>
-                    <li>Teach us balance - recognizing that both withholding and giving have wisdom</li>
-                    <li>Develop trust that Allah withholds only what is harmful for us and gives what is beneficial</li>
+                    <li><strong>Provision:</strong>
+                        <ul>
+                            <li>Controls all sustenance and wealth (<a href="https://quranwbw.com/13:26" target="_blank">13:26</a>)</li>
+                            <li>Tests people through both abundance and scarcity</li>
+                        </ul>
+                    </li>
+                    <li><strong>Souls:</strong>
+                        <ul>
+                            <li>Takes lives at their appointed times (<a href="https://quranwbw.com/15:23" target="_blank">15:23</a>)</li>
+                            <li>Decides the manner of each person's death</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mercy:</strong>
+                        <ul>
+                            <li>May withhold certain blessings for greater wisdom (<a href="https://quranwbw.com/2:216" target="_blank">2:216</a>)</li>
+                            <li>Sometimes restricts to protect from greater harm</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>In Surah Al-Baqarah (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>), Allah reminds us that He both withholds and gives abundantly, encouraging believers to spend in His cause without fear of poverty. This name teaches us that apparent restrictions often contain hidden blessings.</p>
             </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-qabid" target="_blank">https://myislam.org/99-names-of-allah/al-qabid</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
 
-        <!-- Indonesian Version -->
-        <div id="indonesianVersion" class="hidden">
-            <h1>20. Al-Qabid (Maha Menyempitkan)</h1>
+        <!-- Indonesian Content (Hidden by Default) -->
+        <div id="indonesian-content" class="hidden">
+            <h1 class="name-title">20. Al-Qabid (Maha Menyempitkan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-qabid/" target="_blank">myislam.org/99-names-of-allah/al-qabid/</a></div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
 
             <div class="arabic">الْقَابِضُ</div>
-            <p class="transliteration">Transliterasi: Al-Qabid</p>
-            <p><strong>Arti:</strong> Yang Maha Menyempitkan, Yang Maha Menahan, Yang mengambil jiwa</p>
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-qabid" target="_blank">https://myislam.org/99-names-of-allah/al-qabid</a></p>
+            <div class="transliteration">Transliterasi: Al-Qabid</div>
+
+            <!-- Audio Player Added Here for Indonesian Content -->
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Nama Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/20.%20al-qabid.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
             <div class="section">
-                <h2>Penjelasan</h2>
+                <h2 class="section-title">Makna</h2>
                 <p>Al-Qabid adalah salah satu nama Allah yang menunjukkan kekuasaan mutlak-Nya atas segala sesuatu. Nama ini menandakan bahwa Allah memiliki kekuasaan untuk menahan atau menyempitkan apa yang Dia kehendaki - baik itu rezeki, rahmat, atau bahkan jiwa makhluk hidup pada saat kematian.</p>
-                
                 <p>Nama ini muncul bersamaan dengan Al-Basit (Yang Melapangkan) dalam teologi Islam, menunjukkan keseimbangan sempurna dalam sifat-sifat Allah. Dia menahan ketika bijaksana untuk menahan dan melapangkan ketika bijaksana untuk melapangkan, semua sesuai dengan pengetahuan dan hikmah-Nya yang sempurna.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Bukti)</h2>
-                <div class="arabic">اللَّهُ يَبْسُطُ الرِّزْقَ لِمَنْ يَشَاءُ وَيَقْدِرُ ۚ وَفَرِحُوا بِالْحَيَاةِ الدُّنْيَا وَمَا الْحَيَاةُ الدُّنْيَا فِي الْآخِرَةِ إِلَّا مَتَاعٌ</div>
-                <p class="transliteration">Transliterasi: Allahu yabsutu alrrizqa liman yashao wayaqdiru wafarihoo bialhayati alddunya wama alhayatu alddunya fee alakhirati illa mataAAun</p>
-                <p><strong>Terjemahan:</strong> "Allah meluaskan rezeki bagi siapa yang Dia kehendaki dan menyempitkannya. Dan mereka bergembira dengan kehidupan dunia, padahal kehidupan dunia hanyalah kesenangan yang sedikit dibanding akhirat." (<a href="https://quranwbw.com/13:26" target="_blank">Surah Ar-Ra'd 13:26</a>)</p>
+                <h2 class="section-title">Dalil (Bukti dari Quran & Hadits)</h2>
                 
-                <div class="arabic">إِنَّا نَحْنُ نُحْيِي وَنُمِيتُ وَنَحْنُ الْوَارِثُونَ</div>
-                <p class="transliteration">Transliterasi: Inna nahnu nuhyee wanumeetu wanahnu alwarithoona</p>
-                <p><strong>Terjemahan:</strong> "Sesungguhnya Kami yang menghidupkan dan mematikan dan Kami yang mewarisi." (<a href="https://quranwbw.com/15:23" target="_blank">Surah Al-Hijr 15:23</a>)</p>
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/13:26" target="_blank">Surah Ar-Ra'd 13:26</a>
+                    <div class="arabic">اللَّهُ يَبْسُطُ الرِّزْقَ لِمَنْ يَشَاءُ وَيَقْدِرُ ۚ وَفَرِحُوا بِالْحَيَاةِ الدُّنْيَا وَمَا الْحَيَاةُ الدُّنْيَا فِي الْآخِرَةِ إِلَّا مَتَاعٌ</div>
+                    <div class="transliteration">Allahu yabsutu alrrizqa liman yashao wayaqdiru wafarihoo bialhayati alddunya wama alhayatu alddunya fee alakhirati illa mataAAun</div>
+                    <p>"Allah meluaskan rezeki bagi siapa yang Dia kehendaki dan menyempitkannya. Dan mereka bergembira dengan kehidupan dunia, padahal kehidupan dunia hanyalah kesenangan yang sedikit dibanding akhirat."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/13/26/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibnu Katsir menjelaskan bahwa hanya Allah yang memiliki kekuasaan untuk melapangkan atau menyempitkan rezeki menurut hikmah-Nya. Terkadang Dia menahan dari hamba-hamba-Nya yang dicintai sebagai ujian, dan terkadang Dia memberi berlimpah kepada mereka yang Dia ingin uji dengan kekayaan. Orang beriman yang sejati menerima kedua kondisi ini dengan syukur dan kesabaran.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/15:23" target="_blank">Surah Al-Hijr 15:23</a>
+                    <div class="arabic">إِنَّا نَحْنُ نُحْيِي وَنُمِيتُ وَنَحْنُ الْوَارِثُونَ</div>
+                    <div class="transliteration">Inna nahnu nuhyee wanumeetu wanahnu alwarithoona</div>
+                    <p>"Sesungguhnya Kami yang menghidupkan dan mematikan dan Kami yang mewarisi."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/15/23/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibnu Katsir berkomentar bahwa sifat Allah sebagai Al-Qabid terwujud dalam pengambilan jiwa. Dia menentukan momen tepat ketika kehidupan setiap makhluk akan berakhir, menunjukkan kendali penuh-Nya atas kehidupan dan kematian.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2999" target="_blank">Sahih Muslim 2999</a>
+                    <div class="arabic">إِنَّ اللَّهَ هُوَ الْمُسَعِّرُ الْقَابِضُ الْبَاسِطُ الرَّازِقُ</div>
+                    <div class="transliteration">Inna Allaha huwa almusaAAiru alqabidu albasitu alrraziqu</div>
+                    <p>"Sesungguhnya Allah adalah Yang Menetapkan Harga, Yang Menyempitkan, Yang Melapangkan, dan Yang Memberi Rezeki."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) menyebutkan ini dalam konteks kenaikan harga, mengingatkan orang bahwa Allah mengendalikan semua rezeki dan kondisi ekonomi. Hadits ini secara langsung menghubungkan nama Allah Al-Qabid dengan kendali-Nya atas rezeki duniawi.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Ar-Ra'd (13:26), Ibnu Katsir menjelaskan bahwa hanya Allah yang memiliki kekuasaan untuk melapangkan atau menyempitkan rezeki menurut hikmah-Nya. Terkadang Dia menahan dari hamba-hamba-Nya yang dicintai sebagai ujian, dan terkadang Dia memberi berlimpah kepada mereka yang Dia ingin uji dengan kekayaan. Orang beriman yang sejati menerima kedua kondisi ini dengan syukur dan kesabaran.</p>
-                
-                <p>Mengenai Surah Al-Hijr (15:23), Ibnu Katsir berkomentar bahwa sifat Allah sebagai Al-Qabid terwujud dalam pengambilan jiwa. Dia menentukan momen tepat ketika kehidupan setiap makhluk akan berakhir, menunjukkan kendali penuh-Nya atas kehidupan dan kematian.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa (Permohonan)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Doa (Permohonan)</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Pengambilan yang Penuh Rahmat</div>
                     <div class="arabic">اللَّهُمَّ اقْبِضْنِي إِلَيْكَ قَبْضًا رَحِيمًا</div>
-                    <p class="transliteration">Transliterasi: Allahumma iqbidhnee ilayka qabdan raheema</p>
+                    <div class="transliteration">Allahumma iqbidhnee ilayka qabdan raheema</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, ambillah aku kepada-Mu dengan pengambilan yang penuh rahmat."</p>
                     <p><strong>Manfaat:</strong> Doa ini meminta Allah untuk mengambil jiwa seseorang dalam keadaan rahmat ketika waktunya tiba. Ini mengakui Allah sebagai Al-Qabid sambil meminta kelembutan-Nya dalam pengambilan tersebut.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan dari Ujian</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ فِعْلَ الْخَيْرَاتِ وَتَرْكَ الْمُنْكَرَاتِ وَحُبَّ الْمَسَاكِينِ وَأَنْ تَغْفِرَ لِي وَتَرْحَمَنِي وَإِذَا أَرَدْتَ فِتْنَةَ قَوْمٍ فَتَوَفَّنِي غَيْرَ مَفْتُونٍ</div>
-                    <p class="transliteration">Transliterasi: Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan taghfira lee watarhamanee waitha aradta fitnata qawmin fatawaffanee ghayra maftoonin</p>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu kemampuan untuk melakukan kebaikan dan meninggalkan kemungkaran, dan mencintai orang-orang miskin, dan agar Engkau mengampuniku dan merahmatiku, dan ketika Engkau menghendaki ujian bagi suatu kaum, maka wafatkanlah aku tanpa terkena ujian tersebut." (Sunan At-Tirmidzi)</p>
-                    <p><strong>Manfaat:</strong> Doa komprehensif ini termasuk meminta Allah (Al-Qabid) untuk mengambil jiwa seseorang sebelum terkena ujian, menunjukkan kepercayaan pada waktu yang sempurna dari Allah.</p>
+                    <div class="transliteration">Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan taghfira lee watarhamanee waitha aradta fitnata qawmin fatawaffanee ghayra maftoonin</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu kemampuan untuk melakukan kebaikan dan meninggalkan kemungkaran, dan mencintai orang-orang miskin, dan agar Engkau mengampuniku dan merahmatiku, dan ketika Engkau menghendaki ujian bagi suatu kaum, maka wafatkanlah aku tanpa terkena ujian tersebut."</p>
+                    <p><strong>Sumber:</strong> Sunan At-Tirmidzi. Doa komprehensif ini termasuk meminta Allah (Al-Qabid) untuk mengambil jiwa seseorang sebelum terkena ujian, menunjukkan kepercayaan pada waktu yang sempurna dari Allah.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Praktik)</h2>
-                <h3>1. Menerima Ketetapan Allah dengan Ridha</h3>
-                <p>Nabi Muhammad (shallallahu 'alaihi wasallam) bersabda: "Sungguh menakjubkan urusan seorang mukmin, semua urusannya baik. Jika mendapat kesenangan, dia bersyukur dan itu baik baginya. Jika mendapat kesusahan, dia bersabar dan itu baik baginya." (Sahih Muslim)</p>
-                <p><strong>Praktik:</strong> Ketika menghadapi keterbatasan atau penahanan dalam hidup (baik finansial, kesehatan, atau lainnya), praktikkan keridhaan (qana'ah) dan percayalah bahwa Allah sebagai Al-Qabid tahu apa yang terbaik untukmu.</p>
+                <h2 class="section-title">Amalan (Praktik)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Ridha dengan Ketetapan Allah</div>
+                    <p>Nabi Muhammad (ﷺ) bersabda: "Sungguh menakjubkan urusan seorang mukmin, semua urusannya baik. Jika mendapat kesenangan, dia bersyukur dan itu baik baginya. Jika mendapat kesusahan, dia bersabar dan itu baik baginya." (Sahih Muslim)</p>
+                    <p><strong>Praktik:</strong></p>
+                    <ol>
+                        <li>Ketika menghadapi keterbatasan rezeki atau keadaan, ingat Allah sebagai Al-Qabid</li>
+                        <li>Praktikkan syukur ketika rezeki melimpah</li>
+                        <li>Kembangkan kesabaran ketika menghadapi keterbatasan</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Praktik ini menumbuhkan kepercayaan penuh pada hikmah Allah sebagai Yang Menyempitkan dan Melapangkan semua rezeki.</p>
+                </div>
 
-                <h3>2. Memberi Sedekah di Saat Kesempitan</h3>
-                <p>Allah berfirman: "Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan tujuh tangkai, pada setiap tangkai ada seratus biji. Allah melipatgandakan bagi siapa yang Dia kehendaki." (<a href="https://quranwbw.com/2:261" target="_blank">Surah Al-Baqarah 2:261</a>)</p>
-                <p><strong>Praktik:</strong> Ketika mengalami kesulitan finansial, perbanyak sedekah karena ini menunjukkan kepercayaan bahwa Allah dapat melapangkan rezeki setelah menyempitkannya.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Memberi Sedekah di Saat Kesempitan</div>
+                    <p>Allah berfirman: "Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan tujuh tangkai, pada setiap tangkai ada seratus biji. Allah melipatgandakan bagi siapa yang Dia kehendaki." (<a href="https://quranwbw.com/2:261" target="_blank">2:261</a>)</p>
+                    <p><strong>Praktik:</strong></p>
+                    <ol>
+                        <li>Tingkatkan sedekah ketika mengalami kesulitan finansial</li>
+                        <li>Berikan dari apa yang kamu cintai, meskipun kecil</li>
+                        <li>Percayalah bahwa Allah akan mengganti apa yang kamu berikan</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Para sahabat sering meningkatkan sedekah ketika menghadapi kesulitan, mengetahui bahwa Allah sebagai Al-Qabid dapat mengubah situasi mereka melalui kepercayaan mereka kepada-Nya.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Renungan</h2>
-                <p>Memahami Allah sebagai Al-Qabid seharusnya:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
+                <p>Ibnu Katsir menjelaskan Al-Qabid melalui tiga manifestasi utama:</p>
                 <ol>
-                    <li>Membantu kita menerima keterbatasan dalam hidup sebagai bagian dari hikmah ilahi</li>
-                    <li>Meningkatkan rasa syukur ketika rezeki dilapangkan (oleh Al-Basit)</li>
-                    <li>Mengingatkan kita akan kefanaan dan mempersiapkan diri untuk hari ketika Allah akan mengambil jiwa kita</li>
-                    <li>Mengajarkan keseimbangan - menyadari bahwa baik penahanan maupun pemberian memiliki hikmah</li>
-                    <li>Mengembangkan kepercayaan bahwa Allah hanya menahan apa yang berbahaya bagi kita dan memberi apa yang bermanfaat</li>
+                    <li><strong>Rezeki:</strong>
+                        <ul>
+                            <li>Mengendalikan semua penghidupan dan kekayaan (<a href="https://quranwbw.com/13:26" target="_blank">13:26</a>)</li>
+                            <li>Menguji manusia melalui kelimpahan dan kekurangan</li>
+                        </ul>
+                    </li>
+                    <li><strong>Jiwa:</strong>
+                        <ul>
+                            <li>Mengambil nyawa pada waktu yang ditentukan (<a href="https://quranwbw.com/15:23" target="_blank">15:23</a>)</li>
+                            <li>Menentukan cara kematian setiap orang</li>
+                        </ul>
+                    </li>
+                    <li><strong>Rahmat:</strong>
+                        <ul>
+                            <li>Mungkin menahan berkah tertentu untuk hikmah yang lebih besar (<a href="https://quranwbw.com/2:216" target="_blank">2:216</a>)</li>
+                            <li>Terkadang membatasi untuk melindungi dari bahaya yang lebih besar</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>Dalam Surah Al-Baqarah (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>), Allah mengingatkan kita bahwa Dia baik menahan maupun memberi berlimpah, mendorong orang beriman untuk berinfak di jalan-Nya tanpa takut miskin. Nama ini mengajarkan kita bahwa keterbatasan yang tampak sering mengandung berkah tersembunyi.</p>
             </div>
 
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
-
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-qabid" target="_blank">https://myislam.org/99-names-of-allah/al-qabid</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
         // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.remove('hidden');
-            document.getElementById('indonesianVersion').classList.add('hidden');
-        });
-        
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.add('hidden');
-            document.getElementById('indonesianVersion').classList.remove('hidden');
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+            }
         });
 
         // Transliteration Toggle
-        document.getElementById('toggleTransliteration').addEventListener('click', function() {
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(item => {
-                if (item.style.display === 'none') {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            
+            if (this.textContent === 'Hide Transliteration') {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+            }
         });
-
-        // Back to Top
-        const backToTopLinks = document.querySelectorAll('.back-to-top');
-        backToTopLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Set English as default
-        document.getElementById('englishVersion').classList.remove('hidden');
     </script>
 </body>
 </html>
