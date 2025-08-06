@@ -7,303 +7,516 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            line-height: 1.8;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2e7d32;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', Arial, sans-serif;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
         }
         .section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn {
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-btn:hover {
-            background-color: #1b5e20;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 20px;
-            color: #2e7d32;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f5e9;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .dua-box {
-            background-color: #f1f8e9;
-            padding: 15px;
-            border-radius: 5px;
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
             margin: 15px 0;
         }
-        .source {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 30px;
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn" id="englishBtn">English</button>
-            <button class="toggle-btn" id="indonesianBtn">Indonesian</button>
-            <button class="toggle-btn" id="toggleTransliteration">Toggle Transliteration</button>
-        </div>
+        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
 
-        <!-- English Version -->
-        <div id="englishVersion">
-            <h1>25. Al-Mudhill (The Dishonorer)</h1>
+        <!-- English Content -->
+        <div id="english-content">
+            <h1 class="name-title">25. Al-Mudhill (The Dishonorer)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muzil/" target="_blank">myislam.org/99-names-of-allah/al-muzil/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <div class="bonus">
-                <p>Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a></p>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Name</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_25Muizz26Muzill.mp3?_=24" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-muzil" target="_blank">https://myislam.org/99-names-of-allah/al-muzil</a></p>
-            </div>
             <div class="arabic">المُذِلُّ</div>
-            <p class="transliteration">Transliteration: Al-Mudhill</p>
-            <p><strong>Meaning:</strong> The Dishonorer, The Humiliator, The One who lowers and disgraces whoever He wills</p>
+            <div class="transliteration">Transliteration: Al-Mudhill</div>
+
+            <!-- Audio Player for Pronunciation -->
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/25.%20al-mudhill.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
             <div class="section">
-                <h2>Explanation</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Mudhill is the complementary name to Al-Mu'izz (The Honourer). It signifies Allah's attribute of humbling, lowering, and disgracing whoever He wills - whether individuals, nations, or civilizations - when they become arrogant, oppressive, or reject His guidance.</p>
                 
                 <p>This name demonstrates Allah's perfect justice in dealing with the arrogant and oppressive. Throughout the Quran, we see examples of mighty civilizations that were humbled when they transgressed. Allah's humiliation is always just and serves as a warning to others.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence)</h2>
-                <div class="arabic">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَن تَشَاءُ وَتَنزِعُ الْمُلْكَ مِمَّن تَشَاءُ وَتُعِزُّ مَن تَشَاءُ وَتُذِلُّ مَن تَشَاءُ ۖ بِيَدِكَ الْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</div>
-                <p class="transliteration">Transliteration: Quli Allahumma malika almulki tu/tee almulka man tashao watanziAAu almulka mimman tashao watuAAizzu man tashao watuthillu man tashao biyadika alkhayru innaka AAala kulli shayin qadeerun</p>
-                <p><strong>Translation:</strong> "Say, 'O Allah, Owner of Sovereignty, You give sovereignty to whom You will and You take sovereignty away from whom You will. You honor whom You will and You humble whom You will. In Your hand is [all] good. Indeed, You are over all things competent.'" (<a href="https://quranwbw.com/3:26" target="_blank">Surah Al-Imran 3:26</a>)</p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">وَتِلْكَ الْأَيَّامُ نُدَاوِلُهَا بَيْنَ النَّاسِ</div>
-                <p class="transliteration">Transliteration: Watilka al-ayyamu nudaawiluha bayna alnnasi</p>
-                <p><strong>Translation:</strong> "And these days [of varying conditions] We alternate among the people." (<a href="https://quranwbw.com/3:140" target="_blank">Surah Al-Imran 3:140</a>)</p>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/3:26" target="_blank">Surah Al-Imran 3:26</a>
+                    <div class="arabic">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَن تَشَاءُ وَتَنزِعُ الْمُلْكَ مِمَّن تَشَاءُ وَتُعِزُّ مَن تَشَاءُ وَتُذِلُّ مَن تَشَاءُ ۖ بِيَدِكَ الْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</div>
+                    <div class="transliteration">Quli Allahumma malika almulki tu/tee almulka man tashao watanziAAu almulka mimman tashao watuAAizzu man tashao watuthillu man tashao biyadika alkhayru innaka AAala kulli shayin qadeerun</div>
+                    <p>"Say, 'O Allah, Owner of Sovereignty, You give sovereignty to whom You will and You take sovereignty away from whom You will. You honor whom You will and You humble whom You will. In Your hand is [all] good. Indeed, You are over all things competent.'"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir:</strong> This foundational verse establishes Allah's absolute authority over honor and sovereignty. Scholars explain that Allah's humiliation is always just and serves specific purposes: to punish the arrogant, to test the believers, and to serve as a lesson for future generations. The pairing with Al-Mu'izz shows the perfection of divine justice.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/3:140" target="_blank">Surah Al-Imran 3:140</a>
+                    <div class="arabic">وَتِلْكَ الْأَيَّامُ نُدَاوِلُهَا بَيْنَ النَّاسِ</div>
+                    <div class="transliteration">Watilka al-ayyamu nudaawiluha bayna alnnasi</div>
+                    <p>"And these days [of varying conditions] We alternate among the people."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir:</strong> This verse refers to Allah's divine law of alternating periods of honor and humiliation among nations. Historical examples like Pharaoh's humiliation after his arrogance (10:92) and the punishment of the people of Lut (15:73-74) demonstrate this principle. The alternation serves as a test and a reminder of Allah's ultimate authority.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:91" target="_blank">Sahih Muslim 91</a>
+                    <div class="arabic">مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ</div>
+                    <div class="transliteration">Man nafassa AAan mu/minin kurbatan min kurabi alddunya nafassa Allahu AAanhu kurbatan min kurabi yawmi alqiyamati</div>
+                    <p>"Whoever relieves a believer of distress in this world, Allah will relieve him of distress on the Day of Resurrection."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith complements the understanding of Al-Mudhill by showing that protecting others from humiliation leads to protection from divine humiliation. It establishes the principle that how we treat others in matters of honor and disgrace affects our own standing with Allah.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his tafsir of Surah Al-Imran (3:26), Ibn Kathir explains that Allah's attribute as Al-Mudhill demonstrates His complete control over all matters of honor and disgrace. He mentions that Allah humbles the arrogant and those who reject His signs, often after giving them ample opportunity to repent.</p>
-                
-                <p>Regarding Surah Al-Imran (3:140), Ibn Kathir comments that this verse refers to how Allah alternates days of honor and humiliation among people and nations as a test and as a lesson for those who reflect. No worldly power remains forever.</p>
-            </div>
-
-            <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Protection from Humiliation</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْفَقْرِ، وَالْقِلَّةِ، وَالذِّلَّةِ، وَأَعُوذُ بِكَ مِنْ أَنْ أَظْلِمَ أَوْ أُظْلَمَ</div>
-                    <p class="transliteration">Transliteration: Allahumma innee aAAoothu bika mina alfaqri, waalqillati, waalththillati, wa aAAoothu bika an athlima aw uthlam</p>
-                    <p><strong>Translation:</strong> "O Allah, I seek refuge in You from poverty, scarcity, and humiliation, and I seek refuge in You from oppressing or being oppressed." (Sunan Abu Dawud)</p>
-                    <p><strong>Benefits:</strong> This comprehensive du'a seeks protection from Allah Al-Mudhill from all forms of humiliation while also asking to be saved from causing humiliation to others.</p>
+                    <div class="transliteration">Allahumma innee aAAoothu bika mina alfaqri, waalqillati, waalththillati, wa aAAoothu bika an athlima aw uthlam</div>
+                    <p><strong>Translation:</strong> "O Allah, I seek refuge in You from poverty, scarcity, and humiliation, and I seek refuge in You from oppressing or being oppressed."</p>
+                    <p><strong>Benefits:</strong> This comprehensive du'a seeks protection from Allah Al-Mudhill from all forms of humiliation while also asking to be saved from causing humiliation to others. The Prophet (ﷺ) taught that seeking refuge from oppression includes both being oppressed and being an oppressor (Sunan Abu Dawud).</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">For Comprehensive Protection</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ</div>
-                    <p class="transliteration">Transliteration: Allahumma innee aAAoothu bika mina alhami waalhazani waalAAajzi waalkasali waalbukhli waaljubni wadalaAAi aldayni waghalabati alrrijali</p>
-                    <p><strong>Translation:</strong> "O Allah, I seek refuge in You from grief and sadness, from weakness and laziness, from miserliness and cowardice, from being overcome by debt and overpowered by men." (Sahih Bukhari)</p>
-                    <p><strong>Benefits:</strong> This well-known du'a includes seeking protection from being humiliated by others, showing reliance on Allah as the ultimate source of protection from disgrace.</p>
+                    <div class="transliteration">Allahumma innee aAAoothu bika mina alhami waalhazani waalAAajzi waalkasali waalbukhli waaljubni wadalaAAi aldayni waghalabati alrrijali</div>
+                    <p><strong>Translation:</strong> "O Allah, I seek refuge in You from grief and sadness, from weakness and laziness, from miserliness and cowardice, from being overcome by debt and overpowered by men."</p>
+                    <p><strong>Source:</strong> This well-known du'a from Sahih Bukhari includes seeking protection from being humiliated by others, showing reliance on Allah as the ultimate source of protection from disgrace. The Prophet (ﷺ) recommended this dua for comprehensive protection from life's trials.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Avoiding Arrogance and Oppression</h3>
-                <p>The Prophet (peace be upon him) said: "No one who has an atom's weight of arrogance in his heart will enter Paradise." (Sahih Muslim)</p>
-                <p><strong>Practice:</strong> Regularly examine your heart for signs of arrogance (kibr) and treat all people with humility and justice to avoid Allah's humiliation.</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Avoiding Arrogance and Oppression</div>
+                    <p>Daily practice to protect oneself from divine humiliation:</p>
+                    <ol>
+                        <li>Daily self-reflection on intentions and actions</li>
+                        <li>Consciously practice humility in interactions</li>
+                        <li>Stand against oppression in all forms</li>
+                        <li>Seek forgiveness for any arrogant thoughts or actions</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Aligns with the Quranic warning against arrogance</li>
+                        <li>Develops constant awareness of potential kibr (arrogance)</li>
+                        <li>Follows the Prophetic example of humility</li>
+                        <li>Creates protection from Allah's humiliation</li>
+                    </ul>
+                </div>
 
-                <h3>2. Seeking Protection Through Remembrance</h3>
-                <p>Allah says: "And whoever turns away from My remembrance - indeed, he will have a depressed life." (<a href="https://quranwbw.com/20:124" target="_blank">Surah Taha 20:124</a>)</p>
-                <p><strong>Practice:</strong> Maintain regular dhikr (remembrance of Allah) such as morning/evening adhkar, as this is a means of protection from humiliation.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Seeking Protection Through Remembrance</div>
+                    <p>Weekly practice to strengthen spiritual protection:</p>
+                    <ol>
+                        <li>Memorize and recite daily protection duas</li>
+                        <li>Establish consistent morning and evening adhkar</li>
+                        <li>Reflect on Quranic verses about divine justice</li>
+                        <li>Study stories of humiliated nations for lessons</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "Whoever recites 'La ilaha illallah' sincerely will enter Paradise" (Ahmad). This practice transforms understanding of divine protection into action through consistent remembrance and reflection.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Reflection</h2>
-                <p>Understanding Allah as Al-Mudhill should:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Mudhill through four dimensions of divine justice:</p>
                 <ol>
-                    <li>Warn us against arrogance and oppression</li>
-                    <li>Teach us humility before Allah's majesty</li>
-                    <li>Comfort us that injustice will not prevail forever</li>
-                    <li>Remind us that all worldly power is temporary</li>
-                    <li>Encourage us to seek honor through obedience rather than worldly means</li>
+                    <li><strong>Individual Humiliation:</strong>
+                        <ul>
+                            <li>Pharaoh's ultimate humiliation after his arrogance (<a href="https://quranwbw.com/10:92" target="_blank">10:92</a>)</li>
+                            <li>Qarun's destruction despite his wealth (<a href="https://quranwbw.com/28:81" target="_blank">28:81</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>National Humiliation:</strong>
+                        <ul>
+                            <li>Destruction of the people of Lut (<a href="https://quranwbw.com/15:73-74" target="_blank">15:73-74</a>)</li>
+                            <li>Punishment of the people of Thamud (<a href="https://quranwbw.com/7:78" target="_blank">7:78</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Historical Patterns:</strong>
+                        <ul>
+                            <li>Allah's sunnah of humbling arrogant civilizations (<a href="https://quranwbw.com/3:140" target="_blank">3:140</a>)</li>
+                            <li>The rise and fall of nations as divine lessons (<a href="https://quranwbw.com/6:6" target="_blank">6:6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eschatological Humiliation:</strong>
+                        <ul>
+                            <li>Disgrace of disbelievers on Judgment Day (<a href="https://quranwbw.com/40:60" target="_blank">40:60</a>)</li>
+                            <li>Humiliation of hypocrites (<a href="https://quranwbw.com/4:145" target="_blank">4:145</a>)</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>In Surah Al-Hajj (<a href="https://quranwbw.com/22:18" target="_blank">22:18</a>), Allah describes all creation prostrating to Him, showing that ultimate honor comes from submission while humiliation comes from arrogance. The consistent Quranic theme is that Allah's humiliation is always just and serves as a warning to humanity.</p>
             </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-muzil" target="_blank">https://myislam.org/99-names-of-allah/al-muzil</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
 
-        <!-- Indonesian Version -->
-        <div id="indonesianVersion" class="hidden">
-            <h1>25. Al-Mudhill (Maha Menghinakan)</h1>
+        <!-- Indonesian Content (Hidden by Default) -->
+        <div id="indonesian-content" class="hidden">
+            <h1 class="name-title">25. Al-Mudhill (Maha Menghinakan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muzil/" target="_blank">myislam.org/99-names-of-allah/al-muzil/</a></div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
 
             <div class="arabic">المُذِلُّ</div>
-            <p class="transliteration">Transliterasi: Al-Mudhill</p>
-            <p><strong>Arti:</strong> Yang Maha Menghinakan, Yang Merendahkan, Yang menurunkan dan menghinakan siapa yang Dia kehendaki</p>
+            <div class="transliteration">Transliterasi: Al-Mudhill</div>
 
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-muzil" target="_blank">https://myislam.org/99-names-of-allah/al-muzil</a></p>
+            <!-- Audio Player for Pronunciation -->
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Nama Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/25.%20al-mudhill.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
+
             <div class="section">
-                <h2>Penjelasan</h2>
+                <h2 class="section-title">Makna</h2>
                 <p>Al-Mudhill adalah nama yang melengkapi Al-Mu'izz (Yang Memuliakan). Nama ini menandakan sifat Allah dalam merendahkan, menurunkan, dan menghinakan siapa yang Dia kehendaki - baik individu, bangsa, atau peradaban - ketika mereka menjadi sombong, menindas, atau menolak petunjuk-Nya.</p>
                 
                 <p>Nama ini menunjukkan keadilan sempurna Allah dalam berurusan dengan yang sombong dan menindas. Sepanjang Al-Quran, kita melihat contoh peradaban besar yang dihinakan ketika mereka melampaui batas. Penghinaan Allah selalu adil dan berfungsi sebagai peringatan bagi yang lain.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Bukti)</h2>
-                <div class="arabic">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَن تَشَاءُ وَتَنزِعُ الْمُلْكَ مِمَّن تَشَاءُ وَتُعِزُّ مَن تَشَاءُ وَتُذِلُّ مَن تَشَاءُ ۖ بِيَدِكَ الْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</div>
-                <p class="transliteration">Transliterasi: Quli Allahumma malika almulki tu/tee almulka man tashao watanziAAu almulka mimman tashao watuAAizzu man tashao watuthillu man tashao biyadika alkhayru innaka AAala kulli shayin qadeerun</p>
-                <p><strong>Terjemahan:</strong> "Katakanlah: 'Wahai Tuhan Yang mempunyai kerajaan, Engkau berikan kerajaan kepada orang yang Engkau kehendaki dan Engkau cabut kerajaan dari orang yang Engkau kehendaki. Engkau muliakan orang yang Engkau kehendaki dan Engkau hinakan orang yang Engkau kehendaki. Di tangan Engkaulah segala kebajikan. Sesungguhnya Engkau Maha Kuasa atas segala sesuatu.'" (<a href="https://quranwbw.com/3:26" target="_blank">Surah Al-Imran 3:26</a>)</p>
+                <h2 class="section-title">Dalil (Bukti dari Quran & Hadits)</h2>
                 
-                <div class="arabic">وَتِلْكَ الْأَيَّامُ نُدَاوِلُهَا بَيْنَ النَّاسِ</div>
-                <p class="transliteration">Transliterasi: Watilka al-ayyamu nudaawiluha bayna alnnasi</p>
-                <p><strong>Terjemahan:</strong> "Dan masa (kejayaan dan kehancuran) itu Kami pergilirkan di antara manusia." (<a href="https://quranwbw.com/3:140" target="_blank">Surah Al-Imran 3:140</a>)</p>
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/3:26" target="_blank">Surah Al-Imran 3:26</a>
+                    <div class="arabic">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَن تَشَاءُ وَتَنزِعُ الْمُلْكَ مِمَّن تَشَاءُ وَتُعِزُّ مَن تَشَاءُ وَتُذِلُّ مَن تَشَاءُ ۖ بِيَدِكَ الْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</div>
+                    <div class="transliteration">Quli Allahumma malika almulki tu/tee almulka man tashao watanziAAu almulka mimman tashao watuAAizzu man tashao watuthillu man tashao biyadika alkhayru innaka AAala kulli shayin qadeerun</div>
+                    <p>"Katakanlah: 'Wahai Tuhan Yang mempunyai kerajaan, Engkau berikan kerajaan kepada orang yang Engkau kehendaki dan Engkau cabut kerajaan dari orang yang Engkau kehendaki. Engkau muliakan orang yang Engkau kehendaki dan Engkau hinakan orang yang Engkau kehendaki. Di tangan Engkaulah segala kebajikan. Sesungguhnya Engkau Maha Kuasa atas segala sesuatu.'"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir:</strong> Ayat dasar ini menetapkan otoritas mutlak Allah atas kehormatan dan kedaulatan. Para ulama menjelaskan bahwa penghinaan Allah selalu adil dan melayani tujuan tertentu: untuk menghukum yang sombong, untuk menguji orang beriman, dan untuk menjadi pelajaran bagi generasi mendatang. Pasangan dengan Al-Mu'izz menunjukkan kesempurnaan keadilan ilahi.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/3:140" target="_blank">Surah Al-Imran 3:140</a>
+                    <div class="arabic">وَتِلْكَ الْأَيَّامُ نُدَاوِلُهَا بَيْنَ النَّاسِ</div>
+                    <div class="transliteration">Watilka al-ayyamu nudaawiluha bayna alnnasi</div>
+                    <p>"Dan masa (kejayaan dan kehancuran) itu Kami pergilirkan di antara manusia."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir:</strong> Ayat ini merujuk pada hukum ilahi Allah tentang pergantian periode kehormatan dan penghinaan di antara bangsa-bangsa. Contoh sejarah seperti penghinaan Firaun setelah kesombongannya (10:92) dan hukuman kaum Lut (15:73-74) menunjukkan prinsip ini. Pergantian ini berfungsi sebagai ujian dan pengingat akan otoritas tertinggi Allah.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:91" target="_blank">Sahih Muslim 91</a>
+                    <div class="arabic">مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ الْقِيَامَةِ</div>
+                    <div class="transliteration">Man nafassa AAan mu/minin kurbatan min kurabi alddunya nafassa Allahu AAanhu kurbatan min kurabi yawmi alqiyamati</div>
+                    <p>"Barangsiapa menghilangkan kesusahan seorang mukmin di dunia, Allah akan menghilangkan kesusahannya pada hari Kiamat."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Hadits ini melengkapi pemahaman tentang Al-Mudhill dengan menunjukkan bahwa melindungi orang lain dari penghinaan mengarah pada perlindungan dari penghinaan ilahi. Ini menetapkan prinsip bahwa cara kita memperlakukan orang lain dalam hal kehormatan dan penghinaan memengaruhi kedudukan kita sendiri di sisi Allah.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Al-Imran (3:26), Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Mudhill menunjukkan kendali penuh-Nya atas semua urusan kehormatan dan kehinaan. Beliau menyebutkan bahwa Allah merendahkan yang sombong dan mereka yang menolak tanda-tanda-Nya, seringkali setelah memberi mereka kesempatan luas untuk bertaubat.</p>
-                
-                <p>Mengenai Surah Al-Imran (3:140), Ibnu Katsir berkomentar bahwa ayat ini merujuk pada bagaimana Allah menggilirkan hari-hari kejayaan dan kehinaan di antara manusia dan bangsa-bangsa sebagai ujian dan pelajaran bagi yang merenungkan. Tidak ada kekuatan duniawi yang bertahan selamanya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa (Permohonan)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Doa (Permohonan)</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan dari Penghinaan</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْفَقْرِ، وَالْقِلَّةِ، وَالذِّلَّةِ، وَأَعُوذُ بِكَ مِنْ أَنْ أَظْلِمَ أَوْ أُظْلَمَ</div>
-                    <p class="transliteration">Transliterasi: Allahumma innee aAAoothu bika mina alfaqri, waalqillati, waalththillati, wa aAAoothu bika an athlima aw uthlam</p>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari kemiskinan, kekurangan, dan kehinaan, dan aku berlindung kepada-Mu dari menindas atau ditindas." (Sunan Abu Dawud)</p>
-                    <p><strong>Manfaat:</strong> Doa komprehensif ini meminta perlindungan dari Allah Al-Mudhill dari segala bentuk penghinaan sambil juga meminta diselamatkan dari menyebabkan penghinaan pada orang lain.</p>
+                    <div class="transliteration">Allahumma innee aAAoothu bika mina alfaqri, waalqillati, waalththillati, wa aAAoothu bika an athlima aw uthlam</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari kemiskinan, kekurangan, dan kehinaan, dan aku berlindung kepada-Mu dari menindas atau ditindas."</p>
+                    <p><strong>Manfaat:</strong> Doa komprehensif ini meminta perlindungan dari Allah Al-Mudhill dari segala bentuk penghinaan sambil juga meminta diselamatkan dari menyebabkan penghinaan pada orang lain. Nabi (ﷺ) mengajarkan bahwa mencari perlindungan dari penindasan termasuk baik ditindas maupun menjadi penindas (Sunan Abu Dawud).</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan Menyeluruh</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ</div>
-                    <p class="transliteration">Transliterasi: Allahumma innee aAAoothu bika mina alhami waalhazani waalAAajzi waalkasali waalbukhli waaljubni wadalaAAi aldayni waghalabati alrrijali</p>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari kegundahan dan kesedihan, dari kelemahan dan kemalasan, dari kekikiran dan sifat pengecut, dari beban hutang dan penindasan orang." (Sahih Bukhari)</p>
-                    <p><strong>Manfaat:</strong> Doa yang terkenal ini termasuk meminta perlindungan dari dihinakan oleh orang lain, menunjukkan ketergantungan pada Allah sebagai sumber perlindungan utama dari kehinaan.</p>
+                    <div class="transliteration">Allahumma innee aAAoothu bika mina alhami waalhazani waalAAajzi waalkasali waalbukhli waaljubni wadalaAAi aldayni waghalabati alrrijali</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari kegundahan dan kesedihan, dari kelemahan dan kemalasan, dari kekikiran dan sifat pengecut, dari beban hutang dan penindasan orang."</p>
+                    <p><strong>Sumber:</strong> Doa terkenal dari Sahih Bukhari ini termasuk meminta perlindungan dari dihinakan oleh orang lain, menunjukkan ketergantungan pada Allah sebagai sumber perlindungan utama dari kehinaan. Nabi (ﷺ) merekomendasikan doa ini untuk perlindungan menyeluruh dari ujian hidup.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Praktik)</h2>
-                <h3>1. Menghindari Kesombongan dan Penindasan</h3>
-                <p>Nabi (shallallahu 'alaihi wasallam) bersabda: "Tidak akan masuk surga orang yang di dalam hatinya terdapat kesombongan seberat atom." (Sahih Muslim)</p>
-                <p><strong>Praktik:</strong> Secara rutin periksa hatimu untuk tanda-tanda kesombongan (kibr) dan perlakukan semua orang dengan kerendahan hati dan keadilan untuk menghindari penghinaan Allah.</p>
+                <h2 class="section-title">Amalan (Praktik)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Menghindari Kesombongan dan Penindasan</div>
+                    <p>Praktik harian untuk melindungi diri dari penghinaan ilahi:</p>
+                    <ol>
+                        <li>Refleksi diri harian tentang niat dan tindakan</li>
+                        <li>Secara sadar praktikkan kerendahan hati dalam interaksi</li>
+                        <li>Berdiri melawan penindasan dalam segala bentuk</li>
+                        <li>Memohon ampunan untuk pikiran atau tindakan sombong</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Selaras dengan peringatan Quran terhadap kesombongan</li>
+                        <li>Mengembangkan kesadaran konstan akan potensi kibr (kesombongan)</li>
+                        <li>Mengikuti contoh Nabi dalam kerendahan hati</li>
+                        <li>Menciptakan perlindungan dari penghinaan Allah</li>
+                    </ul>
+                </div>
 
-                <h3>2. Mencari Perlindungan Melalui Dzikir</h3>
-                <p>Allah berfirman: "Dan barangsiapa berpaling dari peringatan-Ku, maka sungguh, dia akan menjalani kehidupan yang sempit." (<a href="https://quranwbw.com/20:124" target="_blank">Surah Taha 20:124</a>)</p>
-                <p><strong>Praktik:</strong> Pertahankan dzikir rutin (mengingat Allah) seperti adhkar pagi/sore, karena ini adalah sarana perlindungan dari penghinaan.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Mencari Perlindungan Melalui Dzikir</div>
+                    <p>Praktik mingguan untuk memperkuat perlindungan spiritual:</p>
+                    <ol>
+                        <li>Hafal dan baca doa perlindungan harian</li>
+                        <li>Dirikan dzikir pagi dan petang yang konsisten</li>
+                        <li>Renungkan ayat-ayat Quran tentang keadilan ilahi</li>
+                        <li>Pelajari kisah bangsa-bangsa yang dihinakan untuk pelajaran</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Nabi (ﷺ) bersabda: "Barangsiapa membaca 'La ilaha illallah' dengan ikhlas akan masuk surga" (Ahmad). Praktik ini mengubah pemahaman tentang perlindungan ilahi menjadi tindakan melalui dzikir dan refleksi yang konsisten.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Renungan</h2>
-                <p>Memahami Allah sebagai Al-Mudhill seharusnya:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
+                <p>Ibnu Katsir menjelaskan Al-Mudhill melalui empat dimensi keadilan ilahi:</p>
                 <ol>
-                    <li>Memperingatkan kita terhadap kesombongan dan penindasan</li>
-                    <li>Mengajarkan kita kerendahan hati di hadapan keagungan Allah</li>
-                    <li>Menghibur kita bahwa ketidakadilan tidak akan bertahan selamanya</li>
-                    <li>Mengingatkan kita bahwa semua kekuatan duniawi bersifat sementara</li>
-                    <li>Mendorong kita untuk mencari kehormatan melalui ketaatan daripada cara duniawi</li>
+                    <li><strong>Penghinaan Individu:</strong>
+                        <ul>
+                            <li>Penghinaan terakhir Firaun setelah kesombongannya (<a href="https://quranwbw.com/10:92" target="_blank">10:92</a>)</li>
+                            <li>Kehancuran Qarun meskipun kekayaannya (<a href="https://quranwbw.com/28:81" target="_blank">28:81</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penghinaan Nasional:</strong>
+                        <ul>
+                            <li>Kehancuran kaum Lut (<a href="https://quranwbw.com/15:73-74" target="_blank">15:73-74</a>)</li>
+                            <li>Hukuman kaum Tsamud (<a href="https://quranwbw.com/7:78" target="_blank">7:78</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pola Historis:</strong>
+                        <ul>
+                            <li>Sunnah Allah dalam merendahkan peradaban sombong (<a href="https://quranwbw.com/3:140" target="_blank">3:140</a>)</li>
+                            <li>Kebangkitan dan kejatuhan bangsa sebagai pelajaran ilahi (<a href="https://quranwbw.com/6:6" target="_blank">6:6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penghinaan Eskatologis:</strong>
+                        <ul>
+                            <li>Aib orang kafir pada Hari Kiamat (<a href="https://quranwbw.com/40:60" target="_blank">40:60</a>)</li>
+                            <li>Penghinaan orang munafik (<a href="https://quranwbw.com/4:145" target="_blank">4:145</a>)</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>Dalam Surah Al-Hajj (<a href="https://quranwbw.com/22:18" target="_blank">22:18</a>), Allah menggambarkan semua ciptaan bersujud kepada-Nya, menunjukkan bahwa kehormatan tertinggi datang dari ketundukan sementara penghinaan datang dari kesombongan. Tema konsisten Quran adalah bahwa penghinaan Allah selalu adil dan berfungsi sebagai peringatan bagi umat manusia.</p>
             </div>
 
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
-
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-mudhill" target="_blank">https://myislam.org/99-names-of-allah/al-mudhill</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
         // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.remove('hidden');
-            document.getElementById('indonesianVersion').classList.add('hidden');
-        });
-        
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.add('hidden');
-            document.getElementById('indonesianVersion').classList.remove('hidden');
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+            }
         });
 
         // Transliteration Toggle
-        document.getElementById('toggleTransliteration').addEventListener('click', function() {
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(item => {
-                if (item.style.display === 'none') {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            
+            if (this.textContent === 'Hide Transliteration') {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+            }
         });
-
-        // Back to Top
-        const backToTopLinks = document.querySelectorAll('.back-to-top');
-        backToTopLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Set English as default
-        document.getElementById('englishVersion').classList.remove('hidden');
     </script>
 </body>
 </html>
