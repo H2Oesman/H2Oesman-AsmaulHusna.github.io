@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -131,6 +131,28 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -155,13 +177,33 @@
         <div id="english-content">
             <h1 class="name-title">14. Al-Ghaffar (The Ever-Forgiving)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-ghaffar/" target="_blank">myislam.org/99-names-of-allah/al-ghaffar/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <!-- Audio Player Added Here -->
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Name</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_15Ghaffaar.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْغَفَّارُ</div>
             <div class="transliteration">Transliteration: Al-Ghaffar</div>
+
+            <!-- Audio Player Added Here -->
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/14.%20al-ghaffar.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
             <div class="section">
                 <h2 class="section-title">Meaning and Significance</h2>
@@ -284,6 +326,7 @@
                 </div>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
 
@@ -291,9 +334,19 @@
         <div id="indonesian-content" class="hidden">
             <h1 class="name-title">14. Al-Ghaffar (Maha Pengampun)</h1>
             <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-ghaffar/" target="_blank">myislam.org/99-names-of-allah/al-ghaffar/</a></div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
 
             <div class="arabic">ٱلْغَفَّارُ</div>
             <div class="transliteration">Transliterasi: Al-Ghaffar</div>
+
+            <!-- Audio Player Added Here for Indonesian Content -->
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Nama Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/14.%20al-ghaffar.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
 
             <div class="section">
                 <h2 class="section-title">Makna dan Signifikansi</h2>
@@ -416,9 +469,14 @@
                 </div>
             </div>
 
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
 
     <script>
         // Language Toggle
