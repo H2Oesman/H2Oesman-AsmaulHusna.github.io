@@ -7,164 +7,268 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            line-height: 1.8;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2e7d32;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', Arial, sans-serif;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
         }
         .section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn {
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-btn:hover {
-            background-color: #1b5e20;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 20px;
-            color: #2e7d32;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f5e9;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .dua-box {
-            background-color: #f1f8e9;
-            padding: 15px;
-            border-radius: 5px;
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
             margin: 15px 0;
         }
-        .source {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 30px;
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn" id="englishBtn">English</button>
-            <button class="toggle-btn" id="indonesianBtn">Indonesian</button>
-            <button class="toggle-btn" id="toggleTransliteration">Toggle Transliteration</button>
-        </div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Version -->
-        <div id="englishVersion">
-            <h1>29. Al-Adl (The Just)</h1>
-            
+        <!-- English Content -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">29. Al-Adl (The Just)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-adl" target="_blank">myislam.org/99-names-of-allah/al-adl</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+
             <div class="bonus">
-                <p>Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a></p>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of this Name: 
+                <div class="audio-player">
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_30Adl.mp3?_=28" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-adl" target="_blank">https://myislam.org/99-names-of-allah/al-adl</a></p>
-            </div>
             <div class="arabic">الْعَدْلُ</div>
-            <p class="transliteration">Transliteration: Al-Adl</p>
-            <p><strong>Meaning:</strong> The Just, The Equitable, The One who establishes perfect justice</p>
+            <div class="transliteration">Transliteration: Al-Adl</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/29.%20al-adl.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
             <div class="section">
-                <h2>Explanation</h2>
+                <h2 class="section-title">Meaning and Significance</h2>
                 <p>Al-Adl is one of Allah's names that demonstrates His absolute justice and fairness in all matters. Allah's justice is perfect - He never wrongs anyone in the slightest degree, and He gives each soul exactly what it deserves based on its intentions and actions.</p>
-                
                 <p>This name appears in the Quran emphasizing that Allah's justice encompasses all creation. His justice is not like human justice which may be limited or flawed - it is complete, comprehensive, and perfectly balanced. On the Day of Judgment, His justice will be manifest to all.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence)</h2>
-                <div class="arabic">وَضَرَبَ اللَّهُ مَثَلًا رَّجُلَيْنِ أَحَدُهُمَا أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَيْءٍ وَهُوَ كَلٌّ عَلَىٰ مَوْلَاهُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ ۖ هَلْ يَسْتَوِي هُوَ وَمَن يَأْمُرُ بِالْعَدْلِ ۙ وَهُوَ عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ</div>
-                <p class="transliteration">Transliteration: Wadaraba Allahu mathalan rajulayni ahaduhuma abkamu la yaqdiru AAala shayin wahuwa kallun AAala mawlahu aynama yuwajjihhu la yati bikhayrin hal yastawee huwa waman yamuru bialAAdli wahuwa AAala siratin mustaqeemin</p>
-                <p><strong>Translation:</strong> "And Allah presents an example of two men, one of them dumb and unable to do a thing, while he is a burden to his guardian - wherever he directs him, he brings no good. Is he equal to one who commands justice while he is on a straight path?" (<a href="https://quranwbw.com/16:76" target="_blank">Surah An-Nahl 16:76</a>)</p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ</div>
-                <p class="transliteration">Transliteration: Inna Allaha yamuru bialAAdli waal-ihsani</p>
-                <p><strong>Translation:</strong> "Indeed, Allah orders justice and good conduct." (<a href="https://quranwbw.com/16:90" target="_blank">Surah An-Nahl 16:90</a>)</p>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/16:76" target="_blank">Surah An-Nahl 16:76</a>
+                    <div class="arabic">وَضَرَبَ اللَّهُ مَثَلًا رَّجُلَيْنِ أَحَدُهُمَا أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَيْءٍ وَهُوَ كَلٌّ عَلَىٰ مَوْلَاهُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ ۖ هَلْ يَسْتَوِي هُوَ وَمَن يَأْمُرُ بِالْعَدْلِ ۙ وَهُوَ عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ</div>
+                    <div class="transliteration">Wadaraba Allahu mathalan rajulayni ahaduhuma abkamu la yaqdiru AAala shayin wahuwa kallun AAala mawlahu aynama yuwajjihhu la yati bikhayrin hal yastawee huwa waman yamuru bialAAdli wahuwa AAala siratin mustaqeemin</div>
+                    <p>"And Allah presents an example of two men, one of them dumb and unable to do a thing, while he is a burden to his guardian - wherever he directs him, he brings no good. Is he equal to one who commands justice while he is on a straight path?"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> In his tafsir of this verse, Ibn Kathir explains that this verse contrasts those who are spiritually dead (unable to do good) with those who establish justice. Allah as Al-Adl is the source of all justice, and those who follow His path embody this divine attribute.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/16:90" target="_blank">Surah An-Nahl 16:90</a>
+                    <div class="arabic">إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ</div>
+                    <div class="transliteration">Inna Allaha yamuru bialAAdli waal-ihsani</div>
+                    <p>"Indeed, Allah orders justice and good conduct."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Regarding this verse, Ibn Kathir comments that this verse establishes justice (adl) as one of the fundamental principles of Islam that Allah commands. True justice must be accompanied by ihsan (excellence in conduct).
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his tafsir of Surah An-Nahl (16:76), Ibn Kathir explains that this verse contrasts those who are spiritually dead (unable to do good) with those who establish justice. Allah as Al-Adl is the source of all justice, and those who follow His path embody this divine attribute.</p>
-                
-                <p>Regarding Surah An-Nahl (16:90), Ibn Kathir comments that this verse establishes justice (adl) as one of the fundamental principles of Islam that Allah commands. True justice must be accompanied by ihsan (excellence in conduct).</p>
-            </div>
-
-            <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Justice in Judgment</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَدْلَ فِي الْقَضَاءِ</div>
-                    <p class="transliteration">Transliteration: Allahumma innee asaluka alAAdla fee alqada-i</p>
+                    <div class="transliteration">Allahumma innee asaluka alAAdla fee alqada-i</div>
                     <p><strong>Translation:</strong> "O Allah, I ask You for justice in judgment."</p>
                     <p><strong>Benefits:</strong> This du'a seeks Allah's perfect justice in all matters, especially when making important decisions or resolving disputes.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">For Reconciliation and Peace</div>
                     <div class="arabic">اللَّهُمَّ أَصْلِحْ ذَاتَ بَيْنِنَا وَأَلِّفْ بَيْنَ قُلُوبِنَا وَاهْدِنَا سُبُلَ السَّلَامِ وَنَجِّنَا مِنَ الظُّلُمَاتِ إِلَى النُّورِ</div>
-                    <p class="transliteration">Transliteration: Allahumma aslih thata baynina wa allif bayna quloobina wahdina subula alssalami wanajjina mina alththulumati ila alnnoori</p>
+                    <div class="transliteration">Allahumma aslih thata baynina wa allif bayna quloobina wahdina subula alssalami wanajjina mina alththulumati ila alnnoori</div>
                     <p><strong>Translation:</strong> "O Allah, reconcile between us, unite our hearts, guide us to paths of peace, and deliver us from darkness into light."</p>
                     <p><strong>Benefits:</strong> This comprehensive du'a asks for Allah's justice to bring reconciliation and peace, acknowledging that true justice leads to harmony.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Establishing Justice in Daily Life</h3>
-                <p>The Prophet (peace be upon him) said: "Help your brother, whether he is an oppressor or oppressed." When asked how to help an oppressor, he replied: "By stopping him from oppression." (Sahih Bukhari)</p>
-                <p><strong>Practice:</strong> Actively promote justice in your family, workplace, and community. Stand up against oppression even in small matters.</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Establishing Justice in Daily Life</div>
+                    <p>The Prophet (peace be upon him) said: "Help your brother, whether he is an oppressor or oppressed." When asked how to help an oppressor, he replied: "By stopping him from oppression." (<a href="https://quranwbw.com/" target="_blank">Sahih Bukhari</a>)</p>
+                    <p><strong>Practice:</strong> Actively promote justice in your family, workplace, and community. Stand up against oppression even in small matters.</p>
+                </div>
 
-                <h3>2. Fair Treatment of All People</h3>
-                <p>Allah says: "O you who have believed, be persistently standing firm for Allah, witnesses in justice, and do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness." (<a href="https://quranwbw.com/5:8" target="_blank">Surah Al-Ma'idah 5:8</a>)</p>
-                <p><strong>Practice:</strong> Treat all people fairly regardless of their background, religion, or relationship to you. This includes being just in speech when discussing others.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Fair Treatment of All People</div>
+                    <p>Allah says: "O you who have believed, be persistently standing firm for Allah, witnesses in justice, and do not let the hatred of a people prevent you from being just. Be just; that is nearer to righteousness." (<a href="https://quranwbw.com/5:8" target="_blank">Surah Al-Ma'idah 5:8</a>)</p>
+                    <p><strong>Practice:</strong> Treat all people fairly regardless of their background, religion, or relationship to you. This includes being just in speech when discussing others.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Reflection</h2>
+                <h2 class="section-title">Reflection</h2>
                 <p>Understanding Allah as Al-Adl should:</p>
                 <ol>
                     <li>Motivate us to be just in all our dealings</li>
@@ -175,79 +279,96 @@
                 </ol>
             </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-adl" target="_blank">https://myislam.org/99-names-of-allah/al-adl</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#" class="back-to-top">Back To Top</a>
         </div>
 
-        <!-- Indonesian Version -->
-        <div id="indonesianVersion" class="hidden">
-            <h1>29. Al-Adl (Maha Adil)</h1>
+        <!-- Indonesian Content -->
+        <div id="indonesian-content">
+            <h1 class="name-title">29. Al-Adl (Maha Adil)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-adl" target="_blank">myislam.org/99-names-of-allah/al-adl</a></div>
 
-            <div class="arabic">الْعَدْلُ</div>
-            <p class="transliteration">Transliterasi: Al-Adl</p>
-            <p><strong>Arti:</strong> Yang Maha Adil, Yang Maha Setara, Yang menegakkan keadilan sempurna</p>
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-adl" target="_blank">https://myislam.org/99-names-of-allah/al-adl</a></p>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Nama Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/29.%20al-adl.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
+            <div class="arabic">الْعَدْلُ</div>
+            <div class="transliteration">Transliterasi: Al-Adl</div>
+
             <div class="section">
-                <h2>Penjelasan</h2>
+                <h2 class="section-title">Makna</h2>
                 <p>Al-Adl adalah salah satu nama Allah yang menunjukkan keadilan dan kejujuran mutlak-Nya dalam semua perkara. Keadilan Allah sempurna - Dia tidak pernah menzalimi siapa pun sedikit pun, dan Dia memberi setiap jiwa persis apa yang pantas berdasarkan niat dan perbuatannya.</p>
-                
                 <p>Nama ini muncul dalam Al-Quran yang menekankan bahwa keadilan Allah mencakup semua ciptaan. Keadilan-Nya tidak seperti keadilan manusia yang mungkin terbatas atau cacat - itu lengkap, komprehensif, dan seimbang sempurna. Pada Hari Penghakiman, keadilan-Nya akan terwujud bagi semua.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Bukti)</h2>
-                <div class="arabic">وَضَرَبَ اللَّهُ مَثَلًا رَّجُلَيْنِ أَحَدُهُمَا أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَيْءٍ وَهُوَ كَلٌّ عَلَىٰ مَوْلَاهُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ ۖ هَلْ يَسْتَوِي هُوَ وَمَن يَأْمُرُ بِالْعَدْلِ ۙ وَهُوَ عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ</div>
-                <p class="transliteration">Transliterasi: Wadaraba Allahu mathalan rajulayni ahaduhuma abkamu la yaqdiru AAala shayin wahuwa kallun AAala mawlahu aynama yuwajjihhu la yati bikhayrin hal yastawee huwa waman yamuru bialAAdli wahuwa AAala siratin mustaqeemin</p>
-                <p><strong>Terjemahan:</strong> "Dan Allah membuat perumpamaan dua orang laki-laki, seorang bisu tidak dapat berbuat sesuatu dan dia menjadi beban atas penanggungnya - ke mana saja dia disuruh oleh penanggungnya itu, dia tidak dapat mendatangkan suatu kebajikan pun. Samakah orang itu dengan orang yang menyuruh berbuat keadilan, dan dia berada di jalan yang lurus?" (<a href="https://quranwbw.com/16:76" target="_blank">Surah An-Nahl 16:76</a>)</p>
+                <h2 class="section-title">Dalil (Bukti dari Quran & Hadits)</h2>
                 
-                <div class="arabic">إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ</div>
-                <p class="transliteration">Transliterasi: Inna Allaha yamuru bialAAdli waal-ihsani</p>
-                <p><strong>Terjemahan:</strong> "Sesungguhnya Allah menyuruh (kamu) berlaku adil dan berbuat kebajikan." (<a href="https://quranwbw.com/16:90" target="_blank">Surah An-Nahl 16:90</a>)</p>
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/16:76" target="_blank">Surah An-Nahl 16:76</a>
+                    <div class="arabic">وَضَرَبَ اللَّهُ مَثَلًا رَّجُلَيْنِ أَحَدُهُمَا أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَيْءٍ وَهُوَ كَلٌّ عَلَىٰ مَوْلَاهُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ ۖ هَلْ يَسْتَوِي هُوَ وَمَن يَأْمُرُ بِالْعَدْلِ ۙ وَهُوَ عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ</div>
+                    <div class="transliteration">Wadaraba Allahu mathalan rajulayni ahaduhuma abkamu la yaqdiru AAala shayin wahuwa kallun AAala mawlahu aynama yuwajjihhu la yati bikhayrin hal yastawee huwa waman yamuru bialAAdli wahuwa AAala siratin mustaqeemin</div>
+                    <p>"Dan Allah membuat perumpamaan dua orang laki-laki, seorang bisu tidak dapat berbuat sesuatu dan dia menjadi beban atas penanggungnya - ke mana saja dia disuruh oleh penanggungnya itu, dia tidak dapat mendatangkan suatu kebajikan pun. Samakah orang itu dengan orang yang menyuruh berbuat keadilan, dan dia berada di jalan yang lurus?"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Dalam tafsirnya tentang ayat ini, Ibnu Katsir menjelaskan bahwa ayat ini membandingkan mereka yang mati secara spiritual (tidak mampu berbuat baik) dengan mereka yang menegakkan keadilan. Allah sebagai Al-Adl adalah sumber segala keadilan, dan mereka yang mengikuti jalan-Nya mewujudkan sifat ilahi ini.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/16:90" target="_blank">Surah An-Nahl 16:90</a>
+                    <div class="arabic">إِنَّ اللَّهَ يَأْمُرُ بِالْعَدْلِ وَالْإِحْسَانِ</div>
+                    <div class="transliteration">Inna Allaha yamuru bialAAdli waal-ihsani</div>
+                    <p>"Sesungguhnya Allah menyuruh (kamu) berlaku adil dan berbuat kebajikan."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Mengenai ayat ini, Ibnu Katsir berkomentar bahwa ayat ini menetapkan keadilan (adl) sebagai salah satu prinsip dasar Islam yang diperintahkan Allah. Keadilan sejati harus disertai dengan ihsan (keunggulan dalam perilaku).
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah An-Nahl (16:76), Ibnu Katsir menjelaskan bahwa ayat ini membandingkan mereka yang mati secara spiritual (tidak mampu berbuat baik) dengan mereka yang menegakkan keadilan. Allah sebagai Al-Adl adalah sumber segala keadilan, dan mereka yang mengikuti jalan-Nya mewujudkan sifat ilahi ini.</p>
-                
-                <p>Mengenai Surah An-Nahl (16:90), Ibnu Katsir berkomentar bahwa ayat ini menetapkan keadilan (adl) sebagai salah satu prinsip dasar Islam yang diperintahkan Allah. Keadilan sejati harus disertai dengan ihsan (keunggulan dalam perilaku).</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa (Permohonan)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Keadilan dalam Penghakiman</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَدْلَ فِي الْقَضَاءِ</div>
-                    <p class="transliteration">Transliterasi: Allahumma innee asaluka alAAdla fee alqada-i</p>
+                    <div class="transliteration">Allahumma innee asaluka alAAdla fee alqada-i</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu keadilan dalam penghakiman."</p>
                     <p><strong>Manfaat:</strong> Doa ini meminta keadilan sempurna Allah dalam semua perkara, terutama ketika membuat keputusan penting atau menyelesaikan perselisihan.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">Untuk Rekonsiliasi dan Perdamaian</div>
                     <div class="arabic">اللَّهُمَّ أَصْلِحْ ذَاتَ بَيْنِنَا وَأَلِّفْ بَيْنَ قُلُوبِنَا وَاهْدِنَا سُبُلَ السَّلَامِ وَنَجِّنَا مِنَ الظُّلُمَاتِ إِلَى النُّورِ</div>
-                    <p class="transliteration">Transliterasi: Allahumma aslih thata baynina wa allif bayna quloobina wahdina subula alssalami wanajjina mina alththulumati ila alnnoori</p>
+                    <div class="transliteration">Allahumma aslih thata baynina wa allif bayna quloobina wahdina subula alssalami wanajjina mina alththulumati ila alnnoori</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, damaikanlah hubungan antara kami, satukanlah hati kami, tunjukkanlah kami jalan-jalan kedamaian, dan selamatkanlah kami dari kegelapan menuju cahaya."</p>
                     <p><strong>Manfaat:</strong> Doa komprehensif ini meminta keadilan Allah untuk membawa rekonsiliasi dan perdamaian, mengakui bahwa keadilan sejati mengarah pada harmoni.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Praktik)</h2>
-                <h3>1. Menegakkan Keadilan dalam Kehidupan Sehari-hari</h3>
-                <p>Nabi (shallallahu 'alaihi wasallam) bersabda: "Bantulah saudaramu, baik dia sebagai penindas maupun yang tertindas." Ketika ditanya bagaimana membantu penindas, beliau menjawab: "Dengan menghentikannya dari penindasan." (Sahih Bukhari)</p>
-                <p><strong>Praktik:</strong> Secara aktif promosikan keadilan dalam keluarga, tempat kerja, dan komunitasmu. Berdirilah melawan penindasan bahkan dalam hal-hal kecil.</p>
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Menegakkan Keadilan dalam Kehidupan Sehari-hari</div>
+                    <p>Nabi (shallallahu 'alaihi wasallam) bersabda: "Bantulah saudaramu, baik dia sebagai penindas maupun yang tertindas." Ketika ditanya bagaimana membantu penindas, beliau menjawab: "Dengan menghentikannya dari penindasan." (<a href="https://quranwbw.com/" target="_blank">Sahih Bukhari</a>)</p>
+                    <p><strong>Praktik:</strong> Secara aktif promosikan keadilan dalam keluarga, tempat kerja, dan komunitasmu. Berdirilah melawan penindasan bahkan dalam hal-hal kecil.</p>
+                </div>
 
-                <h3>2. Perlakuan Adil terhadap Semua Orang</h3>
-                <p>Allah berfirman: "Wahai orang-orang yang beriman, hendaklah kamu jadi orang-orang yang selalu menegakkan (kebenaran) karena Allah, menjadi saksi dengan adil. Dan janganlah kebencianmu terhadap suatu kaum mendorong kamu untuk berlaku tidak adil. Berlaku adillah, karena adil itu lebih dekat kepada takwa." (<a href="https://quranwbw.com/5:8" target="_blank">Surah Al-Ma'idah 5:8</a>)</p>
-                <p><strong>Praktik:</strong> Perlakukan semua orang dengan adil terlepas dari latar belakang, agama, atau hubungan mereka denganmu. Ini termasuk bersikap adil dalam ucapan ketika membicarakan orang lain.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Perlakuan Adil terhadap Semua Orang</div>
+                    <p>Allah berfirman: "Wahai orang-orang yang beriman, hendaklah kamu jadi orang-orang yang selalu menegakkan (kebenaran) karena Allah, menjadi saksi dengan adil. Dan janganlah kebencianmu terhadap suatu kaum mendorong kamu untuk berlaku tidak adil. Berlaku adillah, karena adil itu lebih dekat kepada takwa." (<a href="https://quranwbw.com/5:8" target="_blank">Surah Al-Ma'idah 5:8</a>)</p>
+                    <p><strong>Praktik:</strong> Perlakukan semua orang dengan adil terlepas dari latar belakang, agama, atau hubungan mereka denganmu. Ini termasuk bersikap adil dalam ucapan ketika membicarakan orang lain.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Renungan</h2>
+                <h2 class="section-title">Renungan</h2>
                 <p>Memahami Allah sebagai Al-Adl seharusnya:</p>
                 <ol>
                     <li>Memotivasi kita untuk adil dalam semua urusan kita</li>
@@ -258,52 +379,73 @@
                 </ol>
             </div>
 
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
             <a href="#" class="back-to-top">Kembali ke Atas</a>
-
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-adl" target="_blank">https://myislam.org/99-names-of-allah/al-adl</a></p>
-            </div>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Set default state - Indonesian visible, transliteration hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            transliterations.forEach(el => el.style.display = 'none');
+            document.getElementById('transliterationToggle').textContent = 'Show Transliteration';
+            
+            // Check localStorage for language preference
+            const savedLang = localStorage.getItem('languagePreference');
+            if (savedLang === 'english') {
+                toggleLanguage();
+            }
+            
+            // Check localStorage for transliteration preference
+            const savedTrans = localStorage.getItem('transliterationPreference');
+            if (savedTrans === 'show') {
+                toggleTransliteration();
+            }
+        });
+
         // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.remove('hidden');
-            document.getElementById('indonesianVersion').classList.add('hidden');
-        });
-        
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.add('hidden');
-            document.getElementById('indonesianVersion').classList.remove('hidden');
-        });
+        function toggleLanguage() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const toggleButton = document.getElementById('languageToggle');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                toggleButton.textContent = 'Switch to Indonesian';
+                localStorage.setItem('languagePreference', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to English';
+                localStorage.setItem('languagePreference', 'indonesian');
+            }
+        }
+
+        document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
 
         // Transliteration Toggle
-        document.getElementById('toggleTransliteration').addEventListener('click', function() {
+        function toggleTransliteration() {
             const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(item => {
-                if (item.style.display === 'none') {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
+            const toggleButton = document.getElementById('transliterationToggle');
+            
+            if (toggleButton.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                toggleButton.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliterationPreference', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                toggleButton.textContent = 'Show Transliteration';
+                localStorage.setItem('transliterationPreference', 'hide');
+            }
+        }
 
-        // Back to Top
-        const backToTopLinks = document.querySelectorAll('.back-to-top');
-        backToTopLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Set English as default
-        document.getElementById('englishVersion').classList.remove('hidden');
+        document.getElementById('transliterationToggle').addEventListener('click', toggleTransliteration);
     </script>
 </body>
 </html>
