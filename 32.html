@@ -7,290 +7,440 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1, h2, h3 {
-            color: #1e5a1e;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 28px;
-            border-bottom: 2px solid #1e5a1e;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-top: 30px;
-            border-left: 4px solid #1e5a1e;
-            padding-left: 10px;
-        }
-        h3 {
-            font-size: 20px;
-            margin-top: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            line-height: 1.8;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #555;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .dua-section, .amalan-section {
-            background-color: #f0f7f0;
-            padding: 15px;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
-        .toggle-btn {
-            background-color: #1e5a1e;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 5px;
-        }
-        .toggle-btn:hover {
-            background-color: #2d7a2d;
-        }
-        .back-to-top {
+        .back-to-top, .back-to-main {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #1e5a1e;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f4e8;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .title-source {
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
             font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
+        }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
             text-align: center;
         }
-        a {
-            color: #1e5a1e;
-            text-decoration: none;
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
         }
-        a:hover {
-            text-decoration: underline;
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Toggle -->
-        <div class="toggle-container">
-            <button id="englishBtn" class="toggle-btn">English</button>
-            <button id="indonesianBtn" class="toggle-btn">Bahasa Indonesia</button>
-        </div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
 
-        <!-- Transliteration Toggle -->
-        <div class="toggle-container">
-            <button id="showTransliteration" class="toggle-btn">Show Transliteration</button>
-            <button id="hideTransliteration" class="toggle-btn">Hide Transliteration</button>
-        </div>
+        <div class="main-menu"><a href="index.html">Back to Main</a></div>
 
         <!-- English Content -->
-        <div id="englishContent">
+        <div id="english-content" class="hidden">
             <div class="bonus">
-                Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of Al-Halim</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_33Haleem.mp3?_=31" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
-            <h1>32. Al-Halim (الحليم) - The Forbearing, The Most Patient</h1>
-            <div class="title-source">
-                Source: <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">https://myislam.org/99-names-of-allah/al-haleem/</a>
+            <h1 class="name-title">32. Al-Halim (الحليم) - The Forbearing, The Most Patient</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">myislam.org/99-names-of-allah/al-haleem/</a></div>
+
+            <div class="arabic">الحَلِيمُ</div>
+            <div class="transliteration">Transliteration: Al-Halim</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/32.%20al-halim.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
             <div class="section">
-                <p class="arabic">الحَلِيمُ</p>
-                <p class="transliteration">Al-Halim</p>
-                <p><strong>Meaning:</strong> The Forbearing, The Clement, The One who is gentle and forbearing, delaying punishment despite having full power to punish.</p>
-            </div>
-
-            <div class="section">
-                <h2>Explanation</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Halim is the One who shows forbearance, restraint, and patience. He does not hasten to punish His servants for their sins but gives them time to repent. His patience is perfect, and He does not act out of haste or anger.</p>
                 <p>Ibn Kathir explains in his Tafsir that Al-Halim is the One who observes the disobedience of the disobedient and sees the violations of the violators, yet He gives them respite and does not hasten to punish them, hoping they will repent.</p>
             </div>
 
             <div class="section">
-                <h2>Quranic References</h2>
-                <h3>1. Surah Al-Baqarah 2:225</h3>
-                <p class="arabic">وَاللَّهُ غَفُورٌ حَلِيمٌ</p>
-                <p class="transliteration">Wa Allahu Ghafurun Halim</p>
-                <p><strong>Translation:</strong> "And Allah is Forgiving and Forbearing." <a href="https://quranwbw.com/2:225" target="_blank">(Surah Al-Baqarah 2:225)</a></p>
-                <p><strong>Explanation:</strong> This verse shows Allah's forbearance in overlooking people's mistakes and giving them time to repent. Ibn Kathir explains that Allah's attribute of being Al-Halim here refers to His patience with His servants despite their sins.</p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/2:225" target="_blank">Surah Al-Baqarah 2:225</a>
+                    <div class="arabic">وَاللَّهُ غَفُورٌ حَلِيمٌ</div>
+                    <div class="transliteration">Wa Allahu Ghafurun Halim</div>
+                    <p><strong>Translation:</strong> "And Allah is Forgiving and Forbearing."</p>
+                    <div class="tafsir-box">
+                        <strong>Explanation:</strong> This verse shows Allah's forbearance in overlooking people's mistakes and giving them time to repent. Ibn Kathir explains that Allah's attribute of being Al-Halim here refers to His patience with His servants despite their sins.
+                    </div>
+                </div>
 
-                <h3>2. Surah Ash-Shura 42:33</h3>
-                <p class="arabic">إِن يَشَأْ يُسْكِنِ الرِّيحَ فَيَظْلَلْنَ رَوَاكِدَ عَلَىٰ ظَهْرِهِ ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّكُلِّ صَبَّارٍ شَكُورٍ</p>
-                <p class="transliteration">In yasha' yuskinir-riha fa-yathlalna rawakida 'ala zahrih, inna fi dhalika la-ayatin li-kulli sabbarin shakur</p>
-                <p><strong>Translation:</strong> "If He wills, He can still the wind, and they would remain motionless on its surface. Indeed in that are signs for everyone patient and grateful." <a href="https://quranwbw.com/42:33" target="_blank">(Surah Ash-Shura 42:33)</a></p>
-                <p><strong>Explanation:</strong> This verse demonstrates Allah's forbearance in controlling the natural world. Ibn Kathir comments that Allah's patience in maintaining the order of creation is a sign for those who reflect.</p>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/42:33" target="_blank">Surah Ash-Shura 42:33</a>
+                    <div class="arabic">إِن يَشَأْ يُسْكِنِ الرِّيحَ فَيَظْلَلْنَ رَوَاكِدَ عَلَىٰ ظَهْرِهِ ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّكُلِّ صَبَّارٍ شَكُورٍ</div>
+                    <div class="transliteration">In yasha' yuskinir-riha fa-yathlalna rawakida 'ala zahrih, inna fi dhalika la-ayatin li-kulli sabbarin shakur</div>
+                    <p><strong>Translation:</strong> "If He wills, He can still the wind, and they would remain motionless on its surface. Indeed in that are signs for everyone patient and grateful."</p>
+                    <div class="tafsir-box">
+                        <strong>Explanation:</strong> This verse demonstrates Allah's forbearance in controlling the natural world. Ibn Kathir comments that Allah's patience in maintaining the order of creation is a sign for those who reflect.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Benefits and Reflections</h2>
-                <p>1. Recognizing Allah as Al-Halim teaches us to be patient and forbearing with others.</p>
-                <p>2. It gives us hope that Allah will forgive our sins if we repent sincerely.</p>
-                <p>3. We should emulate this attribute by controlling our anger and being patient with people's faults.</p>
-                <p>4. Understanding this name reminds us that Allah's delay in punishment is not absence but rather an opportunity for repentance.</p>
-            </div>
-
-            <div class="dua-section">
-                <h2>Du'a with Al-Halim</h2>
-                <p class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ الْحَلِيمُ الْكَرِيمُ أَنْ تَحْلُمَ عَنِّي فِي ذُنُوبِي كُلِّهَا</p>
-                <p class="transliteration">Allahumma inni as'aluka bi-annaka Anta al-Halim al-Karim an tahlima 'anni fi dhunubi kulliha</p>
-                <p><strong>Translation:</strong> "O Allah, I ask You by virtue of You being Al-Halim (the Forbearing), Al-Karim (the Generous), to overlook all my sins."</p>
-                <p><strong>Usage:</strong> This du'a can be recited when seeking Allah's forgiveness, especially after committing sins. It acknowledges Allah's forbearing nature while seeking His mercy.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Practicing Forbearance</h3>
-                <p>When angered, pause and recite "Audhu billahi minash-shaytanir-rajim" (I seek refuge with Allah from Satan the accursed) and remember Allah's attribute of being Al-Halim. Make it a habit to count to ten before reacting to provocation.</p>
-
-                <h3>2. Seeking Forgiveness</h3>
-                <p>Every night before sleeping, reflect on your day and seek forgiveness for any wrongdoings, remembering that Allah is Al-Halim who gives you time to repent. Recite "Astaghfirullah" (I seek forgiveness from Allah) 100 times.</p>
+                <h2 class="section-title">Benefits and Reflections</h2>
+                <ol>
+                    <li>Recognizing Allah as Al-Halim teaches us to be patient and forbearing with others.</li>
+                    <li>It gives us hope that Allah will forgive our sins if we repent sincerely.</li>
+                    <li>We should emulate this attribute by controlling our anger and being patient with people's faults.</li>
+                    <li>Understanding this name reminds us that Allah's delay in punishment is not absence but rather an opportunity for repentance.</li>
+                </ol>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">Seeking Allah's Forbearance</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ الْحَلِيمُ الْكَرِيمُ أَنْ تَحْلُمَ عَنِّي فِي ذُنُوبِي كُلِّهَا</div>
+                    <div class="transliteration">Allahumma inni as'aluka bi-annaka Anta al-Halim al-Karim an tahlima 'anni fi dhunubi kulliha</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You by virtue of You being Al-Halim (the Forbearing), Al-Karim (the Generous), to overlook all my sins."</p>
+                    <p><strong>Usage:</strong> This du'a can be recited when seeking Allah's forgiveness, especially after committing sins. It acknowledges Allah's forbearing nature while seeking His mercy.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Practicing Forbearance</div>
+                    <p>When angered, pause and recite "Audhu billahi minash-shaytanir-rajim" (I seek refuge with Allah from Satan the accursed) and remember Allah's attribute of being Al-Halim. Make it a habit to count to ten before reacting to provocation.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Seeking Forgiveness</div>
+                    <p>Every night before sleeping, reflect on your day and seek forgiveness for any wrongdoings, remembering that Allah is Al-Halim who gives you time to repent. Recite "Astaghfirullah" (I seek forgiveness from Allah) 100 times.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
                 <p>In his commentary on Surah Al-Baqarah 2:225, Ibn Kathir explains that Allah's attribute of being Al-Halim refers to His perfect patience with His servants despite their sins and shortcomings. He delays punishment to give them opportunity to repent.</p>
                 <p>Regarding Surah Ash-Shura 42:33, Ibn Kathir states that Allah's forbearance is manifested in His control over creation. He maintains the natural order with perfect patience, and this should serve as a lesson for believers to be patient and grateful.</p>
             </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
 
         <!-- Indonesian Content -->
-        <div id="indonesianContent" class="hidden">
-            <h1>32. Al-Halim (الحليم) - Yang Maha Penyantun, Yang Maha Sabar</h1>
-            <div class="title-source">
-                Sumber: <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">https://myislam.org/99-names-of-allah/al-haleem/</a>
+        <div id="indonesian-content">
+            <h1 class="name-title">32. Al-Halim (الحليم) - Yang Maha Penyantun, Yang Maha Sabar</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">myislam.org/99-names-of-allah/al-haleem/</a></div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
+
+            <div class="arabic">الحَلِيمُ</div>
+            <div class="transliteration">Transliterasi: Al-Halim</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Nama Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/32.%20al-halim.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
             <div class="section">
-                <p class="arabic">الحَلِيمُ</p>
-                <p class="transliteration">Al-Halim</p>
-                <p><strong>Arti:</strong> Yang Maha Penyantun, Yang Maha Lembut, Dzat yang bersikap lembut dan penyantun, menunda hukuman meskipun memiliki kekuatan penuh untuk menghukum.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan</h2>
+                <h2 class="section-title">Makna</h2>
                 <p>Al-Halim adalah Dzat yang menunjukkan kesantunan, pengendalian diri, dan kesabaran. Dia tidak terburu-buru menghukum hamba-hamba-Nya atas dosa-dosa mereka tetapi memberi mereka waktu untuk bertaubat. Kesabaran-Nya sempurna, dan Dia tidak bertindak karena tergesa-gesa atau kemarahan.</p>
                 <p>Ibnu Katsir menjelaskan dalam Tafsirnya bahwa Al-Halim adalah Dzat yang mengamati ketidaktaatan orang-orang yang durhaka dan melihat pelanggaran para pelanggar, namun Dia memberi mereka tenggang waktu dan tidak terburu-buru menghukum mereka, berharap mereka akan bertaubat.</p>
             </div>
 
             <div class="section">
-                <h2>Referensi Al-Quran</h2>
-                <h3>1. Surah Al-Baqarah 2:225</h3>
-                <p class="arabic">وَاللَّهُ غَفُورٌ حَلِيمٌ</p>
-                <p class="transliteration">Wa Allahu Ghafurun Halim</p>
-                <p><strong>Terjemahan:</strong> "Dan Allah Maha Pengampun lagi Maha Penyantun." <a href="https://quranwbw.com/2:225" target="_blank">(Surah Al-Baqarah 2:225)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini menunjukkan kesantunan Allah dalam mengabaikan kesalahan orang-orang dan memberi mereka waktu untuk bertaubat. Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Halim di sini merujuk pada kesabaran-Nya terhadap hamba-hamba-Nya meskipun mereka berdosa.</p>
+                <h2 class="section-title">Dalil (Bukti dari Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:225" target="_blank">Surah Al-Baqarah 2:225</a>
+                    <div class="arabic">وَاللَّهُ غَفُورٌ حَلِيمٌ</div>
+                    <div class="transliteration">Wa Allahu Ghafurun Halim</div>
+                    <p><strong>Terjemahan:</strong> "Dan Allah Maha Pengampun lagi Maha Penyantun."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan:</strong> Ayat ini menunjukkan kesantunan Allah dalam mengabaikan kesalahan orang-orang dan memberi mereka waktu untuk bertaubat. Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Halim di sini merujuk pada kesabaran-Nya terhadap hamba-hamba-Nya meskipun mereka berdosa.
+                    </div>
+                </div>
 
-                <h3>2. Surah Ash-Shura 42:33</h3>
-                <p class="arabic">إِن يَشَأْ يُسْكِنِ الرِّيحَ فَيَظْلَلْنَ رَوَاكِدَ عَلَىٰ ظَهْرِهِ ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّكُلِّ صَبَّارٍ شَكُورٍ</p>
-                <p class="transliteration">In yasha' yuskinir-riha fa-yathlalna rawakida 'ala zahrih, inna fi dhalika la-ayatin li-kulli sabbarin shakur</p>
-                <p><strong>Terjemahan:</strong> "Jika Dia menghendaki, Dia akan menenangkan angin, maka jadilah kapal-kapal itu terhenti di permukaan laut. Sesungguhnya pada yang demikian itu terdapat tanda-tanda (kekuasaan-Nya) bagi setiap orang yang sabar lagi bersyukur." <a href="https://quranwbw.com/42:33" target="_blank">(Surah Ash-Shura 42:33)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini menunjukkan kesantunan Allah dalam mengendalikan alam semesta. Ibnu Katsir berkomentar bahwa kesabaran Allah dalam menjaga keteraturan penciptaan adalah tanda bagi mereka yang merenungkan.</p>
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/42:33" target="_blank">Surah Ash-Shura 42:33</a>
+                    <div class="arabic">إِن يَشَأْ يُسْكِنِ الرِّيحَ فَيَظْلَلْنَ رَوَاكِدَ عَلَىٰ ظَهْرِهِ ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّكُلِّ صَبَّارٍ شَكُورٍ</div>
+                    <div class="transliteration">In yasha' yuskinir-riha fa-yathlalna rawakida 'ala zahrih, inna fi dhalika la-ayatin li-kulli sabbarin shakur</div>
+                    <p><strong>Terjemahan:</strong> "Jika Dia menghendaki, Dia akan menenangkan angin, maka jadilah kapal-kapal itu terhenti di permukaan laut. Sesungguhnya pada yang demikian itu terdapat tanda-tanda (kekuasaan-Nya) bagi setiap orang yang sabar lagi bersyukur."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan:</strong> Ayat ini menunjukkan kesantunan Allah dalam mengendalikan alam semesta. Ibnu Katsir berkomentar bahwa kesabaran Allah dalam menjaga keteraturan penciptaan adalah tanda bagi mereka yang merenungkan.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Al-Halim mengajarkan kita untuk bersabar dan penyantun terhadap orang lain.</p>
-                <p>2. Ini memberi kita harapan bahwa Allah akan mengampuni dosa-dosa kita jika kita bertaubat dengan sungguh-sungguh.</p>
-                <p>3. Kita harus meneladani sifat ini dengan mengendalikan kemarahan kita dan bersabar terhadap kesalahan orang lain.</p>
-                <p>4. Memahami nama ini mengingatkan kita bahwa penundaan hukuman Allah bukanlah ketidakhadiran melainkan kesempatan untuk bertaubat.</p>
-            </div>
-
-            <div class="dua-section">
-                <h2>Doa dengan Al-Halim</h2>
-                <p class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ الْحَلِيمُ الْكَرِيمُ أَنْ تَحْلُمَ عَنِّي فِي ذُنُوبِي كُلِّهَا</p>
-                <p class="transliteration">Allahumma inni as'aluka bi-annaka Anta al-Halim al-Karim an tahlima 'anni fi dhunubi kulliha</p>
-                <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan hak-Mu sebagai Al-Halim (Yang Maha Penyantun), Al-Karim (Yang Maha Mulia), untuk mengabaikan semua dosa-dosaku."</p>
-                <p><strong>Penggunaan:</strong> Doa ini dapat dibaca ketika memohon ampunan Allah, terutama setelah melakukan dosa. Ini mengakui sifat penyantun Allah sambil memohon rahmat-Nya.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan</h2>
-                <h3>1. Mempraktikkan Kesantunan</h3>
-                <p>Ketika marah, berhenti sejenak dan baca "Audhu billahi minash-shaytanir-rajim" (Aku berlindung kepada Allah dari godaan setan yang terkutuk) dan ingat sifat Allah sebagai Al-Halim. Biasakan untuk menghitung sampai sepuluh sebelum bereaksi terhadap provokasi.</p>
-
-                <h3>2. Memohon Ampunan</h3>
-                <p>Setiap malam sebelum tidur, renungkan hari Anda dan mohon ampunan untuk segala kesalahan, ingatlah bahwa Allah adalah Al-Halim yang memberi Anda waktu untuk bertaubat. Baca "Astaghfirullah" (Aku memohon ampun kepada Allah) 100 kali.</p>
+                <h2 class="section-title">Manfaat dan Renungan</h2>
+                <ol>
+                    <li>Mengakui Allah sebagai Al-Halim mengajarkan kita untuk bersabar dan penyantun terhadap orang lain.</li>
+                    <li>Ini memberi kita harapan bahwa Allah akan mengampuni dosa-dosa kita jika kita bertaubat dengan sungguh-sungguh.</li>
+                    <li>Kita harus meneladani sifat ini dengan mengendalikan kemarahan kita dan bersabar terhadap kesalahan orang lain.</li>
+                    <li>Memahami nama ini mengingatkan kita bahwa penundaan hukuman Allah bukanlah ketidakhadiran melainkan kesempatan untuk bertaubat.</li>
+                </ol>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Kesantunan Allah</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ الْحَلِيمُ الْكَرِيمُ أَنْ تَحْلُمَ عَنِّي فِي ذُنُوبِي كُلِّهَا</div>
+                    <div class="transliteration">Allahumma inni as'aluka bi-annaka Anta al-Halim al-Karim an tahlima 'anni fi dhunubi kulliha</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan hak-Mu sebagai Al-Halim (Yang Maha Penyantun), Al-Karim (Yang Maha Mulia), untuk mengabaikan semua dosa-dosaku."</p>
+                    <p><strong>Penggunaan:</strong> Doa ini dapat dibaca ketika memohon ampunan Allah, terutama setelah melakukan dosa. Ini mengakui sifat penyantun Allah sambil memohon rahmat-Nya.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Mempraktikkan Kesantunan</div>
+                    <p>Ketika marah, berhenti sejenak dan baca "Audhu billahi minash-shaytanir-rajim" (Aku berlindung kepada Allah dari godaan setan yang terkutuk) dan ingat sifat Allah sebagai Al-Halim. Biasakan untuk menghitung sampai sepuluh sebelum bereaksi terhadap provokasi.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Memohon Ampunan</div>
+                    <p>Setiap malam sebelum tidur, renungkan hari Anda dan mohon ampunan untuk segala kesalahan, ingatlah bahwa Allah adalah Al-Halim yang memberi Anda waktu untuk bertaubat. Baca "Astaghfirullah" (Aku memohon ampun kepada Allah) 100 kali.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
                 <p>Dalam tafsirnya tentang Surah Al-Baqarah 2:225, Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Halim merujuk pada kesabaran-Nya yang sempurna terhadap hamba-hamba-Nya meskipun mereka berdosa dan memiliki kekurangan. Dia menunda hukuman untuk memberi mereka kesempatan bertaubat.</p>
                 <p>Mengenai Surah Ash-Shura 42:33, Ibnu Katsir menyatakan bahwa kesantunan Allah terwujud dalam kendali-Nya atas penciptaan. Dia mempertahankan tatanan alam dengan kesabaran yang sempurna, dan ini harus menjadi pelajaran bagi orang-orang beriman untuk bersabar dan bersyukur.</p>
             </div>
 
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.remove('hidden');
-            document.getElementById('indonesianContent').classList.add('hidden');
+        // Set default language to Indonesian and hide transliteration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('languagePreference');
+            if (savedLang === 'english') {
+                showEnglish();
+            } else {
+                showIndonesian();
+            }
+
+            // Check for saved transliteration preference
+            const savedTranslit = localStorage.getItem('transliterationPreference');
+            if (savedTranslit === 'show') {
+                showTransliteration();
+            } else {
+                hideTransliteration();
+            }
         });
 
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.add('hidden');
-            document.getElementById('indonesianContent').classList.remove('hidden');
+        // Language Toggle
+        function showEnglish() {
+            document.getElementById('english-content').classList.remove('hidden');
+            document.getElementById('indonesian-content').classList.add('hidden');
+            document.getElementById('languageToggle').textContent = 'Switch to Indonesian';
+            localStorage.setItem('languagePreference', 'english');
+        }
+
+        function showIndonesian() {
+            document.getElementById('english-content').classList.add('hidden');
+            document.getElementById('indonesian-content').classList.remove('hidden');
+            document.getElementById('languageToggle').textContent = 'Switch to English';
+            localStorage.setItem('languagePreference', 'indonesian');
+        }
+
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            if (document.getElementById('indonesian-content').classList.contains('hidden')) {
+                showIndonesian();
+            } else {
+                showEnglish();
+            }
         });
 
         // Transliteration Toggle
-        const transliterations = document.querySelectorAll('.transliteration');
-        
-        document.getElementById('showTransliteration').addEventListener('click', function() {
+        function showTransliteration() {
+            const transliterations = document.querySelectorAll('.transliteration');
             transliterations.forEach(el => el.style.display = 'block');
-        });
+            document.getElementById('transliterationToggle').textContent = 'Hide Transliteration';
+            localStorage.setItem('transliterationPreference', 'show');
+        }
 
-        document.getElementById('hideTransliteration').addEventListener('click', function() {
+        function hideTransliteration() {
+            const transliterations = document.querySelectorAll('.transliteration');
             transliterations.forEach(el => el.style.display = 'none');
+            document.getElementById('transliterationToggle').textContent = 'Show Transliteration';
+            localStorage.setItem('transliterationPreference', 'hide');
+        }
+
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            if (this.textContent === 'Hide Transliteration') {
+                hideTransliteration();
+            } else {
+                showTransliteration();
+            }
         });
 
         // Back to top
@@ -300,10 +450,6 @@
                 window.scrollTo({top: 0, behavior: 'smooth'});
             });
         });
-
-        // Initially show English content
-        document.getElementById('englishContent').classList.remove('hidden');
-        document.getElementById('indonesianContent').classList.add('hidden');
     </script>
 </body>
 </html>
