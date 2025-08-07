@@ -116,10 +116,10 @@
 </head>
 <body>
 
-  <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
+  <div class="language-toggle" id="languageToggle">Switch to English</div>
 
   <!-- English Content -->
-  <div id="english-content">
+  <div id="english-content" class="hidden">
     <div class="header">
       <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">﷽</div>
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> — In the name of Allah, the Most Gracious, the Most Merciful</div>
@@ -246,8 +246,8 @@
     </div>
   </div>
 
-  <!-- Indonesian Content (Hidden by Default) -->
-  <div id="indonesian-content" class="hidden">
+  <!-- Indonesian Content (Shown by Default) -->
+  <div id="indonesian-content">
     <div class="header">
       <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">﷽</div>
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> — Dengan nama Allah, Yang Maha Pengasih, Maha Penyayang</div>
@@ -379,6 +379,29 @@
   </footer>
 
   <script>
+    // Check for saved language preference or set default to Indonesian
+    function getPreferredLanguage() {
+      return localStorage.getItem('language') || 'indonesian';
+    }
+
+    // Set the initial language based on preference
+    function setInitialLanguage() {
+      const language = getPreferredLanguage();
+      const englishContent = document.getElementById('english-content');
+      const indonesianContent = document.getElementById('indonesian-content');
+      const toggleButton = document.getElementById('languageToggle');
+
+      if (language === 'english') {
+        englishContent.classList.remove('hidden');
+        indonesianContent.classList.add('hidden');
+        toggleButton.textContent = 'Switch to Indonesian';
+      } else {
+        englishContent.classList.add('hidden');
+        indonesianContent.classList.remove('hidden');
+        toggleButton.textContent = 'Switch to English';
+      }
+    }
+
     // Language Toggle
     document.getElementById('languageToggle').addEventListener('click', function() {
       const englishContent = document.getElementById('english-content');
@@ -388,10 +411,12 @@
         englishContent.classList.remove('hidden');
         indonesianContent.classList.add('hidden');
         this.textContent = 'Switch to Indonesian';
+        localStorage.setItem('language', 'english');
       } else {
         englishContent.classList.add('hidden');
         indonesianContent.classList.remove('hidden');
         this.textContent = 'Switch to English';
+        localStorage.setItem('language', 'indonesian');
       }
     });
 
@@ -420,6 +445,9 @@
         }
       }
     }
+
+    // Initialize the page with the preferred language
+    document.addEventListener('DOMContentLoaded', setInitialLanguage);
   </script>
 </body>
 </html>
