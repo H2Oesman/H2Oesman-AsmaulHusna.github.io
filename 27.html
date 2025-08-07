@@ -7,303 +7,512 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            line-height: 1.8;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            color: #2e7d32;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', Arial, sans-serif;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
         }
         .section {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn {
-            background-color: #2e7d32;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-btn:hover {
-            background-color: #1b5e20;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 20px;
-            color: #2e7d32;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f5e9;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .dua-box {
-            background-color: #f1f8e9;
-            padding: 15px;
-            border-radius: 5px;
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
             margin: 15px 0;
         }
-        .source {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 30px;
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn" id="englishBtn">English</button>
-            <button class="toggle-btn" id="indonesianBtn">Indonesian</button>
-            <button class="toggle-btn" id="toggleTransliteration">Toggle Transliteration</button>
-        </div>
+        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
 
-        <!-- English Version -->
-        <div id="englishVersion">
-            <h1>27. Al-Basir (The All-Seeing)</h1>
+        <!-- English Content -->
+        <div id="english-content">
+            <h1 class="name-title">27. Al-Basir (The All-Seeing)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-baseer" target="_blank">myislam.org/99-names-of-allah/al-baseer/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <div class="bonus">
-                <p>Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a></p>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <!-- Audio Player Added Here -->
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Name</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_28Baseer.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-baseer" target="_blank">https://myislam.org/99-names-of-allah/al-baseer</a></p>
-            </div>
             <div class="arabic">الْبَصِيرُ</div>
-            <p class="transliteration">Transliteration: Al-Basir</p>
-            <p><strong>Meaning:</strong> The All-Seeing, The Ever-Watching, The One who sees all things perfectly</p>
+            <div class="transliteration">Transliteration: Al-Basir</div>
+
+            <!-- Audio Player Added Here -->
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/27.%20al-basir.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
             <div class="section">
-                <h2>Explanation</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Basir is one of Allah's names that demonstrates His perfect and complete vision. Allah sees everything - every action, every movement, every hidden deed, and even what is in the hearts. Nothing is hidden from His sight, whether in darkness or light, in private or public.</p>
                 
                 <p>This name appears frequently in the Quran, often paired with As-Sami' (The All-Hearing), showing Allah's complete awareness. Unlike human sight which is limited, Allah's vision encompasses all things simultaneously without any decrease in His ability to see. He sees all of creation at once without any confusion.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence)</h2>
-                <div class="arabic">إِنَّ اللَّهَ كَانَ سَمِيعًا بَصِيرًا</div>
-                <p class="transliteration">Transliteration: Inna Allaha kana sameeAAan baseeran</p>
-                <p><strong>Translation:</strong> "Indeed, Allah is ever Hearing and Seeing." (<a href="https://quranwbw.com/4:58" target="_blank">Surah An-Nisa 4:58</a>)</p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">وَهُوَ مَعَكُمْ أَيْنَ مَا كُنْتُمْ ۚ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ</div>
-                <p class="transliteration">Transliteration: Wahuwa maAAakum ayna ma kuntum waAllahu bima taAAmaloona baseerun</p>
-                <p><strong>Translation:</strong> "And He is with you wherever you are. And Allah, of what you do, is Seeing." (<a href="https://quranwbw.com/57:4" target="_blank">Surah Al-Hadid 57:4</a>)</p>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/4:58" target="_blank">Surah An-Nisa 4:58</a>
+                    <div class="arabic">إِنَّ اللَّهَ كَانَ سَمِيعًا بَصِيرًا</div>
+                    <div class="transliteration">Inna Allaha kana sameeAAan baseeran</div>
+                    <p>"Indeed, Allah is ever Hearing and Seeing."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/4/58/" target="_blank">Tafsir Ibn Kathir</a>:</strong> In his tafsir of this verse, Ibn Kathir explains that Allah's attribute as Al-Basir means He sees all actions of His creation, whether done openly or secretly. This should motivate believers to perform good deeds and avoid evil, knowing they are always under Allah's watchful sight.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/57:4" target="_blank">Surah Al-Hadid 57:4</a>
+                    <div class="arabic">وَهُوَ مَعَكُمْ أَيْنَ مَا كُنْتُمْ ۚ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ</div>
+                    <div class="transliteration">Wahuwa maAAakum ayna ma kuntum waAllahu bima taAAmaloona baseerun</div>
+                    <p>"And He is with you wherever you are. And Allah, of what you do, is Seeing."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/57/4/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibn Kathir comments that this verse demonstrates Allah's perfect knowledge and vision encompassing all places and times. His being "with us" refers to His knowledge and awareness, not physical proximity, as He is above His creation.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:6502" target="_blank">Sahih Bukhari 6502</a>
+                    <div class="arabic">إِنَّ اللَّهَ لاَ يَخْفَى عَلَيْهِ شَىْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ</div>
+                    <div class="transliteration">Inna Allaha la yakhfa 'alayhi shay'un fi al-ardi wa la fi as-sama'</div>
+                    <p>"Nothing on earth or in heaven is hidden from Allah."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith complements the understanding of Al-Basir by showing that Allah's vision encompasses everything in creation without exception.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his tafsir of Surah An-Nisa (4:58), Ibn Kathir explains that Allah's attribute as Al-Basir means He sees all actions of His creation, whether done openly or secretly. This should motivate believers to perform good deeds and avoid evil, knowing they are always under Allah's watchful sight.</p>
-                
-                <p>Regarding Surah Al-Hadid (57:4), Ibn Kathir comments that this verse demonstrates Allah's perfect knowledge and vision encompassing all places and times. His being "with us" refers to His knowledge and awareness, not physical proximity, as He is above His creation.</p>
-            </div>
-
-            <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Divine Vision Awareness</div>
                     <div class="arabic">اللَّهُمَّ أَنْتَ الْبَصِيرُ الْعَلِيمُ</div>
-                    <p class="transliteration">Transliteration: Allahumma Anta al-Baseeru al-'Aleem</p>
+                    <div class="transliteration">Allahumma Anta al-Baseeru al-'Aleem</div>
                     <p><strong>Translation:</strong> "O Allah, You are the All-Seeing, the All-Knowing."</p>
                     <p><strong>Benefits:</strong> This du'a affirms Allah's perfect vision and knowledge, acknowledging that He sees our circumstances and knows what is best for us.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">For Life According to Divine Knowledge</div>
                     <div class="arabic">اللَّهُمَّ بِعِلْمِكَ الْغَيْبَ وَقُدْرَتِكَ عَلَى الْخَلْقِ أَحْيِنِي مَا عَلِمْتَ الْحَيَاةَ خَيْرًا لِي</div>
-                    <p class="transliteration">Transliteration: Allahumma bi'ilmika al-ghayba wa qudratika 'ala al-khalqi ahyini ma 'alimta al-hayata khayran li</p>
+                    <div class="transliteration">Allahumma bi'ilmika al-ghayba wa qudratika 'ala al-khalqi ahyini ma 'alimta al-hayata khayran li</div>
                     <p><strong>Translation:</strong> "O Allah, by Your knowledge of the unseen and Your power over creation, keep me alive so long as You know life is good for me." (Sunan An-Nasa'i)</p>
-                    <p><strong>Benefits:</strong> This comprehensive du'a acknowledges Allah's all-seeing knowledge of the unseen while making a profound request for what is truly beneficial.</p>
+                    <p><strong>Source:</strong> This comprehensive du'a acknowledges Allah's all-seeing knowledge of the unseen while making a profound request for what is truly beneficial.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Mindful Actions</h3>
-                <p>The Prophet (peace be upon him) said: "Have taqwa (consciousness) of Allah wherever you are." (Sunan At-Tirmidhi)</p>
-                <p><strong>Practice:</strong> Be conscious that Allah sees every action you take, whether in public or private. Let this awareness guide you to righteous deeds.</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Mindful Actions Practice</div>
+                    <p>Daily practice to cultivate awareness of Allah's all-seeing nature:</p>
+                    <ol>
+                        <li>Before any action, pause and remember that Allah sees you</li>
+                        <li>Use the Prophetic reminder: "Have taqwa (consciousness) of Allah wherever you are" (Sunan At-Tirmidhi)</li>
+                        <li>End each day with reflection on actions done in private</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Purifies actions and increases mindfulness</li>
+                        <li>Protects from hidden sins and hypocrisy</li>
+                        <li>Develops constant awareness of Allah's presence</li>
+                    </ul>
+                </div>
 
-                <h3>2. Sincerity in Worship</h3>
-                <p>Allah says: "And they were not commanded except to worship Allah, being sincere to Him in religion." (<a href="https://quranwbw.com/98:5" target="_blank">Surah Al-Bayyinah 98:5</a>)</p>
-                <p><strong>Practice:</strong> Purify your intentions in all acts of worship, knowing Allah sees not just your actions but your inner motives as well.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Sincerity Cultivation Ritual</div>
+                    <p>Weekly practice to strengthen sincerity in worship:</p>
+                    <ol>
+                        <li>Choose one act of worship each week to focus on sincerity</li>
+                        <li>Before performing it, say: "O Allah, make this purely for Your Face"</li>
+                        <li>After completing it, renew intention without seeking praise</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "Actions are judged by intentions" (Sahih Bukhari). This practice transforms understanding of Allah's vision into sincere worship.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Reflection</h2>
-                <p>Understanding Allah as Al-Basir should:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Basir through four dimensions of divine vision:</p>
                 <ol>
-                    <li>Make us mindful of everything we do, even in private</li>
-                    <li>Comfort us that Allah sees our struggles and hardships</li>
-                    <li>Encourage us to perform good deeds even when no one sees</li>
-                    <li>Warn us against hidden sins and hypocrisy</li>
-                    <li>Increase our sincerity in worship and daily life</li>
+                    <li><strong>Universal Vision:</strong>
+                        <ul>
+                            <li>Allah sees all actions simultaneously (<a href="https://quranwbw.com/4:58" target="_blank">4:58</a>)</li>
+                            <li>Nothing is hidden in darkness or light (<a href="https://quranwbw.com/6:103" target="_blank">6:103</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Heart Vision:</strong>
+                        <ul>
+                            <li>Allah sees unspoken intentions and thoughts (<a href="https://quranwbw.com/40:19" target="_blank">40:19</a>)</li>
+                            <li>Knows what is more hidden than secrets (<a href="https://quranwbw.com/20:7" target="_blank">20:7</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Judicial Vision:</strong>
+                        <ul>
+                            <li>Allah sees all testimony and disputes (<a href="https://quranwbw.com/58:1" target="_blank">58:1</a>)</li>
+                            <li>Will judge based on complete knowledge (<a href="https://quranwbw.com/17:36" target="_blank">17:36</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Compassionate Vision:</strong>
+                        <ul>
+                            <li>Allah sees our struggles and hardships (<a href="https://quranwbw.com/2:286" target="_blank">2:286</a>)</li>
+                            <li>Watches over us with care (<a href="https://quranwbw.com/57:4" target="_blank">57:4</a>)</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>In Surah Al-Mulk (<a href="https://quranwbw.com/67:14" target="_blank">67:14</a>), Allah rhetorically asks "Does He who created not know?" affirming that His perfect vision is inherent in His creative power.</p>
             </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-
-            <div class="source">
-                <p>Source: <a href="https://myislam.org/99-names-of-allah/al-baseer" target="_blank">https://myislam.org/99-names-of-allah/al-baseer</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
 
-        <!-- Indonesian Version -->
-        <div id="indonesianVersion" class="hidden">
-            <h1>27. Al-Basir (Maha Melihat)</h1>
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-basir" target="_blank">https://myislam.org/99-names-of-allah/al-basir</a></p>
-            </div>
+        <!-- Indonesian Content (Hidden by Default) -->
+        <div id="indonesian-content" class="hidden">
+            <h1 class="name-title">27. Al-Basir (Maha Melihat)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-basir" target="_blank">myislam.org/99-names-of-allah/al-basir/</a></div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
 
             <div class="arabic">الْبَصِيرُ</div>
-            <p class="transliteration">Transliterasi: Al-Basir</p>
-            <p><strong>Arti:</strong> Yang Maha Melihat, Yang Selalu Mengawasi, Yang melihat segala sesuatu dengan sempurna</p>
+            <div class="transliteration">Transliterasi: Al-Basir</div>
+
+            <!-- Audio Player Added Here for Indonesian Content -->
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Nama Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/27.%20al-basir.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
 
             <div class="section">
-                <h2>Penjelasan</h2>
+                <h2 class="section-title">Makna</h2>
                 <p>Al-Basir adalah salah satu nama Allah yang menunjukkan penglihatan-Nya yang sempurna dan lengkap. Allah melihat segala sesuatu - setiap tindakan, setiap gerakan, setiap perbuatan tersembunyi, bahkan apa yang ada dalam hati. Tidak ada yang tersembunyi dari penglihatan-Nya, baik dalam kegelapan maupun terang, secara pribadi maupun publik.</p>
                 
                 <p>Nama ini sering muncul dalam Al-Quran, sering dipasangkan dengan As-Sami' (Yang Maha Mendengar), menunjukkan kesadaran penuh Allah. Tidak seperti penglihatan manusia yang terbatas, penglihatan Allah meliputi segala sesuatu secara bersamaan tanpa berkurang kemampuan-Nya untuk melihat. Dia melihat seluruh ciptaan sekaligus tanpa kebingungan.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Bukti)</h2>
-                <div class="arabic">إِنَّ اللَّهَ كَانَ سَمِيعًا بَصِيرًا</div>
-                <p class="transliteration">Transliterasi: Inna Allaha kana sameeAAan baseeran</p>
-                <p><strong>Terjemahan:</strong> "Sesungguhnya Allah adalah Maha Mendengar lagi Maha Melihat." (<a href="https://quranwbw.com/4:58" target="_blank">Surah An-Nisa 4:58</a>)</p>
+                <h2 class="section-title">Dalil (Bukti dari Quran & Hadits)</h2>
                 
-                <div class="arabic">وَهُوَ مَعَكُمْ أَيْنَ مَا كُنْتُمْ ۚ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ</div>
-                <p class="transliteration">Transliterasi: Wahuwa maAAakum ayna ma kuntum waAllahu bima taAAmaloona baseerun</p>
-                <p><strong>Terjemahan:</strong> "Dan Dia bersama kamu di mana saja kamu berada. Dan Allah Maha Melihat apa yang kamu kerjakan." (<a href="https://quranwbw.com/57:4" target="_blank">Surah Al-Hadid 57:4</a>)</p>
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/4:58" target="_blank">Surah An-Nisa 4:58</a>
+                    <div class="arabic">إِنَّ اللَّهَ كَانَ سَمِيعًا بَصِيرًا</div>
+                    <div class="transliteration">Inna Allaha kana sameeAAan baseeran</div>
+                    <p>"Sesungguhnya Allah adalah Maha Mendengar lagi Maha Melihat."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/4/58/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Dalam tafsirnya tentang ayat ini, Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Basir berarti Dia melihat semua tindakan ciptaan-Nya, baik dilakukan secara terang-terangan maupun rahasia. Ini seharusnya memotivasi orang beriman untuk melakukan perbuatan baik dan menghindari kejahatan, mengetahui mereka selalu dalam pengawasan Allah.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/57:4" target="_blank">Surah Al-Hadid 57:4</a>
+                    <div class="arabic">وَهُوَ مَعَكُمْ أَيْنَ مَا كُنْتُمْ ۚ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ</div>
+                    <div class="transliteration">Wahuwa maAAakum ayna ma kuntum waAllahu bima taAAmaloona baseerun</div>
+                    <p>"Dan Dia bersama kamu di mana saja kamu berada. Dan Allah Maha Melihat apa yang kamu kerjakan."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/57/4/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibnu Katsir berkomentar bahwa ayat ini menunjukkan pengetahuan dan penglihatan sempurna Allah yang meliputi semua tempat dan waktu. Kebersamaan-Nya "dengan kita" merujuk pada pengetahuan dan kesadaran-Nya, bukan kedekatan fisik, karena Dia berada di atas ciptaan-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:6502" target="_blank">Sahih Bukhari 6502</a>
+                    <div class="arabic">إِنَّ اللَّهَ لاَ يَخْفَى عَلَيْهِ شَىْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ</div>
+                    <div class="transliteration">Inna Allaha la yakhfa 'alayhi shay'un fi al-ardi wa la fi as-sama'</div>
+                    <p>"Tidak ada sesuatu pun di bumi atau di langit yang tersembunyi dari Allah."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Hadits ini melengkapi pemahaman tentang Al-Basir dengan menunjukkan bahwa penglihatan Allah meliputi segala sesuatu dalam ciptaan tanpa terkecuali.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah An-Nisa (4:58), Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Basir berarti Dia melihat semua tindakan ciptaan-Nya, baik dilakukan secara terang-terangan maupun rahasia. Ini seharusnya memotivasi orang beriman untuk melakukan perbuatan baik dan menghindari kejahatan, mengetahui mereka selalu dalam pengawasan Allah.</p>
-                
-                <p>Mengenai Surah Al-Hadid (57:4), Ibnu Katsir berkomentar bahwa ayat ini menunjukkan pengetahuan dan penglihatan sempurna Allah yang meliputi semua tempat dan waktu. Kebersamaan-Nya "dengan kita" merujuk pada pengetahuan dan kesadaran-Nya, bukan kedekatan fisik, karena Dia berada di atas ciptaan-Nya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa (Permohonan)</h2>
-                <div class="dua-box">
+                <h2 class="section-title">Doa (Permohonan)</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Kesadaran akan Penglihatan Ilahi</div>
                     <div class="arabic">اللَّهُمَّ أَنْتَ الْبَصِيرُ الْعَلِيمُ</div>
-                    <p class="transliteration">Transliterasi: Allahumma Anta al-Baseeru al-'Aleem</p>
+                    <div class="transliteration">Allahumma Anta al-Baseeru al-'Aleem</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Yang Maha Melihat, Yang Maha Mengetahui."</p>
                     <p><strong>Manfaat:</strong> Doa ini menegaskan penglihatan dan pengetahuan sempurna Allah, mengakui bahwa Dia melihat keadaan kita dan mengetahui apa yang terbaik untuk kita.</p>
                 </div>
 
-                <div class="dua-box">
+                <div class="dua">
+                    <div class="dua-title">Untuk Hidup Sesuai Pengetahuan Ilahi</div>
                     <div class="arabic">اللَّهُمَّ بِعِلْمِكَ الْغَيْبَ وَقُدْرَتِكَ عَلَى الْخَلْقِ أَحْيِنِي مَا عَلِمْتَ الْحَيَاةَ خَيْرًا لِي</div>
-                    <p class="transliteration">Transliterasi: Allahumma bi'ilmika al-ghayba wa qudratika 'ala al-khalqi ahyini ma 'alimta al-hayata khayran li</p>
+                    <div class="transliteration">Allahumma bi'ilmika al-ghayba wa qudratika 'ala al-khalqi ahyini ma 'alimta al-hayata khayran li</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, dengan pengetahuan-Mu tentang yang gaib dan kekuasaan-Mu atas ciptaan, hidupkanlah aku selama Engkau tahu kehidupan itu baik bagiku." (Sunan An-Nasa'i)</p>
-                    <p><strong>Manfaat:</strong> Doa komprehensif ini mengakui pengetahuan Allah yang maha melihat tentang yang gaib sambil mengajukan permintaan mendalam untuk apa yang benar-benar bermanfaat.</p>
+                    <p><strong>Sumber:</strong> Doa komprehensif ini mengakui pengetahuan Allah yang maha melihat tentang yang gaib sambil mengajukan permintaan mendalam untuk apa yang benar-benar bermanfaat.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Praktik)</h2>
-                <h3>1. Tindakan yang Sadar</h3>
-                <p>Nabi (shallallahu 'alaihi wasallam) bersabda: "Bertakwalah kepada Allah di mana pun kamu berada." (Sunan At-Tirmidzi)</p>
-                <p><strong>Praktik:</strong> Sadarilah bahwa Allah melihat setiap tindakan yang kamu lakukan, baik di depan umum maupun secara pribadi. Biarkan kesadaran ini membimbingmu pada perbuatan baik.</p>
+                <h2 class="section-title">Amalan (Praktik)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Tindakan Sadar</div>
+                    <p>Praktik harian untuk menumbuhkan kesadaran akan sifat Allah yang Maha Melihat:</p>
+                    <ol>
+                        <li>Sebelum melakukan tindakan apa pun, berhenti sejenak dan ingat bahwa Allah melihatmu</li>
+                        <li>Gunakan pengingat Nabi: "Bertakwalah kepada Allah di mana pun kamu berada" (Sunan At-Tirmidzi)</li>
+                        <li>Akhiri setiap hari dengan merenungkan tindakan yang dilakukan secara pribadi</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Memurnikan tindakan dan meningkatkan kesadaran</li>
+                        <li>Melindungi dari dosa tersembunyi dan kemunafikan</li>
+                        <li>Mengembangkan kesadaran konstan akan kehadiran Allah</li>
+                    </ul>
+                </div>
 
-                <h3>2. Keikhlasan dalam Beribadah</h3>
-                <p>Allah berfirman: "Padahal mereka tidak disuruh kecuali supaya menyembah Allah dengan memurnikan ketaatan kepada-Nya dalam (menjalankan) agama." (<a href="https://quranwbw.com/98:5" target="_blank">Surah Al-Bayyinah 98:5</a>)</p>
-                <p><strong>Praktik:</strong> Murnikan niatmu dalam semua ibadah, mengetahui Allah melihat tidak hanya tindakanmu tetapi juga motif batinmu.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Kultivasi Keikhlasan</div>
+                    <p>Praktik mingguan untuk memperkuat keikhlasan dalam ibadah:</p>
+                    <ol>
+                        <li>Pilih satu ibadah setiap minggu untuk fokus pada keikhlasan</li>
+                        <li>Sebelum melakukannya, ucapkan: "Ya Allah, jadikan ini murni untuk Wajah-Mu"</li>
+                        <li>Setelah menyelesaikannya, perbarui niat tanpa mencari pujian</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Nabi (ﷺ) bersabda: "Amal itu tergantung niat" (Sahih Bukhari). Praktik ini mengubah pemahaman tentang penglihatan Allah menjadi ibadah yang ikhlas.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Renungan</h2>
-                <p>Memahami Allah sebagai Al-Basir seharusnya:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
+                <p>Ibnu Katsir menjelaskan Al-Basir melalui empat dimensi penglihatan ilahi:</p>
                 <ol>
-                    <li>Membuat kita sadar akan segala yang kita lakukan, bahkan secara pribadi</li>
-                    <li>Menghibur kita bahwa Allah melihat perjuangan dan kesulitan kita</li>
-                    <li>Mendorong kita untuk melakukan perbuatan baik bahkan ketika tidak ada yang melihat</li>
-                    <li>Memperingatkan kita terhadap dosa tersembunyi dan kemunafikan</li>
-                    <li>Meningkatkan keikhlasan kita dalam ibadah dan kehidupan sehari-hari</li>
+                    <li><strong>Penglihatan Universal:</strong>
+                        <ul>
+                            <li>Allah melihat semua tindakan secara bersamaan (<a href="https://quranwbw.com/4:58" target="_blank">4:58</a>)</li>
+                            <li>Tidak ada yang tersembunyi dalam kegelapan atau terang (<a href="https://quranwbw.com/6:103" target="_blank">6:103</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penglihatan Hati:</strong>
+                        <ul>
+                            <li>Allah melihat niat dan pikiran yang tidak terucapkan (<a href="https://quranwbw.com/40:19" target="_blank">40:19</a>)</li>
+                            <li>Mengetahui apa yang lebih tersembunyi daripada rahasia (<a href="https://quranwbw.com/20:7" target="_blank">20:7</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penglihatan Yudisial:</strong>
+                        <ul>
+                            <li>Allah melihat semua kesaksian dan perselisihan (<a href="https://quranwbw.com/58:1" target="_blank">58:1</a>)</li>
+                            <li>Akan menghakimi berdasarkan pengetahuan lengkap (<a href="https://quranwbw.com/17:36" target="_blank">17:36</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penglihatan Penuh Kasih:</strong>
+                        <ul>
+                            <li>Allah melihat perjuangan dan kesulitan kita (<a href="https://quranwbw.com/2:286" target="_blank">2:286</a>)</li>
+                            <li>Mengawasi kita dengan penuh perhatian (<a href="https://quranwbw.com/57:4" target="_blank">57:4</a>)</li>
+                        </ul>
+                    </li>
                 </ol>
+                <p>Dalam Surah Al-Mulk (<a href="https://quranwbw.com/67:14" target="_blank">67:14</a>), Allah bertanya secara retoris "Apakah Dia yang menciptakan tidak mengetahui?" menegaskan bahwa penglihatan sempurna-Nya melekat pada kekuatan kreatif-Nya.</p>
             </div>
 
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
-
-            <div class="source">
-                <p>Sumber: <a href="https://myislam.org/99-names-of-allah/al-basir" target="_blank">https://myislam.org/99-names-of-allah/al-basir</a></p>
-            </div>
+            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
         // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.remove('hidden');
-            document.getElementById('indonesianVersion').classList.add('hidden');
-        });
-        
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishVersion').classList.add('hidden');
-            document.getElementById('indonesianVersion').classList.remove('hidden');
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+            }
         });
 
         // Transliteration Toggle
-        document.getElementById('toggleTransliteration').addEventListener('click', function() {
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(item => {
-                if (item.style.display === 'none') {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            
+            if (this.textContent === 'Hide Transliteration') {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+            }
         });
-
-        // Back to Top
-        const backToTopLinks = document.querySelectorAll('.back-to-top');
-        backToTopLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Set English as default
-        document.getElementById('englishVersion').classList.remove('hidden');
     </script>
 </body>
 </html>
