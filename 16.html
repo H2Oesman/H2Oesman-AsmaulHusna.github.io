@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -170,22 +171,181 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">16. Al-Wahhab (Maha Pemberi Karunia)</h1>
+            <div class="name-source"><strong>Sumber:</strong> 
+                <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>, 
+                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>
+            </div>
+
+            <div class="arabic">ٱلْوَهَّابُ</div>
+            <div class="transliteration">Transliterasi: Al-Wahhab</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/16.%20al-wahhab.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Wahhab berasal dari akar kata w-h-b (و-ه-ب) yang berarti "memberi" atau "menganugerahkan". Menurut Kementerian Agama RI, nama ini menunjukkan bahwa Allah SWT adalah Dzat yang Maha Memberi segala bentuk karunia dan nikmat tanpa diminta dan tanpa mengharap balasan.</p>
+                <p>NU Online menjelaskan: "Al-Wahhab adalah Dzat yang memberikan segala kebutuhan makhluk-Nya, baik yang diminta maupun tidak. Karunia-Nya meliputi segala sesuatu, dari rezeki, kesehatan, hingga petunjuk dan hidayah."</p>
+                <p>Dalam kitab <em>Al-Maqshad al-Asna fi Syarh Asma' Allah al-Husna</em> karya Imam Al-Ghazali dijelaskan bahwa Al-Wahhab mengandung makna:</p>
+                <ul>
+                    <li><strong>Pemberi yang Maha Dermawan:</strong> Memberikan tanpa diminta dan tanpa pamrih</li>
+                    <li><strong>Pemberi yang Maha Pemurah:</strong> Memberikan dengan kelapangan dan kemurahan hati</li>
+                    <li><strong>Pemberi yang Maha Sempurna:</strong> Pemberian-Nya selalu tepat dan sesuai kebutuhan</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/38:9" target="_blank">Surah Sad 38:9</a>
+                    <div class="arabic">أَمْ عِندَهُمْ خَزَآئِنُ رَحْمَةِ رَبِّكَ ٱلْعَزِيزِ ٱلْوَهَّابِ</div>
+                    <div class="transliteration">Am 'indahum khazā'inu raḥmati rabbika al-'azīzi al-wahhāb</div>
+                    <p>"Atau apakah mereka mempunyai perbendaharaan rahmat Tuhanmu Yang Maha Perkasa lagi Maha Pemberi?"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menegaskan bahwa semua rahmat dan karunia hanya berasal dari Allah SWT sebagai Al-Wahhab, bukan dari sumber lainnya. Perbendaharaan rahmat-Nya tidak akan pernah habis.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/3:8" target="_blank">Surah Al-Imran 3:8</a>
+                    <div class="arabic">رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ ٱلْوَهَّابُ</div>
+                    <div class="transliteration">Rabbanā lā tuzigh qulūbanā ba'da idh hadaytanā wa hab lanā min ladunka raḥmah, innaka anta al-wahhāb</div>
+                    <p>"Ya Tuhan kami, janganlah Engkau condongkan hati kami kepada kesesatan setelah Engkau beri petunjuk kepada kami, dan karuniakanlah kepada kami rahmat dari sisi-Mu. Sesungguhnya Engkau Maha Pemberi."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Doa ini diajarkan dalam Al-Quran sebagai contoh bagaimana memohon kepada Allah dengan menyebut nama-Nya Al-Wahhab, khususnya dalam meminta petunjuk dan rahmat.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/ibnmajah:57" target="_blank">Sunan Ibn Majah 57</a>
+                    <div class="arabic">مَنْ تَصَدَّقَ بِعَدْلِ تَمْرَةٍ مِنْ كَسْبٍ طَيِّبٍ وَلاَ يَقْبَلُ اللَّهُ إِلاَّ الطَّيِّبَ وَإِنَّ اللَّهَ يَتَقَبَّلُهَا بِيَمِينِهِ ثُمَّ يُرَبِّيهَا لِصَاحِبِهِ كَمَا يُرَبِّى أَحَدُكُمْ فَلُوَّهُ حَتَّى تَكُونَ مِثْلَ الْجَبَلِ</div>
+                    <div class="transliteration">Man taṣaddaqa bi-'adli tamratin min kasbin ṭayyibin wa lā yaqbalullāhu illā ṭ-ṭayyib, wa innallāha yataqabbaluhā biyamīnihi thumma yurabbīhā liṣāḥibihī kamā yurabbī aḥadukum fallūhu ḥattā takūna mithla l-jabal</div>
+                    <p>"Barangsiapa bersedekah senilai sebutir kurma dari penghasilan yang baik - dan Allah tidak menerima kecuali yang baik - Allah akan menerimanya dengan tangan kanan-Nya dan mengembangkannya untuk pemberinya, seperti salah seorang dari kalian mengembangkan anak kudanya, hingga menjadi seperti gunung."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan:</strong> Hadits ini menunjukkan bagaimana Allah sebagai Al-Wahhab melipatgandakan pemberian kecil kita menjadi pahala yang besar, melebihi apa yang bisa kita bayangkan.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Hati yang Bersih dan Jiwa yang Tenang</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ الْوَهَّابُ أَنْ تَهَبَ لِي قَلْبًا سَلِيمًا وَنَفْسًا مُطْمَئِنَّةً</div>
+                    <div class="transliteration">Allāhumma innī as'aluka bi-annaka anta al-wahhāb an tahaba lī qalban salīman wa nafsan muṭma'innah</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan menyebut bahwa Engkau adalah Al-Wahhab, agar Engkau menganugerahkan kepadaku hati yang bersih dan jiwa yang tenang."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh ulama untuk memohon ketenangan hati dan jiwa dengan menyebut nama Allah Al-Wahhab. Dianjurkan dibaca setelah shalat lima waktu.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Hikmah dan Pergaulan yang Baik</div>
+                    <div class="arabic">رَبِّ هَبْ لِى حُكْمًۭا وَأَلْحِقْنِى بِٱلصَّـٰلِحِينَ</div>
+                    <div class="transliteration">Rabbi hab lī ḥukmaw wa alḥiqnī biṣ-ṣāliḥīn</div>
+                    <p><strong>Terjemahan:</strong> "Ya Tuhanku, berikanlah kepadaku hikmah dan masukkanlah aku ke dalam golongan orang-orang yang saleh."</p>
+                    <p><strong>Sumber:</strong> <a href="https://quranwbw.com/26:83" target="_blank">Surah Ash-Shu'ara 26:83</a>. Doa Nabi Ibrahim AS yang diajarkan dalam Al-Quran untuk memohon hikmah dan teman yang shaleh.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Merenungkan Nikmat Harian</div>
+                    <p>Rasulullah SAW bersabda: "Barangsiapa bangun pagi dalam keadaan aman, sehat, dan memiliki rezeki untuk hari itu, seolah-olah seluruh dunia telah diberikan kepadanya." (HR. Ibn Majah)</p>
+                    <p><strong>Praktik:</strong></p>
+                    <ol>
+                        <li>Setiap pagi, catat tiga nikmat yang diterima</li>
+                        <li>Ucapkan "Alhamdulillah" untuk setiap nikmat</li>
+                        <li>Renungkan bagaimana nikmat itu datang tanpa diminta</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini mengembangkan rasa syukur (syukur) yang akan menarik lebih banyak karunia dari Al-Wahhab.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Bersedekah dengan Ikhlas</div>
+                    <p>Nabi SAW bersabda: "Tangan di atas (yang memberi) lebih baik daripada tangan di bawah (yang menerima)." (HR. Bukhari)</p>
+                    <p><strong>Praktik:</strong></p>
+                    <ol>
+                        <li>Bersedekah secara rutin meski dalam jumlah kecil</li>
+                        <li>Berikan dengan ikhlas hanya mengharap ridha Allah</li>
+                        <li>Sembunyikan sedekah dari pengetahuan orang lain</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Dalam kitab Riyadhus Shalihin dijelaskan bahwa sedekah yang ikhlas akan dilipatgandakan oleh Allah Al-Wahhab hingga berkali-kali lipat.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut tafsir Kementerian Agama RI, nama Al-Wahhab mengandung tiga dimensi utama:</p>
+                <ol>
+                    <li><strong>Pemberian Tanpa Diminta:</strong>
+                        <ul>
+                            <li>Allah memberikan nikmat dasar seperti kehidupan dan kesehatan (<a href="https://quranwbw.com/67:23" target="_blank">67:23</a>)</li>
+                            <li>Memberikan rezeki kepada semua makhluk (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pemberian Atas Permintaan:</strong>
+                        <ul>
+                            <li>Allah menjawab doa hamba-Nya (<a href="https://quranwbw.com/40:60" target="_blank">40:60</a>)</li>
+                            <li>Memberikan lebih dari yang diminta (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pemberian Khusus:</strong>
+                        <ul>
+                            <li>Karunia kenabian (<a href="https://quranwbw.com/6:84" target="_blank">6:84</a>)</li>
+                            <li>Ilmu dan hikmah (<a href="https://quranwbw.com/21:79" target="_blank">21:79</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam kitab <em>Asmaul Husna untuk Anak</em> yang diterbitkan Kemenag RI dijelaskan bahwa mengimani nama Al-Wahhab berarti:</p>
+                <ul>
+                    <li>Meyakini semua nikmat berasal dari Allah</li>
+                    <li>Selalu bersyukur atas segala pemberian-Nya</li>
+                    <li>Meneladani sifat dermawan dalam kehidupan</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Refleksi</h2>
+                <div class="amalan">
+                    <p><strong>1. Sumber Segala Nikmat:</strong> Al-Wahhab mengingatkan kita bahwa semua yang kita miliki berasal dari Allah, bukan semata hasil usaha kita.</p>
+                    <p><strong>2. Kekuatan Doa:</strong> Sebagai Maha Pemberi, Allah senantiasa mendengar dan mengabulkan doa hamba-Nya yang beriman.</p>
+                    <p><strong>3. Pendidikan Anak:</strong> Mengajarkan anak tentang Al-Wahhab membantu mereka mengembangkan rasa syukur sejak dini.</p>
+                    <p><strong>4. Kedermawanan:</strong> Meneladani sifat Al-Wahhab dengan menjadi pribadi yang suka memberi tanpa pamrih.</p>
+                </div>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
             <h1 class="name-title">16. Al-Wahhab (The Bestower)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-wahhab/" target="_blank">myislam.org/99-names-of-allah/al-wahhab/</a></div>
 
             <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
-                <!-- Audio Player Added Here -->
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Name</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Asmaul Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_17Wahhaab.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -196,9 +356,8 @@
             <div class="arabic">ٱلْوَهَّابُ</div>
             <div class="transliteration">Transliteration: Al-Wahhab</div>
 
-            <!-- Audio Player Added Here -->
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/16.%20al-wahhab.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -206,7 +365,7 @@
             </div>
 
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Wahhab comes from the root w-h-b (و-ه-ب) meaning "to give", "to bestow", or "to grant". This beautiful name appears three times in the Quran, emphasizing Allah's infinite generosity in giving without expectation of return.</p>
                 <p>Ibn Al-Qayyim explains: "Al-Wahhab is the One who gives constantly, abundantly, and without measure. His gifts include existence itself, life, guidance, and all blessings - given purely out of His grace."</p>
             </div>
@@ -331,151 +490,6 @@
             <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">16. Al-Wahhab (Maha Pemberi)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-wahhab/" target="_blank">myislam.org/99-names-of-allah/al-wahhab/</a></div>
-            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
-
-            <div class="arabic">ٱلْوَهَّابُ</div>
-            <div class="transliteration">Transliterasi: Al-Wahhab</div>
-
-            <!-- Audio Player Added Here for Indonesian Content -->
-            <div class="audio-player">
-                <div class="audio-title">Dengarkan Nama Ini</div>
-                <audio controls style="width: 100%;">
-                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/16.%20al-wahhab.mp3" type="audio/mpeg">
-                    Browser Anda tidak mendukung elemen audio.
-                </audio>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Makna</h2>
-                <p>Al-Wahhab berasal dari akar kata w-h-b (و-ه-ب) yang berarti "memberi", "menganugerahkan", atau "memberikan". Nama indah ini muncul tiga kali dalam Al-Quran, menekankan kemurahan hati Allah yang tak terbatas dalam memberi tanpa harapan imbalan.</p>
-                <p>Ibn Al-Qayyim menjelaskan: "Al-Wahhab adalah Yang terus-menerus memberi, melimpah, dan tanpa batas. Pemberian-Nya mencakup keberadaan itu sendiri, kehidupan, petunjuk, dan semua berkah - diberikan murni dari karunia-Nya."</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/38:9" target="_blank">Surah Sad 38:9</a>
-                    <div class="arabic">أَمْ عِندَهُمْ خَزَآئِنُ رَحْمَةِ رَبِّكَ ٱلْعَزِيزِ ٱلْوَهَّابِ</div>
-                    <div class="transliteration">Am 'indahum khazā'inu raḥmati rabbika al-'azīzi al-wahhāb</div>
-                    <p>"Atau apakah mereka mempunyai perbendaharaan rahmat Tuhanmu Yang Maha Perkasa lagi Maha Pemberi?"</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Pertanyaan retoris ini menekankan bahwa semua rahmat dan pemberian datang semata-mata dari Allah sebagai Al-Wahhab, bukan dari sumber lain.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/3:8" target="_blank">Surah Al-Imran 3:8</a>
-                    <div class="arabic">رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ ٱلْوَهَّابُ</div>
-                    <div class="transliteration">Rabbanā lā tuzigh qulūbanā ba'da idh hadaytanā wa hab lanā min ladunka raḥmah, innaka anta al-wahhāb</div>
-                    <p>"Ya Tuhan kami, janganlah Engkau condongkan hati kami kepada kesesatan setelah Engkau beri petunjuk kepada kami, dan karuniakanlah kepada kami rahmat dari sisi-Mu. Sesungguhnya Engkau Maha Pemberi."</p>
-                    <div class="tafsir-box">
-                        <strong>Refleksi:</strong> Doa orang-orang shaleh ini mengakui Allah sebagai sumber segala petunjuk dan rahmat, meminta-Nya untuk terus menganugerahkan karunia ini.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Ibn Majah
-                    <div class="arabic">مَنْ تَصَدَّقَ بِعَدْلِ تَمْرَةٍ مِنْ كَسْبٍ طَيِّبٍ وَلاَ يَقْبَلُ اللَّهُ إِلاَّ الطَّيِّبَ وَإِنَّ اللَّهَ يَتَقَبَّلُهَا بِيَمِينِهِ ثُمَّ يُرَبِّيهَا لِصَاحِبِهِ كَمَا يُرَبِّى أَحَدُكُمْ فَلُوَّهُ حَتَّى تَكُونَ مِثْلَ الْجَبَلِ</div>
-                    <div class="transliteration">Man taṣaddaqa bi-'adli tamratin min kasbin ṭayyibin wa lā yaqbalullāhu illā ṭ-ṭayyib, wa innallāha yataqabbaluhā biyamīnihi thumma yurabbīhā liṣāḥibihī kamā yurabbī aḥadukum fallūhu ḥattā takūna mithla l-jabal</div>
-                    <p>"Barangsiapa bersedekah senilai sebutir kurma dari penghasilan yang baik - dan Allah tidak menerima kecuali yang baik - Allah akan menerimanya dengan tangan kanan-Nya dan mengembangkannya untuk pemberinya, seperti salah seorang dari kalian mengembangkan anak kudanya, hingga menjadi seperti gunung."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Hadits ini menunjukkan bagaimana Allah sebagai Al-Wahhab melipatgandakan pemberian kecil kita menjadi pahala yang besar.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Hati yang Sehat dan Jiwa yang Tenang</div>
-                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ الْوَهَّابُ أَنْ تَهَبَ لِي قَلْبًا سَلِيمًا وَنَفْسًا مُطْمَئِنَّةً</div>
-                    <div class="transliteration">Allāhumma innī as'aluka bi-annaka anta al-wahhāb an tahaba lī qalban salīman wa nafsan muṭma'innah</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan menyebut bahwa Engkau adalah Al-Wahhab, agar Engkau menganugerahkan kepadaku hati yang sehat dan jiwa yang tenang."</p>
-                    <p><strong>Manfaat:</strong> Doa ini membantu menumbuhkan ketenangan batin dan kesehatan spiritual dengan meminta langsung kepada Allah untuk karunia-Nya.</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Hikmah dan Pergaulan yang Shaleh</div>
-                    <div class="arabic">رَبِّ هَبْ لِى حُكْمًۭا وَأَلْحِقْنِى بِٱلصَّـٰلِحِينَ</div>
-                    <div class="transliteration">Rabbi hab lī ḥukmaw wa alḥiqnī biṣ-ṣāliḥīn</div>
-                    <p><strong>Terjemahan:</strong> "Ya Tuhanku, berikanlah kepadaku hikmah dan masukkanlah aku ke dalam golongan orang-orang yang saleh."</p>
-                    <p><strong>Sumber:</strong> <a href="https://quranwbw.com/26:83" target="_blank">Surah Ash-Shu'ara 26:83</a></p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Pengakuan Hadiah Harian</div>
-                    <p>Nabi ﷺ bersabda: "Barangsiapa bangun pagi dalam keadaan aman, sehat, dan memiliki rezeki untuk hari itu, seolah-olah seluruh dunia telah diberikan kepadanya." (Ibn Majah)</p>
-                    <p><strong>Amalan:</strong></p>
-                    <ol>
-                        <li>Setiap pagi, akui tiga karunia dari Al-Wahhab</li>
-                        <li>Ucapkan "Alhamdulillah" untuk setiap berkah</li>
-                        <li>Renungkan bagaimana karunia ini datang tanpa diminta</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Menumbuhkan rasa syukur (shukr) yang menarik lebih banyak berkah dari Sang Maha Pemberi.</p>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Sedekah dengan Niat Murni</div>
-                    <p>Untuk meneladani sifat ilahi ini, Nabi ﷺ menganjurkan memberi tanpa mengharapkan imbalan: "Tangan di atas (yang memberi) lebih baik daripada tangan di bawah (yang menerima)." (Bukhari)</p>
-                    <p><strong>Amalan:</strong></p>
-                    <ol>
-                        <li>Berikan sedekah mingguan dengan niat murni</li>
-                        <li>Cari hanya ridha Allah, bukan ucapan terima kasih atau pengakuan</li>
-                        <li>Beri bahkan dalam jumlah kecil secara konsisten</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Nabi sering memberi dengan murah hati, terkadang memberikan semua yang dimilikinya, percaya pada pemberian Allah yang tak ada habisnya.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan Al-Wahhab melalui tiga dimensi pemberian:</p>
-                <ol>
-                    <li><strong>Pemberian Spontan:</strong>
-                        <ul>
-                            <li>Hadiah yang diberikan tanpa diminta (seperti kehidupan, kesehatan, dan rezeki)</li>
-                            <li>Berkah fundamental yang sering kita anggap remeh</li>
-                        </ul>
-                    </li>
-                    <li><strong>Pemberian Responsif:</strong>
-                        <ul>
-                            <li>Hadiah yang diberikan sebagai jawaban atas permintaan dan doa</li>
-                            <li>Allah senang diminta dan menjawab permohonan</li>
-                        </ul>
-                    </li>
-                    <li><strong>Pemberian Berlimpah:</strong>
-                        <ul>
-                            <li>Memberi melebihi yang diminta atau diharapkan</li>
-                            <li>Melipatgandakan pahala untuk amal baik di luar proporsi</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Al-Ghazali mencatat bahwa pemberian Allah berbeda dengan pemberian manusia dalam dua hal utama: tidak memerlukan klaim atau hak sebelumnya, dan tidak mengharapkan imbalan atau keuntungan.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Refleksi Kontemporer</h2>
-                <div class="amalan">
-                    <p><strong>1. Kelimpahan Ilahi:</strong> Al-Wahhab mengingatkan kita bahwa perbendaharaan Allah tidak terbatas. Tidak seperti sumber daya manusia yang habis, pemberian-Nya bertambah semakin Dia menganugerahkan.</p>
-                    <p><strong>2. Ekonomi Syukur:</strong> Psikologi modern mengkonfirmasi bahwa rasa syukur menarik lebih banyak berkah. Mengakui Allah sebagai sumber (Al-Wahhab) mengubah cara kita menerima dan menghargai pemberian.</p>
-                    <p><strong>3. Paralel Pengasuhan:</strong> Cinta tanpa syarat orang tua mencerminkan pemberian Al-Wahhab. Ini membantu anak-anak memahami kemurahan hati ilahi sebelum teologi abstrak.</p>
-                </div>
-            </div>
-
-            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
-        </div>
     </div>
 
     <footer>
@@ -483,6 +497,37 @@
     </footer>
 
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -492,10 +537,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -503,12 +550,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
