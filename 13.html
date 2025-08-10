@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -142,6 +143,7 @@
             color: #7f8c8d;
             font-size: 14px;
         }
+
         .audio-player {
             width: 100%;
             max-width: 400px;
@@ -153,6 +155,7 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -170,21 +173,176 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">13. Al-Musawwir (Yang Maha Membentuk)</h1>
+            <div class="name-source">
+                <strong>Sumber:</strong> 
+                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>, 
+                <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>, dan
+                <a href="https://myislam.org/99-names-of-allah/al-musawwir/" target="_blank">myislam.org</a>
+            </div>
+
+            <div class="arabic">ٱلْمُصَوِّرُ</div>
+            <div class="transliteration">Transliterasi: Al-Musawwir</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/13.%20al-musawwir.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Musawwir adalah salah satu dari 99 Asmaul Husna yang berarti Yang Maha Membentuk atau Yang Maha Menciptakan Rupa. Menurut <a href="https://islam.nu.or.id/akidah-akhlak/asmaul-husna-al-mushawwir-yang-maha-membentuk-0XZ2K" target="_blank">NU Online</a>, nama ini menunjukkan bahwa Allah SWT menciptakan segala sesuatu dengan bentuk yang sempurna dan sesuai dengan kehendak-Nya.</p>
+                <p><strong>Manfaat:</strong> Mengingat nama ini membantu kita:</p>
+                <ul>
+                    <li>Mensyukuri bentuk fisik yang telah diberikan Allah</li>
+                    <li>Memahami hikmah di balik keragaman ciptaan Allah</li>
+                    <li>Menghindari perasaan tidak puas dengan bentuk fisik diri sendiri</li>
+                </ul>
+                <p>Menurut <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>, Al-Musawwir menunjukkan kekuasaan Allah dalam menciptakan berbagai bentuk makhluk dengan karakteristik yang berbeda-beda.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/59:24" target="_blank">Surah Al-Hasyr 59:24</a>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Huwa Allāhu al-Khāliqu al-Bāri'u al-Muṣawwiru, lahu al-asmā'u al-ḥusnā, yusabbiḥu lahu mā fī as-samāwāti wal-arḍ, wa huwa al-'Azīzu al-Ḥakīm</div>
+                    <p>"Dialah Allah Yang Menciptakan, Yang Mengadakan, Yang Membentuk Rupa, Yang Mempunyai Nama-Nama Yang Paling baik. Bertasbih kepada-Nya apa yang ada di langit dan di bumi. Dan Dialah Yang Maha Perkasa lagi Maha Bijaksana."</p>
+                    <div class="tafsir-box">
+                        <strong>Menurut NU Online:</strong> Ayat ini menunjukkan tiga tahap penciptaan: Al-Khaliq (Pencipta), Al-Bari' (Yang Mengadakan), dan Al-Musawwir (Yang Membentuk Rupa). Ini menunjukkan kesempurnaan proses penciptaan oleh Allah SWT.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/40:64" target="_blank">Surah Ghafir 40:64</a>
+                    <div class="arabic">ٱللَّهُ ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ قَرَارًۭا وَٱلسَّمَآءَ بِنَآءًۭ وَصَوَّرَكُمْ فَأَحْسَنَ صُوَرَكُمْ وَرَزَقَكُم مِّنَ ٱلطَّيِّبَـٰتِ</div>
+                    <div class="transliteration">Allāhu alladhī ja'ala lakumu al-arḍa qarāran was-samā'a binā'an wa ṣawwarakum fa-aḥsana ṣuwarakum wa razaqakum mina aṭ-ṭayyibāt</div>
+                    <p>"Allah-lah yang menjadikan bumi untukmu sebagai tempat menetap dan langit sebagai atap, dan membentuk kamu lalu membaguskan rupamu serta memberi kamu rezeki dari yang baik-baik."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan Kemenag:</strong> Ayat ini menunjukkan bahwa Allah sebagai Al-Musawwir telah membentuk manusia dengan bentuk yang paling baik dan sempurna, sesuai dengan fungsi dan tujuan penciptaannya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> 
+                    <a href="https://sunnah.com/muslim:2658" target="_blank">Sahih Muslim 2658</a>
+                    <div class="arabic">إِنَّ اللَّهَ خَلَقَ آدَمَ عَلَى صُورَتِهِ</div>
+                    <div class="transliteration">Inna Allāha khalaqa Ādama 'alā ṣūratih</div>
+                    <p>"Sesungguhnya Allah menciptakan Adam sesuai dengan bentuk-Nya."</p>
+                    <div class="tafsir-box">
+                        <strong>Menurut NU:</strong> Hadits ini menunjukkan keistimewaan bentuk manusia sebagai ciptaan Allah yang paling sempurna. Namun perlu dipahami bahwa "sesuai dengan bentuk-Nya" tidak berarti menyerupai Allah, karena Allah tidak serupa dengan makhluk-Nya.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Bentuk dan Akhlak yang Baik</div>
+                    <div class="arabic">يَا مُصَوِّرُ، حَسِّنْ خَلْقِي وَخُلُقِي وَاجْعَلْنِي مِنَ ٱلْمُحْسِنِينَ</div>
+                    <div class="transliteration">Yā Muṣawwiru, ḥassin khalqī wa khuluqī waj'alnī mina al-muḥsinīn</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Membentuk, indahkanlah bentuk dan akhlakku, dan jadikanlah aku termasuk orang-orang yang berbuat baik."</p>
+                    <p><strong>Waktu Membaca:</strong></p>
+                    <ul>
+                        <li>Ketika bercermin (3 kali) - sesuai anjuran NU untuk dzikir harian</li>
+                        <li>Setelah shalat Subuh (7 kali)</li>
+                        <li>Ketika merasa kurang puas dengan bentuk fisik atau akhlak diri</li>
+                    </ul>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Bersyukur atas Bentuk yang Diberikan</div>
+                    <div class="arabic">سُبْحَانَ ٱلْمُصَوِّرِ، ٱلَّذِى أَحْسَنَ صُورَتِي وَخَلَقَنِي فِي أَحْسَنِ تَقْوِيمٍ</div>
+                    <div class="transliteration">Subḥāna al-Muṣawwir, alladhī aḥsana ṣūratī wa khalaqanī fī aḥsani taqwīm</div>
+                    <p><strong>Terjemahan:</strong> "Maha Suci Yang Maha Membentuk, yang telah membaguskan rupaku dan menciptakanku dalam bentuk yang sebaik-baiknya."</p>
+                    <p><strong>Manfaat:</strong> Doa ini dianjurkan oleh Kementerian Agama untuk dibaca setiap kali bercermin, sebagai bentuk syukur atas nikmat bentuk fisik yang diberikan Allah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Dzikir Bercermin</div>
+                    <p>Amalan harian yang dianjurkan oleh NU untuk mensyukuri bentuk yang diberikan Allah:</p>
+                    <ol>
+                        <li>Setiap kali bercermin, ucapkan "Subhanal-Musawwir"</li>
+                        <li>Perhatikan tiga hal yang disyukuri dari bentuk fisik diri</li>
+                        <li>Ucapkan syukur dengan "Alhamdulillah"</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini membantu menerima diri sebagaimana diciptakan Allah dan menghindari perasaan tidak puas dengan bentuk fisik yang diberikan.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Merenungkan Ciptaan Allah</div>
+                    <p>Amalan mingguan yang dianjurkan Kementerian Agama untuk memperkuat iman:</p>
+                    <ol>
+                        <li>Carilah tempat dengan pemandangan alam</li>
+                        <li>Amati tiga makhluk hidup yang berbeda</li>
+                        <li>Renungkan keunikan bentuk masing-masing ciptaan</li>
+                        <li>Ucapkan "Subhanallah" sebagai tanda kagum</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) sering merenungkan ciptaan Allah untuk memperkuat keimanan. Beliau bersabda: "Bertafakkurlah tentang ciptaan Allah dan janganlah bertafakkur tentang Dzat Allah." (HR. Thabrani)</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Penjelasan Mendalam</h2>
+                <p>Menurut <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>, Al-Musawwir mengandung beberapa makna penting:</p>
+                <ol>
+                    <li><strong>Penciptaan yang Unik:</strong> Setiap makhluk diberi bentuk khusus yang berbeda dengan yang lain</li>
+                    <li><strong>Kesempurnaan Bentuk:</strong> Semua ciptaan Allah memiliki bentuk yang sempurna sesuai fungsinya</li>
+                    <li><strong>Keragaman sebagai Tanda Kekuasaan:</strong> Perbedaan bentuk makhluk menunjukkan kebesaran Allah</li>
+                </ol>
+                <p>Kementerian Agama dalam <a href="https://kemenag.go.id/" target="_blank">sumber resminya</a> menjelaskan bahwa pengertian Al-Musawwir mencakup:</p>
+                <ul>
+                    <li>Allah menciptakan berbagai bentuk makhluk dengan karakteristik khusus</li>
+                    <li>Setiap bentuk diciptakan dengan hikmah dan tujuan tertentu</li>
+                    <li>Manusia sebagai ciptaan yang paling sempurna bentuknya</li>
+                </ul>
+                <p>Dalam Surah At-Taghabun (<a href="https://quranwbw.com/64:3" target="_blank">64:3</a>), Allah berfirman: "Dia telah menciptakan tujuh langit berlapis-lapis. Kamu sekali-kali tidak melihat pada ciptaan Tuhan Yang Maha Pemurah sesuatu yang tidak seimbang."</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Panduan Praktis dari NU</h2>
+                <ol>
+                    <li>Menerima dengan ikhlas bentuk fisik yang telah diberikan Allah</li>
+                    <li>Tidak mencela atau merendahkan bentuk fisik orang lain</li>
+                    <li>Memahami bahwa keragaman bentuk fisik manusia adalah tanda kekuasaan Allah</li>
+                    <li>Menjaga kesehatan dan kebersihan tubuh sebagai bentuk syukur</li>
+                    <li>Menghindari perubahan bentuk fisik yang bertentangan dengan syariat</li>
+                </ol>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
             <h1 class="name-title">13. Al-Musawwir (The Fashioner, The Bestower of Forms)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-musawwir/" target="_blank">myislam.org/99-names-of-allah/al-musawwir/</a></div>
+
             <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful explanation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
-                <!-- Audio Player Added Here -->
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Name</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_14Musawwir.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -195,9 +353,8 @@
             <div class="arabic">ٱلْمُصَوِّرُ</div>
             <div class="transliteration">Transliteration: Al-Musawwir</div>
 
-            <!-- Audio Player Added Here -->
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation of this Name</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/13.%20al-musawwir.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -321,142 +478,6 @@
             <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">13. Al-Musawwir (Yang Maha Membentuk, Pemberi Rupa)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-musawwir/" target="_blank">myislam.org/99-names-of-allah/al-musawwir/</a></div>
-            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
-
-            <div class="arabic">ٱلْمُصَوِّرُ</div>
-            <div class="transliteration">Transliterasi: Al-Musawwir</div>
-
-            <!-- Audio Player Added Here for Indonesian Content -->
-            <div class="audio-player">
-                <div class="audio-title">Dengarkan Nama Ini</div>
-                <audio controls style="width: 100%;">
-                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/13.%20al-musawwir.mp3" type="audio/mpeg">
-                    Browser Anda tidak mendukung elemen audio.
-                </audio>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Makna</h2>
-                <p>Al-Musawwir berarti Yang Maha Membentuk, Pemberi Rupa. Yang merancang dan membentuk setiap ciptaan dalam bentuk paling sempurna dengan karakteristik unik.</p>
-                <p><strong>Manfaat:</strong> Membaca nama ini meningkatkan apresiasi terhadap desain sempurna Allah, membantu mengenali hikmah-Nya dalam keragaman, dan menumbuhkan kepuasan dengan bentuk yang diberikan Allah.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/59:24" target="_blank">Surah Al-Hasyr 59:24</a>
-                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
-                    <div class="transliteration">Huwa Allāhu al-Khāliqu al-Bāri'u al-Muṣawwiru, lahu al-asmā'u al-ḥusnā, yusabbiḥu lahu mā fī as-samāwāti wal-arḍ, wa huwa al-'Azīzu al-Ḥakīm</div>
-                    <p>"Dialah Allah, Yang Menciptakan, Yang Mengadakan, Yang Membentuk Rupa, Dia memiliki nama-nama yang indah. Apa yang di langit dan di bumi bertasbih kepada-Nya. Dan Dialah Yang Maha Perkasa, Maha Bijaksana."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ibn Kathir menjelaskan bahwa Al-Musawwir merujuk pada Allah yang memberikan setiap ciptaan bentuk dan karakteristik unik - tidak ada dua kepingan salju, sidik jari atau wajah yang persis sama, menunjukkan kreativitas tak terbatas.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/40:64" target="_blank">Surah Ghafir 40:64</a>
-                    <div class="arabic">ٱللَّهُ ٱلَّذِى جَعَلَ لَكُمُ ٱلْأَرْضَ قَرَارًۭا وَٱلسَّمَآءَ بِنَآءًۭ وَصَوَّرَكُمْ فَأَحْسَنَ صُوَرَكُمْ وَرَزَقَكُم مِّنَ ٱلطَّيِّبَـٰتِ</div>
-                    <div class="transliteration">Allāhu alladhī ja'ala lakumu al-arḍa qarāran was-samā'a binā'an wa ṣawwarakum fa-aḥsana ṣuwarakum wa razaqakum mina aṭ-ṭayyibāt</div>
-                    <p>"Allah-lah yang menjadikan bumi untukmu sebagai tempat menetap dan langit sebagai atap, dan membentuk kamu lalu membaguskan rupamu serta memberi kamu rezeki dari yang baik-baik."</p>
-                    <div class="tafsir-box">
-                        <strong>Koneksi:</strong> Ayat ini secara langsung menghubungkan Allah sebagai Al-Musawwir dengan pembentukan sempurna bentuk manusia.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/30:22" target="_blank">Surah Ar-Rum 30:22</a>
-                    <div class="arabic">وَمِنْ ءَايَـٰتِهِۦ خَلْقُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَٱخْتِلَـٰفُ أَلْسِنَتِكُمْ وَأَلْوَٰنِكُمْ ۚ إِنَّ فِى ذَٰلِكَ لَـَٔايَـٰتٍۢ لِّلْعَـٰلِمِينَ</div>
-                    <div class="transliteration">Wa min āyātihī khalqu as-samāwāti wal-arḍi wakhtilāfu alsinatikum wa alwānikum, inna fī dhālika la'āyātin lil-'alamīn</div>
-                    <p>"Dan di antara tanda-tanda kekuasaan-Nya ialah menciptakan langit dan bumi dan berlain-lainan bahasamu dan warna kulitmu. Sesungguhnya pada yang demikan itu benar-benar terdapat tanda-tanda bagi orang-orang yang mengetahui."</p>
-                    <div class="tafsir-box">
-                        <strong>Penjelasan:</strong> Keragaman dalam bentuk manusia, warna kulit dan bahasa secara khusus disebut sebagai tanda kekuatan kreatif Allah sebagai Al-Musawwir.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa (Permohonan)</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Bentuk dan Akhlak yang Indah</div>
-                    <div class="arabic">يَا مُصَوِّرُ، حَسِّنْ خَلْقِي وَخُلُقِي وَاجْعَلْنِي مِنَ ٱلْمُحْسِنِينَ</div>
-                    <div class="transliteration">Yā Muṣawwiru, ḥassin khalqī wa khuluqī waj'alnī mina al-muḥsinīn</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Membentuk, indahkanlah bentuk dan akhlakku, dan jadikan aku termasuk orang-orang yang berbuat baik."</p>
-                    <p><strong>Waktu Membaca:</strong></p>
-                    <ul>
-                        <li>Ketika bercermin (3 kali)</li>
-                        <li>Setelah shalat Subuh (7 kali)</li>
-                        <li>Saat bergumul dengan citra diri atau kekurangan karakter</li>
-                    </ul>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Syukur atas Ciptaan</div>
-                    <div class="arabic">سُبْحَانَ ٱلْمُصَوِّرِ، ٱلَّذِى أَحْسَنَ صُورَتِي وَخَلَقَنِي فِي أَحْسَنِ تَقْوِيمٍ</div>
-                    <div class="transliteration">Subḥāna al-Muṣawwir, alladhī aḥsana ṣūratī wa khalaqanī fī aḥsani taqwīm</div>
-                    <p><strong>Terjemahan:</strong> "Maha Suci Yang Membentuk, yang menyempurnakan rupaku dan menciptakanku dalam bentuk yang sebaik-baiknya."</p>
-                    <p><strong>Manfaat:</strong> Baca ini ketika bercermin untuk menumbuhkan penerimaan diri dan syukur atas desain sempurna Allah.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan (Praktik)</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Dzikir Refleksi Cermin</div>
-                    <p>Untuk menumbuhkan syukur atas desain sempurna Allah:</p>
-                    <ol>
-                        <li>Baca "Subhanal-Musawwir" sambil bercermin setelah bangun tidur</li>
-                        <li>Sebutkan tiga fitur spesifik yang disyukuri</li>
-                        <li>Ucapkan syukur pada Allah atas desain sempurna-Nya</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini mempromosikan citra diri positif yang berakar pada desain ilahi dan memperkuat pengakuan akan hikmah Allah dalam bentuk seseorang.</p>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Meditasi Pengamatan Alam</div>
-                    <p>Untuk menghargai desain sempurna Allah dalam ciptaan:</p>
-                    <ol>
-                        <li>Temukan lingkungan alami (taman, kebun, dll.)</li>
-                        <li>Amati tiga ciptaan berbeda dengan seksama</li>
-                        <li>Baca "Bismillahil-Musawwir" untuk masing-masing sambil merenungkan desain sempurnanya</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Quran sering mendorong perenungan atas ciptaan (3:191). Muslim awal seperti Ibnu Abbas menghabiskan waktu di alam merenungkan desain Allah.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan Al-Musawwir melalui beberapa dimensi:</p>
-                <ol>
-                    <li><strong>Desain Sempurna:</strong> Allah memberikan setiap ciptaan bentuk dan karakteristik unik - tidak ada dua kepingan salju, sidik jari atau wajah yang persis sama</li>
-                    <li><strong>Penciptaan Tiga Tahap:</strong> Urutan Al-Khaliq (Pencipta), Al-Bari' (Pengadakan), Al-Musawwir (Pembentuk) menunjukkan proses komprehensif dari ketetapan hingga wujud hingga bentuk sempurna</li>
-                    <li><strong>Bentuk yang Bertujuan:</strong> Setiap bentuk melayani tujuan - bulu mata unta, sayap burung, insang ikan semua sempurna sesuai lingkungannya (67:3-4)</li>
-                    <li><strong>Keragaman Manusia:</strong> Keragaman dalam bentuk manusia, warna kulit dan bahasa secara khusus disebut sebagai tanda kekuatan kreatif Allah (30:22)</li>
-                </ol>
-                <p>Nama Al-Musawwir mengingatkan kita bahwa Allah adalah perancang utama yang membentuk segala sesuatu dalam bentuk dan proporsi yang sempurna.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Poin Refleksi</h2>
-                <ol>
-                    <li>Bagaimana pengakuan Allah sebagai Al-Musawwir mempengaruhi persepsi kita tentang standar kecantikan di masyarakat?</li>
-                    <li>Pelajaran apa yang bisa kita ambil dari adaptasi sempurna bentuk setiap makhluk terhadap lingkungannya?</li>
-                    <li>Bagaimana kita bisa menyeimbangkan syukur atas bentuk yang diberikan Allah dengan anjuran Islam untuk menjaga penampilan baik?</li>
-                    <li>Dalam hal apa keragaman bentuk dalam ciptaan menjadi bukti kreativitas tak terbatas Allah?</li>
-                </ol>
-            </div>
-
-            <div class="main-menu"><a href="index.html">Kembali ke Utama</a></div>
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
-        </div>
     </div>
 
     <footer>
@@ -464,6 +485,37 @@
     </footer>
 
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -473,10 +525,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -484,12 +538,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
