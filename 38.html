@@ -3,307 +3,549 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>38. Al-Hafeez (The All-Preserver) - 99 Names of Allah</title>
+    <title>38. Al-Hafeez (Yang Maha Memelihara) - 99 Asmaul Husna</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1, h2, h3 {
-            color: #1e5a1e;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 28px;
-            border-bottom: 2px solid #1e5a1e;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-top: 30px;
-            border-left: 4px solid #1e5a1e;
-            padding-left: 10px;
-        }
-        h3 {
-            font-size: 20px;
-            margin-top: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            line-height: 1.8;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #555;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .dua-section, .amalan-section {
-            background-color: #f0f7f0;
-            padding: 15px;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .toggle-btn {
-            background-color: #1e5a1e;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 5px;
-        }
-        .toggle-btn:hover {
-            background-color: #2d7a2d;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #1e5a1e;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f4e8;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .title-source {
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
             font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
             text-align: center;
         }
-        a {
-            color: #1e5a1e;
-            text-decoration: none;
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
         }
-        a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Toggle -->
-        <div class="toggle-container">
-            <button id="englishBtn" class="toggle-btn">English</button>
-            <button id="indonesianBtn" class="toggle-btn">Bahasa Indonesia</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">38. Al-Hafeez (Yang Maha Memelihara)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-hafiz/" target="_blank">myislam.org/99-names-of-allah/al-hafiz/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">الحَفِيظُ</div>
+            <div class="transliteration">Transliterasi: Al-Hafeez</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/38.%20al-hafiz.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Hafeez merupakan salah satu dari 99 Asmaul Husna Allah yang disebutkan dalam Al-Quran. Nama ini mengandung makna:</p>
+                <ul>
+                    <li><strong>Yang Maha Memelihara:</strong> Allah menjaga dan melindungi segala sesuatu</li>
+                    <li><strong>Yang Maha Pelindung:</strong> Perlindungan-Nya mencakup seluruh makhluk</li>
+                    <li><strong>Yang Maha Menjaga:</strong> Allah mencatat dan menyimpan semua amal perbuatan</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI, Al-Hafeez menunjukkan bahwa Allah Maha Memelihara segala urusan makhluk-Nya, baik di dunia maupun di akhirat. Perlindungan-Nya sempurna dan tidak pernah gagal.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/11:57" target="_blank">Surah Hud 11:57</a>
+                    <div class="arabic">فَإِن تَوَلَّوْا فَقَدْ أَبْلَغْتُكُم مَّا أُرْسِلْتُ بِهِ إِلَيْكُمْ ۚ وَيَسْتَخْلِفُ رَبِّي قَوْمًا غَيْرَكُمْ وَلَا تَضُرُّونَهُ شَيْئًا ۚ إِنَّ رَبِّي عَلَىٰ كُلِّ شَيْءٍ حَفِيظٌ</div>
+                    <div class="transliteration">Fa-in tawallaw faqad ablaghtukum ma ursiltu bihi ilaykum, wa yastakhlifu rabbi qawman ghayrakum wa la tadurrunahu shay'a, inna rabbi 'ala kulli shay'in Hafeez</div>
+                    <p>"Jika kamu berpaling, maka sesungguhnya aku telah menyampaikan kepadamu apa (amanat) yang aku diutus (untuk menyampaikan)nya kepadamu. Dan Tuhanku akan mengganti (kamu) dengan kaum yang lain (dari) kamu; dan kamu tidak dapat membuat mudharat kepada-Nya sedikitpun. Sesungguhnya Tuhanku adalah Maha Pemelihara segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/11/57/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ayat ini menunjukkan pemeliharaan sempurna Allah atas agama-Nya. Menurut NU Online, meskipun manusia menolak, Allah akan menjaga kelangsungan agama-Nya dengan menggantikan mereka yang ingkar dengan yang beriman.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/12:64" target="_blank">Surah Yusuf 12:64</a>
+                    <div class="arabic">قَالَ هَلْ آمَنُكُمْ عَلَيْهِ إِلَّا كَمَا أَمِنتُكُمْ عَلَىٰ أَخِيهِ مِن قَبْلُ ۖ فَاللَّهُ خَيْرٌ حَافِظًا ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ</div>
+                    <div class="transliteration">Qala hal amanukum 'alayhi illa kama amintukum 'ala akhihi min qabl, fallahu khayrun hafiza, wa huwa arhamur-rahimin</div>
+                    <p>"Yakub berkata: 'Bagaimana aku akan mempercayakannya (Bunyamin) kepadamu, seperti aku telah mempercayakan saudaranya (Yusuf) kepada kamu dahulu?' Maka Allah adalah penjaga yang paling baik, dan Dia adalah Maha Penyayang di antara para penyayang."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/12/64/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Menurut Kementerian Agama RI, ayat ini mengajarkan bahwa perlindungan manusia terbatas, sedangkan perlindungan Allah sempurna dan penuh rahmat.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2704" target="_blank">Sahih Muslim 2704</a>
+                    <div class="arabic">احْفَظِ اللَّهَ يَحْفَظْكَ احْفَظِ اللَّهَ تَجِدْهُ تُجَاهَكَ</div>
+                    <div class="transliteration">Ihfazillaha yahfazk, ihfazillaha tajidhu tujahak</div>
+                    <p>"Jagalah (hak-hak) Allah, niscaya Dia akan menjagamu. Jagalah (hak-hak) Allah, niscaya engkau akan mendapati-Nya di hadapanmu."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Hadits ini menunjukkan hubungan timbal balik antara hamba dan Allah. Menurut NU Online, ketika kita menjaga perintah Allah, maka Allah akan menjaga kita di dunia dan akhirat.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Perlindungan Allah</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ الْحَفِيظِ احْفَظْنِي مِنْ شَرِّ مَا خَلَقْتَ وَذَرَأْتَ وَبَرَأْتَ</div>
+                    <div class="transliteration">Allahumma bi-haqqi al-Hafeez ihfazni min sharri ma khalaqta wa dhara'ta wa bara'ta</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Al-Hafeez, lindungilah aku dari kejahatan apa yang Engkau ciptakan, tumbuhkan, dan bentuk."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh para ulama NU untuk memohon perlindungan menyeluruh. Dianjurkan dibaca pagi dan petang.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Doa Tawakkal</div>
+                    <div class="arabic">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</div>
+                    <div class="transliteration">Hasbiyallahu la ilaha illa huwa, 'alayhi tawakkaltu, wa huwa rabbul-'arshil-'azeem</div>
+                    <p><strong>Terjemahan:</strong> "Cukuplah Allah bagiku; tidak ada Tuhan selain Dia. Hanya kepada-Nya aku bertawakal, dan Dia adalah Tuhan yang memiliki 'Arsy yang agung."</p>
+                    <p><strong>Sumber:</strong> Doa ini dari Surah At-Tawbah (<a href="https://quranwbw.com/9:129" target="_blank">9:129</a>). Nabi Muhammad SAW mengajarkan doa ini sebagai bentuk penyerahan diri sepenuhnya kepada perlindungan Allah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Perlindungan Harian</div>
+                    <p>Rutinitas untuk mendapatkan perlindungan Al-Hafeez:</p>
+                    <ol>
+                        <li>Baca dzikir pagi dan petang secara konsisten</li>
+                        <li>Amalkan doa perlindungan sebelum keluar rumah</li>
+                        <li>Perbanyak istighfar untuk menjaga diri dari maksiat</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Mendapatkan penjagaan langsung dari Allah</li>
+                        <li>Meningkatkan kesadaran akan pengawasan Allah</li>
+                        <li>Mengikuti sunnah Nabi Muhammad SAW</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Menjaga Amal Ibadah</div>
+                    <p>Amalan mingguan untuk merefleksikan sifat Al-Hafeez:</p>
+                    <ol>
+                        <li>Evaluasi amal ibadah mingguan</li>
+                        <li>Perbaiki kekurangan dalam shalat, puasa, dan sedekah</li>
+                        <li>Catat perkembangan spiritual dalam buku harian</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi Muhammad SAW bersabda: "Amal yang paling dicintai Allah adalah yang kontinu meskipun sedikit." (HR. Bukhari). Praktik ini membantu kita konsisten dalam ibadah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Hafeez melalui beberapa dimensi:</p>
+                <ol>
+                    <li><strong>Pemeliharaan Alam Semesta:</strong>
+                        <ul>
+                            <li>Allah menjaga keseimbangan alam (<a href="https://quranwbw.com/67:3-4" target="_blank">67:3-4</a>)</li>
+                            <li>Memelihara kehidupan semua makhluk (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Perlindungan Hamba:</strong>
+                        <ul>
+                            <li>Menjaga orang beriman dari bahaya (<a href="https://quranwbw.com/40:45" target="_blank">40:45</a>)</li>
+                            <li>Melindungi dari godaan syaitan (<a href="https://quranwbw.com/7:201" target="_blank">7:201</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pencatatan Amal:</strong>
+                        <ul>
+                            <li>Mencatat semua perbuatan manusia (<a href="https://quranwbw.com/50:18" target="_blank">50:18</a>)</li>
+                            <li>Menyimpan amal baik dan buruk (<a href="https://quranwbw.com/99:7-8" target="_blank">99:7-8</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-An'am (<a href="https://quranwbw.com/6:61" target="_blank">6:61</a>), Allah menegaskan bahwa Dia adalah Yang Maha Kuasa atas hamba-hamba-Nya dan mengutus para penjaga untuk mencatat semua perbuatan.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- Transliteration Toggle -->
-        <div class="toggle-container">
-            <button id="showTransliteration" class="toggle-btn">Show Transliteration</button>
-            <button id="hideTransliteration" class="toggle-btn">Hide Transliteration</button>
-        </div>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">38. Al-Hafeez (The All-Preserver)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-hafiz/" target="_blank">myislam.org/99-names-of-allah/al-hafiz/</a></div>
 
-        <!-- English Content -->
-        <div id="englishContent">
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_39Hafeez.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
-            <h1>38. Al-Hafeez (الحفيظ) - The All-Preserver, The Guardian</h1>
-            <div class="title-source">
-                Source: <a href="https://myislam.org/99-names-of-allah/al-hafiz/" target="_blank">https://myislam.org/99-names-of-allah/al-hafiz/</a>
-            </div>
+            <div class="arabic">الحَفِيظُ</div>
+            <div class="transliteration">Transliteration: Al-Hafeez</div>
 
-            <div class="section">
-                <p class="arabic">الحَفِيظُ</p>
-                <p class="transliteration">Al-Hafeez</p>
-                <p><strong>Meaning:</strong> The All-Preserver, The Guardian, The Protector, The One who preserves and protects all things in existence, maintaining the cosmic order.</p>
-            </div>
-
-            <div class="section">
-                <h2>Explanation</h2>
-                <p>Al-Hafeez is the One who perfectly preserves and protects everything in existence. He maintains the balance of the universe, protects His servants from harm, and preserves all deeds in His eternal record. Nothing escapes His watchful preservation.</p>
-                <p>Ibn Kathir explains in his Tafsir that Al-Hafeez is the One who guards and preserves all creation, maintaining the cosmic order while also preserving the records of all human deeds for the Day of Judgment.</p>
-            </div>
-
-            <div class="section">
-                <h2>Quranic References</h2>
-                <h3>1. Surah Hud 11:57</h3>
-                <p class="arabic">فَإِن تَوَلَّوْا فَقَدْ أَبْلَغْتُكُم مَّا أُرْسِلْتُ بِهِ إِلَيْكُمْ ۚ وَيَسْتَخْلِفُ رَبِّي قَوْمًا غَيْرَكُمْ وَلَا تَضُرُّونَهُ شَيْئًا ۚ إِنَّ رَبِّي عَلَىٰ كُلِّ شَيْءٍ حَفِيظٌ</p>
-                <p class="transliteration">Fa-in tawallaw faqad ablaghtukum ma ursiltu bihi ilaykum, wa yastakhlifu rabbi qawman ghayrakum wa la tadurrunahu shay'a, inna rabbi 'ala kulli shay'in Hafeez</p>
-                <p><strong>Translation:</strong> "But if you turn away, then I have already conveyed to you that with which I was sent to you. My Lord will give succession to a people other than you, and you will not harm Him at all. Indeed my Lord is, over all things, Guardian." <a href="https://quranwbw.com/11:57" target="_blank">(Surah Hud 11:57)</a></p>
-                <p><strong>Explanation:</strong> This verse demonstrates Allah's perfect preservation of His message and His ability to replace nations while maintaining His divine plan. Ibn Kathir explains that Allah's preservation ensures the continuity of His religion regardless of people's rejection.</p>
-
-                <h3>2. Surah Yusuf 12:64</h3>
-                <p class="arabic">قَالَ هَلْ آمَنُكُمْ عَلَيْهِ إِلَّا كَمَا أَمِنتُكُمْ عَلَىٰ أَخِيهِ مِن قَبْلُ ۖ فَاللَّهُ خَيْرٌ حَافِظًا ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ</p>
-                <p class="transliteration">Qala hal amanukum 'alayhi illa kama amintukum 'ala akhihi min qabl, fallahu khayrun hafiza, wa huwa arhamur-rahimin</p>
-                <p><strong>Translation:</strong> "He said, 'Should I entrust you with him except [under coercion] as I entrusted you with his brother before? But Allah is the best guardian, and He is the most merciful of the merciful.'" <a href="https://quranwbw.com/12:64" target="_blank">(Surah Yusuf 12:64)</a></p>
-                <p><strong>Explanation:</strong> This verse from the story of Prophet Ya'qub shows that ultimate trust should be placed in Allah's preservation. Ibn Kathir comments that while human guardians may fail, Allah's preservation is perfect and merciful.</p>
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/38.%20al-hafiz.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
             <div class="section">
-                <h2>Benefits and Reflections</h2>
-                <p>1. Recognizing Allah as Al-Hafeez brings comfort knowing He preserves and protects all things.</p>
-                <p>2. It teaches us to place our ultimate trust in Allah's preservation rather than worldly means.</p>
-                <p>3. We should be mindful that Allah preserves all our deeds for the Day of Judgment.</p>
-                <p>4. Understanding this name encourages us to seek Allah's protection in all matters.</p>
-            </div>
-
-            <div class="dua-section">
-                <h2>Du'a with Al-Hafeez</h2>
-                <p class="arabic">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</p>
-                <p class="transliteration">Hasbiyallahu la ilaha illa huwa, 'alayhi tawakkaltu, wa huwa rabbul-'arshil-'azeem</p>
-                <p><strong>Translation:</strong> "Sufficient for me is Allah; there is no deity except Him. On Him I have relied, and He is the Lord of the Great Throne." <a href="https://quranwbw.com/9:129" target="_blank">(Surah At-Tawbah 9:129)</a></p>
-                <p><strong>Usage:</strong> This comprehensive du'a affirms complete reliance on Allah's preservation and protection. It can be recited in times of difficulty or when seeking Allah's guardianship over one's affairs.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Morning and Evening Adhkar</h3>
-                <p>Recite the morning and evening remembrances (adhkar) that include seeking Allah's protection, such as "Bismillahilladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama'i wa huwas-Sami'ul-'Aleem" (In the name of Allah with whose name nothing can harm on earth or in heaven, and He is the All-Hearing, All-Knowing).</p>
-
-                <h3>2. Preserving Good Deeds</h3>
-                <p>Be consistent in performing and preserving good deeds, knowing that Al-Hafeez is recording all actions. The Prophet (peace be upon him) said: "The most beloved deeds to Allah are those consistent, even if small."</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Hafeez is one of the 99 Names of Allah mentioned in the Quran. This name signifies:</p>
+                <ul>
+                    <li><strong>The All-Preserver:</strong> Allah guards and protects all things</li>
+                    <li><strong>The Guardian:</strong> His protection encompasses all creation</li>
+                    <li><strong>The Protector:</strong> Allah records and preserves all deeds</li>
+                </ul>
+                <p>Islamic scholars explain that Al-Hafeez shows Allah's perfect preservation of all matters concerning His creation, both in this world and the Hereafter. His protection is perfect and never fails.</p>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his commentary on Surah Hud 11:57, Ibn Kathir explains that Allah's attribute of being Al-Hafeez refers to His perfect preservation of the universe and His divine decree. He preserves His religion by replacing rejecting nations with others who will uphold it.</p>
-                <p>Regarding Surah Yusuf 12:64, Ibn Kathir states that Allah's preservation is perfect in both protecting His servants and recording all their deeds. Human guardianship is limited, but Allah's guardianship encompasses all things.</p>
-            </div>
+                <h2 class="section-title">Evidence (From Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/11:57" target="_blank">Surah Hud 11:57</a>
+                    <div class="arabic">فَإِن تَوَلَّوْا فَقَدْ أَبْلَغْتُكُم مَّا أُرْسِلْتُ بِهِ إِلَيْكُمْ ۚ وَيَسْتَخْلِفُ رَبِّي قَوْمًا غَيْرَكُمْ وَلَا تَضُرُّونَهُ شَيْئًا ۚ إِنَّ رَبِّي عَلَىٰ كُلِّ شَيْءٍ حَفِيظٌ</div>
+                    <div class="transliteration">Fa-in tawallaw faqad ablaghtukum ma ursiltu bihi ilaykum, wa yastakhlifu rabbi qawman ghayrakum wa la tadurrunahu shay'a, inna rabbi 'ala kulli shay'in Hafeez</div>
+                    <p>"But if you turn away, then I have already conveyed to you that with which I was sent to you. My Lord will give succession to a people other than you, and you will not harm Him at all. Indeed my Lord is, over all things, Guardian."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/11/57/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse shows Allah's perfect preservation of His religion. Though people may reject, Allah will maintain His religion by replacing them with believers.
+                    </div>
+                </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-        </div>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/12:64" target="_blank">Surah Yusuf 12:64</a>
+                    <div class="arabic">قَالَ هَلْ آمَنُكُمْ عَلَيْهِ إِلَّا كَمَا أَمِنتُكُمْ عَلَىٰ أَخِيهِ مِن قَبْلُ ۖ فَاللَّهُ خَيْرٌ حَافِظًا ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ</div>
+                    <div class="transliteration">Qala hal amanukum 'alayhi illa kama amintukum 'ala akhihi min qabl, fallahu khayrun hafiza, wa huwa arhamur-rahimin</div>
+                    <p>"He said, 'Should I entrust you with him except [under coercion] as I entrusted you with his brother before? But Allah is the best guardian, and He is the most merciful of the merciful.'"</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/12/64/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse teaches that human protection is limited, while Allah's protection is perfect and full of mercy.
+                    </div>
+                </div>
 
-        <!-- Indonesian Content -->
-        <div id="indonesianContent" class="hidden">
-            <h1>38. Al-Hafeez (الحفيظ) - Yang Maha Memelihara, Yang Maha Pelindung</h1>
-            <div class="title-source">
-                Sumber: <a href="https://myislam.org/99-names-of-allah/al-hafiz/" target="_blank">https://myislam.org/99-names-of-allah/al-hafiz/</a>
-            </div>
-
-            <div class="section">
-                <p class="arabic">الحَفِيظُ</p>
-                <p class="transliteration">Al-Hafeez</p>
-                <p><strong>Arti:</strong> Yang Maha Memelihara, Yang Maha Pelindung, Yang Maha Menjaga, Dzat yang memelihara dan melindungi segala sesuatu yang ada, menjaga keteraturan kosmik.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan</h2>
-                <p>Al-Hafeez adalah Dzat yang sempurna dalam memelihara dan melindungi segala sesuatu yang ada. Dia menjaga keseimbangan alam semesta, melindungi hamba-hamba-Nya dari bahaya, dan mencatat semua amal dalam catatan abadi-Nya. Tidak ada yang luput dari pengawasan dan pemeliharaan-Nya.</p>
-                <p>Ibnu Katsir menjelaskan dalam Tafsirnya bahwa Al-Hafeez adalah Dzat yang menjaga dan memelihara seluruh ciptaan, mempertahankan keteraturan kosmik sekaligus mencatat semua perbuatan manusia untuk Hari Pembalasan.</p>
-            </div>
-
-            <div class="section">
-                <h2>Referensi Al-Quran</h2>
-                <h3>1. Surah Hud 11:57</h3>
-                <p class="arabic">فَإِن تَوَلَّوْا فَقَدْ أَبْلَغْتُكُم مَّا أُرْسِلْتُ بِهِ إِلَيْكُمْ ۚ وَيَسْتَخْلِفُ رَبِّي قَوْمًا غَيْرَكُمْ وَلَا تَضُرُّونَهُ شَيْئًا ۚ إِنَّ رَبِّي عَلَىٰ كُلِّ شَيْءٍ حَفِيظٌ</p>
-                <p class="transliteration">Fa-in tawallaw faqad ablaghtukum ma ursiltu bihi ilaykum, wa yastakhlifu rabbi qawman ghayrakum wa la tadurrunahu shay'a, inna rabbi 'ala kulli shay'in Hafeez</p>
-                <p><strong>Terjemahan:</strong> "Jika kamu berpaling, maka sesungguhnya aku telah menyampaikan kepadamu apa (amanat) yang aku diutus (untuk menyampaikan)nya kepadamu. Dan Tuhanku akan mengganti (kamu) dengan kaum yang lain (dari) kamu; dan kamu tidak dapat membuat mudharat kepada-Nya sedikitpun. Sesungguhnya Tuhanku adalah Maha Pemelihara segala sesuatu." <a href="https://quranwbw.com/11:57" target="_blank">(Surah Hud 11:57)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini menunjukkan pemeliharaan sempurna Allah atas pesan-Nya dan kemampuan-Nya untuk menggantikan bangsa-bangsa sambil mempertahankan rencana ilahi-Nya. Ibnu Katsir menjelaskan bahwa pemeliharaan Allah memastikan kelangsungan agama-Nya terlepas dari penolakan manusia.</p>
-
-                <h3>2. Surah Yusuf 12:64</h3>
-                <p class="arabic">قَالَ هَلْ آمَنُكُمْ عَلَيْهِ إِلَّا كَمَا أَمِنتُكُمْ عَلَىٰ أَخِيهِ مِن قَبْلُ ۖ فَاللَّهُ خَيْرٌ حَافِظًا ۖ وَهُوَ أَرْحَمُ الرَّاحِمِينَ</p>
-                <p class="transliteration">Qala hal amanukum 'alayhi illa kama amintukum 'ala akhihi min qabl, fallahu khayrun hafiza, wa huwa arhamur-rahimin</p>
-                <p><strong>Terjemahan:</strong> "Yakub berkata: 'Bagaimana aku akan mempercayakannya (Bunyamin) kepadamu, seperti aku telah mempercayakan saudaranya (Yusuf) kepada kamu dahulu?' Maka Allah adalah penjaga yang paling baik, dan Dia adalah Maha Penyayang di antara para penyayang." <a href="https://quranwbw.com/12:64" target="_blank">(Surah Yusuf 12:64)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini dari kisah Nabi Ya'qub menunjukkan bahwa kepercayaan tertinggi harus ditempatkan pada pemeliharaan Allah. Ibnu Katsir berkomentar bahwa sementara penjaga manusia mungkin gagal, pemeliharaan Allah sempurna dan penuh rahmat.</p>
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2704" target="_blank">Sahih Muslim 2704</a>
+                    <div class="arabic">احْفَظِ اللَّهَ يَحْفَظْكَ احْفَظِ اللَّهَ تَجِدْهُ تُجَاهَكَ</div>
+                    <div class="transliteration">Ihfazillaha yahfazk, ihfazillaha tajidhu tujahak</div>
+                    <p>"Be mindful of Allah's rights, and He will protect you. Be mindful of Allah's rights, and you will find Him before you."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith shows the reciprocal relationship between servant and Allah. When we observe Allah's commands, He protects us in this world and the Hereafter.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Al-Hafeez membawa ketenangan mengetahui Dia memelihara dan melindungi segala sesuatu.</p>
-                <p>2. Ini mengajarkan kita untuk menempatkan kepercayaan tertinggi pada pemeliharaan Allah daripada sarana duniawi.</p>
-                <p>3. Kita harus sadar bahwa Allah mencatat semua amal kita untuk Hari Pembalasan.</p>
-                <p>4. Memahami nama ini mendorong kita untuk mencari perlindungan Allah dalam segala hal.</p>
-            </div>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Allah's Protection</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ الْحَفِيظِ احْفَظْنِي مِنْ شَرِّ مَا خَلَقْتَ وَذَرَأْتَ وَبَرَأْتَ</div>
+                    <div class="transliteration">Allahumma bi-haqqi al-Hafeez ihfazni min sharri ma khalaqta wa dhara'ta wa bara'ta</div>
+                    <p><strong>Translation:</strong> "O Allah, by the right of Al-Hafeez, protect me from the evil of what You have created, propagated, and formed."</p>
+                    <p><strong>Benefits:</strong> This dua is taught by scholars for comprehensive protection. Recommended to recite in the morning and evening.</p>
+                </div>
 
-            <div class="dua-section">
-                <h2>Doa dengan Al-Hafeez</h2>
-                <p class="arabic">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</p>
-                <p class="transliteration">Hasbiyallahu la ilaha illa huwa, 'alayhi tawakkaltu, wa huwa rabbul-'arshil-'azeem</p>
-                <p><strong>Terjemahan:</strong> "Cukuplah Allah bagiku; tidak ada Tuhan selain Dia. Hanya kepada-Nya aku bertawakal, dan Dia adalah Tuhan yang memiliki 'Arsy yang agung." <a href="https://quranwbw.com/9:129" target="_blank">(Surah At-Tawbah 9:129)</a></p>
-                <p><strong>Penggunaan:</strong> Doa komprehensif ini menegaskan ketergantungan sepenuhnya pada pemeliharaan dan perlindungan Allah. Dapat dibaca di saat kesulitan atau ketika mencari penjagaan Allah atas urusan seseorang.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan</h2>
-                <h3>1. Dzikir Pagi dan Petang</h3>
-                <p>Bacalah dzikir pagi dan petang yang mencakup permohonan perlindungan Allah, seperti "Bismillahilladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama'i wa huwas-Sami'ul-'Aleem" (Dengan nama Allah yang dengan nama-Nya tidak ada sesuatu pun yang dapat membahayakan di bumi maupun di langit, dan Dia Maha Mendengar lagi Maha Mengetahui).</p>
-
-                <h3>2. Memelihara Amal Baik</h3>
-                <p>Bersikaplah konsisten dalam melakukan dan memelihara amal baik, mengetahui bahwa Al-Hafeez mencatat semua tindakan. Nabi (sallallahu 'alayhi wasallam) bersabda: "Amal yang paling dicintai Allah adalah yang konsisten, meskipun kecil."</p>
+                <div class="dua">
+                    <div class="dua-title">Reliance on Allah</div>
+                    <div class="arabic">حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ</div>
+                    <div class="transliteration">Hasbiyallahu la ilaha illa huwa, 'alayhi tawakkaltu, wa huwa rabbul-'arshil-'azeem</div>
+                    <p><strong>Translation:</strong> "Sufficient for me is Allah; there is no deity except Him. On Him I have relied, and He is the Lord of the Great Throne."</p>
+                    <p><strong>Source:</strong> This dua from Surah At-Tawbah (<a href="https://quranwbw.com/9:129" target="_blank">9:129</a>) was taught by Prophet Muhammad (peace be upon him) as complete reliance on Allah's protection.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Hud 11:57, Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Hafeez merujuk pada pemeliharaan-Nya yang sempurna atas alam semesta dan ketetapan ilahi-Nya. Dia memelihara agama-Nya dengan menggantikan bangsa-bangsa yang menolak dengan yang lain yang akan menjaganya.</p>
-                <p>Mengenai Surah Yusuf 12:64, Ibnu Katsir menyatakan bahwa pemeliharaan Allah sempurna dalam melindungi hamba-hamba-Nya dan mencatat semua perbuatan mereka. Penjagaan manusia terbatas, tetapi penjagaan Allah mencakup segala sesuatu.</p>
+                <h2 class="section-title">Practices</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Daily Protection Practice</div>
+                    <p>Routine to receive Al-Hafeez's protection:</p>
+                    <ol>
+                        <li>Recite morning and evening remembrances consistently</li>
+                        <li>Practice protection dua before leaving home</li>
+                        <li>Increase istighfar to guard against sins</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Receives direct protection from Allah</li>
+                        <li>Increases awareness of Allah's watchfulness</li>
+                        <li>Follows the Sunnah of Prophet Muhammad (peace be upon him)</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Maintaining Worship</div>
+                    <p>Weekly practice to reflect Al-Hafeez's attribute:</p>
+                    <ol>
+                        <li>Evaluate weekly worship performance</li>
+                        <li>Improve shortcomings in prayer, fasting, and charity</li>
+                        <li>Record spiritual progress in a journal</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (peace be upon him) said: "The most beloved deeds to Allah are those consistent, even if small." (Bukhari). This practice helps maintain consistency in worship.</p>
+                </div>
             </div>
 
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Hafeez through several dimensions:</p>
+                <ol>
+                    <li><strong>Preservation of Universe:</strong>
+                        <ul>
+                            <li>Allah maintains cosmic balance (<a href="https://quranwbw.com/67:3-4" target="_blank">67:3-4</a>)</li>
+                            <li>Sustains all creatures' lives (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Protection of Servants:</strong>
+                        <ul>
+                            <li>Guards believers from harm (<a href="https://quranwbw.com/40:45" target="_blank">40:45</a>)</li>
+                            <li>Protects from Satan's whispers (<a href="https://quranwbw.com/7:201" target="_blank">7:201</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Recording of Deeds:</strong>
+                        <ul>
+                            <li>Records all human actions (<a href="https://quranwbw.com/50:18" target="_blank">50:18</a>)</li>
+                            <li>Preserves good and bad deeds (<a href="https://quranwbw.com/99:7-8" target="_blank">99:7-8</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Al-An'am (<a href="https://quranwbw.com/6:61" target="_blank">6:61</a>), Allah affirms He is Omnipotent over His servants and sends guardians to record all deeds.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.remove('hidden');
-            document.getElementById('indonesianContent').classList.add('hidden');
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
 
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.add('hidden');
-            document.getElementById('indonesianContent').classList.remove('hidden');
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
         });
 
         // Transliteration Toggle
-        const transliterations = document.querySelectorAll('.transliteration');
-        
-        document.getElementById('showTransliteration').addEventListener('click', function() {
-            transliterations.forEach(el => el.style.display = 'block');
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
-
-        document.getElementById('hideTransliteration').addEventListener('click', function() {
-            transliterations.forEach(el => el.style.display = 'none');
-        });
-
-        // Back to top
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
-        });
-
-        // Initially show English content
-        document.getElementById('englishContent').classList.remove('hidden');
-        document.getElementById('indonesianContent').classList.add('hidden');
     </script>
 </body>
 </html>
