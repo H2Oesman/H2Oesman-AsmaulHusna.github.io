@@ -3,307 +3,551 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>35. Ash-Shakoor (The Most Appreciative) - 99 Names of Allah</title>
+    <title>35. Ash-Shakoor (Yang Maha Menghargai) - 99 Asmaul Husna</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1, h2, h3 {
-            color: #1e5a1e;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 28px;
-            border-bottom: 2px solid #1e5a1e;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-top: 30px;
-            border-left: 4px solid #1e5a1e;
-            padding-left: 10px;
-        }
-        h3 {
-            font-size: 20px;
-            margin-top: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            line-height: 1.8;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #555;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .dua-section, .amalan-section {
-            background-color: #f0f7f0;
-            padding: 15px;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .toggle-btn {
-            background-color: #1e5a1e;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 5px;
-        }
-        .toggle-btn:hover {
-            background-color: #2d7a2d;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #1e5a1e;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f4e8;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .title-source {
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
             font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
             text-align: center;
         }
-        a {
-            color: #1e5a1e;
-            text-decoration: none;
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
         }
-        a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Toggle -->
-        <div class="toggle-container">
-            <button id="englishBtn" class="toggle-btn">English</button>
-            <button id="indonesianBtn" class="toggle-btn">Bahasa Indonesia</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">35. Ash-Shakoor (Yang Maha Menghargai)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/ash-shakur/" target="_blank">myislam.org/99-names-of-allah/ash-shakur/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">الشَّكُورُ</div>
+            <div class="transliteration">Transliterasi: Ash-Shakoor</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/35.%20ash-shakur.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Ash-Shakoor adalah salah satu dari 99 Asmaul Husna Allah yang disebutkan dalam Al-Quran. Menurut Kementerian Agama RI dan NU Online, nama ini mengandung makna:</p>
+                <ul>
+                    <li><strong>Yang Maha Menghargai:</strong> Allah memberikan balasan berlipat ganda atas amal kebaikan hamba-Nya</li>
+                    <li><strong>Yang Maha Membalas:</strong> Allah tidak menyia-nyiakan sedikitpun amal kebaikan hamba-Nya</li>
+                    <li><strong>Yang Maha Mensyukuri:</strong> Allah menerima dan mengembangkan amal shaleh hamba-Nya</li>
+                </ul>
+                <p>Menurut Tafsir Kementerian Agama RI, Ash-Shakoor adalah Dzat yang membalas kebaikan hamba-Nya dengan pahala berlipat ganda, baik di dunia maupun akhirat. Dalam kitab-kitab aqidah NU disebutkan bahwa Allah akan melipatgandakan pahala satu kebaikan hingga 700 kali lipat atau lebih.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/35:30" target="_blank">Surah Fatir 35:30</a>
+                    <div class="arabic">لِيُوَفِّيَهُمْ أُجُورَهُمْ وَيَزِيدَهُم مِّن فَضْلِهِ ۚ إِنَّهُ غَفُورٌ شَكُورٌ</div>
+                    <div class="transliteration">Li-yuwaffiyahum ujoorahum wa yazeedahum min fadlih, innahu Ghafoorun Shakoor</div>
+                    <p>"Supaya Allah memberikan balasan kepada mereka dengan balasan yang lebih baik dari apa yang telah mereka kerjakan, dan supaya Allah menambah karunia-Nya kepada mereka. Sesungguhnya Allah Maha Pengampun lagi Maha Mensyukuri."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/35/30/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ayat ini menunjukkan bagaimana Allah sebagai Ash-Shakoor tidak hanya membalas amal baik secara sempurna tetapi menambahkan karunia-Nya. Menurut Tafsir Kementerian Agama RI, ini menunjukkan sifat Allah yang sangat menghargai amal hamba-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/42:23" target="_blank">Surah Ash-Shura 42:23</a>
+                    <div class="arabic">ذَٰلِكَ الَّذِي يُبَشِّرُ اللَّهُ عِبَادَهُ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ ۗ قُل لَّا أَسْأَلُكُمْ عَلَيْهِ أَجْرًا إِلَّا الْمَوَدَّةَ فِي الْقُرْبَىٰ ۗ وَمَن يَقْتَرِفْ حَسَنَةً نَّزِدْ لَهُ فِيهَا حُسْنًا ۚ إِنَّ اللَّهَ غَفُورٌ شَكُورٌ</div>
+                    <div class="transliteration">Dhalika alladhi yubashshirullahu 'ibadahu alladhina amanu wa 'amilus-salihat, qul la as'alukum 'alayhi ajran illal-mawaddata fil-qurba, wa man yaqtarif hasanatan nazid lahu fiha husna, innallaha Ghafoorun Shakoor</div>
+                    <p>"Itulah (karunia) yang (dengan itu) Allah menggembirakan hamba-hamba-Nya yang beriman dan mengerjakan amal saleh. Katakanlah: 'Aku tidak meminta kepadamu sesuatu upah pun atas seruanku kecuali kasih sayang dalam kekeluargaan.' Dan siapa yang mengerjakan kebaikan akan Kami tambahkan baginya kebaikan pada kebaikannya itu. Sesungguhnya Allah Maha Pengampun lagi Maha Mensyukuri."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/42/23/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Menurut Tafsir Kementerian Agama RI, ayat ini menunjukkan janji Allah untuk menambah kebaikan bagi yang berbuat baik. Dalam kitab-kitab NU disebutkan bahwa Allah sebagai Ash-Shakoor akan melipatgandakan pahala kebaikan melebihi apa yang pantas diterima oleh amal itu sendiri.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:1017" target="_blank">Sahih Muslim 1017</a>
+                    <div class="arabic">إِنَّ اللَّهَ لَيَرْضَى عَنِ الْعَبْدِ أَنْ يَأْكُلَ الْأَكْلَةَ فَيَحْمَدَهُ عَلَيْهَا أَوْ يَشْرَبَ الشَّرْبَةَ فَيَحْمَدَهُ عَلَيْهَا</div>
+                    <div class="transliteration">Innallaha layarda 'anil-'abdi an ya'kula al-aklata fa yahmadahu 'alayha aw yashraba ash-sharbata fa yahmadahu 'alayha</div>
+                    <p>"Sesungguhnya Allah sangat ridha terhadap seorang hamba yang makan sesuap makanan lalu memuji-Nya atas makanan itu, atau minum seteguk minuman lalu memuji-Nya atas minuman itu."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Hadits ini menunjukkan betapa Allah sebagai Ash-Shakoor menghargai rasa syukur hamba-Nya meskipun dalam hal kecil. Menurut penjelasan dalam kitab-kitab NU, ini adalah bentuk penghargaan Allah yang sangat besar terhadap syukur hamba-Nya.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Doa Menjadi Hamba yang Bersyukur</div>
+                    <div class="arabic">اللَّهُمَّ اجْعَلْنِي مِنَ الشَّاكِرِينَ</div>
+                    <div class="transliteration">Allahummaj'alni minash-shakirin</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, jadikan aku termasuk orang-orang yang bersyukur." (<a href="https://quranwbw.com/46:15" target="_blank">QS. Al-Ahqaf 46:15</a>)</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh Kementerian Agama RI dalam panduan doa sehari-hari. Menurut kitab-kitab NU, doa ini mencakup permohonan untuk menjadi hamba yang mensyukuri nikmat Allah dengan sebenar-benarnya.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Doa Syukur atas Nikmat</div>
+                    <div class="arabic">اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ</div>
+                    <div class="transliteration">Allahumma ma asbaha bi min ni'matin aw bi-ahadin min khalqika fa minka wahdaka la sharika laka fa lakal-hamdu wa lakash-shukru</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, nikmat yang kuterima atau yang diterima oleh seseorang di antara makhluk-Mu di pagi ini, semuanya dari-Mu semata, tiada sekutu bagi-Mu. Maka bagi-Mu segala puji dan syukur."</p>
+                    <p><strong>Sumber:</strong> Hadits riwayat Abu Daud. Menurut penjelasan dalam kitab-kitab NU, doa ini sangat dianjurkan untuk dibaca pagi dan petang sebagai bentuk pengakuan bahwa Allah adalah Ash-Shakoor yang memberikan semua nikmat.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Wirid Syukur Harian</div>
+                    <p>Amalan harian berdasarkan ajaran NU dan Kementerian Agama RI:</p>
+                    <ol>
+                        <li>Setiap selesai shalat fardhu, baca "Alhamdulillah" 33 kali</li>
+                        <li>Setiap pagi dan petang, baca doa syukur di atas</li>
+                        <li>Sebelum tidur, renungkan 3 nikmat yang diterima hari itu dan ucapkan syukur</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Mendatangkan ridha Allah sebagai Ash-Shakoor</li>
+                        <li>Menambah nikmat dan pahala</li>
+                        <li>Dianjurkan dalam kitab-kitab wirid NU seperti Al-Adzkar An-Nawawiyah</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Malam Jumat</div>
+                    <p>Amalan khusus malam Jumat berdasarkan tradisi NU:</p>
+                    <ol>
+                        <li>Shalat sunnah 2 rakaat dengan niat syukur</li>
+                        <li>Baca Surah Al-Waqi'ah dan Al-Mulk</li>
+                        <li>Baca istighfar 100 kali dan shalawat 100 kali</li>
+                        <li>Baca doa syukur dengan khusyuk</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa bersyukur kepada Allah, Allah akan menambah nikmatnya." (HR. Ahmad). Amalan ini dianjurkan dalam kitab-kitab amalan NU untuk meningkatkan rasa syukur kepada Allah Ash-Shakoor.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Ash-Shakoor melalui beberapa dimensi:</p>
+                <ol>
+                    <li><strong>Pembalas yang Sempurna:</strong>
+                        <ul>
+                            <li>Allah membalas kebaikan dengan sempurna (<a href="https://quranwbw.com/35:30" target="_blank">35:30</a>)</li>
+                            <li>Allah menambah dari karunia-Nya (<a href="https://quranwbw.com/14:7" target="_blank">14:7</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pelipatganda Pahala:</strong>
+                        <ul>
+                            <li>Allah melipatgandakan pahala kebaikan (<a href="https://quranwbw.com/2:261" target="_blank">2:261</a>)</li>
+                            <li>Allah menerima amal kecil sebagai besar (<a href="https://quranwbw.com/4:40" target="_blank">4:40</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penerima Syukur:</strong>
+                        <ul>
+                            <li>Allah ridha terhadap syukur hamba-Nya (<a href="https://quranwbw.com/39:7" target="_blank">39:7</a>)</li>
+                            <li>Allah membalas syukur dengan tambahan nikmat (<a href="https://quranwbw.com/14:7" target="_blank">14:7</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam kitab-kitab tafsir NU disebutkan bahwa sifat Ash-Shakoor Allah sangat terkait dengan rahmat-Nya. Allah tidak hanya membalas kebaikan tetapi melipatgandakannya sebagai bentuk penghargaan dan kasih sayang-Nya kepada hamba yang beriman.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- Transliteration Toggle -->
-        <div class="toggle-container">
-            <button id="showTransliteration" class="toggle-btn">Show Transliteration</button>
-            <button id="hideTransliteration" class="toggle-btn">Hide Transliteration</button>
-        </div>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">35. Ash-Shakoor (The Most Appreciative)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/ash-shakur/" target="_blank">myislam.org/99-names-of-allah/ash-shakur/</a></div>
 
-        <!-- English Content -->
-        <div id="englishContent">
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_36Shakur.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
-            <h1>35. Ash-Shakoor (الشكور) - The Most Appreciative, The Most Grateful</h1>
-            <div class="title-source">
-                Source: <a href="https://myislam.org/99-names-of-allah/ash-shakur/" target="_blank">https://myislam.org/99-names-of-allah/ash-shakur/</a>
-            </div>
+            <div class="arabic">الشَّكُورُ</div>
+            <div class="transliteration">Transliteration: Ash-Shakoor</div>
 
-            <div class="section">
-                <p class="arabic">الشَّكُورُ</p>
-                <p class="transliteration">Ash-Shakoor</p>
-                <p><strong>Meaning:</strong> The Most Appreciative, The Most Grateful, The One who recognizes and rewards even the smallest good deed with multiplied recompense.</p>
-            </div>
-
-            <div class="section">
-                <h2>Explanation</h2>
-                <p>Ash-Shakoor is the One who appreciates and rewards good deeds far beyond their worth. He accepts even the smallest acts of obedience and multiplies their reward. His appreciation is perfect and His rewards are beyond measure.</p>
-                <p>Ibn Kathir explains in his Tafsir that Ash-Shakoor is the One who gives abundant rewards for small deeds. He appreciates even the slightest good and repays it manifold in this world and the Hereafter.</p>
-            </div>
-
-            <div class="section">
-                <h2>Quranic References</h2>
-                <h3>1. Surah Fatir 35:30</h3>
-                <p class="arabic">لِيُوَفِّيَهُمْ أُجُورَهُمْ وَيَزِيدَهُم مِّن فَضْلِهِ ۚ إِنَّهُ غَفُورٌ شَكُورٌ</p>
-                <p class="transliteration">Li-yuwaffiyahum ujoorahum wa yazeedahum min fadlih, innahu Ghafoorun Shakoor</p>
-                <p><strong>Translation:</strong> "That He may pay them their wages in full and give them more out of His grace. Indeed, He is Forgiving and Appreciative." <a href="https://quranwbw.com/35:30" target="_blank">(Surah Fatir 35:30)</a></p>
-                <p><strong>Explanation:</strong> This verse shows how Allah not only rewards good deeds fully but adds from His bounty. Ibn Kathir explains that Allah's attribute of being Ash-Shakoor means He appreciates even small acts of obedience and rewards them abundantly.</p>
-
-                <h3>2. Surah Ash-Shura 42:23</h3>
-                <p class="arabic">ذَٰلِكَ الَّذِي يُبَشِّرُ اللَّهُ عِبَادَهُ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ ۗ قُل لَّا أَسْأَلُكُمْ عَلَيْهِ أَجْرًا إِلَّا الْمَوَدَّةَ فِي الْقُرْبَىٰ ۗ وَمَن يَقْتَرِفْ حَسَنَةً نَّزِدْ لَهُ فِيهَا حُسْنًا ۚ إِنَّ اللَّهَ غَفُورٌ شَكُورٌ</p>
-                <p class="transliteration">Dhalika alladhi yubashshirullahu 'ibadahu alladhina amanu wa 'amilus-salihat, qul la as'alukum 'alayhi ajran illal-mawaddata fil-qurba, wa man yaqtarif hasanatan nazid lahu fiha husna, innallaha Ghafoorun Shakoor</p>
-                <p><strong>Translation:</strong> "That is of which Allah gives good tidings to His servants who believe and do righteous deeds. Say, [O Muhammad], 'I do not ask you for it any payment - only that whoever wills might take to his Lord a way.' And whoever does a good deed - We will increase for him good therein. Indeed, Allah is Forgiving and Appreciative." <a href="https://quranwbw.com/42:23" target="_blank">(Surah Ash-Shura 42:23)</a></p>
-                <p><strong>Explanation:</strong> This verse connects Allah's appreciation with His promise to increase good deeds. Ibn Kathir comments that Allah's attribute of being Ash-Shakoor means He not only accepts good deeds but increases their value and reward.</p>
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/35.%20ash-shakur.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
             <div class="section">
-                <h2>Benefits and Reflections</h2>
-                <p>1. Recognizing Allah as Ash-Shakoor motivates us to perform good deeds, knowing they won't be wasted.</p>
-                <p>2. It teaches us to be grateful to others, emulating this divine attribute.</p>
-                <p>3. We should never underestimate small good deeds, as Allah appreciates and multiplies them.</p>
-                <p>4. Understanding this name brings comfort that our sincere efforts are valued by Allah.</p>
-            </div>
-
-            <div class="dua-section">
-                <h2>Du'a with Ash-Shakoor</h2>
-                <p class="arabic">اللَّهُمَّ اجْعَلْنِي مِنَ الشَّاكِرِينَ</p>
-                <p class="transliteration">Allahummaj'alni minash-shakirin</p>
-                <p><strong>Translation:</strong> "O Allah, make me among the grateful ones."</p>
-                <p><strong>Usage:</strong> This simple yet profound du'a asks Allah to include us among those who are truly grateful. It can be recited after prayers or at any time, recognizing that true gratitude comes from Allah's grace.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Daily Gratitude Practice</h3>
-                <p>Every night before sleeping, reflect on at least three blessings from Allah and say "Alhamdulillah" (All praise is for Allah) for each one. The Prophet (peace be upon him) said: "Whoever does not thank people has not thanked Allah."</p>
-
-                <h3>2. Small Consistent Deeds</h3>
-                <p>Perform small but consistent acts of worship like daily dhikr or charity, knowing that Allah as Ash-Shakoor will appreciate and multiply their reward. The Prophet (peace be upon him) said: "The most beloved deeds to Allah are those consistent, even if small."</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Ash-Shakoor is one of Allah's 99 Names mentioned in the Quran. It signifies:</p>
+                <ul>
+                    <li><strong>The Most Appreciative:</strong> Allah gives multiplied rewards for small good deeds</li>
+                    <li><strong>The Most Rewarding:</strong> Allah never lets any good deed go to waste</li>
+                    <li><strong>The Most Grateful:</strong> Allah accepts and increases righteous deeds</li>
+                </ul>
+                <p>In Islamic theology, Ash-Shakoor is the One who rewards good deeds with multiplied recompense, both in this world and the Hereafter. Allah will multiply the reward of one good deed up to 700 times or more.</p>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his commentary on Surah Fatir 35:30, Ibn Kathir explains that Allah's attribute of being Ash-Shakoor refers to His perfect appreciation of good deeds. He not only rewards them fully but adds from His infinite bounty, sometimes multiplying a good deed up to 700 times or more.</p>
-                <p>Regarding Surah Ash-Shura 42:23, Ibn Kathir states that Allah's appreciation is such that He not only accepts good deeds but enhances their value and increases their reward beyond what the deed itself merits.</p>
-            </div>
+                <h2 class="section-title">Evidence (From Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/35:30" target="_blank">Surah Fatir 35:30</a>
+                    <div class="arabic">لِيُوَفِّيَهُمْ أُجُورَهُمْ وَيَزِيدَهُم مِّن فَضْلِهِ ۚ إِنَّهُ غَفُورٌ شَكُورٌ</div>
+                    <div class="transliteration">Li-yuwaffiyahum ujoorahum wa yazeedahum min fadlih, innahu Ghafoorun Shakoor</div>
+                    <p>"That He may pay them their wages in full and give them more out of His grace. Indeed, He is Forgiving and Appreciative."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/35/30/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse shows how Allah as Ash-Shakoor not only rewards good deeds perfectly but adds from His bounty. It demonstrates Allah's attribute of greatly appreciating His servants' deeds.
+                    </div>
+                </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-        </div>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/42:23" target="_blank">Surah Ash-Shura 42:23</a>
+                    <div class="arabic">ذَٰلِكَ الَّذِي يُبَشِّرُ اللَّهُ عِبَادَهُ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ ۗ قُل لَّا أَسْأَلُكُمْ عَلَيْهِ أَجْرًا إِلَّا الْمَوَدَّةَ فِي الْقُرْبَىٰ ۗ وَمَن يَقْتَرِفْ حَسَنَةً نَّزِدْ لَهُ فِيهَا حُسْنًا ۚ إِنَّ اللَّهَ غَفُورٌ شَكُورٌ</div>
+                    <div class="transliteration">Dhalika alladhi yubashshirullahu 'ibadahu alladhina amanu wa 'amilus-salihat, qul la as'alukum 'alayhi ajran illal-mawaddata fil-qurba, wa man yaqtarif hasanatan nazid lahu fiha husna, innallaha Ghafoorun Shakoor</div>
+                    <p>"That is of which Allah gives good tidings to His servants who believe and do righteous deeds. Say, [O Muhammad], 'I do not ask you for it any payment - only that whoever wills might take to his Lord a way.' And whoever does a good deed - We will increase for him good therein. Indeed, Allah is Forgiving and Appreciative."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/42/23/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse shows Allah's promise to increase good for those who do good. It demonstrates that Allah as Ash-Shakoor will multiply the reward of good deeds beyond what the deed itself merits.
+                    </div>
+                </div>
 
-        <!-- Indonesian Content -->
-        <div id="indonesianContent" class="hidden">
-            <h1>35. Ash-Shakoor (الشكور) - Yang Maha Menghargai, Yang Maha Bersyukur</h1>
-            <div class="title-source">
-                Sumber: <a href="https://myislam.org/99-names-of-allah/ash-shakur/" target="_blank">https://myislam.org/99-names-of-allah/ash-shakur/</a>
-            </div>
-
-            <div class="section">
-                <p class="arabic">الشَّكُورُ</p>
-                <p class="transliteration">Ash-Shakoor</p>
-                <p><strong>Arti:</strong> Yang Maha Menghargai, Yang Maha Bersyukur, Dzat yang mengenali dan membalas bahkan amal kebaikan terkecil dengan pahala berlipat ganda.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan</h2>
-                <p>Ash-Shakoor adalah Dzat yang menghargai dan membalas perbuatan baik jauh melebihi nilainya. Dia menerima bahkan perbuatan taat terkecil dan melipatgandakan pahalanya. Penghargaan-Nya sempurna dan balasan-Nya tak terhingga.</p>
-                <p>Ibnu Katsir menjelaskan dalam Tafsirnya bahwa Ash-Shakoor adalah Dzat yang memberikan pahala berlimpah untuk amal kecil. Dia menghargai bahkan kebaikan terkecil dan membalasnya berlipat ganda di dunia dan akhirat.</p>
-            </div>
-
-            <div class="section">
-                <h2>Referensi Al-Quran</h2>
-                <h3>1. Surah Fatir 35:30</h3>
-                <p class="arabic">لِيُوَفِّيَهُمْ أُجُورَهُمْ وَيَزِيدَهُم مِّن فَضْلِهِ ۚ إِنَّهُ غَفُورٌ شَكُورٌ</p>
-                <p class="transliteration">Li-yuwaffiyahum ujoorahum wa yazeedahum min fadlih, innahu Ghafoorun Shakoor</p>
-                <p><strong>Terjemahan:</strong> "Supaya Allah memberikan balasan kepada mereka dengan balasan yang lebih baik dari apa yang telah mereka kerjakan, dan supaya Allah menambah karunia-Nya kepada mereka. Sesungguhnya Allah Maha Pengampun lagi Maha Mensyukuri." <a href="https://quranwbw.com/35:30" target="_blank">(Surah Fatir 35:30)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini menunjukkan bagaimana Allah tidak hanya membalas perbuatan baik secara penuh tetapi menambahkan dari karunia-Nya. Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Ash-Shakoor berarti Dia menghargai bahkan amal ketaatan kecil dan membalasnya dengan berlimpah.</p>
-
-                <h3>2. Surah Ash-Shura 42:23</h3>
-                <p class="arabic">ذَٰلِكَ الَّذِي يُبَشِّرُ اللَّهُ عِبَادَهُ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ ۗ قُل لَّا أَسْأَلُكُمْ عَلَيْهِ أَجْرًا إِلَّا الْمَوَدَّةَ فِي الْقُرْبَىٰ ۗ وَمَن يَقْتَرِفْ حَسَنَةً نَّزِدْ لَهُ فِيهَا حُسْنًا ۚ إِنَّ اللَّهَ غَفُورٌ شَكُورٌ</p>
-                <p class="transliteration">Dhalika alladhi yubashshirullahu 'ibadahu alladhina amanu wa 'amilus-salihat, qul la as'alukum 'alayhi ajran illal-mawaddata fil-qurba, wa man yaqtarif hasanatan nazid lahu fiha husna, innallaha Ghafoorun Shakoor</p>
-                <p><strong>Terjemahan:</strong> "Itulah (karunia) yang (dengan itu) Allah menggembirakan hamba-hamba-Nya yang beriman dan mengerjakan amal saleh. Katakanlah: 'Aku tidak meminta kepadamu sesuatu upah pun atas seruanku kecuali kasih sayang dalam kekeluargaan.' Dan siapa yang mengerjakan kebaikan akan Kami tambahkan baginya kebaikan pada kebaikannya itu. Sesungguhnya Allah Maha Pengampun lagi Maha Mensyukuri." <a href="https://quranwbw.com/42:23" target="_blank">(Surah Ash-Shura 42:23)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini menghubungkan penghargaan Allah dengan janji-Nya untuk menambah kebaikan. Ibnu Katsir berkomentar bahwa sifat Allah sebagai Ash-Shakoor berarti Dia tidak hanya menerima perbuatan baik tetapi meningkatkan nilainya dan pahalanya.</p>
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:1017" target="_blank">Sahih Muslim 1017</a>
+                    <div class="arabic">إِنَّ اللَّهَ لَيَرْضَى عَنِ الْعَبْدِ أَنْ يَأْكُلَ الْأَكْلَةَ فَيَحْمَدَهُ عَلَيْهَا أَوْ يَشْرَبَ الشَّرْبَةَ فَيَحْمَدَهُ عَلَيْهَا</div>
+                    <div class="transliteration">Innallaha layarda 'anil-'abdi an ya'kula al-aklata fa yahmadahu 'alayha aw yashraba ash-sharbata fa yahmadahu 'alayha</div>
+                    <p>"Indeed, Allah is pleased with His servant who eats a morsel and praises Him for it, or drinks a sip and praises Him for it."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith shows how Allah as Ash-Shakoor appreciates the gratitude of His servant even in small matters. It demonstrates the great value Allah places on His servants' thankfulness.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Ash-Shakoor memotivasi kita untuk melakukan perbuatan baik, mengetahui bahwa mereka tidak akan sia-sia.</p>
-                <p>2. Ini mengajarkan kita untuk bersyukur kepada orang lain, meneladani sifat ilahi ini.</p>
-                <p>3. Kita tidak boleh meremehkan amal kecil, karena Allah menghargai dan melipatgandakannya.</p>
-                <p>4. Memahami nama ini membawa kenyamanan bahwa upaya tulus kita dihargai oleh Allah.</p>
-            </div>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">To Be Among the Grateful</div>
+                    <div class="arabic">اللَّهُمَّ اجْعَلْنِي مِنَ الشَّاكِرِينَ</div>
+                    <div class="transliteration">Allahummaj'alni minash-shakirin</div>
+                    <p><strong>Translation:</strong> "O Allah, make me among the grateful ones." (<a href="https://quranwbw.com/46:15" target="_blank">Quran 46:15</a>)</p>
+                    <p><strong>Benefits:</strong> This comprehensive dua asks Allah to include us among those who are truly grateful. It can be recited regularly, especially after prayers, acknowledging that true gratitude comes from Allah's grace.</p>
+                </div>
 
-            <div class="dua-section">
-                <h2>Doa dengan Ash-Shakoor</h2>
-                <p class="arabic">اللَّهُمَّ اجْعَلْنِي مِنَ الشَّاكِرِينَ</p>
-                <p class="transliteration">Allahummaj'alni minash-shakirin</p>
-                <p><strong>Terjemahan:</strong> "Ya Allah, jadikan aku termasuk orang-orang yang bersyukur."</p>
-                <p><strong>Penggunaan:</strong> Doa sederhana namun mendalam ini meminta Allah untuk memasukkan kita di antara mereka yang benar-benar bersyukur. Dapat dibaca setelah shalat atau kapan saja, mengakui bahwa rasa syukur sejati datang dari karunia Allah.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan</h2>
-                <h3>1. Praktik Syukur Harian</h3>
-                <p>Setiap malam sebelum tidur, renungkan setidaknya tiga nikmat dari Allah dan ucapkan "Alhamdulillah" (Segala puji bagi Allah) untuk masing-masing. Nabi (sallallahu 'alayhi wasallam) bersabda: "Barangsiapa tidak berterima kasih kepada manusia, dia belum bersyukur kepada Allah."</p>
-
-                <h3>2. Amal Kecil yang Konsisten</h3>
-                <p>Lakukan amal ibadah kecil tetapi konsisten seperti dzikir harian atau sedekah, mengetahui bahwa Allah sebagai Ash-Shakoor akan menghargai dan melipatgandakan pahalanya. Nabi (sallallahu 'alayhi wasallam) bersabda: "Amal yang paling dicintai Allah adalah yang konsisten, meskipun kecil."</p>
+                <div class="dua">
+                    <div class="dua-title">Thanksgiving for Blessings</div>
+                    <div class="arabic">اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ</div>
+                    <div class="transliteration">Allahumma ma asbaha bi min ni'matin aw bi-ahadin min khalqika fa minka wahdaka la sharika laka fa lakal-hamdu wa lakash-shukru</div>
+                    <p><strong>Translation:</strong> "O Allah, whatever blessing has been received by me or anyone in Your creation is from You alone, without partner. So for You is all praise and unto You all thanks."</p>
+                    <p><strong>Source:</strong> Hadith from Abu Dawud. This dua is highly recommended to be recited morning and evening as an acknowledgment that Allah is Ash-Shakoor who provides all blessings.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Fatir 35:30, Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Ash-Shakoor merujuk pada penghargaan-Nya yang sempurna terhadap perbuatan baik. Dia tidak hanya membalasnya sepenuhnya tetapi menambahkan dari karunia-Nya yang tak terbatas, terkadang melipatgandakan satu amal baik hingga 700 kali atau lebih.</p>
-                <p>Mengenai Surah Ash-Shura 42:23, Ibnu Katsir menyatakan bahwa penghargaan Allah sedemikian rupa sehingga Dia tidak hanya menerima perbuatan baik tetapi meningkatkan nilainya dan menambah pahalanya melebihi yang pantas diterima oleh amal itu sendiri.</p>
+                <h2 class="section-title">Practices</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Daily Gratitude Practice</div>
+                    <p>Daily routine based on authentic traditions:</p>
+                    <ol>
+                        <li>After each obligatory prayer, say "Alhamdulillah" 33 times</li>
+                        <li>Every morning and evening, recite the thanksgiving dua above</li>
+                        <li>Before sleeping, reflect on 3 blessings received that day and give thanks</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Brings Allah's pleasure as Ash-Shakoor</li>
+                        <li>Increases blessings and rewards</li>
+                        <li>Was practiced by the Prophet (ﷺ) and early Muslims</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Thursday Night Practice</div>
+                    <p>Special practice for Thursday nights:</p>
+                    <ol>
+                        <li>Pray 2 rakahs of gratitude prayer</li>
+                        <li>Recite Surah Al-Waqi'ah and Al-Mulk</li>
+                        <li>Recite istighfar 100 times and salawat 100 times</li>
+                        <li>Recite the thanksgiving dua with devotion</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "Whoever is grateful to Allah, Allah will increase him." (Ahmad). This practice transforms understanding of gratitude into action towards Allah Ash-Shakoor.</p>
+                </div>
             </div>
 
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Ash-Shakoor through several dimensions:</p>
+                <ol>
+                    <li><strong>Perfect Rewarder:</strong>
+                        <ul>
+                            <li>Allah rewards good deeds perfectly (<a href="https://quranwbw.com/35:30" target="_blank">35:30</a>)</li>
+                            <li>Allah adds from His bounty (<a href="https://quranwbw.com/14:7" target="_blank">14:7</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Multiplier of Rewards:</strong>
+                        <ul>
+                            <li>Allah multiplies rewards for good deeds (<a href="https://quranwbw.com/2:261" target="_blank">2:261</a>)</li>
+                            <li>Allah accepts small deeds as great (<a href="https://quranwbw.com/4:40" target="_blank">4:40</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Accepter of Gratitude:</strong>
+                        <ul>
+                            <li>Allah is pleased with His servants' gratitude (<a href="https://quranwbw.com/39:7" target="_blank">39:7</a>)</li>
+                            <li>Allah rewards gratitude with increased blessings (<a href="https://quranwbw.com/14:7" target="_blank">14:7</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Islamic theology, Allah's attribute as Ash-Shakoor is closely related to His mercy. Allah not only rewards good deeds but multiplies them as an expression of His appreciation and love for His believing servants.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.remove('hidden');
-            document.getElementById('indonesianContent').classList.add('hidden');
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
 
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.add('hidden');
-            document.getElementById('indonesianContent').classList.remove('hidden');
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
         });
 
         // Transliteration Toggle
-        const transliterations = document.querySelectorAll('.transliteration');
-        
-        document.getElementById('showTransliteration').addEventListener('click', function() {
-            transliterations.forEach(el => el.style.display = 'block');
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
-
-        document.getElementById('hideTransliteration').addEventListener('click', function() {
-            transliterations.forEach(el => el.style.display = 'none');
-        });
-
-        // Back to top
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
-        });
-
-        // Initially show English content
-        document.getElementById('englishContent').classList.remove('hidden');
-        document.getElementById('indonesianContent').classList.add('hidden');
     </script>
 </body>
 </html>
