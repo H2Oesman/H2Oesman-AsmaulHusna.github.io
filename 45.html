@@ -3,6 +3,566 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45. Al-Wasi' - Yang Maha Luas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .arabic {
+            font-size: 32px;
+            text-align: right;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+        }
+        .transliteration {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
+        }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .bonus {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
+        }
+        .hidden {
+            display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">45. Al-Wasi' (Yang Maha Luas)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-wasi/" target="_blank">myislam.org/99-names-of-allah/al-wasi/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْوَٰسِعُ</div>
+            <div class="transliteration">Transliterasi: Al-Wasi'</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/45.%20al-wasi.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Wasi' merupakan salah satu dari Asmaul Husna Allah yang disebutkan dalam Al-Quran. Nama ini mengandung makna:</p>
+                <ul>
+                    <li><strong>Yang Maha Luas:</strong> Allah memiliki keluasan yang tak terbatas dalam segala aspek</li>
+                    <li><strong>Yang Maha Meliputi:</strong> Allah meliputi segala sesuatu dengan ilmu dan kekuasaan-Nya</li>
+                    <li><strong>Yang Maha Mencukupi:</strong> Allah memberikan kecukupan kepada semua makhluk-Nya</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI, Al-Wasi' adalah Dzat yang memiliki keluasan dalam ilmu, rahmat, dan rezeki-Nya. Allah berfirman dalam Surah Al-Baqarah ayat 247: <a href="https://quranwbw.com/2:247" target="_blank">"Dan Allah Maha Luas (pemberian-Nya) lagi Maha Mengetahui."</a></p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:247" target="_blank">Surah Al-Baqarah 2:247</a>
+                    <div class="arabic">وَٱللَّهُ وَٰسِعٌ عَلِيمٌۭ</div>
+                    <div class="transliteration">Wallāhu wāsi'un 'alīm</div>
+                    <p>"Dan Allah Maha Luas (pemberian-Nya) lagi Maha Mengetahui."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan keluasan Allah dalam segala hal, terutama dalam pemberian-Nya. Menurut NU Online, sifat Al-Wasi' mencakup keluasan ilmu, rahmat, dan rezeki Allah yang tak terbatas.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/53:32" target="_blank">Surah An-Najm 53:32</a>
+                    <div class="arabic">إِنَّ رَبَّكَ وَٰسِعُ ٱلْمَغْفِرَةِ</div>
+                    <div class="transliteration">Inna rabbaka wāsi'u al-maghfirah</div>
+                    <p>"Sesungguhnya Tuhanmu Maha Luas ampunan-Nya."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menegaskan keluasan ampunan Allah. Menurut Kementerian Agama RI, ini menunjukkan bahwa rahmat Allah meliputi segala dosa hamba-Nya yang bertaubat.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2577" target="_blank">Sahih Muslim 2577</a>
+                    <div class="arabic">يَقُولُ اللَّهُ تَعَالَى يَا عِبَادِي لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ كَانُوا عَلَى أَتْقَى قَلْبِ رَجُلٍ وَاحِدٍ مِنْكُمْ مَا زَادَ ذَلِكَ فِي مُلْكِي شَيْئًا يَا عِبَادِي لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ كَانُوا عَلَى أَفْجَرِ قَلْبِ رَجُلٍ وَاحِدٍ مَا نَقَصَ ذَلِكَ مِنْ مُلْكِي شَيْئًا</div>
+                    <div class="transliteration">Yaqūlu Allāhu ta'ālā yā 'ibādī law anna awwalakum wa ākhirakum wa insakum wa jinnakum kānū 'alā atqā qalbi rajulin wāhidin minkum mā zāda dhālika fī mulkī shay'an yā 'ibādī law anna awwalakum wa ākhirakum wa insakum wa jinnakum kānū 'alā afjari qalbi rajulin wāhidin mā naqasa dhālika min mulkī shay'an</div>
+                    <p>"Allah Yang Maha Tinggi berfirman: Wahai hamba-hamba-Ku, seandainya orang pertama hingga terakhir dari kalian, manusia dan jin di antara kalian, semuanya bertakwa seperti orang yang paling bertakwa di antara kalian, hal itu tidak akan menambah sedikit pun kerajaan-Ku. Wahai hamba-hamba-Ku, seandainya orang pertama hingga terakhir dari kalian, manusia dan jin di antara kalian, semuanya durhaka seperti orang yang paling durhaka di antara kalian, hal itu tidak akan mengurangi sedikit pun kerajaan-Ku."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU Online:</strong> Hadits Qudsi ini menunjukkan keluasan kekuasaan Allah yang tidak terpengaruh oleh ketaatan atau kemaksiatan hamba-Nya. Kementerian Agama RI menegaskan bahwa ini menunjukkan kesempurnaan dan keluasan kerajaan Allah.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Keluasan Rezeki</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ الْوَاسِعِ</div>
+                    <div class="transliteration">Allāhumma innī as'aluka min faḍlika al-wāsi'</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dari karunia-Mu yang luas."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh ulama Ahlussunnah wal Jama'ah untuk memohon keluasan rezeki dan rahmat. Dianjurkan dibaca setelah shalat Subuh dan Maghrib.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Keluasan Ilmu dan Pemahaman</div>
+                    <div class="arabic">يَا وَاسِعُ يَا وَاسِعُ يَا وَاسِعُ</div>
+                    <div class="transliteration">Yā Wāsi'u yā Wāsi'u yā Wāsi'</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Luas, wahai Yang Maha Luas, wahai Yang Maha Luas."</p>
+                    <p><strong>Sumber:</strong> Wirid ini diajarkan oleh para ulama NU untuk dibaca 100 kali setelah shalat Dhuha, sebagaimana tercantum dalam kitab-kitab wirid Ahlussunnah wal Jama'ah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Mengingat Keluasan Allah</div>
+                    <p>Rutinitas harian untuk mendekatkan diri kepada Al-Wasi':</p>
+                    <ol>
+                        <li>Baca "Ya Wasi'" 100 kali setelah shalat Subuh</li>
+                        <li>Perbanyak istighfar di waktu sahur</li>
+                        <li>Bersedekah setiap hari Jumat</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Meningkatkan kesadaran akan keluasan rahmat Allah</li>
+                        <li>Mengembangkan sikap tawakal yang kuat</li>
+                        <li>Mengikuti sunnah Nabi (ﷺ) dalam berzikir di waktu-waktu utama</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Penyucian Hati</div>
+                    <p>Amalan mingguan untuk membersihkan hati:</p>
+                    <ol>
+                        <li>Setiap malam Jumat, lakukan:</li>
+                        <ul>
+                            <li>Mandi sunnah</li>
+                            <li>Shalat sunnah 2 rakaat</li>
+                            <li>Baca surat Al-Ikhlas 11 kali</li>
+                        </ul>
+                        <li>Sebelum tidur, baca doa memohon keluasan ilmu dan rezeki</li>
+                        <li>Jaga hati dari sifat kikir dan dengki</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Berdasarkan hadits Nabi (ﷺ) tentang keutamaan membersihkan hati. Praktik ini diajarkan dalam kitab-kitab fikih NU untuk membuka pintu rezeki dan ilmu.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut Kementerian Agama RI dan ulama NU, Al-Wasi' memiliki beberapa dimensi:</p>
+                <ol>
+                    <li><strong>Dimensi Ilmu:</strong>
+                        <ul>
+                            <li>Allah mengetahui segala sesuatu (<a href="https://quranwbw.com/2:247" target="_blank">2:247</a>)</li>
+                            <li>Ilmu-Nya meliputi yang nampak dan tersembunyi (<a href="https://quranwbw.com/20:7" target="_blank">20:7</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dimensi Rahmat:</strong>
+                        <ul>
+                            <li>Ampunan Allah meliputi segala dosa (<a href="https://quranwbw.com/53:32" target="_blank">53:32</a>)</li>
+                            <li>Rahmat-Nya mencakup seluruh makhluk (<a href="https://quranwbw.com/7:156" target="_blank">7:156</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dimensi Rezeki:</strong>
+                        <ul>
+                            <li>Allah memberikan rezeki tanpa batas (<a href="https://quranwbw.com/29:62" target="_blank">29:62</a>)</li>
+                            <li>Kekayaan Allah tidak berkurang karena memberi (<a href="https://quranwbw.com/34:39" target="_blank">34:39</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam kitab-kitab tafsir Ahlussunnah wal Jama'ah dijelaskan bahwa sifat Al-Wasi' mengajarkan kita untuk tidak pernah putus asa dari rahmat Allah, sebagaimana firman-Nya dalam Surah Az-Zumar ayat 53: <a href="https://quranwbw.com/39:53" target="_blank">"Katakanlah: Wahai hamba-hamba-Ku yang melampaui batas terhadap diri mereka sendiri, janganlah kamu berputus asa dari rahmat Allah. Sesungguhnya Allah mengampuni dosa-dosa semuanya."</a></p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">45. Al-Wasi' (The All-Encompassing)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-wasi/" target="_blank">myislam.org/99-names-of-allah/al-wasi/</a></div>
+
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_46Waasi.mp3?_=44" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+
+            <div class="arabic">ٱلْوَٰسِعُ</div>
+            <div class="transliteration">Transliteration: Al-Wasi'</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/45.%20al-wasi.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Wasi' is one of Allah's beautiful names mentioned in the Quran. This name signifies:</p>
+                <ul>
+                    <li><strong>The All-Encompassing:</strong> Allah's vastness has no limits in all aspects</li>
+                    <li><strong>The All-Embracing:</strong> Allah encompasses everything with His knowledge and power</li>
+                    <li><strong>The Bountiful:</strong> Allah provides sufficiently for all His creation</li>
+                </ul>
+                <p>Allah says in Surah Al-Baqarah 2:247: <a href="https://quranwbw.com/2:247" target="_blank">"And Allah is all-Encompassing and Knowing."</a></p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Evidence (From Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/2:247" target="_blank">Surah Al-Baqarah 2:247</a>
+                    <div class="arabic">وَٱللَّهُ وَٰسِعٌ عَلِيمٌۭ</div>
+                    <div class="transliteration">Wallāhu wāsi'un 'alīm</div>
+                    <p>"And Allah is all-Encompassing and Knowing."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse shows Allah's all-encompassing nature in all matters, especially in His provisions. The name Al-Wasi' includes the vastness of Allah's knowledge, mercy, and provisions.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/53:32" target="_blank">Surah An-Najm 53:32</a>
+                    <div class="arabic">إِنَّ رَبَّكَ وَٰسِعُ ٱلْمَغْفِرَةِ</div>
+                    <div class="transliteration">Inna rabbaka wāsi'u al-maghfirah</div>
+                    <p>"Indeed, your Lord is vast in forgiveness."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse emphasizes the vastness of Allah's forgiveness. It shows that Allah's mercy encompasses all sins of His repentant servants.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2577" target="_blank">Sahih Muslim 2577</a>
+                    <div class="arabic">يَقُولُ اللَّهُ تَعَالَى يَا عِبَادِي لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ كَانُوا عَلَى أَتْقَى قَلْبِ رَجُلٍ وَاحِدٍ مِنْكُمْ مَا زَادَ ذَلِكَ فِي مُلْكِي شَيْئًا يَا عِبَادِي لَوْ أَنَّ أَوَّلَكُمْ وَآخِرَكُمْ وَإِنْسَكُمْ وَجِنَّكُمْ كَانُوا عَلَى أَفْجَرِ قَلْبِ رَجُلٍ وَاحِدٍ مَا نَقَصَ ذَلِكَ مِنْ مُلْكِي شَيْئًا</div>
+                    <div class="transliteration">Yaqūlu Allāhu ta'ālā yā 'ibādī law anna awwalakum wa ākhirakum wa insakum wa jinnakum kānū 'alā atqā qalbi rajulin wāhidin minkum mā zāda dhālika fī mulkī shay'an yā 'ibādī law anna awwalakum wa ākhirakum wa insakum wa jinnakum kānū 'alā afjari qalbi rajulin wāhidin mā naqasa dhālika min mulkī shay'an</div>
+                    <p>"Allah the Exalted says: O My servants, if the first of you and the last of you, and the humans and jinn among you, were all as pious as the most pious heart of any one man among you, that would not increase My kingdom at all. O My servants, if the first of you and the last of you, and the humans and jinn among you, were all as wicked as the most wicked heart of any one man among you, that would not decrease My kingdom at all."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This Hadith Qudsi shows the vastness of Allah's kingdom that is unaffected by the obedience or disobedience of His servants. It demonstrates the perfection and all-encompassing nature of Allah's dominion.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Abundance of Provision</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ الْوَاسِعِ</div>
+                    <div class="transliteration">Allāhumma innī as'aluka min faḍlika al-wāsi'</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You from Your all-encompassing bounty."</p>
+                    <p><strong>Benefits:</strong> This dua is recommended by scholars to be recited after Fajr and Maghrib prayers for increase in provision and mercy.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Expansion of Knowledge</div>
+                    <div class="arabic">يَا وَاسِعُ يَا وَاسِعُ يَا وَاسِعُ</div>
+                    <div class="transliteration">Yā Wāsi'u yā Wāsi'u yā Wāsi'</div>
+                    <p><strong>Translation:</strong> "O All-Encompassing One, O All-Encompassing One, O All-Encompassing One."</p>
+                    <p><strong>Source:</strong> This wird is recommended to be recited 100 times after Dhuha prayer, as mentioned in various books of remembrance.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Practices</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Remembrance of Allah's Vastness</div>
+                    <p>Daily routine to cultivate awareness of Al-Wasi':</p>
+                    <ol>
+                        <li>Recite "Ya Wasi'" 100 times after Fajr prayer</li>
+                        <li>Increase istighfar during the last third of the night</li>
+                        <li>Give charity every Friday</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Increases awareness of Allah's vast mercy</li>
+                        <li>Develops strong reliance on Allah</li>
+                        <li>Follows the Prophet's (ﷺ) sunnah of remembrance at optimal times</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Heart Purification Ritual</div>
+                    <p>Weekly practice to cleanse the heart:</p>
+                    <ol>
+                        <li>Every Thursday night, perform:</li>
+                        <ul>
+                            <li>Sunnah bath</li>
+                            <li>2 rak'ahs of voluntary prayer</li>
+                            <li>Recite Surah Al-Ikhlas 11 times</li>
+                        </ul>
+                        <li>Before sleeping, make dua for expansion of knowledge and provision</li>
+                        <li>Guard the heart from miserliness and envy</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> Based on the Prophet's (ﷺ) teachings about purifying the heart. This practice helps open doors of provision and knowledge.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Wasi' through several dimensions:</p>
+                <ol>
+                    <li><strong>Knowledge Dimension:</strong>
+                        <ul>
+                            <li>Allah knows all things (<a href="https://quranwbw.com/2:247" target="_blank">2:247</a>)</li>
+                            <li>His knowledge encompasses the apparent and hidden (<a href="https://quranwbw.com/20:7" target="_blank">20:7</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mercy Dimension:</strong>
+                        <ul>
+                            <li>Allah's forgiveness covers all sins (<a href="https://quranwbw.com/53:32" target="_blank">53:32</a>)</li>
+                            <li>His mercy encompasses all creation (<a href="https://quranwbw.com/7:156" target="_blank">7:156</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Provision Dimension:</strong>
+                        <ul>
+                            <li>Allah provides without limit (<a href="https://quranwbw.com/29:62" target="_blank">29:62</a>)</li>
+                            <li>His treasures are not diminished by giving (<a href="https://quranwbw.com/34:39" target="_blank">34:39</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Az-Zumar 39:53, Allah says: <a href="https://quranwbw.com/39:53" target="_blank">"Say: O My servants who have transgressed against themselves, do not despair of Allah's mercy. Indeed, Allah forgives all sins."</a> This verse teaches us never to despair from Allah's vast mercy.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>45. Al-Wasi' - The All-Encompassing</title>
     <style>
         body {
