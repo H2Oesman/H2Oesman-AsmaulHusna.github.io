@@ -3,307 +3,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>39. Al-Muqeet (The All-Sustainer) - 99 Names of Allah</title>
+    <title>39. Al-Muqeet (Yang Maha Pemberi Rezeki) - 99 Nama Allah</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1, h2, h3 {
-            color: #1e5a1e;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 28px;
-            border-bottom: 2px solid #1e5a1e;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 24px;
-            margin-top: 30px;
-            border-left: 4px solid #1e5a1e;
-            padding-left: 10px;
-        }
-        h3 {
-            font-size: 20px;
-            margin-top: 25px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
-            direction: rtl;
+            font-size: 32px;
             text-align: right;
-            line-height: 1.8;
-            margin: 15px 0;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #555;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .dua-section, .amalan-section {
-            background-color: #f0f7f0;
-            padding: 15px;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .toggle-btn {
-            background-color: #1e5a1e;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 0 5px;
-        }
-        .toggle-btn:hover {
-            background-color: #2d7a2d;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #1e5a1e;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
             font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            background-color: #e8f4e8;
-            padding: 10px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
             border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: center;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .title-source {
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
             font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
             text-align: center;
         }
-        a {
-            color: #1e5a1e;
-            text-decoration: none;
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
         }
-        a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Toggle -->
-        <div class="toggle-container">
-            <button id="englishBtn" class="toggle-btn">English</button>
-            <button id="indonesianBtn" class="toggle-btn">Bahasa Indonesia</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">39. Al-Muqeet (Yang Maha Pemberi Rezeki)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muqeet/" target="_blank">myislam.org/99-names-of-allah/al-muqeet/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">المُقِيتُ</div>
+            <div class="transliteration">Transliterasi: Al-Muqeet</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/39.%20al-muqit.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Muqeet merupakan salah satu dari 99 Nama Allah yang indah (Asmaul Husna). Nama ini mengandung makna:</p>
+                <ul>
+                    <li><strong>Yang Maha Pemberi Rezeki:</strong> Allah yang memberikan dan mencukupkan rezeki kepada seluruh makhluk-Nya</li>
+                    <li><strong>Yang Maha Memelihara:</strong> Allah yang menjaga dan mengatur segala kebutuhan makhluk-Nya</li>
+                    <li><strong>Yang Maha Mengetahui:</strong> Allah yang mengetahui keadaan dan kebutuhan setiap makhluk</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI, Al-Muqeet adalah Dzat yang memberikan rezeki kepada semua makhluk-Nya, baik yang beriman maupun yang kafir. Rezeki yang diberikan mencakup kebutuhan jasmani dan rohani.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/4:85" target="_blank">Surah An-Nisa 4:85</a>
+                    <div class="arabic">مَّن يَشْفَعْ شَفَاعَةً حَسَنَةً يَكُن لَّهُ نَصِيبٌ مِّنْهَا ۖ وَمَن يَشْفَعْ شَفَاعَةً سَيِّئَةً يَكُن لَّهُ كِفْلٌ مِّنْهَا ۗ وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ مُّقِيتًا</div>
+                    <div class="transliteration">Man yashfa' shafa'atan hasanatan yakun lahu nasibun minha, wa man yashfa' shafa'atan sayyi'atan yakun lahu kiflun minha, wa kana Allahu 'ala kulli shay'in Muqeeta</div>
+                    <p>"Barangsiapa yang memberikan syafa'at yang baik, niscaya ia akan memperoleh bahagian (pahala) daripadanya. Dan barangsiapa yang memberi syafa'at yang buruk, niscaya ia akan memikul bahagian (dosa) daripadanya. Allah Maha Kuasa atas segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa Allah sebagai Al-Muqeet memiliki kekuasaan penuh atas segala sesuatu. Dia yang mengatur dan memelihara seluruh urusan makhluk-Nya, termasuk memberikan balasan atas setiap perbuatan manusia.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/11:6" target="_blank">Surah Hud 11:6</a>
+                    <div class="arabic">وَمَا مِن دَابَّةٍ فِي الْأَرْضِ إِلَّا عَلَى اللَّهِ رِزْقُهَا وَيَعْلَمُ مُسْتَقَرَّهَا وَمُسْتَوْدَعَهَا ۚ كُلٌّ فِي كِتَابٍ مُّبِينٍ</div>
+                    <div class="transliteration">Wa ma min dabbatin fil-ardi illa 'alallahi rizquha wa ya'lamu mustaqarraha wa mustawda'aha, kullun fi kitabin mubin</div>
+                    <p>"Dan tidak ada suatu binatang melata pun di bumi melainkan Allah-lah yang memberi rezekinya, dan Dia mengetahui tempat berdiam binatang itu dan tempat penyimpanannya. Semuanya tertulis dalam Kitab yang nyata (Lauh Mahfuzh)."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menegaskan bahwa Allah sebagai Al-Muqeet mengetahui segala kebutuhan makhluk-Nya dan menjamin rezeki mereka. Segala sesuatu telah tercatat dalam Lauh Mahfuzh dengan ketentuan yang sempurna.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:3194" target="_blank">Sahih Bukhari 3194</a>
+                    <div class="arabic">إِنَّ لِلَّهِ مِائَةَ رَحْمَةٍ أَنْزَلَ مِنْهَا رَحْمَةً وَاحِدَةً بَيْنَ الْجِنِّ وَالْإِنْسِ وَالْبَهَائِمِ وَالْهَوَامِّ فَبِهَا يَتَعَاطَفُونَ وَبِهَا يَتَرَاحَمُونَ وَبِهَا تَعْطِفُ الْوَحْشُ عَلَى وَلَدِهَا وَأَخَّرَ اللَّهُ تِسْعًا وَتِسْعِينَ رَحْمَةً يَرْحَمُ بِهَا عِبَادَهُ يَوْمَ الْقِيَامَةِ</div>
+                    <div class="transliteration">Inna li-llāhi mi'ata raḥmatin anzala minhā raḥmatan wāḥidatan bayna l-jinni wa l-insi wa l-bahā'imi wa l-hawāmmi fa bihā yata'āṭafūna wa bihā yatarāḥamūna wa bihā ta'ṭifu l-waḥshu 'alā waladihā wa akhkharu llāhu tis'an wa tis'īna raḥmatan yarḥamu bihā 'ibādahu yawma l-qiyāmah</div>
+                    <p>"Sesungguhnya Allah memiliki seratus rahmat. Darinya, Dia menurunkan satu rahmat kepada jin, manusia, hewan ternak dan serangga, yang dengan rahmat itu mereka saling berbuat baik dan menyayangi; dan dengannya pula binatang buas menyayangi anaknya. Dan Allah menyimpan sembilan puluh sembilan rahmat untuk menyayangi hamba-hamba-Nya pada Hari Kiamat."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU:</strong> Hadits ini menunjukkan keluasan rahmat Allah sebagai Al-Muqeet yang mencakup semua makhluk. Rahmat Allah di dunia ini hanyalah sebagian kecil dari rahmat-Nya yang luas.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Rezeki yang Halal dan Baik</div>
+                    <div class="arabic">اللَّهُمَّ ارْزُقْنَا رِزْقًا حَلَالًا طَيِّبًا وَاسِعًا مِنْ غَيْرِ تَعَبٍ وَلَا مَشَقَّةٍ وَلَا ضَيْرٍ وَلَا نَصَبٍ</div>
+                    <div class="transliteration">Allahummarzuqna rizqan halalan tayyiban wasi'an min ghayri ta'abin wa la mashaqqatin wa la dayrin wa la nasab</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, berilah kami rezeki yang halal, baik, melimpah tanpa kesulitan, kesusahan, bahaya atau kelelahan."</p>
+                    <p><strong>Sumber:</strong> Doa ini diajarkan oleh ulama Ahlussunnah wal Jama'ah untuk memohon rezeki yang berkah. Dianjurkan dibaca setelah shalat lima waktu.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Kecukupan Rezeki</div>
+                    <div class="arabic">اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ</div>
+                    <div class="transliteration">Allahummakfini bihalalika 'an haramika wa aghnini bifadlika 'amman siwaka</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, cukupkanlah aku dengan rezeki-Mu yang halal sehingga aku tidak memerlukan yang haram, dan kayakanlah aku dengan karunia-Mu sehingga aku tidak memerlukan selain-Mu."</p>
+                    <p><strong>Sumber:</strong> Doa dari hadits riwayat Tirmidzi yang dianjurkan oleh para ulama NU untuk diamalkan setiap pagi dan petang.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Syukur atas Rezeki</div>
+                    <p>Rutinitas harian untuk meningkatkan kesyukuran:</p>
+                    <ol>
+                        <li>Setiap selesai shalat, ucapkan "Alhamdulillah" 3 kali</li>
+                        <li>Setiap menerima rezeki, baca doa: "Allahumma barik lana fima razaqtana wa qina 'adzaban nar"</li>
+                        <li>Sebelum tidur, renungkan 3 nikmat yang diterima hari itu</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Amalan ini diajarkan oleh para ulama NU untuk:</p>
+                    <ul>
+                        <li>Meningkatkan rasa syukur</li>
+                        <li>Mendatangkan keberkahan rezeki</li>
+                        <li>Mendekatkan diri kepada Allah</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Sedekah</div>
+                    <p>Praktik mingguan untuk mendapatkan rezeki yang melimpah:</p>
+                    <ol>
+                        <li>Setiap Jumat, sisihkan sebagian rezeki untuk sedekah</li>
+                        <li>Baca basmalah sebelum memberi sedekah</li>
+                        <li>Berikan sedekah secara diam-diam</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Rasulullah SAW bersabda: "Sedekah tidak akan mengurangi harta" (HR Muslim). Amalan ini dianjurkan oleh Kementerian Agama RI dalam panduan ibadah harian.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Muqeet melalui beberapa dimensi:</p>
+                <ol>
+                    <li><strong>Pemberi Rezeki:</strong>
+                        <ul>
+                            <li>Allah yang memberikan rezeki kepada semua makhluk (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Rezeki yang diberikan sesuai dengan kebutuhan (<a href="https://quranwbw.com/17:30" target="_blank">17:30</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pemelihara Kehidupan:</strong>
+                        <ul>
+                            <li>Allah yang menjaga kelangsungan hidup makhluk (<a href="https://quranwbw.com/35:3" target="_blank">35:3</a>)</li>
+                            <li>Allah yang mengetahui segala kebutuhan (<a href="https://quranwbw.com/67:14" target="_blank">67:14</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pengatur Segala Urusan:</strong>
+                        <ul>
+                            <li>Allah yang mengatur segala sesuatu dengan sempurna (<a href="https://quranwbw.com/10:31" target="_blank">10:31</a>)</li>
+                            <li>Allah yang mencatat segala perbuatan (<a href="https://quranwbw.com/78:29" target="_blank">78:29</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam tafsirnya, Ibn Kathir menekankan bahwa Al-Muqeet adalah Dzat yang tidak hanya memberikan rezeki tetapi juga menjaga dan memelihara seluruh ciptaan-Nya dengan sempurna.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- Transliteration Toggle -->
-        <div class="toggle-container">
-            <button id="showTransliteration" class="toggle-btn">Show Transliteration</button>
-            <button id="hideTransliteration" class="toggle-btn">Hide Transliteration</button>
-        </div>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">39. Al-Muqeet (The All-Sustainer)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muqeet/" target="_blank">myislam.org/99-names-of-allah/al-muqeet/</a></div>
 
-        <!-- English Content -->
-        <div id="englishContent">
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_40Muqeet.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
-            <h1>39. Al-Muqeet (المقيت) - The All-Sustainer, The Maintainer</h1>
-            <div class="title-source">
-                Source: <a href="https://myislam.org/99-names-of-allah/al-muqeet/" target="_blank">https://myislam.org/99-names-of-allah/al-muqeet/</a>
+            <div class="arabic">المُقِيتُ</div>
+            <div class="transliteration">Transliteration: Al-Muqeet</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/39.%20al-muqit.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
             <div class="section">
-                <p class="arabic">المُقِيتُ</p>
-                <p class="transliteration">Al-Muqeet</p>
-                <p><strong>Meaning:</strong> The All-Sustainer, The Maintainer, The One who provides and sustains all creation with what they need for their existence and survival.</p>
-            </div>
-
-            <div class="section">
-                <h2>Explanation</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Muqeet is the One who sustains all living beings by providing their nourishment and all they need for survival. He maintains the entire creation, ensuring everything receives its provision at the proper time and in the proper measure.</p>
                 <p>Ibn Kathir explains in his Tafsir that Al-Muqeet is the One who provides sustenance to all creatures, from the smallest microorganism to the largest creations. His sustenance encompasses both physical nourishment and spiritual provision.</p>
             </div>
 
             <div class="section">
-                <h2>Quranic References</h2>
-                <h3>1. Surah An-Nisa 4:85</h3>
-                <p class="arabic">مَّن يَشْفَعْ شَفَاعَةً حَسَنَةً يَكُن لَّهُ نَصِيبٌ مِّنْهَا ۖ وَمَن يَشْفَعْ شَفَاعَةً سَيِّئَةً يَكُن لَّهُ كِفْلٌ مِّنْهَا ۗ وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ مُّقِيتًا</p>
-                <p class="transliteration">Man yashfa' shafa'atan hasanatan yakun lahu nasibun minha, wa man yashfa' shafa'atan sayyi'atan yakun lahu kiflun minha, wa kana Allahu 'ala kulli shay'in Muqeeta</p>
-                <p><strong>Translation:</strong> "Whoever intercedes for a good cause will have a share in its reward, and whoever intercedes for an evil cause will have a share of its burden. And Allah is Maintainer of all things." <a href="https://quranwbw.com/4:85" target="_blank">(Surah An-Nisa 4:85)</a></p>
-                <p><strong>Explanation:</strong> This verse shows Allah's all-encompassing sustenance that includes both physical provision and the consequences of human actions. Ibn Kathir explains that Allah's attribute as Al-Muqeet here refers to His perfect maintenance of all affairs.</p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/4:85" target="_blank">Surah An-Nisa 4:85</a>
+                    <div class="arabic">مَّن يَشْفَعْ شَفَاعَةً حَسَنَةً يَكُن لَّهُ نَصِيبٌ مِّنْهَا ۖ وَمَن يَشْفَعْ شَفَاعَةً سَيِّئَةً يَكُن لَّهُ كِفْلٌ مِّنْهَا ۗ وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ مُّقِيتًا</div>
+                    <div class="transliteration">Man yashfa' shafa'atan hasanatan yakun lahu nasibun minha, wa man yashfa' shafa'atan sayyi'atan yakun lahu kiflun minha, wa kana Allahu 'ala kulli shay'in Muqeeta</div>
+                    <p>"Whoever intercedes for a good cause will have a share in its reward, and whoever intercedes for an evil cause will have a share of its burden. And Allah is Maintainer of all things."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse shows Allah's all-encompassing sustenance that includes both physical provision and the consequences of human actions. Ibn Kathir explains that Allah's attribute as Al-Muqeet here refers to His perfect maintenance of all affairs.
+                    </div>
+                </div>
 
-                <h3>2. Surah Hud 11:6</h3>
-                <p class="arabic">وَمَا مِن دَابَّةٍ فِي الْأَرْضِ إِلَّا عَلَى اللَّهِ رِزْقُهَا وَيَعْلَمُ مُسْتَقَرَّهَا وَمُسْتَوْدَعَهَا ۚ كُلٌّ فِي كِتَابٍ مُّبِينٍ</p>
-                <p class="transliteration">Wa ma min dabbatin fil-ardi illa 'alallahi rizquha wa ya'lamu mustaqarraha wa mustawda'aha, kullun fi kitabin mubin</p>
-                <p><strong>Translation:</strong> "And there is no creature on earth but that upon Allah is its provision, and He knows its place of dwelling and place of storage. All is in a clear register." <a href="https://quranwbw.com/11:6" target="_blank">(Surah Hud 11:6)</a></p>
-                <p><strong>Explanation:</strong> This verse affirms that Allah provides for all creatures and knows exactly where they live and what they need. Ibn Kathir comments that Allah's sustenance is perfectly measured and timed for each creature's needs.</p>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/11:6" target="_blank">Surah Hud 11:6</a>
+                    <div class="arabic">وَمَا مِن دَابَّةٍ فِي الْأَرْضِ إِلَّا عَلَى اللَّهِ رِزْقُهَا وَيَعْلَمُ مُسْتَقَرَّهَا وَمُسْتَوْدَعَهَا ۚ كُلٌّ فِي كِتَابٍ مُّبِينٍ</div>
+                    <div class="transliteration">Wa ma min dabbatin fil-ardi illa 'alallahi rizquha wa ya'lamu mustaqarraha wa mustawda'aha, kullun fi kitabin mubin</div>
+                    <p>"And there is no creature on earth but that upon Allah is its provision, and He knows its place of dwelling and place of storage. All is in a clear register."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse affirms that Allah provides for all creatures and knows exactly where they live and what they need. Ibn Kathir comments that Allah's sustenance is perfectly measured and timed for each creature's needs.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:3194" target="_blank">Sahih Bukhari 3194</a>
+                    <div class="arabic">إِنَّ لِلَّهِ مِائَةَ رَحْمَةٍ أَنْزَلَ مِنْهَا رَحْمَةً وَاحِدَةً بَيْنَ الْجِنِّ وَالْإِنْسِ وَالْبَهَائِمِ وَالْهَوَامِّ فَبِهَا يَتَعَاطَفُونَ وَبِهَا يَتَرَاحَمُونَ وَبِهَا تَعْطِفُ الْوَحْشُ عَلَى وَلَدِهَا وَأَخَّرَ اللَّهُ تِسْعًا وَتِسْعِينَ رَحْمَةً يَرْحَمُ بِهَا عِبَادَهُ يَوْمَ الْقِيَامَةِ</div>
+                    <div class="transliteration">Inna li-llāhi mi'ata raḥmatin anzala minhā raḥmatan wāḥidatan bayna l-jinni wa l-insi wa l-bahā'imi wa l-hawāmmi fa bihā yata'āṭafūna wa bihā yatarāḥamūna wa bihā ta'ṭifu l-waḥshu 'alā waladihā wa akhkharu llāhu tis'an wa tis'īna raḥmatan yarḥamu bihā 'ibādahu yawma l-qiyāmah</div>
+                    <p>"Allah has one hundred mercies, out of which He has sent down one mercy between jinn, mankind, animals and insects, by means of which they show kindness to one another and have compassion for one another; and by means of which wild animals care for their young. Allah has retained ninety-nine mercies to deal mercifully with His slaves on the Day of Resurrection."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This famous Hadith Qudsi illustrates the vastness of Al-Muqeet's mercy - what we experience in this world is merely 1% of His total mercy, with 99% reserved for the Hereafter. It shows that all compassion in creation stems from this divine attribute.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Benefits and Reflections</h2>
-                <p>1. Recognizing Allah as Al-Muqeet increases our trust in His perfect provision.</p>
-                <p>2. It teaches us to be content with what Allah has apportioned for us.</p>
-                <p>3. We should strive to be means of sustenance for others, emulating this divine attribute.</p>
-                <p>4. Understanding this name reminds us that all provisions ultimately come from Allah alone.</p>
-            </div>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Sustenance and Provision</div>
+                    <div class="arabic">اللَّهُمَّ ارْزُقْنَا رِزْقًا حَلَالًا طَيِّبًا وَاسِعًا مِنْ غَيْرِ تَعَبٍ وَلَا مَشَقَّةٍ وَلَا ضَيْرٍ وَلَا نَصَبٍ</div>
+                    <div class="transliteration">Allahummarzuqna rizqan halalan tayyiban wasi'an min ghayri ta'abin wa la mashaqqatin wa la dayrin wa la nasab</div>
+                    <p><strong>Translation:</strong> "O Allah, provide us with lawful, pure, abundant provision without difficulty, hardship, harm or fatigue."</p>
+                    <p><strong>Usage:</strong> This comprehensive du'a seeks Allah's sustenance in the best possible way. It can be recited after prayers or when seeking provision, acknowledging Allah as the true source of all sustenance.</p>
+                </div>
 
-            <div class="dua-section">
-                <h2>Du'a with Al-Muqeet</h2>
-                <p class="arabic">اللَّهُمَّ ارْزُقْنَا رِزْقًا حَلَالًا طَيِّبًا وَاسِعًا مِنْ غَيْرِ تَعَبٍ وَلَا مَشَقَّةٍ وَلَا ضَيْرٍ وَلَا نَصَبٍ</p>
-                <p class="transliteration">Allahummarzuqna rizqan halalan tayyiban wasi'an min ghayri ta'abin wa la mashaqqatin wa la dayrin wa la nasab</p>
-                <p><strong>Translation:</strong> "O Allah, provide us with lawful, pure, abundant provision without difficulty, hardship, harm or fatigue."</p>
-                <p><strong>Usage:</strong> This comprehensive du'a seeks Allah's sustenance in the best possible way. It can be recited after prayers or when seeking provision, acknowledging Allah as the true source of all sustenance.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan (Practices)</h2>
-                <h3>1. Gratitude for Provision</h3>
-                <p>Make it a daily practice to express gratitude for three provisions from Allah, whether food, health, or other blessings. The Prophet (peace be upon him) said: "Whoever is not grateful to people is not grateful to Allah."</p>
-
-                <h3>2. Sharing Sustenance</h3>
-                <p>Regularly share your provision with others, especially the needy, knowing that Allah will increase what you have. The Prophet (peace be upon him) said: "Charity does not decrease wealth."</p>
+                <div class="dua">
+                    <div class="dua-title">For Contentment with Provision</div>
+                    <div class="arabic">اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ</div>
+                    <div class="transliteration">Allahummakfini bihalalika 'an haramika wa aghnini bifadlika 'amman siwaka</div>
+                    <p><strong>Translation:</strong> "O Allah, suffice me with what You have made lawful so that I may dispense with what You have made unlawful, and make me independent of all others by Your bounty."</p>
+                    <p><strong>Source:</strong> This du'a from Tirmidhi teaches complete reliance on Allah's provision and contentment with what He provides.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his commentary on Surah An-Nisa 4:85, Ibn Kathir explains that Allah's attribute of being Al-Muqeet refers to His perfect maintenance of all creation and His recording of all human deeds. He sustains both the physical and spiritual dimensions of existence.</p>
-                <p>Regarding Surah Hud 11:6, Ibn Kathir states that Allah's sustenance is perfectly measured for each creature's needs. He knows where each creature resides and what provisions it requires, demonstrating His perfect knowledge and care.</p>
-            </div>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Gratitude Practice</div>
+                    <p>Daily routine to cultivate thankfulness for Allah's provisions:</p>
+                    <ol>
+                        <li>Upon waking, recite "Alhamdulillah" 3 times</li>
+                        <li>Before each meal, say "Bismillah" and after "Alhamdulillah"</li>
+                        <li>Before sleeping, reflect on 3 blessings received that day</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Increases awareness of divine blessings</li>
+                        <li>Develops constant gratitude to Allah</li>
+                        <li>Follows the Prophet's (ﷺ) sunnah of remembrance</li>
+                    </ul>
+                </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-        </div>
-
-        <!-- Indonesian Content -->
-        <div id="indonesianContent" class="hidden">
-            <h1>39. Al-Muqeet (المقيت) - Yang Maha Pemberi Rezeki, Yang Maha Memelihara</h1>
-            <div class="title-source">
-                Sumber: <a href="https://myislam.org/99-names-of-allah/al-muqeet/" target="_blank">https://myislam.org/99-names-of-allah/al-muqeet/</a>
-            </div>
-
-            <div class="section">
-                <p class="arabic">المُقِيتُ</p>
-                <p class="transliteration">Al-Muqeet</p>
-                <p><strong>Arti:</strong> Yang Maha Pemberi Rezeki, Yang Maha Memelihara, Dzat yang menyediakan dan menopang seluruh ciptaan dengan apa yang mereka butuhkan untuk keberadaan dan kelangsungan hidup mereka.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan</h2>
-                <p>Al-Muqeet adalah Dzat yang menopang semua makhluk hidup dengan menyediakan makanan dan semua yang mereka butuhkan untuk bertahan hidup. Dia memelihara seluruh ciptaan, memastikan segala sesuatu menerima rezekinya pada waktu yang tepat dan dalam ukuran yang tepat.</p>
-                <p>Ibnu Katsir menjelaskan dalam Tafsirnya bahwa Al-Muqeet adalah Dzat yang memberikan rezeki kepada semua makhluk, dari mikroorganisme terkecil hingga ciptaan terbesar. Rezeki-Nya mencakup baik makanan fisik maupun penyediaan spiritual.</p>
-            </div>
-
-            <div class="section">
-                <h2>Referensi Al-Quran</h2>
-                <h3>1. Surah An-Nisa 4:85</h3>
-                <p class="arabic">مَّن يَشْفَعْ شَفَاعَةً حَسَنَةً يَكُن لَّهُ نَصِيبٌ مِّنْهَا ۖ وَمَن يَشْفَعْ شَفَاعَةً سَيِّئَةً يَكُن لَّهُ كِفْلٌ مِّنْهَا ۗ وَكَانَ اللَّهُ عَلَىٰ كُلِّ شَيْءٍ مُّقِيتًا</p>
-                <p class="transliteration">Man yashfa' shafa'atan hasanatan yakun lahu nasibun minha, wa man yashfa' shafa'atan sayyi'atan yakun lahu kiflun minha, wa kana Allahu 'ala kulli shay'in Muqeeta</p>
-                <p><strong>Terjemahan:</strong> "Barangsiapa yang memberikan syafa'at yang baik, niscaya ia akan memperoleh bahagian (pahala) daripadanya. Dan barangsiapa yang memberi syafa'at yang buruk, niscaya ia akan memikul bahagian (dosa) daripadanya. Allah Maha Kuasa atas segala sesuatu." <a href="https://quranwbw.com/4:85" target="_blank">(Surah An-Nisa 4:85)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini menunjukkan rezeki Allah yang mencakup segalanya yang meliputi baik penyediaan fisik maupun konsekuensi dari tindakan manusia. Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Muqeet di sini merujuk pada pemeliharaan-Nya yang sempurna atas semua urusan.</p>
-
-                <h3>2. Surah Hud 11:6</h3>
-                <p class="arabic">وَمَا مِن دَابَّةٍ فِي الْأَرْضِ إِلَّا عَلَى اللَّهِ رِزْقُهَا وَيَعْلَمُ مُسْتَقَرَّهَا وَمُسْتَوْدَعَهَا ۚ كُلٌّ فِي كِتَابٍ مُّبِينٍ</p>
-                <p class="transliteration">Wa ma min dabbatin fil-ardi illa 'alallahi rizquha wa ya'lamu mustaqarraha wa mustawda'aha, kullun fi kitabin mubin</p>
-                <p><strong>Terjemahan:</strong> "Dan tidak ada suatu binatang melata pun di bumi melainkan Allah-lah yang memberi rezekinya, dan Dia mengetahui tempat berdiam binatang itu dan tempat penyimpanannya. Semuanya tertulis dalam Kitab yang nyata (Lauh Mahfuzh)." <a href="https://quranwbw.com/11:6" target="_blank">(Surah Hud 11:6)</a></p>
-                <p><strong>Penjelasan:</strong> Ayat ini menegaskan bahwa Allah memberikan rezeki kepada semua makhluk dan mengetahui persis di mana mereka tinggal dan apa yang mereka butuhkan. Ibnu Katsir berkomentar bahwa rezeki Allah diukur dan diwaktu dengan sempurna untuk kebutuhan setiap makhluk.</p>
+                <div class="amalan">
+                    <div class="amalan-title">Charity Ritual</div>
+                    <p>Weekly practice to embody trust in Allah's sustenance:</p>
+                    <ol>
+                        <li>Every Friday, set aside a portion for charity</li>
+                        <li>Give charity secretly when possible</li>
+                        <li>Recite "Bismillah" before giving</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "Charity does not decrease wealth" (Muslim). This practice reinforces trust in Allah as the true Provider while helping others.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Al-Muqeet meningkatkan kepercayaan kita pada penyediaan-Nya yang sempurna.</p>
-                <p>2. Ini mengajarkan kita untuk menerima dengan rela apa yang telah Allah tetapkan untuk kita.</p>
-                <p>3. Kita harus berusaha menjadi sarana rezeki bagi orang lain, meneladani sifat ilahi ini.</p>
-                <p>4. Memahami nama ini mengingatkan kita bahwa semua rezeki pada akhirnya berasal dari Allah semata.</p>
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Muqeet through several dimensions:</p>
+                <ol>
+                    <li><strong>The Sustainer:</strong>
+                        <ul>
+                            <li>Provider for all creatures (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Giver of measured provisions (<a href="https://quranwbw.com/17:30" target="_blank">17:30</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>The Preserver:</strong>
+                        <ul>
+                            <li>Maintainer of all life (<a href="https://quranwbw.com/35:3" target="_blank">35:3</a>)</li>
+                            <li>Knower of all needs (<a href="https://quranwbw.com/67:14" target="_blank">67:14</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>The Overseer:</strong>
+                        <ul>
+                            <li>Controller of all affairs (<a href="https://quranwbw.com/10:31" target="_blank">10:31</a>)</li>
+                            <li>Recorder of all deeds (<a href="https://quranwbw.com/78:29" target="_blank">78:29</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In his commentary, Ibn Kathir emphasizes that Al-Muqeet is not just the Provider but also the Perfect Maintainer who oversees and records all aspects of creation.</p>
             </div>
 
-            <div class="dua-section">
-                <h2>Doa dengan Al-Muqeet</h2>
-                <p class="arabic">اللَّهُمَّ ارْزُقْنَا رِزْقًا حَلَالًا طَيِّبًا وَاسِعًا مِنْ غَيْرِ تَعَبٍ وَلَا مَشَقَّةٍ وَلَا ضَيْرٍ وَلَا نَصَبٍ</p>
-                <p class="transliteration">Allahummarzuqna rizqan halalan tayyiban wasi'an min ghayri ta'abin wa la mashaqqatin wa la dayrin wa la nasab</p>
-                <p><strong>Terjemahan:</strong> "Ya Allah, berilah kami rezeki yang halal, baik, melimpah tanpa kesulitan, kesusahan, bahaya atau kelelahan."</p>
-                <p><strong>Penggunaan:</strong> Doa komprehensif ini mencari rezeki Allah dengan cara terbaik. Dapat dibaca setelah shalat atau ketika mencari rezeki, mengakui Allah sebagai sumber sejati dari semua rezeki.</p>
-            </div>
-
-            <div class="amalan-section">
-                <h2>Amalan</h2>
-                <h3>1. Bersyukur atas Rezeki</h3>
-                <p>Jadikan sebagai praktik harian untuk mengungkapkan rasa syukur atas tiga rezeki dari Allah, baik makanan, kesehatan, atau berkah lainnya. Nabi (sallallahu 'alayhi wasallam) bersabda: "Barangsiapa tidak bersyukur kepada manusia, dia tidak bersyukur kepada Allah."</p>
-
-                <h3>2. Berbagi Rezeki</h3>
-                <p>Secara teratur bagikan rezeki Anda dengan orang lain, terutama yang membutuhkan, mengetahui bahwa Allah akan menambah apa yang Anda miliki. Nabi (sallallahu 'alayhi wasallam) bersabda: "Sedekah tidak mengurangi harta."</p>
-            </div>
-
-            <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah An-Nisa 4:85, Ibnu Katsir menjelaskan bahwa sifat Allah sebagai Al-Muqeet merujuk pada pemeliharaan-Nya yang sempurna atas semua ciptaan dan pencatatan-Nya atas semua perbuatan manusia. Dia menopang baik dimensi fisik maupun spiritual dari keberadaan.</p>
-                <p>Mengenai Surah Hud 11:6, Ibnu Katsir menyatakan bahwa rezeki Allah diukur dengan sempurna untuk kebutuhan setiap makhluk. Dia tahu di mana setiap makhluk tinggal dan rezeki apa yang dibutuhkannya, menunjukkan pengetahuan dan perhatian-Nya yang sempurna.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('englishBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.remove('hidden');
-            document.getElementById('indonesianContent').classList.add('hidden');
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
 
-        document.getElementById('indonesianBtn').addEventListener('click', function() {
-            document.getElementById('englishContent').classList.add('hidden');
-            document.getElementById('indonesianContent').classList.remove('hidden');
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
         });
 
         // Transliteration Toggle
-        const transliterations = document.querySelectorAll('.transliteration');
-        
-        document.getElementById('showTransliteration').addEventListener('click', function() {
-            transliterations.forEach(el => el.style.display = 'block');
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
-
-        document.getElementById('hideTransliteration').addEventListener('click', function() {
-            transliterations.forEach(el => el.style.display = 'none');
-        });
-
-        // Back to top
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
-        });
-
-        // Initially show English content
-        document.getElementById('englishContent').classList.remove('hidden');
-        document.getElementById('indonesianContent').classList.add('hidden');
     </script>
 </body>
 </html>
