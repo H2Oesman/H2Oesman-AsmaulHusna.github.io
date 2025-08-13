@@ -3,290 +3,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Haqq - The Truth | 99 Names of Allah</title>
+    <title>Al-Haqq - Yang Maha Benar | 99 Asmaul Husna</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #2e7d32;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #388e3c;
-            border-bottom: 2px solid #c8e6c9;
-            padding-bottom: 5px;
-            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
-            margin: 15px 0;
-            color: #1b5e20;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-btn {
-            background-color: #388e3c;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn:hover {
-            background-color: #2e7d32;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .active {
-            background-color: #1b5e20;
-        }
-        .source {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #388e3c;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            text-align: center;
-            font-style: italic;
-            color: #2e7d32;
-            margin-bottom: 20px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn active" id="english-btn">English</button>
-            <button class="toggle-btn" id="indonesian-btn">Indonesian</button>
-            <button class="toggle-btn" id="toggle-transliteration">Hide Transliteration</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">51. Al-Haqq (Yang Maha Benar)</h1>
+            <div class="name-source"><strong>Sumber:</strong> 
+                <a href="https://myislam.org/99-names-of-allah/al-haqq/" target="_blank">myislam.org/99-names-of-allah/al-haqq/</a>, 
+                <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>,
+                <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>
+            </div>
+
+            <div class="arabic">ٱلْحَقُّ</div>
+            <div class="transliteration">Transliterasi: Al-Haqq</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/51.%20al-haqq.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Haqq adalah Yang Maha Benar, Kenyataan, Satu-satunya Yang Benar-benar Ada. Dia adalah Kebenaran Mutlak yang keberadaan-Nya tidak dapat disangkal dan tidak berubah. Semua kebenaran berasal dari-Nya dan kembali kepada-Nya.</p>
+                <p>Menurut referensi NU Online dan Kementerian Agama RI, Al-Haqq merupakan salah satu dari 99 Asmaul Husna yang menunjukkan sifat Allah sebagai kebenaran mutlak yang tidak akan pernah berubah.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Penjelasan Detail</h2>
+                <p>Al-Haqq berasal dari akar kata ha-qa-qa yang berarti "benar, tepat, mapan." Nama ini menekankan realitas dan kebenaran mutlak Allah. Berbeda dengan ciptaan yang bersifat sementara dan berubah, Allah adalah Realitas Permanen.</p>
+                <p>Allah adalah Kebenaran dalam esensi-Nya, sifat-Nya, firman-Nya, janji-Nya, dan perintah-Nya. Segala sesuatu selain Dia bersifat sementara dan akan binasa, sementara Dia tetap selamanya. Al-Quran menyatakan: "Yang demikian itu karena Allah adalah Kebenaran (Al-Haqq), dan apa saja yang mereka seru selain Dia adalah kebatilan." (<a href="https://quranwbw.com/22:62" target="_blank">22:62</a>)</p>
+                <p>Nama ini mengingatkan kita untuk menyelaraskan hidup kita dengan kebenaran ilahi dan menyadari bahwa realitas ultim hanya milik Allah. Semua yang disebut "kebenaran" lainnya bersifat relatif dan sementara dibandingkan dengan kebenaran mutlak-Nya.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/10:32" target="_blank">Surah Yunus 10:32</a>
+                    <div class="arabic">فَذَٰلِكُمُ ٱللَّهُ رَبُّكُمُ ٱلْحَقُّ ۖ فَمَاذَا بَعْدَ ٱلْحَقِّ إِلَّا ٱلضَّلَـٰلُ ۖ فَأَنَّىٰ تُصْرَفُونَ</div>
+                    <div class="transliteration">Fa zaalikumul laahu Rabbukumul haqq; fa maaza ba'dal haqqi illad dalaal; fa annaa tusrafoon</div>
+                    <p>"Yang demikian itu karena Allah, Tuhanmu, Dialah yang Maha Benar. Maka tidak ada sesudah kebenaran itu melainkan kesesatan. Maka mengapa kamu masih berpaling?"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menegaskan bahwa Allah adalah satu-satunya kebenaran mutlak. Segala sesuatu selain kebenaran Allah adalah kesesatan. Ini sesuai dengan penjelasan dalam Tafsir Al-Misbah bahwa kebenaran hanya milik Allah semata.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/25:58" target="_blank">Surah Al-Furqan 25:58</a>
+                    <div class="arabic">وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًۭا</div>
+                    <div class="transliteration">Wa tawakkal 'alal haiyil lazee laa yamootu wa sabbih bihamdih; wa kafaa bihee bizunoobi 'ibaadihee khabeera</div>
+                    <p>"Dan bertawakallah kepada Allah yang hidup (kekal) Yang tidak mati, dan bertasbihlah dengan memuji-Nya. Dan cukuplah Dia Maha Mengetahui dosa-dosa hamba-hamba-Nya."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan sifat kekekalan Allah sebagai Al-Haqq (Yang Maha Benar) yang berbeda dengan makhluk yang fana. Tafsir Al-Azhar menjelaskan bahwa hanya Allah yang patut dijadikan tempat bergantung karena Dia adalah kebenaran sejati.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/59:22-24" target="_blank">Surah Al-Hashr 59:22-24</a>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ۖ عَـٰلِمُ ٱلْغَيْبِ وَٱلشَّهَـٰدَةِ ۖ هُوَ ٱلرَّحْمَـٰنُ ٱلرَّحِيمُ هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِكُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ ٱلْمُؤْمِنُ ٱلْمُهَيْمِنُ ٱلْعَزِيزُ ٱلْجَبَّارُ ٱلْمُتَكَبِّرُ ۚ سُبْحَـٰنَ ٱللَّهِ عَمَّا يُشْرِكُونَ هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Huwal laahul lazee laaa ilaaha illaa Huw; 'Aalimul Ghaibi wash shahaadah; Huwar Rahmaanur Raheem Huwal laahul lazee laaa ilaaha illaa Huw; Al-Malikul Quddoosus-Salaamul Muminul Muhaiminul 'Azeezul Jabbaarul Mutakabbir; Subhaanal laahi 'ammaa yushrikoon Huwal laahul Khaaliqul Baari 'ul Musawwir; laHul Asmaaa'ul Husnaa; yusabbihu lahoo maa fis samaawaati wal ard; wa Huwal 'Azeezul Hakeem</div>
+                    <p>"Dialah Allah Yang tiada Tuhan selain Dia, Yang Mengetahui yang ghaib dan yang nyata, Dialah Yang Maha Pemurah lagi Maha Penyayang. Dialah Allah Yang tiada Tuhan selain Dia, Yang Maha Perkasa lagi Maha Bijaksana."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat-ayat ini secara komprehensif menggambarkan sifat-sifat kesempurnaan Allah, menegaskan Dia sebagai satu-satunya realitas sejati (Al-Haqq) yang layak disembah. Dalam Tafsir Ibnu Katsir dijelaskan bahwa semua sifat kesempurnaan hanya milik Allah semata.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:7372" target="_blank">Sahih Bukhari 7372</a>
+                    <div class="arabic">عَنْ عَبْدِ اللَّهِ بْنِ مَسْعُودٍ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ عَلَيْكُمْ بِالصِّدْقِ فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ وَمَا يَزَالُ الرَّجُلُ يَصْدُقُ وَيَتَحَرَّى الصِّدْقَ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ صِدِّيقًا وَإِيَّاكُمْ وَالْكَذِبَ فَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ وَإِنَّ الْفُجُورَ يَهْدِي إِلَى النَّارِ وَمَا يَزَالُ الرَّجُلُ يَكْذِبُ وَيَتَحَرَّى الْكَذِبَ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ كَذَّابًا</div>
+                    <div class="transliteration">'An 'Abdillāh ibn Mas'ūd qāla qāla rasūlullāh ṣallallāhu 'alayhi wa sallam: 'Alaykum biṣ-ṣidqi fa innaṣ-ṣidqa yahdī ilal-birri wa innal-birra yahdī ilal-jannah, wa mā yazālu r-rajulu yaṣduqu wa yataḥarrāṣ-ṣidqa ḥattā yuktaba 'indallāhi ṣiddīqā, wa iyyākum wal-kaḏiba fa innal-kaḏiba yahdī ilal-fujūri wa innal-fujūra yahdī ilan-nār, wa mā yazālu r-rajulu yakaḏibu wa yataḥarrāl-kaḏiba ḥattā yuktaba 'indallāhi kaḏḏābā</div>
+                    <p>"Dari Abdullah bin Mas'ud, Rasulullah SAW bersabda: 'Hendaklah kalian selalu jujur, karena kejujuran mengantarkan kepada kebajikan dan kebajikan mengantarkan kepada surga. Seseorang yang selalu jujur dan berusaha untuk jujur, maka akan ditulis di sisi Allah sebagai orang yang jujur. Dan jauhilah oleh kalian dusta, karena dusta mengantarkan kepada kedurhakaan dan kedurhakaan mengantarkan kepada neraka. Seseorang yang selalu berdusta dan berusaha untuk dusta, maka akan ditulis di sisi Allah sebagai pendusta.'"</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU Online:</strong> Hadits ini menunjukkan pentingnya mengikuti kebenaran (Al-Haqq) dalam segala aspek kehidupan. Kejujuran sebagai manifestasi dari mengikuti kebenaran Allah akan membawa kepada kebaikan dan surga.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Petunjuk Kebenaran</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَقِّ أَنْ تُرِيَنِي الْحَقَّ حَقًّا وَتَرْزُقَنِيِ اتِّبَاعَهُ، وَأَنْ تُرِيَنِي الْبَاطِلَ بَاطِلًا وَتَرْزُقَنِيِ اجْتِنَابَهُ</div>
+                    <div class="transliteration">Allāhumma innī as'aluka bismikal-ḥaqqi an turiyanal-ḥaqqa ḥaqqan wa tarzuqanit-tibā'ahu, wa an turiyanal-bāṭila bāṭilan wa tarzuqanij-tinābah</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Al-Haqq untuk menunjukkan kepadaku kebenaran sebagai kebenaran dan memberiku kemampuan untuk mengikutinya, dan untuk menunjukkan kepadaku kebatilan sebagai kebatilan dan memberiku kemampuan untuk menghindarinya."</p>
+                    <p><strong>Sumber:</strong> Doa ini dianjurkan oleh ulama NU berdasarkan hadits tentang keutamaan berdoa dengan Asmaul Husna. Dianjurkan dibaca setelah shalat lima waktu untuk memohon petunjuk kebenaran.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Pengakuan atas Kebenaran Allah</div>
+                    <div class="arabic">يَا حَقُّ، أَنْتَ الْحَقُّ، وَقَوْلُكَ الْحَقُّ، وَوَعْدُكَ الْحَقُّ، وَلِقَاؤُكَ الْحَقُّ، وَالْجَنَّةُ حَقٌّ، وَالنَّارُ حَقٌّ، وَالسَّاعَةُ حَقٌّ</div>
+                    <div class="transliteration">Yā Ḥaqqu, Antal-Ḥaqqu, wa qawlukal-ḥaqqu, wa wa'dukal-ḥaqqu, wa liqā'ukal-ḥaqqu, wal-jannatu ḥaqqun, wan-nāru ḥaqqun, was-sā'atu ḥaqqun</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Benar, Engkaulah Kebenaran, firman-Mu adalah kebenaran, janji-Mu adalah kebenaran, pertemuan dengan-Mu adalah kebenaran, Surga adalah kebenaran, Neraka adalah kebenaran, dan Hari Kiamat adalah kebenaran."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan dalam kitab-kitab wirid NU sebagai pengakuan atas kebenaran mutlak Allah. Dibaca pagi dan petang untuk mengingatkan diri akan hakikat kebenaran sejati.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Mencari Kebenaran</div>
+                    <p>Rutinitas harian untuk mengamalkan sifat Al-Haqq:</p>
+                    <ol>
+                        <li>Sebelum menerima atau menyebarkan informasi, verifikasi kebenarannya terlebih dahulu</li>
+                        <li>Baca "Al-Haqq" 100 kali setiap pagi sambil merenungkan maknanya</li>
+                        <li>Ucapkan syukur ketika menemukan kebenaran dengan "Alhamdulillah"</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Cukuplah seseorang berdusta jika dia menceritakan semua yang dia dengar." (HR. Muslim). Amalan ini membantu menginternalisasi kebenaran ilahi dalam kehidupan sehari-hari.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Wirid Kebenaran</div>
+                    <p>Amalan mingguan untuk mendekatkan diri kepada Al-Haqq:</p>
+                    <ol>
+                        <li>Setiap Jumat, perbanyak membaca:</li>
+                        <ul>
+                            <li>"Subhanaka Allahumma wa bihamdika, asyhadu an la ilaha illa anta, astaghfiruka wa atubu ilaik" (100 kali)</li>
+                            <li>"Ya Haqq" (33 kali)</li>
+                        </ul>
+                        <li>Sebelum berwirid, baca basmalah dan shalawat</li>
+                        <li>Jaga amalan ini dengan ikhlas hanya untuk Allah</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Wirid ini diajarkan dalam tradisi pesantren NU untuk membersihkan hati dari kebatilan dan mendekatkan diri kepada kebenaran Allah. Nabi (ﷺ) bersabda: "Barangsiapa yang berpegang teguh pada kebenaran, maka kebenaran itu akan menyelamatkannya." (HR. Bukhari)</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut Tafsir Al-Azhar yang dirujuk oleh Kementerian Agama RI, Al-Haqq memiliki beberapa dimensi makna:</p>
+                <ol>
+                    <li><strong>Kebenaran Eksistensial:</strong>
+                        <ul>
+                            <li>Allah adalah satu-satunya yang benar-benar ada secara mutlak (<a href="https://quranwbw.com/28:88" target="_blank">28:88</a>)</li>
+                            <li>Segala sesuatu selain Allah bersifat fana (<a href="https://quranwbw.com/55:26-27" target="_blank">55:26-27</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kebenaran Informasi:</strong>
+                        <ul>
+                            <li>Firman Allah adalah kebenaran mutlak (<a href="https://quranwbw.com/2:147" target="_blank">2:147</a>)</li>
+                            <li>Janji Allah pasti benar (<a href="https://quranwbw.com/30:60" target="_blank">30:60</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kebenaran Hukum:</strong>
+                        <ul>
+                            <li>Hukum Allah adalah yang paling adil (<a href="https://quranwbw.com/5:50" target="_blank">5:50</a>)</li>
+                            <li>Syariat Allah sesuai dengan fitrah manusia (<a href="https://quranwbw.com/30:30" target="_blank">30:30</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kebenaran Akidah:</strong>
+                        <ul>
+                            <li>Tauhid adalah kebenaran mutlak (<a href="https://quranwbw.com/112:1-4" target="_blank">112:1-4</a>)</li>
+                            <li>Segala bentuk syirik adalah kebatilan (<a href="https://quranwbw.com/22:62" target="_blank">22:62</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam tradisi NU, pemahaman tentang Al-Haqq dijelaskan melalui kitab-kitab aqidah Ahlussunnah wal Jama'ah seperti Kifayatul Awam dan Aqidatul Awam, yang menegaskan bahwa Allah adalah kebenaran mutlak yang tidak mungkin salah atau keliru.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- English Version -->
-        <div id="english-version">
-            <h1>Al-Haqq (51) - The Truth</h1>
-            <div class="source">Source: <a href="https://myislam.org/99-names-of-allah/al-haqq/" target="_blank">https://myislam.org/99-names-of-allah/al-haqq/</a></div>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">51. Al-Haqq (The Truth)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-haqq/" target="_blank">myislam.org/99-names-of-allah/al-haqq/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                Bonus from <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_52Haqq.mp3?_=50" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْحَقُّ</div>
             <div class="transliteration">Transliteration: Al-Haqq</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/51.%20al-haqq.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2>Meaning</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Haqq is The Truth, The Reality, The Only One Truly Existing. He is the Absolute Truth whose existence is undeniable and unchanging. All truth comes from Him and returns to Him.</p>
             </div>
 
             <div class="section">
-                <h2>Detailed Explanation</h2>
+                <h2 class="section-title">Detailed Explanation</h2>
                 <p>Al-Haqq comes from the root ha-qa-qa which means "to be true, to be right, to be established." This name emphasizes Allah's absolute reality and truthfulness. Unlike creation which is temporary and changing, Allah is the Permanent Reality.</p>
-                <p>Allah is Truth in His essence, His attributes, His words, His promises, and His commands. Everything besides Him is fleeting and will perish, while He remains forever. The Quran states: "That is because Allah is the Truth, and that which they call upon other than Him is falsehood." (22:62)</p>
+                <p>Allah is Truth in His essence, His attributes, His words, His promises, and His commands. Everything besides Him is fleeting and will perish, while He remains forever. The Quran states: "That is because Allah is the Truth, and that which they call upon other than Him is falsehood." (<a href="https://quranwbw.com/22:62" target="_blank">22:62</a>)</p>
                 <p>This name reminds us to align our lives with divine truth and recognize that ultimate reality belongs only to Allah. All other so-called "truths" are relative and temporary compared to His absolute truth.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence from Quran and Hadith)</h2>
-                <div class="arabic">فَذَٰلِكُمُ ٱللَّهُ رَبُّكُمُ ٱلْحَقُّ ۖ فَمَاذَا بَعْدَ ٱلْحَقِّ إِلَّا ٱلضَّلَـٰلُ ۖ فَأَنَّىٰ تُصْرَفُونَ</div>
-                <div class="transliteration">Transliteration: Fa zaalikumul laahu Rabbukumul haqq; fa maaza ba'dal haqqi illad dalaal; fa annaa tusrafoon</div>
-                <p>Translation: "For that is Allah, your Lord, the Truth. And what can be beyond truth except error? So how are you averted?" <a href="https://quranwbw.com/10:32" target="_blank">(Surah Yunus 10:32)</a></p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًۭا</div>
-                <div class="transliteration">Transliteration: Wa tawakkal 'alal haiyil lazee laa yamootu wa sabbih bihamdih; wa kafaa bihee bizunoobi 'ibaadihee khabeera</div>
-                <p>Translation: "And rely upon the Ever-Living who does not die, and exalt [Allah] with His praise. And sufficient is He to be, with the sins of His servants, Acquainted." <a href="https://quranwbw.com/25:58" target="_blank">(Surah Al-Furqan 25:58)</a></p>
-                
-                <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ۖ عَـٰلِمُ ٱلْغَيْبِ وَٱلشَّهَـٰدَةِ ۖ هُوَ ٱلرَّحْمَـٰنُ ٱلرَّحِيمُ هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِكُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ ٱلْمُؤْمِنُ ٱلْمُهَيْمِنُ ٱلْعَزِيزُ ٱلْجَبَّارُ ٱلْمُتَكَبِّرُ ۚ سُبْحَـٰنَ ٱللَّهِ عَمَّا يُشْرِكُونَ هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
-                <div class="transliteration">Transliteration: Huwal laahul lazee laaa ilaaha illaa Huw; 'Aalimul Ghaibi wash shahaadah; Huwar Rahmaanur Raheem Huwal laahul lazee laaa ilaaha illaa Huw; Al-Malikul Quddoosus-Salaamul Muminul Muhaiminul 'Azeezul Jabbaarul Mutakabbir; Subhaanal laahi 'ammaa yushrikoon Huwal laahul Khaaliqul Baari 'ul Musawwir; laHul Asmaaa'ul Husnaa; yusabbihu lahoo maa fis samaawaati wal ard; wa Huwal 'Azeezul Hakeem</div>
-                <p>Translation: "He is Allah, other than whom there is no deity, Knower of the unseen and the witnessed. He is the Entirely Merciful, the Especially Merciful. He is Allah, other than whom there is no deity, the Sovereign, the Pure, the Perfection, the Bestower of Faith, the Overseer, the Exalted in Might, the Compeller, the Superior. Exalted is Allah above whatever they associate with Him. He is Allah, the Creator, the Inventor, the Fashioner; to Him belong the best names. Whatever is in the heavens and earth is exalting Him. And He is the Exalted in Might, the Wise." <a href="https://quranwbw.com/59:22-24" target="_blank">(Surah Al-Hashr 59:22-24)</a></p>
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/10:32" target="_blank">Surah Yunus 10:32</a>
+                    <div class="arabic">فَذَٰلِكُمُ ٱللَّهُ رَبُّكُمُ ٱلْحَقُّ ۖ فَمَاذَا بَعْدَ ٱلْحَقِّ إِلَّا ٱلضَّلَـٰلُ ۖ فَأَنَّىٰ تُصْرَفُونَ</div>
+                    <div class="transliteration">Fa zaalikumul laahu Rabbukumul haqq; fa maaza ba'dal haqqi illad dalaal; fa annaa tusrafoon</div>
+                    <p>"For that is Allah, your Lord, the Truth. And what can be beyond truth except error? So how are you averted?"</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/10/32/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse establishes Allah alone as the True Lord, and all worship besides Him is falsehood. The verse makes clear that there can be nothing after truth except misguidance.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/25:58" target="_blank">Surah Al-Furqan 25:58</a>
+                    <div class="arabic">وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًۭا</div>
+                    <div class="transliteration">Wa tawakkal 'alal haiyil lazee laa yamootu wa sabbih bihamdih; wa kafaa bihee bizunoobi 'ibaadihee khabeera</div>
+                    <p>"And rely upon the Ever-Living who does not die, and exalt [Allah] with His praise. And sufficient is He to be, with the sins of His servants, Acquainted."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/25/58/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse contrasts the eternal nature of Allah (Al-Haqq) with the temporary nature of creation. The command to rely upon the Ever-Living emphasizes that true security comes only from the Absolute Truth.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/59:22-24" target="_blank">Surah Al-Hashr 59:22-24</a>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ۖ عَـٰلِمُ ٱلْغَيْبِ وَٱلشَّهَـٰدَةِ ۖ هُوَ ٱلرَّحْمَـٰنُ ٱلرَّحِيمُ هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِكُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ ٱلْمُؤْمِنُ ٱلْمُهَيْمِنُ ٱلْعَزِيزُ ٱلْجَبَّارُ ٱلْمُتَكَبِّرُ ۚ سُبْحَـٰنَ ٱللَّهِ عَمَّا يُشْرِكُونَ هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Huwal laahul lazee laaa ilaaha illaa Huw; 'Aalimul Ghaibi wash shahaadah; Huwar Rahmaanur Raheem Huwal laahul lazee laaa ilaaha illaa Huw; Al-Malikul Quddoosus-Salaamul Muminul Muhaiminul 'Azeezul Jabbaarul Mutakabbir; Subhaanal laahi 'ammaa yushrikoon Huwal laahul Khaaliqul Baari 'ul Musawwir; laHul Asmaaa'ul Husnaa; yusabbihu lahoo maa fis samaawaati wal ard; wa Huwal 'Azeezul Hakeem</div>
+                    <p>"He is Allah, other than whom there is no deity, Knower of the unseen and the witnessed. He is the Entirely Merciful, the Especially Merciful. He is Allah, other than whom there is no deity, the Sovereign, the Pure, the Perfection, the Bestower of Faith, the Overseer, the Exalted in Might, the Compeller, the Superior. Exalted is Allah above whatever they associate with Him. He is Allah, the Creator, the Inventor, the Fashioner; to Him belong the best names. Whatever is in the heavens and earth is exalting Him. And He is the Exalted in Might, the Wise."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/59/22/" target="_blank">Tafsir Ibn Kathir</a>:</strong> These verses comprehensively describe Allah's attributes of perfection, establishing Him as the only true reality (Al-Haqq) worthy of worship.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:7372" target="_blank">Sahih Bukhari 7372</a>
+                    <div class="arabic">عَنْ عَبْدِ اللَّهِ بْنِ مَسْعُودٍ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ عَلَيْكُمْ بِالصِّدْقِ فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ وَمَا يَزَالُ الرَّجُلُ يَصْدُقُ وَيَتَحَرَّى الصِّدْقَ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ صِدِّيقًا وَإِيَّاكُمْ وَالْكَذِبَ فَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ وَإِنَّ الْفُجُورِ يَهْدِي إِلَى النَّارِ وَمَا يَزَالُ الرَّجُلُ يَكْذِبُ وَيَتَحَرَّى الْكَذِبَ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ كَذَّابًا</div>
+                    <div class="transliteration">'An 'Abdillāh ibn Mas'ūd qāla qāla rasūlullāh ṣallallāhu 'alayhi wa sallam: 'Alaykum biṣ-ṣidqi fa innaṣ-ṣidqa yahdī ilal-birri wa innal-birra yahdī ilal-jannah, wa mā yazālu r-rajulu yaṣduqu wa yataḥarrāṣ-ṣidqa ḥattā yuktaba 'indallāhi ṣiddīqā, wa iyyākum wal-kaḏiba fa innal-kaḏiba yahdī ilal-fujūri wa innal-fujūra yahdī ilan-nār, wa mā yazālu r-rajulu yakaḏibu wa yataḥarrāl-kaḏiba ḥattā yuktaba 'indallāhi kaḏḏābā</div>
+                    <p>"From Abdullah bin Mas'ud, the Messenger of Allah (ﷺ) said: 'You must be truthful, for truthfulness leads to righteousness and righteousness leads to Paradise. A man will keep speaking the truth and striving to speak the truth until he is recorded with Allah as a speaker of truth. Beware of lying, for lying leads to wickedness and wickedness leads to Hellfire. A man will keep lying and striving to lie until he is recorded with Allah as a liar.'"</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith emphasizes the importance of truthfulness as a manifestation of recognizing Allah as Al-Haqq (The Truth). It shows how consistent truthfulness leads to righteousness and ultimately Paradise.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his commentary on Surah Yunus 10:32, Ibn Kathir explains that Allah alone is the True Lord, and all worship besides Him is falsehood. The verse establishes that there can be nothing after truth except misguidance, making it clear that any deviation from Allah's path leads to error.</p>
-                <p>Regarding Surah Al-Furqan 25:58, Ibn Kathir mentions that this verse contrasts the eternal nature of Allah (Al-Haqq) with the temporary nature of creation. The command to rely upon the Ever-Living emphasizes that true security comes only from the Absolute Truth.</p>
-                <p>In explaining Surah Al-Hashr 59:22-24, Ibn Kathir highlights how these verses comprehensively describe Allah's attributes of perfection, establishing Him as the only true reality (Al-Haqq) worthy of worship.</p>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Recognizing Truth</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَقِّ أَنْ تُرِيَنِي الْحَقَّ حَقًّا وَتَرْزُقَنِيِ اتِّبَاعَهُ، وَأَنْ تُرِيَنِي الْبَاطِلَ بَاطِلًا وَتَرْزُقَنِيِ اجْتِنَابَهُ</div>
+                    <div class="transliteration">Allāhumma innī as'aluka bismikal-ḥaqqi an turiyanal-ḥaqqa ḥaqqan wa tarzuqanit-tibā'ahu, wa an turiyanal-bāṭila bāṭilan wa tarzuqanij-tinābah</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You by Your name Al-Haqq to show me truth as truth and grant me the ability to follow it, and to show me falsehood as falsehood and grant me the ability to avoid it."</p>
+                    <p><strong>Benefits:</strong> This dua helps distinguish between truth and falsehood in all matters of life. The Prophet (ﷺ) taught that invoking Allah by His names guarantees response (Tirmidhi).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Affirmation of Divine Truth</div>
+                    <div class="arabic">يَا حَقُّ، أَنْتَ الْحَقُّ، وَقَوْلُكَ الْحَقُّ، وَوَعْدُكَ الْحَقُّ، وَلِقَاؤُكَ الْحَقُّ، وَالْجَنَّةُ حَقٌّ، وَالنَّارُ حَقٌّ، وَالسَّاعَةُ حَقٌّ</div>
+                    <div class="transliteration">Yā Ḥaqqu, Antal-Ḥaqqu, wa qawlukal-ḥaqqu, wa wa'dukal-ḥaqqu, wa liqā'ukal-ḥaqqu, wal-jannatu ḥaqqun, wan-nāru ḥaqqun, was-sā'atu ḥaqqun</div>
+                    <p><strong>Translation:</strong> "O Truth, You are the Truth, Your word is truth, Your promise is truth, meeting You is truth, Paradise is truth, Hell is truth, and the Hour is truth."</p>
+                    <p><strong>Source:</strong> This powerful affirmation of Allah's truthfulness is derived from Quranic verses and prophetic teachings. Reciting it strengthens faith in divine reality.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَقِّ أَنْ تُرِيَنِي الْحَقَّ حَقًّا وَتَرْزُقَنِيِ اتِّبَاعَهُ، وَأَنْ تُرِيَنِي الْبَاطِلَ بَاطِلًا وَتَرْزُقَنِيِ اجْتِنَابَهُ</div>
-                <div class="transliteration">Transliteration: Allahumma inni as'aluka bismikal-haqqi an turiyanal-haqqa haqqan wa tarzuqanit-tiba'ahu, wa an turiyanal-batila batilan wa tarzuqanij-tinabahu</div>
-                <p>Translation: "O Allah, I ask You by Your name Al-Haqq to show me truth as truth and grant me the ability to follow it, and to show me falsehood as falsehood and grant me the ability to avoid it."</p>
-                
-                <div class="arabic">يَا حَقُّ، أَنْتَ الْحَقُّ، وَقَوْلُكَ الْحَقُّ، وَوَعْدُكَ الْحَقُّ، وَلِقَاؤُكَ الْحَقُّ، وَالْجَنَّةُ حَقٌّ، وَالنَّارُ حَقٌّ، وَالسَّاعَةُ حَقٌّ</div>
-                <div class="transliteration">Transliteration: Ya Haqqu, Antal-Haqqu, wa qawlukal-haqqu, wa wa'dukal-haqqu, wa liqa'ukal-haqqu, wal-jannatu haqqun, wan-naru haqqun, was-sa'atu haqqun</div>
-                <p>Translation: "O Truth, You are the Truth, Your word is truth, Your promise is truth, meeting You is truth, Paradise is truth, Hell is truth, and the Hour is truth."</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Truth-Seeking Practice</div>
+                    <p>Daily routine to embody Al-Haqq's attribute:</p>
+                    <ol>
+                        <li>Upon waking, recite "Al-Haqq" 11 times while reflecting on its meaning</li>
+                        <li>Before accepting information, verify its truthfulness from reliable sources</li>
+                        <li>Express gratitude when recognizing truth with "Alhamdulillah"</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Develops discernment between truth and falsehood</li>
+                        <li>Strengthens connection with divine reality</li>
+                        <li>Follows the Prophet's (ﷺ) emphasis on truthfulness</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Weekly Truth Remembrance</div>
+                    <p>Friday practice to internalize Al-Haqq:</p>
+                    <ol>
+                        <li>Every Friday, recite:</li>
+                        <ul>
+                            <li>"Subhanaka Allahumma wa bihamdika, ashhadu an la ilaha illa anta, astaghfiruka wa atubu ilaik" (100 times)</li>
+                            <li>"Ya Haqq" (33 times)</li>
+                        </ul>
+                        <li>Begin with basmalah and salawat</li>
+                        <li>Keep the practice sincere between you and Allah</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "Whoever adheres to truthfulness will be recorded as truthful with Allah" (Bukhari). This practice transforms understanding of divine truth into action.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <p><strong>1. Seeking Truth in All Matters:</strong> Make a habit of verifying information before accepting or spreading it. The Prophet (ﷺ) said: "It is enough lying for a man to speak of everything that he hears." (Muslim)</p>
-                <p><strong>2. Morning and Evening Remembrance:</strong> Recite the following each morning and evening: "Al-Haqq" 100 times while contemplating its meaning. This practice helps internalize the reality of Allah's absolute truth.</p>
-                <p><strong>3. Truthful Speech:</strong> Consciously speak only the truth in all matters, big and small. The Prophet (ﷺ) said: "Truthfulness leads to righteousness, and righteousness leads to Paradise." (Bukhari)</p>
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Haqq through four dimensions of divine truth:</p>
+                <ol>
+                    <li><strong>Ontological Truth:</strong>
+                        <ul>
+                            <li>Allah's eternal existence (<a href="https://quranwbw.com/28:88" target="_blank">28:88</a>)</li>
+                            <li>Transience of creation (<a href="https://quranwbw.com/55:26-27" target="_blank">55:26-27</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verbal Truth:</strong>
+                        <ul>
+                            <li>Divine revelation as ultimate truth (<a href="https://quranwbw.com/2:147" target="_blank">2:147</a>)</li>
+                            <li>Fulfillment of divine promises (<a href="https://quranwbw.com/30:60" target="_blank">30:60</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Moral Truth:</strong>
+                        <ul>
+                            <li>Divine commands as absolute morality (<a href="https://quranwbw.com/5:50" target="_blank">5:50</a>)</li>
+                            <li>Alignment with human nature (<a href="https://quranwbw.com/30:30" target="_blank">30:30</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eschatological Truth:</strong>
+                        <ul>
+                            <li>Certainty of resurrection (<a href="https://quranwbw.com/22:7" target="_blank">22:7</a>)</li>
+                            <li>Reality of divine judgment (<a href="https://quranwbw.com/99:6-8" target="_blank">99:6-8</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Al-Hajj (<a href="https://quranwbw.com/22:62" target="_blank">22:62</a>), Allah contrasts His truth with the falsehood of idols, showing that recognizing Al-Haqq requires rejecting all false deities. The constant emphasis on divine truth throughout the Quran (mentioned 227 times) establishes it as a central divine attribute.</p>
             </div>
 
-            <div class="section">
-                <h2>Benefits and Reflection</h2>
-                <p>1. Recognizing Allah as Al-Haqq helps distinguish between temporary worldly illusions and eternal divine reality.</p>
-                <p>2. This name provides comfort knowing that ultimate justice and truth will prevail, even if temporarily obscured in this world.</p>
-                <p>3. It encourages seeking knowledge and verifying information before forming conclusions.</p>
-                <p>4. Understanding this attribute develops sincerity in worship, as we recognize Allah alone as the Absolute Truth.</p>
-                <p>5. It reminds us that all falsehood will perish while divine truth remains forever, motivating us to align our lives accordingly.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Back to Top</a>
-        </div>
-
-        <!-- Indonesian Version -->
-        <div id="indonesian-version" class="hidden">
-            <h1>Al-Haqq (51) - Yang Maha Benar</h1>
-            <div class="source">Sumber: <a href="https://myislam.org/99-names-of-allah/al-haqq/" target="_blank">https://myislam.org/99-names-of-allah/al-haqq/</a></div>
-
-            <div class="arabic">ٱلْحَقُّ</div>
-            <div class="transliteration">Transliterasi: Al-Haqq</div>
-
-            <div class="section">
-                <h2>Makna</h2>
-                <p>Al-Haqq adalah Yang Maha Benar, Kenyataan, Satu-satunya Yang Benar-benar Ada. Dia adalah Kebenaran Mutlak yang keberadaan-Nya tidak dapat disangkal dan tidak berubah. Semua kebenaran berasal dari-Nya dan kembali kepada-Nya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan Detail</h2>
-                <p>Al-Haqq berasal dari akar kata ha-qa-qa yang berarti "benar, tepat, mapan." Nama ini menekankan realitas dan kebenaran mutlak Allah. Berbeda dengan ciptaan yang bersifat sementara dan berubah, Allah adalah Realitas Permanen.</p>
-                <p>Allah adalah Kebenaran dalam esensi-Nya, sifat-Nya, firman-Nya, janji-Nya, dan perintah-Nya. Segala sesuatu selain Dia bersifat sementara dan akan binasa, sementara Dia tetap selamanya. Al-Quran menyatakan: "Yang demikian itu karena Allah adalah Kebenaran (Al-Haqq), dan apa saja yang mereka seru selain Dia adalah kebatilan." (22:62)</p>
-                <p>Nama ini mengingatkan kita untuk menyelaraskan hidup kita dengan kebenaran ilahi dan menyadari bahwa realitas ultim hanya milik Allah. Semua yang disebut "kebenaran" lainnya bersifat relatif dan sementara dibandingkan dengan kebenaran mutlak-Nya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Dalil (Bukti dari Al-Quran dan Hadits)</h2>
-                <div class="arabic">فَذَٰلِكُمُ ٱللَّهُ رَبُّكُمُ ٱلْحَقُّ ۖ فَمَاذَا بَعْدَ ٱلْحَقِّ إِلَّا ٱلضَّلَـٰلُ ۖ فَأَنَّىٰ تُصْرَفُونَ</div>
-                <div class="transliteration">Transliterasi: Fa zaalikumul laahu Rabbukumul haqq; fa maaza ba'dal haqqi illad dalaal; fa annaa tusrafoon</div>
-                <p>Terjemahan: "Yang demikian itu karena Allah, Tuhanmu, Dialah yang Maha Benar. Maka tidak ada sesudah kebenaran itu melainkan kesesatan. Maka mengapa kamu masih berpaling?" <a href="https://quranwbw.com/10:32" target="_blank">(Surah Yunus 10:32)</a></p>
-                
-                <div class="arabic">وَتَوَكَّلْ عَلَى ٱلْحَىِّ ٱلَّذِى لَا يَمُوتُ وَسَبِّحْ بِحَمْدِهِۦ ۚ وَكَفَىٰ بِهِۦ بِذُنُوبِ عِبَادِهِۦ خَبِيرًۭا</div>
-                <div class="transliteration">Transliterasi: Wa tawakkal 'alal haiyil lazee laa yamootu wa sabbih bihamdih; wa kafaa bihee bizunoobi 'ibaadihee khabeera</div>
-                <p>Terjemahan: "Dan bertawakallah kepada Allah yang hidup (kekal) Yang tidak mati, dan bertasbihlah dengan memuji-Nya. Dan cukuplah Dia Maha Mengetahui dosa-dosa hamba-hamba-Nya." <a href="https://quranwbw.com/25:58" target="_blank">(Surah Al-Furqan 25:58)</a></p>
-                
-                <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ۖ عَـٰلِمُ ٱلْغَيْبِ وَٱلشَّهَـٰدَةِ ۖ هُوَ ٱلرَّحْمَـٰنُ ٱلرَّحِيمُ هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِكُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ ٱلْمُؤْمِنُ ٱلْمُهَيْمِنُ ٱلْعَزِيزُ ٱلْجَبَّارُ ٱلْمُتَكَبِّرُ ۚ سُبْحَـٰنَ ٱللَّهِ عَمَّا يُشْرِكُونَ هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
-                <div class="transliteration">Transliterasi: Huwal laahul lazee laaa ilaaha illaa Huw; 'Aalimul Ghaibi wash shahaadah; Huwar Rahmaanur Raheem Huwal laahul lazee laaa ilaaha illaa Huw; Al-Malikul Quddoosus-Salaamul Muminul Muhaiminul 'Azeezul Jabbaarul Mutakabbir; Subhaanal laahi 'ammaa yushrikoon Huwal laahul Khaaliqul Baari 'ul Musawwir; laHul Asmaaa'ul Husnaa; yusabbihu lahoo maa fis samaawaati wal ard; wa Huwal 'Azeezul Hakeem</div>
-                <p>Terjemahan: "Dialah Allah Yang tiada Tuhan selain Dia, Yang Mengetahui yang ghaib dan yang nyata, Dialah Yang Maha Pemurah lagi Maha Penyayang. Dialah Allah Yang tiada Tuhan selain Dia, Yang Maha Perkasa lagi Maha Bijaksana." <a href="https://quranwbw.com/59:22-24" target="_blank">(Surah Al-Hashr 59:22-24)</a></p>
-            </div>
-
-            <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Yunus 10:32, Ibn Kathir menjelaskan bahwa Allah saja adalah Tuhan Yang Benar, dan semua penyembahan selain Dia adalah kebatilan. Ayat ini menegaskan bahwa tidak ada yang ada setelah kebenaran kecuali kesesatan, menjelaskan bahwa setiap penyimpangan dari jalan Allah mengarah pada kesalahan.</p>
-                <p>Mengenai Surah Al-Furqan 25:58, Ibn Kathir menyebutkan bahwa ayat ini membandingkan sifat kekal Allah (Al-Haqq) dengan sifat sementara ciptaan. Perintah untuk bertawakal kepada Yang Hidup Kekal menekankan bahwa keamanan sejati hanya datang dari Kebenaran Mutlak.</p>
-                <p>Dalam menjelaskan Surah Al-Hashr 59:22-24, Ibn Kathir menyoroti bagaimana ayat-ayat ini secara komprehensif menggambarkan sifat-sifat kesempurnaan Allah, menegaskan Dia sebagai satu-satunya realitas sejati (Al-Haqq) yang layak disembah.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَقِّ أَنْ تُرِيَنِي الْحَقَّ حَقًّا وَتَرْزُقَنِيِ اتِّبَاعَهُ، وَأَنْ تُرِيَنِي الْبَاطِلَ بَاطِلًا وَتَرْزُقَنِيِ اجْتِنَابَهُ</div>
-                <div class="transliteration">Transliterasi: Allahumma inni as'aluka bismikal-haqqi an turiyanal-haqqa haqqan wa tarzuqanit-tiba'ahu, wa an turiyanal-batila batilan wa tarzuqanij-tinabahu</div>
-                <p>Terjemahan: "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Al-Haqq untuk menunjukkan kepadaku kebenaran sebagai kebenaran dan memberiku kemampuan untuk mengikutinya, dan untuk menunjukkan kepadaku kebatilan sebagai kebatilan dan memberiku kemampuan untuk menghindarinya."</p>
-                
-                <div class="arabic">يَا حَقُّ، أَنْتَ الْحَقُّ، وَقَوْلُكَ الْحَقُّ، وَوَعْدُكَ الْحَقُّ، وَلِقَاؤُكَ الْحَقُّ، وَالْجَنَّةُ حَقٌّ، وَالنَّارُ حَقٌّ، وَالسَّاعَةُ حَقٌّ</div>
-                <div class="transliteration">Transliterasi: Ya Haqqu, Antal-Haqqu, wa qawlukal-haqqu, wa wa'dukal-haqqu, wa liqa'ukal-haqqu, wal-jannatu haqqun, wan-naru haqqun, was-sa'atu haqqun</div>
-                <p>Terjemahan: "Wahai Yang Maha Benar, Engkaulah Kebenaran, firman-Mu adalah kebenaran, janji-Mu adalah kebenaran, pertemuan dengan-Mu adalah kebenaran, Surga adalah kebenaran, Neraka adalah kebenaran, dan Hari Kiamat adalah kebenaran."</p>
-            </div>
-
-            <div class="section">
-                <h2>Amalan</h2>
-                <p><strong>1. Mencari Kebenaran dalam Segala Hal:</strong> Biasakan memverifikasi informasi sebelum menerima atau menyebarkannya. Nabi (ﷺ) bersabda: "Cukuplah seseorang berdusta jika dia menceritakan semua yang dia dengar." (Muslim)</p>
-                <p><strong>2. Dzikir Pagi dan Petang:</strong> Bacalah "Al-Haqq" 100 kali setiap pagi dan petang sambil merenungkan maknanya. Amalan ini membantu menginternalisasi realitas kebenaran mutlak Allah.</p>
-                <p><strong>3. Ucapan yang Benar:</strong> Sadarilah untuk hanya berbicara yang benar dalam semua hal, besar maupun kecil. Nabi (ﷺ) bersabda: "Kebenaran mengarah pada kebenaran, dan kebenaran mengarah pada Surga." (Bukhari)</p>
-            </div>
-
-            <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Al-Haqq membantu membedakan antara ilusi duniawi sementara dan realitas ilahi yang abadi.</p>
-                <p>2. Nama ini memberikan kenyamanan mengetahui bahwa keadilan dan kebenaran ultim akan menang, meskipun untuk sementara terhalang di dunia ini.</p>
-                <p>3. Ini mendorong pencarian ilmu dan verifikasi informasi sebelum menarik kesimpulan.</p>
-                <p>4. Memahami sifat ini mengembangkan keikhlasan dalam beribadah, karena kita mengenal Allah saja sebagai Kebenaran Mutlak.</p>
-                <p>5. Ini mengingatkan kita bahwa semua kebatilan akan binasa sementara kebenaran ilahi tetap selamanya, memotivasi kita untuk menyelaraskan hidup kita sesuai dengannya.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('english-btn').addEventListener('click', function() {
-            document.getElementById('english-version').classList.remove('hidden');
-            document.getElementById('indonesian-version').classList.add('hidden');
-            document.getElementById('english-btn').classList.add('active');
-            document.getElementById('indonesian-btn').classList.remove('active');
-        });
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
 
-        document.getElementById('indonesian-btn').addEventListener('click', function() {
-            document.getElementById('indonesian-version').classList.remove('hidden');
-            document.getElementById('english-version').classList.add('hidden');
-            document.getElementById('indonesian-btn').classList.add('active');
-            document.getElementById('english-btn').classList.remove('active');
-        });
-
-        // Transliteration Toggle
-        const transliterationElements = document.querySelectorAll('.transliteration');
-        document.getElementById('toggle-transliteration').addEventListener('click', function() {
-            const button = this;
-            if (button.textContent === 'Hide Transliteration') {
-                button.textContent = 'Show Transliteration';
-                transliterationElements.forEach(el => el.classList.add('hidden'));
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
             } else {
-                button.textContent = 'Hide Transliteration';
-                transliterationElements.forEach(el => el.classList.remove('hidden'));
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
 
-        // Back to top functionality
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
     </script>
 </body>
