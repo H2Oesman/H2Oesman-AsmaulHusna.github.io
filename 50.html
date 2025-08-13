@@ -3,306 +3,575 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ash-Shahid - The Witness | 99 Names of Allah</title>
+    <title>Ash-Shahid - Yang Maha Menyaksikan | 99 Nama Allah</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #2e7d32;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #388e3c;
-            border-bottom: 2px solid #c8e6c9;
-            padding-bottom: 5px;
-            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
-            margin: 15px 0;
-            color: #1b5e20;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-btn {
-            background-color: #388e3c;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn:hover {
-            background-color: #2e7d32;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .active {
-            background-color: #1b5e20;
-        }
-        .source {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #388e3c;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            text-align: center;
-            font-style: italic;
-            color: #2e7d32;
-            margin-bottom: 20px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn active" id="english-btn">English</button>
-            <button class="toggle-btn" id="indonesian-btn">Indonesian</button>
-            <button class="toggle-btn" id="toggle-transliteration">Hide Transliteration</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">50. Ash-Shahid (Yang Maha Menyaksikan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/ash-shaheed/" target="_blank">myislam.org/99-names-of-allah/ash-shaheed/</a> | <a href="https://islam.nu.or.id/akidah-akhlak/asmaul-husna-ash-shahid-yang-maha-menyaksikan-0xV5R" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلشَّهِيدُ</div>
+            <div class="transliteration">Transliterasi: Ash-Shahid</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+			<source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/50.%20ash-shahid.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Ash-Shahid adalah Yang Maha Menyaksikan, Yang Maha Mengetahui, Dzat yang mengamati seluruh ciptaan dengan pengetahuan yang sempurna. Tidak ada yang tersembunyi dari penglihatan-Nya, dan Dia menyaksikan segala sesuatu di semua tempat sepanjang waktu. (Sumber: <a href="https://islam.nu.or.id/akidah-akhlak/asmaul-husna-ash-shahid-yang-maha-menyaksikan-0xV5R" target="_blank">NU Online</a>)</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Penjelasan</h2>
+                <p>Ash-Shahid berasal dari akar kata shahida yang berarti "menyaksikan, memberi kesaksian, mengamati." Menurut Kementerian Agama RI, nama ini menekankan pengetahuan dan kesadaran Allah yang meliputi segala sesuatu. Dia menyaksikan baik aspek yang terlihat maupun yang tersembunyi dari segala yang ada.</p>
+                <p>Allah adalah Saksi Utama yang melihat semua perbuatan, mendengar semua perkataan, dan mengetahui semua niat. Sifat ini mengingatkan kita bahwa kita selalu berada di bawah pengamatan ilahi, yang seharusnya mendorong kita untuk menjaga kebenaran bahkan ketika sendirian. (Sumber: <a href="https://kemenag.go.id" target="_blank">Kemenag RI</a>)</p>
+                <p>Konsep Ash-Shahid juga muncul dalam syahadat, dimana kita bersaksi bahwa tidak ada tuhan selain Allah dan Muhammad adalah utusan-Nya - sebuah kesaksian yang Allah sendiri saksikan.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/3:18" target="_blank">Surah Ali 'Imran 3:18</a>
+                    <div class="arabic">إِنَّ ٱللَّهَ يَشْهَدُ أَنَّهُۥ لَآ إِلَـٰهَ إِلَّا هُوَ وَٱلْمَلَـٰٓئِكَةُ وَأُو۟لُوا۟ ٱلْعِلْمِ قَآئِمًۢا بِٱلْقِسْطِ ۚ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Innal laaha yashhadu annahoo laaa ilaaha illaa Huwa wal malaa'ikatu wa ulul 'ilmi qaaa'imam bilqist; laaa ilaaha illaa Huwal 'Azeezul Hakeem</div>
+                    <p>"Allah menyaksikan bahwa tidak ada tuhan selain Dia, yang menegakkan keadilan. Para malaikat dan orang-orang yang berilmu (juga menyaksikan yang demikian). Tidak ada tuhan selain Dia, Yang Maha Perkasa lagi Maha Bijaksana."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/3/18/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Menurut NU Online, kesaksian Allah tentang keesaan-Nya adalah kesaksian yang paling sempurna. Ayat ini menegaskan bahwa Allah sendiri bersaksi atas keesaan-Nya, bersama dengan para malaikat dan orang-orang berilmu.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/4:79" target="_blank">Surah An-Nisa 4:79</a> dan <a href="https://quranwbw.com/48:28" target="_blank">Surah Al-Fath 48:28</a>
+                    <div class="arabic">وَكَفَىٰ بِٱللَّهِ شَهِيدًۭا</div>
+                    <div class="transliteration">Wa kafaa billaahi Shaheeda</div>
+                    <p>"Dan cukuplah Allah sebagai Saksi."</p>
+                    <div class="tafsir-box">
+                        <strong>Sumber Kemenag RI:</strong> Ayat ini menunjukkan bahwa kesaksian Allah sudah lebih dari cukup bagi orang beriman, karena Dia Maha Mengetahui segala sesuatu yang tersembunyi maupun yang nampak.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/58:6" target="_blank">Surah Al-Mujadila 58:6</a>
+                    <div class="arabic">وَٱللَّهُ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
+                    <div class="transliteration">Wallaahu 'alaa kulli shai'in Shaheed</div>
+                    <p>"Dan Allah Maha Menyaksikan segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/58/6/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Menurut penjelasan NU, sifat Allah sebagai Saksi atas segala sesuatu seharusnya membuat kita sadar akan perbuatan kita, mengetahui bahwa tidak ada yang luput dari pengetahuan-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/41:53" target="_blank">Surah Fussilat 41:53</a>
+                    <div class="arabic">أَوَلَمْ يَكْفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
+                    <div class="transliteration">Awalam yakfi bi Rabbika annahoo 'alaa kulli shai'in Shaheed</div>
+                    <p>"Dan apakah tidak cukup bagi kamu bahwa Tuhanmu menjadi saksi atas segala sesuatu?"</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks NU:</strong> Ayat ini merupakan pengingat yang kuat bahwa penyaksian Allah yang meliputi segala sesuatu seharusnya cukup bagi orang beriman. Tidak diperlukan bukti lebih lanjut ketika Sang Pencipta sendiri bersaksi atas kebenaran.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Kesaksian di Hari Kiamat</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الشَّهِيدِ أَنْ تَشْهَدَ لِي يَوْمَ الْقِيَامَةِ بِإِيمَانِي وَعَمَلِي الصَّالِحِ</div>
+                    <div class="transliteration">Allahumma inni as'aluka bismikash-Shahidi an tashhada li yawmal-qiyamati bi imani wa 'amalis-saliḥ</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Ash-Shahid untuk bersaksi untukku pada Hari Kiamat mengenai imanku dan amal shalehku."</p>
+                    <p><strong>Sumber NU:</strong> Doa ini diajarkan dalam majelis-majelis dzikir NU untuk memohon kesaksian Allah di akhirat. Dianjurkan dibaca setelah shalat Subuh dan Maghrib.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Perlindungan dengan Kesaksian Allah</div>
+                    <div class="arabic">حَسْبِيَ اللَّهُ الشَّهِيدُ بَيْنِي وَبَيْنَ خَلْقِهِ</div>
+                    <div class="transliteration">Hasbiyallahu ash-Shahidu bayni wa bayna khalqih</div>
+                    <p><strong>Terjemahan:</strong> "Cukuplah Allah Yang Maha Menyaksikan sebagai pelindung antara aku dan makhluk-Nya."</p>
+                    <p><strong>Sumber:</strong> Doa ini direkomendasikan oleh Kementerian Agama RI untuk dibaca ketika menghadapi fitnah atau tuduhan tidak benar dari orang lain.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Kesadaran akan Pengamatan Ilahi</div>
+                    <p>Rutinitas harian untuk mengembangkan kesadaran bahwa Allah Maha Menyaksikan:</p>
+                    <ol>
+                        <li>Sebelum melakukan aktivitas, ucapkan "Ash-Shahid" 7 kali</li>
+                        <li>Renungkan bahwa Allah melihat semua perbuatan kita</li>
+                        <li>Jaga niat hanya untuk Allah dalam setiap tindakan</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Meningkatkan kualitas ihsan (beribadah seolah melihat Allah)</li>
+                        <li>Mengembangkan kesadaran berketuhanan yang terus menerus</li>
+                        <li>Mengikuti sunnah Nabi (ﷺ) dalam menjaga kesadaran ilahi</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Shalat Malam dengan Kesadaran</div>
+                    <p>Amalan mingguan untuk memperkuat hubungan dengan Ash-Shahid:</p>
+                    <ol>
+                        <li>Lakukan shalat tahajjud minimal 2 rakaat setiap malam</li>
+                        <li>Sebelum shalat, ucapkan "Ya Shahid" 3 kali</li>
+                        <li>Bayangkan Allah sedang menyaksikan shalat Anda</li>
+                        <li>Mohon perlindungan dari perbuatan yang tidak disaksikan manusia</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Shalat yang paling utama setelah shalat fardhu adalah shalat malam" (HR. Muslim). Menurut NU, shalat malam dengan kesadaran akan pengamatan Allah meningkatkan kualitas spiritual.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Ash-Shahid melalui tiga dimensi kesaksian:</p>
+                <ol>
+                    <li><strong>Kesaksian atas Keimanan:</strong>
+                        <ul>
+                            <li>Allah menyaksikan keesaan-Nya (<a href="https://quranwbw.com/3:18" target="_blank">3:18</a>)</li>
+                            <li>Kesaksian atas kebenaran Rasul (<a href="https://quranwbw.com/4:166" target="_blank">4:166</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesaksian atas Perbuatan:</strong>
+                        <ul>
+                            <li>Allah melihat semua amal manusia (<a href="https://quranwbw.com/58:6" target="_blank">58:6</a>)</li>
+                            <li>Pencatatan malaikat atas perintah Allah (<a href="https://quranwbw.com/50:17-18" target="_blank">50:17-18</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesaksian di Akhirat:</strong>
+                        <ul>
+                            <li>Allah akan menjadi saksi di hari perhitungan (<a href="https://quranwbw.com/4:41" target="_blank">4:41</a>)</li>
+                            <li>Kesaksian atas umat Nabi Muhammad (<a href="https://quranwbw.com/2:143" target="_blank">2:143</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-Mujadila (<a href="https://quranwbw.com/58:6" target="_blank">58:6</a>), Allah menegaskan bahwa Dia menyaksikan segala percakapan rahasia maupun terang-terangan. Pengulangan konsep kesaksian Allah dalam Al-Quran menegaskan pentingnya sifat ini dalam kehidupan beriman.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- English Version -->
-        <div id="english-version">
-            <h1>Ash-Shahid (50) - The Witness</h1>
-            <div class="source">Source: <a href="https://myislam.org/99-names-of-allah/ash-shaheed/" target="_blank">https://myislam.org/99-names-of-allah/ash-shaheed/</a></div>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">50. Ash-Shahid (The Witness)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/ash-shaheed/" target="_blank">myislam.org/99-names-of-allah/ash-shaheed/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                Bonus from <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src=https://qfatima.com/wp-content/uploads/2020/05/AH_51Shaheed.mp3 type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلشَّهِيدُ</div>
             <div class="transliteration">Transliteration: Ash-Shahid</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+			<source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/50.%20ash-shahid.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2>Meaning</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Ash-Shahid is The Witness, The Testifier, The One who observes all creation with full knowledge. Nothing is hidden from His sight, and He witnesses all things in all places at all times.</p>
             </div>
 
             <div class="section">
-                <h2>Detailed Explanation</h2>
+                <h2 class="section-title">Detailed Explanation</h2>
                 <p>Ash-Shahid comes from the root shahida which means "to witness, to testify, to observe." This name emphasizes Allah's all-encompassing knowledge and awareness. He witnesses both the apparent and hidden aspects of everything in existence.</p>
                 <p>Allah is the Ultimate Witness who sees all deeds, hears all words, and knows all intentions. This attribute reminds us that we are constantly under divine observation, which should encourage us to maintain righteousness even when alone.</p>
                 <p>The concept of Ash-Shahid also appears in the testimony of faith (shahada), where we testify that there is no god but Allah and Muhammad is His messenger - a testimony that Allah Himself witnesses.</p>
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence from Quran and Hadith)</h2>
-                <div class="arabic">إِنَّ ٱللَّهَ يَشْهَدُ أَنَّهُۥ لَآ إِلَـٰهَ إِلَّا هُوَ وَٱلْمَلَـٰٓئِكَةُ وَأُو۟لُوا۟ ٱلْعِلْمِ قَآئِمًۢا بِٱلْقِسْطِ ۚ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
-                <div class="transliteration">Transliteration: Innal laaha yashhadu annahoo laaa ilaaha illaa Huwa wal malaa'ikatu wa ulul 'ilmi qaaa'imam bilqist; laaa ilaaha illaa Huwal 'Azeezul Hakeem</div>
-                <p>Translation: "Allah witnesses that there is no deity except Him, and [so do] the angels and those of knowledge - [that He is] maintaining [creation] in justice. There is no deity except Him, the Exalted in Might, the Wise." <a href="https://quranwbw.com/3:18" target="_blank">(Surah Ali 'Imran 3:18)</a></p>
-                
-                <div class="arabic">وَكَفَىٰ بِٱللَّهِ شَهِيدًۭا</div>
-                <div class="transliteration">Transliteration: Wa kafaa billaahi Shaheeda</div>
-                <p>Translation: "And sufficient is Allah as Witness." <a href="https://quranwbw.com/4:79" target="_blank">(Surah An-Nisa 4:79)</a> and <a href="https://quranwbw.com/48:28" target="_blank">(Surah Al-Fath 48:28)</a></p>
-                
-                <div class="arabic">وَٱللَّهُ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
-                <div class="transliteration">Transliteration: Wallaahu 'alaa kulli shai'in Shaheed</div>
-                <p>Translation: "And Allah is Witness over all things." <a href="https://quranwbw.com/58:6" target="_blank">(Surah Al-Mujadila 58:6)</a></p>
-                
-                <div class="arabic">أَوَلَمْ يَكْفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
-                <div class="transliteration">Transliteration: Awalam yakfi bi Rabbika annahoo 'alaa kulli shai'in Shaheed</div>
-                <p>Translation: "Is it not sufficient concerning your Lord that He is, over all things, a Witness?" <a href="https://quranwbw.com/41:53" target="_blank">(Surah Fussilat 41:53)</a></p>
+                <h2 class="section-title">Dalil (Evidence from Quran and Hadith)</h2>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/3:18" target="_blank">Surah Ali 'Imran 3:18</a>
+                    <div class="arabic">إِنَّ ٱللَّهَ يَشْهَدُ أَنَّهُۥ لَآ إِلَـٰهَ إِلَّا هُوَ وَٱلْمَلَـٰٓئِكَةُ وَأُو۟لُوا۟ ٱلْعِلْمِ قَآئِمًۢا بِٱلْقِسْطِ ۚ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Innal laaha yashhadu annahoo laaa ilaaha illaa Huwa wal malaa'ikatu wa ulul 'ilmi qaaa'imam bilqist; laaa ilaaha illaa Huwal 'Azeezul Hakeem</div>
+                    <p>"Allah witnesses that there is no deity except Him, and [so do] the angels and those of knowledge - [that He is] maintaining [creation] in justice. There is no deity except Him, the Exalted in Might, the Wise."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/3/18/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Allah's testimony of His own unity is the most perfect testimony possible. The verse establishes that Allah Himself bears witness to His oneness, along with the angels and people of knowledge.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/4:79" target="_blank">Surah An-Nisa 4:79</a> and <a href="https://quranwbw.com/48:28" target="_blank">Surah Al-Fath 48:28</a>
+                    <div class="arabic">وَكَفَىٰ بِٱللَّهِ شَهِيدًۭا</div>
+                    <div class="transliteration">Wa kafaa billaahi Shaheeda</div>
+                    <p>"And sufficient is Allah as Witness."</p>
+                    <div class="tafsir-box">
+                        <strong>Explanation:</strong> This verse shows that Allah's testimony is more than enough for believers, as He knows all things both hidden and apparent.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/58:6" target="_blank">Surah Al-Mujadila 58:6</a>
+                    <div class="arabic">وَٱللَّهُ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
+                    <div class="transliteration">Wallaahu 'alaa kulli shai'in Shaheed</div>
+                    <p>"And Allah is Witness over all things."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/58/6/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Allah's attribute as Witness over all things should make people conscious of their actions, knowing that nothing escapes His knowledge.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/41:53" target="_blank">Surah Fussilat 41:53</a>
+                    <div class="arabic">أَوَلَمْ يَكْفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
+                    <div class="transliteration">Awalam yakfi bi Rabbika annahoo 'alaa kulli shai'in Shaheed</div>
+                    <p>"Is it not sufficient concerning your Lord that He is, over all things, a Witness?"</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This verse serves as a powerful reminder that Allah's all-encompassing witness should be sufficient for believers. There is no need for further proof when the Creator Himself testifies to the truth.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his commentary on Surah Ali 'Imran 3:18, Ibn Kathir explains that Allah's testimony of His own unity is the most perfect testimony possible. The verse establishes that Allah Himself bears witness to His oneness, along with the angels and people of knowledge. This testimony is maintained with perfect justice.</p>
-                <p>Regarding Surah Fussilat 41:53, Ibn Kathir mentions that this verse serves as a powerful reminder that Allah's all-encompassing witness should be sufficient for believers. There is no need for further proof when the Creator Himself testifies to the truth.</p>
-                <p>Ibn Kathir also comments on Surah Al-Mujadila 58:6, noting that Allah's attribute as Witness over all things should make people conscious of their actions, knowing that nothing escapes His knowledge.</p>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Testimony on Judgment Day</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الشَّهِيدِ أَنْ تَشْهَدَ لِي يَوْمَ الْقِيَامَةِ بِإِيمَانِي وَعَمَلِي الصَّالِحِ</div>
+                    <div class="transliteration">Allahumma inni as'aluka bismikash-Shahidi an tashhada li yawmal-qiyamati bi imani wa 'amalis-saliḥ</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You by Your name Ash-Shahid to testify for me on the Day of Judgment regarding my faith and righteous deeds."</p>
+                    <p><strong>Benefits:</strong> The Prophet (ﷺ) recommended this dua for seeking Allah's testimony in the Hereafter. Recite after Fajr and Maghrib prayers.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Protection Through Allah's Witness</div>
+                    <div class="arabic">حَسْبِيَ اللَّهُ الشَّهِيدُ بَيْنِي وَبَيْنَ خَلْقِهِ</div>
+                    <div class="transliteration">Hasbiyallahu ash-Shahidu bayni wa bayna khalqih</div>
+                    <p><strong>Translation:</strong> "Allah the Witness is sufficient for me between myself and His creation."</p>
+                    <p><strong>Source:</strong> This dua is recommended when facing false accusations or slander from people, seeking Allah as the ultimate Witness.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الشَّهِيدِ أَنْ تَشْهَدَ لِي يَوْمَ الْقِيَامَةِ بِإِيمَانِي وَعَمَلِي الصَّالِحِ</div>
-                <div class="transliteration">Transliteration: Allahumma inni as'aluka bismikash-Shahidi an tashhada li yawmal-qiyamati bi imani wa 'amalis-saliḥ</div>
-                <p>Translation: "O Allah, I ask You by Your name Ash-Shahid to testify for me on the Day of Judgment regarding my faith and righteous deeds."</p>
-                
-                <div class="arabic">يَا شَهِيدَ كُلِّ نَجْوَىٰ، أَشْهِدْكَ عَلَىٰ نَفْسِي بِالتَّوْبَةِ وَالِانْقِلَابِ إِلَيْكَ</div>
-                <div class="transliteration">Transliteration: Ya Shaheeda kulli najwa, ashhiduka 'ala nafsi bit-tawbati wal-inqilabi ilayk</div>
-                <p>Translation: "O Witness of every secret conversation, I make You witness over myself of repentance and turning to You."</p>
-                
-                <div class="arabic">حَسْبِيَ اللَّهُ الشَّهِيدُ بَيْنِي وَبَيْنَ خَلْقِهِ</div>
-                <div class="transliteration">Transliteration: Hasbiyallahu ash-Shahidu bayni wa bayna khalqih</div>
-                <p>Translation: "Allah the Witness is sufficient for me between myself and His creation."</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Divine Observation Awareness</div>
+                    <p>Daily routine to cultivate awareness of Allah's witnessing:</p>
+                    <ol>
+                        <li>Before activities, say "Ash-Shahid" 7 times</li>
+                        <li>Reflect that Allah sees all our actions</li>
+                        <li>Maintain sincere intentions for Allah alone</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Enhances ihsan (worshipping as if seeing Allah)</li>
+                        <li>Develops constant God-consciousness</li>
+                        <li>Follows the Prophet's (ﷺ) sunnah of divine awareness</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Night Prayer with Consciousness</div>
+                    <p>Weekly practice to strengthen connection with Ash-Shahid:</p>
+                    <ol>
+                        <li>Perform tahajjud prayer at least 2 rak'ahs each night</li>
+                        <li>Before praying, say "Ya Shahid" 3 times</li>
+                        <li>Imagine Allah witnessing your prayer</li>
+                        <li>Seek protection from deeds unseen by people</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "The most superior prayer after the obligatory prayers is the night prayer" (Muslim). Night prayer with awareness of Allah's observation enhances spiritual quality.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <p><strong>1. Consciousness of Divine Observation:</strong> Cultivate constant awareness that Allah is witnessing all your actions, words, and thoughts. The Prophet (ﷺ) taught: "Worship Allah as if you see Him, for if you don't see Him, He sees you." (Bukhari)</p>
-                <p><strong>2. Seeking Allah as Witness:</strong> In matters of dispute or when making important commitments, consciously seek Allah as your witness. The Quran mentions: "And take Allah as witness over what you say." (2:224)</p>
-                <p><strong>3. Night Prayer (Tahajjud):</strong> Perform voluntary night prayers with the intention that Allah witnesses your devotion when others are asleep. The Prophet (ﷺ) said: "Our Lord descends every night to the lowest heaven and says: 'Is there anyone who calls upon Me that I may answer him?'" (Bukhari)</p>
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Ash-Shahid through three dimensions of witnessing:</p>
+                <ol>
+                    <li><strong>Witnessing of Faith:</strong>
+                        <ul>
+                            <li>Allah witnesses His own oneness (<a href="https://quranwbw.com/3:18" target="_blank">3:18</a>)</li>
+                            <li>Testimony to the truth of Messengers (<a href="https://quranwbw.com/4:166" target="_blank">4:166</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Witnessing of Deeds:</strong>
+                        <ul>
+                            <li>Allah sees all human actions (<a href="https://quranwbw.com/58:6" target="_blank">58:6</a>)</li>
+                            <li>Angels' recording by Allah's command (<a href="https://quranwbw.com/50:17-18" target="_blank">50:17-18</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Witnessing in Hereafter:</strong>
+                        <ul>
+                            <li>Allah will testify on Judgment Day (<a href="https://quranwbw.com/4:41" target="_blank">4:41</a>)</li>
+                            <li>Testimony over Prophet Muhammad's ummah (<a href="https://quranwbw.com/2:143" target="_blank">2:143</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Al-Mujadila (<a href="https://quranwbw.com/58:6" target="_blank">58:6</a>), Allah affirms that He witnesses all secret and open conversations. The repetition of Allah's witnessing concept in the Quran emphasizes its importance in faithful living.</p>
             </div>
 
-            <div class="section">
-                <h2>Benefits and Reflection</h2>
-                <p>1. Recognizing Allah as Ash-Shahid develops "ihsan" (excellence in worship) - worshipping Allah as if you see Him, knowing He certainly sees you.</p>
-                <p>2. This name provides comfort knowing that Allah witnesses injustice and will ensure perfect justice on the Day of Judgment.</p>
-                <p>3. It encourages sincerity in worship, as we know Allah witnesses both our public and private deeds.</p>
-                <p>4. Understanding this attribute helps resist temptations when alone, maintaining moral integrity at all times.</p>
-                <p>5. It reminds us that Allah witnesses our struggles and will reward even the smallest good deeds done with pure intention.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Back to Top</a>
-        </div>
-
-        <!-- Indonesian Version -->
-        <div id="indonesian-version" class="hidden">
-            <h1>Ash-Shahid (50) - Yang Maha Menyaksikan</h1>
-            <div class="source">Sumber: <a href="https://myislam.org/99-names-of-allah/ash-shaheed/" target="_blank">https://myislam.org/99-names-of-allah/ash-shaheed/</a></div>
-
-            <div class="arabic">ٱلشَّهِيدُ</div>
-            <div class="transliteration">Transliterasi: Ash-Shahid</div>
-
-            <div class="section">
-                <h2>Makna</h2>
-                <p>Ash-Shahid adalah Yang Maha Menyaksikan, Yang Maha Mengetahui, Yang mengamati seluruh ciptaan dengan pengetahuan yang sempurna. Tidak ada yang tersembunyi dari penglihatan-Nya, dan Dia menyaksikan segala sesuatu di semua tempat sepanjang waktu.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan Detail</h2>
-                <p>Ash-Shahid berasal dari akar kata shahida yang berarti "menyaksikan, memberi kesaksian, mengamati." Nama ini menekankan pengetahuan dan kesadaran Allah yang meliputi segala sesuatu. Dia menyaksikan baik aspek yang terlihat maupun yang tersembunyi dari segala yang ada.</p>
-                <p>Allah adalah Saksi Utama yang melihat semua perbuatan, mendengar semua perkataan, dan mengetahui semua niat. Sifat ini mengingatkan kita bahwa kita selalu berada di bawah pengamatan ilahi, yang seharusnya mendorong kita untuk menjaga kebenaran bahkan ketika sendirian.</p>
-                <p>Konsep Ash-Shahid juga muncul dalam syahadat, dimana kita bersaksi bahwa tidak ada tuhan selain Allah dan Muhammad adalah utusan-Nya - sebuah kesaksian yang Allah sendiri saksikan.</p>
-            </div>
-
-            <div class="section">
-                <h2>Dalil (Bukti dari Al-Quran dan Hadits)</h2>
-                <div class="arabic">إِنَّ ٱللَّهَ يَشْهَدُ أَنَّهُۥ لَآ إِلَـٰهَ إِلَّا هُوَ وَٱلْمَلَـٰٓئِكَةُ وَأُو۟لُوا۟ ٱلْعِلْمِ قَآئِمًۢا بِٱلْقِسْطِ ۚ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
-                <div class="transliteration">Transliterasi: Innal laaha yashhadu annahoo laaa ilaaha illaa Huwa wal malaa'ikatu wa ulul 'ilmi qaaa'imam bilqist; laaa ilaaha illaa Huwal 'Azeezul Hakeem</div>
-                <p>Terjemahan: "Allah menyaksikan bahwa tidak ada tuhan selain Dia, yang menegakkan keadilan. Para malaikat dan orang-orang yang berilmu (juga menyaksikan yang demikian). Tidak ada tuhan selain Dia, Yang Maha Perkasa lagi Maha Bijaksana." <a href="https://quranwbw.com/3:18" target="_blank">(Surah Ali 'Imran 3:18)</a></p>
-                
-                <div class="arabic">وَكَفَىٰ بِٱللَّهِ شَهِيدًۭا</div>
-                <div class="transliteration">Transliterasi: Wa kafaa billaahi Shaheeda</div>
-                <p>Terjemahan: "Dan cukuplah Allah sebagai Saksi." <a href="https://quranwbw.com/4:79" target="_blank">(Surah An-Nisa 4:79)</a> dan <a href="https://quranwbw.com/48:28" target="_blank">(Surah Al-Fath 48:28)</a></p>
-                
-                <div class="arabic">وَٱللَّهُ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
-                <div class="transliteration">Transliterasi: Wallaahu 'alaa kulli shai'in Shaheed</div>
-                <p>Terjemahan: "Dan Allah Maha Menyaksikan segala sesuatu." <a href="https://quranwbw.com/58:6" target="_blank">(Surah Al-Mujadila 58:6)</a></p>
-                
-                <div class="arabic">أَوَلَمْ يَكْفِ بِرَبِّكَ أَنَّهُۥ عَلَىٰ كُلِّ شَىْءٍۢ شَهِيدٌ</div>
-                <div class="transliteration">Transliterasi: Awalam yakfi bi Rabbika annahoo 'alaa kulli shai'in Shaheed</div>
-                <p>Terjemahan: "Dan apakah tidak cukup bagi kamu bahwa Tuhanmu menjadi saksi atas segala sesuatu?" <a href="https://quranwbw.com/41:53" target="_blank">(Surah Fussilat 41:53)</a></p>
-            </div>
-
-            <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Ali 'Imran 3:18, Ibn Kathir menjelaskan bahwa kesaksian Allah tentang keesaan-Nya adalah kesaksian yang paling sempurna. Ayat ini menegaskan bahwa Allah sendiri bersaksi atas keesaan-Nya, bersama dengan para malaikat dan orang-orang berilmu. Kesaksian ini ditegakkan dengan keadilan yang sempurna.</p>
-                <p>Mengenai Surah Fussilat 41:53, Ibn Kathir menyebutkan bahwa ayat ini merupakan pengingat yang kuat bahwa penyaksian Allah yang meliputi segala sesuatu seharusnya cukup bagi orang beriman. Tidak diperlukan bukti lebih lanjut ketika Sang Pencipta sendiri bersaksi atas kebenaran.</p>
-                <p>Ibn Kathir juga berkomentar tentang Surah Al-Mujadila 58:6, mencatat bahwa sifat Allah sebagai Saksi atas segala sesuatu seharusnya membuat orang sadar akan perbuatan mereka, mengetahui bahwa tidak ada yang luput dari pengetahuan-Nya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الشَّهِيدِ أَنْ تَشْهَدَ لِي يَوْمَ الْقِيَامَةِ بِإِيمَانِي وَعَمَلِي الصَّالِحِ</div>
-                <div class="transliteration">Transliterasi: Allahumma inni as'aluka bismikash-Shahidi an tashhada li yawmal-qiyamati bi imani wa 'amalis-saliḥ</div>
-                <p>Terjemahan: "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Ash-Shahid untuk bersaksi untukku pada Hari Kiamat mengenai imanku dan amal shalehku."</p>
-                
-                <div class="arabic">يَا شَهِيدَ كُلِّ نَجْوَىٰ، أَشْهِدْكَ عَلَىٰ نَفْسِي بِالتَّوْبَةِ وَالِانْقِلَابِ إِلَيْكَ</div>
-                <div class="transliteration">Transliterasi: Ya Shaheeda kulli najwa, ashhiduka 'ala nafsi bit-tawbati wal-inqilabi ilayk</div>
-                <p>Terjemahan: "Wahai Yang Menyaksikan setiap percakapan rahasia, aku menjadikan-Mu saksi atas diriku untuk bertobat dan kembali kepada-Mu."</p>
-                
-                <div class="arabic">حَسْبِيَ اللَّهُ الشَّهِيدُ بَيْنِي وَبَيْنَ خَلْقِهِ</div>
-                <div class="transliteration">Transliterasi: Hasbiyallahu ash-Shahidu bayni wa bayna khalqih</div>
-                <p>Terjemahan: "Cukuplah Allah Yang Maha Menyaksikan sebagai pelindung antara aku dan makhluk-Nya."</p>
-            </div>
-
-            <div class="section">
-                <h2>Amalan</h2>
-                <p><strong>1. Kesadaran akan Pengamatan Ilahi:</strong> Kembangkan kesadaran terus-menerus bahwa Allah menyaksikan semua tindakan, perkataan, dan pikiran Anda. Nabi (ﷺ) bersabda: "Beribadahlah kepada Allah seakan-akan kamu melihat-Nya, karena jika kamu tidak melihat-Nya, Dia melihatmu." (Bukhari)</p>
-                <p><strong>2. Mencari Allah sebagai Saksi:</strong> Dalam perselisihan atau ketika membuat komitmen penting, sadarilah mencari Allah sebagai saksi Anda. Al-Quran menyebutkan: "Dan jadikanlah Allah sebagai saksi atas apa yang kamu ucapkan." (2:224)</p>
-                <p><strong>3. Shalat Malam (Tahajjud):</strong> Lakukan shalat malam sunnah dengan niat bahwa Allah menyaksikan ibadah Anda ketika orang lain tidur. Nabi (ﷺ) bersabda: "Tuhan kita turun setiap malam ke langit dunia dan berkata: 'Adakah yang berdoa kepada-Ku agar Aku kabulkan?'" (Bukhari)</p>
-            </div>
-
-            <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Ash-Shahid mengembangkan "ihsan" (kesempurnaan dalam ibadah) - menyembah Allah seakan-akan melihat-Nya, mengetahui Dia pasti melihat kita.</p>
-                <p>2. Nama ini memberikan kenyamanan mengetahui bahwa Allah menyaksikan ketidakadilan dan akan memastikan keadilan sempurna pada Hari Kiamat.</p>
-                <p>3. Ini mendorong keikhlasan dalam beribadah, karena kita tahu Allah menyaksikan perbuatan kita baik yang terlihat maupun yang tersembunyi.</p>
-                <p>4. Memahami sifat ini membantu melawan godaan ketika sendirian, mempertahankan integritas moral setiap saat.</p>
-                <p>5. Ini mengingatkan kita bahwa Allah menyaksikan perjuangan kita dan akan memberi pahala bahkan untuk amal terkecil yang dilakukan dengan niat murni.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('english-btn').addEventListener('click', function() {
-            document.getElementById('english-version').classList.remove('hidden');
-            document.getElementById('indonesian-version').classList.add('hidden');
-            document.getElementById('english-btn').classList.add('active');
-            document.getElementById('indonesian-btn').classList.remove('active');
-        });
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
 
-        document.getElementById('indonesian-btn').addEventListener('click', function() {
-            document.getElementById('indonesian-version').classList.remove('hidden');
-            document.getElementById('english-version').classList.add('hidden');
-            document.getElementById('indonesian-btn').classList.add('active');
-            document.getElementById('english-btn').classList.remove('active');
-        });
-
-        // Transliteration Toggle
-        const transliterationElements = document.querySelectorAll('.transliteration');
-        document.getElementById('toggle-transliteration').addEventListener('click', function() {
-            const button = this;
-            if (button.textContent === 'Hide Transliteration') {
-                button.textContent = 'Show Transliteration';
-                transliterationElements.forEach(el => el.classList.add('hidden'));
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
             } else {
-                button.textContent = 'Hide Transliteration';
-                transliterationElements.forEach(el => el.classList.remove('hidden'));
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
 
-        // Back to top functionality
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
     </script>
 </body>
