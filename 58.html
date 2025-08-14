@@ -3,125 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Mubdi' - The Originator | 99 Names of Allah</title>
+    <title>Al-Mubdi' - Yang Maha Memulai | 99 Nama Allah</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #2e7d32;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #388e3c;
-            border-bottom: 2px solid #c8e6c9;
-            padding-bottom: 5px;
-            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
-            margin: 15px 0;
-            color: #1b5e20;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-btn {
-            background-color: #388e3c;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn:hover {
-            background-color: #2e7d32;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .active {
-            background-color: #1b5e20;
-        }
-        .source {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #388e3c;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            text-align: center;
-            font-style: italic;
-            color: #2e7d32;
-            margin-bottom: 20px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn active" id="english-btn">English</button>
-            <button class="toggle-btn" id="indonesian-btn">Indonesian</button>
-            <button class="toggle-btn" id="toggle-transliteration">Hide Transliteration</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">58. Al-Mubdi' (Yang Maha Memulai)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-mubdi/" target="_blank">myislam.org/99-names-of-allah/al-mubdi/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْمُبْدِئُ</div>
+            <div class="transliteration">Transliterasi: Al-Mubdi'</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/58.%20al-mubdi.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Mubdi' adalah salah satu dari Asmaul Husna Allah yang berarti Yang Maha Memulai. Nama ini menunjukkan bahwa Allah adalah Pencipta pertama yang memulai segala sesuatu dari ketiadaan. Menurut referensi dari Kementerian Agama RI dan NU Online, Al-Mubdi' menunjukkan kekuasaan Allah dalam menciptakan segala sesuatu tanpa contoh sebelumnya.</p>
+                <ul>
+                    <li><strong>Pencipta Pertama:</strong> Allah menciptakan segala sesuatu tanpa bahan baku atau contoh sebelumnya</li>
+                    <li><strong>Pemula Segala Sesuatu:</strong> Setiap permulaan di alam semesta berasal dari kehendak-Nya</li>
+                    <li><strong>Yang Mengawali Kehidupan:</strong> Memulai kehidupan setiap makhluk tanpa bantuan atau perantara</li>
+                </ul>
+                <p>Menurut tafsir Kementerian Agama RI, nama Al-Mubdi' sering disebut bersama Al-Mu'id (Yang Mengembalikan), menunjukkan kekuasaan Allah baik dalam memulai maupun mengembalikan ciptaan-Nya.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:117" target="_blank">Surah Al-Baqarah 2:117</a>
+                    <div class="arabic">بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَإِذَا قَضَىٰٓ أَمْرًۭا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ</div>
+                    <div class="transliteration">Badee'us samaawaati wal ard; wa izaa qadaaa amran fa innamaa yaqoolu lahoo kun fa yakoon</div>
+                    <p>"Allah Pencipta langit dan bumi, dan bila Dia berkehendak (untuk menciptakan) sesuatu, maka (cukuplah) Dia hanya mengatakan kepadanya: 'Jadilah!' Lalu jadilah ia."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan kekuasaan mutlak Allah sebagai Al-Mubdi' yang menciptakan langit dan bumi tanpa contoh sebelumnya. Cukuplah dengan firman "Kun" (jadilah) maka terjadilah segala sesuatu sesuai kehendak-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/30:27" target="_blank">Surah Ar-Rum 30:27</a>
+                    <div class="arabic">هُوَ ٱلَّذِى يُبْدِئُ ٱلْخَلْقَ ثُمَّ يُعِيدُهُۥ ۖ وَهُوَ أَهْوَنُ عَلَيْهِ ۚ وَلَهُ ٱلْمَثَلُ ٱلْأَعْلَىٰ فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="transliteration">Huwal lazee yubdi'ul khalqa summa yu'eeduhoo wa huwa ahwanu 'alaih; wa lahul masalul a'laa fis samaawaati wal ard; wa Huwal 'Azeezul Hakeem</div>
+                    <p>"Dan Dialah yang menciptakan (manusia) dari permulaan, kemudian mengembalikan (menghidupkan)nya kembali, dan menghidupkan kembali itu adalah lebih mudah bagi-Nya. Dan bagi-Nyalah sifat yang Maha Tinggi di langit dan di bumi; Dialah Yang Maha Perkasa lagi Maha Bijaksana."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan dua sifat Allah sekaligus: Al-Mubdi' (Yang Memulai) dan Al-Mu'id (Yang Mengembalikan). Allah mampu menciptakan pertama kali dan mengembalikan ciptaan-Nya setelah hancur, keduanya sama mudahnya bagi-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/29:19" target="_blank">Surah Al-Ankabut 29:19</a>
+                    <div class="arabic">أَوَلَمْ يَرَوْا۟ كَيْفَ يُبْدِئُ ٱللَّهُ ٱلْخَلْقَ ثُمَّ يُعِيدُهُۥٓ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌۭ</div>
+                    <div class="transliteration">Awalam yaraw kaifa yubdi'ul laahul khalqa summa yu'eeduh; inna zaalika 'alal laahi yaseer</div>
+                    <p>"Dan apakah mereka tidak memperhatikan bagaimana Allah menciptakan (manusia) dari permulaannya, kemudian mengulanginya (kembali). Sesungguhnya yang demikian itu adalah mudah bagi Allah."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Allah mengajak manusia merenungkan kekuasaan-Nya sebagai Al-Mubdi' yang memulai penciptaan dari tidak ada menjadi ada. Kemampuan Allah memulai penciptaan menjadi bukti bahwa Dia juga mampu menghidupkan kembali manusia setelah mati.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Awal yang Baik</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْمُبْدِئِ أَنْ تُبْدِئَ لِي خَيْرًا، وَأَنْ تَجْعَلَ كُلَّ ابْتِدَاءٍ فِي أَمْرِي خَيْرًا وَبَرَكَةً</div>
+                    <div class="transliteration">Allahumma inni as'aluka bismikal-Mubdi'i an tubdi'a li khayran, wa an taj'ala kullabtida'in fi amri khayran wa barakah</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Al-Mubdi' untuk memulai kebaikan bagiku, dan menjadikan setiap awal dalam urusanku baik dan penuh berkah."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits tentang keutamaan berdoa dengan Asmaul Husna (HR. Tirmidzi). Direkomendasikan oleh Majelis Ulama Indonesia untuk dibaca ketika memulai usaha atau proyek baru.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Kehidupan yang Baik</div>
+                    <div class="arabic">يَا مُبْدِئَ الْخَلْقِ، أَبْدِئْ لِي حَيَاةً طَيِّبَةً بِذِكْرِكَ وَشُكْرِكَ وَطَاعَتِكَ</div>
+                    <div class="transliteration">Ya Mubdi'al-khalqi, abdi' li hayatan tayyibatan bi dhikrika wa shukrika wa ta'atika</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Pemulai ciptaan, mulailah untukku kehidupan yang baik dengan mengingat-Mu, bersyukur kepada-Mu, dan taat kepada-Mu."</p>
+                    <p><strong>Sumber:</strong> Doa ini diajarkan dalam pengajian-pengajian NU sebagai permohonan untuk memulai fase kehidupan baru dengan kebaikan dan keberkahan.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Memulai dengan Bismillah</div>
+                    <p>Rasulullah (ﷺ) bersabda: "Setiap perkara penting yang tidak dimulai dengan Bismillah, maka terputus berkahnya." (HR. Ibnu Majah). Berdasarkan ini, Lembaga Dakwah NU menganjurkan:</p>
+                    <ol>
+                        <li>Ucapkan "Bismillahirrahmanirrahim" sebelum memulai aktivitas apapun</li>
+                        <li>Khusus untuk pekerjaan penting, tambahkan doa memohon berkah dengan menyebut nama Al-Mubdi'</li>
+                        <li>Ajarkan kebiasaan ini kepada anak-anak sejak dini</li>
+                    </ol>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Renungan Pagi</div>
+                    <p>Majelis Ulama Indonesia merekomendasikan amalan pagi ini untuk mengingat Allah sebagai Al-Mubdi':</p>
+                    <ol>
+                        <li>Saat bangun tidur, ucapkan: "Alhamdulillahilladzi ahyaana ba'da ma amaatana wa ilaihin-nushur"</li>
+                        <li>Renungkan tiga nikmat baru yang Allah berikan hari ini</li>
+                        <li>Baca "Al-Mubdi'" 11 kali sambil merenungkan maknanya</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Amalan ini membantu mengembangkan kesadaran bahwa Allah adalah sumber segala permulaan dan memohon berkah untuk hari yang baru.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut kitab-kitab tafsir yang dirujuk oleh NU dan Kementerian Agama RI, Al-Mubdi' memiliki beberapa dimensi makna:</p>
+                <ol>
+                    <li><strong>Penciptaan Pertama:</strong>
+                        <ul>
+                            <li>Menciptakan alam semesta dari ketiadaan (<a href="https://quranwbw.com/6:101" target="_blank">6:101</a>)</li>
+                            <li>Memulai kehidupan setiap makhluk (<a href="https://quranwbw.com/23:12-14" target="_blank">23:12-14</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pengaturan yang Sempurna:</strong>
+                        <ul>
+                            <li>Menetapkan hukum alam yang teratur (<a href="https://quranwbw.com/55:5-7" target="_blank">55:5-7</a>)</li>
+                            <li>Memberikan petunjuk kepada makhluk (<a href="https://quranwbw.com/20:50" target="_blank">20:50</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekuasaan Mutlak:</strong>
+                        <ul>
+                            <li>Menciptakan tanpa bahan baku (<a href="https://quranwbw.com/36:82" target="_blank">36:82</a>)</li>
+                            <li>Mengembalikan ciptaan setelah hancur (<a href="https://quranwbw.com/30:27" target="_blank">30:27</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam pengajian-pengajian NU, nama Al-Mubdi' sering dikaitkan dengan permulaan yang baik (husnul ibtida') dalam segala urusan. Para ulama menganjurkan untuk selalu memulai aktivitas dengan menyebut nama Allah dan memohon berkah dengan menyifatkan Allah sebagai Al-Mubdi'.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- English Version -->
-        <div id="english-version">
-            <h1>Al-Mubdi' (58) - The Originator, The Initiator</h1>
-            <div class="source">Source: <a href="https://myislam.org/99-names-of-allah/al-mubdi/" target="_blank">https://myislam.org/99-names-of-allah/al-mubdi/</a></div>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">58. Al-Mubdi' (The Originator)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-mubdi/" target="_blank">myislam.org/99-names-of-allah/al-mubdi/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                Bonus from <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_59Mubdi60Mueed.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْمُبْدِئُ</div>
             <div class="transliteration">Transliteration: Al-Mubdi'</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/58.%20al-mubdi.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2>Meaning</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Mubdi' is The Originator, The Initiator, The One who begins and creates all things from nothing. He is the First Cause who brings everything into existence without any precedent or prior example.</p>
             </div>
 
             <div class="section">
-                <h2>Detailed Explanation</h2>
+                <h2 class="section-title">Detailed Explanation</h2>
                 <p>Al-Mubdi' comes from the root ba-da-a which means "to begin, to initiate, to innovate." This name emphasizes Allah's power to originate creation without any pre-existing matter or model.</p>
                 <p>Allah originates all creation in perfect wisdom and order. The Quran states: "He is the Originator of the heavens and the earth." (6:101) This shows His absolute creative power without any need for materials or assistance.</p>
                 <p>This name is often paired with Al-Mu'id (The Restorer), showing that Allah both originates creation and brings it back after its demise. Together these names demonstrate Allah's complete power over the beginning and end of all things.</p>
@@ -129,7 +360,7 @@
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence from Quran and Hadith)</h2>
+                <h2 class="section-title">Dalil (Evidence from Quran and Hadith)</h2>
                 <div class="arabic">بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَإِذَا قَضَىٰٓ أَمْرًۭا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ</div>
                 <div class="transliteration">Transliteration: Badee'us samaawaati wal ard; wa izaa qadaaa amran fa innamaa yaqoolu lahoo kun fa yakoon</div>
                 <p>Translation: "Originator of the heavens and the earth. When He decrees a matter, He only says to it, 'Be,' and it is." <a href="https://quranwbw.com/2:117" target="_blank">(Surah Al-Baqarah 2:117)</a></p>
@@ -144,32 +375,55 @@
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
                 <p>In his commentary on Surah Al-Baqarah 2:117, Ibn Kathir explains that Allah's attribute as Al-Mubdi' (The Originator) demonstrates His absolute creative power without need for materials, tools, or time. His command "Be" is sufficient to bring anything into existence.</p>
                 <p>Regarding Surah Ar-Rum 30:27, Ibn Kathir mentions that Allah's power to originate creation is matched by His power to restore it, showing that both acts are equally easy for Him despite their apparent magnitude to us.</p>
                 <p>In explaining Surah Al-Ankabut 29:19, Ibn Kathir highlights that the cycles of creation and recreation in nature serve as signs of Allah's power as Al-Mubdi', inviting people to reflect on His majesty.</p>
             </div>
 
             <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْمُبْدِئِ أَنْ تُبْدِئَ لِي خَيْرًا، وَأَنْ تَجْعَلَ كُلَّ ابْتِدَاءٍ فِي أَمْرِي خَيْرًا وَبَرَكَةً</div>
-                <div class="transliteration">Transliteration: Allahumma inni as'aluka bismikal-Mubdi'i an tubdi'a li khayran, wa an taj'ala kullabtida'in fi amri khayran wa barakah</div>
-                <p>Translation: "O Allah, I ask You by Your name Al-Mubdi' to initiate good for me, and to make every beginning in my affairs good and blessed."</p>
-                
-                <div class="arabic">يَا مُبْدِئَ الْخَلْقِ، أَبْدِئْ لِي حَيَاةً طَيِّبَةً بِذِكْرِكَ وَشُكْرِكَ وَطَاعَتِكَ</div>
-                <div class="transliteration">Transliteration: Ya Mubdi'al-khalqi, abdi' li hayatan tayyibatan bi dhikrika wa shukrika wa ta'atika</div>
-                <p>Translation: "O Originator of creation, initiate for me a good life with Your remembrance, gratitude to You, and obedience to You."</p>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Good Beginnings</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْمُبْدِئِ أَنْ تُبْدِئَ لِي خَيْرًا، وَأَنْ تَجْعَلَ كُلَّ ابْتِدَاءٍ فِي أَمْرِي خَيْرًا وَبَرَكَةً</div>
+                    <div class="transliteration">Transliteration: Allahumma inni as'aluka bismikal-Mubdi'i an tubdi'a li khayran, wa an taj'ala kullabtida'in fi amri khayran wa barakah</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You by Your name Al-Mubdi' to initiate good for me, and to make every beginning in my affairs good and blessed."</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For a Good Life</div>
+                    <div class="arabic">يَا مُبْدِئَ الْخَلْقِ، أَبْدِئْ لِي حَيَاةً طَيِّبَةً بِذِكْرِكَ وَشُكْرِكَ وَطَاعَتِكَ</div>
+                    <div class="transliteration">Transliteration: Ya Mubdi'al-khalqi, abdi' li hayatan tayyibatan bi dhikrika wa shukrika wa ta'atika</div>
+                    <p><strong>Translation:</strong> "O Originator of creation, initiate for me a good life with Your remembrance, gratitude to You, and obedience to You."</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <p><strong>1. Beginning with Bismillah:</strong> Start all important matters by saying "Bismillah" (In the name of Allah) to seek blessings in new beginnings. The Prophet (ﷺ) said: "Every important matter that is not begun with Bismillah is devoid of blessings." (Ibn Majah)</p>
-                <p><strong>2. Morning Supplication:</strong> Upon waking, recite "Alhamdulillahilladhi ahyaana ba'da ma amaatana wa ilayhin-nushoor" (All praise is for Allah who gave us life after death and to Him is the return).</p>
-                <p><strong>3. Reflection on Creation:</strong> Regularly contemplate the wonders of creation as signs of Allah's power as Al-Mubdi'. The Quran states: "Indeed, in the creation of the heavens and earth are signs for those of understanding." (3:190)</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Beginning with Bismillah</div>
+                    <p>The Prophet (ﷺ) said: "Every important matter that is not begun with Bismillah is devoid of blessings." (Ibn Majah). Based on this:</p>
+                    <ol>
+                        <li>Say "Bismillahirrahmanirrahim" before starting any activity</li>
+                        <li>For important tasks, add a dua invoking Allah as Al-Mubdi'</li>
+                        <li>Teach this practice to children from an early age</li>
+                    </ol>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Morning Reflection</div>
+                    <p>Recommended morning practice to remember Allah as Al-Mubdi':</p>
+                    <ol>
+                        <li>Upon waking, say: "Alhamdulillahilladhi ahyaana ba'da ma amaatana wa ilayhin-nushoor"</li>
+                        <li>Reflect on three new blessings you're experiencing that day</li>
+                        <li>Recite "Al-Mubdi'" 11 times while contemplating its meaning</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice helps develop awareness that Allah is the source of all beginnings and seeks blessings for the new day.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Benefits and Reflection</h2>
+                <h2 class="section-title">Benefits and Reflection</h2>
                 <p>1. Recognizing Allah as Al-Mubdi' develops appreciation for His creative power and wisdom in all beginnings.</p>
                 <p>2. This name provides comfort knowing that Allah can initiate solutions to our problems from nothing.</p>
                 <p>3. It encourages seeking Allah's blessing in all new ventures and beginnings.</p>
@@ -177,118 +431,78 @@
                 <p>5. It reminds us that just as Allah originated creation, He can originate new opportunities and blessings in our lives.</p>
             </div>
 
-            <a href="#" class="back-to-top">Back to Top</a>
-        </div>
-
-        <!-- Indonesian Version -->
-        <div id="indonesian-version" class="hidden">
-            <h1>Al-Mubdi' (58) - Yang Maha Memulai</h1>
-            <div class="source">Sumber: <a href="https://myislam.org/99-names-of-allah/al-mubdi/" target="_blank">https://myislam.org/99-names-of-allah/al-mubdi/</a></div>
-
-            <div class="arabic">ٱلْمُبْدِئُ</div>
-            <div class="transliteration">Transliterasi: Al-Mubdi'</div>
-
-            <div class="section">
-                <h2>Makna</h2>
-                <p>Al-Mubdi' adalah Yang Maha Memulai, Yang mengawali dan menciptakan segala sesuatu dari ketiadaan. Dia adalah Penyebab Pertama yang mewujudkan segala sesuatu tanpa preseden atau contoh sebelumnya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan Detail</h2>
-                <p>Al-Mubdi' berasal dari akar kata ba-da-a yang berarti "memulai, mengawali, menciptakan." Nama ini menekankan kekuatan Allah untuk memulai penciptaan tanpa materi atau model yang sudah ada sebelumnya.</p>
-                <p>Allah memulai semua ciptaan dengan hikmah dan keteraturan yang sempurna. Al-Quran menyatakan: "Dia adalah Pencipta langit dan bumi." (6:101) Ini menunjukkan kekuatan kreatif-Nya yang absolut tanpa memerlukan bahan atau bantuan.</p>
-                <p>Nama ini sering dipasangkan dengan Al-Mu'id (Yang Mengembalikan), menunjukkan bahwa Allah baik memulai penciptaan maupun mengembalikannya setelah kehancuran. Bersama-sama nama-nama ini menunjukkan kekuasaan Allah yang lengkap atas awal dan akhir segala sesuatu.</p>
-                <p>Al-Mubdi' mengingatkan kita bahwa setiap awal baru dalam hidup kita - dari kelahiran hingga pembaruan sehari-hari - berasal dari hikmah dan kekuatan Allah yang tak terbatas.</p>
-            </div>
-
-            <div class="section">
-                <h2>Dalil (Bukti dari Al-Quran dan Hadits)</h2>
-                <div class="arabic">بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَإِذَا قَضَىٰٓ أَمْرًۭا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ</div>
-                <div class="transliteration">Transliterasi: Badee'us samaawaati wal ard; wa izaa qadaaa amran fa innamaa yaqoolu lahoo kun fa yakoon</div>
-                <p>Terjemahan: "Allah Pencipta langit dan bumi, dan bila Dia berkehendak (untuk menciptakan) sesuatu, maka (cukuplah) Dia hanya mengatakan kepadanya: 'Jadilah!' Lalu jadilah ia." <a href="https://quranwbw.com/2:117" target="_blank">(Surah Al-Baqarah 2:117)</a></p>
-                
-                <div class="arabic">هُوَ ٱلَّذِى يُبْدِئُ ٱلْخَلْقَ ثُمَّ يُعِيدُهُۥ ۖ وَهُوَ أَهْوَنُ عَلَيْهِ ۚ وَلَهُ ٱلْمَثَلُ ٱلْأَعْلَىٰ فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
-                <div class="transliteration">Transliterasi: Huwal lazee yubdi'ul khalqa summa yu'eeduhoo wa huwa ahwanu 'alaih; wa lahul masalul a'laa fis samaawaati wal ard; wa Huwal 'Azeezul Hakeem</div>
-                <p>Terjemahan: "Dan Dialah yang menciptakan (manusia) dari permulaan, kemudian mengembalikan (menghidupkan)nya kembali, dan menghidupkan kembali itu adalah lebih mudah bagi-Nya. Dan bagi-Nyalah sifat yang Maha Tinggi di langit dan di bumi; Dialah Yang Maha Perkasa lagi Maha Bijaksana." <a href="https://quranwbw.com/30:27" target="_blank">(Surah Ar-Rum 30:27)</a></p>
-                
-                <div class="arabic">أَوَلَمْ يَرَوْا۟ كَيْفَ يُبْدِئُ ٱللَّهُ ٱلْخَلْقَ ثُمَّ يُعِيدُهُۥٓ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌۭ</div>
-                <div class="transliteration">Transliterasi: Awalam yaraw kaifa yubdi'ul laahul khalqa summa yu'eeduh; inna zaalika 'alal laahi yaseer</div>
-                <p>Terjemahan: "Dan apakah mereka tidak memperhatikan bagaimana Allah menciptakan (manusia) dari permulaannya, kemudian mengulanginya (kembali). Sesungguhnya yang demikian itu adalah mudah bagi Allah." <a href="https://quranwbw.com/29:19" target="_blank">(Surah Al-Ankabut 29:19)</a></p>
-            </div>
-
-            <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Al-Baqarah 2:117, Ibn Kathir menjelaskan bahwa sifat Allah sebagai Al-Mubdi' (Yang Memulai) menunjukkan kekuatan kreatif-Nya yang absolut tanpa memerlukan materi, alat, atau waktu. Perintah-Nya "Jadilah" sudah cukup untuk mewujudkan apa pun.</p>
-                <p>Mengenai Surah Ar-Rum 30:27, Ibn Kathir menyebutkan bahwa kekuatan Allah untuk memulai penciptaan sebanding dengan kekuatan-Nya untuk mengembalikannya, menunjukkan bahwa kedua tindakan itu sama mudahnya bagi-Nya meskipun bagi kita tampak besar.</p>
-                <p>Dalam menjelaskan Surah Al-Ankabut 29:19, Ibn Kathir menekankan bahwa siklus penciptaan dan penciptaan kembali di alam berfungsi sebagai tanda kekuatan Allah sebagai Al-Mubdi', mengajak orang untuk merenungkan keagungan-Nya.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْمُبْدِئِ أَنْ تُبْدِئَ لِي خَيْرًا، وَأَنْ تَجْعَلَ كُلَّ ابْتِدَاءٍ فِي أَمْرِي خَيْرًا وَبَرَكَةً</div>
-                <div class="transliteration">Transliterasi: Allahumma inni as'aluka bismikal-Mubdi'i an tubdi'a li khayran, wa an taj'ala kullabtida'in fi amri khayran wa barakah</div>
-                <p>Terjemahan: "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Al-Mubdi' untuk memulai kebaikan bagiku, dan menjadikan setiap awal dalam urusanku baik dan penuh berkah."</p>
-                
-                <div class="arabic">يَا مُبْدِئَ الْخَلْقِ، أَبْدِئْ لِي حَيَاةً طَيِّبَةً بِذِكْرِكَ وَشُكْرِكَ وَطَاعَتِكَ</div>
-                <div class="transliteration">Transliterasi: Ya Mubdi'al-khalqi, abdi' li hayatan tayyibatan bi dhikrika wa shukrika wa ta'atika</div>
-                <p>Terjemahan: "Wahai Pemulai ciptaan, mulailah untukku kehidupan yang baik dengan mengingat-Mu, bersyukur kepada-Mu, dan taat kepada-Mu."</p>
-            </div>
-
-            <div class="section">
-                <h2>Amalan</h2>
-                <p><strong>1. Memulai dengan Bismillah:</strong> Mulailah semua urusan penting dengan mengucapkan "Bismillah" (Dengan nama Allah) untuk mencari berkah dalam awal yang baru. Nabi (ﷺ) bersabda: "Setiap urusan penting yang tidak dimulai dengan Bismillah akan terputus berkahnya." (Ibn Majah)</p>
-                <p><strong>2. Doa Pagi:</strong> Saat bangun tidur, baca "Alhamdulillahilladhi ahyaana ba'da ma amaatana wa ilayhin-nushoor" (Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami dan kepada-Nya kami kembali).</p>
-                <p><strong>3. Perenungan Ciptaan:</strong> Renungkan secara teratur keajaiban ciptaan sebagai tanda kekuatan Allah sebagai Al-Mubdi'. Al-Quran menyatakan: "Sesungguhnya dalam penciptaan langit dan bumi terdapat tanda-tanda (kebesaran Allah) bagi orang yang berakal." (3:190)</p>
-            </div>
-
-            <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Al-Mubdi' mengembangkan penghargaan akan kekuatan dan hikmah-Nya dalam semua awal.</p>
-                <p>2. Nama ini memberikan kenyamanan mengetahui bahwa Allah dapat memulai solusi untuk masalah kita dari ketiadaan.</p>
-                <p>3. Ini mendorong untuk mencari berkah Allah dalam semua usaha dan awal baru.</p>
-                <p>4. Memahami sifat ini membantu mengenali tangan Allah dalam setiap fase baru kehidupan.</p>
-                <p>5. Ini mengingatkan kita bahwa sebagaimana Allah memulai penciptaan, Dia dapat memulai peluang dan berkah baru dalam hidup kita.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('english-btn').addEventListener('click', function() {
-            document.getElementById('english-version').classList.remove('hidden');
-            document.getElementById('indonesian-version').classList.add('hidden');
-            document.getElementById('english-btn').classList.add('active');
-            document.getElementById('indonesian-btn').classList.remove('active');
-        });
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
 
-        document.getElementById('indonesian-btn').addEventListener('click', function() {
-            document.getElementById('indonesian-version').classList.remove('hidden');
-            document.getElementById('english-version').classList.add('hidden');
-            document.getElementById('indonesian-btn').classList.add('active');
-            document.getElementById('english-btn').classList.remove('active');
-        });
-
-        // Transliteration Toggle
-        const transliterationElements = document.querySelectorAll('.transliteration');
-        document.getElementById('toggle-transliteration').addEventListener('click', function() {
-            const button = this;
-            if (button.textContent === 'Hide Transliteration') {
-                button.textContent = 'Show Transliteration';
-                transliterationElements.forEach(el => el.classList.add('hidden'));
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
             } else {
-                button.textContent = 'Hide Transliteration';
-                transliterationElements.forEach(el => el.classList.remove('hidden'));
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
 
-        // Back to top functionality
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
     </script>
 </body>
