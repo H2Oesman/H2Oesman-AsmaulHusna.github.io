@@ -3,6 +3,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>63. Al-Qayyum - Yang Maha Berdiri Sendiri</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .arabic {
+            font-size: 32px;
+            text-align: right;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+        }
+        .transliteration {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
+        }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .bonus {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
+        }
+        .hidden {
+            display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">63. Al-Qayyum (Yang Maha Berdiri Sendiri)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, <a href="https://kemenag.go.id" target="_blank">Kemenag RI</a>, <a href="https://myislam.org/99-names-of-allah/al-qayyum" target="_blank">myislam.org</a></div>
+
+            <div class="arabic">ٱلْقَيُّومُ</div>
+            <div class="transliteration">Transliterasi: Al-Qayyum</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/63.%20al-qayyum.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Qayyum adalah salah satu dari Asmaul Husna yang menunjukkan sifat Allah Yang Maha Berdiri Sendiri dan Memelihara segala sesuatu. Nama ini disebutkan dalam Al-Quran selalu berpasangan dengan Al-Hayy (Yang Maha Hidup).</p>
+                <ul>
+                    <li><strong>Yang Maha Berdiri Sendiri:</strong> Allah tidak membutuhkan sesuatu apapun untuk keberadaan-Nya</li>
+                    <li><strong>Yang Memelihara Segala:</strong> Seluruh alam semesta bergantung kepada-Nya</li>
+                    <li><strong>Yang Mengurus Makhluk:</strong> Terus menerus mengatur dan mengurus ciptaan-Nya</li>
+                </ul>
+                <p>Menurut tafsir Kementerian Agama RI, Al-Qayyum menunjukkan bahwa Allah SWT berdiri sendiri tanpa membutuhkan apapun, sementara semua makhluk bergantung sepenuhnya kepada-Nya. Nama ini sering disebut dalam ayat-ayat yang menunjukkan kekuasaan Allah yang mutlak.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:255" target="_blank">Surah Al-Baqarah 2:255</a> (Ayat Kursi)
+                    <div class="arabic">ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ</div>
+                    <div class="transliteration">Allahu la ilaha illa huwa al-Hayyul-Qayyoom</div>
+                    <p>"Allah, tidak ada tuhan selain Dia, Yang Hidup Kekal, Yang terus menerus mengurus (makhluk-Nya)."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat Kursi ini menjelaskan dua sifat utama Allah - Al-Hayy (Yang Hidup Kekal) dan Al-Qayyum (Yang Berdiri Sendiri). Menurut NU Online, penyebutan kedua nama ini bersama menunjukkan bahwa Allah SWT memiliki kehidupan yang sempurna dan mandiri, tidak membutuhkan apapun dari makhluk-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/3:2" target="_blank">Surah Ali Imran 3:2</a>
+                    <div class="arabic">ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ</div>
+                    <div class="transliteration">Allahu la ilaha illa huwa al-Hayyul-Qayyoom</div>
+                    <p>"Allah, tidak ada tuhan selain Dia, Yang Hidup Kekal, Yang terus menerus mengurus (makhluk-Nya)."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Pengulangan penyebutan Al-Qayyum dalam Surah Ali Imran menunjukkan pentingnya sifat ini dalam memahami ketuhanan Allah. Semua makhluk bergantung kepada-Nya, sementara Dia tidak bergantung kepada siapapun.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/20:111" target="_blank">Surah Ta-Ha 20:111</a>
+                    <div class="arabic">وَعَنَتِ ٱلْوُجُوهُ لِلْحَىِّ ٱلْقَيُّومِ</div>
+                    <div class="transliteration">Wa 'anati l-wujūhu li-l-Hayyi l-Qayyūm</div>
+                    <p>"Dan tunduklah semua muka (dengan berendah diri) kepada (Allah) Yang Hidup Kekal, Yang terus menerus mengurus (makhluk-Nya)."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Ayat ini menggambarkan keadaan di hari kiamat dimana semua makhluk akan tunduk kepada Allah Yang Maha Hidup dan Maha Berdiri Sendiri. Menurut Kemenag RI, ini menunjukkan kekuasaan mutlak Allah atas segala sesuatu.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2710" target="_blank">Sahih Muslim 2710</a>
+                    <div class="arabic">إِنَّ اللَّهَ لاَ يَنَامُ وَلاَ يَنْبَغِي لَهُ أَنْ يَنَامُ</div>
+                    <div class="transliteration">Inna llāha lā yanāmu wa lā yanbaghī lahu an yanām</div>
+                    <p>"Sesungguhnya Allah tidak tidur dan tidak pantas bagi-Nya untuk tidur."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Hadits ini menjelaskan sifat Al-Qayyum bahwa Allah senantiasa berkuasa dan mengurus makhluk-Nya tanpa henti. Menurut penjelasan ulama NU, ini menunjukkan kesempurnaan kekuasaan Allah yang tidak pernah lemah atau lalai.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Keteguhan dan Pemeliharaan</div>
+                    <div class="arabic">يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
+                    <div class="transliteration">Ya Qayyum bi-rahmatika astaghith, aslih li sha'ni kullahu wa la takilni ila nafsi tarfata 'ayn</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Berdiri Sendiri, dengan rahmat-Mu aku memohon pertolongan. Perbaikilah semua urusanku dan jangan Engkau serahkan aku kepada diriku sendiri walau sekejap mata."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh ulama NU sebagai doa untuk memohon keteguhan dan pemeliharaan Allah dalam segala urusan. Dianjurkan dibaca pagi dan petang.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Perlindungan dengan Nama Al-Qayyum</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْقَيُّومُ الَّذِي لَا تَزُولُ لَهُ قَائِمَةٌ، احْفَظْنِي بِحِفْظِكَ وَاكْلَأْنِي بِعَيْنِكَ الَّتِي لَا تَنَامُ</div>
+                    <div class="transliteration">Allahumma anta l-Qayyumu lladhi la tazulu lahu qa'imah, ihfazhni bi-hifzhika wa kla'ni bi-'aynika llati la tanam</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkaulah Yang Maha Berdiri Sendiri yang kekuasaan-Nya tidak akan goyah. Peliharalah aku dengan pemeliharaan-Mu dan jagalah aku dengan penglihatan-Mu yang tidak pernah tidur."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits-hadits tentang keutamaan memohon perlindungan dengan nama-nama Allah. Kemenag RI menganjurkan doa ini untuk memohon perlindungan dalam perjalanan atau situasi sulit.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Ayat Kursi</div>
+                    <p>Untuk menghayati makna Al-Qayyum dalam kehidupan sehari-hari:</p>
+                    <ol>
+                        <li>Bacalah Ayat Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) setelah setiap shalat wajib</li>
+                        <li>Renungkan makna Al-Qayyum saat membacanya</li>
+                        <li>Bayangkan kekuasaan Allah yang tidak pernah henti mengatur alam semesta</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Menurut NU Online, amalan ini:</p>
+                    <ul>
+                        <li>Memperkuat keyakinan akan kekuasaan Allah</li>
+                        <li>Memberikan perlindungan dari godaan syaitan</li>
+                        <li>Meningkatkan ketenangan hati</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Dzikir Al-Qayyum</div>
+                    <p>Amalan harian untuk mengingat sifat Al-Qayyum:</p>
+                    <ol>
+                        <li>Setiap pagi dan petang, baca "Ya Qayyum" 100 kali</li>
+                        <li>Renungkan bahwa Allah senantiasa mengatur segala urusan</li>
+                        <li>Hilangkan rasa khawatir dengan mengingat kekuasaan Allah</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi SAW bersabda: "Barangsiapa yang membaca 'Ya Hayyu Ya Qayyum' sebanyak seratus kali, Allah akan menghidupkan hatinya dengan cahaya iman" (HR. Al-Hakim). Amalan ini dianjurkan oleh para ulama NU untuk meningkatkan tawakkal kepada Allah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut tafsir Kementerian Agama RI dan NU Online, Al-Qayyum mengandung makna mendalam:</p>
+                <ol>
+                    <li><strong>Kemandirian Mutlak:</strong>
+                        <ul>
+                            <li>Tidak membutuhkan apapun dari makhluk (<a href="https://quranwbw.com/35:15" target="_blank">35:15</a>)</li>
+                            <li>Keberadaan-Nya tidak bergantung pada siapapun (<a href="https://quranwbw.com/112:2" target="_blank">112:2</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pemeliharaan Terus Menerus:</strong>
+                        <ul>
+                            <li>Mengatur seluruh alam semesta (<a href="https://quranwbw.com/10:31" target="_blank">10:31</a>)</li>
+                            <li>Memberi rezeki kepada semua makhluk (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pengawasan Tanpa Henti:</strong>
+                        <ul>
+                            <li>Mengetahui segala sesuatu (<a href="https://quranwbw.com/58:7" target="_blank">58:7</a>)</li>
+                            <li>Menyaksikan semua perbuatan (<a href="https://quranwbw.com/57:4" target="_blank">57:4</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam kitab-kitab aqidah Ahlussunnah wal Jama'ah yang diajarkan NU, penjelasan tentang Al-Qayyum selalu dikaitkan dengan kesempurnaan kekuasaan Allah dan ketergantungan mutlak seluruh makhluk kepada-Nya.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">63. Al-Qayyum (The Self-Subsisting, The Sustainer of All)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-qayyum/" target="_blank">myislam.org/99-names-of-allah/al-qayyum/</a></div>
+
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_64Qayyoom.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+
+            <div class="arabic">ٱلْقَيُّومُ</div>
+            <div class="transliteration">Transliteration: Al-Qayyum</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/63.%20al-qayyum.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Qayyum appears in the Quran three times, always paired with Al-Hayy (The Ever-Living):</p>
+                <ul>
+                    <li><strong>The Self-Subsisting:</strong> Maintains existence without needing anything</li>
+                    <li><strong>The Sustainer of All:</strong> Provides for all creation continuously</li>
+                    <li><strong>The Eternal Administrator:</strong> Manages all affairs without interruption</li>
+                </ul>
+                <p>Ibn Abbas explained: "He is the One who remains when all else perishes, who sustains the heavens and earth without fatigue." This name is particularly meaningful when feeling dependent, as it reminds us that Allah depends on nothing while all depend on Him (<a href="https://quranwbw.com/35:15" target="_blank">35:15</a>).</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Evidence (From Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/2:255" target="_blank">Surah Al-Baqarah 2:255 (Ayat al-Kursi)</a>
+                    <div class="arabic">ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ</div>
+                    <div class="transliteration">Allāhu lā ilāha illā huwa l-Ḥayyu l-Qayyūm</div>
+                    <p>"Allah - there is no deity except Him, the Ever-Living, the Sustainer of existence."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse establishes Allah's perfect life and self-subsistence. Al-Qayyum means He sustains all creation without needing rest or assistance. The pairing with Al-Hayy shows that His perfect life enables His perfect sustenance of creation.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/3:2" target="_blank">Surah Al-Imran 3:2</a>
+                    <div class="arabic">ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ</div>
+                    <div class="transliteration">Allāhu lā ilāha illā huwa l-Ḥayyu l-Qayyūm</div>
+                    <p>"Allah - there is no deity except Him, the Ever-Living, the Sustainer of existence."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> The repetition of this description in Surah Al-Imran emphasizes Allah's self-sufficiency and role as the foundation of all existence. Everything in creation relies on Him while He relies on nothing.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/20:111" target="_blank">Surah Ta-Ha 20:111</a>
+                    <div class="arabic">وَعَنَتِ ٱلْوُجُوهُ لِلْحَىِّ ٱلْقَيُّومِ</div>
+                    <div class="transliteration">Wa 'anati l-wujūhu li-l-Ḥayyi l-Qayyūm</div>
+                    <p>"And [all] faces will be humbled before the Ever-Living, the Sustainer of existence."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse describes the Day of Judgment when all creation will submit to Al-Qayyum. His eternal nature contrasts with creation's temporality, and His self-subsistence highlights creation's dependence.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2710" target="_blank">Sahih Muslim 2710</a>
+                    <div class="arabic">إِنَّ اللَّهَ لاَ يَنَامُ وَلاَ يَنْبَغِي لَهُ أَنْ يَنَامُ</div>
+                    <div class="transliteration">Inna llāha lā yanāmu wa lā yanbaghī lahu an yanām</div>
+                    <p>"Indeed, Allah does not sleep nor does sleep befit Him."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith complements the meaning of Al-Qayyum, showing His constant vigilance and uninterrupted sustenance of creation without fatigue or need for rest.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Sustenance and Independence</div>
+                    <div class="arabic">يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
+                    <div class="transliteration">Yā Qayyūm bi-raḥmatika astaghīth, aṣliḥ lī sha'nī kullahu, wa lā takilnī ilā nafsī ṭarfata 'ayn</div>
+                    <p><strong>Translation:</strong> "O Self-Subsisting, by Your mercy I seek help, rectify all my affairs, and do not leave me to myself even for the blink of an eye."</p>
+                    <p><strong>Benefits:</strong> This dua acknowledges complete dependence on Allah. The Prophet (ﷺ) taught similar supplications recognizing Allah's constant care (Tirmidhi).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Protection and Preservation</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْقَيُّومُ الَّذِي لَا تَزُولُ لَهُ قَائِمَةٌ، احْفَظْنِي بِحِفْظِكَ وَاكْلَأْنِي بِعَيْنِكَ الَّتِي لَا تَنَامُ</div>
+                    <div class="transliteration">Allāhumma anta l-Qayyūmu lladhī lā tazūlu lahu qā'imah, iḥfaẓnī bi-ḥifẓika wa klā'nī bi-'aynika llatī lā tanām</div>
+                    <p><strong>Translation:</strong> "O Allah, You are the Self-Subsisting whose rule never falters, protect me with Your protection and guard me with Your eye that never sleeps."</p>
+                    <p><strong>Source:</strong> Inspired by prophetic teachings on divine protection (Ibn Sunni).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Practical Applications (Amalan)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Morning and Evening Remembrance</div>
+                    <p>To cultivate awareness of divine sustenance:</p>
+                    <ol>
+                        <li>Recite Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) after Fajr and Maghrib</li>
+                        <li>Pause at "Al-Hayyul Qayyum" and reflect</li>
+                        <li>Recite "Yā Hayyu Yā Qayyūm" 100 times daily</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Strengthens reliance on Allah alone</li>
+                        <li>Provides spiritual and physical protection</li>
+                        <li>Was favored by many early scholars</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Financial Reliance Practice</div>
+                    <p>For overcoming financial worries:</p>
+                    <ol>
+                        <li>Before sleeping, recite "Al-Qayyum" 100 times</li>
+                        <li>Place hands on chest while reciting</li>
+                        <li>Visualize Allah's infinite provision</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) encouraged remembrance of Allah's names for worldly and spiritual needs (Tirmidhi). Many righteous predecessors practiced similar dhikr for sustenance.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Qayyum through three dimensions:</p>
+                <ol>
+                    <li><strong>Ontological Sustenance:</strong>
+                        <ul>
+                            <li>Maintains the universe's existence (<a href="https://quranwbw.com/35:41" target="_blank">35:41</a>)</li>
+                            <li>Preserves all creation's systems (<a href="https://quranwbw.com/67:3-4" target="_blank">67:3-4</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Providential Care:</strong>
+                        <ul>
+                            <li>Provides for all creatures (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Manages all affairs (<a href="https://quranwbw.com/10:31" target="_blank">10:31</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Judicial Oversight:</strong>
+                        <ul>
+                            <li>Witnesses all actions (<a href="https://quranwbw.com/58:6" target="_blank">58:6</a>)</li>
+                            <li>Will hold all accountable (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Ar-Rahman (<a href="https://quranwbw.com/55:29" target="_blank">55:29</a>), Allah describes His constant management of creation, showing Al-Qayyum's active role in maintaining cosmic order moment by moment.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Al-Qayyum (63)</title>
     <style>
         body {
