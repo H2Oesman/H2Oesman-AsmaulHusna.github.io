@@ -1,317 +1,553 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>54. Al-Matin - The Firm, The Steadfast</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Matin - Yang Maha Kokoh | 99 Nama Allah</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
-            background-color: #f5fef5;
             color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
-        h1, h2, h3 {
-            color: #2e7d32;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 28px;
-            border-bottom: 2px solid #2e7d32;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 22px;
-            margin-top: 25px;
-            border-left: 4px solid #2e7d32;
-            padding-left: 10px;
-        }
-        h3 {
-            font-size: 18px;
-            margin-top: 20px;
-        }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
-            margin: 15px 0;
-            line-height: 1.8;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #555;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
             margin-bottom: 10px;
         }
-        .verse {
-            background-color: #f0f7f0;
-            padding: 12px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        .dua {
-            background-color: #e8f5e9;
-            padding: 12px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #2e7d32;
-            color: white;
-            padding: 8px 15px;
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 5px 0;
-            font-size: 14px;
+            font-weight: bold;
         }
-        .btn:hover {
-            background-color: #1b5e20;
-        }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .toggle-btn {
-            background-color: #2e7d32;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
             color: white;
-            border: none;
             padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        .toggle-btn:hover {
-            background-color: #1b5e20;
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        .source {
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-            margin-bottom: 20px;
+        .bonus {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .back-to-top {
+        .name-source {
             text-align: center;
-            margin-top: 30px;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
         }
-        .bonus {
-            background-color: #e8f5e9;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 15px 0;
+        .main-menu {
             text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Toggle -->
-        <div class="toggle-container">
-            <button class="toggle-btn" onclick="toggleLanguage('english')">English</button>
-            <button class="toggle-btn" onclick="toggleLanguage('indonesian')">Indonesian</button>
-            <button class="toggle-btn" onclick="toggleTransliteration()">Toggle Transliteration</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">54. Al-Matin (Yang Maha Kokoh)</h1>
+            <div class="name-source"><strong>Sumber:</strong> 
+                <a href="https://myislam.org/99-names-of-allah/al-matin" target="_blank">myislam.org/99-names-of-allah/al-matin</a>, 
+                <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>
+            </div>
+
+            <div class="arabic">ٱلْمَتِينُ</div>
+            <div class="transliteration">Transliterasi: Al-Matin</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/54.%20al-matin.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Matin adalah Yang Maha Kokoh yang kekuatan-Nya mutlak dan tidak tergoyahkan. Dia-lah Yang kekuatan-Nya sempurna, kehendak-Nya tak terbatas, dan keputusan-Nya tidak dapat dibatalkan.</p>
+                <p>Menurut referensi NU Online, Al-Matin menunjukkan bahwa Allah memiliki kekuatan yang sempurna dan tidak pernah berkurang. Kekokohan Allah berbeda dengan kekuatan makhluk-Nya yang terbatas dan sementara.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/51:58" target="_blank">Surah Adh-Dhariyat 51:58</a>
+                    <div class="arabic">إِنَّ ٱللَّهَ هُوَ ٱلرَّزَّاقُ ذُو ٱلْقُوَّةِ ٱلْمَتِينُ</div>
+                    <div class="transliteration">Innallaha huwa ar-Razzaaqu thul-quwwatil-mateen</div>
+                    <p>"Sesungguhnya Allah Dialah Maha Pemberi rezeki Yang Mempunyai Kekuatan lagi Sangat Kokoh."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa kekokohan Allah bersifat sempurna dan tidak terbatas. Kekuatan Allah digandengkan dengan sifat-Nya sebagai pemberi rezeki, menunjukkan bahwa kekokohan-Nya digunakan untuk memberikan kebaikan kepada seluruh makhluk.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/22:74" target="_blank">Surah Al-Hajj 22:74</a>
+                    <div class="arabic">وَٱللَّهُ ٱلْقَوِىُّ ٱلْمَتِينُ</div>
+                    <div class="transliteration">Wallahu al-Qawiyyul-Mateen</div>
+                    <p>"Dan Allah Maha Kuat lagi Maha Kokoh."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU:</strong> Ayat ini menunjukkan bahwa kekuatan dan kekokohan Allah bersifat mutlak. Kekokohan Allah digandengkan dengan sifat Al-Qawiyy (Yang Maha Kuat), menunjukkan bahwa kekuatan-Nya disertai dengan keteguhan yang sempurna.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/urn/1340020" target="_blank">Musnad Ahmad 13400</a>
+                    <div class="arabic">إِنَّ اللَّهَ مَتِينٌ يُحِبُّ الْمَتَانَةَ فِي كُلِّ شَيْءٍ</div>
+                    <div class="transliteration">Innallaha mateenun yuhibbul-matana fee kulli shay</div>
+                    <p>"Sesungguhnya Allah Maha Kokoh dan mencintai kekokohan dalam segala hal."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU:</strong> Hadits ini menunjukkan bahwa sifat kekokohan Allah tercermin dalam ciptaan-Nya. Allah mencintai hamba-Nya yang memiliki keteguhan dalam iman dan amal shaleh.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Keteguhan Iman</div>
+                    <div class="arabic">يَا مَتِينُ، ثَبِّتْنِي عَلَى دِينِكَ وَاجْعَلْنِي مِنَ الْعَابِدِينَ الصَّابِرِينَ</div>
+                    <div class="transliteration">Ya Mateen, thabbitnee 'ala deenik waj'alnee minal-'abideen as-sabireen</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Kokoh, teguhkan aku dalam agama-Mu dan jadikan aku termasuk hamba-hamba-Mu yang sabar."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits tentang keutamaan berdoa dengan Asmaul Husna (Tirmidhi) dan diajarkan dalam majelis-majelis NU sebagai doa untuk memohon keteguhan iman.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Kekuatan dengan Sifat Al-Matin</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ الْمَتِينِ أَعِنِّي عَلَى أَمْرِ الدُّنْيَا وَالدِّينِ</div>
+                    <div class="transliteration">Allahumma bi-haqqil-Mateeni a'inni 'ala amrid-dunya wad-deen</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Al-Matin, tolonglah aku dalam urusan dunia dan agama."</p>
+                    <p><strong>Sumber:</strong> Doa ini diajarkan dalam kitab-kitab wirid NU sebagai permohonan pertolongan dengan menyebut nama Al-Matin.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Wirid Keteguhan</div>
+                    <p>Rutinitas harian untuk mengembangkan keteguhan iman:</p>
+                    <ol>
+                        <li>Setelah shalat Subuh, baca "Ya Mateen" 33 kali sambil merenungkan maknanya</li>
+                        <li>Baca Surah Al-Ikhlas 3 kali untuk mengingat keesaan Allah</li>
+                        <li>Baca doa memohon keteguhan sebelum memulai aktivitas</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Orang beriman yang kuat lebih baik dan lebih dicintai Allah" (Muslim). Praktik ini mengikuti sunnah Nabi dalam menjaga keteguhan iman.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Kekokohan</div>
+                    <p>Amalan mingguan untuk memohon kekokohan dari Allah:</p>
+                    <ol>
+                        <li>Setiap malam Jumat, baca Surah Al-Fatihah 7 kali</li>
+                        <li>Baca ayat kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) 7 kali</li>
+                        <li>Baca "Ya Mateen" 100 kali</li>
+                        <li>Berdoa memohon keteguhan iman dan kekuatan</li>
+                    </ol>
+                    <p><strong>Referensi NU:</strong> Amalan ini berdasarkan hadits tentang keutamaan membaca Al-Quran dan dzikir untuk memohon kekuatan. Dianjurkan dalam majelis-majelis NU sebagai wirid permohonan keteguhan.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut tafsir Kementerian Agama RI dan NU, Al-Matin dapat dipahami melalui beberapa dimensi:</p>
+                <ol>
+                    <li><strong>Kekokohan Mutlak:</strong>
+                        <ul>
+                            <li>Allah memiliki kekuatan yang tidak tergoyahkan (<a href="https://quranwbw.com/22:74" target="_blank">22:74</a>)</li>
+                            <li>Tidak ada yang dapat melemahkan kekokohan Allah (<a href="https://quranwbw.com/35:44" target="_blank">35:44</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekokohan dalam Memberi Rezeki:</strong>
+                        <ul>
+                            <li>Allah mampu memberi rezeki kepada semua makhluk (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Kekokohan Allah dalam mengatur rezeki makhluk-Nya (<a href="https://quranwbw.com/29:60" target="_blank">29:60</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekokohan dalam Membela Orang Beriman:</strong>
+                        <ul>
+                            <li>Allah akan membela orang-orang yang beriman (<a href="https://quranwbw.com/22:40" target="_blank">22:40</a>)</li>
+                            <li>Kekokohan Allah dalam memberikan kemenangan (<a href="https://quranwbw.com/3:160" target="_blank">3:160</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekokohan dalam Menciptakan dan Membangkitkan:</strong>
+                        <ul>
+                            <li>Allah mampu menciptakan langit dan bumi (<a href="https://quranwbw.com/46:33" target="_blank">46:33</a>)</li>
+                            <li>Allah mampu membangkitkan manusia setelah mati (<a href="https://quranwbw.com/22:5" target="_blank">22:5</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam tradisi NU, pemahaman tentang Al-Matin sering dikaitkan dengan konsep tawakkal (berserah diri) setelah berusaha. Kekokohan manusia bersifat relatif dan berasal dari Allah, sehingga harus digunakan untuk kebaikan dan ketaatan.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- English Version -->
-        <div id="english">
-            <h1>54. Al-Matin - The Firm, The Steadfast</h1>
-            <p class="source">Source: <a href="https://myislam.org/99-names-of-allah/al-matin" target="_blank">https://myislam.org/99-names-of-allah/al-matin</a></p>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">54. Al-Matin (The Firm, The Steadfast)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-matin" target="_blank">myislam.org/99-names-of-allah/al-matin</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <p>Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a></p>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_54Qawiy55Mateen.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْمَتِينُ</div>
             <div class="transliteration">Transliteration: Al-Matin</div>
 
-            <h2>Meaning and Significance</h2>
-            <p>Al-Matin is The Firm and Steadfast whose strength is absolute and unshakable. He is the One whose power is perfect, whose will is inexhaustible, and whose decisions cannot be overturned.</p>
-
-            <h2>Detailed Explanation</h2>
-            <p>Al-Matin comes from the Arabic root 'matana' (متن) meaning "to be firm" or "strong." This powerful name often appears in the Quran paired with Al-Qawi (The All-Strong), emphasizing Allah's perfect and unwavering strength.</p>
-
-            <p>Ibn Kathir explains in his tafsir that Al-Matin demonstrates Allah's strength is not like created strength which weakens or fluctuates. His power is constant, perfect, and incapable of being diminished or opposed.</p>
-
-            <h2>Quranic References</h2>
-            <div class="verse">
-                <div class="arabic">إِنَّ ٱللَّهَ هُوَ ٱلرَّزَّاقُ ذُو ٱلْقُوَّةِ ٱلْمَتِينُ</div>
-                <div class="transliteration">Innallaha huwa ar-Razzaaqu thul-quwwatil-mateen</div>
-                <p>"Indeed, it is Allah who is the Perfect Provider, the Possessor of Strength, the Firm." (<a href="https://quranwbw.com/51:58" target="_blank">Surah Adh-Dhariyat 51:58</a>)</p>
-                <p>This verse connects Allah's provision with His perfect strength as Al-Matin, showing that His sustenance is backed by inexhaustible power.</p>
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/54.%20al-matin.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
-            <div class="verse">
-                <div class="arabic">وَٱللَّهُ ٱلْقَوِىُّ ٱلْمَتِينُ</div>
-                <div class="transliteration">Wallahu al-Qawiyyul-Mateen</div>
-                <p>"And Allah is the All-Strong, the Firm." (<a href="https://quranwbw.com/22:74" target="_blank">Surah Al-Hajj 22:74</a>)</p>
-                <p>This direct reference to Al-Matin paired with Al-Qawi emphasizes Allah's absolute and unshakable strength.</p>
+            <div class="section">
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Matin is The Firm and Steadfast whose strength is absolute and unshakable. He is the One whose power is perfect, whose will is inexhaustible, and whose decisions cannot be overturned.</p>
+                <p>This name emphasizes Allah's perfect and unwavering strength that never diminishes. Allah's firmness is comprehensive - it includes all aspects of might and stability.</p>
             </div>
 
-            <h2>Hadith References</h2>
-            <p>The Prophet Muhammad (peace be upon him) said: <span class="arabic">«إِنَّ اللَّهَ مَتِينٌ يُحِبُّ الْمَتَانَةَ فِي كُلِّ شَيْءٍ»</span> <span class="transliteration">"Innallaha mateenun yuhibbul-matana fee kulli shay"</span> ("Indeed Allah is Firm and loves firmness in all things.") (Authenticated by Al-Albani)</p>
-            <p>This hadith connects Allah's attribute of firmness with His love for strength and steadfastness in His creation.</p>
+            <div class="section">
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/51:58" target="_blank">Surah Adh-Dhariyat 51:58</a>
+                    <div class="arabic">إِنَّ ٱللَّهَ هُوَ ٱلرَّزَّاقُ ذُو ٱلْقُوَّةِ ٱلْمَتِينُ</div>
+                    <div class="transliteration">Innallaha huwa ar-Razzaaqu thul-quwwatil-mateen</div>
+                    <p>"Indeed, it is Allah who is the Perfect Provider, the Possessor of Strength, the Firm."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse shows that Allah's firmness is coupled with His role as the Provider (Ar-Razzaq), indicating that His sustenance is backed by inexhaustible power. The term "Al-Matin" emphasizes that His strength is unwavering and constant.
+                    </div>
+                </div>
 
-            <h2>Du'a and Supplications</h2>
-            <div class="dua">
-                <div class="arabic">يَا مَتِينُ، ثَبِّتْنِي عَلَى دِينِكَ وَاجْعَلْنِي مِنَ الْعَابِدِينَ الصَّابِرِينَ</div>
-                <div class="transliteration">Ya Mateen, thabbitnee 'ala deenik waj'alnee minal-'abideen as-sabireen</div>
-                <p><strong>Translation:</strong> "O Firm One, make me steadfast in Your religion and make me among Your patient worshippers."</p>
-                <p><strong>Context:</strong> This du'a can be recited during times of trial or when needing spiritual strength and steadfastness.</p>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/22:74" target="_blank">Surah Al-Hajj 22:74</a>
+                    <div class="arabic">وَٱللَّهُ ٱلْقَوِىُّ ٱلْمَتِينُ</div>
+                    <div class="transliteration">Wallahu al-Qawiyyul-Mateen</div>
+                    <p>"And Allah is the All-Strong, the Firm."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This direct reference to Al-Matin paired with Al-Qawi emphasizes Allah's absolute and unshakable strength. The pairing shows that Allah's power is both comprehensive and unwavering.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/urn/1340020" target="_blank">Musnad Ahmad 13400</a>
+                    <div class="arabic">إِنَّ اللَّهَ مَتِينٌ يُحِبُّ الْمَتَانَةَ فِي كُلِّ شَيْءٍ</div>
+                    <div class="transliteration">Innallaha mateenun yuhibbul-matana fee kulli shay</div>
+                    <p>"Indeed Allah is Firm and loves firmness in all things."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith connects Allah's attribute of firmness with His love for strength and steadfastness in His creation. It encourages believers to develop firmness in their faith and actions.
+                    </div>
+                </div>
             </div>
 
-            <h2>Practical Applications (Amalan)</h2>
-            <h3>1. The Steadfastness Practice</h3>
-            <p>For developing firmness in faith:</p>
-            <ul>
-                <li>Recite "Ya Mateen" 100 times after Fajr prayer</li>
-                <li>Study one verse about Allah's strength daily</li>
-                <li>Reflect on how Allah's firmness supports creation</li>
-                <li>Stand firm when facing challenges in practicing Islam</li>
-            </ul>
+            <div class="section">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Steadfastness in Faith</div>
+                    <div class="arabic">يَا مَتِينُ، ثَبِّتْنِي عَلَى دِينِكَ وَاجْعَلْنِي مِنَ الْعَابِدِينَ الصَّابِرِينَ</div>
+                    <div class="transliteration">Ya Mateen, thabbitnee 'ala deenik waj'alnee minal-'abideen as-sabireen</div>
+                    <p><strong>Translation:</strong> "O Firm One, make me steadfast in Your religion and make me among Your patient worshippers."</p>
+                    <p><strong>Benefits:</strong> The Prophet (ﷺ) taught that invoking Allah by His names guarantees response (Tirmidhi). This dua combines seeking firmness with patience in worship.</p>
+                </div>
 
-            <h3>2. The "Unshakable Trust" Remembrance</h3>
-            <p>Building reliance on Al-Matin:</p>
-            <ol>
-                <li>When facing difficulties, recite "Hasbunallahu wa ni'mal wakeel"</li>
-                <li>Visualize Allah's firm support upholding you</li>
-                <li>Recall historical examples of Allah's help to believers</li>
-                <li>Maintain consistent worship during hard times</li>
-            </ol>
-
-            <h2>Ibn Kathir's Commentary</h2>
-            <p>In his tafsir of Surah Adh-Dhariyat (51:58), Ibn Kathir explains the significance of Allah being Al-Matin:</p>
-            <p>"Allah's attribute as Al-Matin means His strength is perfect and inexhaustible. Unlike created strength which tires or diminishes, Allah's power remains constant and absolute. This should give believers complete confidence that whatever Allah wills must come to pass, and whatever He prevents cannot occur."</p>
-            <p>He further notes that this attribute is particularly comforting during times of weakness or vulnerability, reminding believers of Allah's unwavering support.</p>
-
-            <h2>Reflection Points</h2>
-            <ul>
-                <li>How does Allah's perfect firmness differ from human strength?</li>
-                <li>What challenges in your life require you to rely on Al-Matin?</li>
-                <li>How can you develop greater steadfastness in worship?</li>
-            </ul>
-
-            <div class="back-to-top">
-                <a href="#" class="btn">Back to Top</a>
-            </div>
-        </div>
-
-        <!-- Indonesian Version -->
-        <div id="indonesian" class="hidden">
-            <h1>54. Al-Matin - Yang Maha Kuat, Yang Maha Kokoh</h1>
-            <p class="source">Sumber: <a href="https://myislam.org/99-names-of-allah/al-matin" target="_blank">https://myislam.org/99-names-of-allah/al-matin</a></p>
-
-            <div class="arabic">ٱلْمَتِينُ</div>
-            <div class="transliteration">Transliterasi: Al-Matin</div>
-
-            <h2>Makna dan Signifikansi</h2>
-            <p>Al-Matin adalah Yang Maha Kuat dan Kokoh yang kekuatan-Nya mutlak dan tak tergoyahkan. Dia-lah Yang kekuatan-Nya sempurna, kehendak-Nya tak terbatas, dan keputusan-Nya tidak dapat dibatalkan.</p>
-
-            <h2>Penjelasan Detail</h2>
-            <p>Al-Matin berasal dari akar kata Arab 'matana' (متن) yang berarti "kokoh" atau "kuat." Nama yang kuat ini sering muncul dalam Al-Quran berpasangan dengan Al-Qawi (Yang Maha Kuat), menekankan kekuatan Allah yang sempurna dan tak tergoyahkan.</p>
-
-            <p>Ibnu Katsir menjelaskan dalam tafsirnya bahwa Al-Matin menunjukkan kekuatan Allah tidak seperti kekuatan makhluk yang melemah atau berubah-ubah. Kekuatan-Nya konstan, sempurna, dan tidak dapat dikurangi atau dilawan.</p>
-
-            <h2>Referensi Al-Quran</h2>
-            <div class="verse">
-                <div class="arabic">إِنَّ ٱللَّهَ هُوَ ٱلرَّزَّاقُ ذُو ٱلْقُوَّةِ ٱلْمَتِينُ</div>
-                <div class="transliteration">Innallaha huwa ar-Razzaaqu thul-quwwatil-mateen</div>
-                <p>"Sesungguhnya Allah Dialah Maha Pemberi rezeki Yang Mempunyai Kekuatan lagi Sangat Kokoh." (<a href="https://quranwbw.com/51:58" target="_blank">Surah Adh-Dhariyat 51:58</a>)</p>
-                <p>Ayat ini menghubungkan rezeki Allah dengan kekuatan sempurna-Nya sebagai Al-Matin, menunjukkan bahwa rezeki-Nya didukung oleh kekuatan yang tak terbatas.</p>
+                <div class="dua">
+                    <div class="dua-title">For Strength Through Al-Matin</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ الْمَتِينِ أَعِنِّي عَلَى أَمْرِ الدُّنْيَا وَالدِّينِ</div>
+                    <div class="transliteration">Allahumma bi-haqqil-Mateeni a'inni 'ala amrid-dunya wad-deen</div>
+                    <p><strong>Translation:</strong> "O Allah, by the right of Al-Matin, help me in the matters of this world and religion."</p>
+                    <p><strong>Source:</strong> This dua combines invoking Al-Matin with comprehensive help for both worldly and religious matters, following the Prophet's example of comprehensive supplication.</p>
+                </div>
             </div>
 
-            <div class="verse">
-                <div class="arabic">وَٱللَّهُ ٱلْقَوِىُّ ٱلْمَتِينُ</div>
-                <div class="transliteration">Wallahu al-Qawiyyul-Mateen</div>
-                <p>"Dan Allah Maha Kuat lagi Maha Kokoh." (<a href="https://quranwbw.com/22:74" target="_blank">Surah Al-Hajj 22:74</a>)</p>
-                <p>Referensi langsung ke Al-Matin yang dipasangkan dengan Al-Qawi ini menekankan kekuatan mutlak dan tak tergoyahkan Allah.</p>
+            <div class="section">
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Steadfastness Practice</div>
+                    <p>Daily routine to cultivate spiritual steadfastness:</p>
+                    <ol>
+                        <li>After Fajr prayer, recite "Ya Mateen" 33 times while reflecting on its meaning</li>
+                        <li>Recite Surah Al-Ikhlas 3 times to remember Allah's oneness</li>
+                        <li>Recite a dua for steadfastness before beginning daily activities</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Develops awareness of divine firmness</li>
+                        <li>Strengthens connection with Allah's attributes</li>
+                        <li>Follows the Prophet's (ﷺ) example of morning remembrance</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Weekly Firmness Remembrance</div>
+                    <p>Weekly practice to connect with Allah's firmness:</p>
+                    <ol>
+                        <li>Every Thursday night, recite Surah Al-Fatihah 7 times</li>
+                        <li>Recite Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) 7 times</li>
+                        <li>Recite "Ya Mateen" 100 times</li>
+                        <li>Make dua asking for steadfastness in faith and life</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) emphasized Thursday nights for extra worship. This practice combines Quranic recitation with dhikr to seek Allah's firmness.</p>
+                </div>
             </div>
 
-            <h2>Referensi Hadits</h2>
-            <p>Nabi Muhammad (shallallahu 'alaihi wasallam) bersabda: <span class="arabic">«إِنَّ اللَّهَ مَتِينٌ يُحِبُّ الْمَتَانَةَ فِي كُلِّ شَيْءٍ»</span> <span class="transliteration">"Innallaha mateenun yuhibbul-matana fee kulli shay"</span> ("Sesungguhnya Allah Maha Kokoh dan mencintai kekokohan dalam segala hal.") (Dishahihkan oleh Al-Albani)</p>
-            <p>Hadits ini menghubungkan sifat kekokohan Allah dengan kecintaan-Nya pada kekuatan dan keteguhan dalam ciptaan-Nya.</p>
-
-            <h2>Doa dan Permohonan</h2>
-            <div class="dua">
-                <div class="arabic">يَا مَتِينُ، ثَبِّتْنِي عَلَى دِينِكَ وَاجْعَلْنِي مِنَ الْعَابِدِينَ الصَّابِرِينَ</div>
-                <div class="transliteration">Ya Mateen, thabbitnee 'ala deenik waj'alnee minal-'abideen as-sabireen</div>
-                <p><strong>Terjemahan:</strong> "Wahai Yang Maha Kokoh, teguhkan aku dalam agama-Mu dan jadikan aku termasuk hamba-hamba-Mu yang sabar."</p>
-                <p><strong>Konteks:</strong> Doa ini dapat dibaca saat menghadapi ujian atau ketika membutuhkan kekuatan spiritual dan keteguhan.</p>
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Matin through several dimensions of divine firmness:</p>
+                <ol>
+                    <li><strong>Absolute Firmness:</strong>
+                        <ul>
+                            <li>Unshakable power to create and command (<a href="https://quranwbw.com/36:82" target="_blank">36:82</a>)</li>
+                            <li>Power over all creation (<a href="https://quranwbw.com/3:189" target="_blank">3:189</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sustaining Firmness:</strong>
+                        <ul>
+                            <li>Continuous provision for all creatures (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Maintenance of the universe (<a href="https://quranwbw.com/35:41" target="_blank">35:41</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Protective Firmness:</strong>
+                        <ul>
+                            <li>Defense of believers (<a href="https://quranwbw.com/22:40" target="_blank">22:40</a>)</li>
+                            <li>Victory over falsehood (<a href="https://quranwbw.com/21:18" target="_blank">21:18</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Resurrecting Power:</strong>
+                        <ul>
+                            <li>Ability to bring the dead to life (<a href="https://quranwbw.com/22:5" target="_blank">22:5</a>)</li>
+                            <li>Power over the Day of Judgment (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>The constant mention of Allah's firmness in the Quran serves as a reminder that all stability comes from Him alone, and human steadfastness is merely a reflection of divine attributes.</p>
             </div>
 
-            <h2>Aplikasi Praktis (Amalan)</h2>
-            <h3>1. Praktik Keteguhan</h3>
-            <p>Untuk mengembangkan keteguhan dalam iman:</p>
-            <ul>
-                <li>Baca "Ya Mateen" 100 kali setelah shalat Subuh</li>
-                <li>Pelajari satu ayat tentang kekuatan Allah setiap hari</li>
-                <li>Renungkan bagaimana kekokohan Allah menopang ciptaan</li>
-                <li>Bersikap teguh saat menghadapi tantangan dalam menjalankan Islam</li>
-            </ul>
-
-            <h3>2. Dzikir "Kepercayaan Tak Tergoyahkan"</h3>
-            <p>Membangun ketergantungan pada Al-Matin:</p>
-            <ol>
-                <li>Saat menghadapi kesulitan, baca "Hasbunallahu wa ni'mal wakeel"</li>
-                <li>Bayangkan dukungan kokoh Allah menopangmu</li>
-                <li>Ingat contoh sejarah pertolongan Allah kepada orang beriman</li>
-                <li>Pertahankan ibadah yang konsisten di masa sulit</li>
-            </ol>
-
-            <h2>Komentar Ibnu Katsir</h2>
-            <p>Dalam tafsir Surah Adh-Dhariyat (51:58), Ibnu Katsir menjelaskan makna Allah sebagai Al-Matin:</p>
-            <p>"Sifat Allah sebagai Al-Matin berarti kekuatan-Nya sempurna dan tak terbatas. Tidak seperti kekuatan makhluk yang lelah atau berkurang, kekuatan Allah tetap konstan dan mutlak. Ini seharusnya memberi orang beriman keyakinan penuh bahwa apa pun yang Allah kehendaki pasti terjadi, dan apa pun yang Dia cegah tidak dapat terjadi."</p>
-            <p>Dia lebih lanjut mencatat bahwa sifat ini sangat menghibur di saat kelemahan atau kerentanan, mengingatkan orang beriman akan dukungan Allah yang tak tergoyahkan.</p>
-
-            <h2>Poin Renungan</h2>
-            <ul>
-                <li>Bagaimana kekokohan sempurna Allah berbeda dengan kekuatan manusia?</li>
-                <li>Tantangan apa dalam hidup Anda yang mengharuskan Anda bergantung pada Al-Matin?</li>
-                <li>Bagaimana Anda dapat mengembangkan keteguhan yang lebih besar dalam ibadah?</li>
-            </ul>
-
-            <div class="back-to-top">
-                <a href="#" class="btn">Kembali ke Atas</a>
-            </div>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle Function
-        function toggleLanguage(lang) {
-            if (lang === 'english') {
-                document.getElementById('english').classList.remove('hidden');
-                document.getElementById('indonesian').classList.add('hidden');
-            } else {
-                document.getElementById('english').classList.add('hidden');
-                document.getElementById('indonesian').classList.remove('hidden');
-            }
-        }
-
-        // Transliteration Toggle Function
-        function toggleTransliteration() {
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
             const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(item => {
-                item.classList.toggle('hidden');
-            });
-        }
 
-        // Initially show English version
-        window.onload = function() {
-            toggleLanguage('english');
-        };
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
     </script>
 </body>
 </html>
