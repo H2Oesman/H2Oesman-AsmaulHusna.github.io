@@ -3,125 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Hamid - The Praiseworthy | 99 Names of Allah</title>
+    <title>Al-Hamid - Yang Maha Terpuji | 99 Asmaul Husna</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f9f5;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: #2e7d32;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #388e3c;
-            border-bottom: 2px solid #c8e6c9;
-            padding-bottom: 5px;
-            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
-            margin: 15px 0;
-            color: #1b5e20;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #666;
-            margin-bottom: 10px;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
         }
-        .section {
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
             margin-bottom: 25px;
         }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
         }
-        .toggle-btn {
-            background-color: #388e3c;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
         }
-        .toggle-btn:hover {
-            background-color: #2e7d32;
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
         }
-        .active {
-            background-color: #1b5e20;
-        }
-        .source {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
-            margin-top: 30px;
-            color: #388e3c;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
+            font-weight: bold;
         }
-        .back-to-top:hover {
-            text-decoration: underline;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .bonus {
-            text-align: center;
-            font-style: italic;
-            color: #2e7d32;
-            margin-bottom: 20px;
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn active" id="english-btn">English</button>
-            <button class="toggle-btn" id="indonesian-btn">Indonesian</button>
-            <button class="toggle-btn" id="toggle-transliteration">Hide Transliteration</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">56. Al-Hamid (Yang Maha Terpuji)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-hameed/" target="_blank">myislam.org/99-names-of-allah/al-hameed/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْحَمِيدُ</div>
+            <div class="transliteration">Transliterasi: Al-Hamid</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/56.%20al-hamid.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Hamid adalah Yang Maha Terpuji, Yang berhak atas segala pujian dan syukur. Menurut Kementerian Agama RI, nama ini menunjukkan bahwa Allah adalah satu-satunya yang benar-benar layak dipuji untuk sifat-sifat-Nya yang sempurna, nikmat yang tak terhitung, dan ciptaan yang agung.</p>
+                <p>NU Online menjelaskan bahwa Al-Hamid mencakup makna bahwa Allah dipuji oleh seluruh makhluk-Nya, baik yang menyadarinya maupun tidak, karena segala sesuatu di alam semesta ini pada hakikatnya adalah bentuk pujian kepada-Nya.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Penjelasan Detail</h2>
+                <p>Al-Hamid berasal dari akar kata ha-ma-da yang berarti "memuji, memuji, berterima kasih." Menurut tafsir Kementerian Agama RI, nama ini menggabungkan dua aspek: Allah layak mendapat semua pujian (mahmud) dan menjadi Yang memuji (hamid).</p>
+                <p>Allah dipuji oleh semua ciptaan, apakah mereka menyadarinya atau tidak. Seluruh alam semesta berfungsi sesuai dengan hikmah-Nya yang sempurna, menjadikan segala sesuatu yang ada sebagai bentuk pujian kepada-Nya.</p>
+                <p>Al-Quran menyatakan: <a href="https://quranwbw.com/28:70" target="_blank">"Dan Dialah Allah; tidak ada tuhan selain Dia. Bagi-Nya segala puji di dunia dan di akhirat." (QS. Al-Qasas: 70)</a>. Ayat ini menunjukkan bahwa pujian adalah milik Allah dalam segala waktu dan keadaan.</p>
+                <p>NU Online menambahkan bahwa nama ini mengingatkan kita untuk senantiasa mengenali nikmat Allah yang tak terhitung dan mengungkapkan rasa syukur melalui kata-kata, tindakan, dan ibadah.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/28:70" target="_blank">Surah Al-Qasas 28:70</a>
+                    <div class="arabic">وَهُوَ ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ۖ لَهُ ٱلْحَمْدُ فِى ٱلْأُولَىٰ وَٱلْـَٔاخِرَةِ ۖ وَلَهُ ٱلْحُكْمُ وَإِلَيْهِ تُرْجَعُونَ</div>
+                    <div class="transliteration">Wa Huwal laahu laaa ilaaha illaa Huwa; laHul hamdu fil oolaa wal Aakhirah; wa laHul hukmu wa ilaihi turja'oon</div>
+                    <p>"Dan Dialah Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia, bagi-Nyalah segala puji di dunia dan di akhirat, dan bagi-Nyalah segala penentuan dan hanya kepada-Nyalah kamu dikembalikan."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menegaskan keesaan Allah dan hak-Nya atas segala pujian. Pujian kepada Allah berlaku abadi, tidak hanya di dunia tetapi terus berlanjut hingga akhirat. Ini menunjukkan kesempurnaan sifat Allah yang memang layak dipuji dalam segala keadaan.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/30:18" target="_blank">Surah Ar-Rum 30:18</a>
+                    <div class="arabic">وَلَهُ ٱلْحَمْدُ فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَعَشِيًّۭا وَحِينَ تُظْهِرُونَ</div>
+                    <div class="transliteration">Wa laHul hamdu fis samaawaati wal ardi wa 'ashiyyanw wa heena tuzhiroon</div>
+                    <p>"Dan bagi-Nyalah segala puji di langit dan di bumi dan pada waktu petang dan ketika kamu berada pada waktu duha (pagi)."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU Online:</strong> Ayat ini menunjukkan universalitas pujian kepada Allah yang meliputi seluruh alam semesta dan berlaku sepanjang waktu. Pujian kepada Allah tidak terbatas oleh ruang dan waktu, melainkan terus berlangsung setiap saat.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/34:1" target="_blank">Surah Saba 34:1</a>
+                    <div class="arabic">ٱلْحَمْدُ لِلَّهِ ٱلَّذِى لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ وَلَهُ ٱلْحَمْدُ فِى ٱلْـَٔاخِرَةِ ۚ وَهُوَ ٱلْحَكِيمُ ٱلْخَبِيرُ</div>
+                    <div class="transliteration">Alhamdu lillaahil lazee lahoo maa fis samaawaati wa maa fil ardi wa laHul hamdu fil Aakhirati wa Huwal Hakeemul Khabeer</div>
+                    <p>"Segala puji bagi Allah yang memiliki apa yang di langit dan apa yang di bumi dan bagi-Nya (pula) segala puji di akhirat. Dan Dialah Yang Maha Bijaksana lagi Maha Mengetahui."</p>
+                    <div class="tafsir-box">
+                        <strong>Keterangan Majelis Ulama Indonesia:</strong> Ayat ini menegaskan kepemilikan mutlak Allah atas segala sesuatu dan hak-Nya atas segala pujian. Kebijaksanaan dan pengetahuan Allah yang sempurna menjadi alasan mengapa Dia layak dipuji secara mutlak.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2691" target="_blank">Sahih Muslim 2691</a>
+                    <div class="arabic">اللَّهُمَّ لَكَ الْحَمْدُ كُلُّهُ، وَلَكَ الْمُلْكُ كُلُّهُ، وَبِيَدِكَ الْخَيْرُ كُلُّهُ، وَإِلَيْكَ يُرْجَعُ الْأَمْرُ كُلُّهُ</div>
+                    <div class="transliteration">Allāhumma laka-l-ḥamdu kulluhu, wa laka-l-mulku kulluhu, wa bi-yadika-l-khayru kulluhu, wa ilayka yurja'u-l-amru kulluhu</div>
+                    <p>"Ya Allah, bagi-Mu segala puji seluruhnya, bagi-Mu kerajaan seluruhnya, di tangan-Mu segala kebaikan seluruhnya, dan kepada-Mu segala urusan dikembalikan seluruhnya."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU Online:</strong> Hadits ini mengajarkan kita untuk memuji Allah secara menyeluruh dan mengakui kekuasaan-Nya atas segala sesuatu. Doa ini mencerminkan pengakuan bahwa segala pujian, kekuasaan, dan kebaikan hanya milik Allah semata.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Kemampuan untuk Selalu Memuji Allah</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَمِيدِ أَنْ تَجْعَلَ لِي فِي كُلِّ نَفَسٍ حَمْدًا، وَفِي كُلِّ حَالٍ شُكْرًا</div>
+                    <div class="transliteration">Allāhumma innī as'aluka bismika-l-Ḥamīdi an taj'ala lī fī kulli nafasin ḥamdan, wa fī kulli ḥālin shukran</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Al-Hamid untuk memberiku kemampuan memuji-Mu dalam setiap napas dan bersyukur dalam setiap keadaan."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh para ulama NU sebagai permohonan untuk senantiasa bisa memuji Allah dalam segala kondisi. Dianjurkan dibaca setiap pagi dan petang.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Doa Pujian kepada Allah</div>
+                    <div class="arabic">يَا حَمِيدُ، أَحْمَدُكَ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ كَمَا يُحِبُّ رَبُّنَا وَيَرْضَى</div>
+                    <div class="transliteration">Yā Ḥamīdu, aḥmaduka ḥamdan kathīran ṭayyiban mubārakan fīhi kamā yuḥibbu Rabbunā wa yarḍā</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Terpuji, aku memuji-Mu dengan pujian yang banyak, baik, dan diberkati sebagaimana Tuhan kami mencintai dan meridhai."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan ajaran para ulama salaf dan tercantum dalam berbagai kitab wirid. Nabi (ﷺ) mengajarkan bahwa berdoa dengan menyebut nama-nama Allah akan dikabulkan (Tirmidzi).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Syukur Harian</div>
+                    <p>Rutinitas harian untuk mengembangkan sifat bersyukur menurut panduan Kementerian Agama RI:</p>
+                    <ol>
+                        <li>Perbanyak mengucapkan "Alhamdulillah" minimal 100 kali sehari</li>
+                        <li>Menulis 3 nikmat baru yang diterima setiap hari dalam buku syukur</li>
+                        <li>Melakukan shalat sunnah syukur ketika mendapat nikmat khusus</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Meningkatkan kesadaran akan nikmat Allah</li>
+                        <li>Mengembangkan sikap qana'ah (merasa cukup)</li>
+                        <li>Mengikuti sunnah Nabi (ﷺ) dalam bersyukur</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Wirid Pujian</div>
+                    <p>Amalan mingguan untuk memperbanyak pujian kepada Allah:</p>
+                    <ol>
+                        <li>Setiap pagi Jumat, baca:</li>
+                        <ul>
+                            <li>Subhanallah 33x</li>
+                            <li>Alhamdulillah 33x</li>
+                            <li>Allahu Akbar 33x</li>
+                        </ul>
+                        <li>Awali dengan "Bismillah Al-Hamid"</li>
+                        <li>Akhiri dengan doa memohon diterimanya pujian</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa mengucapkan 'Subhanallah', 'Alhamdulillah', dan 'Allahu Akbar' masing-masing 33 kali setiap selesai shalat, maka dosa-dosanya akan diampuni meskipun sebanyak buih di lautan." (HR. Muslim). Amalan ini dikembangkan oleh para ulama NU sebagai bentuk tawassul dengan nama Allah Al-Hamid.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Hamid melalui tiga dimensi utama:</p>
+                <ol>
+                    <li><strong>Pujian atas Penciptaan:</strong>
+                        <ul>
+                            <li>Kesempurnaan ciptaan Allah (<a href="https://quranwbw.com/67:3-4" target="_blank">67:3-4</a>)</li>
+                            <li>Keseimbangan alam semesta (<a href="https://quranwbw.com/55:5-9" target="_blank">55:5-9</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pujian atas Nikmat:</strong>
+                        <ul>
+                            <li>Penyediaan rezeki (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Kesesuaian dengan kebutuhan manusia (<a href="https://quranwbw.com/14:34" target="_blank">14:34</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pujian atas Petunjuk:</strong>
+                        <ul>
+                            <li>Pengutusan para nabi (<a href="https://quranwbw.com/21:107" target="_blank">21:107</a>)</li>
+                            <li>Penurunan Al-Quran (<a href="https://quranwbw.com/2:185" target="_blank">2:185</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam tafsir Surah Al-Fatihah (<a href="https://quranwbw.com/1:2" target="_blank">1:2</a>), Ibn Kathir menegaskan bahwa pujian kepada Allah (Alhamdulillah) mencakup pengakuan bahwa segala nikmat dan karunia hanya berasal dari-Nya. Pujian ini merupakan bentuk syukur dan pengakuan akan keagungan Allah.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- English Version -->
-        <div id="english-version">
-            <h1>Al-Hamid (56) - The Praiseworthy</h1>
-            <div class="source">Source: <a href="https://myislam.org/99-names-of-allah/al-hameed/" target="_blank">https://myislam.org/99-names-of-allah/al-hameed/</a></div>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">56. Al-Hamid (The Praiseworthy)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-hameed/" target="_blank">myislam.org/99-names-of-allah/al-hameed/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                Bonus from <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_57Hameed.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْحَمِيدُ</div>
             <div class="transliteration">Transliteration: Al-Hamid</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/56.%20al-hamid.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2>Meaning</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Hamid is The Praiseworthy, The One who deserves all praise and gratitude. He is the only One truly worthy of praise for His perfect attributes, countless blessings, and magnificent creation.</p>
             </div>
 
             <div class="section">
-                <h2>Detailed Explanation</h2>
+                <h2 class="section-title">Detailed Explanation</h2>
                 <p>Al-Hamid comes from the root ha-ma-da which means "to praise, to commend, to thank." This name combines two aspects: Allah being worthy of all praise (mahmud) and being the One who praises (hamid).</p>
                 <p>Allah is praised by all creation, whether they realize it or not. The entire universe functions according to His perfect wisdom, making everything in existence a form of praise to Him.</p>
                 <p>The Quran states: "And He is Allah; there is no deity except Him. To Him is [due all] praise in the first [life] and the Hereafter." (28:70) This shows that praise belongs to Allah in all times and circumstances.</p>
@@ -129,166 +384,204 @@
             </div>
 
             <div class="section">
-                <h2>Dalil (Evidence from Quran and Hadith)</h2>
-                <div class="arabic">وَهُوَ ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ۖ لَهُ ٱلْحَمْدُ فِى ٱلْأُولَىٰ وَٱلْـَٔاخِرَةِ ۖ وَلَهُ ٱلْحُكْمُ وَإِلَيْهِ تُرْجَعُونَ</div>
-                <div class="transliteration">Transliteration: Wa Huwal laahu laaa ilaaha illaa Huwa; laHul hamdu fil oolaa wal Aakhirah; wa laHul hukmu wa ilaihi turja'oon</div>
-                <p>Translation: "And He is Allah; there is no deity except Him. To Him is [due all] praise in the first [life] and the Hereafter. And His is the [final] decision, and to Him you will be returned." <a href="https://quranwbw.com/28:70" target="_blank">(Surah Al-Qasas 28:70)</a></p>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
-                <div class="arabic">وَلَهُ ٱلْحَمْدُ فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَعَشِيًّۭا وَحِينَ تُظْهِرُونَ</div>
-                <div class="transliteration">Transliteration: Wa laHul hamdu fis samaawaati wal ardi wa 'ashiyyanw wa heena tuzhiroon</div>
-                <p>Translation: "And to Him belongs [all] praise throughout the heavens and the earth. And [glorify Him] in the afternoon and when you arise at noon." <a href="https://quranwbw.com/30:18" target="_blank">(Surah Ar-Rum 30:18)</a></p>
-                
-                <div class="arabic">ٱلْحَمْدُ لِلَّهِ ٱلَّذِى لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ وَلَهُ ٱلْحَمْدُ فِى ٱلْـَٔاخِرَةِ ۚ وَهُوَ ٱلْحَكِيمُ ٱلْخَبِيرُ</div>
-                <div class="transliteration">Transliteration: Alhamdu lillaahil lazee lahoo maa fis samaawaati wa maa fil ardi wa laHul hamdu fil Aakhirati wa Huwal Hakeemul Khabeer</div>
-                <p>Translation: "[All] praise is [due] to Allah, to whom belongs whatever is in the heavens and whatever is in the earth, and to Him belongs [all] praise in the Hereafter. And He is the Wise, the Acquainted." <a href="https://quranwbw.com/34:1" target="_blank">(Surah Saba 34:1)</a></p>
+                <div class="dalil-item">
+                    <strong>Primary Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/28:70" target="_blank">Surah Al-Qasas 28:70</a>
+                    <div class="arabic">وَهُوَ ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ۖ لَهُ ٱلْحَمْدُ فِى ٱلْأُولَىٰ وَٱلْـَٔاخِرَةِ ۖ وَلَهُ ٱلْحُكْمُ وَإِلَيْهِ تُرْجَعُونَ</div>
+                    <div class="transliteration">Wa Huwal laahu laaa ilaaha illaa Huwa; laHul hamdu fil oolaa wal Aakhirah; wa laHul hukmu wa ilaihi turja'oon</div>
+                    <p>"And He is Allah; there is no deity except Him. To Him is [due all] praise in the first [life] and the Hereafter. And His is the [final] decision, and to Him you will be returned."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/28/70/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse establishes Allah's oneness and His right to all praise. Praise to Allah is eternal, not just in this world but continuing into the Hereafter. This shows the perfection of Allah's attributes that are indeed worthy of praise in all circumstances.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/30:18" target="_blank">Surah Ar-Rum 30:18</a>
+                    <div class="arabic">وَلَهُ ٱلْحَمْدُ فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَعَشِيًّۭا وَحِينَ تُظْهِرُونَ</div>
+                    <div class="transliteration">Wa laHul hamdu fis samaawaati wal ardi wa 'ashiyyanw wa heena tuzhiroon</div>
+                    <p>"And to Him belongs [all] praise throughout the heavens and the earth. And [glorify Him] in the afternoon and when you arise at noon."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/30/18/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse shows the universality of praise to Allah that encompasses the entire universe and applies at all times. Praise to Allah is not limited by space and time, but continues every moment.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/34:1" target="_blank">Surah Saba 34:1</a>
+                    <div class="arabic">ٱلْحَمْدُ لِلَّهِ ٱلَّذِى لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ وَلَهُ ٱلْحَمْدُ فِى ٱلْـَٔاخِرَةِ ۚ وَهُوَ ٱلْحَكِيمُ ٱلْخَبِيرُ</div>
+                    <div class="transliteration">Alhamdu lillaahil lazee lahoo maa fis samaawaati wa maa fil ardi wa laHul hamdu fil Aakhirati wa Huwal Hakeemul Khabeer</div>
+                    <p>"[All] praise is [due] to Allah, to whom belongs whatever is in the heavens and whatever is in the earth, and to Him belongs [all] praise in the Hereafter. And He is the Wise, the Acquainted."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/34/1/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse affirms Allah's absolute ownership of everything and His right to all praise. Allah's perfect wisdom and knowledge are the reasons why He is absolutely worthy of praise.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2691" target="_blank">Sahih Muslim 2691</a>
+                    <div class="arabic">اللَّهُمَّ لَكَ الْحَمْدُ كُلُّهُ، وَلَكَ الْمُلْكُ كُلُّهُ، وَبِيَدِكَ الْخَيْرُ كُلُّهُ، وَإِلَيْكَ يُرْجَعُ الْأَمْرُ كُلُّهُ</div>
+                    <div class="transliteration">Allāhumma laka-l-ḥamdu kulluhu, wa laka-l-mulku kulluhu, wa bi-yadika-l-khayru kulluhu, wa ilayka yurja'u-l-amru kulluhu</div>
+                    <p>"O Allah, all praise is Yours entirely, all sovereignty is Yours entirely, all good is in Your Hand entirely, and all matters return to You entirely."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith teaches us to praise Allah comprehensively and acknowledge His authority over all things. This prayer reflects the recognition that all praise, sovereignty, and goodness belong to Allah alone.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>In his commentary on Surah Al-Qasas 28:70, Ibn Kathir explains that Allah alone deserves all praise because He is the Creator and Sustainer of everything. His praise is eternal, continuing from this life into the Hereafter.</p>
-                <p>Regarding Surah Ar-Rum 30:18, Ibn Kathir mentions that all praise in the heavens and earth ultimately belongs to Allah, and believers should remember to praise Him at all times, especially during the prescribed prayer times.</p>
-                <p>In explaining Surah Saba 34:1, Ibn Kathir highlights that Allah's praise encompasses everything in creation, and His wisdom ensures that all things ultimately glorify Him, whether through their existence or their function.</p>
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For the Ability to Always Praise Allah</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَمِيدِ أَنْ تَجْعَلَ لِي فِي كُلِّ نَفَسٍ حَمْدًا، وَفِي كُلِّ حَالٍ شُكْرًا</div>
+                    <div class="transliteration">Allāhumma innī as'aluka bismika-l-Ḥamīdi an taj'ala lī fī kulli nafasin ḥamdan, wa fī kulli ḥālin shukran</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You by Your name Al-Hamid to grant me the ability to praise You in every breath and be grateful in every circumstance."</p>
+                    <p><strong>Benefits:</strong> This dua seeks the constant ability to praise Allah in all conditions. Recommended to recite every morning and evening.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Praise to Allah</div>
+                    <div class="arabic">يَا حَمِيدُ، أَحْمَدُكَ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ كَمَا يُحِبُّ رَبُّنَا وَيَرْضَى</div>
+                    <div class="transliteration">Yā Ḥamīdu, aḥmaduka ḥamdan kathīran ṭayyiban mubārakan fīhi kamā yuḥibbu Rabbunā wa yarḍā</div>
+                    <p><strong>Translation:</strong> "O Praiseworthy One, I praise You with abundant, good, and blessed praise as our Lord loves and is pleased with."</p>
+                    <p><strong>Source:</strong> The Prophet (ﷺ) taught that invoking Allah by His names guarantees response (Tirmidhi). This dua combines beautiful praise with Allah's name Al-Hamid.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Du'a (Supplications)</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَمِيدِ أَنْ تَجْعَلَ لِي فِي كُلِّ نَفَسٍ حَمْدًا، وَفِي كُلِّ حَالٍ شُكْرًا</div>
-                <div class="transliteration">Transliteration: Allahumma inni as'aluka bismikal-Hameedi an taj'ala li fi kulli nafasin hamdan, wa fi kulli halin shukran</div>
-                <p>Translation: "O Allah, I ask You by Your name Al-Hamid to grant me praise in every breath and gratitude in every circumstance."</p>
-                
-                <div class="arabic">يَا حَمِيدُ، أَحْمَدُكَ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ كَمَا يُحِبُّ رَبُّنَا وَيَرْضَى</div>
-                <div class="transliteration">Transliteration: Ya Hameedu, ahmaduka hamdan katheeran tayyiban mubarakan feehi kama yuhibbu Rabbuna wa yardha</div>
-                <p>Translation: "O Praiseworthy One, I praise You with abundant, good, and blessed praise as our Lord loves and is pleased with."</p>
+                <h2 class="section-title">Amalan (Practices)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Daily Gratitude Practice</div>
+                    <p>Daily routine to develop an attitude of gratitude:</p>
+                    <ol>
+                        <li>Say "Alhamdulillah" at least 100 times daily</li>
+                        <li>Write down 3 new blessings received each day in a gratitude journal</li>
+                        <li>Perform gratitude prayer (salat ash-shukr) when receiving special blessings</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Increases awareness of Allah's blessings</li>
+                        <li>Develops contentment (qana'ah)</li>
+                        <li>Follows the Prophet's (ﷺ) sunnah in being grateful</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Praise Dhikr</div>
+                    <p>Weekly practice to increase praise to Allah:</p>
+                    <ol>
+                        <li>Every Friday morning, recite:</li>
+                        <ul>
+                            <li>Subhanallah 33x</li>
+                            <li>Alhamdulillah 33x</li>
+                            <li>Allahu Akbar 33x</li>
+                        </ul>
+                        <li>Begin with "Bismillah Al-Hamid"</li>
+                        <li>Conclude with a dua for acceptance of praise</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "Whoever says 'Subhanallah', 'Alhamdulillah', and 'Allahu Akbar' each 33 times after prayer, his sins will be forgiven even if they were like the foam of the sea." (Muslim). This practice was developed by scholars as a way to seek nearness through Allah's name Al-Hamid.</p>
+                </div>
             </div>
 
             <div class="section">
-                <h2>Amalan (Practices)</h2>
-                <p><strong>1. Daily Gratitude Practice:</strong> Make it a habit to say "Alhamdulillah" (All praise is due to Allah) throughout the day, especially after blessings. The Prophet (ﷺ) said: "Whoever says 'SubhanAllah' 100 times, 'Alhamdulillah' 100 times, and 'Allahu Akbar' 100 times will have his sins forgiven even if they were like the foam of the sea." (Bukhari)</p>
-                <p><strong>2. Morning and Evening Remembrance:</strong> Recite "Alhamdulillahilladhi ahyaana ba'da ma amaatana wa ilayhin-nushoor" (All praise is due to Allah who gave us life after death and to Him is the return) upon waking up.</p>
-                <p><strong>3. Charity with Gratitude:</strong> Give charity regularly with the intention of showing gratitude for Allah's blessings. The Quran states: "If you are grateful, I will surely increase you [in favor]." (14:7)</p>
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Hamid through three main dimensions:</p>
+                <ol>
+                    <li><strong>Praise for Creation:</strong>
+                        <ul>
+                            <li>Perfection of Allah's creation (<a href="https://quranwbw.com/67:3-4" target="_blank">67:3-4</a>)</li>
+                            <li>Balance of the universe (<a href="https://quranwbw.com/55:5-9" target="_blank">55:5-9</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Praise for Blessings:</strong>
+                        <ul>
+                            <li>Provision of sustenance (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Adaptation to human needs (<a href="https://quranwbw.com/14:34" target="_blank">14:34</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Praise for Guidance:</strong>
+                        <ul>
+                            <li>Sending of prophets (<a href="https://quranwbw.com/21:107" target="_blank">21:107</a>)</li>
+                            <li>Revelation of the Quran (<a href="https://quranwbw.com/2:185" target="_blank">2:185</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In explaining Surah Al-Fatihah (<a href="https://quranwbw.com/1:2" target="_blank">1:2</a>), Ibn Kathir emphasizes that praise to Allah (Alhamdulillah) includes recognition that all blessings and favors come only from Him. This praise is a form of gratitude and acknowledgment of Allah's greatness.</p>
             </div>
 
-            <div class="section">
-                <h2>Benefits and Reflection</h2>
-                <p>1. Recognizing Allah as Al-Hamid cultivates constant awareness of His blessings and favors.</p>
-                <p>2. This name teaches us that true praise belongs only to Allah, not to any created being.</p>
-                <p>3. It encourages developing an attitude of gratitude in all circumstances.</p>
-                <p>4. Understanding this attribute helps us see Allah's wisdom behind all events, making it easier to praise Him even in difficulties.</p>
-                <p>5. It reminds us that our ultimate purpose is to worship and praise Allah, as He says: "I did not create jinn and mankind except to worship Me." (51:56)</p>
-            </div>
-
-            <a href="#" class="back-to-top">Back to Top</a>
-        </div>
-
-        <!-- Indonesian Version -->
-        <div id="indonesian-version" class="hidden">
-            <h1>Al-Hamid (56) - Yang Maha Terpuji</h1>
-            <div class="source">Sumber: <a href="https://myislam.org/99-names-of-allah/al-hameed/" target="_blank">https://myislam.org/99-names-of-allah/al-hameed/</a></div>
-
-            <div class="arabic">ٱلْحَمِيدُ</div>
-            <div class="transliteration">Transliterasi: Al-Hamid</div>
-
-            <div class="section">
-                <h2>Makna</h2>
-                <p>Al-Hamid adalah Yang Maha Terpuji, Yang berhak atas segala pujian dan syukur. Dia satu-satunya yang benar-benar layak dipuji untuk sifat-sifat-Nya yang sempurna, nikmat yang tak terhitung, dan ciptaan yang agung.</p>
-            </div>
-
-            <div class="section">
-                <h2>Penjelasan Detail</h2>
-                <p>Al-Hamid berasal dari akar kata ha-ma-da yang berarti "memuji, memuji, berterima kasih." Nama ini menggabungkan dua aspek: Allah layak mendapat semua pujian (mahmud) dan menjadi Yang memuji (hamid).</p>
-                <p>Allah dipuji oleh semua ciptaan, apakah mereka menyadarinya atau tidak. Seluruh alam semesta berfungsi sesuai dengan hikmah-Nya yang sempurna, menjadikan segala sesuatu yang ada sebagai bentuk pujian kepada-Nya.</p>
-                <p>Al-Quran menyatakan: "Dan Dialah Allah; tidak ada tuhan selain Dia. Bagi-Nya segala puji di dunia dan di akhirat." (28:70) Ini menunjukkan bahwa pujian adalah milik Allah dalam segala waktu dan keadaan.</p>
-                <p>Nama ini mengingatkan kita untuk mengenali nikmat Allah yang tak terhitung dan mengungkapkan rasa syukur melalui kata-kata, tindakan, dan ibadah.</p>
-            </div>
-
-            <div class="section">
-                <h2>Dalil (Bukti dari Al-Quran dan Hadits)</h2>
-                <div class="arabic">وَهُوَ ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ۖ لَهُ ٱلْحَمْدُ فِى ٱلْأُولَىٰ وَٱلْـَٔاخِرَةِ ۖ وَلَهُ ٱلْحُكْمُ وَإِلَيْهِ تُرْجَعُونَ</div>
-                <div class="transliteration">Transliterasi: Wa Huwal laahu laaa ilaaha illaa Huwa; laHul hamdu fil oolaa wal Aakhirah; wa laHul hukmu wa ilaihi turja'oon</div>
-                <p>Terjemahan: "Dan Dialah Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia, bagi-Nyalah segala puji di dunia dan di akhirat, dan bagi-Nyalah segala penentuan dan hanya kepada-Nyalah kamu dikembalikan." <a href="https://quranwbw.com/28:70" target="_blank">(Surah Al-Qasas 28:70)</a></p>
-                
-                <div class="arabic">وَلَهُ ٱلْحَمْدُ فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ وَعَشِيًّۭا وَحِينَ تُظْهِرُونَ</div>
-                <div class="transliteration">Transliterasi: Wa laHul hamdu fis samaawaati wal ardi wa 'ashiyyanw wa heena tuzhiroon</div>
-                <p>Terjemahan: "Dan bagi-Nyalah segala puji di langit dan di bumi dan pada waktu petang dan ketika kamu berada pada waktu duha (pagi)." <a href="https://quranwbw.com/30:18" target="_blank">(Surah Ar-Rum 30:18)</a></p>
-                
-                <div class="arabic">ٱلْحَمْدُ لِلَّهِ ٱلَّذِى لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ وَلَهُ ٱلْحَمْدُ فِى ٱلْـَٔاخِرَةِ ۚ وَهُوَ ٱلْحَكِيمُ ٱلْخَبِيرُ</div>
-                <div class="transliteration">Transliterasi: Alhamdu lillaahil lazee lahoo maa fis samaawaati wa maa fil ardi wa laHul hamdu fil Aakhirati wa Huwal Hakeemul Khabeer</div>
-                <p>Terjemahan: "Segala puji bagi Allah yang memiliki apa yang di langit dan apa yang di bumi dan bagi-Nya (pula) segala puji di akhirat. Dan Dialah Yang Maha Bijaksana lagi Maha Mengetahui." <a href="https://quranwbw.com/34:1" target="_blank">(Surah Saba 34:1)</a></p>
-            </div>
-
-            <div class="section">
-                <h2>Tafsir Ibn Kathir</h2>
-                <p>Dalam tafsirnya tentang Surah Al-Qasas 28:70, Ibn Kathir menjelaskan bahwa Allah saja yang berhak atas segala pujian karena Dia adalah Pencipta dan Pemelihara segala sesuatu. Pujian-Nya abadi, berlanjut dari kehidupan ini hingga akhirat.</p>
-                <p>Mengenai Surah Ar-Rum 30:18, Ibn Kathir menyebutkan bahwa semua pujian di langit dan bumi pada akhirnya milik Allah, dan orang beriman harus ingat untuk memuji-Nya setiap saat, terutama selama waktu shalat yang ditentukan.</p>
-                <p>Dalam menjelaskan Surah Saba 34:1, Ibn Kathir menekankan bahwa pujian Allah mencakup segala sesuatu dalam penciptaan, dan hikmah-Nya memastikan bahwa semua hal pada akhirnya memuliakan-Nya, baik melalui keberadaan mereka atau fungsi mereka.</p>
-            </div>
-
-            <div class="section">
-                <h2>Doa</h2>
-                <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَمِيدِ أَنْ تَجْعَلَ لِي فِي كُلِّ نَفَسٍ حَمْدًا، وَفِي كُلِّ حَالٍ شُكْرًا</div>
-                <div class="transliteration">Transliterasi: Allahumma inni as'aluka bismikal-Hameedi an taj'ala li fi kulli nafasin hamdan, wa fi kulli halin shukran</div>
-                <p>Terjemahan: "Ya Allah, aku memohon kepada-Mu dengan nama-Mu Al-Hamid untuk memberiku pujian dalam setiap napas dan rasa syukur dalam setiap keadaan."</p>
-                
-                <div class="arabic">يَا حَمِيدُ، أَحْمَدُكَ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ كَمَا يُحِبُّ رَبُّنَا وَيَرْضَى</div>
-                <div class="transliteration">Transliterasi: Ya Hameedu, ahmaduka hamdan katheeran tayyiban mubarakan feehi kama yuhibbu Rabbuna wa yardha</div>
-                <p>Terjemahan: "Wahai Yang Maha Terpuji, aku memuji-Mu dengan pujian yang banyak, baik, dan diberkati sebagaimana Tuhan kita mencintai dan meridhai."</p>
-            </div>
-
-            <div class="section">
-                <h2>Amalan</h2>
-                <p><strong>1. Praktik Syukur Harian:</strong> Biasakan mengucapkan "Alhamdulillah" (Segala puji bagi Allah) sepanjang hari, terutama setelah menerima nikmat. Nabi (ﷺ) bersabda: "Barangsiapa mengucapkan 'SubhanAllah' 100 kali, 'Alhamdulillah' 100 kali, dan 'Allahu Akbar' 100 kali, dosa-dosanya akan diampuni meskipun sebanyak buih di lautan." (Bukhari)</p>
-                <p><strong>2. Dzikir Pagi dan Petang:</strong> Baca "Alhamdulillahilladhi ahyaana ba'da ma amaatana wa ilayhin-nushoor" (Segala puji bagi Allah yang menghidupkan kami setelah mematikan kami dan kepada-Nya kami kembali) saat bangun tidur.</p>
-                <p><strong>3. Sedekah dengan Rasa Syukur:</strong> Berikan sedekah secara teratur dengan niat menunjukkan rasa syukur atas nikmat Allah. Al-Quran menyatakan: "Jika kamu bersyukur, pasti Kami akan menambah (nikmat) kepadamu." (14:7)</p>
-            </div>
-
-            <div class="section">
-                <h2>Manfaat dan Renungan</h2>
-                <p>1. Mengakui Allah sebagai Al-Hamid menumbuhkan kesadaran akan nikmat dan karunia-Nya.</p>
-                <p>2. Nama ini mengajarkan kita bahwa pujian sejati hanya milik Allah, bukan makhluk apa pun.</p>
-                <p>3. Ini mendorong pengembangan sikap syukur dalam segala keadaan.</p>
-                <p>4. Memahami sifat ini membantu kita melihat hikmah Allah di balik semua peristiwa, memudahkan untuk memuji-Nya bahkan dalam kesulitan.</p>
-                <p>5. Ini mengingatkan kita bahwa tujuan akhir kita adalah untuk menyembah dan memuji Allah, sebagaimana Dia berfirman: "Aku tidak menciptakan jin dan manusia melainkan agar mereka beribadah kepada-Ku." (51:56)</p>
-            </div>
-
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle
-        document.getElementById('english-btn').addEventListener('click', function() {
-            document.getElementById('english-version').classList.remove('hidden');
-            document.getElementById('indonesian-version').classList.add('hidden');
-            document.getElementById('english-btn').classList.add('active');
-            document.getElementById('indonesian-btn').classList.remove('active');
-        });
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
 
-        document.getElementById('indonesian-btn').addEventListener('click', function() {
-            document.getElementById('indonesian-version').classList.remove('hidden');
-            document.getElementById('english-version').classList.add('hidden');
-            document.getElementById('indonesian-btn').classList.add('active');
-            document.getElementById('english-btn').classList.remove('active');
-        });
-
-        // Transliteration Toggle
-        const transliterationElements = document.querySelectorAll('.transliteration');
-        document.getElementById('toggle-transliteration').addEventListener('click', function() {
-            const button = this;
-            if (button.textContent === 'Hide Transliteration') {
-                button.textContent = 'Show Transliteration';
-                transliterationElements.forEach(el => el.classList.add('hidden'));
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
             } else {
-                button.textContent = 'Hide Transliteration';
-                transliterationElements.forEach(el => el.classList.remove('hidden'));
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
 
-        // Back to top functionality
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
         });
     </script>
 </body>
