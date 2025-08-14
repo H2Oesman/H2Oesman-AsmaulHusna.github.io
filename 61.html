@@ -1,317 +1,553 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>61. Al-Mumeet - The Causer of Death</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>61. Al-Mumeet (Yang Maha Mematikan)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             margin: 0;
             padding: 20px;
-            background-color: #f5fef5;
             color: #333;
+            background-color: #f5f9fc;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
-        h1, h2, h3 {
-            color: #2e7d32;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 28px;
-            border-bottom: 2px solid #2e7d32;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 22px;
-            margin-top: 25px;
-            border-left: 4px solid #2e7d32;
-            padding-left: 10px;
-        }
-        h3 {
-            font-size: 18px;
-            margin-top: 20px;
-        }
         .arabic {
-            font-family: 'KFGQPC Uthmanic Script', 'Traditional Arabic', Arial;
-            font-size: 24px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
-            margin: 15px 0;
-            line-height: 1.8;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
-            color: #555;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
             margin-bottom: 10px;
         }
-        .verse {
-            background-color: #f0f7f0;
-            padding: 12px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        .dua {
-            background-color: #e8f5e9;
-            padding: 12px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #2e7d32;
-            color: white;
-            padding: 8px 15px;
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            color: #3498db;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 5px 0;
-            font-size: 14px;
+            font-weight: bold;
         }
-        .btn:hover {
-            background-color: #1b5e20;
-        }
-        .toggle-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .toggle-btn {
-            background-color: #2e7d32;
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
             color: white;
-            border: none;
             padding: 8px 15px;
-            margin: 0 5px;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        .toggle-btn:hover {
-            background-color: #1b5e20;
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        .source {
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-            margin-bottom: 20px;
+        .bonus {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
         }
         .hidden {
             display: none;
         }
-        .back-to-top {
+        .name-source {
             text-align: center;
-            margin-top: 30px;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
         }
-        .bonus {
-            background-color: #e8f5e9;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 15px 0;
+        .main-menu {
             text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Language Toggle -->
-        <div class="toggle-container">
-            <button class="toggle-btn" onclick="toggleLanguage('english')">English</button>
-            <button class="toggle-btn" onclick="toggleLanguage('indonesian')">Indonesian</button>
-            <button class="toggle-btn" onclick="toggleTransliteration()">Toggle Transliteration</button>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">61. Al-Mumeet (Yang Maha Mematikan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-mumeet/" target="_blank">myislam.org/99-names-of-allah/al-mumeet/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْمُمِيتُ</div>
+            <div class="transliteration">Transliterasi: Al-Mumeet</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/61.%20al-mumeet.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Mumeet adalah salah satu dari Asmaul Husna Allah yang berarti Yang Maha Mematikan. Nama ini menunjukkan kekuasaan mutlak Allah dalam mencabut nyawa semua makhluk hidup ketika ajal telah tiba.</p>
+                <p>Menurut referensi dari Kementerian Agama RI dan NU Online, Al-Mumeet mengandung makna:</p>
+                <ul>
+                    <li><strong>Pencabut Nyawa:</strong> Allah yang mengambil nyawa ketika waktu yang ditentukan telah tiba</li>
+                    <li><strong>Pencipta Kematian:</strong> Yang menciptakan kematian sebagai bagian dari ketetapan-Nya</li>
+                    <li><strong>Yang Berkuasa atas Akhir Kehidupan:</strong> Tidak ada yang bisa menunda atau mempercepat kematian kecuali dengan izin-Nya</li>
+                    <li><strong>Penyebab Kematian:</strong> Yang menentukan sebab-sebab kematian setiap makhluk</li>
+                </ul>
+                <p>Dalam tafsir Kementerian Agama RI, Al-Mumeet menunjukkan bahwa kematian adalah ciptaan Allah dan memiliki hikmah yang besar dalam pengujian manusia.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/67:2" target="_blank">Surah Al-Mulk 67:2</a>
+                    <div class="arabic">ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ</div>
+                    <div class="transliteration">Alladhī khalaqal-mawta wal-ḥayāta li-yabluwakum ayyukum aḥsanu 'amalā, wa huwa l-'azīzu l-ghafūr</div>
+                    <p>"Yang menciptakan mati dan hidup, untuk menguji kamu, siapa di antara kamu yang lebih baik amalnya. Dan Dia Mahaperkasa, Maha Pengampun."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa kematian bukanlah ketiadaan, tetapi ciptaan Allah yang memiliki tujuan sebagai ujian bagi manusia. Allah sebagai Al-Mumeet menciptakan kematian untuk menguji siapa yang paling baik amalnya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/23:80" target="_blank">Surah Al-Mu'minun 23:80</a>
+                    <div class="arabic">وَهُوَ ٱلَّذِى يُحْىِۦ وَيُمِيتُ وَلَهُۥ ٱخْتِلَـٰفُ ٱلَّيْلِ وَٱلنَّهَارِ ۚ أَفَلَا تَعْقِلُونَ</div>
+                    <div class="transliteration">Wa huwa alladhī yuḥyī wa yumītu wa lahukhtilāfu l-layli wan-nahār, afalā ta'qilūn</div>
+                    <p>"Dan Dialah yang menghidupkan dan mematikan, dan Dialah yang (mengatur) pergantian malam dan siang. Maka tidakkah kamu mengerti?"</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menggabungkan dua sifat Allah: Al-Muhyi (Yang Menghidupkan) dan Al-Mumeet (Yang Mematikan), menunjukkan kekuasaan-Nya yang sempurna atas siklus kehidupan dan kematian.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:3194" target="_blank">Sahih Bukhari 3194</a>
+                    <div class="arabic">إِنَّ أَحَدَكُمْ يُجْمَعُ خَلْقُهُ فِي بَطْنِ أُمِّهِ أَرْبَعِينَ يَوْمًا... ثُمَّ يُرْسَلُ إِلَيْهِ الْمَلَكُ فَيَنْفُخُ فِيهِ الرُّوحَ... وَإِنَّ الرَّجُلَ لَيَعْمَلُ عَمَلَ أَهْلِ الْجَنَّةِ حَتَّى مَا يَكُونُ بَيْنَهُ وَبَيْنَهَا إِلاَّ ذِرَاعٌ فَيَسْبِقُ عَلَيْهِ الْكِتَابُ فَيَعْمَلُ بِعَمَلِ أَهْلِ النَّارِ فَيَدْخُلُهَا</div>
+                    <div class="transliteration">Inna aḥadakum yujma'u khalquhū fī baṭni ummihī arba'īna yawmā... thumma yursalu ilayhi l-malaku fa-yanfukhu fīhi r-rūḥ... wa inna r-rajula la-ya'malu 'amala ahli l-jannati ḥattā mā yakūnu baynahū wa baynahā illā dhirā'un fa-yasbiq 'alayhi l-kitābu fa-ya'malu bi-'amali ahli n-nāri fa-yadkhuluhā</div>
+                    <p>"Sesungguhnya penciptaan salah seorang dari kamu dikumpulkan dalam rahim ibunya selama empat puluh hari... Kemudian malaikat diutus kepadanya untuk meniupkan ruh... Dan sungguh, seseorang bisa beramal seperti amalan penghuni surga hingga jarak antara dirinya dan surga hanya sehasta, lalu catatan (takdir) mendahuluinya sehingga dia beramal seperti amalan penghuni neraka lalu memasukinya."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU Online:</strong> Hadits ini menunjukkan kekuasaan mutlak Allah sebagai Al-Mumeet dalam menentukan ajal seseorang. Kematian datang tepat pada waktunya sesuai ketetapan Allah, bukan karena sebab-sebab lahiriah semata.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Kematian yang Baik</div>
+                    <div class="arabic">اللَّهُمَّ بِاسْمِكَ الْمُمِيتِ أَمِتْنِي عَلَى الْإِيمَانِ وَالْإِسْلَامِ</div>
+                    <div class="transliteration">Allāhumma bismika l-mumīti amitnī 'alā l-īmāni wal-islām</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan nama-Mu Al-Mumeet, matikanlah aku dalam keadaan beriman dan berserah diri (Islam)."</p>
+                    <p><strong>Sumber:</strong> Doa ini diajarkan dalam berbagai majelis NU sebagai permohonan untuk mendapatkan husnul khatimah (penutup yang baik). Dianjurkan dibaca setiap selesai shalat fardhu.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Perlindungan dari Kematian yang Buruk</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ مَوْتِ الْفَجْأَةِ وَمِنْ شَرِّ مَوْتِ السُّوءِ</div>
+                    <div class="transliteration">Allāhumma innī a'ūdhu bika min mawti l-faj'ati wa min sharri mawti s-sū'i</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari kematian mendadak dan dari keburukan kematian yang buruk."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits riwayat Abu Dawud dan An-Nasa'i yang sering diajarkan di pesantren-pesantren NU untuk memohon perlindungan dari kematian yang tidak diinginkan.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Mengingat Kematian</div>
+                    <p>Rutinitas mingguan berdasarkan ajaran NU untuk mengingat Al-Mumeet:</p>
+                    <ol>
+                        <li>Setiap hari Jumat, ziarah kubur dengan niat mengingat akhirat</li>
+                        <li>Baca "Yā Mumeet" 100 kali setelah shalat Subuh</li>
+                        <li>Renungkan lima hal yang harus disiapkan sebelum kematian</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Mengingatkan pada kepastian kematian</li>
+                        <li>Mempersiapkan diri untuk menghadapi Al-Mumeet</li>
+                        <li>Mengikuti sunnah Nabi dan tradisi ulama NU</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Amalan "Lima Sebelum Lima"</div>
+                    <p>Praktik harian untuk mempersiapkan kematian:</p>
+                    <ol>
+                        <li>Gunakan masa muda sebelum tua</li>
+                        <li>Gunakan kesehatan sebelum sakit</li>
+                        <li>Gunakan kekayaan sebelum miskin</li>
+                        <li>Gunakan waktu luang sebelum sibuk</li>
+                        <li>Gunakan hidup sebelum mati</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Berdasarkan hadits Nabi yang diriwayatkan oleh Imam Baihaqi. Praktik ini diajarkan di pesantren-pesantren NU sebagai persiapan menghadapi kematian.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Mumeet melalui beberapa dimensi:</p>
+                <ol>
+                    <li><strong>Kematian Fisik:</strong>
+                        <ul>
+                            <li>Pencabutan nyawa oleh malaikat maut (<a href="https://quranwbw.com/32:11" target="_blank">32:11</a>)</li>
+                            <li>Ketidakberdayaan manusia menghadapi kematian (<a href="https://quranwbw.com/63:10" target="_blank">63:10</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kematian Spiritual:</strong>
+                        <ul>
+                            <li>Kematian hati karena maksiat (<a href="https://quranwbw.com/6:122" target="_blank">6:122</a>)</li>
+                            <li>Kebangkitan spiritual melalui hidayah (<a href="https://quranwbw.com/8:24" target="_blank">8:24</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hikmah Kematian:</strong>
+                        <ul>
+                            <li>Ujian bagi manusia (<a href="https://quranwbw.com/67:2" target="_blank">67:2</a>)</li>
+                            <li>Perpindahan menuju kehidupan abadi (<a href="https://quranwbw.com/3:185" target="_blank">3:185</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam tafsir Surah Al-Mulk (<a href="https://quranwbw.com/67:2" target="_blank">67:2</a>), Ibn Kathir menekankan bahwa kematian diciptakan Allah sebagai ujian dan peringatan bagi manusia. Kematian bukan akhir, tetapi awal dari kehidupan yang sebenarnya di akhirat.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
-        <!-- English Version -->
-        <div id="english">
-            <h1>61. Al-Mumeet - The Causer of Death</h1>
-            <p class="source">Source: <a href="https://myislam.org/99-names-of-allah/al-mumeet" target="_blank">https://myislam.org/99-names-of-allah/al-mumeet</a></p>
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">61. Al-Mumeet (The Causer of Death)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-mumeet/" target="_blank">myislam.org/99-names-of-allah/al-mumeet/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <p>Bonus: Listen to beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">https://qfatima.com/a99-audio</a></p>
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_61Muhyi62Mumeet.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْمُمِيتُ</div>
             <div class="transliteration">Transliteration: Al-Mumeet</div>
 
-            <h2>Meaning and Significance</h2>
-            <p>Al-Mumeet is The One who decrees death for all living things. He is the One who causes death at its appointed time, who takes away souls when their term is complete, and who has ultimate power over the ending of life.</p>
-
-            <h2>Detailed Explanation</h2>
-            <p>Al-Mumeet comes from the Arabic root 'mawt' (موت) meaning "death." This divine name complements Al-Muhyi (The Giver of Life), demonstrating Allah's complete control over both life and death.</p>
-
-            <p>Ibn Kathir explains in his tafsir that Al-Mumeet demonstrates Allah's absolute sovereignty. Just as He gives life through Al-Muhyi, He takes it away through Al-Mumeet. This name reminds believers of life's temporary nature and the certainty of death.</p>
-
-            <h2>Quranic References</h2>
-            <div class="verse">
-                <div class="arabic">ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ</div>
-                <div class="transliteration">Alladhee khalaqal-mawta wal-hayata li-yabluwakum ayyukum ahsanu 'amala, wa huwal-'azeezul-ghafoor</div>
-                <p>"[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving." (<a href="https://quranwbw.com/67:2" target="_blank">Surah Al-Mulk 67:2</a>)</p>
-                <p>This profound verse attributes the creation of death itself to Allah, establishing His name Al-Mumeet. Death is not merely an absence of life but a creation with purpose.</p>
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/61.%20al-mumeet.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
-            <div class="verse">
-                <div class="arabic">وَهُوَ ٱلَّذِى يُحْىِۦ وَيُمِيتُ وَلَهُۥ ٱخْتِلَـٰفُ ٱلَّيْلِ وَٱلنَّهَارِ ۚ أَفَلَا تَعْقِلُونَ</div>
-                <div class="transliteration">Wa huwa alladhee yuhyee wa yumeetu wa lahukhtilafullayli wannahar, afala ta'qiloon</div>
-                <p>"And it is He who gives life and causes death, and His is the alternation of the night and the day. Then will you not reason?" (<a href="https://quranwbw.com/23:80" target="_blank">Surah Al-Mu'minun 23:80</a>)</p>
-                <p>This verse pairs Allah's power to give life (Al-Muhyi) with His power to cause death (Al-Mumeet), showing His complete control over existence.</p>
+            <div class="section">
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Mumeet is The One who decrees death for all living things. He is the One who causes death at its appointed time, who takes away souls when their term is complete, and who has ultimate power over the ending of life.</p>
+                <p>This divine name complements Al-Muhyi (The Giver of Life), demonstrating Allah's complete control over both life and death. The name reminds believers of life's temporary nature and the certainty of death.</p>
+                <p>Ibn Kathir explains that Al-Mumeet demonstrates Allah's absolute sovereignty. Just as He gives life through Al-Muhyi, He takes it away through Al-Mumeet.</p>
             </div>
 
-            <h2>Hadith References</h2>
-            <p>The Prophet Muhammad (peace be upon him) said: <span class="arabic">«إِنَّ أَحَدَكُمْ يُجْمَعُ خَلْقُهُ فِي بَطْنِ أُمِّهِ أَرْبَعِينَ يَوْمًا... ثُمَّ يُرْسَلُ إِلَيْهِ الْمَلَكُ فَيَنْفُخُ فِيهِ الرُّوحَ... وَإِنَّ الرَّجُلَ لَيَعْمَلُ عَمَلَ أَهْلِ الْجَنَّةِ حَتَّى مَا يَكُونُ بَيْنَهُ وَبَيْنَهَا إِلاَّ ذِرَاعٌ فَيَسْبِقُ عَلَيْهِ الْكِتَابُ فَيَعْمَلُ بِعَمَلِ أَهْلِ النَّارِ فَيَدْخُلُهَا»</span> <span class="transliteration">"Inna ahadakum yujma'u khalquhu fi batni ummihi arba'eena yawma... thumma yursalu ilayhil-malaku fa-yanfukhu feehi-rrooh... wa inna-rajulan la-ya'malu 'amala ahlil-jannati hatta ma yakoonu baynahu wa baynaha illa dhira'un fa-yasbiq 'alayhil-kitabu fa-ya'malu bi-'amali ahlinnari fa-yadkhuluha"</span> ("Verily, the creation of each one of you is brought together in his mother's womb for forty days... Then the angel is sent to him to blow the soul into him... And verily, a man may perform the deeds of the people of Paradise until there is nothing between him and it but an arm's length, then what is written overtakes him so he performs the deeds of the people of the Fire and enters it.") (Bukhari, Muslim)</p>
-            <p>This hadith emphasizes Allah's complete control over life and death through Al-Mumeet, showing how death comes at the precisely appointed time.</p>
+            <div class="section">
+                <h2 class="section-title">Evidence from Quran & Hadith</h2>
+                
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/67:2" target="_blank">Surah Al-Mulk 67:2</a>
+                    <div class="arabic">ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ</div>
+                    <div class="transliteration">Alladhī khalaqal-mawta wal-ḥayāta li-yabluwakum ayyukum aḥsanu 'amalā, wa huwa l-'azīzu l-ghafūr</div>
+                    <p>"[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This profound verse attributes the creation of death itself to Allah, establishing His name Al-Mumeet. Death is not merely an absence of life but a creation with purpose - to test mankind.
+                    </div>
+                </div>
 
-            <h2>Du'a and Supplications</h2>
-            <div class="dua">
-                <div class="arabic">اللَّهُمَّ بِاسْمِكَ الْمُمِيتِ أَمِتْنِي عَلَى الْإِيمَانِ وَالْإِسْلَامِ</div>
-                <div class="transliteration">Allahumma bismikal-mumeet amitnee 'alal-eemani wal-islam</div>
-                <p><strong>Translation:</strong> "O Allah, by Your name Al-Mumeet, cause me to die upon faith and Islam."</p>
-                <p><strong>Context:</strong> This powerful du'a should be recited regularly, asking Allah to take our souls while we are in a state of submission to Him.</p>
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/23:80" target="_blank">Surah Al-Mu'minun 23:80</a>
+                    <div class="arabic">وَهُوَ ٱلَّذِى يُحْىِۦ وَيُمِيتُ وَلَهُۥ ٱخْتِلَـٰفُ ٱلَّيْلِ وَٱلنَّهَارِ ۚ أَفَلَا تَعْقِلُونَ</div>
+                    <div class="transliteration">Wa huwa alladhī yuḥyī wa yumītu wa lahukhtilāfu l-layli wan-nahār, afalā ta'qilūn</div>
+                    <p>"And it is He who gives life and causes death, and His is the alternation of the night and the day. Then will you not reason?"</p>
+                    <div class="tafsir-box">
+                        <strong>Explanation:</strong> This verse pairs Allah's power to give life (Al-Muhyi) with His power to cause death (Al-Mumeet), showing His complete control over existence.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:3194" target="_blank">Sahih Bukhari 3194</a>
+                    <div class="arabic">إِنَّ أَحَدَكُمْ يُجْمَعُ خَلْقُهُ فِي بَطْنِ أُمِّهِ أَرْبَعِينَ يَوْمًا... ثُمَّ يُرْسَلُ إِلَيْهِ الْمَلَكُ فَيَنْفُخُ فِيهِ الرُّوحَ... وَإِنَّ الرَّجُلَ لَيَعْمَلُ عَمَلَ أَهْلِ الْجَنَّةِ حَتَّى مَا يَكُونُ بَيْنَهُ وَبَيْنَهَا إِلاَّ ذِرَاعٌ فَيَسْبِقُ عَلَيْهِ الْكِتَابُ فَيَعْمَلُ بِعَمَلِ أَهْلِ النَّارِ فَيَدْخُلُهَا</div>
+                    <div class="transliteration">Inna aḥadakum yujma'u khalquhū fī baṭni ummihī arba'īna yawmā... thumma yursalu ilayhi l-malaku fa-yanfukhu fīhi r-rūḥ... wa inna r-rajula la-ya'malu 'amala ahli l-jannati ḥattā mā yakūnu baynahū wa baynahā illā dhirā'un fa-yasbiq 'alayhi l-kitābu fa-ya'malu bi-'amali ahli n-nāri fa-yadkhuluhā</div>
+                    <p>"Verily, the creation of each one of you is brought together in his mother's womb for forty days... Then the angel is sent to him to blow the soul into him... And verily, a man may perform the deeds of the people of Paradise until there is nothing between him and it but an arm's length, then what is written overtakes him so he performs the deeds of the people of the Fire and enters it."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith emphasizes Allah's complete control over life and death through Al-Mumeet, showing how death comes at the precisely appointed time according to divine decree.
+                    </div>
+                </div>
             </div>
 
-            <h2>Practical Applications (Amalan)</h2>
-            <h3>1. Preparing for Death Through Remembrance</h3>
-            <p>Regularly remember death to prepare for meeting Al-Mumeet:</p>
-            <ul>
-                <li>Visit graveyards with the intention to remember the Hereafter</li>
-                <li>Recite the du'a for death with faith daily after Fajr</li>
-                <li>Keep a "death journal" noting what you want completed before death</li>
-            </ul>
+            <div class="section">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For a Good Death</div>
+                    <div class="arabic">اللَّهُمَّ بِاسْمِكَ الْمُمِيتِ أَمِتْنِي عَلَى الْإِيمَانِ وَالْإِسْلَامِ</div>
+                    <div class="transliteration">Allāhumma bismika l-mumīti amitnī 'alā l-īmāni wal-islām</div>
+                    <p><strong>Translation:</strong> "O Allah, by Your name Al-Mumeet, cause me to die upon faith and Islam."</p>
+                    <p><strong>Benefits:</strong> This powerful du'a should be recited regularly, asking Allah to take our souls while we are in a state of submission to Him.</p>
+                </div>
 
-            <h3>2. The "Five Before Five" Practice</h3>
-            <p>A prophetic teaching for preparing for death:</p>
-            <ol>
-                <li>Use your youth before old age</li>
-                <li>Use your health before sickness</li>
-                <li>Use your wealth before poverty</li>
-                <li>Use your free time before becoming busy</li>
-                <li>Use your life before death</li>
-            </ol>
-
-            <h2>Ibn Kathir's Commentary</h2>
-            <p>In his tafsir of Surah Al-Mulk (67:2), Ibn Kathir explains the profound wisdom behind Allah creating death:</p>
-            <p>"Allah created death and life to test His servants - which of them will be best in deeds. This indicates that Allah created creation to test them and command them to worship Him alone without partners."</p>
-            <p>He further notes that death is not an end but a transition to the eternal life, making our deeds in this temporary life crucial for our eternal fate.</p>
-
-            <h2>Reflection Points</h2>
-            <ul>
-                <li>How often do you contemplate your inevitable meeting with Al-Mumeet?</li>
-                <li>What preparations have you made for when Al-Mumeet takes your soul?</li>
-                <li>How can remembering Al-Mumeet positively change your daily priorities?</li>
-            </ul>
-
-            <div class="back-to-top">
-                <a href="#" class="btn">Back to Top</a>
-            </div>
-        </div>
-
-        <!-- Indonesian Version -->
-        <div id="indonesian" class="hidden">
-            <h1>61. Al-Mumeet - Penyebab Kematian</h1>
-            <p class="source">Sumber: <a href="https://myislam.org/99-names-of-allah/al-mumeet" target="_blank">https://myislam.org/99-names-of-allah/al-mumeet</a></p>
-
-            <div class="arabic">ٱلْمُمِيتُ</div>
-            <div class="transliteration">Transliterasi: Al-Mumeet</div>
-
-            <h2>Makna dan Signifikansi</h2>
-            <p>Al-Mumeet adalah Yang menetapkan kematian untuk semua makhluk hidup. Dia-lah Yang menyebabkan kematian pada waktu yang ditentukan, Yang mengambil nyawa ketika ajalnya tiba, dan Yang memiliki kekuasaan mutlak atas berakhirnya kehidupan.</p>
-
-            <h2>Penjelasan Detail</h2>
-            <p>Al-Mumeet berasal dari akar kata Arab 'mawt' (موت) yang berarti "kematian." Nama ilahi ini melengkapi Al-Muhyi (Pemberi Kehidupan), menunjukkan kendali penuh Allah atas kehidupan dan kematian.</p>
-
-            <p>Ibnu Katsir menjelaskan dalam tafsirnya bahwa Al-Mumeet menunjukkan kedaulatan mutlak Allah. Sebagaimana Dia memberikan kehidupan melalui Al-Muhyi, Dia mencabutnya melalui Al-Mumeet. Nama ini mengingatkan orang beriman akan sifat sementara kehidupan dan kepastian kematian.</p>
-
-            <h2>Referensi Al-Quran</h2>
-            <div class="verse">
-                <div class="arabic">ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًۭا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ</div>
-                <div class="transliteration">Alladhee khalaqal-mawta wal-hayata li-yabluwakum ayyukum ahsanu 'amala, wa huwal-'azeezul-ghafoor</div>
-                <p>"[Dia] yang menciptakan kematian dan kehidupan untuk menguji kamu [siapa] di antara kamu yang lebih baik amalnya - dan Dia Mahaperkasa, Maha Pengampun." (<a href="https://quranwbw.com/67:2" target="_blank">Surah Al-Mulk 67:2</a>)</p>
-                <p>Ayat yang mendalam ini mengaitkan penciptaan kematian itu sendiri kepada Allah, menetapkan nama-Nya Al-Mumeet. Kematian bukan hanya ketiadaan kehidupan tetapi ciptaan dengan tujuan.</p>
+                <div class="dua">
+                    <div class="dua-title">Protection from Sudden Death</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ مَوْتِ الْفَجْأَةِ وَمِنْ شَرِّ مَوْتِ السُّوءِ</div>
+                    <div class="transliteration">Allāhumma innī a'ūdhu bika min mawti l-faj'ati wa min sharri mawti s-sū'i</div>
+                    <p><strong>Translation:</strong> "O Allah, I seek refuge in You from sudden death and from the evil of a bad death."</p>
+                    <p><strong>Source:</strong> Based on hadith in Abu Dawud and An-Nasa'i, this dua seeks protection from dying unprepared or in a state of sin.</p>
+                </div>
             </div>
 
-            <div class="verse">
-                <div class="arabic">وَهُوَ ٱلَّذِى يُحْىِۦ وَيُمِيتُ وَلَهُۥ ٱخْتِلَـٰفُ ٱلَّيْلِ وَٱلنَّهَارِ ۚ أَفَلَا تَعْقِلُونَ</div>
-                <div class="transliteration">Wa huwa alladhee yuhyee wa yumeetu wa lahukhtilafullayli wannahar, afala ta'qiloon</div>
-                <p>"Dan Dialah yang menghidupkan dan mematikan, dan Dialah yang mengatur pergantian malam dan siang. Maka tidakkah kamu mengerti?" (<a href="https://quranwbw.com/23:80" target="_blank">Surah Al-Mu'minun 23:80</a>)</p>
-                <p>Ayat ini memasangkan kekuasaan Allah untuk memberikan kehidupan (Al-Muhyi) dengan kekuasaan-Nya untuk menyebabkan kematian (Al-Mumeet), menunjukkan kendali penuh-Nya atas keberadaan.</p>
+            <div class="section">
+                <h2 class="section-title">Practices (Amalan)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Death Remembrance Practice</div>
+                    <p>Weekly routine to cultivate awareness of Al-Mumeet:</p>
+                    <ol>
+                        <li>Every Friday, visit graves with the intention to remember the Hereafter</li>
+                        <li>Recite "Yā Mumeet" 100 times after Fajr prayer</li>
+                        <li>Reflect on five things to prepare before death</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Increases awareness of death's certainty</li>
+                        <li>Prepares one to meet Al-Mumeet</li>
+                        <li>Follows the Prophet's (ﷺ) sunnah of remembering death</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">"Five Before Five" Practice</div>
+                    <p>Daily preparation for meeting Al-Mumeet:</p>
+                    <ol>
+                        <li>Use your youth before old age</li>
+                        <li>Use your health before sickness</li>
+                        <li>Use your wealth before poverty</li>
+                        <li>Use your free time before becoming busy</li>
+                        <li>Use your life before death</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> Based on a hadith reported by Al-Baihaqi, this practice helps Muslims prepare for death while still having the opportunity to do good deeds.</p>
+                </div>
             </div>
 
-            <h2>Referensi Hadits</h2>
-            <p>Nabi Muhammad (shallallahu 'alaihi wasallam) bersabda: <span class="arabic">«إِنَّ أَحَدَكُمْ يُجْمَعُ خَلْقُهُ فِي بَطْنِ أُمِّهِ أَرْبَعِينَ يَوْمًا... ثُمَّ يُرْسَلُ إِلَيْهِ الْمَلَكُ فَيَنْفُخُ فِيهِ الرُّوحَ... وَإِنَّ الرَّجُلَ لَيَعْمَلُ عَمَلَ أَهْلِ الْجَنَّةِ حَتَّى مَا يَكُونُ بَيْنَهُ وَبَيْنَهَا إِلاَّ ذِرَاعٌ فَيَسْبِقُ عَلَيْهِ الْكِتَابُ فَيَعْمَلُ بِعَمَلِ أَهْلِ النَّارِ فَيَدْخُلُهَا»</span> <span class="transliteration">"Inna ahadakum yujma'u khalquhu fi batni ummihi arba'eena yawma... thumma yursalu ilayhil-malaku fa-yanfukhu feehi-rrooh... wa inna-rajulan la-ya'malu 'amala ahlil-jannati hatta ma yakoonu baynahu wa baynaha illa dhira'un fa-yasbiq 'alayhil-kitabu fa-ya'malu bi-'amali ahlinnari fa-yadkhuluha"</span> ("Sesungguhnya, penciptaan setiap orang dari kamu dikumpulkan dalam rahim ibunya selama empat puluh hari... Kemudian malaikat diutus kepadanya untuk meniupkan ruh ke dalamnya... Dan sesungguhnya, seseorang mungkin melakukan perbuatan penghuni surga sampai tidak ada jarak antara dirinya dan surga kecuali sehasta, kemudian takdir mendahuluinya sehingga dia melakukan perbuatan penghuni neraka dan memasukinya.") (Bukhari, Muslim)</p>
-            <p>Hadits ini menekankan kendali penuh Allah atas kehidupan dan kematian melalui Al-Mumeet, menunjukkan bagaimana kematian datang pada waktu yang telah ditetapkan.</p>
-
-            <h2>Doa dan Permohonan</h2>
-            <div class="dua">
-                <div class="arabic">اللَّهُمَّ بِاسْمِكَ الْمُمِيتِ أَمِتْنِي عَلَى الْإِيمَانِ وَالْإِسْلَامِ</div>
-                <div class="transliteration">Allahumma bismikal-mumeet amitnee 'alal-eemani wal-islam</div>
-                <p><strong>Terjemahan:</strong> "Ya Allah, dengan nama-Mu Al-Mumeet, matikanlah aku dalam keadaan beriman dan berserah diri (Islam)."</p>
-                <p><strong>Konteks:</strong> Doa yang kuat ini harus dibaca secara teratur, memohon kepada Allah untuk mengambil nyawa kita saat kita dalam keadaan berserah diri kepada-Nya.</p>
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Mumeet through several dimensions:</p>
+                <ol>
+                    <li><strong>Physical Death:</strong>
+                        <ul>
+                            <li>Taking of souls by the Angel of Death (<a href="https://quranwbw.com/32:11" target="_blank">32:11</a>)</li>
+                            <li>Human helplessness before death (<a href="https://quranwbw.com/63:10" target="_blank">63:10</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Spiritual Death:</strong>
+                        <ul>
+                            <li>Death of the heart through sin (<a href="https://quranwbw.com/6:122" target="_blank">6:122</a>)</li>
+                            <li>Revival through guidance (<a href="https://quranwbw.com/8:24" target="_blank">8:24</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Wisdom of Death:</strong>
+                        <ul>
+                            <li>Test for mankind (<a href="https://quranwbw.com/67:2" target="_blank">67:2</a>)</li>
+                            <li>Transition to eternal life (<a href="https://quranwbw.com/3:185" target="_blank">3:185</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In his tafsir of Surah Al-Mulk (<a href="https://quranwbw.com/67:2" target="_blank">67:2</a>), Ibn Kathir emphasizes that death was created by Allah as a test and reminder for mankind. Death is not an end, but the beginning of true life in the Hereafter.</p>
             </div>
 
-            <h2>Aplikasi Praktis (Amalan)</h2>
-            <h3>1. Mempersiapkan Kematian Melalui Peringatan</h3>
-            <p>Ingatlah kematian secara teratur untuk mempersiapkan pertemuan dengan Al-Mumeet:</p>
-            <ul>
-                <li>Kunjungi kuburan dengan niat mengingat Akhirat</li>
-                <li>Bacalah doa untuk mati dalam iman setiap hari setelah Subuh</li>
-                <li>Simpan "jurnal kematian" mencatat apa yang ingin diselesaikan sebelum meninggal</li>
-            </ul>
-
-            <h3>2. Praktik "Lima Sebelum Lima"</h3>
-            <p>Ajaran Nabi untuk mempersiapkan kematian:</p>
-            <ol>
-                <li>Gunakan masa mudamu sebelum tua</li>
-                <li>Gunakan kesehatanmu sebelum sakit</li>
-                <li>Gunakan kekayaanmu sebelum miskin</li>
-                <li>Gunakan waktu luangmu sebelum sibuk</li>
-                <li>Gunakan hidupmu sebelum mati</li>
-            </ol>
-
-            <h2>Komentar Ibnu Katsir</h2>
-            <p>Dalam tafsir Surah Al-Mulk (67:2), Ibnu Katsir menjelaskan hikmah mendalam di balik Allah menciptakan kematian:</p>
-            <p>"Allah menciptakan kematian dan kehidupan untuk menguji hamba-hamba-Nya - siapa di antara mereka yang paling baik amalnya. Ini menunjukkan bahwa Allah menciptakan makhluk untuk menguji mereka dan memerintahkan mereka untuk menyembah-Nya saja tanpa sekutu."</p>
-            <p>Dia lebih lanjut mencatat bahwa kematian bukanlah akhir tetapi transisi menuju kehidupan abadi, membuat amal kita dalam kehidupan sementara ini sangat penting bagi nasib abadi kita.</p>
-
-            <h2>Poin Renungan</h2>
-            <ul>
-                <li>Seberapa sering Anda merenungkan pertemuan tak terelakkan Anda dengan Al-Mumeet?</li>
-                <li>Persiapan apa yang telah Anda lakukan untuk ketika Al-Mumeet mengambil nyawa Anda?</li>
-                <li>Bagaimana mengingat Al-Mumeet dapat mengubah prioritas harian Anda secara positif?</li>
-            </ul>
-
-            <div class="back-to-top">
-                <a href="#" class="btn">Kembali ke Atas</a>
-            </div>
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Language Toggle Function
-        function toggleLanguage(lang) {
-            if (lang === 'english') {
-                document.getElementById('english').classList.remove('hidden');
-                document.getElementById('indonesian').classList.add('hidden');
-            } else {
-                document.getElementById('english').classList.add('hidden');
-                document.getElementById('indonesian').classList.remove('hidden');
-            }
-        }
-
-        // Transliteration Toggle Function
-        function toggleTransliteration() {
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
             const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(item => {
-                item.classList.toggle('hidden');
-            });
-        }
 
-        // Initially show English version
-        window.onload = function() {
-            toggleLanguage('english');
-        };
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
     </script>
 </body>
 </html>
