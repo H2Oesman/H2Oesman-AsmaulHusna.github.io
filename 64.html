@@ -1,4 +1,552 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>64. Al-Wajid - Yang Maha Menemukan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f9fc;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .arabic {
+            font-size: 32px;
+            text-align: right;
+            direction: rtl;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #1a5276;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+        }
+        .transliteration {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: center;
+            margin: -15px 0 20px;
+            display: none;
+        }
+        .name-title {
+            font-size: 32px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #2980b9;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua, .amalan {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #e0e0e0;
+        }
+        .dua-title, .amalan-title {
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 10px;
+        }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .transliteration-toggle {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .bonus {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .dalil-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .tafsir-box {
+            background-color: #fffde7;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #ffe082;
+        }
+        .hidden {
+            display: none;
+        }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .arabic {
+                font-size: 24px;
+            }
+            .name-title {
+                font-size: 28px;
+            }
+            .language-toggle, .transliteration-toggle {
+                position: static;
+                margin: 10px 0;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">64. Al-Wajid (Yang Maha Menemukan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, <a href="https://kemenag.go.id" target="_blank">Kemenag RI</a>, <a href="https://myislam.org/99-names-of-allah/al-wajid" target="_blank">myislam.org</a></div>
+
+            <div class="arabic">ٱلْوَاجِدُ</div>
+            <div class="transliteration">Transliterasi: Al-Wajid</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/64.%20al-wajid.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Wajid adalah salah satu dari Asmaul Husna yang menunjukkan sifat Allah Yang Maha Mengetahui dan Maha Menemukan segala sesuatu yang Dia kehendaki. Nama ini mengandung makna:</p>
+                <ul>
+                    <li><strong>Yang Maha Mengetahui:</strong> Tidak ada sesuatu pun yang tersembunyi dari pengetahuan-Nya</li>
+                    <li><strong>Yang Maha Menemukan:</strong> Dapat menemukan dan mewujudkan apa yang Dia kehendaki</li>
+                    <li><strong>Yang Maha Kaya:</strong> Tidak membutuhkan apapun dari makhluk-Nya</li>
+                </ul>
+                <p>Menurut tafsir Kementerian Agama RI, Al-Wajid menunjukkan bahwa Allah SWT mengetahui segala kebutuhan hamba-Nya dan mampu memenuhi kebutuhan tersebut sesuai dengan hikmah-Nya. Nama ini mengajarkan kita untuk selalu bergantung hanya kepada Allah dalam segala urusan.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/93:7" target="_blank">Surah Ad-Duha 93:7</a>
+                    <div class="arabic">وَوَجَدَ ٱللَّهُ عِندَهُۥ فَكَفَّرَ عَنْهُ</div>
+                    <div class="transliteration">Wa wajadallahu 'indahu fa-kaffara 'anhu</div>
+                    <p>"Dan Allah mendapatimu sebagai seorang yang bingung, lalu Dia memberikan petunjuk."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menjelaskan bagaimana Allah sebagai Al-Wajid menemukan Nabi Muhammad SAW dalam keadaan bingung dan memberikan petunjuk kepadanya. Menurut NU Online, ini menunjukkan bahwa Allah selalu menemukan hamba-Nya yang sedang dalam kebingungan dan memberikan solusi.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/6:59" target="_blank">Surah Al-An'am 6:59</a>
+                    <div class="arabic">وَعِندَهُۥ مَفَاتِحُ ٱلْغَيْبِ لَا يَعْلَمُهَآ إِلَّا هُوَ</div>
+                    <div class="transliteration">Wa 'indahu mafatihul-ghaybi la ya'lamuha illa huwa</div>
+                    <p>"Dan pada sisi Allah-lah kunci-kunci semua yang ghaib; tidak ada yang mengetahuinya kecuali Dia sendiri."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan sifat Al-Wajid bahwa Allah mengetahui segala yang ghaib dan dapat menemukan apa yang tidak diketahui oleh makhluk-Nya. Ini menjadi dasar keyakinan bahwa hanya Allah yang mengetahui segala rahasia.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/abudawud:4012" target="_blank">Sunan Abu Dawud 4012</a>
+                    <div class="arabic">إِنَّ اللَّهَ تَعَالَى هُوَ الْوَاجِدُ الْمَانِعُ، الْحَيِيُّ السَّتِيرُ، يُحِبُّ الْحَيَاءَ وَالسَّتْرَ</div>
+                    <div class="transliteration">Innallaha ta'ala huwa al-Wajidul-mani', al-Hayyiyyus-sateer, yuhibbul-haya'a was-satar</div>
+                    <p>"Sesungguhnya Allah Yang Maha Tinggi adalah Al-Wajid (Yang Maha Menemukan), Al-Mani' (Yang Maha Mencegah), Yang Maha Pemalu, Yang Maha Menutupi. Dia mencintai rasa malu dan penutupan."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Hadits ini menjelaskan bahwa meskipun Allah sebagai Al-Wajid mengetahui segala sesuatu, Dia juga Maha Menutupi aib hamba-Nya. Menurut penjelasan ulama NU, ini menunjukkan kasih sayang Allah yang sempurna.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Petunjuk dan Penemuan</div>
+                    <div class="arabic">يَا وَاجِدَ كُلِّ ضَالٍّ، أَرِنِي حَقَائِقَ الأَشْيَاءِ كَمَا هِيَ</div>
+                    <div class="transliteration">Ya wajida kulli dallin, arinee haqa'iqal-ashya'i kama hiya</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Menemukan segala yang hilang, tunjukkanlah kepadaku hakikat segala sesuatu sebagaimana adanya."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh para ulama NU untuk memohon petunjuk ketika menghadapi kebingungan atau mencari kebenaran. Dianjurkan dibaca setelah shalat tahajjud.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Kemudahan dalam Mencari</div>
+                    <div class="arabic">اللَّهُمَّ بِاسْمِكَ الْوَاجِدِ أَجِدْ مَا فَقَدْتُ وَأَدْرِكْ مَا أُرِيدُ</div>
+                    <div class="transliteration">Allahumma bismikal-Wajid ajid ma faqadtu wa adrik ma urid</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan nama-Mu Yang Maha Menemukan, temukanlah apa yang hilang dariku dan sampaikanlah apa yang kuinginkan."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits-hadits tentang keutamaan berdoa dengan nama-nama Allah. Kemenag RI menganjurkan doa ini ketika mencari sesuatu yang hilang atau membutuhkan petunjuk.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Mencari yang Hilang</div>
+                    <p>Ketika kehilangan sesuatu atau membutuhkan petunjuk:</p>
+                    <ol>
+                        <li>Lakukan wudhu dan shalat sunnah 2 rakaat</li>
+                        <li>Baca "Ya Wajid" 100 kali dengan khusyuk</li>
+                        <li>Berdoa dengan sungguh-sungguh memohon pertolongan Allah</li>
+                        <li>Yakinlah bahwa Allah akan menunjukkan jalan</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Menurut NU Online, amalan ini:</p>
+                    <ul>
+                        <li>Memperkuat tawakkal kepada Allah</li>
+                        <li>Melatih kesabaran dalam mencari solusi</li>
+                        <li>Mendekatkan diri kepada Allah sebagai sumber petunjuk</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Dzikir Pencari Ilmu</div>
+                    <p>Untuk memudahkan dalam mencari ilmu:</p>
+                    <ol>
+                        <li>Sebelum belajar, baca "Al-Wajid" 11 kali</li>
+                        <li>Renungkan bahwa Allah mengetahui semua ilmu</li>
+                        <li>Mohon kepada Allah untuk membukakan pemahaman</li>
+                        <li>Baca doa memohon ilmu: "Rabbi zidni ilma"</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi SAW bersabda: "Barangsiapa yang menempuh jalan untuk mencari ilmu, maka Allah akan memudahkan baginya jalan ke surga" (HR. Muslim). Amalan ini dianjurkan oleh para ulama NU untuk para penuntut ilmu.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut tafsir Kementerian Agama RI dan NU Online, Al-Wajid mengandung makna mendalam:</p>
+                <ol>
+                    <li><strong>Pengetahuan yang Sempurna:</strong>
+                        <ul>
+                            <li>Mengetahui segala yang tersembunyi (<a href="https://quranwbw.com/58:7" target="_blank">58:7</a>)</li>
+                            <li>Mengetahui isi hati setiap makhluk (<a href="https://quranwbw.com/67:13" target="_blank">67:13</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kemampuan Menemukan:</strong>
+                        <ul>
+                            <li>Dapat menemukan apa yang dicari (<a href="https://quranwbw.com/93:7" target="_blank">93:7</a>)</li>
+                            <li>Mengetahui kebutuhan hamba-Nya sebelum diminta (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekayaan yang Sempurna:</strong>
+                        <ul>
+                            <li>Tidak membutuhkan apapun dari makhluk (<a href="https://quranwbw.com/35:15" target="_blank">35:15</a>)</li>
+                            <li>Memiliki segala sumber daya untuk memenuhi kebutuhan (<a href="https://quranwbw.com/14:34" target="_blank">14:34</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam kitab-kitab aqidah Ahlussunnah wal Jama'ah yang diajarkan NU, penjelasan tentang Al-Wajid selalu dikaitkan dengan kesempurnaan ilmu Allah dan kemampuan-Nya untuk memenuhi segala kebutuhan hamba-Nya sesuai dengan hikmah-Nya.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">64. Al-Wajid (The Perceiver, The Finder)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-wajid" target="_blank">myislam.org/99-names-of-allah/al-wajid</a></div>
+
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_65Waajid.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+
+            <div class="arabic">ٱلْوَاجِدُ</div>
+            <div class="transliteration">Transliteration: Al-Wajid</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/64.%20al-wajid.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Wajid is The One who perceives and finds whatever He wills. He is the One whose knowledge encompasses everything, who finds whatever He seeks, and who lacks nothing He desires.</p>
+                <ul>
+                    <li><strong>The All-Perceiving:</strong> Nothing is hidden from His knowledge</li>
+                    <li><strong>The Finder:</strong> Can manifest and discover whatever He wills</li>
+                    <li><strong>The Self-Sufficient:</strong> Needs nothing from His creation</li>
+                </ul>
+                <p>Ibn Kathir explains in his tafsir that Al-Wajid demonstrates Allah's complete knowledge and power. Nothing is hidden from Him, and He can bring forth whatever He wishes from His infinite treasures and wisdom.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Evidence (From Quran & Hadith)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/93:7" target="_blank">Surah Ad-Duha 93:7</a>
+                    <div class="arabic">وَوَجَدَ ٱللَّهُ عِندَهُۥ فَكَفَّرَ عَنْهُ</div>
+                    <div class="transliteration">Wa wajadallahu 'indahu fa-kaffara 'anhu</div>
+                    <p>"And Allah found you lost and guided [you]."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse shows Allah as Al-Wajid finding His prophet and responding to his needs with mercy and guidance. It demonstrates how Allah finds those who are sincerely seeking Him, even when they feel lost.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/6:59" target="_blank">Surah Al-An'am 6:59</a>
+                    <div class="arabic">وَعِندَهُۥ مَفَاتِحُ ٱلْغَيْبِ لَا يَعْلَمُهَآ إِلَّا هُوَ</div>
+                    <div class="transliteration">Wa 'indahu mafatihul-ghaybi la ya'lamuha illa huwa</div>
+                    <p>"And with Him are the keys of the unseen; none knows them except Him."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This verse emphasizes Allah's perfect knowledge as Al-Wajid, showing He alone holds the keys to all unseen matters and can reveal what He wills when He wills.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/abudawud:4012" target="_blank">Sunan Abu Dawud 4012</a>
+                    <div class="arabic">إِنَّ اللَّهَ تَعَالَى هُوَ الْوَاجِدُ الْمَانِعُ، الْحَيِيُّ السَّتِيرُ، يُحِبُّ الْحَيَاءَ وَالسَّتْرَ</div>
+                    <div class="transliteration">Innallaha ta'ala huwa al-Wajidul-mani', al-Hayyiyyus-sateer, yuhibbul-haya'a was-satar</div>
+                    <p>"Indeed Allah is The Finder, The Withholder, The Modest, The Coverer. He loves modesty and covering."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This hadith beautifully describes Allah as Al-Wajid who finds and provides while also being modest in covering people's faults, showing His perfect balance of knowledge and mercy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Du'a (Supplications)</h2>
+                <div class="dua">
+                    <div class="dua-title">For Guidance and Discovery</div>
+                    <div class="arabic">يَا وَاجِدَ كُلِّ ضَالٍّ، أَرِنِي حَقَائِقَ الأَشْيَاءِ كَمَا هِيَ</div>
+                    <div class="transliteration">Ya wajida kulli dallin, arinee haqa'iqal-ashya'i kama hiya</div>
+                    <p><strong>Translation:</strong> "O Finder of every lost thing, show me the realities of things as they truly are."</p>
+                    <p><strong>Benefits:</strong> This du'a can be recited when seeking guidance, clarity, or when searching for something lost. The Prophet (ﷺ) taught similar supplications recognizing Allah's perfect knowledge.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Finding What is Lost</div>
+                    <div class="arabic">اللَّهُمَّ بِاسْمِكَ الْوَاجِدِ أَجِدْ مَا فَقَدْتُ وَأَدْرِكْ مَا أُرِيدُ</div>
+                    <div class="transliteration">Allahumma bismikal-Wajid ajid ma faqadtu wa adrik ma urid</div>
+                    <p><strong>Translation:</strong> "O Allah, by Your name Al-Wajid, help me find what I've lost and attain what I seek."</p>
+                    <p><strong>Source:</strong> Based on prophetic teachings about invoking Allah by His names for specific needs (Tirmidhi).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Practical Applications (Amalan)</h2>
+                <div class="amalan">
+                    <div class="amalan-title">The "Lost and Found" Practice</div>
+                    <p>When searching for something lost:</p>
+                    <ol>
+                        <li>Perform wudu and pray 2 rak'ahs of prayer</li>
+                        <li>Recite "Ya Wajid" 100 times</li>
+                        <li>Make sincere du'a asking Allah to help you find what you seek</li>
+                        <li>Have complete trust that Allah will guide you</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice strengthens reliance on Allah alone and has been recommended by scholars throughout Islamic history for those seeking lost items or guidance.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">The Truth Seeker's Remembrance</div>
+                    <p>For seeking knowledge and clarity:</p>
+                    <ol>
+                        <li>Before studying or making important decisions, say "Al-Wajid" 11 times</li>
+                        <li>Recite the du'a for knowledge: "Rabbi zidnee ilma" (My Lord, increase me in knowledge)</li>
+                        <li>Reflect that Allah knows all truths and can reveal them to you</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) encouraged remembrance of Allah's names when seeking knowledge (Muslim). Many early scholars practiced similar dhikr for divine illumination.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
+                <p>Ibn Kathir explains Al-Wajid through three dimensions:</p>
+                <ol>
+                    <li><strong>Perfect Knowledge:</strong>
+                        <ul>
+                            <li>Knows all hidden matters (<a href="https://quranwbw.com/58:7" target="_blank">58:7</a>)</li>
+                            <li>Understands the depths of hearts (<a href="https://quranwbw.com/67:13" target="_blank">67:13</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Manifestation Power:</strong>
+                        <ul>
+                            <li>Can bring forth what He wills (<a href="https://quranwbw.com/93:7" target="_blank">93:7</a>)</li>
+                            <li>Knows needs before they're expressed (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Complete Self-Sufficiency:</strong>
+                        <ul>
+                            <li>Needs nothing from creation (<a href="https://quranwbw.com/35:15" target="_blank">35:15</a>)</li>
+                            <li>Possesses all resources (<a href="https://quranwbw.com/14:34" target="_blank">14:34</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Ad-Duha (<a href="https://quranwbw.com/93:7" target="_blank">93:7</a>), Allah describes finding His prophet when he was lost, showing Al-Wajid's active role in guiding those who sincerely seek Him.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back To Top</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (this.textContent === 'Show Transliteration') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
