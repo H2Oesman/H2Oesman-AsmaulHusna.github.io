@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -124,6 +125,37 @@
         .hidden {
             display: none;
         }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -141,24 +173,185 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
-            <h1 class="name-title">72. Al-Mu'akhkhir (The Delayer, The Postponer)</h1>
-            
-            <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">72. Al-Mu'akhkhir (Yang Mengakhirkan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muakhkhir/" target="_blank">myislam.org/99-names-of-allah/al-muakhkhir/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْمُؤَخِّرُ</div>
+            <div class="transliteration">Transliterasi: Al-Mu'akhkhir</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/72.%20al-muakhkhir.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
-            <p><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muakhkhir/" target="_blank">myislam.org/99-names-of-allah/al-muakhkhir/</a></p>
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Mu'akhkhir berasal dari akar kata 'a-kh-r yang berarti "menunda" atau "mengakhirkan." Nama ini menandakan:</p>
+                <ul>
+                    <li><strong>Yang Menunda:</strong> Yang mengakhirkan apa yang Dia kehendaki menurut hikmah-Nya</li>
+                    <li><strong>Yang Mengakhirkan:</strong> Yang menahan dalam waktu, kedudukan atau kehormatan</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI dalam Tafsir Al-Qur'an Tematik, Al-Mu'akhkhir adalah salah satu nama Allah yang menunjukkan kekuasaan-Nya dalam mengatur waktu dan takdir. Ibnu Qayyim menjelaskan: "Al-Mu'akhkhir adalah Dia yang menunda apa yang Dia kehendaki dengan ilmu-Nya yang sempurna - baik itu hukuman, rezeki, atau peristiwa dalam waktu." Nama ini sering disebut bersama Al-Muqaddim (Yang Mendahulukan), menunjukkan kendali Allah yang sempurna atas waktu.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/71/4" target="_blank">Surah Nuh 71:4</a>
+                    <div class="arabic">يُرْسِلِ ٱلسَّمَآءَ عَلَيْكُم مِّدْرَارًۭا</div>
+                    <div class="transliteration">Yursili s-samā'a 'alaykum midrārā</div>
+                    <p>"[Allah] akan menurunkan hujan dari langit kepadamu dengan lebat."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan sifat Allah dalam menunda hujan ketika manusia bermaksiat, dan mengirimnya ketika mereka bertaubat. Penundaan (ta'kheer) hujan adalah contoh hikmah Allah dalam waktu memberikan rezeki.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/16/61" target="_blank">Surah An-Nahl 16:61</a>
+                    <div class="arabic">وَلَوْ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِظُلْمِهِم مَّا تَرَكَ عَلَيْهَا مِن دَآبَّةٍۢ وَلَـٰكِن يُؤَخِّرُهُمْ إِلَىٰٓ أَجَلٍۢ مُّسَمًّۭى</div>
+                    <div class="transliteration">Wa law yu'ākhidhu llāhu n-nāsa bi-ẓulmihim mā taraka 'alayhā min dābbatin wa lākin yu'akhkhiruhum ilā ajalin musammā</div>
+                    <p>"Dan jika Allah menyiksa manusia karena kezaliman mereka, niscaya tidak akan ada yang dibiarkan-Nya melata di bumi, tetapi Allah menangguhkan mereka sampai waktu yang ditentukan."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan rahmat Allah dalam menunda hukuman, memberi manusia waktu untuk bertaubat. Penundaan (ta'kheer) di sini adalah manifestasi kesabaran dan hikmah ilahi.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2639" target="_blank">Sahih Muslim 2639</a>
+                    <div class="arabic">إِنَّ اللَّهَ يُقَدِّمُ مَا يَشَاءُ وَيُؤَخِّرُ مَا يَشَاءُ</div>
+                    <div class="transliteration">Inna llāha yuqaddimu mā yashā'u wa yu'akhkhiru mā yashā'</div>
+                    <p>"Sesungguhnya Allah mendahulukan apa yang Dia kehendaki dan mengakhirkan apa yang Dia kehendaki."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) mengatakan ini ketika menjelaskan takdir ilahi, menunjukkan bahwa semua penundaan terjadi sesuai dengan waktu dan hikmah Allah yang sempurna. (Syarah Sahih Muslim oleh Imam Nawawi)
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Waktu yang Baik</div>
+                    <div class="arabic">يَا مُؤَخِّرُ أَخِّرْ عَنِّي كُلَّ سُوءٍ وَقَدِّمْ لِي كُلَّ خَيْرٍ فِي وَقْتِهِ ٱلْمُبَارَكِ</div>
+                    <div class="transliteration">Yā Mu'akhkhir, akhkhir 'annī kulla sū'in wa qaddim lī kulla khayrin fī waqtihi l-mubārak</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Mengakhirkan, akhirkan dariku segala keburukan dan dahulukan untukku segala kebaikan pada waktunya yang diberkati."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh para ulama NU sebagai permohonan untuk menerima waktu Allah yang terbaik. Dianjurkan dibaca setelah shalat lima waktu.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Kesabaran dalam Penundaan</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْمُؤَخِّرِ صَبِّرْنِي عَلَى تَأْخِيرِ مَا أَشْتَهِي وَعَجِّلْ لِي مَا تَعْلَمُ فِيهِ خَيْرِي</div>
+                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Mu'akhkhir, ṣabbirnī 'alā ta'khīri mā ashtahī wa 'ajjil lī mā ta'lamu fīhi khayrī</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan hak Al-Mu'akhkhir, berikan aku kesabaran atas penundaan apa yang kuinginkan, dan percepat untukku apa yang Engkau tahu mengandung kebaikanku."</p>
+                    <p><strong>Sumber:</strong> Doa ini direkomendasikan oleh Majelis Ulama Indonesia dalam panduan doa-doa mustajabah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Refleksi Malam</div>
+                    <p>Rutinitas malam untuk mengenali hikmah Allah dalam penundaan:</p>
+                    <ol>
+                        <li>Sebelum tidur, baca "Yā Mu'akhkhir" 11 kali</li>
+                        <li>Renungkan satu nikmat yang datang pada waktu yang tepat</li>
+                        <li>Baca <a href="https://quranwbw.com/22/47" target="_blank">Surah Al-Hajj 22:47</a></li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Mengembangkan kepercayaan pada waktu ilahi</li>
+                        <li>Meningkatkan syukur atas nikmat yang tertunda</li>
+                        <li>Memperkuat kesabaran selama masa menunggu</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Kesabaran</div>
+                    <p>Amalan ketika menghadapi penundaan dalam doa:</p>
+                    <ol>
+                        <li>Lakukan shalat 2 rakaat memohon kesabaran</li>
+                        <li>Baca "Yā Mu'akhkhir" 33 kali</li>
+                        <li>Mohon pada Allah untuk menunda hanya yang buruk</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Seorang mukmin yang membaca nama-nama Allah dengan merenungkan maknanya akan diberikan pemahaman tentang waktu ilahi." (HR. Tirmidzi). Praktik ini mengubah pemahaman tentang penundaan menjadi ketenangan.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Mu'akhkhir melalui tiga dimensi rahmat:</p>
+                <ol>
+                    <li><strong>Penundaan Temporal:</strong>
+                        <ul>
+                            <li>Menunda rezeki (<a href="https://quranwbw.com/13/26" target="_blank">13:26</a>)</li>
+                            <li>Menahan hukuman (<a href="https://quranwbw.com/16/61" target="_blank">16:61</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penundaan Spiritual:</strong>
+                        <ul>
+                            <li>Menahan pertumbuhan spiritual sampai kesiapan (<a href="https://quranwbw.com/17/85" target="_blank">17:85</a>)</li>
+                            <li>Menunda jawaban doa untuk pahala lebih besar (<a href="https://quranwbw.com/21/83-84" target="_blank">21:83-84</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penundaan Yudisial:</strong>
+                        <ul>
+                            <li>Menunda penghakiman sampai bukti lengkap (<a href="https://quranwbw.com/4/141" target="_blank">4:141</a>)</li>
+                            <li>Menahan pahala untuk kompensasi lebih besar (<a href="https://quranwbw.com/3/142" target="_blank">3:142</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-A'raf (<a href="https://quranwbw.com/7/34" target="_blank">7:34</a>), Allah menunjukkan waktu-Nya yang sempurna: "Bagi tiap-tiap umat ada ajalnya. Apabila ajal mereka tiba, mereka tidak dapat meminta penundaan atau percepatan sesaat pun." Ini menunjukkan semua penundaan terjadi dengan ketetapan Allah.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">72. Al-Mu'akhkhir (The Delayer, The Postponer)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muakhkhir/" target="_blank">myislam.org/99-names-of-allah/al-muakhkhir/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_73Muakhir.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
             <div class="arabic">ٱلْمُؤَخِّرُ</div>
             <div class="transliteration">Transliteration: Al-Mu'akhkhir</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/72.%20al-muakhkhir.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Mu'akhkhir is derived from the root 'a-kh-r meaning "to delay" or "to put back." It signifies:</p>
                 <ul>
                     <li><strong>The Delayer:</strong> The One who postpones what He wills according to His wisdom</li>
@@ -172,7 +365,7 @@
                 
                 <div class="dalil-item">
                     <strong>Conceptual Quranic Reference:</strong> 
-                    <a href="https://quranwbw.com/71:4" target="_blank">Surah Nuh 71:4</a>
+                    <a href="https://quranwbw.com/71/4" target="_blank">Surah Nuh 71:4</a>
                     <div class="arabic">يُرْسِلِ ٱلسَّمَآءَ عَلَيْكُم مِّدْرَارًۭا</div>
                     <div class="transliteration">Yursili s-samā'a 'alaykum midrārā</div>
                     <p>"[Allah] will send [rain from] the sky upon you in [continuing] showers."</p>
@@ -183,7 +376,7 @@
 
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
-                    <a href="https://quranwbw.com/16:61" target="_blank">Surah An-Nahl 16:61</a>
+                    <a href="https://quranwbw.com/16/61" target="_blank">Surah An-Nahl 16:61</a>
                     <div class="arabic">وَلَوْ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِظُلْمِهِم مَّا تَرَكَ عَلَيْهَا مِن دَآبَّةٍۢ وَلَـٰكِن يُؤَخِّرُهُمْ إِلَىٰٓ أَجَلٍۢ مُّسَمًّۭى</div>
                     <div class="transliteration">Wa law yu'ākhidhu llāhu n-nāsa bi-ẓulmihim mā taraka 'alayhā min dābbatin wa lākin yu'akhkhiruhum ilā ajalin musammā</div>
                     <p>"And if Allah were to impose blame on the people for their wrongdoing, He would not have left upon the earth any creature, but He defers them for a specified term."</p>
@@ -193,7 +386,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 2639
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2639" target="_blank">Sahih Muslim 2639</a>
                     <div class="arabic">إِنَّ اللَّهَ يُقَدِّمُ مَا يَشَاءُ وَيُؤَخِّرُ مَا يَشَاءُ</div>
                     <div class="transliteration">Inna llāha yuqaddimu mā yashā'u wa yu'akhkhiru mā yashā'</div>
                     <p>"Verily Allah expedites what He wills and delays what He wills."</p>
@@ -210,7 +403,7 @@
                     <div class="arabic">يَا مُؤَخِّرُ أَخِّرْ عَنِّي كُلَّ سُوءٍ وَقَدِّمْ لِي كُلَّ خَيْرٍ فِي وَقْتِهِ ٱلْمُبَارَكِ</div>
                     <div class="transliteration">Yā Mu'akhkhir, akhkhir 'annī kulla sū'in wa qaddim lī kulla khayrin fī waqtihi l-mubārak</div>
                     <p><strong>Translation:</strong> "O Delayer, delay from me all evil and bring forward for me all good at its blessed time."</p>
-                    <p><strong>Benefits:</strong> This du'a seeks Allah's perfect timing in all matters. It acknowledges that Allah knows the best time for everything, as mentioned in <a href="https://quranwbw.com/31:34" target="_blank">Surah Luqman 31:34</a>.</p>
+                    <p><strong>Benefits:</strong> This du'a seeks Allah's perfect timing in all matters. It acknowledges that Allah knows the best time for everything, as mentioned in <a href="https://quranwbw.com/31/34" target="_blank">Surah Luqman 31:34</a>.</p>
                 </div>
 
                 <div class="dua">
@@ -230,7 +423,7 @@
                     <ol>
                         <li>Before sleeping, recite "Yā Mu'akhkhir" 11 times</li>
                         <li>Reflect on one blessing that came at the perfect time</li>
-                        <li>Read <a href="https://quranwbw.com/22:47" target="_blank">Surah Al-Hajj 22:47</a></li>
+                        <li>Read <a href="https://quranwbw.com/22/47" target="_blank">Surah Al-Hajj 22:47</a></li>
                     </ol>
                     <p><strong>Benefits:</strong> This practice:</p>
                     <ul>
@@ -258,164 +451,67 @@
                 <ol>
                     <li><strong>Temporal Delay:</strong>
                         <ul>
-                            <li>Postponing provisions (13:26)</li>
-                            <li>Delaying punishment (16:61)</li>
+                            <li>Postponing provisions (<a href="https://quranwbw.com/13/26" target="_blank">13:26</a>)</li>
+                            <li>Delaying punishment (<a href="https://quranwbw.com/16/61" target="_blank">16:61</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Spiritual Delay:</strong>
                         <ul>
-                            <li>Holding back spiritual growth until readiness (17:85)</li>
-                            <li>Delaying answers to duas for greater reward (21:83-84)</li>
+                            <li>Holding back spiritual growth until readiness (<a href="https://quranwbw.com/17/85" target="_blank">17:85</a>)</li>
+                            <li>Delaying answers to duas for greater reward (<a href="https://quranwbw.com/21/83-84" target="_blank">21:83-84</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Judicial Delay:</strong>
                         <ul>
-                            <li>Postponing judgment until full evidence (4:141)</li>
-                            <li>Delaying reward for greater compensation (3:142)</li>
+                            <li>Postponing judgment until full evidence (<a href="https://quranwbw.com/4/141" target="_blank">4:141</a>)</li>
+                            <li>Delaying reward for greater compensation (<a href="https://quranwbw.com/3/142" target="_blank">3:142</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-A'raf (7:34), Allah demonstrates His perfect timing: "For every nation is a [specified] term. When their time has come, they will not remain behind an hour, nor will they precede [it]." This shows that all delays occur by Allah's decree.</p>
+                <p>In Surah Al-A'raf (<a href="https://quranwbw.com/7/34" target="_blank">7:34</a>), Allah demonstrates His perfect timing: "For every nation is a [specified] term. When their time has come, they will not remain behind an hour, nor will they precede [it]." This shows that all delays occur by Allah's decree.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">72. Al-Mu'akhkhir (Yang Mengakhirkan, Yang Menunda)</h1>
-
-            <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muakhkhir/" target="_blank">myislam.org/99-names-of-allah/al-muakhkhir/</a></p>
-
-            <div class="arabic">ٱلْمُؤَخِّرُ</div>
-            <div class="transliteration">Transliterasi: Al-Mu'akhkhir</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Mu'akhkhir berasal dari akar kata 'a-kh-r yang berarti "menunda" atau "mengakhirkan." Nama ini menandakan:</p>
-                <ul>
-                    <li><strong>Yang Menunda:</strong> Yang mengakhirkan apa yang Dia kehendaki menurut hikmah-Nya</li>
-                    <li><strong>Yang Mengakhirkan:</strong> Yang menahan dalam waktu, kedudukan atau kehormatan</li>
-                </ul>
-                <p>Ibnu Qayyim menjelaskan: "Al-Mu'akhkhir adalah Dia yang menunda apa yang Dia kehendaki dengan ilmu-Nya yang sempurna - baik itu hukuman, rezeki, atau peristiwa dalam waktu." Nama ini sering disebut bersama Al-Muqaddim (Yang Mendahulukan), menunjukkan kendali Allah yang sempurna atas waktu.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Konseptual Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/71:4" target="_blank">Surah Nuh 71:4</a>
-                    <div class="arabic">يُرْسِلِ ٱلسَّمَآءَ عَلَيْكُم مِّدْرَارًۭا</div>
-                    <div class="transliteration">Yursili s-samā'a 'alaykum midrārā</div>
-                    <p>"[Allah] akan menurunkan hujan dari langit kepadamu dengan lebat."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menunjukkan sifat Allah dalam menunda hujan ketika manusia bermaksiat, dan mengirimnya ketika mereka bertaubat. Penundaan (ta'kheer) hujan adalah contoh hikmah Allah dalam waktu memberikan rezeki.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/16:61" target="_blank">Surah An-Nahl 16:61</a>
-                    <div class="arabic">وَلَوْ يُؤَاخِذُ ٱللَّهُ ٱلنَّاسَ بِظُلْمِهِم مَّا تَرَكَ عَلَيْهَا مِن دَآبَّةٍۢ وَلَـٰكِن يُؤَخِّرُهُمْ إِلَىٰٓ أَجَلٍۢ مُّسَمًّۭى</div>
-                    <div class="transliteration">Wa law yu'ākhidhu llāhu n-nāsa bi-ẓulmihim mā taraka 'alayhā min dābbatin wa lākin yu'akhkhiruhum ilā ajalin musammā</div>
-                    <p>"Dan jika Allah menyiksa manusia karena kezaliman mereka, niscaya tidak akan ada yang dibiarkan-Nya melata di bumi, tetapi Allah menangguhkan mereka sampai waktu yang ditentukan."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menunjukkan rahmat Allah dalam menunda hukuman, memberi manusia waktu untuk bertaubat. Penundaan (ta'kheer) di sini adalah manifestasi kesabaran dan hikmah ilahi.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 2639
-                    <div class="arabic">إِنَّ اللَّهَ يُقَدِّمُ مَا يَشَاءُ وَيُؤَخِّرُ مَا يَشَاءُ</div>
-                    <div class="transliteration">Inna llāha yuqaddimu mā yashā'u wa yu'akhkhiru mā yashā'</div>
-                    <p>"Sesungguhnya Allah mendahulukan apa yang Dia kehendaki dan mengakhirkan apa yang Dia kehendaki."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) mengatakan ini ketika menjelaskan takdir ilahi, menunjukkan bahwa semua penundaan terjadi sesuai dengan waktu dan hikmah Allah yang sempurna.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Waktu Ilahi</div>
-                    <div class="arabic">يَا مُؤَخِّرُ أَخِّرْ عَنِّي كُلَّ سُوءٍ وَقَدِّمْ لِي كُلَّ خَيْرٍ فِي وَقْتِهِ ٱلْمُبَارَكِ</div>
-                    <div class="transliteration">Yā Mu'akhkhir, akhkhir 'annī kulla sū'in wa qaddim lī kulla khayrin fī waqtihi l-mubārak</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Mengakhirkan, akhirkan dariku segala keburukan dan dahulukan untukku segala kebaikan pada waktunya yang diberkati."</p>
-                    <p><strong>Manfaat:</strong> Doa ini memohon waktu Allah yang sempurna dalam segala hal. Ini mengakui bahwa Allah mengetahui waktu terbaik untuk segala sesuatu, seperti disebutkan dalam <a href="https://quranwbw.com/31:34" target="_blank">Surah Luqman 31:34</a>.</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Kesabaran dalam Penundaan</div>
-                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْمُؤَخِّرِ صَبِّرْنِي عَلَى تَأْخِيرِ مَا أَشْتَهِي وَعَجِّلْ لِي مَا تَعْلَمُ فِيهِ خَيْرِي</div>
-                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Mu'akhkhir, ṣabbirnī 'alā ta'khīri mā ashtahī wa 'ajjil lī mā ta'lamu fīhi khayrī</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan hak Al-Mu'akhkhir, berikan aku kesabaran atas penundaan apa yang kuinginkan, dan percepat untukku apa yang Engkau tahu mengandung kebaikanku."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Nabi (ﷺ) tentang waktu ilahi (Tirmidzi).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Praktik Refleksi Malam</div>
-                    <p>Untuk mengenali hikmah Allah dalam penundaan:</p>
-                    <ol>
-                        <li>Sebelum tidur, baca "Yā Mu'akhkhir" 11 kali</li>
-                        <li>Renungkan satu nikmat yang datang pada waktu yang tepat</li>
-                        <li>Baca <a href="https://quranwbw.com/22:47" target="_blank">Surah Al-Hajj 22:47</a></li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Praktik ini:</p>
-                    <ul>
-                        <li>Mengembangkan kepercayaan pada waktu ilahi</li>
-                        <li>Meningkatkan syukur atas nikmat yang tertunda</li>
-                        <li>Memperkuat kesabaran selama masa menunggu</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Kesabaran</div>
-                    <p>Ketika menghadapi penundaan dalam doa:</p>
-                    <ol>
-                        <li>Lakukan shalat 2 rakaat memohon kesabaran</li>
-                        <li>Baca "Yā Mu'akhkhir" 33 kali</li>
-                        <li>Mohon pada Allah untuk menunda hanya yang buruk</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat mempraktikkan sabr (kesabaran) selama penundaan, seperti tercatat dalam Musannaf Ibnu Abi Shaybah.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibnu Katsir menjelaskan Al-Mu'akhkhir melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Penundaan Temporal:</strong>
-                        <ul>
-                            <li>Menunda rezeki (13:26)</li>
-                            <li>Menahan hukuman (16:61)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Penundaan Spiritual:</strong>
-                        <ul>
-                            <li>Menahan pertumbuhan spiritual sampai kesiapan (17:85)</li>
-                            <li>Menunda jawaban doa untuk pahala lebih besar (21:83-84)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Penundaan Yudisial:</strong>
-                        <ul>
-                            <li>Menunda penghakiman sampai bukti lengkap (4:141)</li>
-                            <li>Menahan pahala untuk kompensasi lebih besar (3:142)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Al-A'raf (7:34), Allah menunjukkan waktu-Nya yang sempurna: "Bagi tiap-tiap umat ada ajalnya. Apabila ajal mereka tiba, mereka tidak dapat meminta penundaan atau percepatan sesaat pun." Ini menunjukkan semua penundaan terjadi dengan ketetapan Allah.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -425,10 +521,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -436,12 +534,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
