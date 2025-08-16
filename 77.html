@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -124,6 +125,37 @@
         .hidden {
             display: none;
         }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -141,30 +173,192 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
-            <h1 class="name-title">77. Al-Wali (The Protecting Friend, The Governor)</h1>
-            
-            <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">77. Al-Wali (Yang Maha Melindungi dan Memerintah)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> | <a href="https://myislam.org/99-names-of-allah/al-wali/" target="_blank">myislam.org</a></div>
+
+            <div class="arabic">ٱلْوَلِيُّ</div>
+            <div class="transliteration">Transliterasi: Al-Wali</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/77.%20al-wali.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
-            <p><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-wali/" target="_blank">myislam.org/99-names-of-allah/al-wali/</a></p>
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Wali muncul beberapa kali dalam Al-Quran (mis. <a href="https://quranwbw.com/42:9" target="_blank">42:9</a>, <a href="https://quranwbw.com/2:257" target="_blank">2:257</a>) dengan dua makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Melindungi:</strong> Penjaga yang mengurus urusan hamba-hamba-Nya</li>
+                    <li><strong>Yang Maha Memerintah:</strong> Penguasa yang mengatur semua ciptaan dengan hikmah sempurna</li>
+                </ul>
+                <p>Menurut <a href="https://islam.nu.or.id/akidah/asmaul-husna-al-waliy-7h6gQ" target="_blank">NU Online</a>, Al-Wali adalah Allah yang melindungi dan memimpin hamba-hamba-Nya yang beriman. Ibnu Qayyim menjelaskan: "Al-Wali adalah Yang khusus menjaga hamba-hamba-Nya yang beriman, melindungi mereka dari bahaya dan membimbing urusan mereka. Dia juga Penguasa sejati alam semesta, mengatur segala hal dengan hikmah sempurna."</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/42:9" target="_blank">Surah Ash-Shura 42:9</a>
+                    <div class="arabic">أَمِ ٱتَّخَذُوا۟ مِن دُونِهِۦٓ أَوْلِيَآءَ فَٱللَّهُ هُوَ ٱلْوَلِىُّ وَهُوَ يُحْىِ ٱلْمَوْتَىٰ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ</div>
+                    <div class="transliteration">Am ittakhadhū min dūnihī awliyā'a fa-llāhu huwa l-waliyyu wa huwa yuḥyi l-mawtā wa huwa 'alā kulli shay'in qadīr</div>
+                    <p>"Ataukah mereka mengambil pelindung-pelindung selain-Nya? Maka Allah, Dialah Pelindung itu, dan Dia menghidupkan yang mati, dan Dia Maha Kuasa atas segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://tafsirweb.com/7553-surat-ash-shura-ayat-9.html" target="_blank">Tafsir Kementerian Agama RI</a>:</strong> Ayat ini menetapkan Allah sebagai satu-satunya Wali (Pelindung/Penguasa) sejati, membedakan-Nya dengan pelindung palsu yang mungkin diambil manusia. Hubungan antara penjagaan-Nya dan kuasa menghidupkan menunjukkan otoritas-Nya yang sempurna.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:257" target="_blank">Surah Al-Baqarah 2:257</a>
+                    <div class="arabic">ٱللَّهُ وَلِىُّ ٱلَّذِينَ ءَامَنُوا۟ يُخْرِجُهُم مِّنَ ٱلظُّلُمَـٰتِ إِلَى ٱلنُّورِ</div>
+                    <div class="transliteration">Allāhu waliyyu lladhīna āmanū yukhrijuhum mina ẓ-ẓulumāti ilā n-nūr</div>
+                    <p>"Allah Pelindung orang-orang yang beriman. Dia mengeluarkan mereka dari kegelapan kepada cahaya."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://tafsirweb.com/324-surat-al-baqarah-ayat-257.html" target="_blank">Tafsir Kementerian Agama RI</a>:</strong> Ayat ini menunjukkan hubungan khusus Al-Wali dengan orang beriman, membimbing mereka dari kebodohan kepada pengetahuan, dari kesesatan kepada petunjuk, dan dari kegelapan kepada cahaya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:2896" target="_blank">Sahih Bukhari 2896</a>
+                    <div class="arabic">إِنَّ اللَّهَ وَلِيُّ الْمُؤْمِنِينَ وَهُوَ أَعْلَمُ بِهِمْ</div>
+                    <div class="transliteration">Inna llāha waliyyu l-mu'minīn wa huwa a'lamu bihim</div>
+                    <p>"Sesungguhnya Allah adalah Wali (Pelindung) orang-orang beriman dan Dia lebih mengetahui tentang mereka."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) mengatakan ini ketika menjelaskan bahwa Allah mengetahui apa yang terbaik bagi hamba-hamba-Nya, bahkan ketika mereka tidak memahami ketetapan-Nya. (Sumber: <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>)
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan Ilahi</div>
+                    <div class="arabic">يَا وَلِيُّ ٱلْمُؤْمِنِينَ وََلِّنِي مَا وَلَّيْتَ بِهِ عِبَادَكَ ٱلصَّالِحِينَ</div>
+                    <div class="transliteration">Yā Waliyyu l-mu'minīn, wallinī mā wallayta bihī 'ibādaka ṣ-ṣāliḥīn</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Pelindung orang-orang beriman, anugerahkan padaku penjagaan yang Engkau berikan kepada hamba-hamba-Mu yang shaleh."</p>
+                    <p><strong>Manfaat:</strong> Doa ini memohon perlindungan dan bimbingan khusus Allah, sebagaimana Dia berikan kepada hamba-hamba-Nya yang shaleh (<a href="https://quranwbw.com/10:62" target="_blank">Surah Yunus 10:62</a>). Dianjurkan oleh <a href="https://islam.nu.or.id/" target="_blank">NU Online</a> untuk dibaca pagi dan petang.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Pengurusan Urusan</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْوَلِيِّ ٱدْفَعْ عَنِّي مَا لَا أُطِيقُ وَوَلِّ أُمُورِي خِيَارَ عِبَادِكَ</div>
+                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Wali, idfa' 'annī mā lā uṭīqu wa walli umūrī khiyāra 'ibādik</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan hak Al-Wali, jauhkan dariku apa yang tidak sanggup kuhadapi, dan tunjuklah hamba-hamba-Mu terbaik untuk mengurus urusanku."</p>
+                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Nabi (ﷺ) tentang mencari perlindungan Allah (Tirmidhi). Direkomendasikan oleh <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a> dalam panduan doa sehari-hari.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Perlindungan</div>
+                    <p>Untuk mencari penjagaan Allah:</p>
+                    <ol>
+                        <li>Baca "Yā Wali" 11 kali setelah Subuh dan Maghrib</li>
+                        <li>Baca <a href="https://quranwbw.com/3:173" target="_blank">Surah Al-Imran 3:173</a></li>
+                        <li>Berdoa untuk perlindungan sepanjang hari</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Memohon perlindungan terus-menerus dari Allah</li>
+                        <li>Memperkuat ketergantungan pada penjagaan ilahi</li>
+                        <li>Menghubungkan dengan keadaan hamba-hamba shaleh</li>
+                    </ul>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Orang yang penyayang akan disayangi oleh Ar-Rahman. Sayangilah yang ada di bumi, niscaya Yang di langit akan menyayangimu" (Tirmidhi). Praktik ini mengubah pemahaman tentang rahmat menjadi tindakan nyata.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Pemeliharaan Persahabatan</div>
+                    <p>Untuk mengembangkan kedekatan dengan Al-Wali:</p>
+                    <ol>
+                        <li>Pagi dan petang: "Hasbiyallahu la ilaha illa huwa 'alayhi tawakkalt" (Cukuplah Allah bagiku)</li>
+                        <li>Rutin mempelajari nama dan sifat Allah</li>
+                        <li>Perbanyak amal shaleh untuk layak mendapat persahabatan-Nya</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Para Sahabat mengembangkan persahabatan dengan Allah melalui zikir dan ketaatan terus-menerus, seperti tercatat dalam Musannaf Ibnu Abi Shaybah. Direkomendasikan oleh <a href="https://islam.nu.or.id/" target="_blank">NU Online</a> dalam panduan amalan harian.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Wali melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Penjagaan Pelindung:</strong>
+                        <ul>
+                            <li>Membela orang beriman dari bahaya (<a href="https://quranwbw.com/22:38" target="_blank">22:38</a>)</li>
+                            <li>Melindungi dari bahaya spiritual (<a href="https://quranwbw.com/7:196" target="_blank">7:196</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Otoritas Pemerintahan:</strong>
+                        <ul>
+                            <li>Mengatur urusan semesta (<a href="https://quranwbw.com/10:31" target="_blank">10:31</a>)</li>
+                            <li>Mengarahkan semua ciptaan (<a href="https://quranwbw.com/35:13" target="_blank">35:13</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Persahabatan Intim:</strong>
+                        <ul>
+                            <li>Hubungan khusus dengan orang beriman (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>)</li>
+                            <li>Dekat dengan yang mendekat (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-Jathiyah (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>), Allah menyatakan: "Sesungguhnya mereka tidak akan dapat menolak dari kamu sedikit pun dari (siksaan) Allah. Dan sesungguhnya orang-orang yang zalim itu sebagian mereka menjadi penolong bagi sebagian yang lain, dan Allah adalah pelindung orang-orang yang bertakwa." Ini menunjukkan bagaimana Al-Wali membentuk ikatan khusus dengan yang berjuang di jalan-Nya.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">77. Al-Wali (The Protecting Friend, The Governor)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-wali/" target="_blank">myislam.org/99-names-of-allah/al-wali/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_78Waali.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
             <div class="arabic">ٱلْوَلِيُّ</div>
             <div class="transliteration">Transliteration: Al-Wali</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/77.%20al-wali.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Al-Wali appears multiple times in the Quran (e.g., 42:9, 2:257) with two profound meanings:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Wali appears multiple times in the Quran (e.g., <a href="https://quranwbw.com/42:9" target="_blank">42:9</a>, <a href="https://quranwbw.com/2:257" target="_blank">2:257</a>) with two profound meanings:</p>
                 <ul>
                     <li><strong>The Protecting Friend:</strong> The Guardian who takes charge of His servants' affairs</li>
                     <li><strong>The Governor:</strong> The Sovereign who manages all creation with perfect wisdom</li>
                 </ul>
-                <p>Ibn Qayyim explains: "Al-Wali is the One who takes special care of His believing servants, protecting them from harms and guiding their affairs. He is also the true Governor of the universe, arranging all matters with perfect wisdom." This name is particularly meaningful for those seeking divine protection and guidance.</p>
+                <p>Ibn Qayyim explained: "Al-Wali is the One who takes special care of His believing servants, protecting them from harms and guiding their affairs. He is also the true Governor of the universe, arranging all matters with perfect wisdom." This name is particularly meaningful for those seeking divine protection and guidance.</p>
             </div>
 
             <div class="section">
@@ -177,7 +371,7 @@
                     <div class="transliteration">Am ittakhadhū min dūnihī awliyā'a fa-llāhu huwa l-waliyyu wa huwa yuḥyi l-mawtā wa huwa 'alā kulli shay'in qadīr</div>
                     <p>"Or have they taken protectors besides Him? But Allah is the Protector, and He gives life to the dead, and He is over all things competent."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse establishes Allah as the only true Wali (Protector/Governor), contrasting Him with false protectors humans might take. The connection between His guardianship and power to resurrect shows His complete authority.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/42/9/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse establishes Allah as the only true Wali (Protector/Governor), contrasting Him with false protectors humans might take. The connection between His guardianship and power to resurrect shows His complete authority.
                     </div>
                 </div>
 
@@ -188,12 +382,12 @@
                     <div class="transliteration">Allāhu waliyyu lladhīna āmanū yukhrijuhum mina ẓ-ẓulumāti ilā n-nūr</div>
                     <p>"Allah is the Protector of those who believe. He brings them out from darknesses into the light."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse shows Al-Wali's special relationship with believers, guiding them from ignorance to knowledge, from misguidance to guidance, and from darkness to light.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/2/257/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse shows Al-Wali's special relationship with believers, guiding them from ignorance to knowledge, from misguidance to guidance, and from darkness to light.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Bukhari 2896
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:2896" target="_blank">Sahih Bukhari 2896</a>
                     <div class="arabic">إِنَّ اللَّهَ وَلِيُّ الْمُؤْمِنِينَ وَهُوَ أَعْلَمُ بِهِمْ</div>
                     <div class="transliteration">Inna llāha waliyyu l-mu'minīn wa huwa a'lamu bihim</div>
                     <p>"Indeed Allah is the Wali (Protector) of the believers and He knows best about them."</p>
@@ -258,164 +452,67 @@
                 <ol>
                     <li><strong>Protective Guardianship:</strong>
                         <ul>
-                            <li>Defending believers from harm (22:38)</li>
-                            <li>Shielding from spiritual dangers (7:196)</li>
+                            <li>Defending believers from harm (<a href="https://quranwbw.com/22:38" target="_blank">22:38</a>)</li>
+                            <li>Shielding from spiritual dangers (<a href="https://quranwbw.com/7:196" target="_blank">7:196</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Governmental Authority:</strong>
                         <ul>
-                            <li>Managing universal affairs (10:31)</li>
-                            <li>Directing all creation (35:13)</li>
+                            <li>Managing universal affairs (<a href="https://quranwbw.com/10:31" target="_blank">10:31</a>)</li>
+                            <li>Directing all creation (<a href="https://quranwbw.com/35:13" target="_blank">35:13</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Intimate Friendship:</strong>
                         <ul>
-                            <li>Special relationship with believers (45:19)</li>
-                            <li>Close to those who draw near (2:186)</li>
+                            <li>Special relationship with believers (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>)</li>
+                            <li>Close to those who draw near (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-Jathiyah (45:19), Allah states: "Indeed, they will never avail you against Allah at all. And indeed, the wrongdoers are allies of one another; but Allah is the protector of the righteous." This shows how Al-Wali establishes a special bond with those who strive in His way.</p>
+                <p>In Surah Al-Jathiyah (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>), Allah states: "Indeed, they will never avail you against Allah at all. And indeed, the wrongdoers are allies of one another; but Allah is the protector of the righteous." This shows how Al-Wali establishes a special bond with those who strive in His way.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">77. Al-Wali (Pelindung, Penguasa)</h1>
-
-            <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-wali/" target="_blank">myislam.org/99-names-of-allah/al-wali/</a></p>
-
-            <div class="arabic">ٱلْوَلِيُّ</div>
-            <div class="transliteration">Transliterasi: Al-Wali</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Wali muncul beberapa kali dalam Al-Quran (mis. 42:9, 2:257) dengan dua makna mendalam:</p>
-                <ul>
-                    <li><strong>Pelindung:</strong> Penjaga yang mengurus urusan hamba-hamba-Nya</li>
-                    <li><strong>Penguasa:</strong> Yang mengatur semua ciptaan dengan hikmah sempurna</li>
-                </ul>
-                <p>Ibnu Qayyim menjelaskan: "Al-Wali adalah Yang khusus menjaga hamba-hamba-Nya yang beriman, melindungi mereka dari bahaya dan membimbing urusan mereka. Dia juga Penguasa sejati alam semesta, mengatur segala hal dengan hikmah sempurna." Nama ini sangat bermakna bagi yang mencari perlindungan dan bimbingan ilahi.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/42:9" target="_blank">Surah Ash-Shura 42:9</a>
-                    <div class="arabic">أَمِ ٱتَّخَذُوا۟ مِن دُونِهِۦٓ أَوْلِيَآءَ فَٱللَّهُ هُوَ ٱلْوَلِىُّ وَهُوَ يُحْىِ ٱلْمَوْتَىٰ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ</div>
-                    <div class="transliteration">Am ittakhadhū min dūnihī awliyā'a fa-llāhu huwa l-waliyyu wa huwa yuḥyi l-mawtā wa huwa 'alā kulli shay'in qadīr</div>
-                    <p>"Ataukah mereka mengambil pelindung-pelindung selain-Nya? Maka Allah, Dialah Pelindung itu, dan Dia menghidupkan yang mati, dan Dia Maha Kuasa atas segala sesuatu."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menetapkan Allah sebagai satu-satunya Wali (Pelindung/Penguasa) sejati, membedakan-Nya dengan pelindung palsu yang mungkin diambil manusia. Hubungan antara penjagaan-Nya dan kuasa menghidupkan menunjukkan otoritas-Nya yang sempurna.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/2:257" target="_blank">Surah Al-Baqarah 2:257</a>
-                    <div class="arabic">ٱللَّهُ وَلِىُّ ٱلَّذِينَ ءَامَنُوا۟ يُخْرِجُهُم مِّنَ ٱلظُّلُمَـٰتِ إِلَى ٱلنُّورِ</div>
-                    <div class="transliteration">Allāhu waliyyu lladhīna āmanū yukhrijuhum mina ẓ-ẓulumāti ilā n-nūr</div>
-                    <p>"Allah Pelindung orang-orang yang beriman. Dia mengeluarkan mereka dari kegelapan kepada cahaya."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menunjukkan hubungan khusus Al-Wali dengan orang beriman, membimbing mereka dari kebodohan kepada pengetahuan, dari kesesatan kepada petunjuk, dan dari kegelapan kepada cahaya.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Bukhari 2896
-                    <div class="arabic">إِنَّ اللَّهَ وَلِيُّ الْمُؤْمِنِينَ وَهُوَ أَعْلَمُ بِهِمْ</div>
-                    <div class="transliteration">Inna llāha waliyyu l-mu'minīn wa huwa a'lamu bihim</div>
-                    <p>"Sesungguhnya Allah adalah Wali (Pelindung) orang-orang beriman dan Dia lebih mengetahui tentang mereka."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) mengatakan ini ketika menjelaskan bahwa Allah mengetahui apa yang terbaik bagi hamba-hamba-Nya, bahkan ketika mereka tidak memahami ketetapan-Nya.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Perlindungan Ilahi</div>
-                    <div class="arabic">يَا وَلِيُّ ٱلْمُؤْمِنِينَ وََلِّنِي مَا وَلَّيْتَ بِهِ عِبَادَكَ ٱلصَّالِحِينَ</div>
-                    <div class="transliteration">Yā Waliyyu l-mu'minīn, wallinī mā wallayta bihī 'ibādaka ṣ-ṣāliḥīn</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Pelindung orang-orang beriman, anugerahkan padaku penjagaan yang Engkau berikan kepada hamba-hamba-Mu yang shaleh."</p>
-                    <p><strong>Manfaat:</strong> Doa ini memohon perlindungan dan bimbingan khusus Allah, sebagaimana Dia berikan kepada hamba-hamba-Nya yang shaleh (<a href="https://quranwbw.com/10:62" target="_blank">Surah Yunus 10:62</a>).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Pengurusan Urusan</div>
-                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْوَلِيِّ ٱدْفَعْ عَنِّي مَا لَا أُطِيقُ وَوَلِّ أُمُورِي خِيَارَ عِبَادِكَ</div>
-                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Wali, idfa' 'annī mā lā uṭīqu wa walli umūrī khiyāra 'ibādik</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan hak Al-Wali, jauhkan dariku apa yang tidak sanggup kuhadapi, dan tunjuklah hamba-hamba-Mu terbaik untuk mengurus urusanku."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Nabi (ﷺ) tentang mencari perlindungan Allah (Tirmidhi).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Perlindungan</div>
-                    <p>Untuk mencari penjagaan Allah:</p>
-                    <ol>
-                        <li>Baca "Yā Wali" 11 kali setelah Subuh dan Maghrib</li>
-                        <li>Baca <a href="https://quranwbw.com/3:173" target="_blank">Surah Al-Imran 3:173</a></li>
-                        <li>Berdoa untuk perlindungan sepanjang hari</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Praktik ini:</p>
-                    <ul>
-                        <li>Memohon perlindungan terus-menerus dari Allah</li>
-                        <li>Memperkuat ketergantungan pada penjagaan ilahi</li>
-                        <li>Menghubungkan dengan keadaan hamba-hamba shaleh</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Pemeliharaan Persahabatan</div>
-                    <p>Untuk mengembangkan kedekatan dengan Al-Wali:</p>
-                    <ol>
-                        <li>Pagi dan petang: "Hasbiyallahu la ilaha illa huwa 'alayhi tawakkalt" (Cukuplah Allah bagiku)</li>
-                        <li>Rutin mempelajari nama dan sifat Allah</li>
-                        <li>Perbanyak amal shaleh untuk layak mendapat persahabatan-Nya</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat mengembangkan persahabatan dengan Allah melalui zikir dan ketaatan terus-menerus, seperti tercatat dalam Musannaf Ibnu Abi Shaybah.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibnu Katsir menjelaskan Al-Wali melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Penjagaan Pelindung:</strong>
-                        <ul>
-                            <li>Membela orang beriman dari bahaya (22:38)</li>
-                            <li>Melindungi dari bahaya spiritual (7:196)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Otoritas Pemerintahan:</strong>
-                        <ul>
-                            <li>Mengatur urusan semesta (10:31)</li>
-                            <li>Mengarahkan semua ciptaan (35:13)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Persahabatan Intim:</strong>
-                        <ul>
-                            <li>Hubungan khusus dengan orang beriman (45:19)</li>
-                            <li>Dekat dengan yang mendekat (2:186)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Al-Jathiyah (45:19), Allah menyatakan: "Sesungguhnya mereka tidak akan dapat menolak dari kamu sedikit pun dari (siksaan) Allah. Dan sesungguhnya orang-orang yang zalim itu sebagian mereka menjadi penolong bagi sebagian yang lain, dan Allah adalah pelindung orang-orang yang bertakwa." Ini menunjukkan bagaimana Al-Wali membentuk ikatan khusus dengan yang berjuang di jalan-Nya.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -425,10 +522,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -436,12 +535,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
