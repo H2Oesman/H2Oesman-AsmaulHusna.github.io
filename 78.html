@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -124,6 +125,37 @@
         .hidden {
             display: none;
         }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -141,30 +173,192 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
-            <h1 class="name-title">78. Al-Mutaali (The Supreme Exalted, The Most High) (78)</h1>
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">78. Al-Mutaali (Yang Maha Tinggi dan Maha Luhur)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> | <a href="https://myislam.org/99-names-of-allah/al-mutaali/" target="_blank">myislam.org</a></div>
+
+            <div class="arabic">ٱلْمُتَعَالِي</div>
+            <div class="transliteration">Transliterasi: Al-Mutaali</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/78.%20al-muta-ali.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Mutaali muncul dalam Al-Quran (<a href="https://quranwbw.com/13:9" target="_blank">13:9</a>) dengan makna yang mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Tinggi:</strong> Yang berada di atas seluruh ciptaan dalam kedudukan dan kekuasaan</li>
+                    <li><strong>Yang Maha Luhur:</strong> Yang keagungan-Nya melampaui semua batas</li>
+                </ul>
+                <p>Menurut <a href="https://islam.nu.or.id/akidah/asmaul-husna-al-muta-ali-7h6gQ" target="_blank">NU Online</a>, Al-Mutaali adalah Allah yang Maha Tinggi di atas segala sesuatu. Ibnu Katsir menjelaskan: "Dia Maha Tinggi di atas segala yang tidak pantas bagi-Nya, dan Dia Maha Tinggi di atas segala kekurangan." Nama ini mengingatkan kita pada transendensi dan kesempurnaan mutlak Allah, sebagaimana disebutkan dalam Surah Ar-Rahman (<a href="https://quranwbw.com/55:27" target="_blank">55:27</a>).</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/13:9" target="_blank">Surah Ar-Ra'd 13:9</a>
+                    <div class="arabic">عَـٰلِمُ ٱلْغَيْبِ وَٱلشَّهَـٰدَةِ ٱلْكَبِيرُ ٱلْمُتَعَالِ</div>
+                    <div class="transliteration">ʿĀlimu l-ghaybi wa sh-shahādati l-kabīru l-mutaʿāl</div>
+                    <p>"Yang mengetahui semua yang ghaib dan yang nyata, Yang Maha Besar, Yang Maha Tinggi."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://tafsirweb.com/7553-surat-ash-shura-ayat-9.html" target="_blank">Tafsir Kementerian Agama RI</a>:</strong> Ayat ini menghubungkan Al-Mutaali dengan kemahatahuan Allah (Yang Mengetahui yang ghaib dan nyata) dan keagungan-Nya yang tertinggi. Urutan ini menunjukkan bahwa pengetahuan sejati mengarah pada pengakuan akan sifat Allah yang Maha Tinggi.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:255" target="_blank">Surah Al-Baqarah 2:255</a>
+                    <div class="arabic">وَهُوَ ٱلْعَلِىُّ ٱلْعَظِيمُ</div>
+                    <div class="transliteration">Wa huwa l-ʿaliyyu l-ʿaẓīm</div>
+                    <p>"Dan Dia-lah Yang Maha Tinggi, Yang Maha Besar."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://tafsirweb.com/324-surat-al-baqarah-ayat-257.html" target="_blank">Tafsir Kementerian Agama RI</a>:</strong> Dalam menjelaskan Ayat Kursi, Ibnu Katsir menekankan bahwa ketinggian Allah mencakup baik elevasi fisik di atas ciptaan maupun ketinggian status dan sifat-sifat-Nya di atas segala sesuatu.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:179" target="_blank">Sahih Muslim 179</a>
+                    <div class="arabic">إِنَّ اللَّهَ عَزَّ وَجَلَّ يَقُولُ: أَنَا الْعَلِيُّ الْعَظِيمُ</div>
+                    <div class="transliteration">Inna Allāha ʿazza wa jalla yaqūlu: Anā l-ʿaliyyu l-ʿaẓīm</div>
+                    <p>"Sesungguhnya Allah Yang Maha Perkasa dan Maha Mulia berfirman: Aku adalah Yang Maha Tinggi, Yang Maha Besar."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) menceritakan pernyataan ilahi ini untuk menekankan status tertinggi Allah. (Sumber: <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>)
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Peninggian Spiritual</div>
+                    <div class="arabic">يَا مُتَعَالِي ارْفَعْ دَرَجَتِي وَزِدْنِي عِلْمًا نَافِعًا وَارْزُقْنِي الْعَمَلَ بِهِ</div>
+                    <div class="transliteration">Yā Mutaʿālī irfaʿ darajatī wa zidnī ʿilman nāfiʿan warzuqnī l-ʿamala bih</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Tinggi, tinggikan derajatku, tambahkanlah aku ilmu yang bermanfaat, dan berikan aku kemampuan untuk mengamalkannya."</p>
+                    <p><strong>Manfaat:</strong> Doa ini direkomendasikan oleh <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a> dalam panduan doa sehari-hari. Nabi (ﷺ) mengajarkan bahwa Allah mengangkat derajat orang yang berilmu dan mengamalkannya (<a href="https://sunnah.com/bukhari:79" target="_blank">Bukhari</a>).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan dari Kesombongan</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْمُتَعَالِي وَمِنْكَ الْعُلُوُّ، أَذْهِبْ عَنِّي الْكِبْرَ وَاجْعَلْنِي مِنَ الْعَابِدِينَ</div>
+                    <div class="transliteration">Allāhumma anta l-Mutaʿālī wa minka l-ʿuluww, adhhib ʿannī l-kibra wa jʿalnī mina l-ʿābidīn</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Yang Maha Tinggi dan dari-Mu datang segala ketinggian, hilangkan kesombongan dariku dan jadikan aku termasuk hamba-Mu yang beribadah."</p>
+                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Nabi (ﷺ) tentang larangan kesombongan (<a href="https://sunnah.com/muslim:91" target="_blank">Muslim</a>). Direkomendasikan oleh <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Peninggian</div>
+                    <p>Untuk peninggian spiritual:</p>
+                    <ol>
+                        <li>Baca "Yā Mutaʿālī" 33 kali setelah Subuh</li>
+                        <li>Baca <a href="https://quranwbw.com/87" target="_blank">Surah Al-A'la (87)</a> setiap hari</li>
+                        <li>Lakukan sujud sukarela sambil memuji keagungan Allah</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Membantu mengenali status tertinggi Allah</li>
+                        <li>Menangkal perasaan bangga duniawi</li>
+                        <li>Menghubungkan dengan makna ketinggian ilahi</li>
+                    </ul>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Orang yang penyayang akan disayangi oleh Ar-Rahman. Sayangilah yang ada di bumi, niscaya Yang di langit akan menyayangimu" (<a href="https://sunnah.com/tirmidhi:1924" target="_blank">Tirmidhi</a>).</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Pengingat Kerendahan Hati</div>
+                    <p>Untuk menumbuhkan kerendahan hati di hadapan keagungan Allah:</p>
+                    <ol>
+                        <li>Tulis "Al-Mutaali" dengan za'faran di kertas</li>
+                        <li>Letakkan di tempat Anda sering duduk</li>
+                        <li>Baca "Subhāna rabbiya l-aʿlā" (Maha Suci Tuhanku Yang Maha Tinggi) sesering mungkin</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Para Sahabat sering mengingat sifat Allah yang Maha Tinggi untuk menjaga kerendahan hati, sebagaimana tercatat dalam Musannaf Ibnu Abi Syaibah. Direkomendasikan oleh <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibnu Katsir menjelaskan Al-Mutaali melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Eksistensi yang Maha Tinggi:</strong>
+                        <ul>
+                            <li>Hakikat Allah di atas ciptaan (<a href="https://quranwbw.com/20:5" target="_blank">20:5</a>)</li>
+                            <li>Di atas Arsy dengan cara yang sesuai dengan keagungan-Nya (<a href="https://quranwbw.com/7:54" target="_blank">7:54</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sifat yang Maha Tinggi:</strong>
+                        <ul>
+                            <li>Sifat-sifat-Nya yang sempurna melampaui semua ciptaan (<a href="https://quranwbw.com/42:11" target="_blank">42:11</a>)</li>
+                            <li>Tidak ada kesamaan antara Pencipta dan ciptaan (<a href="https://quranwbw.com/42:11" target="_blank">42:11</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekuasaan yang Maha Tinggi:</strong>
+                        <ul>
+                            <li>Kekuasaan-Nya atas segala sesuatu (<a href="https://quranwbw.com/3:189" target="_blank">3:189</a>)</li>
+                            <li>Tidak ada yang bisa menentang otoritas-Nya (<a href="https://quranwbw.com/21:22" target="_blank">21:22</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah An-Nahl (<a href="https://quranwbw.com/16:50" target="_blank">16:50</a>), Allah menggambarkan bagaimana para malaikat takut kepada Tuhan mereka yang di atas mereka, mengilustrasikan realitas ketinggian ilahi yang dicakup oleh Al-Mutaali.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">78. Al-Mutaali (The Supreme Exalted, The Most High)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-mutaali/" target="_blank">myislam.org/99-names-of-allah/al-mutaali/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
-            <p><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-mutaali/" target="_blank">myislam.org/99-names-of-allah/al-mutaali/</a></p>
-
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_79Mutaali.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْمُتَعَالِي</div>
             <div class="transliteration">Transliteration: Al-Mutaali</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/78.%20al-muta-ali.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Al-Mutaali appears in the Quran once (13:9) with profound meanings:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Mutaali appears in the Quran once (<a href="https://quranwbw.com/13:9" target="_blank">13:9</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Supreme Exalted:</strong> The One who is above all creation in rank and power</li>
                     <li><strong>The Most High:</strong> The One whose greatness exceeds all limits</li>
                 </ul>
-                <p>Ibn Kathir explains: "He is exalted above all that is not befitting to Him, and He is high above any imperfections." This name reminds us of Allah's absolute transcendence and perfection, as mentioned in Surah Ar-Rahman (55:27): "And there will remain the Face of your Lord, Owner of Majesty and Honor."</p>
+                <p>Ibn Kathir explains: "He is exalted above all that is not befitting to Him, and He is high above any imperfections." This name reminds us of Allah's absolute transcendence and perfection, as mentioned in Surah Ar-Rahman (<a href="https://quranwbw.com/55:27" target="_blank">55:27</a>).</p>
             </div>
 
             <div class="section">
@@ -177,7 +371,7 @@
                     <div class="transliteration">ʿĀlimu l-ghaybi wa sh-shahādati l-kabīru l-mutaʿāl</div>
                     <p>"Knower of the unseen and the witnessed, the Grand, the Exalted."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse connects Al-Mutaali with Allah's omniscience (Knower of unseen and seen) and His supreme greatness. The sequence shows that true knowledge leads to recognition of Allah's exalted nature. Ibn Kathir notes that this name appears in a context emphasizing Allah's perfect attributes as opposed to human limitations.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/13/9/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse connects Al-Mutaali with Allah's omniscience (Knower of unseen and seen) and His supreme greatness. The sequence shows that true knowledge leads to recognition of Allah's exalted nature.
                     </div>
                 </div>
 
@@ -188,17 +382,17 @@
                     <div class="transliteration">Wa huwa l-ʿaliyyu l-ʿaẓīm</div>
                     <p>"And He is the Most High, the Most Great."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> In explaining Ayat al-Kursi, Ibn Kathir highlights that Allah's highness encompasses both physical elevation above creation and the elevation of His status and attributes above all else. This complements the meaning of Al-Mutaali as the Supreme Exalted.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/2/255/" target="_blank">Tafsir Ibn Kathir</a>:</strong> In explaining Ayat al-Kursi, Ibn Kathir highlights that Allah's highness encompasses both physical elevation above creation and the elevation of His status and attributes above all else.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 179
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:179" target="_blank">Sahih Muslim 179</a>
                     <div class="arabic">إِنَّ اللَّهَ عَزَّ وَجَلَّ يَقُولُ: أَنَا الْعَلِيُّ الْعَظِيمُ</div>
                     <div class="transliteration">Inna Allāha ʿazza wa jalla yaqūlu: Anā l-ʿaliyyu l-ʿaẓīm</div>
                     <p>"Indeed Allah the Almighty says: I am the Most High, the Most Great."</p>
                     <div class="tafsir-box">
-                        <strong>Context:</strong> The Prophet (ﷺ) narrated this divine statement to emphasize Allah's supreme status. This hadith complements the Quranic verses about Allah's exalted nature and connects with the name Al-Mutaali.
+                        <strong>Context:</strong> The Prophet (ﷺ) narrated this divine statement to emphasize Allah's supreme status. This hadith complements the Quranic verses about Allah's exalted nature.
                     </div>
                 </div>
             </div>
@@ -210,7 +404,7 @@
                     <div class="arabic">يَا مُتَعَالِي ارْفَعْ دَرَجَتِي وَزِدْنِي عِلْمًا نَافِعًا وَارْزُقْنِي الْعَمَلَ بِهِ</div>
                     <div class="transliteration">Yā Mutaʿālī irfaʿ darajatī wa zidnī ʿilman nāfiʿan warzuqnī l-ʿamala bih</div>
                     <p><strong>Translation:</strong> "O Supreme Exalted One, elevate my status, increase me in beneficial knowledge, and grant me the ability to act upon it."</p>
-                    <p><strong>Benefits:</strong> This dua combines seeking elevation with practical knowledge. The Prophet (ﷺ) taught that Allah elevates those who gain knowledge and act upon it (Bukhari).</p>
+                    <p><strong>Benefits:</strong> This dua combines seeking elevation with practical knowledge. The Prophet (ﷺ) taught that Allah elevates those who gain knowledge and act upon it (<a href="https://sunnah.com/bukhari:79" target="_blank">Bukhari</a>).</p>
                 </div>
 
                 <div class="dua">
@@ -218,7 +412,7 @@
                     <div class="arabic">اللَّهُمَّ أَنْتَ الْمُتَعَالِي وَمِنْكَ الْعُلُوُّ، أَذْهِبْ عَنِّي الْكِبْرَ وَاجْعَلْنِي مِنَ الْعَابِدِينَ</div>
                     <div class="transliteration">Allāhumma anta l-Mutaʿālī wa minka l-ʿuluww, adhhib ʿannī l-kibra wa jʿalnī mina l-ʿābidīn</div>
                     <p><strong>Translation:</strong> "O Allah, You are the Supreme Exalted and from You comes all highness, remove arrogance from me and make me among Your worshippers."</p>
-                    <p><strong>Source:</strong> Inspired by the Prophet's (ﷺ) teachings against arrogance (Muslim).</p>
+                    <p><strong>Source:</strong> Inspired by the Prophet's (ﷺ) teachings against arrogance (<a href="https://sunnah.com/muslim:91" target="_blank">Muslim</a>).</p>
                 </div>
             </div>
 
@@ -229,7 +423,7 @@
                     <p>For spiritual elevation:</p>
                     <ol>
                         <li>Recite "Yā Mutaʿālī" 33 times after Fajr</li>
-                        <li>Recite Surah Al-Ala (87) daily</li>
+                        <li>Recite Surah Al-Ala (<a href="https://quranwbw.com/87" target="_blank">87</a>) daily</li>
                         <li>Perform voluntary prostration while praising Allah's greatness</li>
                     </ol>
                     <p><strong>Benefits:</strong> This practice:</p>
@@ -258,164 +452,67 @@
                 <ol>
                     <li><strong>Ontological Exaltation:</strong>
                         <ul>
-                            <li>Allah's essence is above creation (20:5)</li>
-                            <li>Above His Throne in a manner befitting His majesty (7:54)</li>
+                            <li>Allah's essence is above creation (<a href="https://quranwbw.com/20:5" target="_blank">20:5</a>)</li>
+                            <li>Above His Throne in a manner befitting His majesty (<a href="https://quranwbw.com/7:54" target="_blank">7:54</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Attribute Exaltation:</strong>
                         <ul>
-                            <li>His perfect attributes exceed all creation (42:11)</li>
-                            <li>No similarity between Creator and creation (42:11)</li>
+                            <li>His perfect attributes exceed all creation (<a href="https://quranwbw.com/42:11" target="_blank">42:11</a>)</li>
+                            <li>No similarity between Creator and creation (<a href="https://quranwbw.com/42:11" target="_blank">42:11</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Power Exaltation:</strong>
                         <ul>
-                            <li>His dominion over all things (3:189)</li>
-                            <li>No one can challenge His authority (21:22)</li>
+                            <li>His dominion over all things (<a href="https://quranwbw.com/3:189" target="_blank">3:189</a>)</li>
+                            <li>No one can challenge His authority (<a href="https://quranwbw.com/21:22" target="_blank">21:22</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah An-Nahl (16:50), Allah describes how the angels fear their Lord above them, illustrating the reality of divine exaltation that Al-Mutaali encompasses.</p>
+                <p>In Surah An-Nahl (<a href="https://quranwbw.com/16:50" target="_blank">16:50</a>), Allah describes how the angels fear their Lord above them, illustrating the reality of divine exaltation that Al-Mutaali encompasses.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">78. Al-Mutaali (Yang Maha Tinggi, Yang Maha Luhur) (78)</h1>
-
-            <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-mutaali/" target="_blank">myislam.org/99-names-of-allah/al-mutaali/</a></p>
-
-            <div class="arabic">ٱلْمُتَعَالِي</div>
-            <div class="transliteration">Transliterasi: Al-Mutaali</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Mutaali muncul dalam Al-Quran sekali (13:9) dengan makna yang mendalam:</p>
-                <ul>
-                    <li><strong>Yang Maha Tinggi:</strong> Yang berada di atas seluruh ciptaan dalam kedudukan dan kekuasaan</li>
-                    <li><strong>Yang Maha Luhur:</strong> Yang keagungan-Nya melampaui semua batas</li>
-                </ul>
-                <p>Ibnu Katsir menjelaskan: "Dia Maha Tinggi di atas segala yang tidak pantas bagi-Nya, dan Dia Maha Tinggi di atas segala kekurangan." Nama ini mengingatkan kita pada transendensi dan kesempurnaan mutlak Allah, sebagaimana disebutkan dalam Surah Ar-Rahman (55:27): "Dan tetap kekal Wajah Tuhanmu yang mempunyai kebesaran dan kemuliaan."</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/13:9" target="_blank">Surah Ar-Ra'd 13:9</a>
-                    <div class="arabic">عَـٰلِمُ ٱلْغَيْبِ وَٱلشَّهَـٰدَةِ ٱلْكَبِيرُ ٱلْمُتَعَالِ</div>
-                    <div class="transliteration">ʿĀlimu l-ghaybi wa sh-shahādati l-kabīru l-mutaʿāl</div>
-                    <p>"Yang mengetahui semua yang ghaib dan yang nyata, Yang Maha Besar, Yang Maha Tinggi."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menghubungkan Al-Mutaali dengan kemahatahuan Allah (Yang Mengetahui yang ghaib dan nyata) dan keagungan-Nya yang tertinggi. Urutan ini menunjukkan bahwa pengetahuan sejati mengarah pada pengakuan akan sifat Allah yang Maha Tinggi. Ibnu Katsir mencatat bahwa nama ini muncul dalam konteks yang menekankan sifat-sifat sempurna Allah yang bertentangan dengan keterbatasan manusia.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/2:255" target="_blank">Surah Al-Baqarah 2:255</a>
-                    <div class="arabic">وَهُوَ ٱلْعَلِىُّ ٱلْعَظِيمُ</div>
-                    <div class="transliteration">Wa huwa l-ʿaliyyu l-ʿaẓīm</div>
-                    <p>"Dan Dia-lah Yang Maha Tinggi, Yang Maha Besar."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Dalam menjelaskan Ayat Kursi, Ibnu Katsir menekankan bahwa ketinggian Allah mencakup baik elevasi fisik di atas ciptaan maupun ketinggian status dan sifat-sifat-Nya di atas segala sesuatu. Ini melengkapi makna Al-Mutaali sebagai Yang Maha Tinggi.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 179
-                    <div class="arabic">إِنَّ اللَّهَ عَزَّ وَجَلَّ يَقُولُ: أَنَا الْعَلِيُّ الْعَظِيمُ</div>
-                    <div class="transliteration">Inna Allāha ʿazza wa jalla yaqūlu: Anā l-ʿaliyyu l-ʿaẓīm</div>
-                    <p>"Sesungguhnya Allah Yang Maha Perkasa dan Maha Mulia berfirman: Aku adalah Yang Maha Tinggi, Yang Maha Besar."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menceritakan pernyataan ilahi ini untuk menekankan status tertinggi Allah. Hadits ini melengkapi ayat-ayat Al-Quran tentang sifat Allah yang Maha Tinggi dan terhubung dengan nama Al-Mutaali.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Peninggian Spiritual</div>
-                    <div class="arabic">يَا مُتَعَالِي ارْفَعْ دَرَجَتِي وَزِدْنِي عِلْمًا نَافِعًا وَارْزُقْنِي الْعَمَلَ بِهِ</div>
-                    <div class="transliteration">Yā Mutaʿālī irfaʿ darajatī wa zidnī ʿilman nāfiʿan warzuqnī l-ʿamala bih</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Tinggi, tinggikan derajatku, tambahkanlah aku ilmu yang bermanfaat, dan berikan aku kemampuan untuk mengamalkannya."</p>
-                    <p><strong>Manfaat:</strong> Doa ini menggabungkan permintaan peninggian dengan ilmu yang praktis. Nabi (ﷺ) mengajarkan bahwa Allah mengangkat derajat orang yang berilmu dan mengamalkannya (Bukhari).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Perlindungan dari Kesombongan</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ الْمُتَعَالِي وَمِنْكَ الْعُلُوُّ، أَذْهِبْ عَنِّي الْكِبْرَ وَاجْعَلْنِي مِنَ الْعَابِدِينَ</div>
-                    <div class="transliteration">Allāhumma anta l-Mutaʿālī wa minka l-ʿuluww, adhhib ʿannī l-kibra wa jʿalnī mina l-ʿābidīn</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Yang Maha Tinggi dan dari-Mu datang segala ketinggian, hilangkan kesombongan dariku dan jadikan aku termasuk hamba-Mu yang beribadah."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Nabi (ﷺ) tentang larangan kesombongan (Muslim).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Amalan Peninggian</div>
-                    <p>Untuk peninggian spiritual:</p>
-                    <ol>
-                        <li>Baca "Yā Mutaʿālī" 33 kali setelah Subuh</li>
-                        <li>Baca Surah Al-A'la (87) setiap hari</li>
-                        <li>Lakukan sujud sukarela sambil memuji keagungan Allah</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini:</p>
-                    <ul>
-                        <li>Membantu mengenali status tertinggi Allah</li>
-                        <li>Menangkal perasaan bangga duniawi</li>
-                        <li>Menghubungkan dengan makna ketinggian ilahi</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Pengingat Kerendahan Hati</div>
-                    <p>Untuk menumbuhkan kerendahan hati di hadapan keagungan Allah:</p>
-                    <ol>
-                        <li>Tulis "Al-Mutaali" dengan za'faran di kertas</li>
-                        <li>Letakkan di tempat Anda sering duduk</li>
-                        <li>Baca "Subhāna rabbiya l-aʿlā" (Maha Suci Tuhanku Yang Maha Tinggi) sesering mungkin</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat sering mengingat sifat Allah yang Maha Tinggi untuk menjaga kerendahan hati, sebagaimana tercatat dalam Musannaf Ibnu Abi Syaibah.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibnu Katsir menjelaskan Al-Mutaali melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Eksistensi yang Maha Tinggi:</strong>
-                        <ul>
-                            <li>Hakikat Allah di atas ciptaan (20:5)</li>
-                            <li>Di atas Arsy dengan cara yang sesuai dengan keagungan-Nya (7:54)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Sifat yang Maha Tinggi:</strong>
-                        <ul>
-                            <li>Sifat-sifat-Nya yang sempurna melampaui semua ciptaan (42:11)</li>
-                            <li>Tidak ada kesamaan antara Pencipta dan ciptaan (42:11)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Kekuasaan yang Maha Tinggi:</strong>
-                        <ul>
-                            <li>Kekuasaan-Nya atas segala sesuatu (3:189)</li>
-                            <li>Tidak ada yang bisa menentang otoritas-Nya (21:22)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah An-Nahl (16:50), Allah menggambarkan bagaimana para malaikat takut kepada Tuhan mereka yang di atas mereka, mengilustrasikan realitas ketinggian ilahi yang dicakup oleh Al-Mutaali.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -425,10 +522,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -436,12 +535,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
