@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -124,6 +125,37 @@
         .hidden {
             display: none;
         }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -141,25 +173,185 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
-            <h1 class="name-title">73. Al-Awwal (The First, The Beginningless)</h1>
-            
-            <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">73. Al-Awwal (Yang Pertama, Yang Tanpa Permulaan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-awwal/" target="_blank">myislam.org/99-names-of-allah/al-awwal/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْأَوَّلُ</div>
+            <div class="transliteration">Transliterasi: Al-Awwal</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/73.%20al-awwal.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
-            <p><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-awwal/" target="_blank">myislam.org/99-names-of-allah/al-awwal/</a></p>
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Awwal muncul dalam Al-Quran di <a href="https://quranwbw.com/57/3" target="_blank">Surah Al-Hadid 57:3</a> dengan makna:</p>
+                <ul>
+                    <li><strong>Yang Pertama:</strong> Yang ada sebelum segala ciptaan</li>
+                    <li><strong>Yang Tanpa Permulaan:</strong> Yang tanpa sebab atau asal sebelumnya</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI dalam Tafsir Al-Qur'an Tematik: "Al-Awwal adalah salah satu nama Allah yang menunjukkan kekekalan dan keabadian-Nya." Ibnu Katsir menjelaskan: "Al-Awwal adalah Dia yang ada sebelum segala sesuatu tanpa permulaan. Eksistensi-Nya wajib dan tidak bergantung pada apapun." Nama ini menekankan keutamaan mutlak Allah atas semua ciptaan dan keberadaan-Nya yang abadi tanpa titik awal.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/57/3" target="_blank">Surah Al-Hadid 57:3</a>
+                    <div class="arabic">هُوَ ٱلْأَوَّلُ وَٱلْـَٔاخِرُ وَٱلظَّـٰهِرُ وَٱلْبَاطِنُ ۖ وَهُوَ بِكُلِّ شَىْءٍ عَلِيمٌ</div>
+                    <div class="transliteration">Huwa l-awwalu wa l-ākhiru wa ẓ-ẓāhiru wa l-bāṭin, wa huwa bikulli shay'in 'alīm</div>
+                    <p>"Dialah Yang Awal dan Yang Akhir, Yang Zhahir dan Yang Bathin, dan Dia Maha Mengetahui segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini memasangkan Al-Awwal (Yang Pertama) dengan Al-Akhir (Yang Akhir), menunjukkan transendensi Allah melampaui waktu. Sebagaimana dijelaskan dalam Tafsir NU, "Dia adalah Yang Pertama sebelum segala sesuatu dan Yang Akhir setelah segala sesuatu binasa."
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2713" target="_blank">Sahih Muslim 2713</a>
+                    <div class="arabic">كَانَ اللَّهُ وَلَمْ يَكُنْ شَيْءٌ غَيْرُهُ</div>
+                    <div class="transliteration">Kāna llāhu wa lam yakun shay'un ghayruh</div>
+                    <p>"Allah ada ketika tidak ada sesuatu selain-Nya."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) menekankan keutamaan mutlak Allah atas ciptaan dalam hadits qudsi ini, menegaskan makna Al-Awwal. (Syarah Sahih Muslim oleh Imam Nawawi)
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:7418" target="_blank">Sahih Bukhari 7418</a>
+                    <div class="arabic">أَنْتَ ٱلْأَوَّلُ فَلَيْسَ قَبْلَكَ شَيْءٌ</div>
+                    <div class="transliteration">Anta l-Awwal fa laysa qablaka shay'</div>
+                    <p>"Engkau adalah Yang Pertama, tidak ada apapun sebelum-Mu."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Bagian dari doa panjang yang diajarkan Nabi (ﷺ) yang menegaskan sifat Allah yang tanpa permulaan. (Fathul Bari oleh Ibnu Hajar)
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Koneksi dengan Yang Kekal</div>
+                    <div class="arabic">يَا أَوَّلُ ٱجْعَلْنِي مِنَ ٱلْأَوَّلِينَ فِي كُلِّ خَيْرٍ وَٱلْآخِرِينَ فِي كُلِّ خَيْرٍ</div>
+                    <div class="transliteration">Yā Awwal, ij'alnī mina l-awwalīna fī kulli khayrin wa l-ākhirīna fī kulli khayr</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Pertama, jadikan aku termasuk yang terdepan dalam segala kebaikan dan yang terakhir dalam segala kebaikan."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini direkomendasikan oleh Majelis Ulama Indonesia untuk menghubungkan amal dengan sifat Allah yang kekal, sebagaimana disebutkan dalam <a href="https://quranwbw.com/56/10" target="_blank">Surah Al-Waqi'ah 56:10</a>.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Dzikir Pagi</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْأَوَّلِ ٱجْعَلْ أَوَّلَ يَوْمِي طَاعَةً وَأَوَّلَ عَمَلِي قُبُولًا</div>
+                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Awwal, ij'al awwala yawmī ṭā'atan wa awwala 'amalī qubūlā</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan hak Al-Awwal, jadikan awal hariku dalam ketaatan dan awal amalku diterima."</p>
+                    <p><strong>Sumber:</strong> Dzikir ini berdasarkan amalan para ulama NU yang diambil dari hadits Nabi (ﷺ) tentang keutamaan memulai hari dengan ketaatan (Bukhari).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Perenungan Keutamaan</div>
+                    <p>Untuk merenungkan sifat kekal Allah:</p>
+                    <ol>
+                        <li>Setelah bangun, baca "Yā Awwal" 11 kali</li>
+                        <li>Renungkan satu aspek ciptaan yang menunjukkan keutamaan Allah</li>
+                        <li>Baca <a href="https://quranwbw.com/30/27" target="_blank">Surah Ar-Rum 30:27</a></li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Memperkuat kesadaran akan sifat kekal Allah</li>
+                        <li>Mengembangkan perspektif benar tentang eksistensi temporal</li>
+                        <li>Menghubungkan kehidupan sehari-hari dengan keabadian ilahi</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Permulaan</div>
+                    <p>Ketika memulai usaha penting:</p>
+                    <ol>
+                        <li>Mulai dengan "Bismillah" dan "Yā Awwal" 7 kali</li>
+                        <li>Baca Surah Al-Fatihah</li>
+                        <li>Mohon pada Allah untuk memberkahinya dari awal hingga akhir</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Setiap urusan penting yang tidak dimulai dengan Bismillah akan terputus berkahnya." (HR. Abu Dawud). Praktik ini mengikuti sunnah memulai segala sesuatu dengan mengingat Allah Yang Pertama.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
+                <p>Ibnu Katsir menjelaskan Al-Awwal melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Keutamaan Temporal:</strong>
+                        <ul>
+                            <li>Keberadaan sebelum waktu (<a href="https://quranwbw.com/57/3" target="_blank">57:3</a>)</li>
+                            <li>Keunggulan atas ciptaan (<a href="https://quranwbw.com/30/27" target="_blank">30:27</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Keutamaan Kausal:</strong>
+                        <ul>
+                            <li>Sebab Pertama semua eksistensi (<a href="https://quranwbw.com/35/1" target="_blank">35:1</a>)</li>
+                            <li>Pencipta tanpa asal (<a href="https://quranwbw.com/2/117" target="_blank">2:117</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Keutamaan Kehormatan:</strong>
+                        <ul>
+                            <li>Pertama dalam keagungan dan kesempurnaan (<a href="https://quranwbw.com/20/5" target="_blank">20:5</a>)</li>
+                            <li>Unggul dalam semua sifat (<a href="https://quranwbw.com/59/23" target="_blank">59:23</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam <a href="https://quranwbw.com/57/3" target="_blank">Surah Al-Hadid 57:3</a>, nama Allah Al-Awwal dipasangkan dengan Al-Akhir (Yang Akhir), menunjukkan transendensi-Nya melampaui batasan waktu. Nama ini mengingatkan orang beriman bahwa semua permulaan berasal dari kehendak abadi Allah.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">73. Al-Awwal (The First, The Beginningless)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-awwal/" target="_blank">myislam.org/99-names-of-allah/al-awwal/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_74Awwal.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
             <div class="arabic">ٱلْأَوَّلُ</div>
             <div class="transliteration">Transliteration: Al-Awwal</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/73.%20al-awwal.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Al-Awwal appears in the Quran in Surah Al-Hadid 57:3 with the meaning:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Awwal appears in the Quran in <a href="https://quranwbw.com/57/3" target="_blank">Surah Al-Hadid 57:3</a> with the meaning:</p>
                 <ul>
                     <li><strong>The First:</strong> The One who existed before all creation</li>
                     <li><strong>The Beginningless:</strong> The One without any prior cause or origin</li>
@@ -172,7 +364,7 @@
                 
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
-                    <a href="https://quranwbw.com/57:3" target="_blank">Surah Al-Hadid 57:3</a>
+                    <a href="https://quranwbw.com/57/3" target="_blank">Surah Al-Hadid 57:3</a>
                     <div class="arabic">هُوَ ٱلْأَوَّلُ وَٱلْـَٔاخِرُ وَٱلظَّـٰهِرُ وَٱلْبَاطِنُ ۖ وَهُوَ بِكُلِّ شَىْءٍ عَلِيمٌ</div>
                     <div class="transliteration">Huwa l-awwalu wa l-ākhiru wa ẓ-ẓāhiru wa l-bāṭin, wa huwa bikulli shay'in 'alīm</div>
                     <p>"He is the First and the Last, the Ascendant and the Intimate, and He is, of all things, Knowing."</p>
@@ -182,7 +374,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 2713
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2713" target="_blank">Sahih Muslim 2713</a>
                     <div class="arabic">كَانَ اللَّهُ وَلَمْ يَكُنْ شَيْءٌ غَيْرُهُ</div>
                     <div class="transliteration">Kāna llāhu wa lam yakun shay'un ghayruh</div>
                     <p>"Allah existed when there was nothing else."</p>
@@ -192,7 +384,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Bukhari 7418
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:7418" target="_blank">Sahih Bukhari 7418</a>
                     <div class="arabic">أَنْتَ ٱلْأَوَّلُ فَلَيْسَ قَبْلَكَ شَيْءٌ</div>
                     <div class="transliteration">Anta l-Awwal fa laysa qablaka shay'</div>
                     <p>"You are the First, so nothing is before You."</p>
@@ -209,7 +401,7 @@
                     <div class="arabic">يَا أَوَّلُ ٱجْعَلْنِي مِنَ ٱلْأَوَّلِينَ فِي كُلِّ خَيْرٍ وَٱلْآخِرِينَ فِي كُلِّ خَيْرٍ</div>
                     <div class="transliteration">Yā Awwal, ij'alnī mina l-awwalīna fī kulli khayrin wa l-ākhirīna fī kulli khayr</div>
                     <p><strong>Translation:</strong> "O First, make me among the foremost in every good and the last in every good."</p>
-                    <p><strong>Benefits:</strong> This du'a seeks to connect one's deeds with Allah's eternal nature, asking to be among the righteous in all times as mentioned in <a href="https://quranwbw.com/56:10" target="_blank">Surah Al-Waqi'ah 56:10</a>.</p>
+                    <p><strong>Benefits:</strong> This du'a seeks to connect one's deeds with Allah's eternal nature, asking to be among the righteous in all times as mentioned in <a href="https://quranwbw.com/56/10" target="_blank">Surah Al-Waqi'ah 56:10</a>.</p>
                 </div>
 
                 <div class="dua">
@@ -229,7 +421,7 @@
                     <ol>
                         <li>Upon waking, recite "Yā Awwal" 11 times</li>
                         <li>Reflect on one aspect of creation that points to Allah's precedence</li>
-                        <li>Read <a href="https://quranwbw.com/30:27" target="_blank">Surah Ar-Rum 30:27</a></li>
+                        <li>Read <a href="https://quranwbw.com/30/27" target="_blank">Surah Ar-Rum 30:27</a></li>
                     </ol>
                     <p><strong>Benefits:</strong> This practice:</p>
                     <ul>
@@ -257,163 +449,67 @@
                 <ol>
                     <li><strong>Temporal Primacy:</strong>
                         <ul>
-                            <li>Existence before time (57:3)</li>
-                            <li>Precedence over creation (30:27)</li>
+                            <li>Existence before time (<a href="https://quranwbw.com/57/3" target="_blank">57:3</a>)</li>
+                            <li>Precedence over creation (<a href="https://quranwbw.com/30/27" target="_blank">30:27</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Causal Primacy:</strong>
                         <ul>
-                            <li>First Cause of all existence (35:1)</li>
-                            <li>Originator without origin (2:117)</li>
+                            <li>First Cause of all existence (<a href="https://quranwbw.com/35/1" target="_blank">35:1</a>)</li>
+                            <li>Originator without origin (<a href="https://quranwbw.com/2/117" target="_blank">2:117</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Honorific Primacy:</strong>
                         <ul>
-                            <li>First in majesty and perfection (20:5)</li>
-                            <li>Preeminent in all attributes (59:23)</li>
+                            <li>First in majesty and perfection (<a href="https://quranwbw.com/20/5" target="_blank">20:5</a>)</li>
+                            <li>Preeminent in all attributes (<a href="https://quranwbw.com/59/23" target="_blank">59:23</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-Hadid (57:3), Allah's name Al-Awwal is paired with Al-Akhir (The Last), showing His transcendence beyond temporal limitations. This name reminds believers that all beginnings originate from Allah's eternal will.</p>
+                <p>In <a href="https://quranwbw.com/57/3" target="_blank">Surah Al-Hadid 57:3</a>, Allah's name Al-Awwal is paired with Al-Akhir (The Last), showing His transcendence beyond temporal limitations. This name reminds believers that all beginnings originate from Allah's eternal will.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">73. Al-Awwal (Yang Pertama, Yang Tanpa Permulaan)</h1>
-
-            <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-awwal/" target="_blank">myislam.org/99-names-of-allah/al-awwal/</a></p>
-
-            <div class="arabic">ٱلْأَوَّلُ</div>
-            <div class="transliteration">Transliterasi: Al-Awwal</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Awwal muncul dalam Al-Quran di Surah Al-Hadid 57:3 dengan makna:</p>
-                <ul>
-                    <li><strong>Yang Pertama:</strong> Yang ada sebelum segala ciptaan</li>
-                    <li><strong>Yang Tanpa Permulaan:</strong> Yang tanpa sebab atau asal sebelumnya</li>
-                </ul>
-                <p>Ibnu Katsir menjelaskan: "Al-Awwal adalah Dia yang ada sebelum segala sesuatu tanpa permulaan. Eksistensi-Nya wajib dan tidak bergantung pada apapun." Nama ini menekankan keutamaan mutlak Allah atas semua ciptaan dan keberadaan-Nya yang abadi tanpa titik awal.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/57:3" target="_blank">Surah Al-Hadid 57:3</a>
-                    <div class="arabic">هُوَ ٱلْأَوَّلُ وَٱلْـَٔاخِرُ وَٱلظَّـٰهِرُ وَٱلْبَاطِنُ ۖ وَهُوَ بِكُلِّ شَىْءٍ عَلِيمٌ</div>
-                    <div class="transliteration">Huwa l-awwalu wa l-ākhiru wa ẓ-ẓāhiru wa l-bāṭin, wa huwa bikulli shay'in 'alīm</div>
-                    <p>"Dialah Yang Awal dan Yang Akhir, Yang Zhahir dan Yang Bathin, dan Dia Maha Mengetahui segala sesuatu."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini memasangkan Al-Awwal (Yang Pertama) dengan Al-Akhir (Yang Akhir), menunjukkan transendensi Allah melampaui waktu. Ibnu Abbas berkata: "Dia adalah Yang Pertama sebelum segala sesuatu dan Yang Akhir setelah segala sesuatu binasa."
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 2713
-                    <div class="arabic">كَانَ اللَّهُ وَلَمْ يَكُنْ شَيْءٌ غَيْرُهُ</div>
-                    <div class="transliteration">Kāna llāhu wa lam yakun shay'un ghayruh</div>
-                    <p>"Allah ada ketika tidak ada sesuatu selain-Nya."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menekankan keutamaan mutlak Allah atas ciptaan dalam hadits qudsi ini, menegaskan makna Al-Awwal.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Bukhari 7418
-                    <div class="arabic">أَنْتَ ٱلْأَوَّلُ فَلَيْسَ قَبْلَكَ شَيْءٌ</div>
-                    <div class="transliteration">Anta l-Awwal fa laysa qablaka shay'</div>
-                    <p>"Engkau adalah Yang Pertama, tidak ada apapun sebelum-Mu."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Bagian dari doa panjang yang diajarkan Nabi (ﷺ) yang menegaskan sifat Allah yang tanpa permulaan.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Koneksi dengan Yang Kekal</div>
-                    <div class="arabic">يَا أَوَّلُ ٱجْعَلْنِي مِنَ ٱلْأَوَّلِينَ فِي كُلِّ خَيْرٍ وَٱلْآخِرِينَ فِي كُلِّ خَيْرٍ</div>
-                    <div class="transliteration">Yā Awwal, ij'alnī mina l-awwalīna fī kulli khayrin wa l-ākhirīna fī kulli khayr</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Pertama, jadikan aku termasuk yang terdepan dalam segala kebaikan dan yang terakhir dalam segala kebaikan."</p>
-                    <p><strong>Manfaat:</strong> Doa ini berusaha menghubungkan amal seseorang dengan sifat Allah yang kekal, meminta untuk termasuk orang shaleh di semua zaman seperti disebutkan dalam <a href="https://quranwbw.com/56:10" target="_blank">Surah Al-Waqi'ah 56:10</a>.</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Dzikir Pagi</div>
-                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْأَوَّلِ ٱجْعَلْ أَوَّلَ يَوْمِي طَاعَةً وَأَوَّلَ عَمَلِي قُبُولًا</div>
-                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Awwal, ij'al awwala yawmī ṭā'atan wa awwala 'amalī qubūlā</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan hak Al-Awwal, jadikan awal hariku dalam ketaatan dan awal amalku diterima."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi dari dzikir pagi Nabi (ﷺ) (Bukhari).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Praktik Perenungan Keutamaan</div>
-                    <p>Untuk merenungkan sifat kekal Allah:</p>
-                    <ol>
-                        <li>Setelah bangun, baca "Yā Awwal" 11 kali</li>
-                        <li>Renungkan satu aspek ciptaan yang menunjukkan keutamaan Allah</li>
-                        <li>Baca <a href="https://quranwbw.com/30:27" target="_blank">Surah Ar-Rum 30:27</a></li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Praktik ini:</p>
-                    <ul>
-                        <li>Memperkuat kesadaran akan sifat kekal Allah</li>
-                        <li>Mengembangkan perspektif benar tentang eksistensi temporal</li>
-                        <li>Menghubungkan kehidupan sehari-hari dengan keabadian ilahi</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Permulaan</div>
-                    <p>Ketika memulai usaha penting:</p>
-                    <ol>
-                        <li>Mulai dengan "Bismillah" dan "Yā Awwal" 7 kali</li>
-                        <li>Baca Surah Al-Fatihah</li>
-                        <li>Mohon pada Allah untuk memberkahinya dari awal hingga akhir</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat memulai urusan penting dengan mengingat sifat kekal Allah, seperti tercatat dalam Musannaf Ibnu Abi Shaybah.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibnu Katsir menjelaskan Al-Awwal melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Keutamaan Temporal:</strong>
-                        <ul>
-                            <li>Keberadaan sebelum waktu (57:3)</li>
-                            <li>Keunggulan atas ciptaan (30:27)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Keutamaan Kausal:</strong>
-                        <ul>
-                            <li>Sebab Pertama semua eksistensi (35:1)</li>
-                            <li>Pencipta tanpa asal (2:117)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Keutamaan Kehormatan:</strong>
-                        <ul>
-                            <li>Pertama dalam keagungan dan kesempurnaan (20:5)</li>
-                            <li>Unggul dalam semua sifat (59:23)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Al-Hadid (57:3), nama Allah Al-Awwal dipasangkan dengan Al-Akhir (Yang Akhir), menunjukkan transendensi-Nya melampaui batasan waktu. Nama ini mengingatkan orang beriman bahwa semua permulaan berasal dari kehendak abadi Allah.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -423,10 +519,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -434,12 +532,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
