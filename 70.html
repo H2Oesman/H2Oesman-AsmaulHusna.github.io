@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -124,6 +125,37 @@
         .hidden {
             display: none;
         }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -141,25 +173,197 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
-            <h1 class="name-title">70. Al-Muqtadir (The Omnipotent, The Perfect in Power)</h1>
-            
-            <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">70. Al-Muqtadir (Yang Maha Kuasa, Sempurna dalam Kekuatan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, <a href="https://myislam.org/99-names-of-allah/al-muqtadir/" target="_blank">myislam.org</a></div>
+
+            <div class="arabic">ٱلْمُقْتَدِرُ</div>
+            <div class="transliteration">Transliterasi: Al-Muqtadir</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/70.%20al-muqtadir.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
             </div>
 
-            <p><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muqtadir/" target="_blank">myislam.org/99-names-of-allah/al-muqtadir/</a></p>
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Muqtadir muncul dalam Al-Quran tiga kali (<a href="https://quranwbw.com/18:45" target="_blank">18:45</a>, <a href="https://quranwbw.com/54:42" target="_blank">54:42</a>, <a href="https://quranwbw.com/54:55" target="_blank">54:55</a>) dengan makna:</p>
+                <ul>
+                    <li><strong>Yang Maha Kuasa:</strong> Yang memiliki kekuasaan sempurna atas segala sesuatu</li>
+                    <li><strong>Sempurna dalam Kekuatan:</strong> Yang melaksanakan apa yang Dia kehendaki dengan cara yang Dia kehendaki</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI, Al-Muqtadir adalah Dzat yang kekuasaan-Nya meliputi segala sesuatu. Ibnu Katsir menjelaskan: "Al-Muqtadir adalah Yang kekuasaan-Nya sempurna dan paripurna. Tidak ada yang luput dari kekuasaan-Nya, dan tidak ada yang terjadi kecuali dengan kehendak-Nya." (Tafsir Ibn Kathir)</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/18:45" target="_blank">Surah Al-Kahf 18:45</a>
+                    <div class="arabic">وَٱضْرِبْ لَهُم مَّثَلَ ٱلْحَيَوٰةِ ٱلدُّنْيَا كَمَآءٍ أَنزَلْنَـٰهُ مِنَ ٱلسَّمَآءِ فَٱخْتَلَطَ بِهِۦ نَبَاتُ ٱلْأَرْضِ فَأَصْبَحَ هَشِيمًۭا تَذْرُوهُ ٱلرِّيَـٰحُ ۗ وَكَانَ ٱللَّهُ عَلَىٰ كُلِّ شَىْءٍۢ مُّقْتَدِرًۭا</div>
+                    <div class="transliteration">Wa ḍrib lahum mathala l-ḥayāti d-dunyā kamā'in anzalnāhu mina s-samā'i fakhtalaṭa bihī nabātu l-arḍi fa-aṣbaḥa hashīman tadhrūhu r-riyāḥ. Wa kāna llāhu 'alā kulli shay'in muqtadirā</div>
+                    <p>"Dan berikanlah kepada mereka perumpamaan kehidupan dunia ini, [yaitu] seperti air yang Kami turunkan dari langit, lalu tumbuhlah dengan suburnya tumbuh-tumbuhan di muka bumi, kemudian tumbuhan itu menjadi kering yang diterbangkan oleh angin. Dan Allah Maha Kuasa atas segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan kekuasaan Allah yang sempurna melalui siklus tumbuh-tumbuhan. Penyebutan khusus Al-Muqtadir menekankan bahwa kekuasaan Allah sempurna dan meliputi segala aspek ciptaan.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/54:42" target="_blank">Surah Al-Qamar 54:42</a>
+                    <div class="arabic">كَذَّبُوا۟ بِـَٔايَـٰتِنَا كُلِّهَا فَأَخَذْنَـٰهُمْ أَخْذَ عَزِيزٍۢ مُّقْتَدِرٍۢ</div>
+                    <div class="transliteration">Kadhdhabū bi-āyātinā kullihā fa-akhadhnāhum akhda 'azīzin muqtadir</div>
+                    <p>"Mereka mendustakan semua ayat-ayat Kami, maka Kami siksa mereka dengan siksaan dari Yang Maha Perkasa lagi Maha Kuasa."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menggambarkan hukuman Firaun, menunjukkan bahwa tidak ada yang bisa lolos dari kekuasaan Allah ketika Dia memutuskan untuk menghukum.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/54:55" target="_blank">Surah Al-Qamar 54:55</a>
+                    <div class="arabic">فِى مَقْعَدِ صِدْقٍ عِندَ مَلِيكٍۢ مُّقْتَدِرٍۭ</div>
+                    <div class="transliteration">Fī maq'adi ṣidqin 'inda malīkin muqtadir</div>
+                    <p>"Di tempat yang dekat di sisi Tuhan Yang Berkuasa."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menggambarkan balasan orang-orang yang shaleh di Surga, dekat dengan Allah Yang Maha Kuasa.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2653" target="_blank">Sahih Muslim 2653</a>
+                    <div class="arabic">إِنَّ اللَّهَ قَدِيرٌ مُقْتَدِرٌ، فَمَنْ شَكَّ فِي قُدْرَتِي فَقَدْ كَفَرَ</div>
+                    <div class="transliteration">Inna llāha qadīrun muqtadir, fa-man shakka fī qudratī fa-qad kafar</div>
+                    <p>"Sesungguhnya Allah Maha Kuasa dan Sempurna dalam Kemampuan. Barangsiapa meragukan kekuasaan-Ku, maka dia telah kafir."</p>
+                    <div class="tafsir-box">
+                        <strong>Keterangan NU:</strong> Hadits ini menekankan pentingnya meyakini kekuasaan Allah yang sempurna sebagai bagian dari akidah Islam.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Mengakui Kekuasaan Ilahi</div>
+                    <div class="arabic">يَا مُقْتَدِرُ بِقُدْرَتِكَ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
+                    <div class="transliteration">Yā Muqtadir, bi-qudratika aṣliḥ lī sha'nī kullah, wa lā takilnī ilā nafsī ṭarfata 'ayn</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Sempurna dalam Kekuatan, dengan kekuasaan-Mu perbaikilah semua urusanku dan jangan serahkan aku kepada diriku sendiri walau sekejap mata."</p>
+                    <p><strong>Sumber:</strong> Doa ini diajarkan dalam kitab-kitab wirid NU sebagai bentuk pengakuan akan kekuasaan Allah yang sempurna.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Saat Kesulitan</div>
+                    <div class="arabic">اللَّهُمَّ بِقُدْرَتِكَ ٱلْكَامِلَةِ وَحِكْمَتِكَ ٱلْبَالِغَةِ، اكْشِفْ عَنِّي مَآ أَنَا فِيهِ</div>
+                    <div class="transliteration">Allāhumma bi-qudratika l-kāmilati wa ḥikmatika l-bālighati, kshif 'annī mā anā fīh</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan kekuasaan-Mu yang sempurna dan hikmah-Mu yang lengkap, singkirkan dariku apa yang aku alami."</p>
+                    <p><strong>Sumber:</strong> Kumpulan Doa Kementerian Agama RI, terinspirasi dari ajaran Nabi (ﷺ).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Perenungan Kekuasaan</div>
+                    <p>Untuk memperkuat pengakuan akan kekuasaan Allah:</p>
+                    <ol>
+                        <li>Setiap pagi, renungkan satu manifestasi kekuasaan Allah dalam penciptaan</li>
+                        <li>Baca "Yā Muqtadir" 33 kali</li>
+                        <li>Baca <a href="https://quranwbw.com/3:26" target="_blank">Surah Al-Imran 3:26</a> setiap hari</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Praktik ini diajarkan dalam majelis-majelis taklim NU untuk:</p>
+                    <ul>
+                        <li>Meningkatkan kesadaran akan kekuasaan ilahi</li>
+                        <li>Memperkuat ketergantungan pada Allah</li>
+                        <li>Mengembangkan perspektif yang benar tentang kekuasaan</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Malam Pengakuan Kekuasaan</div>
+                    <p>Pada Lailatul Qadar (Malam Kemuliaan):</p>
+                    <ol>
+                        <li>Bangun untuk beribadah antara Maghrib dan Fajr</li>
+                        <li>Baca "Yā Muqtadir" 100 kali</li>
+                        <li>Renungkan bagaimana kekuasaan Allah termanifestasi dalam penetapan takdir</li>
+                    </ol>
+                    <p><strong>Dasar:</strong> Amalan ini berdasarkan tradisi pesantren NU dalam memaknai Lailatul Qadar.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Muqtadir melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Kekuasaan Kreatif:</strong>
+                        <ul>
+                            <li>Kemampuan sempurna dalam penciptaan (<a href="https://quranwbw.com/36:81" target="_blank">36:81</a>)</li>
+                            <li>Ketepatan dalam semua aspek alam semesta (<a href="https://quranwbw.com/67:3" target="_blank">67:3</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekuasaan Pemerintahan:</strong>
+                        <ul>
+                            <li>Kendali atas segala urusan (<a href="https://quranwbw.com/35:41" target="_blank">35:41</a>)</li>
+                            <li>Kemampuan mengubah keadaan (<a href="https://quranwbw.com/3:26" target="_blank">3:26</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kekuasaan Yudisial:</strong>
+                        <ul>
+                            <li>Keadilan sempurna pada Hari Kiamat (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
+                            <li>Kemampuan memberi pahala dan hukuman sesuai kehendak-Nya (<a href="https://quranwbw.com/2:284" target="_blank">2:284</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-An'am (<a href="https://quranwbw.com/6:65" target="_blank">6:65</a>), Allah menunjukkan kekuasaan-Nya yang sempurna. Nama ini mengingatkan bahwa tidak ada kekuasaan yang ada terlepas dari kehendak Allah.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">70. Al-Muqtadir (The Omnipotent, The Perfect in Power)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muqtadir/" target="_blank">myislam.org/99-names-of-allah/al-muqtadir/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_71Muqtadir.mp3?_=33" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
             <div class="arabic">ٱلْمُقْتَدِرُ</div>
             <div class="transliteration">Transliteration: Al-Muqtadir</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio70.%20al-muqtadir.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Al-Muqtadir appears in the Quran three times (18:45, 54:42, 54:55) with the meaning:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Muqtadir appears in the Quran three times (<a href="https://quranwbw.com/18:45" target="_blank">18:45</a>, <a href="https://quranwbw.com/54:42" target="_blank">54:42</a>, <a href="https://quranwbw.com/54:55" target="_blank">54:55</a>) with the meaning:</p>
                 <ul>
                     <li><strong>The Omnipotent:</strong> The One who has perfect power over all things</li>
                     <li><strong>The Perfect in Power:</strong> The One who enacts whatever He wills in the manner He wills</li>
@@ -177,7 +381,7 @@
                     <div class="transliteration">Wa ḍrib lahum mathala l-ḥayāti d-dunyā kamā'in anzalnāhu mina s-samā'i fakhtalaṭa bihī nabātu l-arḍi fa-aṣbaḥa hashīman tadhrūhu r-riyāḥ. Wa kāna llāhu 'alā kulli shay'in muqtadirā</div>
                     <p>"And present to them the example of the life of this world, [its being] like rain which We send down from the sky, and the vegetation of the earth mingles with it and [then] it becomes dry remnants, scattered by the winds. And Allah is ever, over all things, Perfect in Ability."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse demonstrates Allah's perfect power through the cycle of vegetation. Just as He brings life from dead earth and then returns it to dryness, His power encompasses all aspects of creation. The specific mention of Al-Muqtadir here emphasizes that this power is complete and perfect.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse demonstrates Allah's perfect power through the cycle of vegetation. The specific mention of Al-Muqtadir here emphasizes that this power is complete and perfect.
                     </div>
                 </div>
 
@@ -188,7 +392,7 @@
                     <div class="transliteration">Kadhdhabū bi-āyātinā kullihā fa-akhadhnāhum akhda 'azīzin muqtadir</div>
                     <p>"They denied all Our signs, so We seized them with a seizure of One Exalted in Might and Perfect in Ability."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse describes Pharaoh's punishment, showing that no one can escape Allah's power when He decides to punish. The combination of 'Aziz (Exalted in Might) and Muqtadir (Perfect in Ability) emphasizes the completeness of Allah's power in both authority and execution.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse describes Pharaoh's punishment, showing that no one can escape Allah's power when He decides to punish.
                     </div>
                 </div>
 
@@ -199,17 +403,17 @@
                     <div class="transliteration">Fī maq'adi ṣidqin 'inda malīkin muqtadir</div>
                     <p>"In a seat of honor near a Sovereign, Perfect in Ability."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse describes the reward of the righteous in Paradise, near Allah who is Perfect in Ability. The context shows that just as His power encompasses punishment, it also encompasses reward, demonstrating the perfection of His abilities in all matters.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse describes the reward of the righteous in Paradise, near Allah who is Perfect in Ability.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 2653
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2653" target="_blank">Sahih Muslim 2653</a>
                     <div class="arabic">إِنَّ اللَّهَ قَدِيرٌ مُقْتَدِرٌ، فَمَنْ شَكَّ فِي قُدْرَتِي فَقَدْ كَفَرَ</div>
                     <div class="transliteration">Inna llāha qadīrun muqtadir, fa-man shakka fī qudratī fa-qad kafar</div>
                     <p>"Verily Allah is All-Powerful and Perfect in Ability. Whoever doubts My power has committed disbelief."</p>
                     <div class="tafsir-box">
-                        <strong>Context:</strong> The Prophet (ﷺ) emphasized that doubting Allah's perfect power constitutes kufr (disbelief), showing the importance of this attribute in Islamic theology.
+                        <strong>Context:</strong> The Prophet (ﷺ) emphasized that doubting Allah's perfect power constitutes kufr (disbelief).
                     </div>
                 </div>
             </div>
@@ -221,7 +425,7 @@
                     <div class="arabic">يَا مُقْتَدِرُ بِقُدْرَتِكَ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
                     <div class="transliteration">Yā Muqtadir, bi-qudratika aṣliḥ lī sha'nī kullah, wa lā takilnī ilā nafsī ṭarfata 'ayn</div>
                     <p><strong>Translation:</strong> "O Perfect in Ability, by Your power rectify all my affairs and do not leave me to myself even for the blink of an eye."</p>
-                    <p><strong>Benefits:</strong> This du'a teaches complete reliance on Allah's perfect power. The Prophet (ﷺ) taught similar supplications to acknowledge our dependence on Allah's constant power and control over all matters.</p>
+                    <p><strong>Benefits:</strong> This du'a teaches complete reliance on Allah's perfect power.</p>
                 </div>
 
                 <div class="dua">
@@ -269,175 +473,67 @@
                 <ol>
                     <li><strong>Creative Power:</strong>
                         <ul>
-                            <li>Perfect ability in creation (36:81)</li>
-                            <li>Precision in all aspects of the universe (67:3)</li>
+                            <li>Perfect ability in creation (<a href="https://quranwbw.com/36:81" target="_blank">36:81</a>)</li>
+                            <li>Precision in all aspects of the universe (<a href="https://quranwbw.com/67:3" target="_blank">67:3</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Governing Power:</strong>
                         <ul>
-                            <li>Control over all affairs (35:41)</li>
-                            <li>Ability to change circumstances (3:26)</li>
+                            <li>Control over all affairs (<a href="https://quranwbw.com/35:41" target="_blank">35:41</a>)</li>
+                            <li>Ability to change circumstances (<a href="https://quranwbw.com/3:26" target="_blank">3:26</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Judicial Power:</strong>
                         <ul>
-                            <li>Perfect justice on Judgment Day (40:16)</li>
-                            <li>Ability to reward and punish as He wills (2:284)</li>
+                            <li>Perfect justice on Judgment Day (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
+                            <li>Ability to reward and punish as He wills (<a href="https://quranwbw.com/2:284" target="_blank">2:284</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-An'am (6:65), Allah demonstrates His perfect power by showing He could destroy creation or bring new creation at will. This name reminds believers that no power exists independent of Allah's will.</p>
+                <p>In Surah Al-An'am (<a href="https://quranwbw.com/6:65" target="_blank">6:65</a>), Allah demonstrates His perfect power by showing He could destroy creation or bring new creation at will. This name reminds believers that no power exists independent of Allah's will.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">70. Al-Muqtadir (Maha Kuasa, Sempurna dalam Kekuatan)</h1>
-
-            <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muqtadir/" target="_blank">myislam.org/99-names-of-allah/al-muqtadir/</a></p>
-
-            <div class="arabic">ٱلْمُقْتَدِرُ</div>
-            <div class="transliteration">Transliterasi: Al-Muqtadir</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Muqtadir muncul dalam Al-Quran tiga kali (18:45, 54:42, 54:55) dengan makna:</p>
-                <ul>
-                    <li><strong>Maha Kuasa:</strong> Yang memiliki kekuasaan sempurna atas segala sesuatu</li>
-                    <li><strong>Sempurna dalam Kekuatan:</strong> Yang melaksanakan apa yang Dia kehendaki dengan cara yang Dia kehendaki</li>
-                </ul>
-                <p>Ibnu Katsir menjelaskan: "Al-Muqtadir adalah Yang kekuasaan-Nya sempurna dan paripurna. Tidak ada yang luput dari kekuasaan-Nya, dan tidak ada yang terjadi kecuali dengan kehendak-Nya." Nama ini menekankan bahwa kekuasaan Allah adalah mutlak dan mencakup segala sesuatu yang ada.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/18:45" target="_blank">Surah Al-Kahf 18:45</a>
-                    <div class="arabic">وَٱضْرِبْ لَهُم مَّثَلَ ٱلْحَيَوٰةِ ٱلدُّنْيَا كَمَآءٍ أَنزَلْنَـٰهُ مِنَ ٱلسَّمَآءِ فَٱخْتَلَطَ بِهِۦ نَبَاتُ ٱلْأَرْضِ فَأَصْبَحَ هَشِيمًۭا تَذْرُوهُ ٱلرِّيَـٰحُ ۗ وَكَانَ ٱللَّهُ عَلَىٰ كُلِّ شَىْءٍۢ مُّقْتَدِرًۭا</div>
-                    <div class="transliteration">Wa ḍrib lahum mathala l-ḥayāti d-dunyā kamā'in anzalnāhu mina s-samā'i fakhtalaṭa bihī nabātu l-arḍi fa-aṣbaḥa hashīman tadhrūhu r-riyāḥ. Wa kāna llāhu 'alā kulli shay'in muqtadirā</div>
-                    <p>"Dan berikanlah kepada mereka perumpamaan kehidupan dunia ini, [yaitu] seperti air yang Kami turunkan dari langit, lalu tumbuhlah dengan suburnya tumbuh-tumbuhan di muka bumi, kemudian tumbuhan itu menjadi kering yang diterbangkan oleh angin. Dan Allah Maha Kuasa atas segala sesuatu."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menunjukkan kekuasaan Allah yang sempurna melalui siklus tumbuh-tumbuhan. Sebagaimana Dia menghidupkan tanah yang mati kemudian mengembalikannya menjadi kering, kekuasaan-Nya mencakup semua aspek ciptaan. Penyebutan khusus Al-Muqtadir di sini menekankan bahwa kekuasaan ini sempurna dan paripurna.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/54:42" target="_blank">Surah Al-Qamar 54:42</a>
-                    <div class="arabic">كَذَّبُوا۟ بِـَٔايَـٰتِنَا كُلِّهَا فَأَخَذْنَـٰهُمْ أَخْذَ عَزِيزٍۢ مُّقْتَدِرٍۢ</div>
-                    <div class="transliteration">Kadhdhabū bi-āyātinā kullihā fa-akhadhnāhum akhda 'azīzin muqtadir</div>
-                    <p>"Mereka mendustakan semua ayat-ayat Kami, maka Kami siksa mereka dengan siksaan dari Yang Maha Perkasa lagi Maha Kuasa."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menggambarkan hukuman Firaun, menunjukkan bahwa tidak ada yang bisa lolos dari kekuasaan Allah ketika Dia memutuskan untuk menghukum. Kombinasi 'Aziz (Maha Perkasa) dan Muqtadir (Maha Kuasa) menekankan kesempurnaan kekuasaan Allah baik dalam otoritas maupun pelaksanaan.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/54:55" target="_blank">Surah Al-Qamar 54:55</a>
-                    <div class="arabic">فِى مَقْعَدِ صِدْقٍ عِندَ مَلِيكٍۢ مُّقْتَدِرٍۭ</div>
-                    <div class="transliteration">Fī maq'adi ṣidqin 'inda malīkin muqtadir</div>
-                    <p>"Di tempat yang dekat di sisi Tuhan Yang Berkuasa."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menggambarkan balasan orang-orang yang shaleh di Surga, dekat dengan Allah Yang Maha Kuasa. Konteks ini menunjukkan bahwa sebagaimana kekuasaan-Nya mencakup hukuman, juga mencakup pahala, menunjukkan kesempurnaan kemampuan-Nya dalam segala hal.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 2653
-                    <div class="arabic">إِنَّ اللَّهَ قَدِيرٌ مُقْتَدِرٌ، فَمَنْ شَكَّ فِي قُدْرَتِي فَقَدْ كَفَرَ</div>
-                    <div class="transliteration">Inna llāha qadīrun muqtadir, fa-man shakka fī qudratī fa-qad kafar</div>
-                    <p>"Sesungguhnya Allah Maha Kuasa dan Sempurna dalam Kemampuan. Barangsiapa meragukan kekuasaan-Ku, maka dia telah kafir."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menekankan bahwa meragukan kekuasaan Allah yang sempurna merupakan kekufuran, menunjukkan pentingnya sifat ini dalam teologi Islam.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Mengakui Kekuasaan Ilahi</div>
-                    <div class="arabic">يَا مُقْتَدِرُ بِقُدْرَتِكَ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
-                    <div class="transliteration">Yā Muqtadir, bi-qudratika aṣliḥ lī sha'nī kullah, wa lā takilnī ilā nafsī ṭarfata 'ayn</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Sempurna dalam Kekuatan, dengan kekuasaan-Mu perbaikilah semua urusanku dan jangan serahkan aku kepada diriku sendiri walau sekejap mata."</p>
-                    <p><strong>Manfaat:</strong> Doa ini mengajarkan ketergantungan penuh pada kekuasaan Allah yang sempurna. Nabi (ﷺ) mengajarkan doa serupa untuk mengakui ketergantungan kita pada kekuasaan dan kendali Allah yang konstan atas segala urusan.</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Saat Kesulitan</div>
-                    <div class="arabic">اللَّهُمَّ بِقُدْرَتِكَ ٱلْكَامِلَةِ وَحِكْمَتِكَ ٱلْبَالِغَةِ، اكْشِفْ عَنِّي مَآ أَنَا فِيهِ</div>
-                    <div class="transliteration">Allāhumma bi-qudratika l-kāmilati wa ḥikmatika l-bālighati, kshif 'annī mā anā fīh</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, dengan kekuasaan-Mu yang sempurna dan hikmah-Mu yang lengkap, singkirkan dariku apa yang aku alami."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Nabi (ﷺ) tentang mencari pertolongan melalui pengakuan akan sifat-sifat Allah (Tirmidzi).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Praktik Perenungan Kekuasaan</div>
-                    <p>Untuk memperkuat pengakuan akan kekuasaan Allah:</p>
-                    <ol>
-                        <li>Setiap pagi, renungkan satu manifestasi kekuasaan Allah dalam penciptaan</li>
-                        <li>Baca "Yā Muqtadir" 33 kali</li>
-                        <li>Baca <a href="https://quranwbw.com/3:26" target="_blank">Surah Al-Imran 3:26</a> setiap hari</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Praktik ini:</p>
-                    <ul>
-                        <li>Meningkatkan kesadaran akan kekuasaan ilahi dalam kehidupan sehari-hari</li>
-                        <li>Memperkuat ketergantungan pada Allah saat menghadapi tantangan</li>
-                        <li>Mengembangkan perspektif yang benar tentang kekuasaan duniawi</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Malam Pengakuan Kekuasaan</div>
-                    <p>Pada Lailatul Qadar (Malam Kemuliaan):</p>
-                    <ol>
-                        <li>Bangun untuk beribadah antara Maghrib dan Fajr</li>
-                        <li>Baca "Yā Muqtadir" 100 kali</li>
-                        <li>Renungkan bagaimana kekuasaan Allah termanifestasi dalam penetapan takdir</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat meningkatkan ibadah mereka pada sepuluh malam terakhir Ramadan, mengakui kekuasaan Allah yang sempurna dalam menetapkan takdir untuk tahun yang akan datang.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibnu Katsir menjelaskan Al-Muqtadir melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Kekuasaan Kreatif:</strong>
-                        <ul>
-                            <li>Kemampuan sempurna dalam penciptaan (36:81)</li>
-                            <li>Ketepatan dalam semua aspek alam semesta (67:3)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Kekuasaan Pemerintahan:</strong>
-                        <ul>
-                            <li>Kendali atas segala urusan (35:41)</li>
-                            <li>Kemampuan mengubah keadaan (3:26)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Kekuasaan Yudisial:</strong>
-                        <ul>
-                            <li>Keadilan sempurna pada Hari Kiamat (40:16)</li>
-                            <li>Kemampuan memberi pahala dan hukuman sesuai kehendak-Nya (2:284)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Al-An'am (6:65), Allah menunjukkan kekuasaan-Nya yang sempurna dengan menunjukkan bahwa Dia bisa menghancurkan ciptaan atau menciptakan yang baru sesuai kehendak-Nya. Nama ini mengingatkan orang beriman bahwa tidak ada kekuasaan yang ada terlepas dari kehendak Allah.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -447,10 +543,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -458,12 +556,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
