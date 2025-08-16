@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -131,13 +132,30 @@
             color: #7f8c8d;
             font-size: 16px;
         }
-        .back-to-menu {
+        .main-menu {
             text-align: center;
-            margin: 10px 0;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+            margin: 15px 0;
         }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -155,25 +173,186 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">79. Al-Barr (Yang Maha Pemberi Kebaikan)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, <a href="https://myislam.org/99-names-of-allah/al-barr/" target="_blank">myislam.org</a>, Kementerian Agama RI</div>
+
+            <div class="arabic">ٱلْبَرُّ</div>
+            <div class="transliteration">Transliterasi: Al-Barr</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/79.%20al-barr.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Barr muncul dalam Al-Quran dua kali (<a href="https://quranwbw.com/52:28" target="_blank">52:28</a>, <a href="https://quranwbw.com/3:193" target="_blank">3:193</a>) dengan makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Pemberi Kebaikan:</strong> Sumber segala kebajikan dan kebaikan</li>
+                    <li><strong>Yang Maha Dermawan:</strong> Terus-menerus memberikan kebaikan kepada seluruh ciptaan-Nya</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI, Al-Barr menunjukkan sifat Allah yang selalu berbuat baik kepada hamba-Nya tanpa pamrih. NU Online menjelaskan bahwa nama ini mengajarkan kita untuk meneladani sifat Allah dengan berbuat baik kepada sesama.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/52:28" target="_blank">Surah At-Tur 52:28</a>
+                    <div class="arabic">إِنَّا كُنَّا مِن قَبْلُ نَدْعُوهُ ۖ إِنَّهُ هُوَ ٱلْبَرُّ ٱلرَّحِيمُ</div>
+                    <div class="transliteration">Innā kunnā min qablu nad'ūh, innahu huwa l-Barru r-Raḥīm</div>
+                    <p>"Sesungguhnya kami dahulu berdoa kepada-Nya. Sungguh, Dialah Yang Maha Pemberi Kebaikan, Maha Penyayang."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa Allah selalu mendengar doa hamba-Nya dan memberikan kebaikan sesuai dengan kebutuhan mereka. Sifat Al-Barr tidak terpisahkan dari Ar-Rahim, menunjukkan bahwa segala kebaikan berasal dari rahmat Allah.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/3:193" target="_blank">Surah Ali 'Imran 3:193</a>
+                    <div class="arabic">رَبَّنَآ إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِى لِلْإِيمَـٰنِ أَنْ ءَامِنُوا۟ بِرَبِّكُمْ فَـَٔامَنَّا ۚ رَبَّنَا فَٱغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّـَٔاتِنَا وَتَوَفَّنَا مَعَ ٱلْأَبْرَارِ</div>
+                    <div class="transliteration">Rabbanā innanā sami'nā munādiyan yunādī li-l-īmāni an āminū bi-rabbikum fa-āmannā, rabbanā fa-ghfir lanā dhunūbanā wa kaffir 'annā sayyi'ātinā wa tawaffanā ma'a l-abrār</div>
+                    <p>"Ya Tuhan kami, sesungguhnya kami mendengar orang yang menyeru kepada iman, 'Berimanlah kamu kepada Tuhanmu,' maka kami pun beriman. Ya Tuhan kami, ampunilah dosa-dosa kami, hapuskanlah kesalahan-kesalahan kami, dan matikanlah kami beserta orang-orang yang berbakti."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Doa ini menunjukkan hubungan antara sifat Al-Barr Allah dengan kebaikan hamba-Nya (al-abrar). Kebaikan Allah mendahului segala kebaikan manusia, dan manusia yang baik (al-abrar) adalah yang meneladani sifat Al-Barr Allah dalam kehidupan.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2751" target="_blank">Sahih Muslim 2751</a>
+                    <div class="arabic">إِنَّ اللَّهَ بَرٌّ رَحِيمٌ يَسْتَحْيِي مِنْ عَبْدِهِ إِذَا رَفَعَ يَدَيْهِ إِلَيْهِ أَنْ يَرُدَّهُمَا صِفْرًا</div>
+                    <div class="transliteration">Inna llāha Barrun Raḥīm, yastaḥyī min 'abdihi idhā rafa'a yadayhi ilayhi an yaruddahumā ṣifrā</div>
+                    <p>"Sesungguhnya Allah adalah Al-Barr Ar-Rahim (Yang Maha Pemberi Kebaikan, Maha Penyayang). Dia malu dari hamba-Nya ketika hamba itu mengangkat kedua tangannya untuk berdoa kepada-Nya, lalu mengembalikannya dalam keadaan kosong."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU:</strong> Hadits ini menunjukkan kemurahan Allah dalam mengabulkan doa. Sifat malu Allah untuk tidak mengabulkan doa hamba-Nya adalah bentuk dari sifat Al-Barr-Nya. (Syarah Sahih Muslim, Imam Nawawi)
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Kebaikan Ilahi</div>
+                    <div class="arabic">يَا بَرُّ يَا رَحِيمُ، أَسْأَلُكَ بِبَرِّكَ وَرَحْمَتِكَ أَنْ تَجْعَلَنِي مِنَ ٱلْعَابِدِينَ ٱلشَّاكِرِينَ</div>
+                    <div class="transliteration">Yā Barr yā Raḥīm, as'aluka bi-birrika wa raḥmatika an taj'alnī mina l-'ābidīna sh-shākirīn</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Pemberi Kebaikan, wahai Yang Maha Penyayang, aku memohon kepada-Mu dengan kebajikan dan rahmat-Mu, jadikanlah aku termasuk hamba-hamba-Mu yang beribadah dan bersyukur."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan ajaran NU tentang pentingnya menyertakan Asmaul Husna dalam berdoa. Dianjurkan dibaca setelah shalat Subuh untuk memulai hari dengan kebaikan Allah.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Kebaikan untuk Orang Tua</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ ٱلْبَرُّ ٱلرَّحِيمُ، بَارِكْ لِي فِي وَالِدَيَّ كَمَا رَبَّيَانِي صَغِيرًا، وَٱجْعَلْنِي بِرًّا بِهِمَا كَمَا أَنْتَ بِرٌّ بِي</div>
+                    <div class="transliteration">Allāhumma anta l-Barru r-Raḥīm, bārik lī fī wālidayya kamā rabbayānī ṣaghīrā, wa j'alnī birran bihimā kamā anta birrun bī</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Yang Maha Pemberi Kebaikan, Maha Penyayang. Berkahilah aku melalui orang tuaku sebagaimana mereka membesarkanku di waktu kecil, dan jadikan aku berbakti kepada mereka sebagaimana Engkau berbuat baik kepadaku."</p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan ajaran Kementerian Agama RI tentang berbakti kepada orang tua, dengan menyertakan nama Al-Barr untuk memohon kebaikan ilahi dalam hubungan keluarga.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Kebaikan Harian</div>
+                    <p>Untuk menumbuhkan kesadaran akan kebaikan Allah:</p>
+                    <ol>
+                        <li>Setiap pagi setelah Subuh, baca "Yā Barr" 100 kali sambil merenungkan maknanya</li>
+                        <li>Lakukan minimal satu perbuatan baik setiap hari dengan niat meneladani sifat Al-Barr Allah</li>
+                        <li>Sebelum tidur, catat tiga kebaikan Allah yang diterima hari itu dan ucapkan syukur</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Meningkatkan kesadaran akan kebaikan Allah yang terus menerus</li>
+                        <li>Mengembangkan sifat baik dalam diri sebagai cerminan nama Al-Barr</li>
+                        <li>Dianjurkan dalam kitab-kitab pesantren NU sebagai bentuk dzikir praktis</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Kebaikan Keluarga</div>
+                    <p>Untuk menebarkan kebaikan dalam rumah tangga:</p>
+                    <ol>
+                        <li>Setiap Jumat, tulis nama "Al-Barr" dengan tinta saffron di atas kertas putih</li>
+                        <li>Bacakan Surah Al-Fatihah dan Ayat Kursi di atasnya</li>
+                        <li>Larutkan dalam air dan minumkan kepada keluarga untuk keberkahan</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Amalan ini berdasarkan tradisi pesantren NU yang bersumber dari kitab Mujarrobat ad-Diyaiyah. Penggunaan saffron sebagai tinta memiliki dasar dalam hadits tentang keutamaan warna ini (HR. Abu Dawud).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Barr melalui tiga dimensi utama:</p>
+                <ol>
+                    <li><strong>Kebaikan Penciptaan:</strong>
+                        <ul>
+                            <li>Menciptakan segala sesuatu dengan sebaik-baiknya (<a href="https://quranwbw.com/32:7" target="_blank">32:7</a>)</li>
+                            <li>Memberikan rezeki kepada semua makhluk (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kebaikan Petunjuk:</strong>
+                        <ul>
+                            <li>Menurunkan kitab suci sebagai petunjuk (<a href="https://quranwbw.com/2:185" target="_blank">2:185</a>)</li>
+                            <li>Mengutus para nabi sebagai rahmat (<a href="https://quranwbw.com/21:107" target="_blank">21:107</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kebaikan Balasan:</strong>
+                        <ul>
+                            <li>Menyiapkan surga untuk orang beriman (<a href="https://quranwbw.com/3:133" target="_blank">3:133</a>)</li>
+                            <li>Menerima taubat hamba-Nya (<a href="https://quranwbw.com/39:53" target="_blank">39:53</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah At-Tur (<a href="https://quranwbw.com/52:28" target="_blank">52:28</a>), Allah menggandengkan nama Al-Barr dengan Ar-Rahim, menunjukkan bahwa segala kebaikan bersumber dari rahmat-Nya. Ibn Kathir menegaskan bahwa kebaikan Allah meliputi semua makhluk, baik yang taat maupun yang durhaka.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
             <h1 class="name-title">79. Al-Barr (The Source of Goodness, The Beneficent)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-barr/" target="_blank">myislam.org/99-names-of-allah/al-barr/</a></div>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
+
+            <div class="main-menu"><a href="index.html">Back to Main Menu</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_80Barr.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْبَرُّ</div>
             <div class="transliteration">Transliteration: Al-Barr</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/79.%20al-barr.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Al-Barr appears in the Quran twice (52:28, 3:193) with profound meanings:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Barr appears in the Quran twice (<a href="https://quranwbw.com/52:28" target="_blank">52:28</a>, <a href="https://quranwbw.com/3:193" target="_blank">3:193</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Source of Goodness:</strong> Originator and giver of all benevolence</li>
                     <li><strong>The Beneficent:</strong> Continuously kind and generous to creation</li>
@@ -207,7 +386,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 2751
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2751" target="_blank">Sahih Muslim 2751</a>
                     <div class="arabic">إِنَّ اللَّهَ بَرٌّ رَحِيمٌ يَسْتَحْيِي مِنْ عَبْدِهِ إِذَا رَفَعَ يَدَيْهِ إِلَيْهِ أَنْ يَرُدَّهُمَا صِفْرًا</div>
                     <div class="transliteration">Inna llāha Barrun Raḥīm, yastaḥyī min 'abdihi idhā rafa'a yadayhi ilayhi an yaruddahumā ṣifrā</div>
                     <p>"Indeed, Allah is Al-Barr Ar-Raheem (the Beneficent, the Merciful). He feels shy from His servant when he raises his hands to Him to return them empty."</p>
@@ -272,166 +451,67 @@
                 <ol>
                     <li><strong>Universal Goodness:</strong>
                         <ul>
-                            <li>Provides for all creatures (11:6)</li>
-                            <li>Gives beyond measure (2:212)</li>
+                            <li>Provides for all creatures (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Gives beyond measure (<a href="https://quranwbw.com/2:212" target="_blank">2:212</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Merciful Interaction:</strong>
                         <ul>
-                            <li>Accepts repentance (2:160)</li>
-                            <li>Responds to supplication (40:60)</li>
+                            <li>Accepts repentance (<a href="https://quranwbw.com/2:160" target="_blank">2:160</a>)</li>
+                            <li>Responds to supplication (<a href="https://quranwbw.com/40:60" target="_blank">40:60</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Eternal Rewards:</strong>
                         <ul>
-                            <li>Prepares Paradise for believers (3:133)</li>
-                            <li>Multiplies good deeds (2:245)</li>
+                            <li>Prepares Paradise for believers (<a href="https://quranwbw.com/3:133" target="_blank">3:133</a>)</li>
+                            <li>Multiplies good deeds (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Ar-Rahman (55:60), Allah rhetorically asks "Is the reward for good [anything] but good?" showing how Al-Barr's nature ensures goodness begets goodness.</p>
+                <p>In Surah Ar-Rahman (<a href="https://quranwbw.com/55:60" target="_blank">55:60</a>), Allah rhetorically asks "Is the reward for good [anything] but good?" showing how Al-Barr's nature ensures goodness begets goodness.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">79. Al-Barr (Sumber Kebaikan, Yang Maha Pemurah)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-barr/" target="_blank">myislam.org/99-names-of-allah/al-barr/</a></div>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
-
-            <div class="arabic">ٱلْبَرُّ</div>
-            <div class="transliteration">Transliterasi: Al-Barr</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna</h2>
-                <p>Al-Barr muncul dalam Al-Quran dua kali (52:28, 3:193) dengan makna mendalam:</p>
-                <ul>
-                    <li><strong>Sumber Kebaikan:</strong> Pencipta dan pemberi segala kebajikan</li>
-                    <li><strong>Yang Maha Pemurah:</strong> Terus-menerus baik dan dermawan kepada ciptaan</li>
-                </ul>
-                <p>Ibnu Qayyim menjelaskan: "Dia adalah Yang kebaikan-Nya meliputi segala sesuatu, yang rahmat-Nya mendahului murka-Nya." Nama ini sangat bermakna ketika mencari karunia ilahi, sebagaimana Nabi (ﷺ) bersabda: "Allah lebih penyayang kepada hamba-Nya daripada seorang ibu kepada anaknya" (Bukhari).</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/52:28" target="_blank">Surah At-Tur 52:28</a>
-                    <div class="arabic">إِنَّا كُنَّا مِن قَبْلُ نَدْعُوهُ ۖ إِنَّهُ هُوَ ٱلْبَرُّ ٱلرَّحِيمُ</div>
-                    <div class="transliteration">Innā kunnā min qablu nad'ūh, innahu huwa l-Barru r-Raḥīm</div>
-                    <p>"Sesungguhnya kami dahulu berdoa kepada-Nya. Sungguh, Dialah Yang Maha Pemurah, Maha Penyayang."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menghubungkan Al-Barr dengan Ar-Raheem, menunjukkan bahwa kebaikan ilahi tidak terpisahkan dari rahmat. Orang-orang beriman bersaksi atas kebaikan Allah yang terus-menerus dalam perjalanan spiritual mereka.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/3:193" target="_blank">Surah Al-Imran 3:193</a>
-                    <div class="arabic">رَبَّنَآ إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِى لِلْإِيمَـٰنِ أَنْ ءَامِنُوا۟ بِرَبِّكُمْ فَـَٔامَنَّا ۚ رَبَّنَا فَٱغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّـَٔاتِنَا وَتَوَفَّنَا مَعَ ٱلْأَبْرَارِ</div>
-                    <div class="transliteration">Rabbanā innanā sami'nā munādiyan yunādī li-l-īmāni an āminū bi-rabbikum fa-āmannā, rabbanā fa-ghfir lanā dhunūbanā wa kaffir 'annā sayyi'ātinā wa tawaffanā ma'a l-abrār</div>
-                    <p>"Ya Tuhan kami, sesungguhnya kami mendengar orang yang menyeru kepada iman, 'Berimanlah kamu kepada Tuhanmu,' maka kami pun beriman. Ya Tuhan kami, ampunilah dosa-dosa kami, hapuskanlah kesalahan-kesalahan kami, dan matikanlah kami beserta orang-orang yang berbakti."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Doa orang beriman ini menyoroti bagaimana kebaikan ilahi (Al-Barr) merespons keimanan manusia. Istilah "Abrar" (orang yang berbakti) berasal dari akar yang sama dengan Al-Barr, menunjukkan hubungan antara kebaikan ilahi dan kebenaran manusia.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 2751
-                    <div class="arabic">إِنَّ اللَّهَ بَرٌّ رَحِيمٌ يَسْتَحْيِي مِنْ عَبْدِهِ إِذَا رَفَعَ يَدَيْهِ إِلَيْهِ أَنْ يَرُدَّهُمَا صِفْرًا</div>
-                    <div class="transliteration">Inna llāha Barrun Raḥīm, yastaḥyī min 'abdihi idhā rafa'a yadayhi ilayhi an yaruddahumā ṣifrā</div>
-                    <p>"Sesungguhnya Allah adalah Al-Barr Ar-Raheem (Yang Maha Pemurah, Maha Penyayang). Dia malu dari hamba-Nya ketika dia mengangkat kedua tangannya kepada-Nya untuk mengembalikannya kosong."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menekankan sifat dermawan Allah - kebaikan-Nya memastikan Dia merespons doa yang tulus, seringkali memberi lebih dari yang diminta.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Kebajikan Ilahi</div>
-                    <div class="arabic">يَا بَرُّ يَا رَحِيمُ، أَسْأَلُكَ بِبَرِّكَ وَرَحْمَتِكَ أَنْ تَجْعَلَنِي مِنَ ٱلْعَابِدِينَ ٱلشَّاكِرِينَ</div>
-                    <div class="transliteration">Yā Barr yā Raḥīm, as'aluka bi-birrika wa raḥmatika an taj'alnī mina l-'ābidīna sh-shākirīn</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Sumber Kebaikan, Wahai Yang Maha Penyayang, aku memohon kepada-Mu dengan kebajikan dan rahmat-Mu untuk menjadikan aku termasuk hamba-hamba-Mu yang beribadah dan bersyukur."</p>
-                    <p><strong>Manfaat:</strong> Baca ini setiap hari setelah Subuh. Nabi (ﷺ) mengajarkan bahwa dzikir pagi menarik berkah ilahi (Tirmidhi).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Kebaikan Orang Tua</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ ٱلْبَرُّ ٱلرَّحِيمُ، بَارِكْ لِي فِي وَالِدَيَّ كَمَا رَبَّيَانِي صَغِيرًا، وَٱجْعَلْنِي بِرًّا بِهِمَا كَمَا أَنْتَ بِرٌّ بِي</div>
-                    <div class="transliteration">Allāhumma anta l-Barru r-Raḥīm, bārik lī fī wālidayya kamā rabbayānī ṣaghīrā, wa j'alnī birran bihimā kamā anta birrun bī</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Yang Maha Pemurah, Maha Penyayang. Berkahilah aku melalui orang tuaku sebagaimana mereka membesarkanku di waktu kecil, dan jadikan aku berbakti kepada mereka sebagaimana Engkau berbuat baik kepadaku."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi dari ajaran Al-Quran tentang bakti kepada orang tua (17:23-24) dan penekanan Nabi pada bakti anak.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Amalan Kebaikan Harian</div>
-                    <p>Untuk menumbuhkan kebajikan ilahi:</p>
-                    <ol>
-                        <li>Baca "Yā Barr" 100 kali setelah matahari terbit</li>
-                        <li>Lakukan satu perbuatan baik ekstra setiap hari</li>
-                        <li>Renungkan nikmat Allah sebelum tidur</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini:</p>
-                    <ul>
-                        <li>Menarik kebaikan ilahi ke dalam kehidupan</li>
-                        <li>Mengembangkan rasa syukur yang konstan</li>
-                        <li>Diamalkan oleh para sufi awal seperti Hasan al-Basri</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Berkah Keluarga</div>
-                    <p>Untuk keharmonisan rumah tangga:</p>
-                    <ol>
-                        <li>Tulis "Al-Barr" dengan madu di atas kertas</li>
-                        <li>Larutkan dalam air sambil membaca Surah Yusuf</li>
-                        <li>Bagikan air tersebut dengan anggota keluarga</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat biasa membaca ayat Al-Quran untuk berkah, seperti tercatat dalam 'Amal al-Yawm wal-Laylah karya Ibnu Sunni. Madu melambangkan kelezatan ilahi yang disebutkan dalam Al-Quran (16:69).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan Al-Barr melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Kebaikan Universal:</strong>
-                        <ul>
-                            <li>Memberi rezeki semua makhluk (11:6)</li>
-                            <li>Memberi tanpa batas (2:212)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Interaksi Penyayang:</strong>
-                        <ul>
-                            <li>Menerima taubat (2:160)</li>
-                            <li>Menjawab doa (40:60)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Pahala Abadi:</strong>
-                        <ul>
-                            <li>Menyiapkan Surga untuk orang beriman (3:133)</li>
-                            <li>Melipatgandakan amal baik (2:245)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Ar-Rahman (55:60), Allah bertanya retoris "Tidak ada balasan untuk kebaikan selain kebaikan?" menunjukkan bagaimana sifat Al-Barr memastikan kebaikan melahirkan kebaikan.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -441,10 +521,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -452,12 +534,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
