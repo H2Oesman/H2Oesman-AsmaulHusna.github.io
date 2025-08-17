@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -131,6 +132,30 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -148,24 +173,187 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">88. Al-Ghani (Yang Maha Kaya)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, <a href="https://myislam.org/99-names-of-allah/al-ghaniy/" target="_blank">myislam.org</a></div>
+
+            <div class="arabic">ٱلْغَنِيُّ</div>
+            <div class="transliteration">Transliterasi: Al-Ghani</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/88.%20al-ghaniyy.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Ghani muncul dalam Al-Quran beberapa kali (<a href="https://quranwbw.com/2:263" target="_blank">2:263</a>, <a href="https://quranwbw.com/3:97" target="_blank">3:97</a>, <a href="https://quranwbw.com/31:12" target="_blank">31:12</a>) dengan makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Kaya Mutlak:</strong> Bebas dari semua kebutuhan sementara semua bergantung pada-Nya</li>
+                    <li><strong>Yang Maha Berkecukupan:</strong> Tidak membutuhkan apa pun dari ciptaan-Nya</li>
+                    <li><strong>Yang Maha Pemberi Kekayaan:</strong> Memberikan kekayaan dan kecukupan kepada makhluk-Nya</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI, Al-Ghani adalah salah satu nama Allah yang menunjukkan kekayaan mutlak-Nya. Ibnu Qayyim menjelaskan: "Al-Ghani kaya dalam esensi-Nya, kaya dalam sifat-Nya, dan kaya dalam tindakan-Nya. Kekayaan-Nya bersifat intrinsik dan abadi, sementara yang lain memperoleh kekayaan mereka dari-Nya." Nabi (ﷺ) bersabda: "Allah berfirman: 'Wahai hamba-hamba-Ku! Seandainya orang pertama hingga terakhir dari kalian meminta kepada-Ku, Aku tidak akan mengurangi apa yang Aku miliki lebih dari jarum mengurangi lautan'" (Muslim), menggambarkan kecukupan diri ilahi.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:263" target="_blank">Surah Al-Baqarah 2:263</a>
+                    <div class="arabic">ٱللَّهُ ٱلْغَنِىُّ ٱلْحَمِيدُ</div>
+                    <div class="transliteration">Allāhu l-ghanīyu l-ḥamīd</div>
+                    <p>"Allah Maha Kaya lagi Maha Terpuji."</p>
+                    <div class="tafsir-box">
+                        <strong>Sumber NU Online:</strong> Ayat ini menghubungkan kecukupan diri Allah (Al-Ghani) dengan pujian-Nya (Al-Hamid), menunjukkan bahwa kekayaan sejati disertai dengan sifat-sifat sempurna. Konteksnya membahas sedekah, menunjukkan bahwa Allah tidak membutuhkan sedekah kita tetapi memuji mereka yang memberi. Ibnu Abbas mencatat bahwa kekayaan ilahi berarti Allah tidak membutuhkan ibadah, tetapi Dia berhak atas semua ibadah.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/31:12" target="_blank">Surah Luqman 31:12</a>
+                    <div class="arabic">وَٱشْكُرُوا۟ لِلَّهِ ۚ وَمَن يَشْكُرْ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِۦ ۖ وَمَن كَفَرَ فَإِنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌۭ</div>
+                    <div class="transliteration">Wa shkurū li-llāh wa man yashkur fa innamā yashkuru li-nafsih wa man kafar fa inna llāha ghanīyun ḥamīd</div>
+                    <p>"Dan bersyukurlah kepada Allah. Dan barangsiapa bersyukur, maka sesungguhnya dia bersyukur untuk dirinya sendiri. Dan barangsiapa ingkar, maka sesungguhnya Allah Maha Kaya lagi Maha Terpuji."</p>
+                    <div class="tafsir-box">
+                        <strong>Sumber Kemenag RI:</strong> Ayat ini menunjukkan bahwa rasa syukur menguntungkan manusia sementara kekafiran tidak merugikan Allah - Dia tetap Al-Ghani (Maha Berkecukupan). Pasangan dengan "Maha Terpuji" menunjukkan bahwa kemandirian Allah tidak membuat-Nya acuh tak acuh; Dia tetap berhak atas semua pujian atas berkah-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:7407" target="_blank">Sahih Bukhari 7407</a>
+                    <div class="arabic">يَا أَيُّهَا النَّاسُ إِنَّ اللَّهَ غَنِيٌّ عَنْكُمْ لاَ يَنْفَعُهُ مَعْصِيَتُكُمْ وَلاَ يَضُرُّهُ طَاعَتُكُمْ</div>
+                    <div class="transliteration">Yā ayyuhā n-nāsu inna llāha ghanīyun 'ankum lā yanfa'uhu ma'ṣiyatukum wa lā yaḍurruhu ṭā'atukum</div>
+                    <p>"Wahai manusia! Sesungguhnya Allah Maha Kaya dan tidak membutuhkan kalian. Kemaksiatan kalian tidak memberi manfaat kepada-Nya, dan ketaatan kalian tidak membahayakan-Nya."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) menyampaikan khutbah ini untuk menekankan bahwa ibadah menguntungkan manusia, bukan Allah. Hadits ini menetapkan prinsip bahwa kecukupan diri Allah (Ghina) membuat perintah-perintah-Nya murni untuk kebaikan kita, bukan kebutuhan-Nya.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Kepuasan Melalui Kecukupan Ilahi</div>
+                    <div class="arabic">يَا غَنِيُّ يَا حَمِيدُ يَا مُبْدِئُ يَا مُعِيدُ يَا رَحِيمُ يَا وَدُودُ أَغْنِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَبِطَاعَتِكَ عَنْ مَعْصِيَتِكَ وَبِفَضْلِكَ عَمَّنْ سِوَاكَ</div>
+                    <div class="transliteration">Yā Ghanīyu yā Ḥamīdu yā Mubdi'u yā Mu'īdu yā Raḥīmu yā Wadūdu aghninī bi-ḥalālika 'an ḥarāmika wa bi-ṭā'atika 'an ma'ṣiyatika wa bi-faḍlika 'amman siwāk</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Kaya, Wahai Yang Maha Terpuji, Wahai Yang Memulai, Wahai Yang Mengembalikan, Wahai Yang Maha Penyayang, Wahai Yang Maha Mencintai, cukupkan aku dengan yang Engkau halalkan daripada yang Engkau haramkan, dengan ketaatan kepada-Mu daripada maksiat kepada-Mu, dan dengan karunia-Mu daripada karunia selain-Mu."</p>
+                    <p><strong>Keutamaan:</strong> Doa komprehensif dari Nabi (ﷺ) ini menghubungkan kecukupan ilahi dengan spiritualitas praktis. Dianjurkan dibaca setelah shalat Fajr untuk kepuasan dan rezeki halal (Tirmidhi).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Kekayaan Spiritual</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْغَنِيِّ أَغْنِنِي عَنِ ٱلْحَوَائِجِ إِلَى ٱلنَّاسِ وَٱجْعَلْ غِنَايَ فِي نَفْسِي وَكَفَٰفِي بِقَضَائِكَ</div>
+                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Ghanīyi aghninī 'ani l-ḥawā'iji ilā n-nāsi wa j'al ghināya fī nafsī wa kafāfī bi-qaḍā'ik</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Al-Ghani, buatlah aku tidak membutuhkan orang lain, tempatkan kecukupanku dalam diriku, dan cukupkan aku dengan ketetapan-Mu."</p>
+                    <p><strong>Sumber:</strong> Terinspirasi oleh ajaran Nabi (ﷺ) tentang kecukupan diri. Doa ini mengubah pengakuan akan kekayaan ilahi menjadi kemandirian spiritual pribadi (Ibnu Majah).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Syukur Harian</div>
+                    <p>Rutinitas pagi untuk menumbuhkan kepuasan:</p>
+                    <ol>
+                        <li>Saat bangun, baca "Alhamdulillah al-Ghani" 33 kali</li>
+                        <li>Identifikasi tiga nikmat yang biasanya dianggap remeh</li>
+                        <li>Ungkapkan rasa syukur spesifik untuk setiap nikmat</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Mengembangkan kesadaran akan pemberian ilahi</li>
+                        <li>Mengikuti sunnah dzikir pagi</li>
+                        <li>Menciptakan kepuasan psikologis</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Sedekah dari Kelimpahan Ilahi</div>
+                    <p>Praktik pemberian mingguan:</p>
+                    <ol>
+                        <li>Sebelum bersedekah, baca "Bismillah al-Ghani al-Mughni"</li>
+                        <li>Berikan secara rutin (bahkan dalam jumlah kecil)</li>
+                        <li>Bayangkan sedekah berasal dari kekayaan Allah yang tak terbatas</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Sedekah tidak mengurangi harta" (Muslim). Praktik ini mewujudkan kepercayaan pada kecukupan ilahi sambil berpartisipasi dalam sirkulasi kekayaan.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir</h2>
+                <p>Menurut sumber-sumber resmi Kementerian Agama RI dan NU, Al-Ghani dapat dipahami melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Kekayaan Esensial:</strong>
+                        <ul>
+                            <li>Mandiri dalam hakikat ilahi-Nya (<a href="https://quranwbw.com/35:15" target="_blank">35:15</a>)</li>
+                            <li>Tidak membutuhkan pembantu atau sekutu (<a href="https://quranwbw.com/17:111" target="_blank">17:111</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kelengkapan Sifat:</strong>
+                        <ul>
+                            <li>Sempurna dalam semua nama dan sifat-Nya (<a href="https://quranwbw.com/20:8" target="_blank">20:8</a>)</li>
+                            <li>Tidak kekurangan kesempurnaan (<a href="https://quranwbw.com/64:1-3" target="_blank">64:1-3</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kemurahan Pemberian:</strong>
+                        <ul>
+                            <li>Memberi tanpa harapan (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>)</li>
+                            <li>Menyediakan untuk semua ciptaan (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Muhammad (<a href="https://quranwbw.com/47:38" target="_blank">47:38</a>), Allah membandingkan kecukupan diri-Nya dengan kebutuhan manusia, menunjukkan bahwa memberi menguntungkan pemberi, bukan Allah. Nabi (ﷺ) mencontohkan ini dengan hidup sederhana meskipun memiliki akses ke kekayaan, menunjukkan kepercayaan pada kecukupan ilahi (Bukhari).</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
             <h1 class="name-title">88. Al-Ghani (The Self-Sufficient, The Rich)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-ghaniy/" target="_blank">myislam.org/99-names-of-allah/al-ghaniy/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_89Ghani.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْغَنِيُّ</div>
             <div class="transliteration">Transliteration: Al-Ghani</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/88.%20al-ghaniyy.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Al-Ghani appears in the Quran multiple times (2:263, 3:97, 31:12) with profound meanings:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Ghani appears in the Quran multiple times (<a href="https://quranwbw.com/2:263" target="_blank">2:263</a>, <a href="https://quranwbw.com/3:97" target="_blank">3:97</a>, <a href="https://quranwbw.com/31:12" target="_blank">31:12</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Absolutely Rich:</strong> Free from all needs while all depend on Him</li>
                     <li><strong>The Self-Sufficient:</strong> Requires nothing from His creation</li>
@@ -200,7 +388,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Bukhari 7407
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:7407" target="_blank">Sahih Bukhari 7407</a>
                     <div class="arabic">يَا أَيُّهَا النَّاسُ إِنَّ اللَّهَ غَنِيٌّ عَنْكُمْ لاَ يَنْفَعُهُ مَعْصِيَتُكُمْ وَلاَ يَضُرُّهُ طَاعَتُكُمْ</div>
                     <div class="transliteration">Yā ayyuhā n-nāsu inna llāha ghanīyun 'ankum lā yanfa'uhu ma'ṣiyatukum wa lā yaḍurruhu ṭā'atukum</div>
                     <p>"O people! Indeed Allah is self-sufficient and independent of you. Your disobedience does not benefit Him, nor does your obedience harm Him."</p>
@@ -285,144 +473,47 @@
                 <p>In Surah Muhammad (47:38), Allah contrasts His self-sufficiency with human neediness, showing that giving benefits the giver, not Allah. The Prophet (ﷺ) exemplified this by living simply despite access to wealth, demonstrating trust in divine sufficiency (Bukhari).</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">88. Al-Ghani (Maha Kaya, Maha Berkecukupan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-ghaniy/" target="_blank">myislam.org/99-names-of-allah/al-ghaniy/</a></div>
-
-            <div class="arabic">ٱلْغَنِيُّ</div>
-            <div class="transliteration">Transliterasi: Al-Ghani</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Ghani muncul dalam Al-Quran beberapa kali (2:263, 3:97, 31:12) dengan makna mendalam:</p>
-                <ul>
-                    <li><strong>Maha Kaya Mutlak:</strong> Bebas dari semua kebutuhan sementara semua bergantung pada-Nya</li>
-                    <li><strong>Maha Berkecukupan:</strong> Tidak membutuhkan apa pun dari ciptaan-Nya</li>
-                    <li><strong>Maha Pemberi Kekayaan:</strong> Memberikan kekayaan dan kecukupan kepada makhluk-Nya</li>
-                </ul>
-                <p>Ibnu Qayyim menjelaskan: "Al-Ghani kaya dalam esensi-Nya, kaya dalam sifat-Nya, dan kaya dalam tindakan-Nya. Kekayaan-Nya bersifat intrinsik dan abadi, sementara yang lain memperoleh kekayaan mereka dari-Nya." Nabi (ﷺ) bersabda: "Allah berfirman: 'Wahai hamba-hamba-Ku! Seandainya orang pertama hingga terakhir dari kalian meminta kepada-Ku, Aku tidak akan mengurangi apa yang Aku miliki lebih dari jarum mengurangi lautan'" (Muslim), menggambarkan kecukupan diri ilahi.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Bukti dari Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/2:263" target="_blank">Surah Al-Baqarah 2:263</a>
-                    <div class="arabic">ٱللَّهُ ٱلْغَنِىُّ ٱلْحَمِيدُ</div>
-                    <div class="transliteration">Allāhu l-ghanīyu l-ḥamīd</div>
-                    <p>"Allah Maha Kaya lagi Maha Terpuji."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menghubungkan kecukupan diri Allah (Al-Ghani) dengan pujian-Nya (Al-Hamid), menunjukkan bahwa kekayaan sejati disertai dengan sifat-sifat sempurna. Konteksnya membahas sedekah, menunjukkan bahwa Allah tidak membutuhkan sedekah kita tetapi memuji mereka yang memberi. Ibnu Abbas mencatat bahwa kekayaan ilahi berarti Allah tidak membutuhkan ibadah, tetapi Dia berhak atas semua ibadah.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/31:12" target="_blank">Surah Luqman 31:12</a>
-                    <div class="arabic">وَٱشْكُرُوا۟ لِلَّهِ ۚ وَمَن يَشْكُرْ فَإِنَّمَا يَشْكُرُ لِنَفْسِهِۦ ۖ وَمَن كَفَرَ فَإِنَّ ٱللَّهَ غَنِىٌّ حَمِيدٌۭ</div>
-                    <div class="transliteration">Wa shkurū li-llāh wa man yashkur fa innamā yashkuru li-nafsih wa man kafar fa inna llāha ghanīyun ḥamīd</div>
-                    <p>"Dan bersyukurlah kepada Allah. Dan barangsiapa bersyukur, maka sesungguhnya dia bersyukur untuk dirinya sendiri. Dan barangsiapa ingkar, maka sesungguhnya Allah Maha Kaya lagi Maha Terpuji."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menunjukkan bahwa rasa syukur menguntungkan manusia sementara kekafiran tidak merugikan Allah - Dia tetap Al-Ghani (Maha Berkecukupan). Pasangan dengan "Maha Terpuji" menunjukkan bahwa kemandirian Allah tidak membuat-Nya acuh tak acuh; Dia tetap berhak atas semua pujian atas berkah-Nya.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Bukhari 7407
-                    <div class="arabic">يَا أَيُّهَا النَّاسُ إِنَّ اللَّهَ غَنِيٌّ عَنْكُمْ لاَ يَنْفَعُهُ مَعْصِيَتُكُمْ وَلاَ يَضُرُّهُ طَاعَتُكُمْ</div>
-                    <div class="transliteration">Yā ayyuhā n-nāsu inna llāha ghanīyun 'ankum lā yanfa'uhu ma'ṣiyatukum wa lā yaḍurruhu ṭā'atukum</div>
-                    <p>"Wahai manusia! Sesungguhnya Allah Maha Kaya dan tidak membutuhkan kalian. Kemaksiatan kalian tidak memberi manfaat kepada-Nya, dan ketaatan kalian tidak membahayakan-Nya."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menyampaikan khutbah ini untuk menekankan bahwa ibadah menguntungkan manusia, bukan Allah. Hadits ini menetapkan prinsip bahwa kecukupan diri Allah (Ghina) membuat perintah-perintah-Nya murni untuk kebaikan kita, bukan kebutuhan-Nya.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Kepuasan Melalui Kecukupan Ilahi</div>
-                    <div class="arabic">يَا غَنِيُّ يَا حَمِيدُ يَا مُبْدِئُ يَا مُعِيدُ يَا رَحِيمُ يَا وَدُودُ أَغْنِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَبِطَاعَتِكَ عَنْ مَعْصِيَتِكَ وَبِفَضْلِكَ عَمَّنْ سِوَاكَ</div>
-                    <div class="transliteration">Yā Ghanīyu yā Ḥamīdu yā Mubdi'u yā Mu'īdu yā Raḥīmu yā Wadūdu aghninī bi-ḥalālika 'an ḥarāmika wa bi-ṭā'atika 'an ma'ṣiyatika wa bi-faḍlika 'amman siwāk</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Kaya, Wahai Yang Maha Terpuji, Wahai Yang Memulai, Wahai Yang Mengembalikan, Wahai Yang Maha Penyayang, Wahai Yang Maha Mencintai, cukupkan aku dengan yang Engkau halalkan daripada yang Engkau haramkan, dengan ketaatan kepada-Mu daripada maksiat kepada-Mu, dan dengan karunia-Mu daripada karunia selain-Mu."</p>
-                    <p><strong>Manfaat:</strong> Doa komprehensif dari Nabi (ﷺ) ini menghubungkan kecukupan ilahi dengan spiritualitas praktis. Baca setelah shalat Fajr untuk kepuasan dan rezeki halal (Tirmidhi).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Kekayaan Spiritual</div>
-                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْغَنِيِّ أَغْنِنِي عَنِ ٱلْحَوَائِجِ إِلَى ٱلنَّاسِ وَٱجْعَلْ غِنَايَ فِي نَفْسِي وَكَفَٰفِي بِقَضَائِكَ</div>
-                    <div class="transliteration">Allāhumma bi-ḥaqqi l-Ghanīyi aghninī 'ani l-ḥawā'iji ilā n-nāsi wa j'al ghināya fī nafsī wa kafāfī bi-qaḍā'ik</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Al-Ghani, buatlah aku tidak membutuhkan orang lain, tempatkan kecukupanku dalam diriku, dan cukupkan aku dengan ketetapan-Mu."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi oleh ajaran Nabi (ﷺ) tentang kecukupan diri. Doa ini mengubah pengakuan akan kekayaan ilahi menjadi kemandirian spiritual pribadi (Ibnu Majah).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Praktik Syukur Harian</div>
-                    <p>Rutinitas pagi untuk menumbuhkan kepuasan:</p>
-                    <ol>
-                        <li>Saat bangun, baca "Alhamdulillah al-Ghani" 33 kali</li>
-                        <li>Identifikasi tiga nikmat yang biasanya dianggap remeh</li>
-                        <li>Ungkapkan rasa syukur spesifik untuk setiap nikmat</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Praktik ini:</p>
-                    <ul>
-                        <li>Mengembangkan kesadaran akan pemberian ilahi</li>
-                        <li>Mengikuti sunnah dzikir pagi</li>
-                        <li>Menciptakan kepuasan psikologis</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Sedekah dari Kelimpahan Ilahi</div>
-                    <p>Praktik pemberian mingguan:</p>
-                    <ol>
-                        <li>Sebelum bersedekah, baca "Bismillah al-Ghani al-Mughni"</li>
-                        <li>Berikan secara rutin (bahkan dalam jumlah kecil)</li>
-                        <li>Bayangkan sedekah berasal dari kekayaan Allah yang tak terbatas</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Nabi (ﷺ) bersabda: "Sedekah tidak mengurangi harta" (Muslim). Praktik ini mewujudkan kepercayaan pada kecukupan ilahi sambil berpartisipasi dalam sirkulasi kekayaan.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan Al-Ghani melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Kekayaan Esensial:</strong>
-                        <ul>
-                            <li>Mandiri dalam hakikat ilahi-Nya (35:15)</li>
-                            <li>Tidak membutuhkan pembantu atau sekutu (17:111)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Kelengkapan Sifat:</strong>
-                        <ul>
-                            <li>Sempurna dalam semua nama dan sifat-Nya (20:8)</li>
-                            <li>Tidak kekurangan kesempurnaan (64:1-3)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Kemurahan Pemberian:</strong>
-                        <ul>
-                            <li>Memberi tanpa harapan (2:245)</li>
-                            <li>Menyediakan untuk semua ciptaan (11:6)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Muhammad (47:38), Allah membandingkan kecukupan diri-Nya dengan kebutuhan manusia, menunjukkan bahwa memberi menguntungkan pemberi, bukan Allah. Nabi (ﷺ) mencontohkan ini dengan hidup sederhana meskipun memiliki akses ke kekayaan, menunjukkan kepercayaan pada kecukupan ilahi (Bukhari).</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -432,10 +523,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -443,12 +536,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
