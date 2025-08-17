@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -124,6 +125,37 @@
         .hidden {
             display: none;
         }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -141,24 +173,186 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
-            <h1 class="name-title">81. Al-Muntaqim (The Avenger) (81)</h1>
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">81. Al-Muntaqim (Yang Maha Penyiksa)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muntaqim/" target="_blank">myislam.org/99-names-of-allah/al-muntaqim/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْمُنْتَقِمُ</div>
+            <div class="transliteration">Transliterasi: Al-Muntaqim</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/81.%20al-muntaqim.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Muntaqim muncul dalam Al-Quran tiga kali (<a href="https://quranwbw.com/32:22" target="_blank">32:22</a>, <a href="https://quranwbw.com/43:41" target="_blank">43:41</a>, <a href="https://quranwbw.com/44:16" target="_blank">44:16</a>) dengan makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Penyiksa:</strong> Yang menghukum pelaku kezaliman dengan adil</li>
+                    <li><strong>Yang Membalas:</strong> Yang memberikan balasan untuk kejahatan</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI dalam Tafsir Kementerian Agama, Al-Muntaqim adalah Allah Yang Maha Adil dalam memberikan hukuman kepada orang-orang yang zalim setelah memberikan kesempatan dan peringatan. Sebagaimana disebutkan dalam <a href="https://quranwbw.com/40:3" target="_blank">Surah Ghafir 40:3</a>: "Yang Mengampuni dosa, Yang Menerima taubat, Yang Keras dalam hukuman."</p>
+                <p>NU Online menjelaskan bahwa sifat ini menunjukkan kesempurnaan keadilan Allah, dimana hukuman hanya diberikan setelah segala peringatan dan kesempatan bertaubat diberikan.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/32:22" target="_blank">Surah As-Sajdah 32:22</a>
+                    <div class="arabic">وَمَنْ أَظْلَمُ مِمَّن ذُكِّرَ بِـَٔايَـٰتِ رَبِّهِۦ ثُمَّ أَعْرَضَ عَنْهَآ ۚ إِنَّا مِنَ ٱلْمُجْرِمِينَ مُنتَقِمُونَ</div>
+                    <div class="transliteration">Wa man aẓlamu mimman dhukkira bi-āyāti rabbihī thumma aʿraḍa ʿanhā, innā mina l-mujrimīna muntaqimūn</div>
+                    <p>"Dan siapakah yang lebih zalim daripada orang yang telah diperingatkan dengan ayat-ayat Tuhannya, kemudian dia berpaling darinya? Sesungguhnya Kami akan memberikan balasan kepada orang-orang yang berdosa."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menetapkan sifat Allah sebagai Al-Muntaqim terhadap mereka yang dengan sengaja menolak kebenaran setelah diperingatkan. Hukuman datang hanya setelah peringatan jelas dan kesempatan untuk bertaubat.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/44:16" target="_blank">Surah Ad-Dukhan 44:16</a>
+                    <div class="arabic">يَوْمَ نَبْطِشُ ٱلْبَطْشَةَ ٱلْكُبْرَىٰٓ إِنَّا مُنتَقِمُونَ</div>
+                    <div class="transliteration">Yawma nabṭishu l-baṭshata l-kubrā innā muntaqimūn</div>
+                    <p>"Pada hari Kami menghantam dengan hantaman yang besar, sesungguhnya Kami akan memberi balasan."</p>
+                    <div class="tafsir-box">
+                        <strong>NU Online:</strong> Ini menggambarkan pembalasan terakhir Allah pada Hari Kiamat. Menurut penjelasan ulama NU, ini adalah manifestasi terakhir dari Al-Muntaqim setelah semua peringatan dan kesempatan untuk bertaubat habis.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2582" target="_blank">Sahih Muslim 2582</a>
+                    <div class="arabic">إِنَّ اللَّهَ لَيُمْلِي لِلظَّالِمِ حَتَّى إِذَا أَخَذَهُ لَمْ يُفْلِتْهُ</div>
+                    <div class="transliteration">Inna Allāha layumlī liẓ-ẓālimi ḥattā idhā akhadhahu lam yuflit-hu</div>
+                    <p>"Sesungguhnya Allah memberi tenggang waktu kepada orang zalim, tetapi ketika Dia menangkapnya, Dia tidak melepaskannya."</p>
+                    <div class="tafsir-box">
+                        <strong>Keterangan NU:</strong> Nabi (ﷺ) menggambarkan keadilan Allah sebagai Al-Muntaqim - memberi waktu untuk bertaubat sebelum hukuman yang tak terelakkan. Ini melengkapi konsep Quran tentang pembalasan yang tertunda tetapi pasti.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan dari Penindasan</div>
+                    <div class="arabic">يَا مُنْتَقِمُ انْتَقِمْ لِي مِمَّنْ ظَلَمَنِي وَاجْعَلْنِي فِي كَنَفِكَ وَحِفْظِكَ</div>
+                    <div class="transliteration">Yā Muntaqim intaqim lī mimman ẓalamanī wa-jʿalnī fī kanafika wa ḥifẓika</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Penyiksa, balaslah untukku terhadap mereka yang menzalimiku, dan tempatkan aku dalam perlindungan dan penjagaan-Mu."</p>
+                    <p><strong>Manfaat:</strong> Doa ini diajarkan dalam kitab-kitab wirid NU untuk mencari keadilan ilahi sambil menghindari balas dendam pribadi. Nabi (ﷺ) mengajarkan untuk menyerahkan penghakiman kepada Allah (Muslim).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Keadilan Melawan Penindas</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْمُنْتَقِمُ مِنَ الظَّالِمِينَ، أَنْتَ الْقَادِرُ عَلَى كُلِّ شَيْءٍ، انْتَقِمْ لِلْمُسْتَضْعَفِينَ</div>
+                    <div class="transliteration">Allāhumma anta l-Muntaqim mina ẓ-ẓālimīn, anta l-Qādiru ʿalā kulli shayʾ, intaqim li-l-mustaḍʿafīn</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Pembalas terhadap para penindas, Engkau Maha Kuasa atas segala sesuatu, balaslah untuk orang-orang yang tertindas."</p>
+                    <p><strong>Sumber:</strong> Dianjurkan dalam kitab Al-Adzkar An-Nawawi yang menjadi rujukan pesantren NU, terinspirasi oleh doa Nabi (ﷺ) untuk orang tertindas (Ibnu Majah).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Mencari Keadilan</div>
+                    <p>Untuk mencari keadilan ilahi menurut panduan Kementerian Agama RI:</p>
+                    <ol>
+                        <li>Baca "Yā Muntaqim" 100 kali pada malam Jumat</li>
+                        <li>Baca <a href="https://quranwbw.com/42:40-43" target="_blank">Surah Ash-Shura 42:40-43</a> setiap hari</li>
+                        <li>Lakukan shalat hajat dua rakaat</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Memperkuat kepercayaan pada keadilan ilahi</li>
+                        <li>Menyucikan dari keinginan untuk balas dendam pribadi</li>
+                        <li>Menghubungkan dengan sifat Allah yang sempurna dalam keadilan</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Perlindungan dari Penindasan</div>
+                    <p>Untuk perlindungan dari penindas menurut amalan pesantren NU:</p>
+                    <ol>
+                        <li>Tulis "Al-Muntaqim" dengan air za'faran</li>
+                        <li>Simpan di rumah atau tempat kerja</li>
+                        <li>Baca Surah Al-Falaq (113) setiap hari</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Para ulama NU meriwayatkan bahwa para Sahabat mencari perlindungan Allah melalui nama-nama-Nya, sebagaimana tercatat dalam kitab-kitab klasik.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Muntaqim melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Keadilan Tertunda:</strong>
+                        <ul>
+                            <li>Memberi waktu untuk bertaubat (<a href="https://quranwbw.com/3:178" target="_blank">3:178</a>)</li>
+                            <li>Tidak terburu-buru dalam hukuman (<a href="https://quranwbw.com/22:47" target="_blank">22:47</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Takaran Sempurna:</strong>
+                        <ul>
+                            <li>Hukuman sesuai kejahatan (<a href="https://quranwbw.com/16:126" target="_blank">16:126</a>)</li>
+                            <li>Tidak melebihi yang pantas (<a href="https://quranwbw.com/6:160" target="_blank">6:160</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Keadilan Tertinggi:</strong>
+                        <ul>
+                            <li>Tidak ada pelarian pada Hari Kiamat (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
+                            <li>Balasan sempurna (<a href="https://quranwbw.com/99:6-8" target="_blank">99:6-8</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam <a href="https://quranwbw.com/42:40" target="_blank">Surah Ash-Shura 42:40</a>, Allah menyeimbangkan sifat ini: "Balasan suatu kejahatan adalah kejahatan yang serupa, tetapi barang siapa memaafkan dan berbuat baik, maka pahalanya atas (tanggungan) Allah." menunjukkan keadilan yang dilunakkan dengan rahmat.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">81. Al-Muntaqim (The Avenger)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muntaqim/" target="_blank">myislam.org/99-names-of-allah/al-muntaqim/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
-            <p><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muntaqim/" target="_blank">myislam.org/99-names-of-allah/al-muntaqim/</a></p>
-
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_79Mutaali.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْمُنْتَقِمُ</div>
             <div class="transliteration">Transliteration: Al-Muntaqim</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/81.%20al-muntaqim.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Muntaqim appears in the Quran three times (<a href="https://quranwbw.com/32:22" target="_blank">32:22</a>, <a href="https://quranwbw.com/43:41" target="_blank">43:41</a>, <a href="https://quranwbw.com/44:16" target="_blank">44:16</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Avenger:</strong> The One who justly punishes the wrongdoers</li>
@@ -193,7 +387,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 2582
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2582" target="_blank">Sahih Muslim 2582</a>
                     <div class="arabic">إِنَّ اللَّهَ لَيُمْلِي لِلظَّالِمِ حَتَّى إِذَا أَخَذَهُ لَمْ يُفْلِتْهُ</div>
                     <div class="transliteration">Inna Allāha layumlī liẓ-ẓālimi ḥattā idhā akhadhahu lam yuflit-hu</div>
                     <p>"Allah gives respite to the oppressor, but when He seizes him, He does not let him escape."</p>
@@ -278,144 +472,47 @@
                 <p>In <a href="https://quranwbw.com/42:40" target="_blank">Surah Ash-Shura 42:40</a>, Allah balances this attribute: "The recompense for an evil is an evil like thereof; but whoever forgives and makes reconciliation, his reward is with Allah." showing justice tempered with mercy.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">81. Al-Muntaqim (Yang Maha Penyiksa) (81)</h1>
-
-            <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muntaqim/" target="_blank">myislam.org/99-names-of-allah/al-muntaqim/</a></p>
-
-            <div class="arabic">ٱلْمُنْتَقِمُ</div>
-            <div class="transliteration">Transliterasi: Al-Muntaqim</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Muntaqim muncul dalam Al-Quran tiga kali (<a href="https://quranwbw.com/32:22" target="_blank">32:22</a>, <a href="https://quranwbw.com/43:41" target="_blank">43:41</a>, <a href="https://quranwbw.com/44:16" target="_blank">44:16</a>) dengan makna mendalam:</p>
-                <ul>
-                    <li><strong>Yang Maha Penyiksa:</strong> Yang menghukum pelaku kezaliman dengan adil</li>
-                    <li><strong>Yang Membalas:</strong> Yang memberikan balasan untuk kejahatan</li>
-                </ul>
-                <p>Ibnu Katsir menjelaskan: "Dia menghukum orang-orang zalim setelah memberi mereka kesempatan dan mengirim peringatan." Nama ini mengingatkan kita pada keadilan sempurna Allah, sebagaimana disebutkan dalam <a href="https://quranwbw.com/40:3" target="_blank">Surah Ghafir 40:3</a>: "Yang Mengampuni dosa, Yang Menerima taubat, Yang Keras dalam hukuman."</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/32:22" target="_blank">Surah As-Sajdah 32:22</a>
-                    <div class="arabic">وَمَنْ أَظْلَمُ مِمَّن ذُكِّرَ بِـَٔايَـٰتِ رَبِّهِۦ ثُمَّ أَعْرَضَ عَنْهَآ ۚ إِنَّا مِنَ ٱلْمُجْرِمِينَ مُنتَقِمُونَ</div>
-                    <div class="transliteration">Wa man aẓlamu mimman dhukkira bi-āyāti rabbihī thumma aʿraḍa ʿanhā, innā mina l-mujrimīna muntaqimūn</div>
-                    <p>"Dan siapakah yang lebih zalim daripada orang yang telah diperingatkan dengan ayat-ayat Tuhannya, kemudian dia berpaling darinya? Sesungguhnya Kami akan memberikan balasan kepada orang-orang yang berdosa."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menetapkan sifat Allah sebagai Al-Muntaqim terhadap mereka yang dengan sengaja menolak kebenaran setelah diperingatkan. Ibnu Katsir mencatat hukuman datang hanya setelah peringatan jelas dan kesempatan untuk bertaubat.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/44:16" target="_blank">Surah Ad-Dukhan 44:16</a>
-                    <div class="arabic">يَوْمَ نَبْطِشُ ٱلْبَطْشَةَ ٱلْكُبْرَىٰٓ إِنَّا مُنتَقِمُونَ</div>
-                    <div class="transliteration">Yawma nabṭishu l-baṭshata l-kubrā innā muntaqimūn</div>
-                    <p>"Pada hari Kami menghantam dengan hantaman yang besar, sesungguhnya Kami akan memberi balasan."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ini menggambarkan pembalasan terakhir Allah pada Hari Kiamat. Ibnu Katsir menjelaskan ini adalah manifestasi terakhir dari Al-Muntaqim setelah semua peringatan dan kesempatan untuk bertaubat habis.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 2582
-                    <div class="arabic">إِنَّ اللَّهَ لَيُمْلِي لِلظَّالِمِ حَتَّى إِذَا أَخَذَهُ لَمْ يُفْلِتْهُ</div>
-                    <div class="transliteration">Inna Allāha layumlī liẓ-ẓālimi ḥattā idhā akhadhahu lam yuflit-hu</div>
-                    <p>"Sesungguhnya Allah memberi tenggang waktu kepada orang zalim, tetapi ketika Dia menangkapnya, Dia tidak melepaskannya."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menggambarkan keadilan Allah sebagai Al-Muntaqim - memberi waktu untuk bertaubat sebelum hukuman yang tak terelakkan. Ini melengkapi konsep Quran tentang pembalasan yang tertunda tetapi pasti.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Perlindungan dari Penindasan</div>
-                    <div class="arabic">يَا مُنْتَقِمُ انْتَقِمْ لِي مِمَّنْ ظَلَمَنِي وَاجْعَلْنِي فِي كَنَفِكَ وَحِفْظِكَ</div>
-                    <div class="transliteration">Yā Muntaqim intaqim lī mimman ẓalamanī wa-jʿalnī fī kanafika wa ḥifẓika</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Penyiksa, balaslah untukku terhadap mereka yang menzalimiku, dan tempatkan aku dalam perlindungan dan penjagaan-Mu."</p>
-                    <p><strong>Manfaat:</strong> Doa ini mencari keadilan ilahi sambil menghindari balas dendam pribadi. Nabi (ﷺ) mengajarkan untuk menyerahkan penghakiman kepada Allah (Muslim).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Keadilan Melawan Penindas</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ الْمُنْتَقِمُ مِنَ الظَّالِمِينَ، أَنْتَ الْقَادِرُ عَلَى كُلِّ شَيْءٍ، انْتَقِمْ لِلْمُسْتَضْعَفِينَ</div>
-                    <div class="transliteration">Allāhumma anta l-Muntaqim mina ẓ-ẓālimīn, anta l-Qādiru ʿalā kulli shayʾ, intaqim li-l-mustaḍʿafīn</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Pembalas terhadap para penindas, Engkau Maha Kuasa atas segala sesuatu, balaslah untuk orang-orang yang tertindas."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi oleh doa Nabi (ﷺ) untuk orang tertindas (Ibnu Majah).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Amalan Mencari Keadilan</div>
-                    <p>Untuk mencari keadilan ilahi:</p>
-                    <ol>
-                        <li>Baca "Yā Muntaqim" 100 kali pada malam Jumat</li>
-                        <li>Baca <a href="https://quranwbw.com/42:40-43" target="_blank">Surah Ash-Shura 42:40-43</a> setiap hari</li>
-                        <li>Lakukan shalat hajat dua rakaat</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini:</p>
-                    <ul>
-                        <li>Memperkuat kepercayaan pada keadilan ilahi</li>
-                        <li>Menyucikan dari keinginan untuk balas dendam pribadi</li>
-                        <li>Menghubungkan dengan sifat Allah yang sempurna dalam keadilan</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Perlindungan dari Penindasan</div>
-                    <p>Untuk perlindungan dari penindas:</p>
-                    <ol>
-                        <li>Tulis "Al-Muntaqim" dengan air za'faran</li>
-                        <li>Simpan di rumah atau tempat kerja</li>
-                        <li>Baca Surah Al-Falaq (113) setiap hari</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat mencari perlindungan Allah melalui nama-nama-Nya, sebagaimana tercatat dalam 'Amal al-Yawm wal-Laylah karya Ibnu Sunni.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibnu Katsir menjelaskan Al-Muntaqim melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Keadilan Tertunda:</strong>
-                        <ul>
-                            <li>Memberi waktu untuk bertaubat (<a href="https://quranwbw.com/3:178" target="_blank">3:178</a>)</li>
-                            <li>Tidak terburu-buru dalam hukuman (<a href="https://quranwbw.com/22:47" target="_blank">22:47</a>)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Takaran Sempurna:</strong>
-                        <ul>
-                            <li>Hukuman sesuai kejahatan (<a href="https://quranwbw.com/16:126" target="_blank">16:126</a>)</li>
-                            <li>Tidak melebihi yang pantas (<a href="https://quranwbw.com/6:160" target="_blank">6:160</a>)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Keadilan Tertinggi:</strong>
-                        <ul>
-                            <li>Tidak ada pelarian pada Hari Kiamat (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
-                            <li>Balasan sempurna (<a href="https://quranwbw.com/99:6-8" target="_blank">99:6-8</a>)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam <a href="https://quranwbw.com/42:40" target="_blank">Surah Ash-Shura 42:40</a>, Allah menyeimbangkan sifat ini: "Balasan suatu kejahatan adalah kejahatan yang serupa, tetapi barang siapa memaafkan dan berbuat baik, maka pahalanya atas (tanggungan) Allah." menunjukkan keadilan yang dilunakkan dengan rahmat.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -425,10 +522,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -436,12 +535,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
