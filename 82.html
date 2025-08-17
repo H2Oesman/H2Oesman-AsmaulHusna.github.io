@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -124,6 +125,37 @@
         .hidden {
             display: none;
         }
+        .name-source {
+            text-align: center;
+            margin-top: -15px;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .main-menu {
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -141,24 +173,186 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
-            <h1 class="name-title">82. Al-Afuww (The Pardoner) (82)</h1>
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">82. Al-Afuww (Yang Maha Pemaaf)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-afuw/" target="_blank">myislam.org/99-names-of-allah/al-afuw/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلْعَفُوُّ</div>
+            <div class="transliteration">Transliterasi: Al-Afuww</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/83.%20ar-rauf.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Afuww muncul dalam Al-Quran lima kali (<a href="https://quranwbw.com/4:43" target="_blank">4:43</a>, <a href="https://quranwbw.com/4:99" target="_blank">4:99</a>, <a href="https://quranwbw.com/4:149" target="_blank">4:149</a>, <a href="https://quranwbw.com/22:60" target="_blank">22:60</a>, <a href="https://quranwbw.com/58:2" target="_blank">58:2</a>) dengan makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Pemaaf:</strong> Yang menghapus dosa sepenuhnya</li>
+                    <li><strong>Yang Menghilangkan:</strong> Yang menghapus jejak kesalahan</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI dalam Tafsir Kementerian Agama, Al-Afuww adalah Allah Yang Maha Pemaaf yang menghapus dosa-dosa hamba-Nya setelah mereka bertaubat. Sebagaimana disebutkan dalam <a href="https://quranwbw.com/39:53" target="_blank">Surah Az-Zumar 39:53</a>: "Sesungguhnya Allah mengampuni segala dosa."</p>
+                <p>NU Online menjelaskan bahwa sifat ini menunjukkan kasih sayang Allah yang luar biasa, dimana Dia tidak hanya mengampuni tetapi benar-benar menghapus jejak-jejak kesalahan.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/4:149" target="_blank">Surah An-Nisa 4:149</a>
+                    <div class="arabic">إِن تُبْدُوا۟ خَيْرًا أَوْ تُخْفُوهُ أَوْ تَعْفُوا۟ عَن سُوٓءٍۢ فَإِنَّ ٱللَّهَ كَانَ عَفُوًّۭا قَدِيرًۭا</div>
+                    <div class="transliteration">In tubdū khayran aw tukhfūhu aw taʿfū ʿan sū'in fa-inna Allāha kāna ʿafuwwan qadīrā</div>
+                    <p>"Jika kamu menyatakan kebaikan atau menyembunyikannya atau memaafkan kesalahan, maka sesungguhnya Allah Maha Pemaaf lagi Maha Kuasa."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan bahwa Allah sebagai Al-Afuww mendorong manusia untuk saling memaafkan. Menurut penjelasan Kemenag, pemaafan manusia merupakan cerminan dari sifat Allah Yang Maha Pemaaf.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/22:60" target="_blank">Surah Al-Hajj 22:60</a>
+                    <div class="arabic">وَإِنْ عَاقَبْتُمْ فَعَاقِبُوا۟ بِمِثْلِ مَا عُوقِبْتُم بِهِۦ ۖ وَلَئِن صَبَرْتُمْ لَهُوَ خَيْرٌۭ لِّلصَّـٰبِرِينَ * وَٱصْبِرْ وَمَا صَبْرُكَ إِلَّا بِٱللَّهِ ۚ وَلَا تَحْزَنْ عَلَيْهِمْ وَلَا تَكُ فِى ضَيْقٍۢ مِّمَّا يَمْكُرُونَ * إِنَّ ٱللَّهَ مَعَ ٱلَّذِينَ ٱتَّقَوا۟ وَّٱلَّذِينَ هُم مُّحْسِنُونَ</div>
+                    <div class="transliteration">Wa in ʿāqabtum fa-ʿāqibū bi-mithli mā ʿūqibtum bih, wa la-in ṣabartum la-huwa khayrun liṣ-ṣābirīn * Wa ṣbir wa mā ṣabruka illā bi-Llāh, wa lā taḥzan ʿalayhim wa lā taku fī ḍayqim mimmā yamkurūn * Inna Allāha maʿa lladhīna ttaqaw wa lladhīna hum muḥsinūn</div>
+                    <p>"Dan jika kamu membalas, maka balaslah dengan yang setimpal. Tetapi jika kamu bersabar, itu lebih baik bagi orang yang sabar. Bersabarlah, dan kesabaranmu itu tidak lain hanyalah dengan pertolongan Allah. Janganlah kamu bersedih terhadap mereka dan janganlah kamu bersempit dada terhadap tipu daya mereka. Sesungguhnya Allah beserta orang-orang yang bertakwa dan orang-orang yang berbuat kebaikan."</p>
+                    <div class="tafsir-box">
+                        <strong>NU Online:</strong> Ayat ini menunjukkan keseimbangan antara keadilan dan pemaafan. Para ulama NU menjelaskan bahwa meskipun pembalasan diizinkan, Allah sebagai Al-Afuww memberi pahala lebih besar bagi mereka yang memilih kesabaran dan pemaafan.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:7509" target="_blank">Sahih Bukhari 7509</a>
+                    <div class="arabic">وَاللَّهُ عَفُوٌّ يُحِبُّ الْعَفْوَ</div>
+                    <div class="transliteration">Wa Llāhu ʿafuwwun yuḥibbu l-ʿafw</div>
+                    <p>"Allah Maha Pemaaf dan menyukai pemaafan."</p>
+                    <div class="tafsir-box">
+                        <strong>Keterangan NU:</strong> Nabi (ﷺ) menggambarkan sifat Allah sebagai Al-Afuww yang tidak hanya memaafkan tetapi menyukai ketika hamba-Nya memaafkan orang lain. Dalam kitab-kitab pesantren, hadits ini sering dijadikan dasar untuk mengajarkan pentingnya memaafkan.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Pemaafan Sempurna</div>
+                    <div class="arabic">يَا عَفُوُّ يَا غَفُورُ اغْفِرْ لِي ذُنُوبِي كُلَّهَا وَاعْفُ عَنِّي سَيِّئَاتِي بِفَضْلِكَ وَكَرَمِكَ</div>
+                    <div class="transliteration">Yā ʿAfuwwu yā Ghafūru ghfir lī dhunūbī kullahā waʿfu ʿannī sayyi'ātī bi-faḍlika wa karamik</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Pemaaf, wahai Yang Maha Pengampun, ampunilah semua dosaku dan maafkan kesalahanku dengan karunia dan kemurahan-Mu."</p>
+                    <p><strong>Manfaat:</strong> Doa ini diajarkan dalam kitab-kitab wirid NU untuk memohon pengampunan total. Nabi (ﷺ) mengajarkan bahwa pemaafan Allah menghapus semua jejak dosa (Tirmidzi).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Kemampuan Memaafkan</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْعَفُوُّ وَمِنْكَ الْعَفْوُ، أَعْطِنِي قَلْبًا عَفُوًّا وَاجْعَلْنِي مِمَّنْ تَغْمُرُهُمْ رَحْمَتُكَ</div>
+                    <div class="transliteration">Allāhumma anta l-ʿAfuwwu wa minka l-ʿafw, aʿṭinī qalban ʿafuwwan wa-jʿalnī mimman taghmaruhum raḥmatuk</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Al-Afuww dan dari-Mu datang pemaafan. Berikan aku hati yang pemaaf dan jadikan aku termasuk orang-orang yang diliputi rahmat-Mu."</p>
+                    <p><strong>Sumber:</strong> Dianjurkan dalam kitab Al-Adzkar An-Nawawi yang menjadi rujukan pesantren NU, terinspirasi oleh ajaran Nabi (ﷺ) tentang pemaafan (Muslim).</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Mencari Pemaafan</div>
+                    <p>Untuk pembersihan spiritual sempurna menurut panduan Kementerian Agama RI:</p>
+                    <ol>
+                        <li>Baca "Yā ʿAfuww" 100 kali sebelum Subuh</li>
+                        <li>Baca <a href="https://quranwbw.com/3:133-136" target="_blank">Surah Al-Imran 3:133-136</a> setiap hari</li>
+                        <li>Maafkan seseorang yang menyakitimu setiap hari</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Menghubungkan dengan sifat Allah yang memaafkan sepenuhnya</li>
+                        <li>Menyucikan hati dari dendam</li>
+                        <li>Mendatangkan rahmat dan pengampunan ilahi</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Malam Pemaafan</div>
+                    <p>Amalan khusus pada malam Jumat menurut tradisi pesantren NU:</p>
+                    <ol>
+                        <li>Tulis "Al-Afuww" dengan air mawar</li>
+                        <li>Simpan di bawah bantal saat tidur</li>
+                        <li>Baca Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) sebelum tidur</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Orang-orang shaleh biasa mencari pemaafan Allah terutama pada malam Jumat, sebagaimana tercatat dalam kitab-kitab klasik yang menjadi rujukan pesantren NU.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibnu Katsir menjelaskan Al-Afuww melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Penghapusan Sempurna:</strong>
+                        <ul>
+                            <li>Menghapus dosa sepenuhnya (<a href="https://quranwbw.com/39:53" target="_blank">39:53</a>)</li>
+                            <li>Menghilangkan jejak kesalahan (<a href="https://quranwbw.com/4:31" target="_blank">4:31</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Melampaui Pengampunan:</strong>
+                        <ul>
+                            <li>Tidak hanya menutupi tetapi menghilangkan dosa (<a href="https://quranwbw.com/42:25" target="_blank">42:25</a>)</li>
+                            <li>Mengubah perbuatan buruk menjadi baik (<a href="https://quranwbw.com/25:70" target="_blank">25:70</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pemaafan Bersyarat:</strong>
+                        <ul>
+                            <li>Memerlukan taubat yang tulus (<a href="https://quranwbw.com/66:8" target="_blank">66:8</a>)</li>
+                            <li>Perlu memaafkan orang lain (<a href="https://quranwbw.com/24:22" target="_blank">24:22</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam <a href="https://quranwbw.com/64:14" target="_blank">Surah At-Taghabun 64:14</a>, Allah menyeimbangkan sifat ini: "Jika kamu memaafkan dan tidak mempersoalkan dan mengampuni, maka sungguh, Allah Maha Pengampun lagi Maha Penyayang." menunjukkan bagaimana pemaafan manusia terhubung dengan pemaafan ilahi.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
+            <h1 class="name-title">82. Al-Afuww (The Pardoner)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-afuw/" target="_blank">myislam.org/99-names-of-allah/al-afuw/</a></div>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
-            <p><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-afuw/" target="_blank">myislam.org/99-names-of-allah/al-afuw/</a></p>
-
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_83Afw.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْعَفُوُّ</div>
             <div class="transliteration">Transliteration: Al-Afuww</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/83.%20ar-rauf.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
+                <h2 class="section-title">Meaning</h2>
                 <p>Al-Afuww appears in the Quran five times (<a href="https://quranwbw.com/4:43" target="_blank">4:43</a>, <a href="https://quranwbw.com/4:99" target="_blank">4:99</a>, <a href="https://quranwbw.com/4:149" target="_blank">4:149</a>, <a href="https://quranwbw.com/22:60" target="_blank">22:60</a>, <a href="https://quranwbw.com/58:2" target="_blank">58:2</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Pardoner:</strong> The One who erases sins completely</li>
@@ -193,7 +387,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Bukhari 7509
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:7509" target="_blank">Sahih Bukhari 7509</a>
                     <div class="arabic">وَاللَّهُ عَفُوٌّ يُحِبُّ الْعَفْوَ</div>
                     <div class="transliteration">Wa Llāhu ʿafuwwun yuḥibbu l-ʿafw</div>
                     <p>"Allah is Pardoning and loves forgiveness."</p>
@@ -278,144 +472,47 @@
                 <p>In <a href="https://quranwbw.com/64:14" target="_blank">Surah At-Taghabun 64:14</a>, Allah balances this attribute: "If you pardon and overlook and forgive, then indeed, Allah is Forgiving and Merciful." showing how human forgiveness connects with divine pardon.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">82. Al-Afuww (Yang Maha Pemaaf) (82)</h1>
-
-            <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-afuw/" target="_blank">myislam.org/99-names-of-allah/al-afuw/</a></p>
-
-            <div class="arabic">ٱلْعَفُوُّ</div>
-            <div class="transliteration">Transliterasi: Al-Afuww</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna dan Signifikansi</h2>
-                <p>Al-Afuww muncul dalam Al-Quran lima kali (<a href="https://quranwbw.com/4:43" target="_blank">4:43</a>, <a href="https://quranwbw.com/4:99" target="_blank">4:99</a>, <a href="https://quranwbw.com/4:149" target="_blank">4:149</a>, <a href="https://quranwbw.com/22:60" target="_blank">22:60</a>, <a href="https://quranwbw.com/58:2" target="_blank">58:2</a>) dengan makna mendalam:</p>
-                <ul>
-                    <li><strong>Yang Maha Pemaaf:</strong> Yang menghapus dosa sepenuhnya</li>
-                    <li><strong>Yang Menghilangkan:</strong> Yang menghapus jejak kesalahan</li>
-                </ul>
-                <p>Ibnu Katsir menjelaskan: "Dia memaafkan dosa dan mengabaikan kesalahan, menghapusnya seolah-olah tidak pernah terjadi." Nama ini mengingatkan kita pada pengampunan tertinggi Allah, sebagaimana disebutkan dalam <a href="https://quranwbw.com/39:53" target="_blank">Surah Az-Zumar 39:53</a>: "Sesungguhnya Allah mengampuni segala dosa."</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/4:149" target="_blank">Surah An-Nisa 4:149</a>
-                    <div class="arabic">إِن تُبْدُوا۟ خَيْرًا أَوْ تُخْفُوهُ أَوْ تَعْفُوا۟ عَن سُوٓءٍۢ فَإِنَّ ٱللَّهَ كَانَ عَفُوًّۭا قَدِيرًۭا</div>
-                    <div class="transliteration">In tubdū khayran aw tukhfūhu aw taʿfū ʿan sū'in fa-inna Allāha kāna ʿafuwwan qadīrā</div>
-                    <p>"Jika kamu menyatakan kebaikan atau menyembunyikannya atau memaafkan kesalahan, maka sesungguhnya Allah Maha Pemaaf lagi Maha Kuasa."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menghubungkan pemaafan manusia dengan pemaafan ilahi. Ibnu Katsir mencatat bahwa sifat Allah sebagai Al-Afuww mendorong orang beriman untuk memaafkan orang lain, dengan janji pengampunan ilahi yang lebih besar.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/22:60" target="_blank">Surah Al-Hajj 22:60</a>
-                    <div class="arabic">وَإِنْ عَاقَبْتُمْ فَعَاقِبُوا۟ بِمِثْلِ مَا عُوقِبْتُم بِهِۦ ۖ وَلَئِن صَبَرْتُمْ لَهُوَ خَيْرٌۭ لِّلصَّـٰبِرِينَ * وَٱصْبِرْ وَمَا صَبْرُكَ إِلَّا بِٱللَّهِ ۚ وَلَا تَحْزَنْ عَلَيْهِمْ وَلَا تَكُ فِى ضَيْقٍۢ مِّمَّا يَمْكُرُونَ * إِنَّ ٱللَّهَ مَعَ ٱلَّذِينَ ٱتَّقَوا۟ وَّٱلَّذِينَ هُم مُّحْسِنُونَ</div>
-                    <div class="transliteration">Wa in ʿāqabtum fa-ʿāqibū bi-mithli mā ʿūqibtum bih, wa la-in ṣabartum la-huwa khayrun liṣ-ṣābirīn * Wa ṣbir wa mā ṣabruka illā bi-Llāh, wa lā taḥzan ʿalayhim wa lā taku fī ḍayqim mimmā yamkurūn * Inna Allāha maʿa lladhīna ttaqaw wa lladhīna hum muḥsinūn</div>
-                    <p>"Dan jika kamu membalas, maka balaslah dengan yang setimpal. Tetapi jika kamu bersabar, itu lebih baik bagi orang yang sabar. Bersabarlah, dan kesabaranmu itu tidak lain hanyalah dengan pertolongan Allah. Janganlah kamu bersedih terhadap mereka dan janganlah kamu bersempit dada terhadap tipu daya mereka. Sesungguhnya Allah beserta orang-orang yang bertakwa dan orang-orang yang berbuat kebaikan."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menunjukkan keseimbangan antara keadilan dan pemaafan. Ibnu Katsir menjelaskan bahwa meskipun pembalasan diizinkan, Allah sebagai Al-Afuww memberi pahala bagi mereka yang memilih kesabaran dan pemaafan.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Bukhari 7509
-                    <div class="arabic">وَاللَّهُ عَفُوٌّ يُحِبُّ الْعَفْوَ</div>
-                    <div class="transliteration">Wa Llāhu ʿafuwwun yuḥibbu l-ʿafw</div>
-                    <p>"Allah Maha Pemaaf dan menyukai pemaafan."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menggambarkan sifat Allah sebagai Al-Afuww yang tidak hanya memaafkan tetapi menyukai ketika hamba-Nya memaafkan orang lain. Ini melengkapi konsep Quran tentang pemaafan ilahi.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Pemaafan Sempurna</div>
-                    <div class="arabic">يَا عَفُوُّ يَا غَفُورُ اغْفِرْ لِي ذُنُوبِي كُلَّهَا وَاعْفُ عَنِّي سَيِّئَاتِي بِفَضْلِكَ وَكَرَمِكَ</div>
-                    <div class="transliteration">Yā ʿAfuwwu yā Ghafūru ghfir lī dhunūbī kullahā waʿfu ʿannī sayyi'ātī bi-faḍlika wa karamik</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Pemaaf, wahai Yang Maha Pengampun, ampunilah semua dosaku dan maafkan kesalahanku dengan karunia dan kemurahan-Mu."</p>
-                    <p><strong>Manfaat:</strong> Doa komprehensif ini menggabungkan permohonan pengampunan (maghfirah) dan pemaafan sempurna (ʿafw). Nabi (ﷺ) mengajarkan bahwa pemaafan Allah menghapus semua jejak dosa (Tirmidzi).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Kemampuan Memaafkan</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ الْعَفُوُّ وَمِنْكَ الْعَفْوُ، أَعْطِنِي قَلْبًا عَفُوًّا وَاجْعَلْنِي مِمَّنْ تَغْمُرُهُمْ رَحْمَتُكَ</div>
-                    <div class="transliteration">Allāhumma anta l-ʿAfuwwu wa minka l-ʿafw, aʿṭinī qalban ʿafuwwan wa-jʿalnī mimman taghmaruhum raḥmatuk</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Al-Afuww dan dari-Mu datang pemaafan. Berikan aku hati yang pemaaf dan jadikan aku termasuk orang-orang yang diliputi rahmat-Mu."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi oleh ajaran Nabi (ﷺ) tentang pemaafan (Muslim).</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Amalan Mencari Pemaafan</div>
-                    <p>Untuk pembersihan spiritual sempurna:</p>
-                    <ol>
-                        <li>Baca "Yā ʿAfuww" 100 kali sebelum Subuh</li>
-                        <li>Baca <a href="https://quranwbw.com/3:133-136" target="_blank">Surah Al-Imran 3:133-136</a> setiap hari</li>
-                        <li>Maafkan seseorang yang menyakitimu setiap hari</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini:</p>
-                    <ul>
-                        <li>Menghubungkan dengan sifat Allah yang memaafkan sepenuhnya</li>
-                        <li>Menyucikan hati dari dendam</li>
-                        <li>Mendatangkan rahmat dan pengampunan ilahi</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Malam Pemaafan</div>
-                    <p>Amalan khusus pada malam Jumat:</p>
-                    <ol>
-                        <li>Tulis "Al-Afuww" dengan air mawar</li>
-                        <li>Simpan di bawah bantal saat tidur</li>
-                        <li>Baca Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) sebelum tidur</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Orang-orang shaleh biasa mencari pemaafan Allah terutama pada malam Jumat, sebagaimana tercatat dalam 'Amal al-Yawm wal-Laylah karya Ibnu Sunni.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibnu Katsir menjelaskan Al-Afuww melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Penghapusan Sempurna:</strong>
-                        <ul>
-                            <li>Menghapus dosa sepenuhnya (<a href="https://quranwbw.com/39:53" target="_blank">39:53</a>)</li>
-                            <li>Menghilangkan jejak kesalahan (<a href="https://quranwbw.com/4:31" target="_blank">4:31</a>)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Melampaui Pengampunan:</strong>
-                        <ul>
-                            <li>Tidak hanya menutupi tetapi menghilangkan dosa (<a href="https://quranwbw.com/42:25" target="_blank">42:25</a>)</li>
-                            <li>Mengubah perbuatan buruk menjadi baik (<a href="https://quranwbw.com/25:70" target="_blank">25:70</a>)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Pemaafan Bersyarat:</strong>
-                        <ul>
-                            <li>Memerlukan taubat yang tulus (<a href="https://quranwbw.com/66:8" target="_blank">66:8</a>)</li>
-                            <li>Perlu memaafkan orang lain (<a href="https://quranwbw.com/24:22" target="_blank">24:22</a>)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam <a href="https://quranwbw.com/64:14" target="_blank">Surah At-Taghabun 64:14</a>, Allah menyeimbangkan sifat ini: "Jika kamu memaafkan dan tidak mempersoalkan dan mengampuni, maka sungguh, Allah Maha Pengampun lagi Maha Penyayang." menunjukkan bagaimana pemaafan manusia terhubung dengan pemaafan ilahi.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -425,10 +522,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -436,12 +535,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
