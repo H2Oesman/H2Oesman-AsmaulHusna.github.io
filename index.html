@@ -22,6 +22,525 @@
     .search-box {
       text-align: center;
       margin-bottom: 20px;
+      position: sticky;
+      top: 0;
+      background-color: #f5f3eb;
+      padding: 10px 0;
+      z-index: 10;
+    }
+    input[type="text"] {
+      width: 50%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .names-container {
+      display: flex;
+      flex-wrap: wrap;
+      overflow-y: auto;
+      max-height: 70vh;
+      max-width: 100%;
+      gap: 20px;
+      justify-content: space-between;
+      scroll-behavior: smooth;
+    }
+    .name-box {
+      width: 30%;
+      font-size: 20px;
+      line-height: 1.5em;
+      margin-bottom: 15px;
+    }
+    .name-box a {
+      text-decoration: none;
+      color: #146356;
+      display: block;
+    }
+    .name-box a:hover {
+      color: #0a4d3c;
+      text-decoration: underline;
+    }
+    .reference {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+    .instruction {
+      text-align: center;
+      font-size: 18px;
+      margin: 20px 0;
+      font-style: italic;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 15px 0;
+      font-size: 14px;
+      color: #555;
+      border-top: 1px solid #ddd;
+    }
+    .intro-link {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .intro-link a {
+      color: #146356;
+      text-decoration: none;
+    }
+    .intro-link a:hover {
+      text-decoration: underline;
+    }
+    .language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #146356;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 100;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .hidden {
+      display: none;
+    }
+    @media screen and (max-width: 768px) {
+      .name-box {
+        width: 100%;
+        font-size: 18px;
+      }
+      .language-toggle {
+        position: static;
+        display: inline-block;
+        margin: 10px 0;
+      }
+      input[type="text"] {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="language-toggle" id="languageToggle">Switch to English</div>
+
+  <!-- English Content -->
+  <div id="english-content" class="hidden">
+    <div class="header">
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">﷽</div>
+      <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> — In the name of Allah, the Most Gracious, the Most Merciful</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
+      <div><strong>As-salāmu ʿalaykum wa raḥmatullāhi wa barakātuh</strong> — Peace and blessings of Allah be upon you</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
+      <div><strong>Waṣ-ṣalātu was-salāmu ʿalā Rasūlillāh</strong> — May peace and blessings be upon the Messenger of Allah</div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" onkeyup="searchNames()" placeholder="Search Names or Numbers...">
+    </div>
+
+    <div class="intro-link">
+      <a href="introduction.html">Introduction</a>
+    </div>
+
+    <div class="instruction">Click on one of the Names</div>
+
+    <div class="names-container" id="englishNamesContainer">
+      <!-- Names will be populated here by JavaScript -->
+    </div>
+
+    <div class="reference">
+      <a href="ref.html">Reference</a>
+    </div>
+  </div>
+
+  <!-- Indonesian Content (Shown by Default) -->
+  <div id="indonesian-content">
+    <div class="header">
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">﷽</div>
+      <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> </div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
+      <div><strong>As-salāmu ʿalaykum wa raḥmatullāhi wa barakātuh</strong> </div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
+      <div><strong>Waṣ-ṣalātu was-salāmu ʿalā Rasūlillāh</strong> </div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInputIndo" onkeyup="searchNamesIndo()" placeholder="Cari Nama atau Nomor...">
+    </div>
+
+    <div class="intro-link">
+      <a href="introduction.html">Pengantar</a>
+    </div>
+
+    <div class="instruction">Klik salah satu Nama</div>
+
+    <div class="names-container" id="indonesianNamesContainer">
+      <!-- Names will be populated here by JavaScript -->
+    </div>
+
+    <div class="reference">
+      <a href="ref.html">Referensi</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Names data
+    const englishNames = [
+      {number: 1, arabic: "ٱلرَّحْمَٰنُ", transliteration: "Ar-Rahmān", translation: "The Beneficent"},
+      {number: 2, arabic: "ٱلرَّحِيمُ", transliteration: "Ar-Rahīm", translation: "The Merciful"},
+      {number: 3, arabic: "ٱلْمَلِكُ", transliteration: "Al-Malik", translation: "The King and Owner of Dominion"},
+      {number: 4, arabic: "ٱلْقُدُّوسُ", transliteration: "Al-Quddūs", translation: "The Absolutely Pure"},
+      {number: 5, arabic: "ٱلسَّلَامُ", transliteration: "As-Salām", translation: "The Source of Peace, Safety"},
+      {number: 6, arabic: "ٱلْمُؤْمِنُ", transliteration: "Al-Mu'min", translation: "The One Who gives Emaan and Security"},
+      {number: 7, arabic: "ٱلْمُهَيْمِنُ", transliteration: "Al-Muhaymin", translation: "The Guardian, The Witness"},
+      {number: 8, arabic: "ٱلْعَزِيزُ", transliteration: "Al-ʿAzīz", translation: "The Almighty"},
+      {number: 9, arabic: "ٱلْجَبَّارُ", transliteration: "Al-Jabbār", translation: "The Compeller"},
+      {number: 10, arabic: "ٱلْمُتَكَبِّرُ", transliteration: "Al-Mutakabbir", translation: "The Supreme, The Majestic"},
+      {number: 11, arabic: "ٱلْخَالِقُ", transliteration: "Al-Khaaliq", translation: "The Creator, The Maker"},
+      {number: 12, arabic: "ٱلْبَارِئُ", transliteration: "Al-Baari", translation: "The Evolver"},
+      {number: 13, arabic: "ٱلْمُصَوِّرُ", transliteration: "Al-Musawwir", translation: "The Fashioner"},
+      {number: 14, arabic: "ٱلْغَفَّارُ", transliteration: "Al-Ghaffar", translation: "The Constant Forgiver"},
+      {number: 15, arabic: "ٱلْقَهَّارُ", transliteration: "Al-Qahhaar", translation: "The All-Subduer"},
+      {number: 16, arabic: "ٱلْوَهَّابُ", transliteration: "Al-Wahhaab", translation: "The Supreme Bestower"},
+      {number: 17, arabic: "ٱلرَّزَّاقُ", transliteration: "Ar-Razzaaq", translation: "The Provider"},
+      {number: 18, arabic: "ٱلْفَتَّاحُ", transliteration: "Al-Fattaah", translation: "The Supreme Opener"},
+      {number: 19, arabic: "ٱلْعَلِيمُ", transliteration: "Al-`Aleem", translation: "The All-Knowing"},
+      {number: 20, arabic: "ٱلْقَابِضُ", transliteration: "Al-Qaabid", translation: "The Withholder"},
+      {number: 21, arabic: "ٱلْبَاسِطُ", transliteration: "Al-Baasit", translation: "The Extender"},
+      {number: 22, arabic: "ٱلْخَافِضُ", transliteration: "Al-Khaafid", translation: "The Reducer"},
+      {number: 23, arabic: "ٱلرَّافِعُ", transliteration: "Ar-Raafi`", translation: "The Exalter"},
+      {number: 24, arabic: "ٱلْمُعِزُّ", transliteration: "Al-Mu`izz", translation: "The Honourer"},
+      {number: 25, arabic: "ٱلْمُذِلُّ", transliteration: "Al-Mudhill", translation: "The Dishonourer"},
+      {number: 26, arabic: "ٱلسَّمِيعُ", transliteration: "As-Samee`", translation: "The All-Hearing"},
+      {number: 27, arabic: "ٱلْبَصِيرُ", transliteration: "Al-Baseer", translation: "The All-Seeing"},
+      {number: 28, arabic: "ٱلْحَكَمُ", transliteration: "Al-Hakam", translation: "The Impartial Judge"},
+      {number: 29, arabic: "ٱلْعَدْلُ", transliteration: "Al-`Adl", translation: "The Utterly Just"},
+      {number: 30, arabic: "ٱللَّطِيفُ", transliteration: "Al-Lateef", translation: "The Subtle One, The Most Gentle"},
+      {number: 31, arabic: "ٱلْخَبِيرُ", transliteration: "Al-Khabeer", translation: "The All-Aware"},
+      {number: 32, arabic: "ٱلْحَلِيمُ", transliteration: "Al-Haleem", translation: "The Most Forbearing"},
+      {number: 33, arabic: "ٱلْعَظِيمُ", transliteration: "Al-`Azeem", translation: "The Magnificent, the Infinite"},
+      {number: 34, arabic: "ٱلْغَفُور", transliteration: "Al-Ghafoor", translation: "The Great Forgiver"},
+      {number: 35, arabic: "ٱلشَّكُورُ", transliteration: "Ash-Shakoor", translation: "The Most Appreciative"},
+      {number: 36, arabic: "ٱلْعَلِيُّ", transliteration: "Al-`Aliyy", translation: "The Most High, the Exalted"},
+      {number: 37, arabic: "ٱلْكَبِيرُ", transliteration: "Al-Kabeer", translation: "The Most Great"},
+      {number: 38, arabic: "ٱلْحَفِيظُ", transliteration: "Al-Hafeedh", translation: "The Preserver"},
+      {number: 39, arabic: "ٱلْمُقِيت", transliteration: "Al-Muqeet", translation: "The Sustainer"},
+      {number: 40, arabic: "ٱلْحسِيبُ", transliteration: "Al-Haseeb", translation: "The Reckoner"},
+      {number: 41, arabic: "ٱلْجَلِيلُ", transliteration: "Al-Jaleel", translation: "The Majestic"},
+      {number: 42, arabic: "ٱلْكَرِيمُ", transliteration: "Al-Kareem", translation: "The Most Generous, the Most Esteemed"},
+      {number: 43, arabic: "ٱلرَّقِيبُ", transliteration: "Ar-Raqeeb", translation: "The Watchful"},
+      {number: 44, arabic: "ٱلْمُجِيبُ", transliteration: "Al-Mujeeb", translation: "The Responsive One"},
+      {number: 45, arabic: "ٱلْوَاسِعُ", transliteration: "Al-Waasi`", translation: "The All-Encompassing, the Boundless"},
+      {number: 46, arabic: "ٱلْحَكِيمُ", transliteration: "Al-Hakeem", translation: "The All-Wise"},
+      {number: 47, arabic: "ٱلْوَدُودُ", transliteration: "Al-Wadud", translation: "The Most Loving"},
+      {number: 48, arabic: "ٱلْمَجِيدُ", transliteration: "Al-Majeed", translation: "The Glorious, the Most Honorable"},
+      {number: 49, arabic: "ٱلْبَاعِثُ", transliteration: "Al-Ba'ith", translation: "The Infuser of New Life"},
+      {number: 50, arabic: "ٱلشَّهِيدُ", transliteration: "Ash-Shaheed", translation: "The All-and-Ever Witnessing"},
+      {number: 51, arabic: "ٱلْحَقُ", transliteration: "Al-Haqq", translation: "The Absolute Truth"},
+      {number: 52, arabic: "ٱلْوَكِيلُ", transliteration: "Al-Wakeel", translation: "The Trustee, The Disposer of Affairs"},
+      {number: 53, arabic: "ٱلْقَوِي", transliteration: "Al-Qawiyy", translation: "The All-Strong"},
+      {number: 54, arabic: "ٱلْمَتِينُ", transliteration: "Al-Mateen", translation: "The Firm One"},
+      {number: 55, arabic: "ٱلْوَلِيُّ", transliteration: "Al-Waliyy", translation: "The Sole Provider"},
+      {number: 56, arabic: "ٱلْحَمِيدُ", transliteration: "Al-Hameed", translation: "The Praiseworthy"},
+      {number: 57, arabic: "ٱلْمُحْصِي", transliteration: "Al-Muhsee", translation: "The All-Enumerating, the Counter"},
+      {number: 58, arabic: "ٱلْمُبْدِئُ", transliteration: "Al-Mubdi'", translation: "The Originator, the Initiator"},
+      {number: 59, arabic: "ٱلْمُعِيدُ", transliteration: "Al-Mueed", translation: "The Restorer, the Reinstater"},
+      {number: 60, arabic: "ٱلْمُحْيِي", transliteration: "Al-Muhyi", translation: "The Giver of Life"},
+      {number: 61, arabic: "ٱلْمُمِيتُ", transliteration: "Al-Mumeet", translation: "The Creator of Death"},
+      {number: 62, arabic: "ٱلْحَيُّ", transliteration: "Al-Hayy", translation: "The Ever-Living"},
+      {number: 63, arabic: "ٱلْقَيُّومُ", transliteration: "Al-Qayyoom", translation: "The Sustainer, The Self-Subsisting"},
+      {number: 64, arabic: "ٱلْوَاجِدُ", transliteration: "Al-Waajid", translation: "The Perceiver"},
+      {number: 65, arabic: "ٱلْمَاجِدُ", transliteration: "Al-Maajid", translation: "The Glorious, the Most Honorable"},
+      {number: 66, arabic: "ٱلْواحِدُ", transliteration: "Al-Waahid", translation: "The Only One"},
+      {number: 67, arabic: "ٱلْأَحَدُ", transliteration: "Al-Ahad", translation: "The Indivisible, the Absolute"},
+      {number: 68, arabic: "ٱلصَّمَدُ", transliteration: "As-Samad", translation: "The Self-Sufficient, the Impregnable"},
+      {number: 69, arabic: "ٱلْقَادِرُ", transliteration: "Al-Qaadir", translation: "The Omnipotent"},
+      {number: 70, arabic: "ٱلْمُقْتَدِرُ", transliteration: "Al-Muqtadir", translation: "The Creator of All Power"},
+      {number: 71, arabic: "ٱلْمُقَدِّمُ", transliteration: "Al-Muqaddim", translation: "The Expediter"},
+      {number: 72, arabic: "ٱلْمُؤَخِّرُ", transliteration: "Al-Mu'akhkhir", translation: "The Delayer"},
+      {number: 73, arabic: "ٱلأَوَّلُ", transliteration: "Al-Awwal", translation: "The First"},
+      {number: 74, arabic: "ٱلآخِرُ", transliteration: "Al-Aakhir", translation: "The Last"},
+      {number: 75, arabic: "ٱلظَّاهِرُ", transliteration: "Az-Zaahir", translation: "The Manifest"},
+      {number: 76, arabic: "ٱلْبَاطِنُ", transliteration: "Al-Baatin", translation: "The Hidden One, Knower of the Hidden"},
+      {number: 77, arabic: "ٱلْوَالِي", transliteration: "Al-Waali", translation: "The Sole Governor"},
+      {number: 78, arabic: "ٱلْمُتَعَالِي", transliteration: "Al-Muta`aali", translation: "The Self Exalted"},
+      {number: 79, arabic: "ٱلْبَرُّ", transliteration: "Al-Barr", translation: "The Source of All Goodness"},
+      {number: 80, arabic: "ٱلتَّوَابُ", transliteration: "At-Tawwaab", translation: "The Ever-Accepter of Repentance"},
+      {number: 81, arabic: "ٱلْمُنْتَقِمُ", transliteration: "Al-Muntaqim", translation: "The Avenger"},
+      {number: 82, arabic: "ٱلْعَفُو", transliteration: "Al-`Afuww", translation: "The Supreme Pardoner"},
+      {number: 83, arabic: "ٱلرَّؤُوفُ", transliteration: "Ar-Ra'oof", translation: "The Most Kind"},
+      {number: 84, arabic: "ٱلْمَالِكُ ٱلْمُلْكُ", transliteration: "Maalik-ul-Mulk", translation: "Master and King of the Kingdom"},
+      {number: 85, arabic: "ذُوالْجَلاَلِ وَالإكْرَامِ", transliteration: "Dhul-Jalaali Wal-Ikraam", translation: "Lord of Glory and Honour, Lord of Majesty and Generosity"},
+      {number: 86, arabic: "ٱلْمُقْسِطُ", transliteration: "Al-Muqsit", translation: "The Just One"},
+      {number: 87, arabic: "ٱلْجَامِعُ", transliteration: "Al-Jaami`", translation: "The Gatherer, the Uniter"},
+      {number: 88, arabic: "ٱلْغَنيُ", transliteration: "Al-Ghaniyy", translation: "The Self-Sufficient, the Wealthy"},
+      {number: 89, arabic: "ٱلْمُغْنِي", transliteration: "Al-Mughni", translation: "The Enricher"},
+      {number: 90, arabic: "ٱلْمَانِعُ", transliteration: "Al-Maani`", translation: "The Withholder"},
+      {number: 91, arabic: "ٱلضَّارَ", transliteration: "Ad-Daarr", translation: "The Distresser"},
+      {number: 92, arabic: "ٱلنَّافِعُ", transliteration: "An-Naafi`", translation: "The Propitious, the Benefactor"},
+      {number: 93, arabic: "ٱلنُّورُ", transliteration: "An-Noor", translation: "The Light, the Illuminator"},
+      {number: 94, arabic: "ٱلْهَادِي", transliteration: "Al-Haadi", translation: "The Guide"},
+      {number: 95, arabic: "ٱلْبَدِيعُ", transliteration: "Al-Badee`", translation: "The Incomparable Originator"},
+      {number: 96, arabic: "ٱلْبَاقِي", transliteration: "Al-Baaqi", translation: "The Everlasting"},
+      {number: 97, arabic: "ٱلْوَارِثُ", transliteration: "Al-Waarith", translation: "The Inheritor, the Heir"},
+      {number: 98, arabic: "ٱلرَّشِيدُ", transliteration: "Ar-Rasheed", translation: "The Guide, Infallible Teacher, and Knower"},
+      {number: 99, arabic: "ٱلصَّبُورُ", transliteration: "Aṣ-Ṣabūr", translation: "The Patient One"}
+    ];
+
+    const indonesianNames = [
+      {number: 1, arabic: "ٱلرَّحْمَٰنُ", transliteration: "Ar-Rahmān", translation: "Yang Maha Pengasih"},
+      {number: 2, arabic: "ٱلرَّحِيمُ", transliteration: "Ar-Rahīm", translation: "Yang Maha Penyayang"},
+      {number: 3, arabic: "ٱلْمَلِكُ", transliteration: "Al-Malik", translation: "Yang Maha Merajai"},
+      {number: 4, arabic: "ٱلْقُدُّوسُ", transliteration: "Al-Quddūs", translation: "Yang Maha Suci"},
+      {number: 5, arabic: "ٱلسَّلَامُ", transliteration: "As-Salām", translation: "Yang Maha Memberi Kesejahteraan"},
+      {number: 6, arabic: "ٱلْمُؤْمِنُ", transliteration: "Al-Mu'min", translation: "Yang Maha Memberi Keamanan"},
+      {number: 7, arabic: "ٱلْمُهَيْمِنُ", transliteration: "Al-Muhaymin", translation: "Yang Maha Memelihara"},
+      {number: 8, arabic: "ٱلْعَزِيزُ", transliteration: "Al-ʿAzīz", translation: "Yang Maha Perkasa"},
+      {number: 9, arabic: "ٱلْجَبَّارُ", transliteration: "Al-Jabbār", translation: "Yang Memiliki Mutlak Kegagahan"},
+      {number: 10, arabic: "ٱلْمُتَكَبِّرُ", transliteration: "Al-Mutakabbir", translation: "Yang Maha Megah"},
+      {number: 11, arabic: "ٱلْخَالِقُ", transliteration: "Al-Khaaliq", translation: "Yang Maha Pencipta"},
+      {number: 12, arabic: "ٱلْبَارِئُ", transliteration: "Al-Baari", translation: "Yang Maha Melepaskan"},
+      {number: 13, arabic: "ٱلْمُصَوِّرُ", transliteration: "Al-Musawwir", translation: "Yang Maha Membentuk Rupa"},
+      {number: 14, arabic: "ٱلْغَفَّارُ", transliteration: "Al-Ghaffar", translation: "Yang Maha Pengampun"},
+      {number: 15, arabic: "ٱلْقَهَّارُ", transliteration: "Al-Qahhaar", translation: "Yang Maha Memaksa"},
+      {number: 16, arabic: "ٱلْوَهَّابُ", transliteration: "Al-Wahhaab", translation: "Yang Maha Pemberi Karunia"},
+      {number: 17, arabic: "ٱلرَّزَّاقُ", transliteration: "Ar-Razzaaq", translation: "Yang Maha Pemberi Rezeki"},
+      {number: 18, arabic: "ٱلْفَتَّاحُ", transliteration: "Al-Fattaah", translation: "Yang Maha Pembuka Rahmat"},
+      {number: 19, arabic: "ٱلْعَلِيمُ", transliteration: "Al-`Aleem", translation: "Yang Maha Mengetahui"},
+      {number: 20, arabic: "ٱلْقَابِضُ", transliteration: "Al-Qaabid", translation: "Yang Maha Menyempitkan"},
+      {number: 21, arabic: "ٱلْبَاسِطُ", transliteration: "Al-Baasit", translation: "Yang Maha Melapangkan"},
+      {number: 22, arabic: "ٱلْخَافِضُ", transliteration: "Al-Khaafid", translation: "Yang Maha Merendahkan"},
+      {number: 23, arabic: "ٱلرَّافِعُ", transliteration: "Ar-Raafi`", translation: "Yang Maha Meninggikan"},
+      {number: 24, arabic: "ٱلْمُعِزُّ", transliteration: "Al-Mu`izz", translation: "Yang Maha Memuliakan"},
+      {number: 25, arabic: "ٱلْمُذِلُّ", transliteration: "Al-Mudhill", translation: "Yang Maha Menghinakan"},
+      {number: 26, arabic: "ٱلسَّمِيعُ", transliteration: "As-Samee`", translation: "Yang Maha Mendengar"},
+      {number: 27, arabic: "ٱلْبَصِيرُ", transliteration: "Al-Baseer", translation: "Yang Maha Melihat"},
+      {number: 28, arabic: "ٱلْحَكَمُ", transliteration: "Al-Hakam", translation: "Yang Maha Menetapkan"},
+      {number: 29, arabic: "ٱلْعَدْلُ", transliteration: "Al-`Adl", translation: "Yang Maha Adil"},
+      {number: 30, arabic: "ٱللَّطِيفُ", transliteration: "Al-Lateef", translation: "Yang Maha Lembut"},
+      {number: 31, arabic: "ٱلْخَبِيرُ", transliteration: "Al-Khabeer", translation: "Yang Maha Mengenal"},
+      {number: 32, arabic: "ٱلْحَلِيمُ", transliteration: "Al-Haleem", translation: "Yang Maha Penyantun"},
+      {number: 33, arabic: "ٱلْعَظِيمُ", transliteration: "Al-`Azeem", translation: "Yang Maha Agung"},
+      {number: 34, arabic: "ٱلْغَفُور", transliteration: "Al-Ghafoor", translation: "Yang Maha Pengampun"},
+      {number: 35, arabic: "ٱلشَّكُورُ", transliteration: "Ash-Shakoor", translation: "Yang Maha Pembalas Budi"},
+      {number: 36, arabic: "ٱلْعَلِيُّ", transliteration: "Al-`Aliyy", translation: "Yang Maha Tinggi"},
+      {number: 37, arabic: "ٱلْكَبِيرُ", transliteration: "Al-Kabeer", translation: "Yang Maha Besar"},
+      {number: 38, arabic: "ٱلْحَفِيظُ", transliteration: "Al-Hafeedh", translation: "Yang Maha Memelihara"},
+      {number: 39, arabic: "ٱلْمُقِيت", transliteration: "Al-Muqeet", translation: "Yang Maha Pemberi Kecukupan"},
+      {number: 40, arabic: "ٱلْحسِيبُ", transliteration: "Al-Haseeb", translation: "Yang Maha Membuat Perhitungan"},
+      {number: 41, arabic: "ٱلْجَلِيلُ", transliteration: "Al-Jaleel", translation: "Yang Maha Luhur"},
+      {number: 42, arabic: "ٱلْكَرِيمُ", transliteration: "Al-Kareem", translation: "Yang Maha Pemurah"},
+      {number: 43, arabic: "ٱلرَّقِيبُ", transliteration: "Ar-Raqeeb", translation: "Yang Maha Mengawasi"},
+      {number: 44, arabic: "ٱلْمُجِيبُ", transliteration: "Al-Mujeeb", translation: "Yang Maha Mengabulkan"},
+      {number: 45, arabic: "ٱلْوَاسِعُ", transliteration: "Al-Waasi`", translation: "Yang Maha Luas"},
+      {number: 46, arabic: "ٱلْحَكِيمُ", transliteration: "Al-Hakeem", translation: "Yang Maha Bijaksana"},
+      {number: 47, arabic: "ٱلْوَدُودُ", transliteration: "Al-Wadud", translation: "Yang Maha Mengasihi"},
+      {number: 48, arabic: "ٱلْمَجِيدُ", transliteration: "Al-Majeed", translation: "Yang Maha Mulia"},
+      {number: 49, arabic: "ٱلْبَاعِثُ", transliteration: "Al-Ba'ith", translation: "Yang Maha Membangkitkan"},
+      {number: 50, arabic: "ٱلشَّهِيدُ", transliteration: "Ash-Shaheed", translation: "Yang Maha Menyaksikan"},
+      {number: 51, arabic: "ٱلْحَقُ", transliteration: "Al-Haqq", translation: "Yang Maha Benar"},
+      {number: 52, arabic: "ٱلْوَكِيلُ", transliteration: "Al-Wakeel", translation: "Yang Maha Memelihara"},
+      {number: 53, arabic: "ٱلْقَوِي", transliteration: "Al-Qawiyy", translation: "Yang Maha Kuat"},
+      {number: 54, arabic: "ٱلْمَتِينُ", transliteration: "Al-Mateen", translation: "Yang Maha Kokoh"},
+      {number: 55, arabic: "ٱلْوَلِيُّ", transliteration: "Al-Waliyy", translation: "Yang Maha Melindungi"},
+      {number: 56, arabic: "ٱلْحَمِيدُ", transliteration: "Al-Hameed", translation: "Yang Maha Terpuji"},
+      {number: 57, arabic: "ٱلْمُحْصِي", transliteration: "Al-Muhsee", translation: "Yang Maha Menghitung"},
+      {number: 58, arabic: "ٱلْمُبْدِئُ", transliteration: "Al-Mubdi'", translation: "Yang Maha Memulai"},
+      {number: 59, arabic: "ٱلْمُعِيدُ", transliteration: "Al-Mueed", translation: "Yang Maha Mengembalikan Kehidupan"},
+      {number: 60, arabic: "ٱلْمُحْيِي", transliteration: "Al-Muhyi", translation: "Yang Maha Menghidupkan"},
+      {number: 61, arabic: "ٱلْمُمِيتُ", transliteration: "Al-Mumeet", translation: "Yang Maha Mematikan"},
+      {number: 62, arabic: "ٱلْحَيُّ", transliteration: "Al-Hayy", translation: "Yang Maha Hidup"},
+      {number: 63, arabic: "ٱلْقَيُّومُ", transliteration: "Al-Qayyoom", translation: "Yang Maha Mandiri"},
+      {number: 64, arabic: "ٱلْوَاجِدُ", transliteration: "Al-Waajid", translation: "Yang Maha Penemu"},
+      {number: 65, arabic: "ٱلْمَاجِدُ", transliteration: "Al-Maajid", translation: "Yang Maha Mulia"},
+      {number: 66, arabic: "ٱلْواحِدُ", transliteration: "Al-Waahid", translation: "Yang Maha Tunggal"},
+      {number: 67, arabic: "ٱلْأَحَدُ", transliteration: "Al-Ahad", translation: "Yang Maha Esa"},
+      {number: 68, arabic: "ٱلصَّمَدُ", transliteration: "As-Samad", translation: "Yang Maha Dibutuhkan"},
+      {number: 69, arabic: "ٱلْقَادِرُ", transliteration: "Al-Qaadir", translation: "Yang Maha Menentukan"},
+      {number: 70, arabic: "ٱلْمُقْتَدِرُ", transliteration: "Al-Muqtadir", translation: "Yang Maha Berkuasa"},
+      {number: 71, arabic: "ٱلْمُقَدِّمُ", transliteration: "Al-Muqaddim", translation: "Yang Maha Mendahulukan"},
+      {number: 72, arabic: "ٱلْمُؤَخِّرُ", transliteration: "Al-Mu'akhkhir", translation: "Yang Maha Mengakhirkan"},
+      {number: 73, arabic: "ٱلأَوَّلُ", transliteration: "Al-Awwal", translation: "Yang Maha Awal"},
+      {number: 74, arabic: "ٱلآخِرُ", transliteration: "Al-Aakhir", translation: "Yang Maha Akhir"},
+      {number: 75, arabic: "ٱلظَّاهِرُ", transliteration: "Az-Zaahir", translation: "Yang Maha Nyata"},
+      {number: 76, arabic: "ٱلْبَاطِنُ", transliteration: "Al-Baatin", translation: "Yang Maha Ghaib"},
+      {number: 77, arabic: "ٱلْوَالِي", transliteration: "Al-Waali", translation: "Yang Maha Memerintah"},
+      {number: 78, arabic: "ٱلْمُتَعَالِي", transliteration: "Al-Muta`aali", translation: "Yang Maha Tinggi"},
+      {number: 79, arabic: "ٱلْبَرُّ", transliteration: "Al-Barr", translation: "Yang Maha Penderma"},
+      {number: 80, arabic: "ٱلتَّوَابُ", transliteration: "At-Tawwaab", translation: "Yang Maha Penerima Tobat"},
+      {number: 81, arabic: "ٱلْمُنْتَقِمُ", transliteration: "Al-Muntaqim", translation: "Yang Maha Penuntut Balas"},
+      {number: 82, arabic: "ٱلْعَفُو", transliteration: "Al-`Afuww", translation: "Yang Maha Pemaaf"},
+      {number: 83, arabic: "ٱلرَّؤُوفُ", transliteration: "Ar-Ra'oof", translation: "Yang Maha Pengasuh"},
+      {number: 84, arabic: "ٱلْمَالِكُ ٱلْمُلْكُ", transliteration: "Maalik-ul-Mulk", translation: "Yang Maha Penguasa Kerajaan"},
+      {number: 85, arabic: "ذُوالْجَلاَلِ وَالإكْرَامِ", transliteration: "Dhul-Jalaali Wal-Ikraam", translation: "Yang Maha Pemilik Kebesaran dan Kemuliaan"},
+      {number: 86, arabic: "ٱلْمُقْسِطُ", transliteration: "Al-Muqsit", translation: "Yang Maha Adil"},
+      {number: 87, arabic: "ٱلْجَامِعُ", transliteration: "Al-Jaami`", translation: "Yang Maha Mengumpulkan"},
+      {number: 88, arabic: "ٱلْغَنيُ", transliteration: "Al-Ghaniyy", translation: "Yang Maha Kaya"},
+      {number: 89, arabic: "ٱلْمُغْنِي", transliteration: "Al-Mughni", translation: "Yang Maha Pemberi Kekayaan"},
+      {number: 90, arabic: "ٱلْمَانِعُ", transliteration: "Al-Maani`", translation: "Yang Maha Mencegah"},
+      {number: 91, arabic: "ٱلضَّارَ", transliteration: "Ad-Daarr", translation: "Yang Maha Memberi Derita"},
+      {number: 92, arabic: "ٱلنَّافِعُ", transliteration: "An-Naafi`", translation: "Yang Maha Memberi Manfaat"},
+      {number: 93, arabic: "ٱلنُّورُ", transliteration: "An-Noor", translation: "Yang Maha Bercahaya"},
+      {number: 94, arabic: "ٱلْهَادِي", transliteration: "Al-Haadi", translation: "Yang Maha Pemberi Petunjuk"},
+      {number: 95, arabic: "ٱلْبَدِيعُ", transliteration: "Al-Badee`", translation: "Yang Maha Pencipta"},
+      {number: 96, arabic: "ٱلْبَاقِي", transliteration: "Al-Baaqi", translation: "Yang Maha Kekal"},
+      {number: 97, arabic: "ٱلْوَارِثُ", transliteration: "Al-Waarith", translation: "Yang Maha Pewaris"},
+      {number: 98, arabic: "ٱلرَّشِيدُ", transliteration: "Ar-Rasheed", translation: "Yang Maha Pandai"},
+      {number: 99, arabic: "ٱلصَّبُورُ", transliteration: "Aṣ-Ṣabūr", translation: "Yang Maha Sabar"}
+    ];
+
+    // Populate names containers
+    function populateNames() {
+      const englishContainer = document.getElementById('englishNamesContainer');
+      const indonesianContainer = document.getElementById('indonesianNamesContainer');
+      
+      englishContainer.innerHTML = '';
+      indonesianContainer.innerHTML = '';
+      
+      englishNames.forEach(name => {
+        englishContainer.innerHTML += `
+          <div class="name-box">
+            <a href="${name.number.toString().padStart(2, '0')}.html">
+              ${name.number}. ${name.arabic} – ${name.transliteration}<br>${name.translation}
+            </a>
+          </div>
+        `;
+      });
+      
+      indonesianNames.forEach(name => {
+        indonesianContainer.innerHTML += `
+          <div class="name-box">
+            <a href="${name.number.toString().padStart(2, '0')}.html">
+              ${name.number}. ${name.arabic} – ${name.transliteration}<br>${name.translation}
+            </a>
+          </div>
+        `;
+      });
+    }
+
+    // Check for saved language preference or set default to Indonesian
+    function getPreferredLanguage() {
+      return localStorage.getItem('language') || 'indonesian';
+    }
+
+    // Set the initial language based on preference
+    function setInitialLanguage() {
+      const language = getPreferredLanguage();
+      const englishContent = document.getElementById('english-content');
+      const indonesianContent = document.getElementById('indonesian-content');
+      const toggleButton = document.getElementById('languageToggle');
+
+      if (language === 'english') {
+        englishContent.classList.remove('hidden');
+        indonesianContent.classList.add('hidden');
+        toggleButton.textContent = 'Switch to Indonesian';
+      } else {
+        englishContent.classList.add('hidden');
+        indonesianContent.classList.remove('hidden');
+        toggleButton.textContent = 'Switch to English';
+      }
+    }
+
+    // Language Toggle
+    document.getElementById('languageToggle').addEventListener('click', function() {
+      const englishContent = document.getElementById('english-content');
+      const indonesianContent = document.getElementById('indonesian-content');
+      
+      if (englishContent.classList.contains('hidden')) {
+        englishContent.classList.remove('hidden');
+        indonesianContent.classList.add('hidden');
+        this.textContent = 'Switch to Indonesian';
+        localStorage.setItem('language', 'english');
+      } else {
+        englishContent.classList.add('hidden');
+        indonesianContent.classList.remove('hidden');
+        this.textContent = 'Switch to English';
+        localStorage.setItem('language', 'indonesian');
+      }
+    });
+
+    // Search Function for English
+    function searchNames() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const boxes = document.querySelectorAll("#english-content .name-box");
+      
+      if (input === '') {
+        boxes.forEach(box => box.style.display = "block");
+        return;
+      }
+      
+      for (let box of boxes) {
+        const text = box.innerText.toLowerCase();
+        if (text.includes(input) || text.startsWith(input)) {
+          box.style.display = "block";
+          box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          box.style.display = "none";
+        }
+      }
+    }
+
+    // Search Function for Indonesian
+    function searchNamesIndo() {
+      const input = document.getElementById("searchInputIndo").value.toLowerCase();
+      const boxes = document.querySelectorAll("#indonesian-content .name-box");
+      
+      if (input === '') {
+        boxes.forEach(box => box.style.display = "block");
+        return;
+      }
+      
+      for (let box of boxes) {
+        const text = box.innerText.toLowerCase();
+        if (text.includes(input) || text.startsWith(input)) {
+          box.style.display = "block";
+          box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          box.style.display = "none";
+        }
+      }
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      populateNames();
+      setInitialLanguage();
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Asmaul Husna - 99 Names of Allah</title>
+  <style>
+    body {
+      background-color: #f5f3eb;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .header {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header div {
+      margin: 5px 0;
+    }
+    .search-box {
+      text-align: center;
+      margin-bottom: 20px;
     }
     input[type="text"] {
       width: 50%;
