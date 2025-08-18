@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -131,13 +132,30 @@
             color: #7f8c8d;
             font-size: 16px;
         }
-        .back-to-menu {
+        .main-menu {
             text-align: center;
-            margin: 10px 0;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+            margin: 15px 0;
         }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -155,25 +173,191 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">93. An-Noor (Yang Maha Pemberi Cahaya)</h1>
+            <div class="name-source"><strong>Sumber:</strong> 
+                <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, 
+                <a href="https://kemenag.go.id" target="_blank">Kemenag RI</a>, 
+                <a href="https://myislam.org/99-names-of-allah/an-noor/" target="_blank">myislam.org</a>
+            </div>
+
+            <div class="arabic">ٱلنُّورُ</div>
+            <div class="transliteration">Transliterasi: An-Noor</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/93.%20an-nur.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>An-Noor muncul dalam Al-Quran beberapa kali (<a href="https://quranwbw.com/24:35" target="_blank">24:35</a>, <a href="https://quranwbw.com/5:15" target="_blank">5:15</a>, <a href="https://quranwbw.com/61:8" target="_blank">61:8</a>) dengan makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Pemberi Cahaya:</strong> Sumber segala penerangan dalam penciptaan</li>
+                    <li><strong>Yang Menerangi:</strong> Penunjuk jalan kebenaran dan hikmah</li>
+                </ul>
+                <p>Menurut Kementerian Agama RI dalam Tafsir Al-Quran, An-Noor adalah Allah Yang Maha Kuasa memberikan cahaya petunjuk kepada seluruh makhluk-Nya. NU Online menjelaskan bahwa nama ini mengingatkan kita bahwa semua petunjuk berasal dari Allah semata.</p>
+                <p>Ibnu Arabi menjelaskan: "Allah adalah Cahaya langit dan bumi - bukan seperti matahari menerangi, tetapi sebagai sumber segala penerangan." Nabi (ﷺ) bersabda: "Allah memiliki cahaya yang jika Dia berkehendak memberikannya kepada seorang hamba, dia menjadi terbimbing" (HR. Tabarani).</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/24:35" target="_blank">Surah An-Noor 24:35</a>
+                    <div class="arabic">ٱللَّهُ نُورُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ مَثَلُ نُورِهِۦ كَمِشْكَوٰةٍۢ فِيهَا مِصْبَاحٌ ۖ ٱلْمِصْبَاحُ فِى زُجَاجَةٍ ۖ ٱلزُّجَاجَةُ كَأَنَّهَا كَوْكَبٌۭ دُرِّىٌّۭ يُوقَدُ مِن شَجَرَةٍۢ مُّبَـٰرَكَةٍۢ زَيْتُونَةٍۢ لَّا شَرْقِيَّةٍۢ وَلَا غَرْبِيَّةٍۢ يَكَادُ زَيْتُهَا يُضِىٓءُ وَلَوْ لَمْ تَمْسَسْهُ نَارٌۭ ۚ نُّورٌ عَلَىٰ نُورٍۢ ۗ يَهْدِى ٱللَّهُ لِنُورِهِۦ مَن يَشَآءُ ۚ وَيَضْرِبُ ٱللَّهُ ٱلْأَمْثَالَ لِلنَّاسِ ۗ وَٱللَّهُ بِكُلِّ شَىْءٍ عَلِيمٌۭ</div>
+                    <div class="transliteration">Allāhu nūru s-samāwāti wa l-arḍ, mathalu nūrih ka-mishkātin fīhā miṣbāḥ, al-miṣbāḥ fī zujājah, az-zujājah ka-annahā kawkabun durriyyun yūqadu min shajaratin mubārakatin zaytūnatin lā sharqiyyatin wa lā gharbiyyah, yakādu zaytuhā yuḍī'u wa law lam tamsash nār, nūrun 'alā nūr, yahdī Llāhu li-nūrih man yashā', wa yaḍribu Llāhu l-amthāla li-n-nās, wa Llāhu bi-kulli shay'in 'alīm</div>
+                    <p>"Allah adalah Cahaya langit dan bumi. Perumpamaan cahaya-Nya seperti sebuah lubang yang tak tembus, yang di dalamnya ada pelita besar. Pelita itu di dalam kaca, kaca itu seakan-akan bintang yang berkilau seperti mutiara, yang dinyalakan dengan minyak dari pohon yang diberkahi, pohon zaitun yang tumbuh tidak di timur dan tidak pula di barat, yang minyaknya saja hampir-hampir menerangi walaupun tidak disentuh api. Cahaya di atas cahaya. Allah membimbing kepada cahaya-Nya siapa yang Dia kehendaki. Dan Allah membuat perumpamaan-perumpamaan bagi manusia. Dan Allah Maha Mengetahui segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Kemenag RI:</strong> Ayat Cahaya ini menggambarkan sifat An-Noor sebagai sumber segala petunjuk dan penerangan spiritual. NU Online menjelaskan bahwa "cahaya di atas cahaya" menunjukkan lapisan-lapisan petunjuk ilahi yang Allah berikan kepada hamba-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/5:15" target="_blank">Surah Al-Ma'idah 5:15</a>
+                    <div class="arabic">قَدْ جَآءَكُم مِّنَ ٱللَّهِ نُورٌۭ وَكِتَـٰبٌۭ مُّبِينٌۭ</div>
+                    <div class="transliteration">Qad jā'akum mina Llāhi nūrun wa kitābun mubīn</div>
+                    <p>"Sungguh telah datang kepadamu cahaya dari Allah dan kitab yang jelas."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan bahwa Nabi Muhammad (ﷺ) dan Al-Quran merupakan manifestasi cahaya ilahi An-Noor. Kemenag RI menambahkan bahwa petunjuk Allah datang melalui wahyu dan utusan-Nya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:767" target="_blank">Sahih Muslim 767</a>
+                    <div class="arabic">إِنَّ الْقُلُوبَ بَيْنَ إِصْبَعَيْنِ مِنْ أَصَابِعِ الرَّحْمَٰنِ يُقَلِّبُهَا كَيْفَ يَشَاءُ</div>
+                    <div class="transliteration">Inna l-qulūba bayna iṣba'ayni min aṣābi'i r-Raḥmān yuqallibuhā kayfa yashā'</div>
+                    <p>"Sesungguhnya hati semua anak Adam berada di antara dua jari dari jari-jari Allah Yang Maha Pengasih seperti satu hati. Dia memalingkannya sesuai kehendak-Nya."</p>
+                    <div class="tafsir-box">
+                        <strong>Penjelasan NU Online:</strong> Hadits ini menunjukkan kekuasaan Allah sebagai An-Noor dalam memberikan petunjuk kepada hati manusia. Kemenag RI menjelaskan bahwa petunjuk ilahi diberikan sesuai dengan kehendak dan hikmah Allah.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Penerangan Ilahi</div>
+                    <div class="arabic">يَا نُورُ يَا هَادِي، أَضِئْ قَلْبِي بِنُورِ مَعْرِفَتِكَ، وَاشْرَحْ صَدْرِي بِنُورِ حِكْمَتِكَ، وَاجْعَلْنِي مِنَ ٱلْمُنِيرِينَ ٱلْمُهْتَدِينَ</div>
+                    <div class="transliteration">Yā Nūru yā Hādī, aḍi' qalbī bi-nūri ma'rifatik, wa shraḥ ṣadrī bi-nūri ḥikmatik, wa j'alnī mina l-munīrīna l-muhtadīn</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Cahaya, Wahai Pemberi Petunjuk, terangilah hatiku dengan cahaya pengetahuan-Mu, lapangkanlah dadaku dengan cahaya hikmah-Mu, dan jadikan aku termasuk orang-orang yang tercerahkan dan terbimbing."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan dalam pengajian-pengajian NU untuk memohon petunjuk ilahi. Dianjurkan dibaca setelah shalat Tahajjud ketika turun rahmat Allah (HR. Tirmidhi).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan dari Kegelapan</div>
+                    <div class="arabic">اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا، وَفِي بَصَرِي نُورًا، وَفِي سَمْعِي نُورًا، وَعَنْ يَمِينِي نُورًا، وَعَنْ شِمَالِي نُورًا، وَأَمَامِي نُورًا، وَخَلْفِي نُورًا، وَفَوْقِي نُورًا، وَتَحْتِي نُورًا، وَاجْعَلْ لِي نُورًا</div>
+                    <div class="transliteration">Allāhumma j'al fī qalbī nūrā, wa fī baṣarī nūrā, wa fī sam'ī nūrā, wa 'an yamīnī nūrā, wa 'an shimālī nūrā, wa amāmī nūrā, wa khalfī nūrā, wa fawqī nūrā, wa taḥtī nūrā, wa j'al lī nūrā</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, tempatkan cahaya dalam hatiku, cahaya dalam penglihatanku, cahaya dalam pendengaranku, cahaya di sebelah kananku, cahaya di sebelah kiriku, cahaya di depanku, cahaya di belakangku, cahaya di atasku, cahaya di bawahku, dan jadikan cahaya untukku."</p>
+                    <p><strong>Sumber:</strong> Doa dari Nabi (ﷺ) yang dicatat dalam Sahih Bukhari dan sering diajarkan dalam majelis-majelis NU. Kemenag RI menganjurkan doa ini untuk memohon perlindungan dari kegelapan hati.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Meditasi Cahaya</div>
+                    <p>Untuk menumbuhkan penerangan ilahi:</p>
+                    <ol>
+                        <li>Baca "Yā Noor" 100 kali sebelum Subuh</li>
+                        <li>Bayangkan cahaya memenuhi hati saat membacanya</li>
+                        <li>Baca Surah An-Noor (24:35-40) setiap pekan</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Meningkatkan persepsi spiritual menurut kajian NU</li>
+                        <li>Membersihkan kegelapan mental dan emosional</li>
+                        <li>Diamalkan oleh para ulama salaf</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Penerangan Rumah</div>
+                    <p>Untuk cahaya spiritual di rumah tangga:</p>
+                    <ol>
+                        <li>Tulis "An-Noor" dengan air mawar di kertas putih</li>
+                        <li>Letakkan dalam wadah kaca bersih berisi air</li>
+                        <li>Simpan dekat sumber cahaya sambil baca Ayat al-Kursi setiap hari</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Para ulama NU menjelaskan amalan ini berdasarkan tradisi salaf dalam memohon cahaya ilahi. Air mawar melambangkan kesucian dan penerangan dalam tradisi Islam.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Mendalam</h2>
+                <p>Berdasarkan kajian Kemenag RI dan NU Online, An-Noor dapat dipahami melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Cahaya Kosmik:</strong>
+                        <ul>
+                            <li>Sumber penerangan langit (<a href="https://quranwbw.com/10:5" target="_blank">QS. Yunus: 5</a>)</li>
+                            <li>Asal semua fenomena cahaya di alam semesta</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cahaya Wahyu:</strong>
+                        <ul>
+                            <li>Petunjuk ilahi melalui para nabi (<a href="https://quranwbw.com/6:91" target="_blank">QS. Al-An'am: 91</a>)</li>
+                            <li>Penerangan kitab suci (<a href="https://quranwbw.com/64:8" target="_blank">QS. At-Taghabun: 8</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cahaya Spiritual:</strong>
+                        <ul>
+                            <li>Penerangan hati (<a href="https://quranwbw.com/39:22" target="_blank">QS. Az-Zumar: 22</a>)</li>
+                            <li>Penglihatan di Akhirat (<a href="https://quranwbw.com/57:12" target="_blank">QS. Al-Hadid: 12</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam <a href="https://quranwbw.com/39:22" target="_blank">QS. Az-Zumar: 22</a>, Allah berfirman: "Maka apakah orang yang dibukakan hatinya oleh Allah untuk (menerima) Islam, lalu dia berada dalam cahaya dari Tuhannya (sama dengan orang yang hatinya keras)?" Ayat ini menunjukkan kekuasaan An-Noor dalam memberikan petunjuk sesuai kehendak-Nya.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
             <h1 class="name-title">93. An-Noor (The Light, The Illuminator)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/an-noor/" target="_blank">myislam.org/99-names-of-allah/an-noor/</a></div>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
+
+            <div class="main-menu"><a href="index.html">Back to Main Menu</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_94Nur.mp3?_=88" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلنُّورُ</div>
             <div class="transliteration">Transliteration: An-Noor</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/93.%20an-nur.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>An-Noor appears in the Quran multiple times (24:35, 5:15, 61:8) with profound meanings:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>An-Noor appears in the Quran multiple times (<a href="https://quranwbw.com/24:35" target="_blank">24:35</a>, <a href="https://quranwbw.com/5:15" target="_blank">5:15</a>, <a href="https://quranwbw.com/61:8" target="_blank">61:8</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Light:</strong> Source of all illumination in creation</li>
                     <li><strong>The Illuminator:</strong> Guide to truth and wisdom</li>
@@ -207,7 +391,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 767
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:767" target="_blank">Sahih Muslim 767</a>
                     <div class="arabic">إِنَّ الْقُلُوبَ بَيْنَ إِصْبَعَيْنِ مِنْ أَصَابِعِ الرَّحْمَٰنِ يُقَلِّبُهَا كَيْفَ يَشَاءُ</div>
                     <div class="transliteration">Inna l-qulūba bayna iṣba'ayni min aṣābi'i r-Raḥmān yuqallibuhā kayfa yashā'</div>
                     <p>"Verily, the hearts of all the children of Adam are between the two fingers of the Most Merciful as one heart. He turns it wherever He wills."</p>
@@ -272,166 +456,67 @@
                 <ol>
                     <li><strong>Cosmic Light:</strong>
                         <ul>
-                            <li>Source of celestial illumination (10:5)</li>
+                            <li>Source of celestial illumination (<a href="https://quranwbw.com/10:5" target="_blank">10:5</a>)</li>
                             <li>Origin of all electromagnetic phenomena</li>
                         </ul>
                     </li>
                     <li><strong>Revelatory Light:</strong>
                         <ul>
-                            <li>Divine guidance through prophets (6:91)</li>
-                            <li>Illumination of scripture (64:8)</li>
+                            <li>Divine guidance through prophets (<a href="https://quranwbw.com/6:91" target="_blank">6:91</a>)</li>
+                            <li>Illumination of scripture (<a href="https://quranwbw.com/64:8" target="_blank">64:8</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Spiritual Light:</strong>
                         <ul>
-                            <li>Illumination of hearts (39:22)</li>
-                            <li>Vision in the Hereafter (57:12)</li>
+                            <li>Illumination of hearts (<a href="https://quranwbw.com/39:22" target="_blank">39:22</a>)</li>
+                            <li>Vision in the Hereafter (<a href="https://quranwbw.com/57:12" target="_blank">57:12</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Az-Zumar (39:22), Allah contrasts those whose hearts He has opened to Islam - "they are upon light from their Lord" - with those in darkness, showing An-Noor's selective illumination based on spiritual receptivity.</p>
+                <p>In Surah Az-Zumar (<a href="https://quranwbw.com/39:22" target="_blank">39:22</a>), Allah contrasts those whose hearts He has opened to Islam - "they are upon light from their Lord" - with those in darkness, showing An-Noor's selective illumination based on spiritual receptivity.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">93. An-Noor (Cahaya, Yang Menerangi)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/an-noor/" target="_blank">myislam.org/99-names-of-allah/an-noor/</a></div>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
-
-            <div class="arabic">ٱلنُّورُ</div>
-            <div class="transliteration">Transliterasi: An-Noor</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna</h2>
-                <p>An-Noor muncul dalam Al-Quran beberapa kali (24:35, 5:15, 61:8) dengan makna mendalam:</p>
-                <ul>
-                    <li><strong>Cahaya:</strong> Sumber segala penerangan dalam penciptaan</li>
-                    <li><strong>Yang Menerangi:</strong> Penunjuk jalan kebenaran dan hikmah</li>
-                </ul>
-                <p>Ibnu Arabi menjelaskan: "Allah adalah Cahaya langit dan bumi - bukan seperti matahari menerangi, tetapi sebagai sumber segala penerangan." Nama ini sangat bermakna ketika mencari petunjuk, sebagaimana Nabi (ﷺ) bersabda: "Allah memiliki cahaya yang jika Dia berkehendak memberikannya kepada seorang hamba, dia menjadi terbimbing" (Tabarani).</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/24:35" target="_blank">Surah An-Noor 24:35</a>
-                    <div class="arabic">ٱللَّهُ نُورُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۚ مَثَلُ نُورِهِۦ كَمِشْكَوٰةٍۢ فِيهَا مِصْبَاحٌ ۖ ٱلْمِصْبَاحُ فِى زُجَاجَةٍ ۖ ٱلزُّجَاجَةُ كَأَنَّهَا كَوْكَبٌۭ دُرِّىٌّۭ يُوقَدُ مِن شَجَرَةٍۢ مُّبَـٰرَكَةٍۢ زَيْتُونَةٍۢ لَّا شَرْقِيَّةٍۢ وَلَا غَرْبِيَّةٍۢ يَكَادُ زَيْتُهَا يُضِىٓءُ وَلَوْ لَمْ تَمْسَسْهُ نَارٌۭ ۚ نُّورٌ عَلَىٰ نُورٍۢ ۗ يَهْدِى ٱللَّهُ لِنُورِهِۦ مَن يَشَآءُ ۚ وَيَضْرِبُ ٱللَّهُ ٱلْأَمْثَالَ لِلنَّاسِ ۗ وَٱللَّهُ بِكُلِّ شَىْءٍ عَلِيمٌۭ</div>
-                    <div class="transliteration">Allāhu nūru s-samāwāti wa l-arḍ, mathalu nūrih ka-mishkātin fīhā miṣbāḥ, al-miṣbāḥ fī zujājah, az-zujājah ka-annahā kawkabun durriyyun yūqadu min shajaratin mubārakatin zaytūnatin lā sharqiyyatin wa lā gharbiyyah, yakādu zaytuhā yuḍī'u wa law lam tamsash nār, nūrun 'alā nūr, yahdī Llāhu li-nūrih man yashā', wa yaḍribu Llāhu l-amthāla li-n-nās, wa Llāhu bi-kulli shay'in 'alīm</div>
-                    <p>"Allah adalah Cahaya langit dan bumi. Perumpamaan cahaya-Nya seperti sebuah lubang yang tak tembus, yang di dalamnya ada pelita besar. Pelita itu di dalam kaca, kaca itu seakan-akan bintang yang berkilau seperti mutiara, yang dinyalakan dengan minyak dari pohon yang diberkahi, pohon zaitun yang tumbuh tidak di timur dan tidak pula di barat, yang minyaknya saja hampir-hampir menerangi walaupun tidak disentuh api. Cahaya di atas cahaya. Allah membimbing kepada cahaya-Nya siapa yang Dia kehendaki. Dan Allah membuat perumpamaan-perumpamaan bagi manusia. Dan Allah Maha Mengetahui segala sesuatu."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> "Ayat Cahaya" yang terkenal ini menggambarkan penerangan ilahi melalui metafora yang mendalam. An-Noor bukan cahaya fisik tetapi sumber segala petunjuk, hikmah dan persepsi spiritual. "Cahaya di atas cahaya" menunjukkan lapisan-lapisan penerangan ilahi yang mencapai orang beriman.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/5:15" target="_blank">Surah Al-Ma'idah 5:15</a>
-                    <div class="arabic">قَدْ جَآءَكُم مِّنَ ٱللَّهِ نُورٌۭ وَكِتَـٰبٌۭ مُّبِينٌۭ</div>
-                    <div class="transliteration">Qad jā'akum mina Llāhi nūrun wa kitābun mubīn</div>
-                    <p>"Sungguh telah datang kepadamu cahaya dari Allah dan kitab yang jelas."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Di sini An-Noor merujuk pada Nabi Muhammad (ﷺ) sebagai pembawa cahaya ilahi dan Al-Quran sebagai manifestasinya. Ini menunjukkan bagaimana penerangan ilahi mencapai manusia melalui wahyu dan kenabian.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 767
-                    <div class="arabic">إِنَّ الْقُلُوبَ بَيْنَ إِصْبَعَيْنِ مِنْ أَصَابِعِ الرَّحْمَٰنِ يُقَلِّبُهَا كَيْفَ يَشَاءُ</div>
-                    <div class="transliteration">Inna l-qulūba bayna iṣba'ayni min aṣābi'i r-Raḥmān yuqallibuhā kayfa yashā'</div>
-                    <p>"Sesungguhnya hati semua anak Adam berada di antara dua jari dari jari-jari Allah Yang Maha Pengasih seperti satu hati. Dia memalingkannya sesuai kehendak-Nya."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menggambarkan kendali Allah atas hati manusia, menunjukkan bagaimana petunjuk An-Noor beroperasi sesuai kehendak ilahi. Hadits ini melengkapi ayat Al-Quran "Allah membimbing kepada cahaya-Nya siapa yang Dia kehendaki" (24:35).
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Penerangan Ilahi</div>
-                    <div class="arabic">يَا نُورُ يَا هَادِي، أَضِئْ قَلْبِي بِنُورِ مَعْرِفَتِكَ، وَاشْرَحْ صَدْرِي بِنُورِ حِكْمَتِكَ، وَاجْعَلْنِي مِنَ ٱلْمُنِيرِينَ ٱلْمُهْتَدِينَ</div>
-                    <div class="transliteration">Yā Nūru yā Hādī, aḍi' qalbī bi-nūri ma'rifatik, wa shraḥ ṣadrī bi-nūri ḥikmatik, wa j'alnī mina l-munīrīna l-muhtadīn</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Cahaya, Wahai Pemberi Petunjuk, terangilah hatiku dengan cahaya pengetahuan-Mu, lapangkanlah dadaku dengan cahaya hikmah-Mu, dan jadikan aku termasuk orang-orang yang tercerahkan dan terbimbing."</p>
-                    <p><strong>Manfaat:</strong> Baca ini setelah shalat Tahajjud. Nabi (ﷺ) mengajarkan bahwa sepertiga malam terakhir adalah saat cahaya ilahi turun (Tirmidhi).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Perlindungan dari Kegelapan</div>
-                    <div class="arabic">اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا، وَفِي بَصَرِي نُورًا، وَفِي سَمْعِي نُورًا، وَعَنْ يَمِينِي نُورًا، وَعَنْ شِمَالِي نُورًا، وَأَمَامِي نُورًا، وَخَلْفِي نُورًا، وَفَوْقِي نُورًا، وَتَحْتِي نُورًا، وَاجْعَلْ لِي نُورًا</div>
-                    <div class="transliteration">Allāhumma j'al fī qalbī nūrā, wa fī baṣarī nūrā, wa fī sam'ī nūrā, wa 'an yamīnī nūrā, wa 'an shimālī nūrā, wa amāmī nūrā, wa khalfī nūrā, wa fawqī nūrā, wa taḥtī nūrā, wa j'al lī nūrā</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, tempatkan cahaya dalam hatiku, cahaya dalam penglihatanku, cahaya dalam pendengaranku, cahaya di sebelah kananku, cahaya di sebelah kiriku, cahaya di depanku, cahaya di belakangku, cahaya di atasku, cahaya di bawahku, dan jadikan cahaya untukku."</p>
-                    <p><strong>Sumber:</strong> Nabi (ﷺ) membaca doa cahaya komprehensif ini (Bukhari), mencari penerangan ilahi dalam semua aspek kehidupan.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Amalan Meditasi Cahaya</div>
-                    <p>Untuk menumbuhkan penerangan ilahi:</p>
-                    <ol>
-                        <li>Baca "Yā Noor" 100 kali sebelum Subuh</li>
-                        <li>Bayangkan cahaya memenuhi hati saat membacanya</li>
-                        <li>Baca Surah An-Noor (24:35-40) setiap pekan</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini:</p>
-                    <ul>
-                        <li>Meningkatkan persepsi spiritual</li>
-                        <li>Membersihkan kegelapan mental dan emosional</li>
-                        <li>Diamalkan oleh para sufi seperti Imam Junayd</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Penerangan Rumah</div>
-                    <p>Untuk cahaya spiritual di rumah tangga:</p>
-                    <ol>
-                        <li>Tulis "An-Noor" dengan air mawar di kertas putih</li>
-                        <li>Letakkan dalam wadah kaca bersih berisi air</li>
-                        <li>Simpan dekat sumber cahaya sambil baca Ayat al-Kursi setiap hari</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat mencari cahaya ilahi melalui dzikir Al-Quran, seperti tercatat dalam 'Amal al-Yawm wal-Laylah karya Ibnu Sunni. Air mawar melambangkan kesucian dan penerangan.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan An-Noor melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Cahaya Kosmik:</strong>
-                        <ul>
-                            <li>Sumber penerangan langit (10:5)</li>
-                            <li>Asal semua fenomena elektromagnetik</li>
-                        </ul>
-                    </li>
-                    <li><strong>Cahaya Wahyu:</strong>
-                        <ul>
-                            <li>Petunjuk ilahi melalui para nabi (6:91)</li>
-                            <li>Penerangan kitab suci (64:8)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Cahaya Spiritual:</strong>
-                        <ul>
-                            <li>Penerangan hati (39:22)</li>
-                            <li>Penglihatan di Akhirat (57:12)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Az-Zumar (39:22), Allah membandingkan orang yang hatinya dibuka untuk Islam - "mereka berada di atas cahaya dari Tuhan mereka" - dengan mereka yang dalam kegelapan, menunjukkan penerangan An-Noor yang selektif berdasarkan penerimaan spiritual.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -441,10 +526,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -452,12 +539,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
