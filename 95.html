@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -131,13 +132,30 @@
             color: #7f8c8d;
             font-size: 16px;
         }
-        .back-to-menu {
+        .main-menu {
             text-align: center;
-            margin: 10px 0;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+            margin: 15px 0;
         }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -155,25 +173,188 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">95. Al-Badi' (Yang Maha Pencipta Tanpa Contoh)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> dan <a href="https://myislam.org/99-names-of-allah/al-badi/" target="_blank">myislam.org</a></div>
+
+            <div class="arabic">ٱلْبَدِيعُ</div>
+            <div class="transliteration">Transliterasi: Al-Badi'</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/95.%20al-badi.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Al-Badi' muncul dalam Al-Quran dua kali (<a href="https://quranwbw.com/2:117" target="_blank">2:117</a>, <a href="https://quranwbw.com/6:101" target="_blank">6:101</a>) dengan makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Pencipta Tanpa Contoh:</strong> Allah yang menciptakan segala sesuatu tanpa model sebelumnya</li>
+                    <li><strong>Yang Maha Pembuat yang Tiada Banding:</strong> Yang menghasilkan keajaiban ciptaan yang unik</li>
+                </ul>
+                <p>Menurut <a href="https://islam.nu.or.id/akidah/asmaul-husna-al-badi-maha-pencipta-tanpa-contoh-0x5Vv" target="_blank">NU Online</a>, Al-Badi' menunjukkan bahwa Allah SWT menciptakan segala sesuatu dari ketiadaan tanpa contoh sebelumnya. Nabi (ﷺ) bersabda: "Allah ada ketika tidak ada sesuatu pun selain-Nya" (HR Bukhari), menegaskan sifat Allah sebagai Pencipta utama.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/2:117" target="_blank">Surah Al-Baqarah 2:117</a>
+                    <div class="arabic">بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَإِذَا قَضَىٰٓ أَمْرًۭا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ</div>
+                    <div class="transliteration">Badī'u s-samāwāti wa l-arḍ, wa idhā qaḍā amran fa-innamā yaqūlu lahu kun fa-yakūn</div>
+                    <p>"Pencipta langit dan bumi. Ketika Dia hendak menetapkan sesuatu, Dia hanya berkata kepadanya: 'Jadilah!' Maka jadilah ia."</p>
+                    <div class="tafsir-box">
+                        <strong>Sumber:</strong> <a href="https://tafsirweb.com/3734-surat-al-baqarah-ayat-117.html" target="_blank">Kementerian Agama RI</a><br>
+                        Ayat ini menegaskan kekuatan kreatif mutlak Allah. Al-Badi' menciptakan dari ketiadaan tanpa alat atau bahan, menunjukkan kemandirian-Nya yang sempurna dalam penciptaan.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/6:101" target="_blank">Surah Al-An'am 6:101</a>
+                    <div class="arabic">بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ أَنَّىٰ يَكُونُ لَهُۥ وَلَدٌۭ وَلَمْ تَكُن لَّهُۥ صَـٰحِبَةٌۭ ۖ وَخَلَقَ كُلَّ شَىْءٍۢ ۖ وَهُوَ بِكُلِّ شَىْءٍ عَلِيمٌۭ</div>
+                    <div class="transliteration">Badī'u s-samāwāti wa l-arḍ, annā yakūnu lahu waladun wa lam takun lahu ṣāḥibah, wa khalaqa kulla shay', wa huwa bi-kulli shay'in 'alīm</div>
+                    <p>"Pencipta langit dan bumi. Bagaimana mungkin Dia mempunyai anak padahal Dia tidak mempunyai istri? Dia menciptakan segala sesuatu; dan Dia mengetahui segala sesuatu."</p>
+                    <div class="tafsir-box">
+                        <strong>Sumber:</strong> <a href="https://tafsirweb.com/3734-surat-al-anam-ayat-101.html" target="_blank">Kementerian Agama RI</a><br>
+                        Ayat ini menghubungkan Al-Badi' dengan keesaan ilahi, menunjukkan bahwa keaslian sejati hanya milik Allah. Pertanyaan retoris menyangkal kebutuhan akan mitra dalam penciptaan.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2713" target="_blank">Sahih Muslim 2713</a>
+                    <div class="arabic">كَانَ اللَّهُ وَلَمْ يَكُنْ شَيْءٌ غَيْرُهُ</div>
+                    <div class="transliteration">Kāna Llāhu wa lam yakun shay'un ghayruh</div>
+                    <p>"Allah ada ketika tidak ada sesuatu pun selain-Nya."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Hadits ini menekankan keberadaan abadi Allah yang mendahului semua ciptaan. Menurut <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>, ini menunjukkan sifat Allah sebagai Al-Badi' yang memulai segala sesuatu tanpa preseden.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Memohon Solusi Kreatif</div>
+                    <div class="arabic">يَا بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ، أَبْدِعْ فِي حَالِي مَا تُحِبُّ وَتَرْضَىٰ، وَٱفْتَحْ لِي أَبْوَابَ ٱلْحِكْمَةِ وَٱلرَّحْمَةِ</div>
+                    <div class="transliteration">Yā Badī'u s-samāwāti wa l-arḍ, abdi' fī ḥālī mā tuḥibbu wa tarḍā, wa ftah lī abwāba l-ḥikmati wa r-raḥmah</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Pencipta langit dan bumi, ciptakanlah dalam keadaanku apa yang Engkau cintai dan ridhai, dan bukakanlah untukku pintu-pintu hikmah dan rahmat."</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh ulama Ahlussunnah wal Jamaah untuk memohon solusi ilahi. Dianjurkan dibaca setelah shalat Subuh ketika menghadapi masalah (<a href="https://islam.nu.or.id/" target="_blank">NU Online</a>).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Memohon Karunia yang Unik</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ ٱلْبَدِيعُ ٱلْعَظِيمُ، أَسْأَلُكَ بِبَدَائِعِ حِكْمَتِكَ وَعَجَائِبِ رَحْمَتِكَ أَنْ تَهَبَ لِي مِنَ ٱلْفَضْلِ مَا لَا عَيْنٌ رَأَتْ وَلَا أُذُنٌ سَمِعَتْ وَلَا خَطَرَ عَلَىٰ قَلْبِ بَشَرٍ</div>
+                    <div class="transliteration">Allāhumma anta l-Badī'u l-'aẓīm, as'aluka bi-badā'i' ḥikmatik wa 'ajā'ib raḥmatik an tahaba lī mina l-faḍli mā lā 'aynun ra'at wa lā udhunun sami'at wa lā khaṭara 'alā qalbi bashar</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Pencipta Agung, aku memohon kepada-Mu dengan keajaiban hikmah-Mu dan keistimewaan rahmat-Mu untuk menganugerahkan kepadaku dari karunia-Mu apa yang tidak pernah dilihat mata, tidak pernah didengar telinga, dan tidak terlintas dalam hati manusia."</p>
+                    <p><strong>Sumber:</strong> Doa ini diadaptasi dari hadits tentang berkah Surga (HR Bukhari) dan diajarkan oleh <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a> untuk memohon karunia unik dari Allah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Praktik Mencari Inspirasi Ilahi</div>
+                    <p>Amalan harian untuk mendapatkan petunjuk kreatif:</p>
+                    <ol>
+                        <li>Setelah shalat Subuh, baca "Yā Badī'" 100 kali sambil merenungkan maknanya</li>
+                        <li>Lakukan shalat Istikharah ketika membutuhkan solusi kreatif</li>
+                        <li>Baca Surah Al-Ikhlas dengan khusyuk dan tadabbur</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Membuka pintu inspirasi dari Allah</li>
+                        <li>Mengembangkan kreativitas yang bermanfaat</li>
+                        <li>Diamalkan oleh ulama salaf seperti Imam Ghazali</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Memulai Usaha Baru</div>
+                    <p>Untuk memohon berkah dalam proyek baru:</p>
+                    <ol>
+                        <li>Sebelum memulai, bacakan Surah Yasin dengan niat memohon petunjuk</li>
+                        <li>Letakkan tangan di tempat usaha sambil membaca doa memohon keberkahan</li>
+                        <li>Bersedekah sebelum memulai usaha sebagai bentuk tawakal</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa membaca Surah Yasin karena mengharap ridha Allah, maka diampuni dosa-dosanya" (HR Ibnu Hibban). Amalan ini dianjurkan oleh <a href="https://islam.nu.or.id/" target="_blank">NU Online</a> untuk memohon petunjuk dalam usaha baru.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Al-Badi' melalui tiga dimensi penciptaan:</p>
+                <ol>
+                    <li><strong>Penciptaan Kosmik:</strong>
+                        <ul>
+                            <li>Terbentuknya alam semesta dari ketiadaan (<a href="https://quranwbw.com/21:30" target="_blank">21:30</a>)</li>
+                            <li>Keseimbangan sistem langit (<a href="https://quranwbw.com/36:40" target="_blank">36:40</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Keanekaragaman Hayati:</strong>
+                        <ul>
+                            <li>Keragaman bentuk kehidupan (<a href="https://quranwbw.com/30:22" target="_blank">30:22</a>)</li>
+                            <li>Desain sempurna manusia (<a href="https://quranwbw.com/32:7-9" target="_blank">32:7-9</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Mukjizat Sejarah:</strong>
+                        <ul>
+                            <li>Tanda-tanda kenabian (<a href="https://quranwbw.com/3:49" target="_blank">3:49</a>)</li>
+                            <li>Intervensi ilahi dalam sejarah (<a href="https://quranwbw.com/8:9" target="_blank">8:9</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam <a href="https://quranwbw.com/30:27" target="_blank">Surah Ar-Rum 30:27</a>, Allah berfirman: "Dan Dialah yang memulai penciptaan, kemudian mengulanginya, dan yang demikian itu lebih mudah bagi-Nya." Ayat ini menunjukkan peran Al-Badi' dalam penciptaan awal dan kebangkitan di akhirat.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
             <h1 class="name-title">95. Al-Badi' (The Originator, The Incomparable Inventor)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-badi/" target="_blank">myislam.org/99-names-of-allah/al-badi/</a></div>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
+
+            <div class="main-menu"><a href="index.html">Back to Main Menu</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_96Badii.mp3?_=90" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلْبَدِيعُ</div>
             <div class="transliteration">Transliteration: Al-Badi'</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/95.%20al-badi.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Al-Badi' appears in the Quran twice (2:117, 6:101) with profound meanings:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Al-Badi' appears in the Quran twice (<a href="https://quranwbw.com/2:117" target="_blank">2:117</a>, <a href="https://quranwbw.com/6:101" target="_blank">6:101</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Originator:</strong> Who creates without precedent or model</li>
                     <li><strong>The Incomparable Inventor:</strong> Who brings forth wonders of creation</li>
@@ -191,7 +372,7 @@
                     <div class="transliteration">Badī'u s-samāwāti wa l-arḍ, wa idhā qaḍā amran fa-innamā yaqūlu lahu kun fa-yakūn</div>
                     <p>"Originator of the heavens and the earth. When He decrees a matter, He only says to it, 'Be,' and it is."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse establishes Allah's absolute creative power. Al-Badi' creates ex nihilo (from nothing) without tools, materials or time constraints, showing His complete independence in creation.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/2/117/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse establishes Allah's absolute creative power. Al-Badi' creates ex nihilo (from nothing) without tools, materials or time constraints, showing His complete independence in creation.
                     </div>
                 </div>
 
@@ -202,12 +383,12 @@
                     <div class="transliteration">Badī'u s-samāwāti wa l-arḍ, annā yakūnu lahu waladun wa lam takun lahu ṣāḥibah, wa khalaqa kulla shay', wa huwa bi-kulli shay'in 'alīm</div>
                     <p>"Originator of the heavens and the earth. How could He have a son when He does not have a companion and He created all things? And He is, of all things, Knowing."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Here Al-Badi' is connected to divine oneness, showing that true originality belongs only to Allah. The rhetorical question refutes any need for partners in creation.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/6/101/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Here Al-Badi' is connected to divine oneness, showing that true originality belongs only to Allah. The rhetorical question refutes any need for partners in creation.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sahih Muslim 2713
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2713" target="_blank">Sahih Muslim 2713</a>
                     <div class="arabic">كَانَ اللَّهُ وَلَمْ يَكُنْ شَيْءٌ غَيْرُهُ</div>
                     <div class="transliteration">Kāna Llāhu wa lam yakun shay'un ghayruh</div>
                     <p>"Allah existed when nothing else existed."</p>
@@ -292,146 +473,47 @@
                 <p>In Surah Ar-Rum (30:27), Allah states: "And it is He who begins creation; then He repeats it, and that is easier for Him." This shows Al-Badi's continuous role in both initial creation and resurrection.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">95. Al-Badi' (Pencipta, Pembuat yang Tiada Banding)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-badi/" target="_blank">myislam.org/99-names-of-allah/al-badi/</a></div>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
-
-            <div class="arabic">ٱلْبَدِيعُ</div>
-            <div class="transliteration">Transliterasi: Al-Badi'</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna</h2>
-                <p>Al-Badi' muncul dalam Al-Quran dua kali (2:117, 6:101) dengan makna mendalam:</p>
-                <ul>
-                    <li><strong>Pencipta:</strong> Yang menciptakan tanpa contoh atau model sebelumnya</li>
-                    <li><strong>Pembuat yang Tiada Banding:</strong> Yang menghasilkan keajaiban ciptaan</li>
-                </ul>
-                <p>Ibnu Kathir menjelaskan: "Dia memulai penciptaan dalam bentuk yang belum pernah terlihat sebelumnya, mewujudkan apa yang belum pernah ada dengan hikmah sempurna." Nama ini sangat bermakna ketika merenungkan ciptaan, sebagaimana Nabi (ﷺ) bersabda: "Allah ada ketika tidak ada sesuatu pun bersama-Nya" (Bukhari), menekankan peran-Nya sebagai Pencipta utama.</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/2:117" target="_blank">Surah Al-Baqarah 2:117</a>
-                    <div class="arabic">بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَإِذَا قَضَىٰٓ أَمْرًۭا فَإِنَّمَا يَقُولُ لَهُۥ كُن فَيَكُونُ</div>
-                    <div class="transliteration">Badī'u s-samāwāti wa l-arḍ, wa idhā qaḍā amran fa-innamā yaqūlu lahu kun fa-yakūn</div>
-                    <p>"Pencipta langit dan bumi. Ketika Dia hendak menetapkan sesuatu, Dia hanya berkata kepadanya: 'Jadilah!' Maka jadilah ia."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menetapkan kekuatan kreatif mutlak Allah. Al-Badi' menciptakan ex nihilo (dari ketiadaan) tanpa alat, bahan atau batasan waktu, menunjukkan kemandirian-Nya yang sempurna dalam penciptaan.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/6:101" target="_blank">Surah Al-An'am 6:101</a>
-                    <div class="arabic">بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ أَنَّىٰ يَكُونُ لَهُۥ وَلَدٌۭ وَلَمْ تَكُن لَّهُۥ صَـٰحِبَةٌۭ ۖ وَخَلَقَ كُلَّ شَىْءٍۢ ۖ وَهُوَ بِكُلِّ شَىْءٍ عَلِيمٌۭ</div>
-                    <div class="transliteration">Badī'u s-samāwāti wa l-arḍ, annā yakūnu lahu waladun wa lam takun lahu ṣāḥibah, wa khalaqa kulla shay', wa huwa bi-kulli shay'in 'alīm</div>
-                    <p>"Pencipta langit dan bumi. Bagaimana mungkin Dia mempunyai anak padahal Dia tidak mempunyai istri? Dia menciptakan segala sesuatu; dan Dia mengetahui segala sesuatu."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Di sini Al-Badi' dikaitkan dengan keesaan ilahi, menunjukkan bahwa keaslian sejati hanya milik Allah. Pertanyaan retoris menyangkal kebutuhan akan mitra dalam penciptaan.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sahih Muslim 2713
-                    <div class="arabic">كَانَ اللَّهُ وَلَمْ يَكُنْ شَيْءٌ غَيْرُهُ</div>
-                    <div class="transliteration">Kāna Llāhu wa lam yakun shay'un ghayruh</div>
-                    <p>"Allah ada ketika tidak ada sesuatu pun selain-Nya."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) menekankan keberadaan abadi Allah yang mendahului semua ciptaan, menetapkan sifat-Nya sebagai Al-Badi' yang memulai segala sesuatu tanpa preseden.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Solusi Kreatif</div>
-                    <div class="arabic">يَا بَدِيعُ ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ، أَبْدِعْ فِي حَالِي مَا تُحِبُّ وَتَرْضَىٰ، وَٱفْتَحْ لِي أَبْوَابَ ٱلْحِكْمَةِ وَٱلرَّحْمَةِ</div>
-                    <div class="transliteration">Yā Badī'u s-samāwāti wa l-arḍ, abdi' fī ḥālī mā tuḥibbu wa tarḍā, wa ftah lī abwāba l-ḥikmati wa r-raḥmah</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Pencipta langit dan bumi, ciptakanlah dalam keadaanku apa yang Engkau cintai dan ridhai, dan bukakanlah untukku pintu-pintu hikmah dan rahmat."</p>
-                    <p><strong>Manfaat:</strong> Baca ini ketika menghadapi masalah sulit. Nabi (ﷺ) mengajarkan bahwa Allah dapat menciptakan solusi di luar imajinasi manusia (Ibnu Majah).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Berkah yang Unik</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ ٱلْبَدِيعُ ٱلْعَظِيمُ، أَسْأَلُكَ بِبَدَائِعِ حِكْمَتِكَ وَعَجَائِبِ رَحْمَتِكَ أَنْ تَهَبَ لِي مِنَ ٱلْفَضْلِ مَا لَا عَيْنٌ رَأَتْ وَلَا أُذُنٌ سَمِعَتْ وَلَا خَطَرَ عَلَىٰ قَلْبِ بَشَرٍ</div>
-                    <div class="transliteration">Allāhumma anta l-Badī'u l-'aẓīm, as'aluka bi-badā'i' ḥikmatik wa 'ajā'ib raḥmatik an tahaba lī mina l-faḍli mā lā 'aynun ra'at wa lā udhunun sami'at wa lā khaṭara 'alā qalbi bashar</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Pencipta Agung, aku memohon kepada-Mu dengan keajaiban hikmah-Mu dan keistimewaan rahmat-Mu untuk menganugerahkan kepadaku dari karunia-Mu apa yang tidak pernah dilihat mata, tidak pernah didengar telinga, dan tidak terlintas dalam hati manusia."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi oleh hadits tentang berkah Surga (Bukhari), diadaptasi untuk mencari karunia unik Al-Badi' dalam kehidupan ini.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Amalan Inspirasi Kreatif</div>
-                    <p>Untuk terhubung dengan keaslian ilahi:</p>
-                    <ol>
-                        <li>Baca "Yā Badī'" 100 kali sebelum matahari terbit</li>
-                        <li>Renungkan satu keajaiban ciptaan setiap hari</li>
-                        <li>Baca Surah Al-Ikhlas dengan perenungan</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini:</p>
-                    <ul>
-                        <li>Meningkatkan apresiasi terhadap kreativitas ilahi</li>
-                        <li>Membuka pikiran untuk solusi inovatif</li>
-                        <li>Diamalkan ulama seperti Imam Ghazali</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Berkah Inovasi</div>
-                    <p>Untuk bantuan ilahi dalam proyek baru:</p>
-                    <ol>
-                        <li>Tulis "Al-Badi'" dengan za'faran di kertas putih</li>
-                        <li>Letakkan di tempat kerja sambil membaca Ayat al-Kursi</li>
-                        <li>Bersedekah sebelum memulai usaha baru</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat mencari bantuan kreatif Allah melalui dzikir dan sedekah, seperti tercatat dalam 'Amal al-Yawm wal-Laylah karya Ibnu Sunni.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan Al-Badi' melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Permulaan Kosmik:</strong>
-                        <ul>
-                            <li>Penciptaan alam semesta dari ketiadaan (21:30)</li>
-                            <li>Desain sistem langit (36:40)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Inovasi Biologis:</strong>
-                        <ul>
-                            <li>Keanekaragaman bentuk kehidupan (30:22)</li>
-                            <li>Kompleksitas desain manusia (32:7-9)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Keunikan Historis:</strong>
-                        <ul>
-                            <li>Mukjizat para nabi (3:49)</li>
-                            <li>Campur tangan ilahi dalam urusan manusia (8:9)</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Ar-Rum (30:27), Allah menyatakan: "Dan Dialah yang memulai penciptaan, kemudian mengulanginya, dan yang demikian itu lebih mudah bagi-Nya." Ini menunjukkan peran terus-menerus Al-Badi' dalam penciptaan awal dan kebangkitan.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -441,10 +523,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -452,12 +536,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
