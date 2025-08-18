@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 28px;
+            font-size: 32px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -36,6 +36,7 @@
             font-size: 18px;
             text-align: center;
             margin: -15px 0 20px;
+            display: none;
         }
         .name-title {
             font-size: 32px;
@@ -131,13 +132,30 @@
             color: #7f8c8d;
             font-size: 16px;
         }
-        .back-to-menu {
+        .main-menu {
             text-align: center;
-            margin: 10px 0;
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+            margin: 15px 0;
         }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .audio-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1a5276;
+        }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -155,25 +173,186 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to Indonesian</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="language-toggle" id="languageToggle">Switch to English</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <!-- English Content -->
-        <div id="english-content">
+        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+
+        <!-- Indonesian Content (Default) -->
+        <div id="indonesian-content">
+            <h1 class="name-title">91. Ad-Darr (Yang Maha Pemberi Bahaya)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/ad-darr/" target="_blank">myislam.org/99-names-of-allah/ad-darr/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+
+            <div class="arabic">ٱلضَّارُ</div>
+            <div class="transliteration">Transliterasi: Ad-Darr</div>
+
+            <div class="audio-player">
+                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/91.%20ad-darr.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung elemen audio.
+                </audio>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Makna</h2>
+                <p>Ad-Darr muncul dalam Al-Quran berpasangan dengan An-Nafi' (Yang Maha Pemberi Manfaat) dalam <a href="https://quranwbw.com/6:17" target="_blank">6:17</a> dengan makna mendalam:</p>
+                <ul>
+                    <li><strong>Yang Maha Pemberi Bahaya:</strong> Pembawa mudarat ketika hikmah menghendaki</li>
+                    <li><strong>Yang Menimpakan Musibah:</strong> Pencipta ujian sebagai kebijaksanaan ilahi</li>
+                </ul>
+                <p>Ibnu Qayyim menjelaskan: "Sifat Allah dalam menimpakan bahaya selalu disertai hikmah dan rahmat. Bahkan musibah dari-Nya pada akhirnya bermanfaat." Nama ini mengingatkan kita bahwa semua kesulitan dari Allah mengandung hikmah tersembunyi, sebagaimana Nabi (ﷺ) bersabda: "Sungguh menakjubkan urusan seorang mukmin! Jika sesuatu yang baik menimpanya dia bersyukur, dan jika sesuatu yang buruk menimpanya dia bersabar - dan keduanya baik baginya" (Muslim).</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
+                
+                <div class="dalil-item">
+                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/6:17" target="_blank">Surah Al-An'am 6:17</a>
+                    <div class="arabic">وَإِن يَمْسَسْكَ ٱللَّهُ بِضُرٍّۢ فَلَا كَاشِفَ لَهُۥٓ إِلَّا هُوَ ۖ وَإِن يُرِدْكَ بِخَيْرٍۢ فَلَا رَآدَّ لِفَضْلِهِۦ ۚ يُصِيبُ بِهِۦ مَن يَشَآءُ مِنْ عِبَادِهِۦ ۚ وَهُوَ ٱلْغَفُورُ ٱلرَّحِيمُ</div>
+                    <div class="transliteration">Wa in yamsaska Llāhu bi-ḍurrin fa-lā kāshifa lahu illā huwa, wa in yuridka bi-khayrin fa-lā rāddda li-faḍlih, yuṣību bih man yashā'u min 'ibādih, wa huwa l-Ghafūru r-Raḥīm</div>
+                    <p>"Dan jika Allah menimpakan kemudaratan kepadamu, maka tidak ada yang dapat menghilangkannya kecuali Dia. Dan jika Dia menghendaki kebaikan bagimu, maka tidak ada yang dapat menolak karunia-Nya. Dia memberikan kebaikan itu kepada siapa yang Dia kehendaki di antara hamba-hamba-Nya. Dan Dia-lah Yang Maha Pengampun, Maha Penyayang."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menetapkan kendali penuh Allah atas manfaat dan mudarat. Tindakan Ad-Darr selalu disertai sifat pengampunan dan rahmat-Nya, menunjukkan bahwa bahkan musibah ilahi melayani tujuan tinggi penyucian dan pertumbuhan spiritual.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/57:22" target="_blank">Surah Al-Hadid 57:22</a>
+                    <div class="arabic">مَآ أَصَابَ مِن مُّصِيبَةٍۢ فِى ٱلْأَرْضِ وَلَا فِىٓ أَنفُسِكُمْ إِلَّا فِى كِتَـٰبٍۢ مِّن قَبْلِ أَن نَّبْرَأَهَآ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌۭ</div>
+                    <div class="transliteration">Mā aṣāba min muṣībatin fī l-arḍi wa lā fī anfusikum illā fī kitābin min qabli an nabra'ahā, inna dhālika 'alā Llāhi yasīr</div>
+                    <p>"Tidak ada suatu musibah pun yang menimpa di bumi dan pada dirimu sendiri melainkan telah tertulis dalam kitab (Lauh Mahfuz) sebelum Kami menciptakannya. Sungguh, yang demikian itu mudah bagi Allah."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menjelaskan bahwa semua musibah dari Ad-Darr telah ditetapkan dengan hikmah ilahi. Kemudahan yang disebutkan merujuk pada kendali penuh Allah atas manfaat dan mudarat, menunjukkan bahwa yang tampak sebagai kesulitan adalah bagian dari rencana ilahi yang lebih besar.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/ibnmajah:4031" target="_blank">Sunan Ibn Majah 4031</a>
+                    <div class="arabic">مَا يُصِيبُ الْمُسْلِمَ مِنْ نَصَبٍ وَلَا وَصَبٍ وَلَا هَمٍّ وَلَا حُزْنٍ وَلَا أَذًى وَلَا غَمٍّ حَتَّى الشَّوْكَةِ يُشَاكُهَا إِلَّا كَفَّرَ اللَّهُ بِهَا مِنْ خَطَايَاهُ</div>
+                    <div class="transliteration">Mā yuṣību l-muslima min naṣabin wa lā waṣabin wa lā hammi wa lā ḥuznin wa lā adhan wa lā ghammin ḥattā sh-shawkati yushākuhā illā kaffara Llāhu bihā min khaṭāyāhu</div>
+                    <p>"Tidak ada kelelahan, penyakit, kecemasan, kesedihan, bahaya atau kesedihan yang menimpa seorang Muslim, bahkan duri yang menusuknya, melainkan Allah menghapus sebagian dosa-dosanya karenanya."</p>
+                    <div class="tafsir-box">
+                        <strong>Konteks:</strong> Nabi (ﷺ) mengungkap rahmat tersembunyi dalam musibah dari Ad-Darr - mereka berfungsi sebagai penghapus dosa dan peningkat derajat spiritual. Ini mengubah pemahaman kita tentang bahaya ilahi dari hukuman menjadi penyucian.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Doa</h2>
+                <div class="dua">
+                    <div class="dua-title">Untuk Perlindungan dari Bahaya</div>
+                    <div class="arabic">يَا ضَارُّ يَا نَافِعُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا أَنْتَ ضَارٌّ بِهِ، وَأَسْأَلُكَ خَيْرَ مَا أَنْتَ نَافِعٌ بِهِ</div>
+                    <div class="transliteration">Yā Ḍārru yā Nāfi', a'ūdhu bika min sharri mā anta ḍārrun bih, wa as'aluka khayra mā anta nāfi'un bih</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Pemberi Bahaya, Wahai Yang Maha Pemberi Manfaat, aku berlindung kepada-Mu dari keburukan apa yang Engkau timpakan, dan aku memohon kepada-Mu kebaikan apa yang Engkau berikan."</p>
+                    <p><strong>Manfaat:</strong> Baca ini saat cemas. Nabi (ﷺ) mengajarkan doa komprehensif yang mengakui kendali Allah atas manfaat dan mudarat (Ibnu Majah).</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">Untuk Pemahaman dalam Kesulitan</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَدْمِ، وَأَعُوذُ بِكَ مِنَ التَّرَدِّي، وَأَعُوذُ بِكَ مِنَ الْغَرَقِ وَالْحَرَقِ وَالْهَرَمِ، وَأَعُوذُ بِكَ أَنْ يَتَخَبَّطَنِي الشَّيْطَانُ عِنْدَ الْمَوْتِ، وَأَعُوذُ بِكَ أَنْ أَمُوتَ فِي سَبِيلِكَ مُدْبِرًا، وَأَعُوذُ بِكَ أَنْ أَمُوتَ لَدِيغًا</div>
+                    <div class="transliteration">Allāhumma innī a'ūdhu bika mina l-hadm, wa a'ūdhu bika mina t-taradd, wa a'ūdhu bika mina l-gharaq wa l-ḥaraq wa l-haram, wa a'ūdhu bika an yatakhabbaṭanī sh-shayṭānu 'inda l-mawt, wa a'ūdhu bika an amūta fī sabīlika mudbiran, wa a'ūdhu bika an amūta ladīghā</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari runtuhan, dari jatuh, dari tenggelam, terbakar dan penuaan. Aku berlindung kepada-Mu dari gangguan setan saat kematian, dari mati dalam keadaan mundur dari jalan-Mu, dan dari mati karena sengatan berbisa."</p>
+                    <p><strong>Sumber:</strong> Nabi (ﷺ) membaca doa perlindungan komprehensif ini (Abu Dawud), mengakui berbagai bentuk ujian ilahi sambil memohon rahmat Allah.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Amalan</h2>
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Refleksi Kesulitan</div>
+                    <p>Untuk menumbuhkan hikmah saat diuji:</p>
+                    <ol>
+                        <li>Baca "Yā Dārr" 33 kali saat menghadapi kesulitan</li>
+                        <li>Renungkan tiga hikmah potensial dalam situasi tersebut</li>
+                        <li>Baca Surah Al-Asr (<a href="https://quranwbw.com/103" target="_blank">103</a>) dan mohon petunjuk ilahi</li>
+                    </ol>
+                    <p><strong>Manfaat:</strong> Amalan ini:</p>
+                    <ul>
+                        <li>Mengembangkan kesabaran dan kebijaksanaan</li>
+                        <li>Mengubah perspektif tentang kesulitan</li>
+                        <li>Diamalkan ulama seperti Imam Ghazali</li>
+                    </ul>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">Ritual Perlindungan</div>
+                    <p>Untuk perlindungan spiritual dari bahaya berat:</p>
+                    <ol>
+                        <li>Tulis "Ad-Darr An-Nafi'" di kertas dengan za'faran</li>
+                        <li>Letakkan di kain bersih sambil membaca Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>)</li>
+                        <li>Simpan di rumah atau bawa saat bepergian</li>
+                    </ol>
+                    <p><strong>Dasar Historis:</strong> Para Sahabat mencari perlindungan melalui ayat Quran dan nama-nama Allah, seperti tercatat dalam 'Amal al-Yawm wal-Laylah karya Ibnu Sunni. Za'faran digunakan karena simbolisme kesuciannya.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir menjelaskan Ad-Darr melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Bahaya Korektif:</strong>
+                        <ul>
+                            <li>Hukuman ilahi bagi pelaku salah (<a href="https://quranwbw.com/30:41" target="_blank">30:41</a>)</li>
+                            <li>Tanda peringatan bagi manusia (<a href="https://quranwbw.com/7:94" target="_blank">7:94</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ujian Penyucian:</strong>
+                        <ul>
+                            <li>Ujian untuk orang beriman (<a href="https://quranwbw.com/29:2-3" target="_blank">29:2-3</a>)</li>
+                            <li>Penghapus dosa (Hadits di atas)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kesulitan Preventif:</strong>
+                        <ul>
+                            <li>Bahaya kecil mencegah yang lebih besar</li>
+                            <li>Rasa sakit fisik sebagai peringatan spiritual</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Ash-Shura (<a href="https://quranwbw.com/42:30" target="_blank">42:30</a>), Allah menjelaskan: "Musibah apa pun yang menimpa kamu adalah karena perbuatan tanganmu sendiri, dan Dia memaafkan banyak (kesalahanmu)." Ini menunjukkan tindakan Ad-Darr selalu adil dan sering diringankan oleh rahmat ilahi.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+        </div>
+
+        <!-- English Content (Hidden by Default) -->
+        <div id="english-content" class="hidden">
             <h1 class="name-title">91. Ad-Darr (The Distresser, The Afflicter)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/ad-darr/" target="_blank">myislam.org/99-names-of-allah/ad-darr/</a></div>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
+
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
+            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful recitation of the 99 Names at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_92Dhaar.mp3?_=86" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
 
             <div class="arabic">ٱلضَّارُ</div>
             <div class="transliteration">Transliteration: Ad-Darr</div>
 
+            <div class="audio-player">
+                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/91.%20ad-darr.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
             <div class="section">
-                <h2 class="section-title">Meaning and Significance</h2>
-                <p>Ad-Darr appears in the Quran paired with An-Nafi' (The Benefiter) in 6:17 with profound meanings:</p>
+                <h2 class="section-title">Meaning</h2>
+                <p>Ad-Darr appears in the Quran paired with An-Nafi' (The Benefiter) in <a href="https://quranwbw.com/6:17" target="_blank">6:17</a> with profound meanings:</p>
                 <ul>
                     <li><strong>The Distresser:</strong> Bringer of harm when wisdom dictates</li>
                     <li><strong>The Afflicter:</strong> Creator of trials as divine wisdom</li>
@@ -207,7 +386,7 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Sunan Ibn Majah 4031
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/ibnmajah:4031" target="_blank">Sunan Ibn Majah 4031</a>
                     <div class="arabic">مَا يُصِيبُ الْمُسْلِمَ مِنْ نَصَبٍ وَلَا وَصَبٍ وَلَا هَمٍّ وَلَا حُزْنٍ وَلَا أَذًى وَلَا غَمٍّ حَتَّى الشَّوْكَةِ يُشَاكُهَا إِلَّا كَفَّرَ اللَّهُ بِهَا مِنْ خَطَايَاهُ</div>
                     <div class="transliteration">Mā yuṣību l-muslima min naṣabin wa lā waṣabin wa lā hammi wa lā ḥuznin wa lā adhan wa lā ghammin ḥattā sh-shawkati yushākuhā illā kaffara Llāhu bihā min khaṭāyāhu</div>
                     <p>"No fatigue, illness, anxiety, sorrow, harm or sadness afflicts any Muslim, even the prick of a thorn, but that Allah expiates some of his sins because of it."</p>
@@ -244,7 +423,7 @@
                     <ol>
                         <li>Recite "Yā Dārr" 33 times when facing difficulty</li>
                         <li>Reflect on three potential wisdoms in the situation</li>
-                        <li>Recite Surah Al-Asr and seek divine guidance</li>
+                        <li>Recite Surah Al-Asr (<a href="https://quranwbw.com/103" target="_blank">103</a>) and seek divine guidance</li>
                     </ol>
                     <p><strong>Benefits:</strong> This practice:</p>
                     <ul>
@@ -259,7 +438,7 @@
                     <p>For spiritual protection from severe harm:</p>
                     <ol>
                         <li>Write "Ad-Darr An-Nafi'" on paper with saffron</li>
-                        <li>Place it in a clean cloth while reciting Ayat al-Kursi</li>
+                        <li>Place it in a clean cloth while reciting Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>)</li>
                         <li>Keep it in your home or carry when traveling</li>
                     </ol>
                     <p><strong>Historical Basis:</strong> The Companions would seek protection through Quranic verses and Allah's names, as recorded in Ibn Sunni's 'Amal al-Yawm wal-Laylah. Saffron was used for its purity symbolism.</p>
@@ -272,13 +451,13 @@
                 <ol>
                     <li><strong>Corrective Harm:</strong>
                         <ul>
-                            <li>Divine chastisement for wrongdoers (30:41)</li>
-                            <li>Warning signs for humanity (7:94)</li>
+                            <li>Divine chastisement for wrongdoers (<a href="https://quranwbw.com/30:41" target="_blank">30:41</a>)</li>
+                            <li>Warning signs for humanity (<a href="https://quranwbw.com/7:94" target="_blank">7:94</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Purifying Trials:</strong>
                         <ul>
-                            <li>Tests for believers (29:2-3)</li>
+                            <li>Tests for believers (<a href="https://quranwbw.com/29:2-3" target="_blank">29:2-3</a>)</li>
                             <li>Expiations for sins (Hadith above)</li>
                         </ul>
                     </li>
@@ -289,149 +468,50 @@
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Ash-Shura (42:30), Allah explains: "Whatever strikes you of disaster - it is for what your hands have earned; but He pardons much." This shows Ad-Darr's actions are always just and often mitigated by divine mercy.</p>
+                <p>In Surah Ash-Shura (<a href="https://quranwbw.com/42:30" target="_blank">42:30</a>), Allah explains: "Whatever strikes you of disaster - it is for what your hands have earned; but He pardons much." This shows Ad-Darr's actions are always just and often mitigated by divine mercy.</p>
             </div>
 
+            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
-            <a href="index.html" class="back-to-menu">Back to Main Menu</a>
-        </div>
-
-        <!-- Indonesian Content (Hidden by Default) -->
-        <div id="indonesian-content" class="hidden">
-            <h1 class="name-title">91. Ad-Darr (Pemberi Bahaya, Yang Menimpakan Musibah)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/ad-darr/" target="_blank">myislam.org/99-names-of-allah/ad-darr/</a></div>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
-
-            <div class="arabic">ٱلضَّارُ</div>
-            <div class="transliteration">Transliterasi: Ad-Darr</div>
-
-            <div class="section">
-                <h2 class="section-title">Makna</h2>
-                <p>Ad-Darr muncul dalam Al-Quran berpasangan dengan An-Nafi' (Pemberi Manfaat) dalam 6:17 dengan makna mendalam:</p>
-                <ul>
-                    <li><strong>Pemberi Bahaya:</strong> Pembawa mudarat ketika hikmah menghendaki</li>
-                    <li><strong>Yang Menimpakan Musibah:</strong> Pencipta ujian sebagai kebijaksanaan ilahi</li>
-                </ul>
-                <p>Ibnu Qayyim menjelaskan: "Sifat Allah dalam menimpakan bahaya selalu disertai hikmah dan rahmat. Bahkan musibah dari-Nya pada akhirnya bermanfaat." Nama ini mengingatkan kita bahwa semua kesulitan dari Allah mengandung hikmah tersembunyi, sebagaimana Nabi (ﷺ) bersabda: "Sungguh menakjubkan urusan seorang mukmin! Jika sesuatu yang baik menimpanya dia bersyukur, dan jika sesuatu yang buruk menimpanya dia bersabar - dan keduanya baik baginya" (Muslim).</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
-                
-                <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/6:17" target="_blank">Surah Al-An'am 6:17</a>
-                    <div class="arabic">وَإِن يَمْسَسْكَ ٱللَّهُ بِضُرٍّۢ فَلَا كَاشِفَ لَهُۥٓ إِلَّا هُوَ ۖ وَإِن يُرِدْكَ بِخَيْرٍۢ فَلَا رَآدَّ لِفَضْلِهِۦ ۚ يُصِيبُ بِهِۦ مَن يَشَآءُ مِنْ عِبَادِهِۦ ۚ وَهُوَ ٱلْغَفُورُ ٱلرَّحِيمُ</div>
-                    <div class="transliteration">Wa in yamsaska Llāhu bi-ḍurrin fa-lā kāshifa lahu illā huwa, wa in yuridka bi-khayrin fa-lā rāddda li-faḍlih, yuṣību bih man yashā'u min 'ibādih, wa huwa l-Ghafūru r-Raḥīm</div>
-                    <p>"Dan jika Allah menimpakan kemudaratan kepadamu, maka tidak ada yang dapat menghilangkannya kecuali Dia. Dan jika Dia menghendaki kebaikan bagimu, maka tidak ada yang dapat menolak karunia-Nya. Dia memberikan kebaikan itu kepada siapa yang Dia kehendaki di antara hamba-hamba-Nya. Dan Dia-lah Yang Maha Pengampun, Maha Penyayang."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menetapkan kendali penuh Allah atas manfaat dan mudarat. Tindakan Ad-Darr selalu disertai sifat pengampunan dan rahmat-Nya, menunjukkan bahwa bahkan musibah ilahi melayani tujuan tinggi penyucian dan pertumbuhan spiritual.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/57:22" target="_blank">Surah Al-Hadid 57:22</a>
-                    <div class="arabic">مَآ أَصَابَ مِن مُّصِيبَةٍۢ فِى ٱلْأَرْضِ وَلَا فِىٓ أَنفُسِكُمْ إِلَّا فِى كِتَـٰبٍۢ مِّن قَبْلِ أَن نَّبْرَأَهَآ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌۭ</div>
-                    <div class="transliteration">Mā aṣāba min muṣībatin fī l-arḍi wa lā fī anfusikum illā fī kitābin min qabli an nabra'ahā, inna dhālika 'alā Llāhi yasīr</div>
-                    <p>"Tidak ada suatu musibah pun yang menimpa di bumi dan pada dirimu sendiri melainkan telah tertulis dalam kitab (Lauh Mahfuz) sebelum Kami menciptakannya. Sungguh, yang demikian itu mudah bagi Allah."</p>
-                    <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> Ayat ini menjelaskan bahwa semua musibah dari Ad-Darr telah ditetapkan dengan hikmah ilahi. Kemudahan yang disebutkan merujuk pada kendali penuh Allah atas manfaat dan mudarat, menunjukkan bahwa yang tampak sebagai kesulitan adalah bagian dari rencana ilahi yang lebih besar.
-                    </div>
-                </div>
-
-                <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> Sunan Ibn Majah 4031
-                    <div class="arabic">مَا يُصِيبُ الْمُسْلِمَ مِنْ نَصَبٍ وَلَا وَصَبٍ وَلَا هَمٍّ وَلَا حُزْنٍ وَلَا أَذًى وَلَا غَمٍّ حَتَّى الشَّوْكَةِ يُشَاكُهَا إِلَّا كَفَّرَ اللَّهُ بِهَا مِنْ خَطَايَاهُ</div>
-                    <div class="transliteration">Mā yuṣību l-muslima min naṣabin wa lā waṣabin wa lā hammi wa lā ḥuznin wa lā adhan wa lā ghammin ḥattā sh-shawkati yushākuhā illā kaffara Llāhu bihā min khaṭāyāhu</div>
-                    <p>"Tidak ada kelelahan, penyakit, kecemasan, kesedihan, bahaya atau kesedihan yang menimpa seorang Muslim, bahkan duri yang menusuknya, melainkan Allah menghapus sebagian dosa-dosanya karenanya."</p>
-                    <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) mengungkap rahmat tersembunyi dalam musibah dari Ad-Darr - mereka berfungsi sebagai penghapus dosa dan peningkat derajat spiritual. Ini mengubah pemahaman kita tentang bahaya ilahi dari hukuman menjadi penyucian.
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Doa</h2>
-                <div class="dua">
-                    <div class="dua-title">Untuk Perlindungan dari Bahaya</div>
-                    <div class="arabic">يَا ضَارُّ يَا نَافِعُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا أَنْتَ ضَارٌّ بِهِ، وَأَسْأَلُكَ خَيْرَ مَا أَنْتَ نَافِعٌ بِهِ</div>
-                    <div class="transliteration">Yā Ḍārru yā Nāfi', a'ūdhu bika min sharri mā anta ḍārrun bih, wa as'aluka khayra mā anta nāfi'un bih</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Pemberi Bahaya, Wahai Pemberi Manfaat, aku berlindung kepada-Mu dari keburukan apa yang Engkau timpakan, dan aku memohon kepada-Mu kebaikan apa yang Engkau berikan."</p>
-                    <p><strong>Manfaat:</strong> Baca ini saat cemas. Nabi (ﷺ) mengajarkan doa komprehensif yang mengakui kendali Allah atas manfaat dan mudarat (Ibnu Majah).</p>
-                </div>
-
-                <div class="dua">
-                    <div class="dua-title">Untuk Pemahaman dalam Kesulitan</div>
-                    <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَدْمِ، وَأَعُوذُ بِكَ مِنَ التَّرَدِّي، وَأَعُوذُ بِكَ مِنَ الْغَرَقِ وَالْحَرَقِ وَالْهَرَمِ، وَأَعُوذُ بِكَ أَنْ يَتَخَبَّطَنِي الشَّيْطَانُ عِنْدَ الْمَوْتِ، وَأَعُوذُ بِكَ أَنْ أَمُوتَ فِي سَبِيلِكَ مُدْبِرًا، وَأَعُوذُ بِكَ أَنْ أَمُوتَ لَدِيغًا</div>
-                    <div class="transliteration">Allāhumma innī a'ūdhu bika mina l-hadm, wa a'ūdhu bika mina t-taradd, wa a'ūdhu bika mina l-gharaq wa l-ḥaraq wa l-haram, wa a'ūdhu bika an yatakhabbaṭanī sh-shayṭānu 'inda l-mawt, wa a'ūdhu bika an amūta fī sabīlika mudbiran, wa a'ūdhu bika an amūta ladīghā</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari runtuhan, dari jatuh, dari tenggelam, terbakar dan penuaan. Aku berlindung kepada-Mu dari gangguan setan saat kematian, dari mati dalam keadaan mundur dari jalan-Mu, dan dari mati karena sengatan berbisa."</p>
-                    <p><strong>Sumber:</strong> Nabi (ﷺ) membaca doa perlindungan komprehensif ini (Abu Dawud), mengakui berbagai bentuk ujian ilahi sambil memohon rahmat Allah.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Amalan Refleksi Kesulitan</div>
-                    <p>Untuk menumbuhkan hikmah saat diuji:</p>
-                    <ol>
-                        <li>Baca "Yā Dārr" 33 kali saat menghadapi kesulitan</li>
-                        <li>Renungkan tiga hikmah potensial dalam situasi tersebut</li>
-                        <li>Baca Surah Al-Asr dan mohon petunjuk ilahi</li>
-                    </ol>
-                    <p><strong>Manfaat:</strong> Amalan ini:</p>
-                    <ul>
-                        <li>Mengembangkan kesabaran dan kebijaksanaan</li>
-                        <li>Mengubah perspektif tentang kesulitan</li>
-                        <li>Diamalkan ulama seperti Imam Ghazali</li>
-                    </ul>
-                </div>
-
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Perlindungan</div>
-                    <p>Untuk perlindungan spiritual dari bahaya berat:</p>
-                    <ol>
-                        <li>Tulis "Ad-Darr An-Nafi'" di kertas dengan za'faran</li>
-                        <li>Letakkan di kain bersih sambil membaca Ayat al-Kursi</li>
-                        <li>Simpan di rumah atau bawa saat bepergian</li>
-                    </ol>
-                    <p><strong>Dasar Historis:</strong> Para Sahabat mencari perlindungan melalui ayat Quran dan nama-nama Allah, seperti tercatat dalam 'Amal al-Yawm wal-Laylah karya Ibnu Sunni. Za'faran digunakan karena simbolisme kesuciannya.</p>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan Ad-Darr melalui tiga dimensi:</p>
-                <ol>
-                    <li><strong>Bahaya Korektif:</strong>
-                        <ul>
-                            <li>Hukuman ilahi bagi pelaku salah (30:41)</li>
-                            <li>Tanda peringatan bagi manusia (7:94)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Ujian Penyucian:</strong>
-                        <ul>
-                            <li>Ujian untuk orang beriman (29:2-3)</li>
-                            <li>Penghapus dosa (Hadits di atas)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Kesulitan Preventif:</strong>
-                        <ul>
-                            <li>Bahaya kecil mencegah yang lebih besar</li>
-                            <li>Rasa sakit fisik sebagai peringatan spiritual</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Dalam Surah Ash-Shura (42:30), Allah menjelaskan: "Musibah apa pun yang menimpa kamu adalah karena perbuatan tanganmu sendiri, dan Dia memaafkan banyak (kesalahanmu)." Ini menunjukkan tindakan Ad-Darr selalu adil dan sering diringankan oleh rahmat ilahi.</p>
-            </div>
-
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
-            <a href="index.html" class="back-to-menu">Kembali ke Menu Utama</a>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
+
     <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const englishContent = document.getElementById('english-content');
@@ -441,10 +521,12 @@
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
             } else {
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
         });
 
@@ -452,12 +534,14 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Hide Transliteration') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
+            if (this.textContent === 'Show Transliteration') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
         });
     </script>
