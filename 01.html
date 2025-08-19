@@ -28,7 +28,8 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            line-height: 2;
         }
         .transliteration {
             font-style: italic;
@@ -136,6 +137,19 @@
             text-align: center;
             margin: 15px 0;
         }
+        .top-home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .top-home-link:hover {
+            background-color: #ebf5fb;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
@@ -168,22 +182,27 @@
                 margin: 10px 0;
                 display: inline-block;
             }
+            .top-home-link {
+                margin-bottom: 15px;
+            }
         }
     </style>
+    <!-- Adding Uthmanic Script HAFS font for proper Arabic display -->
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
 
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
-
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
+
             <h1 class="name-title">1. Ar-Rahman (Yang Maha Pengasih)</h1>
             <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/ar-rahman/" target="_blank">myislam.org/99-names-of-allah/ar-rahman/</a> & <a href="https://islam.nu.or.id/asmaul-husna/ar-rahman-maha-pemurah-0x1eU" target="_blank">NU Online</a></div>
 
-            <div class="arabic">ٱلرَّحْمَـٰنُ</div>
+            <div class="arabic">الرَّحْمَـٰنُ</div>
             <div class="transliteration">Transliterasi: Ar-Rahman</div>
 
             <div class="audio-player">
@@ -211,18 +230,18 @@
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/1:1" target="_blank">Surah Al-Fatihah 1:1</a>
-                    <div class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+                    <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
                     <div class="transliteration">Bismi llāhi r-Raḥmāni r-Raḥīm</div>
                     <p>"Dengan nama Allah Yang Maha Pengasih, Maha Penyayang."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/1/1/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ayat pembuka ini menetapkan Ar-Rahman sebagai sifat utama Allah. Urutan menunjukkan bahwa seluruh keberadaan dimulai dengan rahmat ilahi (Ar-Rahman) sebelum rahmat khusus (Ar-Raheem). Menurut pandangan ulama NU, Ibnu Abbas mencatat bahwa Ar-Rahman menggambarkan rahmat Allah yang meliputi segala sesuatu di dunia, sementara Ar-Raheem merujuk pada rahmat khusus-Nya untuk orang beriman di akhirat.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/1/1/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ayat pembaku ini menetapkan Ar-Rahman sebagai sifat utama Allah. Urutan menunjukkan bahwa seluruh keberadaan dimulai dengan rahmat ilahi (Ar-Rahman) sebelum rahmat khusus (Ar-Raheem). Menurut pandangan ulama NU, Ibnu Abbas mencatat bahwa Ar-Rahman menggambarkan rahmat Allah yang meliputi segala sesuatu di dunia, sementara Ar-Raheem merujuk pada rahmat khusus-Nya untuk orang beriman di akhirat.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/55:1-2" target="_blank">Surah Ar-Rahman 55:1-2</a>
-                    <div class="arabic">ٱلرَّحْمَـٰنُ ﴿١﴾ عَلَّمَ ٱلْقُرْءَانَ ﴿٢﴾</div>
+                    <div class="arabic">الرَّحْمَـٰنُ ﴿١﴾ عَلَّمَ الْقُرْآنَ ﴿٢﴾</div>
                     <div class="transliteration">Ar-Raḥmānu. 'Allama l-Qur'ān</div>
                     <p>"Yang Maha Pengasih. Yang mengajarkan Al-Quran."</p>
                     <div class="tafsir-box">
@@ -233,7 +252,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/17:110" target="_blank">Surah Al-Isra 17:110</a>
-                    <div class="arabic">قُلِ ٱدْعُوا۟ ٱللَّهَ أَوِ ٱدْعُوا۟ ٱلرَّحْمَـٰنَ ۖ أَيًّۭا مَّا تَدْعُوا۟ فَلَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ</div>
+                    <div class="arabic">قُلِ ادْعُوا اللَّهَ أَوِ ادْعُوا الرَّحْمَـٰنَ ۖ أَيًّا مَّا تَدْعُوا فَلَهُ الْأَسْمَاءُ الْحُسْنَىٰ</div>
                     <div class="transliteration">Quli d'ū llāha awi d'ū r-Raḥmān ayyam mā tad'ū fa lahū l-asmā'u l-ḥusnā</div>
                     <p>"Katakanlah: 'Serulah Allah atau serulah Ar-Rahman. Dengan nama apa pun kamu menyeru, Dia memiliki Asmaul Husna (nama-nama yang terbaik).'"</p>
                     <div class="tafsir-box">
@@ -256,7 +275,7 @@
                 <h2 class="section-title">Doa</h2>
                 <div class="dua">
                     <div class="dua-title">Memohon Rahmat dan Ampunan</div>
-                    <div class="arabic">يَا رَحْمَانُ ٱرْحَمْنِي رَحْمَةً تُغْنِينِي بِهَا عَن رَّحْمَةِ مَن سِوَاكَ</div>
+                    <div class="arabic">يَا رَحْمَانُ ارْحَمْنِي رَحْمَةً تُغْنِينِي بِهَا عَنْ رَحْمَةِ مَنْ سِوَاكَ</div>
                     <div class="transliteration">Yā Raḥmānu rḥamnī raḥmatan tughnīnī bihā 'an raḥmati man siwāk</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Pengasih, limpahkanlah kepadaku rahmat yang membuatku tidak memerlukan rahmat selain dari-Mu."</p>
                     <p><strong>Keutamaan:</strong> Nabi (ﷺ) menganjurkan doa ini untuk mencapai ketergantungan penuh pada rahmat Allah. Dianjurkan dibaca setelah shalat Subuh dan Maghrib untuk mencapai kemandirian spiritual (Ibnu Majah).</p>
@@ -264,7 +283,7 @@
 
                 <div class="dua">
                     <div class="dua-title">Memohon Perlindungan Melalui Rahmat</div>
-                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلرَّحْمَـٰنِ ٱجْعَلْ قُلُوبَنَا مُتَّصِلَةً بِرَحْمَتِكَ وَأَرْزُقْنَا مِنْ حَيْثُ لَا نَحْتَسِبُ</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ الرَّحْمَـٰنِ اجْعَلْ قُلُوبَنَا مُتَّصِلَةً بِرَحْمَتِكَ وَأَرْزُقْنَا مِنْ حَيْثُ لَا نَحْتَسِبُ</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi r-Raḥmāni j'al qulūbanā muttaṣilatan bi-raḥmatika wa arzuqnā min ḥaythu lā naḥtasib</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Ar-Rahman, sambungkanlah hati kami dengan rahmat-Mu dan berilah kami rezeki dari arah yang tidak kami sangka."</p>
                     <p><strong>Sumber:</strong> Doa ini menggabungkan penyebutan nama Ar-Rahman dengan janji Allah dalam Al-Quran tentang pemberian rezeki dari arah yang tidak terduga (<a href="https://quranwbw.com/65:3" target="_blank">65:3</a>). Nabi (ﷺ) mengajarkan bahwa berdoa dengan menyebut nama-nama Allah akan dikabulkan (Tirmidhi).</p>
@@ -338,31 +357,18 @@
                 <p>Dalam Surah Maryam (<a href="https://quranwbw.com/19:18" target="_blank">19:18</a>), Maryam memohon perlindungan dengan menyebut Ar-Rahman, menunjukkan kekuatan nama ini dalam situasi sulit. Pengulangan nama "Ar-Rahman" dalam Al-Quran (57 kali) menegaskan sentralitasnya dalam sifat ketuhanan.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <a href="index.html" class="top-home-link">&larr; Back to Home</a>
+
             <h1 class="name-title">1. Ar-Rahman (The Most Gracious)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/ar-rahman/" target="_blank">myislam.org/99-names-of-allah/ar-rahman/</a></div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
-            
-            <!-- Bonus section only in English -->
-            <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
-
-                <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
-                    <audio controls style="width: 100%;">
-                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_02_03RahmanRaheem.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-
-            <div class="arabic">ٱلرَّحْمَـٰنُ</div>
+            <div class="arabic">الرَّحْمَـٰنُ</div>
             <div class="transliteration">Transliteration: Ar-Rahman</div>
 
             <div class="audio-player">
@@ -390,7 +396,7 @@
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/1:1" target="_blank">Surah Al-Fatihah 1:1</a>
-                    <div class="arabic">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>
+                    <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
                     <div class="transliteration">Bismi llāhi r-Raḥmāni r-Raḥīm</div>
                     <p>"In the name of Allah, the Entirely Merciful, the Especially Merciful."</p>
                     <div class="tafsir-box">
@@ -401,7 +407,7 @@
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/55:1-2" target="_blank">Surah Ar-Rahman 55:1-2</a>
-                    <div class="arabic">ٱلرَّحْمَـٰنُ ﴿١﴾ عَلَّمَ ٱلْقُرْءَانَ ﴿٢﴾</div>
+                    <div class="arabic">الرَّحْمَـٰنُ ﴿١﴾ عَلَّمَ الْقُرْآنَ ﴿٢﴾</div>
                     <div class="transliteration">Ar-Raḥmānu. 'Allama l-Qur'ān</div>
                     <p>"The Most Merciful. Taught the Quran."</p>
                     <div class="tafsir-box">
@@ -412,7 +418,7 @@
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/17:110" target="_blank">Surah Al-Isra 17:110</a>
-                    <div class="arabic">قُلِ ٱدْعُوا۟ ٱللَّهَ أَوِ ٱدْعُوا۟ ٱلرَّحْمَـٰنَ ۖ أَيًّۭا مَّا تَدْعُوا۟ فَلَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ</div>
+                    <div class="arabic">قُلِ ادْعُوا اللَّهَ أَوِ ادْعُوا الرَّحْمَـٰنَ ۖ أَيًّا مَّا تَدْعُوا فَلَهُ الْأَسْمَاءُ الْحُسْنَىٰ</div>
                     <div class="transliteration">Quli d'ū llāha awi d'ū r-Raḥmān ayyam mā tad'ū fa lahū l-asmā'u l-ḥusnā</div>
                     <p>"Say, 'Call upon Allah or call upon the Most Merciful. Whichever [name] you call - to Him belong the best names.'"</p>
                     <div class="tafsir-box">
@@ -435,7 +441,7 @@
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Mercy and Forgiveness</div>
-                    <div class="arabic">يَا رَحْمَانُ ٱرْحَمْنِي رَحْمَةً تُغْنِينِي بِهَا عَن رَّحْمَةِ مَن سِوَاكَ</div>
+                    <div class="arabic">يَا رَحْمَانُ ارْحَمْنِي رَحْمَةً تُغْنِينِي بِهَا عَنْ رَحْمَةِ مَنْ سِوَاكَ</div>
                     <div class="transliteration">Yā Raḥmānu rḥamnī raḥmatan tughnīnī bihā 'an raḥmati man siwāk</div>
                     <p><strong>Translation:</strong> "O Most Gracious, bestow upon me such mercy that makes me independent of the mercy of anyone besides You."</p>
                     <p><strong>Benefits:</strong> The Prophet (ﷺ) recommended this dua for complete reliance on Allah's mercy. Recite after Fajr and Maghrib prayers for spiritual independence (Ibn Majah).</p>
@@ -443,7 +449,7 @@
 
                 <div class="dua">
                     <div class="dua-title">For Protection Through Mercy</div>
-                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلرَّحْمَـٰنِ ٱجْعَلْ قُلُوبَنَا مُتَّصِلَةً بِرَحْمَتِكَ وَأَرْزُقْنَا مِنْ حَيْثُ لَا نَحْتَسِبُ</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ الرَّحْمَـٰنِ اجْعَلْ قُلُوبَنَا مُتَّصِلَةً بِرَحْمَتِكَ وَأَرْزُقْنَا مِنْ حَيْثُ لَا نَحْتَسِبُ</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi r-Raḥmāni j'al qulūbanā muttaṣilatan bi-raḥmatika wa arzuqnā min ḥaythu lā naḥtasib</div>
                     <p><strong>Translation:</strong> "O Allah, by the right of Ar-Rahman, connect our hearts to Your mercy and provide for us from where we do not expect."</p>
                     <p><strong>Source:</strong> This dua combines invoking Ar-Rahman with the Quranic promise of provision from unexpected sources (<a href="https://quranwbw.com/65:3" target="_blank">65:3</a>). The Prophet (ﷺ) taught that invoking Allah by His names guarantees response (Tirmidhi).</p>
@@ -517,7 +523,7 @@
                 <p>In Surah Maryam (<a href="https://quranwbw.com/19:18" target="_blank">19:18</a>), Maryam invokes Ar-Rahman for protection, showing this name's power in difficult situations. The constant repetition of "Ar-Rahman" in the Quran (57 times) emphasizes its centrality to divine nature.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
