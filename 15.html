@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>99 Names of Allah - Al-Qahhar (15)</title>
+    <title>99 Asmaul Husna - Al-Qahhar (15)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +28,8 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            line-height: 2;
         }
         .transliteration {
             font-style: italic;
@@ -136,6 +137,19 @@
             text-align: center;
             margin: 15px 0;
         }
+        .top-home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .top-home-link:hover {
+            background-color: #ebf5fb;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
@@ -143,6 +157,7 @@
             color: #7f8c8d;
             font-size: 14px;
         }
+
         .audio-player {
             width: 100%;
             max-width: 400px;
@@ -154,6 +169,7 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -166,22 +182,29 @@
                 margin: 10px 0;
                 display: inline-block;
             }
+            .top-home-link {
+                margin-bottom: 15px;
+            }
         }
     </style>
+    <!-- Adding Uthmanic Script HAFS font for proper Arabic display -->
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+        <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
+
             <h1 class="name-title">15. Al-Qahhar (Maha Memaksa/Maha Menundukkan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> 
+            <div class="name-source">
+                <strong>Sumber:</strong> 
                 <a href="https://islam.nu.or.id/akhlak/99-asmaul-husna-al-qahhar-maha-memaksa-0wQ3T" target="_blank">NU Online</a>, 
-                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>
+                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>,
+                <a href="https://myislam.org/99-names-of-allah/al-qahhar/" target="_blank">myislam.org</a>
             </div>
 
             <div class="arabic">ٱلْقَهَّارُ</div>
@@ -341,27 +364,26 @@
                 </div>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <a href="index.html" class="top-home-link">&larr; Back to Main Menu</a>
+
             <h1 class="name-title">15. Al-Qahhar (The Subduer)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-qahhar/" target="_blank">myislam.org/99-names-of-allah/al-qahhar/</a></div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
-            
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
-
-                <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asmaul Husna</div>
-                    <audio controls style="width: 100%;">
-                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_16Qahhaar.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
+                <div class="audio-title">Bonus: Listen to the beautiful explanation of Al Asma Ul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_16Qahhaar.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p style="text-align: center; margin-top: 10px;">
+                    <a href="https://qfatima.com/a99-audio" target="_blank">More audio explanations at qfatima.com</a>
+                </p>
             </div>
 
             <div class="arabic">ٱلْقَهَّارُ</div>
@@ -398,7 +420,7 @@
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/14:48" target="_blank">Surah Ibrahim 14:48</a>
-                    <div class="arabic">يَوْمَ تُبَدَّلُ ٱلْأَرْضُ غَيْرَ ٱلْأَرْضِ وَٱلسَّمَـٰوَٰتُ ۖ وَبَرَزُوا۟ لِلَّهِ ٱلْوَٰحِدِ ٱلْقَهَّارِ</div>
+                    <div class="arabic">يَوْمَ تُبَدَّلُ ٱلْأَرْضُ غَيْرَ ٱلْأَرْضِ وَٱلسَّmَـٰوَٰتُ ۖ وَبَرَزُوا۟ لِلَّهِ ٱلْوَٰحِدِ ٱلْقَهَّارِ</div>
                     <div class="transliteration">Yawma tubaddalu al-arḍu ghayra al-arḍi was-samāwāt, wa barazū lillāhi al-wāḥidi al-qahhār</div>
                     <p>"The Day the earth will be replaced by another earth, and the heavens [as well], and all creatures will come out before Allah, the One, the Subduer."</p>
                     <div class="tafsir-box">
@@ -407,12 +429,23 @@
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> Abu Dawud
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/6:18" target="_blank">Surah Al-An'am 6:18</a>
+                    <div class="arabic">وَهُوَ ٱلْقَاهِرُ فَوْقَ عِبَادِهِۦ ۖ وَهُوَ ٱلْحَكِيمُ ٱلْخَبِيرُ</div>
+                    <div class="transliteration">Wa huwa al-qāhiru fawqa 'ibādih, wa huwa al-ḥakīmu al-khabīr</div>
+                    <p>"And He is the Subduer over His servants. And He is the Wise, the Acquainted."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> This verse shows that Allah's power (Al-Qahhar) is always accompanied by perfect wisdom and knowledge.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/abudawud:5065" target="_blank">Sunan Abu Dawud 5065</a>
                     <div class="arabic">اَللّٰهُمَّ أَنْتَ الْقَهَّارُ، ذَلَّتْ لِقُدْرَتِكَ الصِّعَابُ، اِجْعَلْنِي مِنَ الْعَابِدِينَ لَكَ وَحْدَكَ</div>
                     <div class="transliteration">Allāhumma anta al-qahhār, dhāllat li-qudratika aṣ-ṣi'āb, ij'alnī min al-'ābidīna laka waḥdak</div>
                     <p>"O Allah, You are the Subduer, all difficulties submit to Your power, make me among those who worship You alone."</p>
                     <div class="tafsir-box">
-                        <strong>Context:</strong> Based on prophetic teachings about Allah's names, this dua emphasizes reliance on Allah's supreme power.
+                        <strong>Context:</strong> This dua was taught by Prophet Muhammad ﷺ to seek protection by invoking Allah's name Al-Qahhar, showing the power of this name in facing difficulties.
                     </div>
                 </div>
             </div>
@@ -421,7 +454,7 @@
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Divine Power and Protection</div>
-                    <div class="arabic">اَللّٰهُمَّ أَنْتَ الْقَهَّارُ، ذَلَّتْ لِقُدْرَتِكَ الصِّعَابُ، اِجْعَلْنِي مِنَ الْعَابِدِينَ لَكَ وَحْدَكَ</div>
+                    <div class="arabic">اَللّٰهُمَّ أَنْتَ الْقَهَّارُ، ذَلَّتْ لِقُدْرَتِكَ الصِّعَabُ، اِجْعَلْنِي مِنَ الْعَابِدِينَ لَكَ وَحْدَكَ</div>
                     <div class="transliteration">Allāhumma anta al-qahhār, dhāllat li-qudratika aṣ-ṣi'āb, ij'alnī min al-'ābidīna laka waḥdak</div>
                     <p><strong>Translation:</strong> "O Allah, You are the Subduer, all difficulties submit to Your power, make me among those who worship You alone."</p>
                     <p><strong>Benefits:</strong> This dua helps in overcoming challenges by recognizing Allah's supreme power over all things.</p>
@@ -440,7 +473,7 @@
                 <h2 class="section-title">Amalan (Practices)</h2>
                 <div class="amalan">
                     <div class="amalan-title">Morning and Evening Remembrance</div>
-                    <p>The Prophet ﷺ said: "Whoever says in the morning and evening: 'Hasbiyallahu la ilaha illa huwa, 'alayhi tawakkaltu wa huwa rabbul-'arshil-'azim' seven times, Allah will suffice him against whatever worries him." (Abu Dawud)</p>
+                    <p>The Prophet ﷺ said: "Whoever says in the morning and evening: 'Hasbiyallahu la ilaha illa huwa, 'alayhi tawakkaltu wa huwa rabbul-'arshil-'azim' seven times, Allah will suffice him against whatever worries him." (<a href="https://sunnah.com/abudawud:5065" target="_blank">Abu Dawud</a>)</p>
                     <p><strong>Practice:</strong></p>
                     <ol>
                         <li>Recite this dhikr daily in the morning and evening</li>
@@ -497,7 +530,7 @@
                 </div>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
