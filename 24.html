@@ -28,7 +28,7 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -155,6 +155,14 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        .back-arrow {
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+        .main-menu a:hover .back-arrow {
+            transform: translateX(-5px);
+        }
 
         @media (max-width: 768px) {
             .arabic {
@@ -176,12 +184,16 @@
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
-
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
+
             <h1 class="name-title">24. Al-Mu'izz (Yang Maha Memuliakan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> dan <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>, dan <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a></div>
 
             <div class="arabic">الْمُعِزُّ</div>
             <div class="transliteration">Transliterasi: Al-Mu'izz</div>
@@ -260,6 +272,7 @@
                     <div class="transliteration">Allahumma innee asaluka alAAizza li-ahli al-islami wa aAAoothu bika an tathillanee</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu kemuliaan untuk umat Islam dan aku berlindung kepada-Mu dari kehinaan."</p>
                     <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh ulama Ahlussunnah wal Jama'ah untuk memohon kemuliaan bagi seluruh umat Islam. Dalam kitab Al-Adzkar karya Imam Nawawi disebutkan bahwa doa untuk kemaslahatan umat Islam secara kolektif memiliki keutamaan yang besar.</p>
+                    <p><strong>Sumber:</strong> Kemenag RI dan NU Online</p>
                 </div>
 
                 <div class="dua">
@@ -288,6 +301,7 @@
                         <li>Mengikuti petunjuk Rasulullah dan para sahabat</li>
                         <li>Membangun karakter mulia sesuai tuntunan Islam</li>
                     </ul>
+                    <p><strong>Sumber:</strong> Panduan Kemenag RI dan NU Online</p>
                 </div>
 
                 <div class="amalan">
@@ -304,6 +318,7 @@
                         <li>Jaga amalan ini ikhlas karena Allah semata</li>
                     </ol>
                     <p><strong>Dasar Syar'i:</strong> Rasulullah SAW bersabda: "Barangsiapa tidak menyayangi yang muda dan tidak menghormati yang tua, maka bukan termasuk golongan kami" (HR. Tirmidzi). Dalam kitab Ihyā' Ulūmiddīn, Imam Al-Ghazali menjelaskan bahwa memuliakan sesama adalah cerminan dari kemuliaan hati.</p>
+                    <p><strong>Sumber:</strong> Kemenag RI dan NU Online</p>
                 </div>
             </div>
 
@@ -337,18 +352,27 @@
                     </li>
                 </ol>
                 <p>Dalam kitab-kitab tafsir mu'tabarah seperti Tafsir Al-Qurthubi dan Tafsir Al-Munir dijelaskan bahwa kemuliaan dari Allah bersifat hakiki dan abadi, berbeda dengan kemuliaan duniawi yang bersifat sementara. Surah Al-Hujurat (<a href="https://quranwbw.com/49:13" target="_blank">49:13</a>) menegaskan bahwa standar kemuliaan di sisi Allah adalah ketakwaan.</p>
+                <p><strong>Sumber:</strong> Tafsir Ibn Kathir dengan referensi tambahan dari Kemenag RI dan NU Online</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
+
             <h1 class="name-title">24. Al-Mu'izz (The Honourer, The Bestower of Honour)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muizz/" target="_blank">myislam.org/99-names-of-allah/al-muizz/</a></div>
-
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <!-- Bonus section only in English -->
             <div class="bonus">
@@ -505,7 +529,11 @@
                 <p>In Surah Al-Hujurat (<a href="https://quranwbw.com/49:13" target="_blank">49:13</a>), Allah specifically mentions that honor comes through taqwa, showing that divine honor is accessible to all regardless of worldly status. The consistent theme throughout the Quran is that true honor comes only from Allah and is granted to those who follow His guidance.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
