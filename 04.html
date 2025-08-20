@@ -28,7 +28,7 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -136,6 +136,19 @@
             text-align: center;
             margin: 15px 0;
         }
+        .top-home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .top-home-link:hover {
+            background-color: #ebf5fb;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
@@ -166,6 +179,9 @@
                 margin: 10px 0;
                 display: inline-block;
             }
+            .top-home-link {
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
@@ -174,10 +190,10 @@
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
-
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
+            
             <h1 class="name-title">4. Al-Quddus (Yang Mahasuci)</h1>
             <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> dan Kementerian Agama RI</div>
 
@@ -210,7 +226,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/59:23" target="_blank">Surah Al-Hasyr 59:23</a>
-                    <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِكُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ</div>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِkُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ</div>
                     <div class="transliteration">Huwa llāhu lladhī lā ilāha illā huwa l-Maliku l-Quddūsu s-Salām</div>
                     <p>"Dialah Allah, tidak ada tuhan selain Dia, Raja Yang Mahasuci, Yang Mahasejahtera..." (Terjemahan Kemenag RI)</p>
                     <div class="tafsir-box">
@@ -221,7 +237,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/62:1" target="_blank">Surah Al-Jumu'ah 62:1</a>
-                    <div class="arabic">يُسَبِّحُ لِلَّهِ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ٱلْمَلِكِ ٱلْقُدُّوسِ</div>
+                    <div class="arabic">يُسَبِّحُ لِلَّهِ مَا فِى ٱلسَّمَـٰوَٰتِ وَmَا فِى ٱلْأَرْضِ ٱلْمَلِkِ ٱلْقُدُّوسِ</div>
                     <div class="transliteration">Yusabbihu lillāhi mā fi s-samāwāti wa mā fi l-arḍi l-Maliki l-Quddūs</div>
                     <p>"Senantiasa bertasbih kepada Allah apa yang ada di langit dan apa yang ada di bumi, Raja Yang Mahasuci..." (Terjemahan Kemenag RI)</p>
                     <div class="tafsir-box">
@@ -318,15 +334,16 @@
                 <p>Dalam <a href="https://quranwbw.com/2:30" target="_blank">Surah Al-Baqarah 2:30</a>, ketika malaikat mempertanyakan penciptaan manusia, mereka pertama-tama menyatakan kesucian Allah, menunjukkan bahwa pengakuan akan kesucian Allah adalah dasar untuk memahami hikmah ilahi.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <a href="index.html" class="top-home-link">&larr; Back to Main</a>
+
             <h1 class="name-title">4. Al-Quddus (The Most Pure, The Most Holy)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-quddus/" target="_blank">myislam.org/99-names-of-allah/al-quddus/</a></div>
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
             
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
@@ -340,7 +357,7 @@
                 </div>
             </div>
 
-            <div class="arabic">ٱلْقُدُّوسُ</div>
+            <div class="arabic">ٱلْقُdُّوسُ</div>
             <div class="transliteration">Transliteration: Al-Quddūs</div>
 
             <div class="audio-player">
@@ -368,7 +385,7 @@
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/59:23" target="_blank">Surah Al-Hashr 59:23</a>
-                    <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِكُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ</div>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلَّذِى لَآ إِلَـٰهَ إِلَّا هُوَ ٱلْمَلِkُ ٱلْقُدُّوسُ ٱلسَّلَـٰمُ</div>
                     <div class="transliteration">Huwa llāhu lladhī lā ilāha illā huwa l-Maliku l-Quddūsu s-Salām</div>
                     <p>"He is Allah, other than whom there is no deity, the Sovereign, the Pure, the Perfection..."</p>
                     <div class="tafsir-box">
@@ -379,7 +396,7 @@
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/62:1" target="_blank">Surah Al-Jumu'ah 62:1</a>
-                    <div class="arabic">يُسَبِّحُ لِلَّهِ مَا فِى ٱلسَّمَـٰوَٰتِ وَمَا فِى ٱلْأَرْضِ ٱلْمَلِكِ ٱلْقُدُّوسِ</div>
+                    <div class="arabic">يُسَبِّحُ لِلَّهِ mَا فِى ٱلسَّmَـٰوَٰتِ وَmَا فِى ٱلْأَرْضِ ٱلْمَلِkِ ٱلْقُدُّوسِ</div>
                     <div class="transliteration">Yusabbihu lillāhi mā fi s-samāwāti wa mā fi l-arḍi l-Maliki l-Quddūs</div>
                     <p>"Whatever is in the heavens and whatever is on the earth is exalting Allah, the Sovereign, the Pure..."</p>
                     <div class="tafsir-box">
@@ -410,7 +427,7 @@
 
                 <div class="dua">
                     <div class="dua-title">For Protection from Impurity</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ الْقُدُّوسُ وَمِنْكَ كُلُّ طُهْرٍ فَطَهِّرْنِي بِطُهْرِكَ</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْقُدُّوسُ وَmِنْكَ كُلُّ طُهْرٍ فَطَهِّرْنِي بِطُهْرِكَ</div>
                     <div class="transliteration">Allāhumma anta l-Quddūs wa minka kullu ṭūhrin fa ṭahhirnī biṭūhrik</div>
                     <p><strong>Translation:</strong> "O Allah, You are the Most Holy and all purity comes from You, so purify me with Your purity."</p>
                     <p><strong>Source:</strong> Inspired by the Prophet's (ﷺ) emphasis on both physical and spiritual purity (Muslim).</p>
@@ -470,7 +487,7 @@
                 <p>In Surah Al-Baqarah (<a href="https://quranwbw.com/2:30" target="_blank">2:30</a>), when the angels question human creation, they first declare Allah's holiness, showing this attribute is the basis for understanding His wisdom.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <a href="index.html" class="top-home-link">&larr; Back to Main</a>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
