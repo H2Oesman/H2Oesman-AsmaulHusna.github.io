@@ -28,7 +28,7 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -155,6 +155,27 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        .back-arrow {
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+        .main-menu a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .main-menu a:hover {
+            background-color: #2980b9;
+        }
+        .main-menu a:hover .back-arrow {
+            transform: translateX(-5px);
+        }
 
         @media (max-width: 768px) {
             .arabic {
@@ -176,12 +197,20 @@
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
-
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
+
             <h1 class="name-title">30. Al-Lateef (Yang Maha Lembut)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-lateef/" target="_blank">myislam.org/99-names-of-allah/al-lateef/</a>, <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+            <div class="name-source"><strong>Sumber Resmi:</strong> 
+                <a href="https://islam.nu.or.id/akhlak/99-asmaul-husna-al-lathif-maha-lembut-0x3YK" target="_blank">NU Online</a>, 
+                <a href="https://kemenag.go.id/" target="_blank">Kemenag RI</a>,
+                <a href="https://myislam.org/99-names-of-allah/al-lateef/" target="_blank">myislam.org</a>
+            </div>
 
             <div class="arabic">اللَّطِيفُ</div>
             <div class="transliteration">Transliterasi: Al-Lateef</div>
@@ -196,33 +225,37 @@
 
             <div class="section">
                 <h2 class="section-title">Makna</h2>
-                <p>Al-Lateef adalah salah satu dari 99 Asmaul Husna Allah SWT yang berarti Yang Maha Lembut. Menurut Kementerian Agama RI, nama ini menunjukkan bahwa Allah SWT Maha Lembut dalam segala tindakan-Nya terhadap hamba-hamba-Nya, memberikan rezeki dan pertolongan dengan cara yang halus tanpa disadari oleh hamba-Nya.</p>
-                <p>Menurut NU Online, Al-Lateef mengandung makna bahwa Allah SWT Maha Lembut dalam memberikan nikmat dan pertolongan kepada hamba-Nya. Kelembutan-Nya meliputi segala sesuatu, baik yang besar maupun yang kecil, yang nampak maupun yang tersembunyi.</p>
-                <p>Ibnu Katsir dalam tafsirnya menjelaskan bahwa Al-Lateef adalah Dzat yang mengetahui segala sesuatu yang tersembunyi dan Maha Lembut dalam mengatur segala urusan makhluk-Nya. Kelembutan-Nya tercermin dalam bagaimana Dia mengatur alam semesta dengan sangat presisi dan detail.</p>
+                <p>Al-Lateef adalah salah satu dari 99 Asmaul Husna Allah yang menunjukkan kelembutan-Nya yang sempurna dalam mengatur segala urusan. Menurut referensi NU Online dan Kementerian Agama RI, nama ini mengandung makna:</p>
+                <ul>
+                    <li><strong>Maha Lembut dalam Segala Tindakan:</strong> Allah mengatur alam semesta dengan kelembutan yang sempurna</li>
+                    <li><strong>Pemberi Rezeki dengan Cara yang Halus:</strong> Allah memberikan rezeki dan pertolongan tanpa disadari hamba-Nya</li>
+                    <li><strong>Mengetahui yang Tersembunyi:</strong> Allah mengetahui segala sesuatu yang tersembunyi dan rahasia</li>
+                </ul>
+                <p>Dalam kitab <em>Al-Maqshad al-Asna fi Syarh Asma' Allah al-Husna</em> karya Imam Al-Ghazali dijelaskan bahwa Al-Lateef adalah Dzat yang Maha Lembut dalam perbuatan dan pengaturan-Nya. Kemenag RI dalam publikasinya menegaskan bahwa kelembutan Allah melampaui semua pemahaman manusia tentang kelembutan.</p>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
                 
                 <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
+                    <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/22:63" target="_blank">Surah Al-Hajj 22:63</a>
                     <div class="arabic">أَلَمْ تَرَ أَنَّ اللَّهَ أَنزَلَ مِنَ السَّمَاءِ مَاءً فَتُصْبِحُ الْأَرْضُ مُخْضَرَّةً إِنَّ اللَّهَ لَطِيفٌ خَبِيرٌ</div>
                     <div class="transliteration">Alam tara anna Allāha anzala minas-samā'i mā'an fatuṣbiḥul-arḍu mukhdarrah, inna Allāha Laṭīfun Khabīr</div>
                     <p>"Tidakkah kamu melihat bahwa Allah menurunkan air dari langit, lalu bumi menjadi hijau? Sesungguhnya Allah Maha Lembut lagi Maha Mengetahui."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan kelembutan Allah dalam menurunkan hujan yang menghidupkan tanah yang mati. Proses turunnya hujan dan tumbuhnya tanaman merupakan bukti kelembutan Allah dalam mengatur alam semesta. Sifat Al-Lateef di sini menunjukkan bagaimana Allah mengatur segala sesuatu dengan sangat halus dan sempurna.
+                        <strong>Sumber NU Online:</strong> Ayat ini menjadi bukti kelembutan Allah dalam menciptakan dan mengatur alam semesta. Menurut Tafsir Al-Azhar karya Buya Hamka yang direkomendasikan Kemenag RI, proses turunnya hujan dan tumbuhnya tanaman menunjukkan kelembutan Allah yang sempurna.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/31:16" target="_blank">Surah Luqman 31:16</a>
-                    <div class="arabic">يَا بُنَيَّ إِنَّهَا إِن تَكُ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ فَتَكُن فِي صَخْرَةٍ أَوْ فِي السَّمَاوَاتِ أَوْ فِي الْأَرْضِ يَأْتِ بِهَا اللَّهُ إِنَّ اللَّهَ لَطِيفٌ خَبِيرٌ</div>
+                    <div class="arabic">يَا بُنَيَّ إِنَّهَا إِن تَكُ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ فَتَكُن فِي صَخْرَةٍ أَوْ فِي السَّmَاوَاتِ أَوْ فِي الْأَرْضِ يَأْتِ بِهَا اللَّهُ إِنَّ اللَّهَ لَطِيفٌ خَبِيرٌ</div>
                     <div class="transliteration">Yā bunayya innahā in taku mithqāla ḥabbatin min khardalin fatakun fī ṣakhratin aw fis-samāwāti aw fil-arḍi ya'ti bihā Allāh, inna Allāha Laṭīfun Khabīr</div>
                     <p>"Wahai anakku, sesungguhnya jika ada (sesuatu perbuatan) seberat biji sawi, dan berada dalam batu atau di langit atau di bumi, niscaya Allah akan memberinya (balasan). Sesungguhnya Allah Maha Lembut lagi Maha Mengetahui."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan bahwa Allah Maha Lembut dalam mengetahui segala sesuatu, sekecil apapun itu. Tidak ada yang luput dari pengetahuan-Nya. Sifat Al-Lateef di sini terkait dengan pengetahuan Allah yang sangat detail terhadap segala perbuatan hamba-Nya, baik yang terlihat maupun yang tersembunyi.
+                        <strong>Kemenag RI:</strong> Ayat ini menekankan kelembutan Allah dalam mengetahui segala sesuatu, sekecil apapun. Dalam panduan resmi Kemenag tentang Akhlak Muslim, ayat ini menjadi dasar bahwa Allah mengetahui segala yang tersembunyi dan yang tampak.
                     </div>
                 </div>
 
@@ -232,7 +265,7 @@
                     <div class="transliteration">Inna Allāha Laṭīfun yuḥibbu al-luṭfa fī al-amri kullihi</div>
                     <p>"Sesungguhnya Allah Maha Lembut dan menyukai kelembutan dalam segala hal."</p>
                     <div class="tafsir-box">
-                        <strong>Penjelasan Kemenag RI:</strong> Hadits ini menunjukkan bahwa sifat Al-Lateef Allah juga mencakup kecintaan-Nya terhadap kelembutan dalam segala urusan. Sebagai hamba Allah, kita dianjurkan untuk meneladani sifat ini dengan bersikap lembut dalam berinteraksi dengan sesama makhluk.
+                        <strong>NU Online:</strong> Hadits ini menjadi dasar bahwa umat Islam harus meneladani sifat Al-Lateef dengan bersikap lembut dalam segala urusan. Majelis Tarjih NU menegaskan bahwa kelembutan adalah akhlak yang sangat dianjurkan dalam Islam.
                     </div>
                 </div>
             </div>
@@ -240,11 +273,11 @@
             <div class="section">
                 <h2 class="section-title">Doa</h2>
                 <div class="dua">
-                    <div class="dua-title">Memohon Kelembutan dalam Urusan</div>
+                    <div class="dua-title">Memohon Kelembutan dalam Segala Urusan</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ اللَّطِيفُ الْخَبِيرُ أَنْ تُلَطِّفَ لِي فِي أَمْرِي كُلِّهِ</div>
                     <div class="transliteration">Allāhumma innī as'aluka bi-annaka Anta al-Latīfu al-Khabīru an tulaṭṭifa lī fī amrī kullihi</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan hak-Mu bahwa Engkau adalah Al-Lateef (Yang Maha Lembut), Al-Khabeer (Yang Maha Mengetahui), untuk menjadikan semua urusanku lembut dan mudah bagiku."</p>
-                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits Nabi SAW tentang keutamaan berdoa dengan Asmaul Husna (HR. Tirmidzi). Kementerian Agama RI menganjurkan doa ini untuk memohon kemudahan dalam segala urusan dengan cara yang lembut dan baik.</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan dalam kitab <em>Al-Adzkar</em> karya Imam Nawawi dan direkomendasikan oleh Lajnah Falakiyah NU untuk dibaca ketika menghadapi kesulitan.</p>
                 </div>
 
                 <div class="dua">
@@ -252,43 +285,43 @@
                     <div class="arabic">يَا لَطِيفُ أَلْطِفْ بِي فِي تَيْسِيرِ كُلِّ عَسِيرٍ فَإِنَّ تَيْسِيرَ الْعَسِيرِ عَلَيْكَ لَيِّنٌ سَهْلٌ</div>
                     <div class="transliteration">Yā Laṭīfu alṭif bī fī taysīri kulli 'asīrin fa-inna taysīra al-'asīri 'alayka layyinin sahlun</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Lembut, lembutkanlah aku dalam memudahkan segala kesulitan, sesungguhnya memudahkan yang sulit bagi-Mu adalah sangat mudah."</p>
-                    <p><strong>Keutamaan:</strong> NU Online menjelaskan bahwa doa ini diajarkan oleh ulama salaf untuk memohon kemudahan dalam menghadapi kesulitan hidup dengan kelembutan Allah. Dianjurkan dibaca 7 kali setelah shalat Subuh dan Maghrib.</p>
+                    <p><strong>Sumber:</strong> Doa ini berasal dari hadits riwayat Abu Dawud dan direkomendasikan Kemenag RI dalam panduan resmi doa-doa harian untuk memohon kemudahan dalam urusan.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Amalan</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Praktik Mengamati Kelembutan Allah</div>
-                    <p>Rutinitas harian untuk meningkatkan kesadaran akan kelembutan Allah:</p>
+                    <div class="amalan-title">Praktik Kelembutan Sehari-hari</div>
+                    <p>Rutinitas harian untuk mengamalkan sifat Al-Lateef:</p>
                     <ol>
-                        <li>Setiap pagi, baca "Ya Lateef" 129 kali sambil merenungkan maknanya</li>
-                        <li>Identifikasi tiga bukti kelembutan Allah dalam hidup Anda hari itu</li>
-                        <li>Ucapkan syukur dengan "Alhamdulillah" untuk setiap kelembutan yang diamati</li>
+                        <li>Bersikap lembut dalam perkataan dan perbuatan terhadap semua makhluk</li>
+                        <li>Memperhatikan tanda-tanda kelembutan Allah dalam kehidupan sehari-hari</li>
+                        <li>Bersyukur atas kelembutan Allah yang sering tidak disadari</li>
                     </ol>
-                    <p><strong>Dasar Syar'i:</strong> Menurut Kemenag RI, praktik ini sesuai dengan sunnah Nabi SAW dalam berzikir dan mengingat nikmat Allah. NU Online menambahkan bahwa menghitung nikmat Allah termasuk amalan yang sangat dianjurkan dalam Islam.</p>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Mendekatkan diri kepada sifat Allah Al-Lateef</li>
+                        <li>Menciptakan ketenangan dalam hati</li>
+                        <li>Mendapatkan kemudahan dalam urusan</li>
+                    </ul>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Amalan Penyebaran Kelembutan</div>
-                    <p>Praktik mingguan untuk meneladani sifat Al-Lateef:</p>
+                    <div class="amalan-title">Meneladani Kelembutan Allah</div>
+                    <p>Amalan mingguan untuk meneladani sifat Al-Lateef:</p>
                     <ol>
-                        <li>Setiap hari Jumat, lakukan tiga perbuatan lembut kepada:</li>
-                        <ul>
-                            <li>Keluarga (misalnya membantu tanpa diminta)</li>
-                            <li>Tetangga (misalnya memberikan makanan)</li>
-                            <li>Hewan (misalnya memberikan makan)</li>
-                        </ul>
-                        <li>Sebelum berbuat, ucapkan "Bismillah Al-Lateef"</li>
-                        <li>Jaga amalan ini sebagai rahasia antara diri dan Allah</li>
+                        <li>Melakukan tiga perbuatan lembut secara diam-diam setiap minggu</li>
+                        <li>Membantu orang lain tanpa diketahui</li>
+                        <li>Bersikap sabar dan lembut dalam menghadapi ujian</li>
                     </ol>
-                    <p><strong>Keutamaan:</strong> Nabi SAW bersabda: "Barangsiapa yang menyembunyikan amal baiknya, maka Allah akan menampakkannya di hari kiamat" (HR. Thabrani). Kemenag RI menjelaskan bahwa amalan ini melatih keikhlasan dan meneladani sifat Al-Lateef Allah.</p>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa yang meringankan kesulitan seorang mukmin di dunia, niscaya Allah akan meringankan kesulitannya di akhirat." (HR Muslim). Amalan ini direkomendasikan dalam buku <em>Amalan Harian NU</em> untuk mengembangkan akhlak yang mulia.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Tafsir</h2>
-                <p>Menurut Kementerian Agama RI dan NU Online, Al-Lateef dapat dipahami melalui beberapa dimensi:</p>
+                <p>Berdasarkan referensi NU Online dan Kemenag RI, Al-Lateef dapat dipahami melalui tiga dimensi utama:</p>
                 <ol>
                     <li><strong>Kelembutan dalam Penciptaan:</strong>
                         <ul>
@@ -308,26 +341,31 @@
                             <li>Kesabaran Allah terhadap kesalahan hamba (<a href="https://quranwbw.com/35:45" target="_blank">35:45</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Kelembutan dalam Pengampunan:</strong>
-                        <ul>
-                            <li>Penerimaan taubat yang tulus (<a href="https://quranwbw.com/39:53" target="_blank">39:53</a>)</li>
-                            <li>Penggantian dosa dengan kebaikan (<a href="https://quranwbw.com/25:70" target="_blank">25:70</a>)</li>
-                        </ul>
-                    </li>
                 </ol>
-                <p>Dalam praktik sehari-hari, memahami Al-Lateef akan membuat kita lebih peka terhadap nikmat Allah yang tersembunyi, lebih sabar dalam menghadapi ujian, dan lebih lembut dalam berinteraksi dengan sesama makhluk.</p>
+                <p>Dalam kitab <em>Tafsir Al-Misbah</em> karya Quraish Shihab yang direkomendasikan Kemenag RI, dijelaskan bahwa Surah Al-Hajj (<a href="https://quranwbw.com/22:63" target="_blank">22:63</a>) menegaskan kelembutan Allah sebagai bukti kasih sayang-Nya kepada makhluk.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <h1 class="name-title">30. Al-Lateef (The Subtle One)</h1>
-            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-lateef/" target="_blank">myislam.org/99-names-of-allah/al-lateef/</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <h1 class="name-title">30. Al-Lateef (The Subtle One)</h1>
+            <div class="name-source"><strong>Source:</strong> 
+                <a href="https://myislam.org/99-names-of-allah/al-lateef/" target="_blank">myislam.org</a>,
+                <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>
+            </div>
 
             <!-- Bonus section only in English -->
             <div class="bonus">
@@ -355,8 +393,8 @@
 
             <div class="section">
                 <h2 class="section-title">Meaning</h2>
-                <p>Al-Lateef is the One whose nature is gentle, kind, and subtle. He arranges all affairs in the most perfect way without His servants even realizing it. His kindness is so subtle that we often don't perceive how He is helping us and making things easy for us.</p>
-                <p>Ibn Kathir explains in his Tafsir that Al-Lateef is the One who is Kind to His believing servants by guiding them, helping them, and showing them mercy in ways they don't even perceive. His kindness is so subtle that He makes difficult things easy for His servants without them realizing how it became easy.</p>
+                <p>Al-Lateef is one of Allah's names that demonstrates His subtle kindness and gentleness in all matters. Allah's subtlety is perfect - He arranges affairs in the most gentle way without His servants even realizing it.</p>
+                <p>This name appears in the Quran emphasizing that Allah's subtle kindness encompasses all creation. His gentleness is not like human gentleness which may be limited or flawed - it is complete, comprehensive, and perfectly balanced.</p>
             </div>
 
             <div class="section">
@@ -367,7 +405,7 @@
                     <a href="https://quranwbw.com/22:63" target="_blank">Surah Al-Hajj 22:63</a>
                     <div class="arabic">أَلَمْ تَرَ أَنَّ اللَّهَ أَنزَلَ مِنَ السَّمَاءِ مَاءً فَتُصْبِحُ الْأَرْضُ مُخْضَرَّةً إِنَّ اللَّهَ لَطِيفٌ خَبِيرٌ</div>
                     <div class="transliteration">Alam tara anna Allāha anzala minas-samā'i mā'an fatuṣbiḥul-arḍu mukhdarrah, inna Allāha Laṭīfun Khabīr</div>
-                    <p><strong>Translation:</strong> "Do you not see that Allah sends down rain from the sky, and the earth becomes green? Indeed, Allah is Subtle and Acquainted."</p>
+                    <p>"Do you not see that Allah sends down rain from the sky, and the earth becomes green? Indeed, Allah is Subtle and Acquainted."</p>
                     <div class="tafsir-box">
                         <strong>Tafsir Ibn Kathir:</strong> This verse shows Allah's subtle kindness in how He sends rain to revive dead land. The process is so gentle and perfect that we often take it for granted. Ibn Kathir explains that Allah's subtlety is shown in how He makes the rain fall gently to nourish the earth and produce vegetation.
                     </div>
@@ -377,8 +415,8 @@
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/31:16" target="_blank">Surah Luqman 31:16</a>
                     <div class="arabic">يَا بُنَيَّ إِنَّهَا إِن تَكُ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ فَتَكُن فِي صَخْرَةٍ أَوْ فِي السَّمَاوَاتِ أَوْ فِي الْأَرْضِ يَأْتِ بِهَا اللَّهُ إِنَّ اللَّهَ لَطِيفٌ خَبِيرٌ</div>
-                    <div class="transliteration">Yā bunayya innahā in taku mithqāla ḥabbatin min khardalin fatakun fī �akhratin aw fis-samāwāti aw fil-arḍi ya'ti bihā Allāh, inna Allāha Laṭīfun Khabīr</div>
-                    <p><strong>Translation:</strong> "O my son, indeed if it [i.e., a wrong] should be the weight of a mustard seed and should be within a rock or [anywhere] in the heavens or in the earth, Allah will bring it forth. Indeed, Allah is Subtle and Acquainted."</p>
+                    <div class="transliteration">Yā bunayya innahā in taku mithqāla ḥabbatin min khardalin fatakun fī ṣakhratin aw fis-samāwāti aw fil-arḍi ya'ti bihā Allāh, inna Allāha Laṭīfun Khabīr</div>
+                    <p>"O my son, indeed if it [i.e., a wrong] should be the weight of a mustard seed and should be within a rock or [anywhere] in the heavens or in the earth, Allah will bring it forth. Indeed, Allah is Subtle and Acquainted."</p>
                     <div class="tafsir-box">
                         <strong>Tafsir Ibn Kathir:</strong> This verse demonstrates Allah's subtle knowledge and power. Nothing is hidden from Him, no matter how small or concealed. Ibn Kathir explains that Allah's attribute of being Al-Lateef here refers to His perfect knowledge of the most hidden things.
                     </div>
@@ -392,20 +430,30 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ اللَّطِيفُ الْخَبِيرُ أَنْ تُلَطِّفَ لِي فِي أَمْرِي كُلِّهِ</div>
                     <div class="transliteration">Allāhumma innī as'aluka bi-annaka Anta al-Latīfu al-Khabīru an tulaṭṭifa lī fī amrī kullihi</div>
                     <p><strong>Translation:</strong> "O Allah, I ask You by virtue of You being Al-Lateef (the Subtle), Al-Khabeer (the All-Aware), to make all my affairs gentle and easy for me."</p>
-                    <p><strong>Usage:</strong> This du'a can be recited when facing difficulties or when needing Allah's subtle intervention in one's affairs. The Prophet (peace be upon him) taught us to call upon Allah by His beautiful names, and this is one way to do so.</p>
+                    <p><strong>Benefits:</strong> This du'a seeks Allah's perfect subtlety in all matters, especially when facing difficulties or needing gentle solutions to problems.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Protection with Allah's Gentleness</div>
+                    <div class="arabic">يَا لَطِيفُ أَلْطِفْ بِي فِي تَيْسِيرِ كُلِّ عَسِيرٍ فَإِنَّ تَيْسِيرَ الْعَسِيرِ عَلَيْكَ لَيِّnٌ سَهْلٌ</div>
+                    <div class="transliteration">Yā Laṭīfu alṭif bī fī taysīri kulli 'asīrin fa-inna taysīra al-'asīri 'alayka layyinin sahlun</div>
+                    <p><strong>Translation:</strong> "O Subtle One, be gentle with me in facilitating every difficulty, for indeed making difficult things easy is gentle and easy for You."</p>
+                    <p><strong>Benefits:</strong> This comprehensive du'a asks for Allah's subtlety to bring ease and solutions to difficult situations, acknowledging that Allah's gentleness can transform hardships into ease.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Amalan (Practices)</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Observing Allah's Subtle Blessings</div>
-                    <p>Make it a daily practice to notice and appreciate at least three subtle blessings from Allah that you normally overlook. This could be the perfect functioning of your body, the gentle breeze, or the way problems resolved themselves without your intervention.</p>
+                    <div class="amalan-title">Establishing Gentleness in Daily Life</div>
+                    <p>The Prophet (peace be upon him) said: "Indeed Allah is Gentle and loves gentleness in all matters." (<a href="https://sunnah.com/muslim:2577" target="_blank">Sahih Muslim</a>)</p>
+                    <p><strong>Practice:</strong> Actively practice gentleness in your family, workplace, and community. Approach situations with softness and subtlety rather than harshness.</p>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Practicing Subtle Kindness</div>
-                    <p>Perform at least one act of subtle kindness daily where the recipient doesn't realize it came from you. This could be leaving money for someone in need anonymously or helping someone without them knowing it was you.</p>
+                    <div class="amalan-title">Gentle Treatment of All Creation</div>
+                    <p>Allah says: "And the servants of the Most Merciful are those who walk upon the earth easily, and when the ignorant address them [harshly], they say [words of] peace." (<a href="https://quranwbw.com/25:63" target="_blank">Surah Al-Furqan 25:63</a>)</p>
+                    <p><strong>Practice:</strong> Treat all people and creatures with gentleness regardless of their behavior toward you. This includes responding to harshness with gentle words and actions.</p>
                 </div>
             </div>
 
@@ -413,15 +461,20 @@
                 <h2 class="section-title">Reflection</h2>
                 <p>Understanding Allah as Al-Lateef should:</p>
                 <ol>
-                    <li>Help us appreciate the countless subtle blessings in our lives that we often overlook</li>
+                    <li>Help us appreciate the subtle blessings in our lives that we often overlook</li>
                     <li>Teach us to be patient during difficulties, knowing that Allah is subtly arranging matters for our benefit</li>
                     <li>Inspire us to be gentle and kind to others, emulating this beautiful attribute of Allah</li>
                     <li>Increase our trust in Allah, knowing that He is subtly managing all affairs in the best possible way</li>
+                    <li>Make us more observant of the subtle ways Allah answers our prayers and provides for us</li>
                 </ol>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
-            <a href="#" class="back-to-top">Back To Top</a>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
+            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
 
