@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>99 Names of Allah - Al-Bari'</title>
+    <title>99 Asmaul Husna - Al-Bari' (12)</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +28,8 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            line-height: 2;
         }
         .transliteration {
             font-style: italic;
@@ -136,6 +137,19 @@
             text-align: center;
             margin: 15px 0;
         }
+        .top-home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .top-home-link:hover {
+            background-color: #ebf5fb;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
@@ -166,20 +180,25 @@
                 margin: 10px 0;
                 display: inline-block;
             }
+            .top-home-link {
+                margin-bottom: 15px;
+            }
         }
     </style>
+    <!-- Adding Uthmanic Script HAFS font for proper Arabic display -->
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+        <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
+
             <h1 class="name-title">12. Al-Bari' (Yang Maha Mengadakan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-bari/" target="_blank">myislam.org/99-names-of-allah/al-bari/</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-bari/" target="_blank">myislam.org/99-names-of-allah/al-bari/</a> & <a href="https://islam.nu.or.id/asmaul-husna/al-bari-maha-mengadakan-0x1eU" target="_blank">NU Online</a></div>
 
             <div class="arabic">ٱلْبَارِئُ</div>
             <div class="transliteration">Transliterasi: Al-Bari'</div>
@@ -350,28 +369,26 @@
                 </ol>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <a href="index.html" class="top-home-link">&larr; Back to Main Menu</a>
+
             <h1 class="name-title">12. Al-Bari' (The Evolver, The Maker from Nothing)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-bari/" target="_blank">myislam.org/99-names-of-allah/al-bari/</a></div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
-            
-            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
-
-                <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
-                    <audio controls style="width: 100%;">
-                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_13Baari.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
+                <div class="audio-title">Bonus: Listen to the beautiful explanation of Al Asma Ul Husna</div>
+                <audio controls style="width: 100%;">
+                    <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_13Baari.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p style="text-align: center; margin-top: 10px;">
+                    <a href="https://qfatima.com/a99-audio" target="_blank">More audio explanations at qfatima.com</a>
+                </p>
             </div>
 
             <div class="arabic">ٱلْبَارِئُ</div>
@@ -397,7 +414,7 @@
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/59:24" target="_blank">Surah Al-Hashr 59:24</a>
-                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ mَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
                     <div class="transliteration">Huwa Allāhu al-Khāliqu al-Bāri'u al-Muṣawwiru, lahu al-asmā'u al-ḥusnā, yusabbiḥu lahu mā fī as-samāwāti wal-arḍ, wa huwa al-'Azīzu al-Ḥakīm</div>
                     <p>"He is Allah, the Creator, the Inventor, the Fashioner; to Him belong the best names. Whatever is in the heavens and earth is exalting Him. And He is the Exalted in Might, the Wise."</p>
                     <div class="tafsir-box">
@@ -419,7 +436,7 @@
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/23:12" target="_blank">Surah Al-Mu'minun 23:12-14</a>
-                    <div class="arabic">وَلَقَدْ خَلَقْنَا ٱلْإِنسَـٰنَ مِن سُلَـٰلَةٍۢ مِّن طِينٍۢ ۝ ثُمَّ جَعَلْنَـٰهُ نُطْفَةًۭ فِى قَرَارٍۢ مَّكِينٍۢ ۝ ثُمَّ خَلَقْنَا ٱلنُّطْفَةَ عَلَقَةًۭ فَخَلَقْنَا ٱلْعَلَقَةَ مُضْغَةًۭ فَخَلَقْنَا ٱلْمُضْغَةَ عِظَـٰمًۭا فَكَسَوْنَا ٱلْعِظَـٰمَ لَحْمًۭا ثُمَّ أَنشَأْنَـٰهُ خَلْقًۭا ءَاخَرَ ۚ فَتَبَارَكَ ٱللَّهُ أَحْسَنُ ٱلْخَـٰلِقِينَ ۝</div>
+                    <div class="arabic">وَلَقَدْ خَلَقْنَا ٱلْإِنسَـٰنَ مِن سُلَـٰلَةٍۢ mِّن طِينٍۢ ۝ ثُمَّ جَعَلْنَـٰهُ نُطْفَةًۭ فِى قَرَارٍۢ مَّكِينٍۢ ۝ ثُمَّ خَلَقْنَا ٱلنُّطْفَةَ عَلَقَةًۭ فَخَلَقْنَا ٱلْعَلَقَةَ مُضْغَةًۭ فَخَلَقْنَا ٱلْمُضْغَةَ عِظَـٰmًۭا فَكَسَوْنَا ٱلْعِظَـٰmَ لَحْمًۭا ثُمَّ أَنشَأْنَـٰهُ خَلْقًۭا ءَاخَرَ ۚ فَتَبَارَكَ ٱللَّهُ أَحْسَنُ ٱلْخَـٰلِقِينَ ۝</div>
                     <div class="transliteration">Wa laqad khalaqnā al-insāna min sulālatin min ṭīn. Thumma ja'alnāhu nuṭfatan fī qarārin makīn. Thumma khalaqnā an-nuṭfata 'alaqatan fa khalaqnā al-'alaqata muḍghatan fa khalaqnā al-muḍghata 'iẓāman fa kasawnā al-'iẓāma laḥman thumma ansha'nāhu khalqan ākhar. Fa tabāraka Allāhu aḥsanu al-khāliqīn</div>
                     <p>"And certainly did We create man from an extract of clay. Then We placed him as a sperm-drop in a firm lodging. Then We made the sperm-drop into a clinging clot, and We made the clot into a lump [of flesh], and We made [from] the lump, bones, and We covered the bones with flesh; then We developed him into another creation. So blessed is Allah, the best of creators."</p>
                     <div class="tafsir-box">
@@ -504,7 +521,7 @@
                 </ol>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
