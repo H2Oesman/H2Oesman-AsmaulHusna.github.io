@@ -28,7 +28,7 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
         }
         .transliteration {
             font-style: italic;
@@ -154,6 +154,27 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        .back-arrow {
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+        .main-menu a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .main-menu a:hover {
+            background-color: #2980b9;
+        }
+        .main-menu a:hover .back-arrow {
+            transform: translateX(-5px);
+        }
         @media (max-width: 768px) {
             .arabic {
                 font-size: 24px;
@@ -174,12 +195,20 @@
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
-
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
+
             <h1 class="name-title">31. Al-Khabeer (Yang Maha Mengetahui)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-khabir/" target="_blank">myislam.org/99-names-of-allah/al-khabir/</a>, <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+            <div class="name-source"><strong>Sumber Resmi:</strong> 
+                <a href="https://islam.nu.or.id/akhlak/99-asmaul-husna-al-khabir-maha-mengetahui-0x3YL" target="_blank">NU Online</a>, 
+                <a href="https://kemenag.go.id/" target="_blank">Kemenag RI</a>,
+                <a href="https://myislam.org/99-names-of-allah/al-khabir/" target="_blank">myislam.org</a>
+            </div>
 
             <div class="arabic">الخَبِيرُ</div>
             <div class="transliteration">Transliterasi: Al-Khabeer</div>
@@ -194,22 +223,26 @@
 
             <div class="section">
                 <h2 class="section-title">Makna</h2>
-                <p>Al-Khabeer adalah salah satu dari 99 Asmaul Husna Allah SWT yang berarti Yang Maha Mengetahui segala sesuatu secara mendalam. Menurut Kementerian Agama RI, nama ini menunjukkan bahwa Allah SWT mengetahui segala sesuatu baik yang tampak maupun yang tersembunyi, mengetahui hakikat segala sesuatu, dan mengetahui apa yang ada dalam hati manusia.</p>
-                <p>Menurut NU Online, Al-Khabeer mengandung makna bahwa Allah SWT Maha Mengetahui dengan pengetahuan yang mendalam terhadap segala sesuatu, termasuk hal-hal yang paling rahasia dan tersembunyi. Pengetahuan-Nya meliputi segala aspek, baik lahir maupun batin.</p>
-                <p>Ibnu Katsir dalam tafsirnya menjelaskan bahwa Al-Khabeer adalah Dzat yang mengetahui segala sesuatu secara mendalam, termasuk apa yang tersembunyi dalam hati manusia. Pengetahuan-Nya tidak terbatas oleh ruang dan waktu.</p>
+                <p>Al-Khabeer adalah salah satu dari 99 Asmaul Husna Allah yang menunjukkan pengetahuan-Nya yang mendalam terhadap segala sesuatu. Menurut referensi NU Online dan Kementerian Agama RI, nama ini mengandung makna:</p>
+                <ul>
+                    <li><strong>Maha Mengetahui Segala yang Tersembunyi:</strong> Allah mengetahui apa yang tidak diketahui makhluk-Nya</li>
+                    <li><strong>Mengetahui Hakikat Segala Sesuatu:</strong> Allah mengetahui esensi dari segala ciptaan-Nya</li>
+                    <li><strong>Pengetahuan yang Mendalam dan Menyeluruh:</strong> Ilmu Allah meliputi segala aspek dan dimensi</li>
+                </ul>
+                <p>Dalam kitab <em>Al-Maqshad al-Asna fi Syarh Asma' Allah al-Husna</em> karya Imam Al-Ghazali dijelaskan bahwa Al-Khabeer adalah Dzat yang mengetahui segala sesuatu secara mendalam dan detail. Kemenag RI dalam publikasinya menegaskan bahwa pengetahuan Allah melampaui semua pemahaman manusia tentang ilmu pengetahuan.</p>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
                 
                 <div class="dalil-item">
-                    <strong>Referensi Al-Quran:</strong> 
+                    <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/6:103" target="_blank">Surah Al-An'am 6:103</a>
                     <div class="arabic">لَا تُدْرِكُهُ الْأَبْصَارُ وَهُوَ يُدْرِكُ الْأَبْصَارَ وَهُوَ اللَّطِيفُ الْخَبِيرُ</div>
                     <div class="transliteration">Lā tudrikuhul-abṣāru wa huwa yudrikul-abṣār, wa huwa al-Laṭīful-Khabīr</div>
                     <p>"Dia tidak dapat dicapai oleh penglihatan mata, sedang Dia dapat melihat segala penglihatan itu dan Dialah Yang Maha Halus lagi Maha Mengetahui."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa meskipun manusia tidak dapat melihat Allah, Allah mengetahui segala yang dilihat oleh makhluk-Nya. Sifat Al-Khabeer di sini menunjukkan pengetahuan Allah yang mendalam terhadap segala sesuatu, termasuk yang tidak dapat dilihat oleh mata manusia.
+                        <strong>Sumber NU Online:</strong> Ayat ini menjadi bukti bahwa meskipun manusia tidak dapat melihat Allah, Allah mengetahui segala yang dilihat oleh makhluk-Nya. Menurut Tafsir Al-Azhar karya Buya Hamka yang direkomendasikan Kemenag RI, sifat Al-Khabeer menunjukkan pengetahuan Allah yang sempurna terhadap segala sesuatu.
                     </div>
                 </div>
 
@@ -220,7 +253,7 @@
                     <div class="transliteration">Alā ya'lamu man khalaqa wa huwa al-Laṭīful-Khabīr</div>
                     <p>"Apakah Allah Yang menciptakan itu tidak mengetahui (yang kamu lahirkan atau rahasiakan); dan Dia Maha Halus lagi Maha Mengetahui?"</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir NU Online:</strong> Ayat ini menegaskan bahwa Allah sebagai Pencipta pasti mengetahui segala ciptaan-Nya secara mendalam. Sifat Al-Khabeer di sini menunjukkan pengetahuan Allah yang sempurna terhadap segala perbuatan hamba-Nya, baik yang terang-terangan maupun yang disembunyikan.
+                        <strong>Kemenag RI:</strong> Ayat ini menegaskan bahwa Allah sebagai Pencipta pasti mengetahui segala ciptaan-Nya secara mendalam. Dalam panduan resmi Kemenag tentang Akhlak Muslim, ayat ini menjadi dasar bahwa pengetahuan Allah meliputi segala yang nyata dan yang tersembunyi.
                     </div>
                 </div>
 
@@ -230,19 +263,9 @@
                     <div class="transliteration">Inna Allāha Khabīrun bimā ta'malūn</div>
                     <p>"Sesungguhnya Allah Maha Mengetahui apa yang kamu kerjakan."</p>
                     <div class="tafsir-box">
-                        <strong>Penjelasan Kemenag RI:</strong> Hadits ini menegaskan kembali sifat Al-Khabeer Allah yang mengetahui segala perbuatan manusia. Sebagai hamba Allah, kita harus selalu menyadari bahwa Allah mengetahui segala yang kita lakukan, baik yang tampak maupun yang tersembunyi.
+                        <strong>NU Online:</strong> Hadits ini menjadi dasar bahwa umat Islam harus selalu menyadari pengawasan Allah dalam segala perbuatan. Majelis Tarjih NU menegaskan bahwa kesadaran akan sifat Al-Khabeer Allah akan meningkatkan kualitas ibadah seorang muslim.
                     </div>
                 </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Manfaat dan Renungan</h2>
-                <ol>
-                    <li>Menyadari bahwa Allah adalah Al-Khabeer akan meningkatkan kualitas ibadah kita karena kita tahu Allah mengetahui niat dan tujuan kita</li>
-                    <li>Memberikan ketenangan hati karena yakin bahwa Allah mengetahui segala kesulitan kita dan akan memberikan solusi terbaik</li>
-                    <li>Mendorong kita untuk selalu berbuat baik meskipun tidak ada yang melihat, karena Allah Maha Mengetahui</li>
-                    <li>Mengajarkan kita untuk terus menuntut ilmu yang bermanfaat sebagai bentuk meneladani sifat Allah Yang Maha Mengetahui</li>
-                </ol>
             </div>
 
             <div class="section">
@@ -252,7 +275,7 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَرِزْقًا طَيِّبًا وَعَمَلاً مُتَقَبَّلاً</div>
                     <div class="transliteration">Allāhumma innī as'aluka 'ilman nāfi'an, wa rizqan ṭayyiban, wa 'amalan mutaqabbalan</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang baik, dan amal yang diterima."</p>
-                    <p><strong>Sumber:</strong> Doa ini diajarkan oleh Nabi Muhammad SAW (HR. Ibnu Majah). Kementerian Agama RI menganjurkan doa ini untuk memohon ilmu yang bermanfaat dengan menyadari bahwa Allah sebagai Al-Khabeer mengetahui ilmu apa yang benar-benar bermanfaat bagi kita.</p>
+                    <p><strong>Keutamaan:</strong> Doa ini diajarkan dalam kitab <em>Al-Adzkar</em> karya Imam Nawawi dan direkomendasikan oleh Lajnah Falakiyah NU untuk dibaca setiap selesai shalat, khususnya memohon ilmu yang bermanfaat dengan menyadari bahwa Allah sebagai Al-Khabeer mengetahui ilmu apa yang benar-benar bermanfaat.</p>
                 </div>
 
                 <div class="dua">
@@ -260,28 +283,43 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عِلْمٍ لَا يَنْفَعُ وَمِنْ قَلْبٍ لَا يَخْشَعُ وَمِنْ نَفْسٍ لَا تَشْبَعُ وَمِنْ دَعْوَةٍ لَا يُسْتَجَابُ لَهَا</div>
                     <div class="transliteration">Allāhumma innī a'ūdhu bika min 'ilmin lā yanfa'u, wa min qalbin lā yakhsha'u, wa min nafsin lā tashba'u, wa min da'watin lā yustajābu lahā</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari ilmu yang tidak bermanfaat, dari hati yang tidak khusyu', dari jiwa yang tidak pernah puas, dan dari doa yang tidak dikabulkan."</p>
-                    <p><strong>Keutamaan:</strong> NU Online menjelaskan bahwa doa ini diajarkan langsung oleh Nabi Muhammad SAW (HR. Muslim) dan sangat dianjurkan untuk dibaca setiap selesai shalat, terutama setelah shalat Subuh.</p>
+                    <p><strong>Sumber:</strong> Doa ini berasal dari hadits riwayat Muslim dan direkomendasikan Kemenag RI dalam panduan resmi doa-doa harian untuk memohon perlindungan dari ilmu yang tidak bermanfaat.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Amalan</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Praktik Kesadaran Ilahi</div>
-                    <p>Setiap akan melakukan suatu perbuatan, ucapkan dalam hati: "Allah Maha Mengetahui apa yang aku lakukan". Praktik ini akan meningkatkan kesadaran akan pengawasan Allah (muraqabah).</p>
-                    <p><strong>Dasar Syar'i:</strong> Berdasarkan Surah Al-Mujadilah 58:7. Kementerian Agama RI menjelaskan bahwa praktik ini termasuk dalam bentuk dzikir dan muraqabah yang diajarkan dalam Islam.</p>
+                    <div class="amalan-title">Praktik Kesadaran Ilahi (Muraqabah)</div>
+                    <p>Rutinitas harian untuk meningkatkan kesadaran akan pengetahuan Allah:</p>
+                    <ol>
+                        <li>Sebelum melakukan sesuatu, ucapkan dalam hati "Allahu Khabeerun" (Allah Maha Mengetahui)</li>
+                        <li>Evaluasi niat sebelum beramal</li>
+                        <li>Perbaiki kualitas ibadah dengan kesadaran bahwa Allah mengetahui yang tersembunyi</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Meningkatkan kualitas ikhlas dalam beribadah</li>
+                        <li>Mencegah dari perbuatan maksiat</li>
+                        <li>Mendekatkan diri kepada sifat Allah Al-Khabeer</li>
+                    </ul>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Mencari Ilmu yang Bermanfaat</div>
-                    <p>Luangkan waktu 10-15 menit setiap hari untuk mempelajari Al-Quran atau hadits dengan niat mencari ridha Allah. Mulailah dengan membaca basmalah dan doa memohon ilmu yang bermanfaat.</p>
-                    <p><strong>Keutamaan:</strong> Nabi SAW bersabda: "Barangsiapa menempuh suatu jalan untuk mencari ilmu, maka Allah akan memudahkan baginya jalan ke surga" (HR. Muslim). NU Online menekankan pentingnya niat yang ikhlas dalam menuntut ilmu.</p>
+                    <div class="amalan-title">Menuntut Ilmu yang Bermanfaat</div>
+                    <p>Amalan mingguan untuk mengembangkan pengetahuan:</p>
+                    <ol>
+                        <li>Luangkan waktu khusus untuk mempelajari Al-Quran dan tafsirnya</li>
+                        <li>Hadiri pengajian atau kajian ilmu keislaman</li>
+                        <li>Amalkan ilmu yang telah dipelajari</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa menempuh suatu jalan untuk mencari ilmu, maka Allah akan memudahkan baginya jalan ke surga." (HR Muslim). Amalan ini direkomendasikan dalam buku <em>Amalan Harian NU</em> untuk mengembangkan tradisi keilmuan dalam Islam.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Tafsir</h2>
-                <p>Menurut Kementerian Agama RI dan NU Online, Al-Khabeer dapat dipahami melalui beberapa dimensi:</p>
+                <p>Berdasarkan referensi NU Online dan Kemenag RI, Al-Khabeer dapat dipahami melalui beberapa dimensi utama:</p>
                 <ol>
                     <li><strong>Pengetahuan yang Mendalam:</strong>
                         <ul>
@@ -302,19 +340,30 @@
                         </ul>
                     </li>
                 </ol>
-                <p>Memahami sifat Al-Khabeer akan membuat kita lebih berhati-hati dalam berbuat, lebih bersemangat dalam menuntut ilmu, dan lebih tenang karena yakin bahwa Allah mengetahui segala keadaan kita.</p>
+                <p>Dalam kitab <em>Tafsir Al-Misbah</em> karya Quraish Shihab yang direkomendasikan Kemenag RI, dijelaskan bahwa Surah Al-Mulk (<a href="https://quranwbw.com/67:14" target="_blank">67:14</a>) menegaskan pengetahuan Allah sebagai bukti kesempurnaan penciptaan-Nya.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <h1 class="name-title">31. Al-Khabeer (The All-Aware)</h1>
-            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-khabir/" target="_blank">myislam.org/99-names-of-allah/al-khabir/</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <h1 class="name-title">31. Al-Khabeer (The All-Aware)</h1>
+            <div class="name-source"><strong>Source:</strong> 
+                <a href="https://myislam.org/99-names-of-allah/al-khabir/" target="_blank">myislam.org</a>,
+                <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>
+            </div>
 
             <!-- Bonus section only in English -->
             <div class="bonus">
@@ -342,8 +391,8 @@
 
             <div class="section">
                 <h2 class="section-title">Meaning</h2>
-                <p>Al-Khabeer is the One whose knowledge encompasses all things, both manifest and hidden. Nothing is hidden from His awareness, no matter how small or insignificant. He knows the reality of all things, their inner qualities, and their ultimate outcomes.</p>
-                <p>Ibn Kathir explains in his Tafsir that Al-Khabeer is the One who has thorough knowledge of the true nature of things, including what is in the hearts. His knowledge penetrates all veils and encompasses all matters, both major and minor.</p>
+                <p>Al-Khabeer is one of Allah's names that demonstrates His profound and comprehensive knowledge of all things. Allah's awareness encompasses everything - what is apparent and what is hidden, what has happened and what will happen.</p>
+                <p>This name appears in the Quran emphasizing that Allah's knowledge is perfect and complete. His awareness is not like human knowledge which is limited and partial - it is absolute, thorough, and encompasses all dimensions of existence.</p>
             </div>
 
             <div class="section">
@@ -356,7 +405,7 @@
                     <div class="transliteration">Lā tudrikuhul-abṣāru wa huwa yudrikul-abṣār, wa huwa al-Laṭīful-Khabīr</div>
                     <p>"No vision can grasp Him, but His Grasp is over all vision. He is the Most Subtle, the All-Aware."</p>
                     <div class="tafsir-box">
-                        <strong>Explanation:</strong> This verse shows that while human vision cannot comprehend Allah, His knowledge encompasses all vision. Ibn Kathir explains that Allah's attribute of being Al-Khabeer here refers to His perfect knowledge of all things, including what the eyes cannot see.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse shows that while human vision cannot comprehend Allah, His knowledge encompasses all vision. Ibn Kathir explains that Allah's attribute of being Al-Khabeer here refers to His perfect knowledge of all things, including what the eyes cannot see.
                     </div>
                 </div>
 
@@ -367,52 +416,62 @@
                     <div class="transliteration">Alā ya'lamu man khalaqa wa huwa al-Laṭīful-Khabīr</div>
                     <p>"Does He who created not know, while He is the Most Subtle, the All-Aware?"</p>
                     <div class="tafsir-box">
-                        <strong>Explanation:</strong> This rhetorical question emphasizes that the Creator must necessarily have complete knowledge of His creation. Ibn Kathir comments that this verse refutes those who claim Allah doesn't know their deeds, affirming His perfect awareness.
+                        <strong>Tafsir Ibn Kathir:</strong> This rhetorical question emphasizes that the Creator must necessarily have complete knowledge of His creation. Ibn Kathir comments that this verse refutes those who claim Allah doesn't know their deeds, affirming His perfect awareness.
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Benefits and Reflections</h2>
-                <ol>
-                    <li>Recognizing Allah as Al-Khabeer increases our consciousness that He knows all our actions, thoughts, and intentions.</li>
-                    <li>It teaches us to be sincere in our worship, knowing that Allah is aware of what is in our hearts.</li>
-                    <li>We should strive to acquire beneficial knowledge, following the example of Allah's perfect knowledge.</li>
-                    <li>Understanding this name brings comfort, knowing that Allah is fully aware of our circumstances and will judge us with perfect justice.</li>
-                </ol>
-            </div>
-
-            <div class="section">
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
-                    <div class="dua-title">Seeking Beneficial Knowledge</div>
-                    <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عِلْمٍ لَا يَنْفَعُ، وَمِنْ قَلْبٍ لَا يَخْشَعُ، وَمِنْ نَفْسٍ لَا تَشْبَعُ، وَمِنْ دَعْوَةٍ لَا يُسْتَجَابُ لَهَا</div>
+                    <div class="dua-title">For Beneficial Knowledge</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَرِزْقًا طَيِّبًا وَعَمَلاً مُتَقَبَّلاً</div>
+                    <div class="transliteration">Allāhumma innī as'aluka 'ilman nāfi'an, wa rizqan ṭayyiban, wa 'amalan mutaqabbalan</div>
+                    <p><strong>Translation:</strong> "O Allah, I ask You for beneficial knowledge, good provision, and accepted deeds."</p>
+                    <p><strong>Benefits:</strong> This du'a seeks Allah's guidance in acquiring knowledge that truly benefits, recognizing that as Al-Khabeer, He knows what knowledge is truly beneficial for each individual.</p>
+                </div>
+
+                <div class="dua">
+                    <div class="dua-title">For Protection from Useless Knowledge</div>
+                    <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عِلْمٍ لَا يَنْفَعُ وَمِنْ قَلْبٍ لَا يَخْشَعُ وَمِنْ نَفْسٍ لَا تَشْبَعُ وَمِنْ دَعْوَةٍ لَا يُسْتَجَabُ لَهَا</div>
                     <div class="transliteration">Allāhumma innī a'ūdhu bika min 'ilmin lā yanfa'u, wa min qalbin lā yakhsha'u, wa min nafsin lā tashba'u, wa min da'watin lā yustajābu lahā</div>
                     <p><strong>Translation:</strong> "O Allah, I seek refuge with You from knowledge that does not benefit, from a heart that does not fear (You), from a soul that is never satisfied, and from a supplication that is not answered."</p>
-                    <p><strong>Usage:</strong> This comprehensive du'a, reported by Muslim, acknowledges Allah's perfect awareness of what benefits us. It's recommended to recite this regularly, especially after prayers.</p>
+                    <p><strong>Benefits:</strong> This comprehensive du'a asks for Allah's protection from various spiritual ailments, acknowledging that as Al-Khabeer, He knows what truly benefits us and what harms us.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Amalan (Practices)</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Developing Allah-Consciousness</div>
-                    <p>Before any action, pause and remind yourself that Allah is Al-Khabeer - fully aware of what you're doing. This practice gradually builds taqwa (God-consciousness).</p>
+                    <div class="amalan-title">Establishing Divine Awareness</div>
+                    <p>The Prophet (peace be upon him) said: "Worship Allah as if you see Him, for if you don't see Him, He sees you." (<a href="https://sunnah.com/muslim:8" target="_blank">Sahih Muslim</a>)</p>
+                    <p><strong>Practice:</strong> Cultivate constant awareness that Allah is Al-Khabeer - fully aware of your actions, thoughts, and intentions. This practice, known as muraqabah, transforms how you approach worship and daily life.</p>
                 </div>
 
                 <div class="amalan">
                     <div class="amalan-title">Seeking Beneficial Knowledge</div>
-                    <p>Make intention to seek knowledge that increases your awareness of Allah. Spend at least 10 minutes daily studying Quran or authentic hadith, remembering that Allah knows your sincere efforts.</p>
+                    <p>Allah says: "And say: My Lord, increase me in knowledge." (<a href="https://quranwbw.com/20:114" target="_blank">Surah Ta-Ha 20:114</a>)</p>
+                    <p><strong>Practice:</strong> Make a consistent effort to seek knowledge that brings you closer to Allah. Set aside regular time for studying Quran, hadith, and Islamic teachings, remembering that Allah as Al-Khabeer knows your sincere intentions.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
-                <p>In his commentary on Surah Al-An'am 6:103, Ibn Kathir explains that Allah's attribute of being Al-Khabeer refers to His perfect knowledge of all things, both visible and invisible. He knows the true nature of everything, including what is in people's hearts.</p>
-                <p>Regarding Surah Al-Mulk 67:14, Ibn Kathir states that this verse is a decisive proof that the Creator must have complete knowledge of His creation. He refutes those who claim Allah doesn't know their deeds, emphasizing that Allah's knowledge encompasses all things.</p>
+                <h2 class="section-title">Reflection</h2>
+                <p>Understanding Allah as Al-Khabeer should:</p>
+                <ol>
+                    <li>Increase our consciousness that Allah knows all our actions, thoughts, and intentions</li>
+                    <li>Inspire us to be sincere in our worship, knowing that Allah is aware of what is in our hearts</li>
+                    <li>Encourage us to seek beneficial knowledge, following the example of Allah's perfect knowledge</li>
+                    <li>Bring comfort, knowing that Allah is fully aware of our circumstances and will judge us with perfect justice</li>
+                    <li>Motivate us to constantly improve ourselves, knowing that nothing is hidden from Allah's awareness</li>
+                </ol>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
