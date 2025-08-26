@@ -5,122 +5,163 @@
   <title>Asmaul Husna - 99 Names of Allah</title>
   <style>
     body {
-      background-color: #f5f3eb;
+      background-color: #f5f9fc;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
       margin: 0;
       padding: 20px;
-      font-size: 18px;
+      font-size: 20px;
     }
     .header {
-      font-size: 20px;
+      font-size: 22px;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .header div {
-      margin: 5px 0;
+      margin: 8px 0;
     }
     .search-box {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       position: sticky;
       top: 0;
-      background-color: #f5f3eb;
-      padding: 10px 0;
+      background-color: #f5f9fc;
+      padding: 15px 0;
       z-index: 10;
     }
     input[type="text"] {
-      width: 50%;
-      padding: 8px;
-      font-size: 18px;
+      width: 60%;
+      padding: 12px;
+      font-size: 20px;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .names-container {
       display: flex;
       flex-wrap: wrap;
       overflow-y: auto;
       max-height: 70vh;
-      max-width: 100%;
-      gap: 20px;
-      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 25px;
+      justify-content: center;
       scroll-behavior: smooth;
     }
     .name-box {
-      width: 30%;
-      font-size: 22px;
-      line-height: 1.5em;
-      margin-bottom: 15px;
+      width: 45%;
+      font-size: 24px;
+      line-height: 1.6em;
+      margin-bottom: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .name-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .name-box a {
       text-decoration: none;
-      color: #146356;
+      color: #1a5276;
       display: block;
+      font-weight: 500;
     }
     .name-box a:hover {
       color: #0a4d3c;
-      text-decoration: underline;
+      text-decoration: none;
     }
     .reference {
       text-align: center;
-      margin-top: 30px;
-      font-size: 16px;
+      margin-top: 40px;
+      font-size: 18px;
     }
     .instruction {
       text-align: center;
-      font-size: 20px;
-      margin: 20px 0;
+      font-size: 22px;
+      margin: 25px 0;
       font-style: italic;
       color: #555;
     }
     footer {
       text-align: center;
-      margin-top: 30px;
-      padding: 15px 0;
-      font-size: 16px;
-      color: #555;
+      margin-top: 40px;
+      padding: 20px 0;
+      font-size: 18px;
+      color: #7f8c8d;
       border-top: 1px solid #ddd;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .intro-link {
       text-align: center;
-      margin: 10px 0;
+      margin: 15px 0;
     }
     .intro-link a {
-      color: #146356;
+      color: #1a5276;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 20px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      background-color: #e8f4fc;
+      transition: background-color 0.3s;
     }
     .intro-link a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      background-color: #d1e9f9;
     }
     .language-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: #146356;
+      background: #3498db;
       color: white;
-      padding: 8px 15px;
+      padding: 10px 18px;
       border-radius: 20px;
       cursor: pointer;
       z-index: 100;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     .hidden {
       display: none;
     }
+    @media screen and (max-width: 1024px) {
+      .name-box {
+        width: 45%;
+      }
+    }
     @media screen and (max-width: 768px) {
       .name-box {
         width: 100%;
-        font-size: 20px;
+        font-size: 22px;
       }
       .language-toggle {
         position: static;
         display: inline-block;
-        margin: 10px 0;
+        margin: 15px 0;
       }
       input[type="text"] {
-        width: 80%;
+        width: 85%;
+      }
+      body {
+        font-size: 18px;
+      }
+      .header {
+        font-size: 20px;
+        padding: 15px;
       }
     }
   </style>
@@ -132,11 +173,11 @@
   <!-- English Content -->
   <div id="english-content" class="hidden">
     <div class="header">
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">﷽</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 28px;">﷽</div>
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> — In the name of Allah, the Most Gracious, the Most Merciful</div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
       <div><strong>As-salāmu ʿalaykum wa raḥmatullāhi wa barakātuh</strong> — Peace and blessings of Allah be upon you</div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
       <div><strong>Waṣ-ṣalātu was-salāmu ʿalā Rasūlillāh</strong> — May peace and blessings be upon the Messenger of Allah</div>
     </div>
 
@@ -260,11 +301,11 @@
   <!-- Indonesian Content (Shown by Default) -->
   <div id="indonesian-content">
     <div class="header">
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">﷽</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 28px;">﷽</div>
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> </div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
       <div><strong>As-salāmu ʿalaykum wa raḥmatullāhi wa barakātuh</strong> </div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 24px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
       <div><strong>Waṣ-ṣalātu was-salāmu ʿalā Rasūlillāh</strong> </div>
     </div>
 
@@ -361,13 +402,13 @@
       <div class="name-box"><a href="80.html">80. ٱلتَّوَابُ – At-Tawwaab<br>Yang Maha Penerima Tobat</a></div>
       <div class="name-box"><a href="81.html">81. ٱلْمُنْتَقِمُ – Al-Muntaqim<br>Yang Maha Penuntut Balas</a></div>
       <div class="name-box"><a href="82.html">82. ٱلْعَفُو – Al-`Afuww<br>Yang Maha Pemaaf</a></div>
-      <div class="name-box"><a href="83.html">83. ٱلرَّؤُوفُ – Ar-Ra'oof<br>Yang Maha Pengasuh</a></div>
+      <div class="name-box"><a href="83.html">83. ٱلرَّؤُوفُ – Ar-Ra'oof<br>Yang Maha Pengasih</a></div>
       <div class="name-box"><a href="84.html">84. ٱلْمَالِكُ ٱلْمُلْكُ – Maalik-ul-Mulk<br>Yang Maha Penguasa Kerajaan</a></div>
       <div class="name-box"><a href="85.html">85. ذُوالْجَلاَلِ وَالإكْرَامِ – Dhul-Jalaali Wal-Ikraam<br>Yang Maha Pemilik Kebesaran dan Kemuliaan</a></div>
       <div class="name-box"><a href="86.html">86. ٱلْمُقْسِطُ – Al-Muqsit<br>Yang Maha Adil</a></div>
       <div class="name-box"><a href="87.html">87. ٱلْجَامِعُ – Al-Jaami`<br>Yang Maha Mengumpulkan</a></div>
       <div class="name-box"><a href="88.html">88. ٱلْغَنيُ – Al-Ghaniyy<br>Yang Maha Kaya</a></div>
-      <div class="name-box"><a href="89.html">89. ٱلْمُغْنِي – Al-Mughni<br>Yang Maha Pemberi Kekayaan</a></div>
+      <div class="name-box"><a href="89.html">89. ٱلْمُغْنِي – Al-Mughni<br>Yang Maha Memberi Kekayaan</a></div>
       <div class="name-box"><a href="90.html">90. ٱلْمَانِعُ – Al-Maani`<br>Yang Maha Mencegah</a></div>
       <div class="name-box"><a href="91.html">91. ٱلضَّارَ – Ad-Daarr<br>Yang Maha Memberi Derita</a></div>
       <div class="name-box"><a href="92.html">92. ٱلنَّافِعُ – An-Naafi`<br>Yang Maha Memberi Manfaat</a></div>
@@ -386,103 +427,60 @@
   </div>
 
   <footer>
-    <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    <div>© 2023 Asmaul Husna - 99 Names of Allah</div>
   </footer>
 
   <script>
-    // Check for saved language preference or set default to Indonesian
-    function getPreferredLanguage() {
-      return localStorage.getItem('language') || 'indonesian';
-    }
-
-    // Set the initial language based on preference
-    function setInitialLanguage() {
-      const language = getPreferredLanguage();
-      const englishContent = document.getElementById('english-content');
-      const indonesianContent = document.getElementById('indonesian-content');
-      const toggleButton = document.getElementById('languageToggle');
-
-      if (language === 'english') {
-        englishContent.classList.remove('hidden');
-        indonesianContent.classList.add('hidden');
-        toggleButton.textContent = 'Switch to Indonesian';
-      } else {
-        englishContent.classList.add('hidden');
-        indonesianContent.classList.remove('hidden');
-        toggleButton.textContent = 'Switch to English';
-      }
-    }
-
-    // Language Toggle
+    // Toggle language function
     document.getElementById('languageToggle').addEventListener('click', function() {
       const englishContent = document.getElementById('english-content');
       const indonesianContent = document.getElementById('indonesian-content');
+      const languageToggle = document.getElementById('languageToggle');
       
       if (englishContent.classList.contains('hidden')) {
         englishContent.classList.remove('hidden');
         indonesianContent.classList.add('hidden');
-        this.textContent = 'Switch to Indonesian';
-        localStorage.setItem('language', 'english');
+        languageToggle.textContent = 'Switch to Indonesian';
       } else {
         englishContent.classList.add('hidden');
         indonesianContent.classList.remove('hidden');
-        this.textContent = 'Switch to English';
-        localStorage.setItem('language', 'indonesian');
+        languageToggle.textContent = 'Switch to English';
       }
     });
 
-    // Search Function for English
+    // Search function for English names
     function searchNames() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const boxes = document.querySelectorAll("#english-content .name-box");
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toUpperCase();
+      const container = document.getElementById('englishNamesContainer');
+      const boxes = container.getElementsByClassName('name-box');
       
-      if (input === '') {
-        boxes.forEach(box => box.style.display = "block");
-        return;
-      }
-      
-      let found = false;
-      for (let box of boxes) {
-        const text = box.innerText.toLowerCase();
-        if (text.includes(input) || text.startsWith(input)) {
-          box.style.display = "block";
-          if (!found) {
-            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            found = true;
-          }
+      for (let i = 0; i < boxes.length; i++) {
+        const text = boxes[i].textContent || boxes[i].innerText;
+        if (text.toUpperCase().indexOf(filter) > -1) {
+          boxes[i].style.display = "";
         } else {
-          box.style.display = "none";
+          boxes[i].style.display = "none";
         }
       }
     }
 
-    // Search Function for Indonesian
+    // Search function for Indonesian names
     function searchNamesIndo() {
-      const input = document.getElementById("searchInputIndo").value.toLowerCase();
-      const boxes = document.querySelectorAll("#indonesian-content .name-box");
+      const input = document.getElementById('searchInputIndo');
+      const filter = input.value.toUpperCase();
+      const container = document.getElementById('indonesianNamesContainer');
+      const boxes = container.getElementsByClassName('name-box');
       
-      if (input === '') {
-        boxes.forEach(box => box.style.display = "block");
-        return;
-      }
-      
-      let found = false;
-      for (let box of boxes) {
-        const text = box.innerText.toLowerCase();
-        if (text.includes(input) || text.startsWith(input)) {
-          box.style.display = "block";
-          if (!found) {
-            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            found = true;
-          }
+      for (let i = 0; i < boxes.length; i++) {
+        const text = boxes[i].textContent || boxes[i].innerText;
+        if (text.toUpperCase().indexOf(filter) > -1) {
+          boxes[i].style.display = "";
         } else {
-          box.style.display = "none";
+          boxes[i].style.display = "none";
         }
       }
     }
-
-    // Initialize the page with the preferred language
-    document.addEventListener('DOMContentLoaded', setInitialLanguage);
   </script>
 </body>
 </html>
