@@ -5,183 +5,246 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asmaul Husna - 99 Names of Allah</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
       background-color: #f5f9fc;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
-      margin: 0;
       padding: 15px;
       font-size: 16px;
       line-height: 1.6;
     }
+    
     .header {
       font-size: 18px;
       text-align: center;
       margin-bottom: 15px;
-      padding: 10px;
+      padding: 15px;
       background-color: white;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
+    
     .header div {
       margin: 5px 0;
     }
+    
     .search-box {
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       position: sticky;
       top: 0;
       background-color: #f5f9fc;
-      padding: 10px 0;
+      padding: 15px 0;
       z-index: 10;
     }
+    
     input[type="text"] {
       width: 90%;
       max-width: 500px;
-      padding: 10px;
+      padding: 12px 15px;
       font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
       background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 2px 12px rgba(52, 152, 219, 0.2);
+    }
+    
     .names-container {
       display: flex;
       flex-wrap: wrap;
-      overflow-y: auto;
-      max-height: 70vh;
-      max-width: 100%;
-      gap: 12px;
-      justify-content: space-between;
-      scroll-behavior: smooth;
+      gap: 15px;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 1200px;
     }
+    
     .name-box {
-      width: calc(33.33% - 8px);
+      flex: 0 0 calc(33.333% - 15px);
+      min-width: 0;
       font-size: 16px;
       line-height: 1.4;
-      margin-bottom: 8px;
       background-color: #fff;
-      padding: 12px 8px;
+      padding: 15px 10px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
     }
+    
     .name-box:nth-child(even) {
       background-color: #f8f9fa;
     }
+    
     .name-box:hover {
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
     }
+    
     .name-box a {
       text-decoration: none;
       color: #1a5276;
       display: block;
-      text-align: center;
     }
+    
     .name-box a:hover {
       color: #2980b9;
     }
+    
     .reference {
       text-align: center;
-      margin-top: 25px;
+      margin-top: 30px;
       font-size: 14px;
     }
+    
     .instruction {
       text-align: center;
       font-size: 18px;
-      margin: 15px 0;
+      margin: 20px 0;
       font-style: italic;
       color: #555;
-      padding: 10px;
+      padding: 12px;
       background-color: #e8f4fc;
       border-radius: 8px;
     }
+    
     footer {
       text-align: center;
-      margin-top: 25px;
-      padding: 15px 0;
+      margin-top: 30px;
+      padding: 20px 0;
       font-size: 14px;
       color: #7f8c8d;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid #e0e0e0;
     }
+    
     .intro-link {
       text-align: center;
-      margin: 10px 0;
+      margin: 15px 0;
     }
+    
     .intro-link a {
       color: #2980b9;
       text-decoration: none;
       font-size: 16px;
-      padding: 8px 15px;
+      padding: 10px 20px;
       background-color: #e8f4fc;
-      border-radius: 20px;
+      border-radius: 25px;
       display: inline-block;
+      transition: background-color 0.3s;
     }
+    
     .intro-link a:hover {
       background-color: #d1e9f9;
       text-decoration: none;
     }
+    
     .language-toggle {
       position: fixed;
       top: 15px;
       right: 15px;
       background: #3498db;
       color: white;
-      padding: 8px 15px;
-      border-radius: 20px;
+      padding: 10px 18px;
+      border-radius: 25px;
       cursor: pointer;
       z-index: 100;
       font-weight: bold;
       font-size: 14px;
       border: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      transition: background 0.3s;
     }
+    
     .language-toggle:hover {
       background: #2980b9;
     }
+    
     .hidden {
       display: none;
     }
+    
+    /* Responsive adjustments */
+    @media screen and (max-width: 992px) {
+      .name-box {
+        flex: 0 0 calc(33.333% - 15px);
+        font-size: 15px;
+        padding: 12px 8px;
+      }
+    }
+    
     @media screen and (max-width: 768px) {
       body {
-        padding: 10px;
-        font-size: 14px;
+        padding: 12px;
       }
+      
       .name-box {
-        width: calc(33.33% - 8px);
+        flex: 0 0 calc(33.333% - 12px);
         font-size: 14px;
-        padding: 10px 5px;
+        padding: 10px 6px;
       }
+      
       .language-toggle {
         position: fixed;
         top: 10px;
         right: 10px;
-        font-size: 12px;
-        padding: 6px 12px;
+        font-size: 13px;
+        padding: 8px 15px;
       }
+      
       input[type="text"] {
-        width: 90%;
+        width: 92%;
         font-size: 16px;
       }
+      
       .header {
         font-size: 16px;
-        padding: 8px;
+        padding: 12px;
       }
+      
       .instruction {
         font-size: 16px;
-        padding: 8px;
+        padding: 10px;
       }
     }
-    @media screen and (max-width: 480px) {
+    
+    @media screen and (max-width: 576px) {
       .name-box {
-        width: calc(33.33% - 6px);
+        flex: 0 0 calc(33.333% - 10px);
         font-size: 12px;
         padding: 8px 4px;
         line-height: 1.3;
       }
+      
+      .names-container {
+        gap: 10px;
+      }
+      
       .name-box a {
         font-size: 11px;
+      }
+    }
+    
+    @media screen and (max-width: 400px) {
+      .name-box {
+        flex: 0 0 calc(33.333% - 8px);
+        font-size: 11px;
+        padding: 6px 3px;
+      }
+      
+      .name-box a {
+        font-size: 10px;
       }
     }
   </style>
@@ -222,7 +285,7 @@
       <div class="name-box"><a href="08.html">8. ٱلْعَزِيزُ – Al-ʿAzīz<br>The Almighty</a></div>
       <div class="name-box"><a href="09.html">9. ٱلْجَبَّارُ – Al-Jabbār<br>The Compeller</a></div>
       <div class="name-box"><a href="10.html">10. ٱلْمُتَكَبِّرُ – Al-Mutakabbir<br>The Supreme, The Majestic</a></div>
-      <div class="name-box"><a href="11.html">11. ٱلْخَالِقُ – Al-Khaaliq<br>The Creator, The Maker</a></div>
+      <div class="name-box"><a href="11.html">11. ٱلْخālِقُ – Al-Khaaliq<br>The Creator, The Maker</a></div>
       <div class="name-box"><a href="12.html">12. ٱلْبَارِئُ – Al-Baari<br>The Evolver</a></div>
       <div class="name-box"><a href="13.html">13. ٱلْمُصَوِّرُ – Al-Musawwir<br>The Fashioner</a></div>
       <div class="name-box"><a href="14.html">14. ٱلْغَفَّارُ – Al-Ghaffar<br>The Constant Forgiver</a></div>
@@ -271,7 +334,7 @@
       <div class="name-box"><a href="57.html">57. ٱلْمُحْصِي – Al-Muhsee<br>The All-Enumerating, the Counter</a></div>
       <div class="name-box"><a href="58.html">58. ٱلْمُبْدِئُ – Al-Mubdi'<br>The Originator, the Initiator</a></div>
       <div class="name-box"><a href="59.html">59. ٱلْمُعِيدُ – Al-Mueed<br>The Restorer, the Reinstater</a></div>
-      <div class="name-box"><a href="60.html">60. ٱلْمُحْyِي – Al-Muhyi<br>The Giver of Life</a></div>
+      <div class="name-box"><a href="60.html">60. ٱلْمُحْيِي – Al-Muhyi<br>The Giver of Life</a></div>
       <div class="name-box"><a href="61.html">61. ٱلْمُمِيتُ – Al-Mumeet<br>The Creator of Death</a></div>
       <div class="name-box"><a href="62.html">62. ٱلْحَيُّ – Al-Hayy<br>The Ever-Living</a></div>
       <div class="name-box"><a href="63.html">63. ٱلْقَيُّومُ – Al-Qayyoom<br>The Sustainer, The Self-Subsisting</a></div>
@@ -282,7 +345,7 @@
       <div class="name-box"><a href="68.html">68. ٱلصَّمَدُ – As-Samad<br>The Self-Sufficient, the Impregnable</a></div>
       <div class="name-box"><a href="69.html">69. ٱلْقَادِرُ – Al-Qaadir<br>The Omnipotent</a></div>
       <div class="name-box"><a href="70.html">70. ٱلْمُقْتَدِرُ – Al-Muqtadir<br>The Creator of All Power</a></div>
-      <div class="name-box"><a href="71.html">71. ٱلْمُقَدِّmُ – Al-Muqaddim<br>The Expediter</a></div>
+      <div class="name-box"><a href="71.html">71. ٱلْمُقَدِّمُ – Al-Muqaddim<br>The Expediter</a></div>
       <div class="name-box"><a href="72.html">72. ٱلْمُؤَخِّرُ – Al-Mu'akhkhir<br>The Delayer</a></div>
       <div class="name-box"><a href="73.html">73. ٱلأَوَّلُ – Al-Awwal<br>The First</a></div>
       <div class="name-box"><a href="74.html">74. ٱلآخِرُ – Al-Aakhir<br>The Last</a></div>
@@ -321,7 +384,7 @@
   <!-- Indonesian Content (Shown by Default) -->
   <div id="indonesian-content">
     <div class="header">
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 22px;">﷽</div>
+      <div style="font-family: 'Amiri', serif; direction: rtrl; font-size: 22px;">﷽</div>
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> </div>
       <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 18px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
       <div><strong>As-salāmu ʿalaykum wa raḥmatullāhi wa barakātuh</strong> </div>
@@ -343,7 +406,7 @@
       <div class="name-box"><a href="01.html">1. ٱلرَّحْمَٰنُ – Ar-Rahmān<br>Yang Maha Pengasih</a></div>
       <div class="name-box"><a href="02.html">2. ٱلرَّحِيمُ – Ar-Rahīm<br>Yang Maha Penyayang</a></div>
       <div class="name-box"><a href="03.html">3. ٱلْمَلِكُ – Al-Malik<br>Yang Maha Merajai</a></div>
-      <div class="name-box"><a href="04.html">4. ٱلْقُدُّوسُ – Al-Quddūs<br>Yang Maha Suci</a></div>
+      <div class="name-box"><a href="04.html">4. ٱلْقُدُّousُ – Al-Quddūs<br>Yang Maha Suci</a></div>
       <div class="name-box"><a href="05.html">5. ٱلسَّلَامُ – As-Salām<br>Yang Maha Memberi Kesejahteraan</a></div>
       <div class="name-box"><a href="06.html">6. ٱلْمُؤْمِنُ – Al-Mu'min<br>Yang Maha Memberi Keamanan</a></div>
       <div class="name-box"><a href="07.html">7. ٱلْمُهَيْمِنُ – Al-Muhaymin<br>Yang Maha Memelihara</a></div>
@@ -425,7 +488,7 @@
       <div class="name-box"><a href="83.html">83. ٱلرَّؤُوفُ – Ar-Ra'oof<br>Yang Maha Pengasuh</a></div>
       <div class="name-box"><a href="84.html">84. ٱلْمَالِكُ ٱلْمُلْكُ – Maalik-ul-Mulk<br>Yang Maha Penguasa Kerajaan</a></div>
       <div class="name-box"><a href="85.html">85. ذُوالْجَلاَلِ وَالإكْرَامِ – Dhul-Jalaali Wal-Ikraam<br>Yang Maha Pemilik Kebesaran dan Kemuliaan</a></div>
-      <div class="name-box"><a href="86.html">86. ٱلْمُقْsِطُ – Al-Muqsit<br>Yang Maha Adil</a></div>
+      <div class="name-box"><a href="86.html">86. ٱلْمُقْسِطُ – Al-Muqsit<br>Yang Maha Adil</a></div>
       <div class="name-box"><a href="87.html">87. ٱلْجَامِعُ – Al-Jaami`<br>Yang Maha Mengumpulkan</a></div>
       <div class="name-box"><a href="88.html">88. ٱلْغَنيُ – Al-Ghaniyy<br>Yang Maha Kaya</a></div>
       <div class="name-box"><a href="89.html">89. ٱلْمُغْنِي – Al-Mughni<br>Yang Maha Pemberi Kekayaan</a></div>
