@@ -15,73 +15,65 @@
       background-color: #f5f9fc;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #333;
-      padding: 15px;
-      font-size: 16px;
-      line-height: 1.6;
+      padding: 12px;
+      font-size: 15px;
+      line-height: 1.5;
     }
     
     .header {
-      font-size: 18px;
+      font-size: 16px;
       text-align: center;
       margin-bottom: 15px;
-      padding: 15px;
+      padding: 12px;
       background-color: white;
       border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     
     .header div {
-      margin: 5px 0;
+      margin: 4px 0;
     }
     
     .search-box {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       position: sticky;
       top: 0;
       background-color: #f5f9fc;
-      padding: 15px 0;
+      padding: 12px 0;
       z-index: 10;
     }
     
     input[type="text"] {
       width: 90%;
       max-width: 500px;
-      padding: 12px 15px;
-      font-size: 16px;
+      padding: 10px 12px;
+      font-size: 15px;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: 6px;
       background-color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-    
-    input[type="text"]:focus {
-      outline: none;
-      border-color: #3498db;
-      box-shadow: 0 2px 12px rgba(52, 152, 219, 0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
     
     .names-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
       margin: 0 auto;
       max-width: 1200px;
     }
     
     .name-box {
-      flex: 0 0 calc(33.333% - 15px);
-      min-width: 0;
-      font-size: 16px;
-      line-height: 1.4;
       background-color: #fff;
-      padding: 15px 10px;
-      border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      padding: 10px 6px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
       text-align: center;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
     .name-box:nth-child(even) {
@@ -89,14 +81,16 @@
     }
     
     .name-box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
     }
     
     .name-box a {
       text-decoration: none;
       color: #1a5276;
       display: block;
+      font-size: 13px;
+      line-height: 1.3;
     }
     
     .name-box a:hover {
@@ -105,70 +99,59 @@
     
     .reference {
       text-align: center;
-      margin-top: 30px;
-      font-size: 14px;
+      margin-top: 25px;
+      font-size: 13px;
     }
     
     .instruction {
       text-align: center;
-      font-size: 18px;
-      margin: 20px 0;
+      font-size: 16px;
+      margin: 15px 0;
       font-style: italic;
       color: #555;
-      padding: 12px;
+      padding: 10px;
       background-color: #e8f4fc;
-      border-radius: 8px;
+      border-radius: 6px;
     }
     
     footer {
       text-align: center;
-      margin-top: 30px;
-      padding: 20px 0;
-      font-size: 14px;
+      margin-top: 25px;
+      padding: 15px 0;
+      font-size: 13px;
       color: #7f8c8d;
       border-top: 1px solid #e0e0e0;
     }
     
     .intro-link {
       text-align: center;
-      margin: 15px 0;
+      margin: 12px 0;
     }
     
     .intro-link a {
       color: #2980b9;
       text-decoration: none;
-      font-size: 16px;
-      padding: 10px 20px;
+      font-size: 14px;
+      padding: 8px 15px;
       background-color: #e8f4fc;
-      border-radius: 25px;
+      border-radius: 20px;
       display: inline-block;
-      transition: background-color 0.3s;
-    }
-    
-    .intro-link a:hover {
-      background-color: #d1e9f9;
-      text-decoration: none;
     }
     
     .language-toggle {
       position: fixed;
-      top: 15px;
-      right: 15px;
+      top: 12px;
+      right: 12px;
       background: #3498db;
       color: white;
-      padding: 10px 18px;
-      border-radius: 25px;
+      padding: 8px 14px;
+      border-radius: 20px;
       cursor: pointer;
       z-index: 100;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 13px;
       border: none;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-      transition: background 0.3s;
-    }
-    
-    .language-toggle:hover {
-      background: #2980b9;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
     
     .hidden {
@@ -176,75 +159,60 @@
     }
     
     /* Responsive adjustments */
-    @media screen and (max-width: 992px) {
-      .name-box {
-        flex: 0 0 calc(33.333% - 15px);
-        font-size: 15px;
-        padding: 12px 8px;
-      }
-    }
-    
     @media screen and (max-width: 768px) {
       body {
-        padding: 12px;
+        padding: 10px;
+        font-size: 14px;
       }
       
       .name-box {
-        flex: 0 0 calc(33.333% - 12px);
-        font-size: 14px;
-        padding: 10px 6px;
+        padding: 8px 4px;
+        min-height: 70px;
+      }
+      
+      .name-box a {
+        font-size: 12px;
       }
       
       .language-toggle {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        font-size: 13px;
-        padding: 8px 15px;
-      }
-      
-      input[type="text"] {
-        width: 92%;
-        font-size: 16px;
+        padding: 6px 12px;
+        font-size: 12px;
       }
       
       .header {
-        font-size: 16px;
-        padding: 12px;
+        font-size: 15px;
+        padding: 10px;
       }
       
       .instruction {
-        font-size: 16px;
-        padding: 10px;
+        font-size: 15px;
+        padding: 8px;
       }
     }
     
-    @media screen and (max-width: 576px) {
-      .name-box {
-        flex: 0 0 calc(33.333% - 10px);
-        font-size: 12px;
-        padding: 8px 4px;
-        line-height: 1.3;
+    @media screen and (max-width: 480px) {
+      .name-box a {
+        font-size: 11px;
+        line-height: 1.2;
       }
       
       .names-container {
-        gap: 10px;
+        gap: 8px;
       }
       
-      .name-box a {
-        font-size: 11px;
+      .name-box {
+        min-height: 65px;
+        padding: 6px 3px;
       }
     }
     
-    @media screen and (max-width: 400px) {
-      .name-box {
-        flex: 0 0 calc(33.333% - 8px);
-        font-size: 11px;
-        padding: 6px 3px;
-      }
-      
+    @media screen and (max-width: 360px) {
       .name-box a {
         font-size: 10px;
+      }
+      
+      .name-box {
+        min-height: 60px;
       }
     }
   </style>
@@ -256,12 +224,8 @@
   <!-- English Content -->
   <div id="english-content" class="hidden">
     <div class="header">
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 22px;">﷽</div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">﷽</div>
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> — In the name of Allah, the Most Gracious, the Most Merciful</div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 18px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
-      <div><strong>As-salāmu ʿalaykum wa raḥmatullāhi wa barakātuh</strong> — Peace and blessings of Allah be upon you</div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 18px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
-      <div><strong>Waṣ-ṣalātu was-salāmu ʿalā Rasūlillāh</strong> — May peace and blessings be upon the Messenger of Allah</div>
     </div>
 
     <div class="search-box">
@@ -275,105 +239,105 @@
     <div class="instruction">Click on one of the Names</div>
 
     <div class="names-container" id="englishNamesContainer">
-      <div class="name-box"><a href="01.html">1. ٱلرَّحْمَٰنُ – Ar-Rahmān<br>The Beneficent</a></div>
-      <div class="name-box"><a href="02.html">2. ٱلرَّحِيمُ – Ar-Rahīm<br>The Merciful</a></div>
-      <div class="name-box"><a href="03.html">3. ٱلْمَلِكُ – Al-Malik<br>The King and Owner of Dominion</a></div>
-      <div class="name-box"><a href="04.html">4. ٱلْقُدُّوسُ – Al-Quddūs<br>The Absolutely Pure</a></div>
-      <div class="name-box"><a href="05.html">5. ٱلسَّلَامُ – As-Salām<br>The Source of Peace, Safety</a></div>
-      <div class="name-box"><a href="06.html">6. ٱلْمُؤْمِنُ – Al-Mu'min<br>The One Who gives Emaan and Security</a></div>
-      <div class="name-box"><a href="07.html">7. ٱلْمُهَيْمِنُ – Al-Muhaymin<br>The Guardian, The Witness</a></div>
-      <div class="name-box"><a href="08.html">8. ٱلْعَزِيزُ – Al-ʿAzīz<br>The Almighty</a></div>
-      <div class="name-box"><a href="09.html">9. ٱلْجَبَّارُ – Al-Jabbār<br>The Compeller</a></div>
-      <div class="name-box"><a href="10.html">10. ٱلْمُتَكَبِّرُ – Al-Mutakabbir<br>The Supreme, The Majestic</a></div>
-      <div class="name-box"><a href="11.html">11. ٱلْخālِقُ – Al-Khaaliq<br>The Creator, The Maker</a></div>
-      <div class="name-box"><a href="12.html">12. ٱلْبَارِئُ – Al-Baari<br>The Evolver</a></div>
-      <div class="name-box"><a href="13.html">13. ٱلْمُصَوِّرُ – Al-Musawwir<br>The Fashioner</a></div>
-      <div class="name-box"><a href="14.html">14. ٱلْغَفَّارُ – Al-Ghaffar<br>The Constant Forgiver</a></div>
-      <div class="name-box"><a href="15.html">15. ٱلْقَهَّارُ – Al-Qahhaar<br>The All-Subduer</a></div>
-      <div class="name-box"><a href="16.html">16. ٱلْوَهَّابُ – Al-Wahhaab<br>The Supreme Bestower</a></div>
-      <div class="name-box"><a href="17.html">17. ٱلرَّزَّاقُ – Ar-Razzaaq<br>The Provider</a></div>
-      <div class="name-box"><a href="18.html">18. ٱلْفَتَّاحُ – Al-Fattaah<br>The Supreme Opener</a></div>
-      <div class="name-box"><a href="19.html">19. ٱلْعَلِيمُ – Al-`Aleem<br>The All-Knowing</a></div>
-      <div class="name-box"><a href="20.html">20. ٱلْقَابِضُ – Al-Qaabid<br>The Withholder</a></div>
-      <div class="name-box"><a href="21.html">21. ٱلْبَاسِطُ – Al-Baasit<br>The Extender</a></div>
-      <div class="name-box"><a href="22.html">22. ٱلْخَافِضُ – Al-Khaafid<br>The Reducer</a></div>
-      <div class="name-box"><a href="23.html">23. ٱلرَّافِعُ – Ar-Raafi`<br>The Exalter</a></div>
-      <div class="name-box"><a href="24.html">24. ٱلْمُعِزُّ – Al-Mu`izz<br>The Honourer</a></div>
-      <div class="name-box"><a href="25.html">25. ٱلْمُذِلُّ – Al-Mudhill<br>The Dishonourer</a></div>
-      <div class="name-box"><a href="26.html">26. ٱلسَّمِيعُ – As-Samee`<br>The All-Hearing</a></div>
-      <div class="name-box"><a href="27.html">27. ٱلْبَصِيرُ – Al-Baseer<br>The All-Seeing</a></div>
-      <div class="name-box"><a href="28.html">28. ٱلْحَكَمُ – Al-Hakam<br>The Impartial Judge</a></div>
-      <div class="name-box"><a href="29.html">29. ٱلْعَدْلُ – Al-`Adl<br>The Utterly Just</a></div>
-      <div class="name-box"><a href="30.html">30. ٱللَّطِيفُ – Al-Lateef<br>The Subtle One, The Most Gentle</a></div>
-      <div class="name-box"><a href="31.html">31. ٱلْخَبِيرُ – Al-Khabeer<br>The All-Aware</a></div>
-      <div class="name-box"><a href="32.html">32. ٱلْحَلِيمُ – Al-Haleem<br>The Most Forbearing</a></div>
-      <div class="name-box"><a href="33.html">33. ٱلْعَظِيمُ – Al-`Azeem<br>The Magnificent, the Infinite</a></div>
-      <div class="name-box"><a href="34.html">34. ٱلْغَفُور – Al-Ghafoor<br>The Great Forgiver</a></div>
-      <div class="name-box"><a href="35.html">35. ٱلشَّكُورُ – Ash-Shakoor<br>The Most Appreciative</a></div>
-      <div class="name-box"><a href="36.html">36. ٱلْعَلِيُّ – Al-`Aliyy<br>The Most High, the Exalted</a></div>
-      <div class="name-box"><a href="37.html">37. ٱلْكَبِيرُ – Al-Kabeer<br>The Most Great</a></div>
-      <div class="name-box"><a href="38.html">38. ٱلْحَفِيظُ – Al-Hafeedh<br>The Preserver</a></div>
-      <div class="name-box"><a href="39.html">39. ٱلْمُقِيت – Al-Muqeet<br>The Sustainer</a></div>
-      <div class="name-box"><a href="40.html">40. ٱلْحسِيبُ – Al-Haseeb<br>The Reckoner</a></div>
-      <div class="name-box"><a href="41.html">41. ٱلْجَلِيلُ – Al-Jaleel<br>The Majestic</a></div>
-      <div class="name-box"><a href="42.html">42. ٱلْكَرِيمُ – Al-Kareem<br>The Most Generous, the Most Esteemed</a></div>
-      <div class="name-box"><a href="43.html">43. ٱلرَّقِيبُ – Ar-Raqeeb<br>The Watchful</a></div>
-      <div class="name-box"><a href="44.html">44. ٱلْمُجِيبُ – Al-Mujeeb<br>The Responsive One</a></div>
-      <div class="name-box"><a href="45.html">45. ٱلْوَاسِعُ – Al-Waasi`<br>The All-Encompassing, the Boundless</a></div>
-      <div class="name-box"><a href="46.html">46. ٱلْحَكِيمُ – Al-Hakeem<br>The All-Wise</a></div>
-      <div class="name-box"><a href="47.html">47. ٱلْوَدُودُ – Al-Wadud<br>The Most Loving</a></div>
-      <div class="name-box"><a href="48.html">48. ٱلْمَجِيدُ – Al-Majeed<br>The Glorious, the Most Honorable</a></div>
-      <div class="name-box"><a href="49.html">49. ٱلْبَاعِثُ – Al-Ba'ith<br>The Infuser of New Life</a></div>
-      <div class="name-box"><a href="50.html">50. ٱلشَّهِيدُ – Ash-Shaheed<br>The All-and-Ever Witnessing</a></div>
-      <div class="name-box"><a href="51.html">51. ٱلْحَقُ – Al-Haqq<br>The Absolute Truth</a></div>
-      <div class="name-box"><a href="52.html">52. ٱلْوَكِيلُ – Al-Wakeel<br>The Trustee, The Disposer of Affairs</a></div>
-      <div class="name-box"><a href="53.html">53. ٱلْقَوِي – Al-Qawiyy<br>The All-Strong</a></div>
-      <div class="name-box"><a href="54.html">54. ٱلْمَتِينُ – Al-Mateen<br>The Firm One</a></div>
-      <div class="name-box"><a href="55.html">55. ٱلْوَلِيُّ – Al-Waliyy<br>The Sole Provider</a></div>
-      <div class="name-box"><a href="56.html">56. ٱلْحَمِيدُ – Al-Hameed<br>The Praiseworthy</a></div>
-      <div class="name-box"><a href="57.html">57. ٱلْمُحْصِي – Al-Muhsee<br>The All-Enumerating, the Counter</a></div>
-      <div class="name-box"><a href="58.html">58. ٱلْمُبْدِئُ – Al-Mubdi'<br>The Originator, the Initiator</a></div>
-      <div class="name-box"><a href="59.html">59. ٱلْمُعِيدُ – Al-Mueed<br>The Restorer, the Reinstater</a></div>
-      <div class="name-box"><a href="60.html">60. ٱلْمُحْيِي – Al-Muhyi<br>The Giver of Life</a></div>
-      <div class="name-box"><a href="61.html">61. ٱلْمُمِيتُ – Al-Mumeet<br>The Creator of Death</a></div>
-      <div class="name-box"><a href="62.html">62. ٱلْحَيُّ – Al-Hayy<br>The Ever-Living</a></div>
-      <div class="name-box"><a href="63.html">63. ٱلْقَيُّومُ – Al-Qayyoom<br>The Sustainer, The Self-Subsisting</a></div>
-      <div class="name-box"><a href="64.html">64. ٱلْوَاجِدُ – Al-Waajid<br>The Perceiver</a></div>
-      <div class="name-box"><a href="65.html">65. ٱلْمَاجِدُ – Al-Maajid<br>The Glorious, the Most Honorable</a></div>
-      <div class="name-box"><a href="66.html">66. ٱلْواحِدُ – Al-Waahid<br>The Only One</a></div>
-      <div class="name-box"><a href="67.html">67. ٱلْأَحَدُ – Al-Ahad<br>The Indivisible, the Absolute</a></div>
-      <div class="name-box"><a href="68.html">68. ٱلصَّمَدُ – As-Samad<br>The Self-Sufficient, the Impregnable</a></div>
-      <div class="name-box"><a href="69.html">69. ٱلْقَادِرُ – Al-Qaadir<br>The Omnipotent</a></div>
-      <div class="name-box"><a href="70.html">70. ٱلْمُقْتَدِرُ – Al-Muqtadir<br>The Creator of All Power</a></div>
-      <div class="name-box"><a href="71.html">71. ٱلْمُقَدِّمُ – Al-Muqaddim<br>The Expediter</a></div>
-      <div class="name-box"><a href="72.html">72. ٱلْمُؤَخِّرُ – Al-Mu'akhkhir<br>The Delayer</a></div>
-      <div class="name-box"><a href="73.html">73. ٱلأَوَّلُ – Al-Awwal<br>The First</a></div>
-      <div class="name-box"><a href="74.html">74. ٱلآخِرُ – Al-Aakhir<br>The Last</a></div>
-      <div class="name-box"><a href="75.html">75. ٱلظَّاهِرُ – Az-Zaahir<br>The Manifest</a></div>
-      <div class="name-box"><a href="76.html">76. ٱلْبَاطِنُ – Al-Baatin<br>The Hidden One, Knower of the Hidden</a></div>
-      <div class="name-box"><a href="77.html">77. ٱلْوَالِي – Al-Waali<br>The Sole Governor</a></div>
-      <div class="name-box"><a href="78.html">78. ٱلْمُتَعَالِي – Al-Muta`aali<br>The Self Exalted</a></div>
-      <div class="name-box"><a href="79.html">79. ٱلْبَرُّ – Al-Barr<br>The Source of All Goodness</a></div>
-      <div class="name-box"><a href="80.html">80. ٱلتَّوَابُ – At-Tawwaab<br>The Ever-Accepter of Repentance</a></div>
-      <div class="name-box"><a href="81.html">81. ٱلْمُنْتَقِمُ – Al-Muntaqim<br>The Avenger</a></div>
-      <div class="name-box"><a href="82.html">82. ٱلْعَفُو – Al-`Afuww<br>The Supreme Pardoner</a></div>
-      <div class="name-box"><a href="83.html">83. ٱلرَّؤُوفُ – Ar-Ra'oof<br>The Most Kind</a></div>
-      <div class="name-box"><a href="84.html">84. ٱلْمَالِكُ ٱلْمُلْكُ – Maalik-ul-Mulk<br>Master and King of the Kingdom</a></div>
-      <div class="name-box"><a href="85.html">85. ذُوالْجَلاَلِ وَالإكْرَامِ – Dhul-Jalaali Wal-Ikraam<br>Lord of Glory and Honour, Lord of Majesty and Generosity</a></div>
-      <div class="name-box"><a href="86.html">86. ٱلْمُقْسِطُ – Al-Muqsit<br>The Just One</a></div>
-      <div class="name-box"><a href="87.html">87. ٱلْجَامِعُ – Al-Jaami`<br>The Gatherer, the Uniter</a></div>
-      <div class="name-box"><a href="88.html">88. ٱلْغَنيُ – Al-Ghaniyy<br>The Self-Sufficient, the Wealthy</a></div>
-      <div class="name-box"><a href="89.html">89. ٱلْمُغْنِي – Al-Mughni<br>The Enricher</a></div>
-      <div class="name-box"><a href="90.html">90. ٱلْمَانِعُ – Al-Maani`<br>The Withholder</a></div>
-      <div class="name-box"><a href="91.html">91. ٱلضَّارَ – Ad-Daarr<br>The Distresser</a></div>
-      <div class="name-box"><a href="92.html">92. ٱلنَّافِعُ – An-Naafi`<br>The Propitious, the Benefactor</a></div>
-      <div class="name-box"><a href="93.html">93. ٱلنُّورُ – An-Noor<br>The Light, the Illuminator</a></div>
-      <div class="name-box"><a href="94.html">94. ٱلْهَادِي – Al-Haadi<br>The Guide</a></div>
-      <div class="name-box"><a href="95.html">95. ٱلْبَدِيعُ – Al-Badee`<br>The Incomparable Originator</a></div>
-      <div class="name-box"><a href="96.html">96. ٱلْبَاقِي – Al-Baaqi<br>The Everlasting</a></div>
-      <div class="name-box"><a href="97.html">97. ٱلْوَارِثُ – Al-Waarith<br>The Inheritor, the Heir</a></div>
-      <div class="name-box"><a href="98.html">98. ٱلرَّشِيدُ – Ar-Rasheed<br>The Guide, Infallible Teacher, and Knower</a></div>
-      <div class="name-box"><a href="99.html">99. ٱلصَّبُورُ – Aṣ-Ṣabūr<br>The Patient One</a></div>
+      <div class="name-box"><a href="01.html">1. Ar-Rahmān<br>The Beneficent</a></div>
+      <div class="name-box"><a href="02.html">2. Ar-Rahīm<br>The Merciful</a></div>
+      <div class="name-box"><a href="03.html">3. Al-Malik<br>The King</a></div>
+      <div class="name-box"><a href="04.html">4. Al-Quddūs<br>The Pure</a></div>
+      <div class="name-box"><a href="05.html">5. As-Salām<br>Source of Peace</a></div>
+      <div class="name-box"><a href="06.html">6. Al-Mu'min<br>Giver of Security</a></div>
+      <div class="name-box"><a href="07.html">7. Al-Muhaymin<br>The Guardian</a></div>
+      <div class="name-box"><a href="08.html">8. Al-ʿAzīz<br>The Almighty</a></div>
+      <div class="name-box"><a href="09.html">9. Al-Jabbār<br>The Compeller</a></div>
+      <div class="name-box"><a href="10.html">10. Al-Mutakabbir<br>The Majestic</a></div>
+      <div class="name-box"><a href="11.html">11. Al-Khaaliq<br>The Creator</a></div>
+      <div class="name-box"><a href="12.html">12. Al-Baari<br>The Evolver</a></div>
+      <div class="name-box"><a href="13.html">13. Al-Musawwir<br>The Fashioner</a></div>
+      <div class="name-box"><a href="14.html">14. Al-Ghaffar<br>The Forgiver</a></div>
+      <div class="name-box"><a href="15.html">15. Al-Qahhaar<br>The Subduer</a></div>
+      <div class="name-box"><a href="16.html">16. Al-Wahhaab<br>The Bestower</a></div>
+      <div class="name-box"><a href="17.html">17. Ar-Razzaaq<br>The Provider</a></div>
+      <div class="name-box"><a href="18.html">18. Al-Fattaah<br>The Opener</a></div>
+      <div class="name-box"><a href="19.html">19. Al-`Aleem<br>All-Knowing</a></div>
+      <div class="name-box"><a href="20.html">20. Al-Qaabid<br>The Withholder</a></div>
+      <div class="name-box"><a href="21.html">21. Al-Baasit<br>The Extender</a></div>
+      <div class="name-box"><a href="22.html">22. Al-Khaafid<br>The Reducer</a></div>
+      <div class="name-box"><a href="23.html">23. Ar-Raafi`<br>The Exalter</a></div>
+      <div class="name-box"><a href="24.html">24. Al-Mu`izz<br>The Honourer</a></div>
+      <div class="name-box"><a href="25.html">25. Al-Mudhill<br>The Dishonourer</a></div>
+      <div class="name-box"><a href="26.html">26. As-Samee`<br>All-Hearing</a></div>
+      <div class="name-box"><a href="27.html">27. Al-Baseer<br>All-Seeing</a></div>
+      <div class="name-box"><a href="28.html">28. Al-Hakam<br>The Judge</a></div>
+      <div class="name-box"><a href="29.html">29. Al-`Adl<br>The Just</a></div>
+      <div class="name-box"><a href="30.html">30. Al-Lateef<br>The Gentle</a></div>
+      <div class="name-box"><a href="31.html">31. Al-Khabeer<br>All-Aware</a></div>
+      <div class="name-box"><a href="32.html">32. Al-Haleem<br>The Forbearing</a></div>
+      <div class="name-box"><a href="33.html">33. Al-`Azeem<br>The Magnificent</a></div>
+      <div class="name-box"><a href="34.html">34. Al-Ghafoor<br>Great Forgiver</a></div>
+      <div class="name-box"><a href="35.html">35. Ash-Shakoor<br>Appreciative</a></div>
+      <div class="name-box"><a href="36.html">36. Al-`Aliyy<br>The Exalted</a></div>
+      <div class="name-box"><a href="37.html">37. Al-Kabeer<br>The Most Great</a></div>
+      <div class="name-box"><a href="38.html">38. Al-Hafeedh<br>The Preserver</a></div>
+      <div class="name-box"><a href="39.html">39. Al-Muqeet<br>The Sustainer</a></div>
+      <div class="name-box"><a href="40.html">40. Al-Haseeb<br>The Reckoner</a></div>
+      <div class="name-box"><a href="41.html">41. Al-Jaleel<br>The Majestic</a></div>
+      <div class="name-box"><a href="42.html">42. Al-Kareem<br>The Generous</a></div>
+      <div class="name-box"><a href="43.html">43. Ar-Raqeeb<br>The Watchful</a></div>
+      <div class="name-box"><a href="44.html">44. Al-Mujeeb<br>The Responsive</a></div>
+      <div class="name-box"><a href="45.html">45. Al-Waasi`<br>The All-Encompassing</a></div>
+      <div class="name-box"><a href="46.html">46. Al-Hakeem<br>The All-Wise</a></div>
+      <div class="name-box"><a href="47.html">47. Al-Wadud<br>The Most Loving</a></div>
+      <div class="name-box"><a href="48.html">48. Al-Majeed<br>The Glorious</a></div>
+      <div class="name-box"><a href="49.html">49. Al-Ba'ith<br>The Infuser of Life</a></div>
+      <div class="name-box"><a href="50.html">50. Ash-Shaheed<br>The Witnessing</a></div>
+      <div class="name-box"><a href="51.html">51. Al-Haqq<br>The Truth</a></div>
+      <div class="name-box"><a href="52.html">52. Al-Wakeel<br>The Trustee</a></div>
+      <div class="name-box"><a href="53.html">53. Al-Qawiyy<br>The All-Strong</a></div>
+      <div class="name-box"><a href="54.html">54. Al-Mateen<br>The Firm</a></div>
+      <div class="name-box"><a href="55.html">55. Al-Waliyy<br>The Sole Provider</a></div>
+      <div class="name-box"><a href="56.html">56. Al-Hameed<br>The Praiseworthy</a></div>
+      <div class="name-box"><a href="57.html">57. Al-Muhsee<br>The Counter</a></div>
+      <div class="name-box"><a href="58.html">58. Al-Mubdi'<br>The Originator</a></div>
+      <div class="name-box"><a href="59.html">59. Al-Mueed<br>The Restorer</a></div>
+      <div class="name-box"><a href="60.html">60. Al-Muhyi<br>Giver of Life</a></div>
+      <div class="name-box"><a href="61.html">61. Al-Mumeet<br>Creator of Death</a></div>
+      <div class="name-box"><a href="62.html">62. Al-Hayy<br>The Ever-Living</a></div>
+      <div class="name-box"><a href="63.html">63. Al-Qayyoom<br>The Sustainer</a></div>
+      <div class="name-box"><a href="64.html">64. Al-Waajid<br>The Perceiver</a></div>
+      <div class="name-box"><a href="65.html">65. Al-Maajid<br>The Glorious</a></div>
+      <div class="name-box"><a href="66.html">66. Al-Waahid<br>The Only One</a></div>
+      <div class="name-box"><a href="67.html">67. Al-Ahad<br>The Absolute</a></div>
+      <div class="name-box"><a href="68.html">68. As-Samad<br>The Self-Sufficient</a></div>
+      <div class="name-box"><a href="69.html">69. Al-Qaadir<br>The Omnipotent</a></div>
+      <div class="name-box"><a href="70.html">70. Al-Muqtadir<br>Creator of Power</a></div>
+      <div class="name-box"><a href="71.html">71. Al-Muqaddim<br>The Expediter</a></div>
+      <div class="name-box"><a href="72.html">72. Al-Mu'akhkhir<br>The Delayer</a></div>
+      <div class="name-box"><a href="73.html">73. Al-Awwal<br>The First</a></div>
+      <div class="name-box"><a href="74.html">74. Al-Aakhir<br>The Last</a></div>
+      <div class="name-box"><a href="75.html">75. Az-Zaahir<br>The Manifest</a></div>
+      <div class="name-box"><a href="76.html">76. Al-Baatin<br>The Hidden</a></div>
+      <div class="name-box"><a href="77.html">77. Al-Waali<br>The Governor</a></div>
+      <div class="name-box"><a href="78.html">78. Al-Muta`aali<br>The Self Exalted</a></div>
+      <div class="name-box"><a href="79.html">79. Al-Barr<br>Source of Goodness</a></div>
+      <div class="name-box"><a href="80.html">80. At-Tawwaab<br>Accepter of Repentance</a></div>
+      <div class="name-box"><a href="81.html">81. Al-Muntaqim<br>The Avenger</a></div>
+      <div class="name-box"><a href="82.html">82. Al-`Afuww<br>The Pardoner</a></div>
+      <div class="name-box"><a href="83.html">83. Ar-Ra'oof<br>The Most Kind</a></div>
+      <div class="name-box"><a href="84.html">84. Maalik-ul-Mulk<br>Master of Kingdom</a></div>
+      <div class="name-box"><a href="85.html">85. Dhul-Jalaali<br>Lord of Majesty</a></div>
+      <div class="name-box"><a href="86.html">86. Al-Muqsit<br>The Just</a></div>
+      <div class="name-box"><a href="87.html">87. Al-Jaami`<br>The Gatherer</a></div>
+      <div class="name-box"><a href="88.html">88. Al-Ghaniyy<br>The Self-Sufficient</a></div>
+      <div class="name-box"><a href="89.html">89. Al-Mughni<br>The Enricher</a></div>
+      <div class="name-box"><a href="90.html">90. Al-Maani`<br>The Withholder</a></div>
+      <div class="name-box"><a href="91.html">91. Ad-Daarr<br>The Distresser</a></div>
+      <div class="name-box"><a href="92.html">92. An-Naafi`<br>The Benefactor</a></div>
+      <div class="name-box"><a href="93.html">93. An-Noor<br>The Light</a></div>
+      <div class="name-box"><a href="94.html">94. Al-Haadi<br>The Guide</a></div>
+      <div class="name-box"><a href="95.html">95. Al-Badee`<br>The Originator</a></div>
+      <div class="name-box"><a href="96.html">96. Al-Baaqi<br>The Everlasting</a></div>
+      <div class="name-box"><a href="97.html">97. Al-Waarith<br>The Inheritor</a></div>
+      <div class="name-box"><a href="98.html">98. Ar-Rasheed<br>The Guide</a></div>
+      <div class="name-box"><a href="99.html">99. Aṣ-Ṣabūr<br>The Patient</a></div>
     </div>
 
     <div class="reference">
@@ -384,12 +348,8 @@
   <!-- Indonesian Content (Shown by Default) -->
   <div id="indonesian-content">
     <div class="header">
-      <div style="font-family: 'Amiri', serif; direction: rtrl; font-size: 22px;">﷽</div>
-      <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> </div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 18px;">ٱلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ ٱللّٰهِ وَبَرَكَاتُهُ</div>
-      <div><strong>As-salāmu ʿalaykum wa raḥmatullāhi wa barakātuh</strong> </div>
-      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 18px;">وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللّٰهِ</div>
-      <div><strong>Waṣ-ṣalātu was-salāmu ʿalā Rasūlillāh</strong> </div>
+      <div style="font-family: 'Amiri', serif; direction: rtl; font-size: 20px;">﷽</div>
+      <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong></div>
     </div>
 
     <div class="search-box">
@@ -403,105 +363,105 @@
     <div class="instruction">Klik salah satu Nama</div>
 
     <div class="names-container" id="indonesianNamesContainer">
-      <div class="name-box"><a href="01.html">1. ٱلرَّحْمَٰنُ – Ar-Rahmān<br>Yang Maha Pengasih</a></div>
-      <div class="name-box"><a href="02.html">2. ٱلرَّحِيمُ – Ar-Rahīm<br>Yang Maha Penyayang</a></div>
-      <div class="name-box"><a href="03.html">3. ٱلْمَلِكُ – Al-Malik<br>Yang Maha Merajai</a></div>
-      <div class="name-box"><a href="04.html">4. ٱلْقُدُّousُ – Al-Quddūs<br>Yang Maha Suci</a></div>
-      <div class="name-box"><a href="05.html">5. ٱلسَّلَامُ – As-Salām<br>Yang Maha Memberi Kesejahteraan</a></div>
-      <div class="name-box"><a href="06.html">6. ٱلْمُؤْمِنُ – Al-Mu'min<br>Yang Maha Memberi Keamanan</a></div>
-      <div class="name-box"><a href="07.html">7. ٱلْمُهَيْمِنُ – Al-Muhaymin<br>Yang Maha Memelihara</a></div>
-      <div class="name-box"><a href="08.html">8. ٱلْعَزِيزُ – Al-ʿAzīz<br>Yang Maha Perkasa</a></div>
-      <div class="name-box"><a href="09.html">9. ٱلْجَبَّارُ – Al-Jabbār<br>Yang Memiliki Mutlak Kegagahan</a></div>
-      <div class="name-box"><a href="10.html">10. ٱلْمُتَكَبِّرُ – Al-Mutakabbir<br>Yang Maha Megah</a></div>
-      <div class="name-box"><a href="11.html">11. ٱلْخَالِقُ – Al-Khaaliq<br>Yang Maha Pencipta</a></div>
-      <div class="name-box"><a href="12.html">12. ٱلْبَارِئُ – Al-Baari<br>Yang Maha Melepaskan</a></div>
-      <div class="name-box"><a href="13.html">13. ٱلْمُصَوِّرُ – Al-Musawwir<br>Yang Maha Membentuk Rupa</a></div>
-      <div class="name-box"><a href="14.html">14. ٱلْغَفَّارُ – Al-Ghaffar<br>Yang Maha Pengampun</a></div>
-      <div class="name-box"><a href="15.html">15. ٱلْقَهَّارُ – Al-Qahhaar<br>Yang Maha Memaksa</a></div>
-      <div class="name-box"><a href="16.html">16. ٱلْوَهَّابُ – Al-Wahhaab<br>Yang Maha Pemberi Karunia</a></div>
-      <div class="name-box"><a href="17.html">17. ٱلرَّزَّاقُ – Ar-Razzaaq<br>Yang Maha Pemberi Rezeki</a></div>
-      <div class="name-box"><a href="18.html">18. ٱلْفَتَّاحُ – Al-Fattaah<br>Yang Maha Pembuka Rahmat</a></div>
-      <div class="name-box"><a href="19.html">19. ٱلْعَلِيمُ – Al-`Aleem<br>Yang Maha Mengetahui</a></div>
-      <div class="name-box"><a href="20.html">20. ٱلْقَابِضُ – Al-Qaabid<br>Yang Maha Menyempitkan</a></div>
-      <div class="name-box"><a href="21.html">21. ٱلْبَاسِطُ – Al-Baasit<br>Yang Maha Melapangkan</a></div>
-      <div class="name-box"><a href="22.html">22. ٱلْخَافِضُ – Al-Khaafid<br>Yang Maha Merendahkan</a></div>
-      <div class="name-box"><a href="23.html">23. ٱلرَّافِعُ – Ar-Raafi`<br>Yang Maha Meninggikan</a></div>
-      <div class="name-box"><a href="24.html">24. ٱلْمُعِزُّ – Al-Mu`izz<br>Yang Maha Memuliakan</a></div>
-      <div class="name-box"><a href="25.html">25. ٱلْمُذِلُّ – Al-Mudhill<br>Yang Maha Menghinakan</a></div>
-      <div class="name-box"><a href="26.html">26. ٱلسَّمِيعُ – As-Samee`<br>Yang Maha Mendengar</a></div>
-      <div class="name-box"><a href="27.html">27. ٱلْبَصِيرُ – Al-Baseer<br>Yang Maha Melihat</a></div>
-      <div class="name-box"><a href="28.html">28. ٱلْحَكَمُ – Al-Hakam<br>Yang Maha Menetapkan</a></div>
-      <div class="name-box"><a href="29.html">29. ٱلْعَدْلُ – Al-`Adl<br>Yang Maha Adil</a></div>
-      <div class="name-box"><a href="30.html">30. ٱللَّطِيفُ – Al-Lateef<br>Yang Maha Lembut</a></div>
-      <div class="name-box"><a href="31.html">31. ٱلْخَبِيرُ – Al-Khabeer<br>Yang Maha Mengenal</a></div>
-      <div class="name-box"><a href="32.html">32. ٱلْحَلِيمُ – Al-Haleem<br>Yang Maha Penyantun</a></div>
-      <div class="name-box"><a href="33.html">33. ٱلْعَظِيمُ – Al-`Azeem<br>Yang Maha Agung</a></div>
-      <div class="name-box"><a href="34.html">34. ٱلْغَفُور – Al-Ghafoor<br>Yang Maha Pengampun</a></div>
-      <div class="name-box"><a href="35.html">35. ٱلشَّكُورُ – Ash-Shakoor<br>Yang Maha Pembalas Budi</a></div>
-      <div class="name-box"><a href="36.html">36. ٱلْعَلِيُّ – Al-`Aliyy<br>Yang Maha Tinggi</a></div>
-      <div class="name-box"><a href="37.html">37. ٱلْكَبِيرُ – Al-Kabeer<br>Yang Maha Besar</a></div>
-      <div class="name-box"><a href="38.html">38. ٱلْحَفِيظُ – Al-Hafeedh<br>Yang Maha Memelihara</a></div>
-      <div class="name-box"><a href="39.html">39. ٱلْمُقِيت – Al-Muqeet<br>Yang Maha Pemberi Kecukupan</a></div>
-      <div class="name-box"><a href="40.html">40. ٱلْحسِيبُ – Al-Haseeb<br>Yang Maha Membuat Perhitungan</a></div>
-      <div class="name-box"><a href="41.html">41. ٱلْجَلِيلُ – Al-Jaleel<br>Yang Maha Luhur</a></div>
-      <div class="name-box"><a href="42.html">42. ٱلْكَرِيمُ – Al-Kareem<br>Yang Maha Pemurah</a></div>
-      <div class="name-box"><a href="43.html">43. ٱلرَّقِيبُ – Ar-Raqeeb<br>Yang Maha Mengawasi</a></div>
-      <div class="name-box"><a href="44.html">44. ٱلْمُجِيبُ – Al-Mujeeb<br>Yang Maha Mengabulkan</a></div>
-      <div class="name-box"><a href="45.html">45. ٱلْوَاسِعُ – Al-Waasi`<br>Yang Maha Luas</a></div>
-      <div class="name-box"><a href="46.html">46. ٱلْحَكِيمُ – Al-Hakeem<br>Yang Maha Bijaksana</a></div>
-      <div class="name-box"><a href="47.html">47. ٱلْوَدُودُ – Al-Wadud<br>Yang Maha Mengasihi</a></div>
-      <div class="name-box"><a href="48.html">48. ٱلْمَجِيدُ – Al-Majeed<br>Yang Maha Mulia</a></div>
-      <div class="name-box"><a href="49.html">49. ٱلْبَاعِثُ – Al-Ba'ith<br>Yang Maha Membangkitkan</a></div>
-      <div class="name-box"><a href="50.html">50. ٱلشَّهِيدُ – Ash-Shaheed<br>Yang Maha Menyaksikan</a></div>
-      <div class="name-box"><a href="51.html">51. ٱلْحَقُ – Al-Haqq<br>Yang Maha Benar</a></div>
-      <div class="name-box"><a href="52.html">52. ٱلْوَكِيلُ – Al-Wakeel<br>Yang Maha Memelihara</a></div>
-      <div class="name-box"><a href="53.html">53. ٱلْقَوِي – Al-Qawiyy<br>Yang Maha Kuat</a></div>
-      <div class="name-box"><a href="54.html">54. ٱلْمَتِينُ – Al-Mateen<br>Yang Maha Kokoh</a></div>
-      <div class="name-box"><a href="55.html">55. ٱلْوَلِيُّ – Al-Waliyy<br>Yang Maha Melindungi</a></div>
-      <div class="name-box"><a href="56.html">56. ٱلْحَمِيدُ – Al-Hameed<br>Yang Maha Terpuji</a></div>
-      <div class="name-box"><a href="57.html">57. ٱلْمُحْصِي – Al-Muhsee<br>Yang Maha Menghitung</a></div>
-      <div class="name-box"><a href="58.html">58. ٱلْمُبْدِئُ – Al-Mubdi'<br>Yang Maha Memulai</a></div>
-      <div class="name-box"><a href="59.html">59. ٱلْمُعِيدُ – Al-Mueed<br>Yang Maha Mengembalikan Kehidupan</a></div>
-      <div class="name-box"><a href="60.html">60. ٱلْمُحْيِي – Al-Muhyi<br>Yang Maha Menghidupkan</a></div>
-      <div class="name-box"><a href="61.html">61. ٱلْمُمِيتُ – Al-Mumeet<br>Yang Maha Mematikan</a></div>
-      <div class="name-box"><a href="62.html">62. ٱلْحَيُّ – Al-Hayy<br>Yang Maha Hidup</a></div>
-      <div class="name-box"><a href="63.html">63. ٱلْقَيُّومُ – Al-Qayyoom<br>Yang Maha Mandiri</a></div>
-      <div class="name-box"><a href="64.html">64. ٱلْوَاجِدُ – Al-Waajid<br>Yang Maha Penemu</a></div>
-      <div class="name-box"><a href="65.html">65. ٱلْمَاجِدُ – Al-Maajid<br>Yang Maha Mulia</a></div>
-      <div class="name-box"><a href="66.html">66. ٱلْواحِدُ – Al-Waahid<br>Yang Maha Tunggal</a></div>
-      <div class="name-box"><a href="67.html">67. ٱلْأَحَدُ – Al-Ahad<br>Yang Maha Esa</a></div>
-      <div class="name-box"><a href="68.html">68. ٱلصَّمَدُ – As-Samad<br>Yang Maha Dibutuhkan</a></div>
-      <div class="name-box"><a href="69.html">69. ٱلْقَادِرُ – Al-Qaadir<br>Yang Maha Menentukan</a></div>
-      <div class="name-box"><a href="70.html">70. ٱلْمُقْتَدِرُ – Al-Muqtadir<br>Yang Maha Berkuasa</a></div>
-      <div class="name-box"><a href="71.html">71. ٱلْمُقَدِّمُ – Al-Muqaddim<br>Yang Maha Mendahulukan</a></div>
-      <div class="name-box"><a href="72.html">72. ٱلْمُؤَخِّرُ – Al-Mu'akhkhir<br>Yang Maha Mengakhirkan</a></div>
-      <div class="name-box"><a href="73.html">73. ٱلأَوَّلُ – Al-Awwal<br>Yang Maha Awal</a></div>
-      <div class="name-box"><a href="74.html">74. ٱلآخِرُ – Al-Aakhir<br>Yang Maha Akhir</a></div>
-      <div class="name-box"><a href="75.html">75. ٱلظَّاهِرُ – Az-Zaahir<br>Yang Maha Nyata</a></div>
-      <div class="name-box"><a href="76.html">76. ٱلْبَاطِنُ – Al-Baatin<br>Yang Maha Ghaib</a></div>
-      <div class="name-box"><a href="77.html">77. ٱلْوَالِي – Al-Waali<br>Yang Maha Memerintah</a></div>
-      <div class="name-box"><a href="78.html">78. ٱلْمُتَعَالِي – Al-Muta`aali<br>Yang Maha Tinggi</a></div>
-      <div class="name-box"><a href="79.html">79. ٱلْبَرُّ – Al-Barr<br>Yang Maha Penderma</a></div>
-      <div class="name-box"><a href="80.html">80. ٱلتَّوَابُ – At-Tawwaab<br>Yang Maha Penerima Tobat</a></div>
-      <div class="name-box"><a href="81.html">81. ٱلْمُنْتَقِمُ – Al-Muntaqim<br>Yang Maha Penuntut Balas</a></div>
-      <div class="name-box"><a href="82.html">82. ٱلْعَفُو – Al-`Afuww<br>Yang Maha Pemaaf</a></div>
-      <div class="name-box"><a href="83.html">83. ٱلرَّؤُوفُ – Ar-Ra'oof<br>Yang Maha Pengasuh</a></div>
-      <div class="name-box"><a href="84.html">84. ٱلْمَالِكُ ٱلْمُلْكُ – Maalik-ul-Mulk<br>Yang Maha Penguasa Kerajaan</a></div>
-      <div class="name-box"><a href="85.html">85. ذُوالْجَلاَلِ وَالإكْرَامِ – Dhul-Jalaali Wal-Ikraam<br>Yang Maha Pemilik Kebesaran dan Kemuliaan</a></div>
-      <div class="name-box"><a href="86.html">86. ٱلْمُقْسِطُ – Al-Muqsit<br>Yang Maha Adil</a></div>
-      <div class="name-box"><a href="87.html">87. ٱلْجَامِعُ – Al-Jaami`<br>Yang Maha Mengumpulkan</a></div>
-      <div class="name-box"><a href="88.html">88. ٱلْغَنيُ – Al-Ghaniyy<br>Yang Maha Kaya</a></div>
-      <div class="name-box"><a href="89.html">89. ٱلْمُغْنِي – Al-Mughni<br>Yang Maha Pemberi Kekayaan</a></div>
-      <div class="name-box"><a href="90.html">90. ٱلْمَانِعُ – Al-Maani`<br>Yang Maha Mencegah</a></div>
-      <div class="name-box"><a href="91.html">91. ٱلضَّارَ – Ad-Daarr<br>Yang Maha Memberi Derita</a></div>
-      <div class="name-box"><a href="92.html">92. ٱلنَّافِعُ – An-Naafi`<br>Yang Maha Memberi Manfaat</a></div>
-      <div class="name-box"><a href="93.html">93. ٱلنُّورُ – An-Noor<br>Yang Maha Bercahaya</a></div>
-      <div class="name-box"><a href="94.html">94. ٱلْهَادِي – Al-Haadi<br>Yang Maha Pemberi Petunjuk</a></div>
-      <div class="name-box"><a href="95.html">95. ٱلْبَدِيعُ – Al-Badee`<br>Yang Maha Pencipta</a></div>
-      <div class="name-box"><a href="96.html">96. ٱلْبَاقِي – Al-Baaqi<br>Yang Maha Kekal</a></div>
-      <div class="name-box"><a href="97.html">97. ٱلْوَارِثُ – Al-Waarith<br>Yang Maha Pewaris</a></div>
-      <div class="name-box"><a href="98.html">98. ٱلرَّشِيدُ – Ar-Rasheed<br>Yang Maha Pandai</a></div>
-      <div class="name-box"><a href="99.html">99. ٱلصَّبُورُ – Aṣ-Ṣabūr<br>Yang Maha Sabar</a></div>
+      <div class="name-box"><a href="01.html">1. Ar-Rahmān<br>Maha Pengasih</a></div>
+      <div class="name-box"><a href="02.html">2. Ar-Rahīm<br>Maha Penyayang</a></div>
+      <div class="name-box"><a href="03.html">3. Al-Malik<br>Maha Merajai</a></div>
+      <div class="name-box"><a href="04.html">4. Al-Quddūs<br>Maha Suci</a></div>
+      <div class="name-box"><a href="05.html">5. As-Salām<br>Pemberi Kesejahteraan</a></div>
+      <div class="name-box"><a href="06.html">6. Al-Mu'min<br>Pemberi Keamanan</a></div>
+      <div class="name-box"><a href="07.html">7. Al-Muhaymin<br>Maha Memelihara</a></div>
+      <div class="name-box"><a href="08.html">8. Al-ʿAzīz<br>Maha Perkasa</a></div>
+      <div class="name-box"><a href="09.html">9. Al-Jabbār<br>Pemilik Kegagahan</a></div>
+      <div class="name-box"><a href="10.html">10. Al-Mutakabbir<br>Maha Megah</a></div>
+      <div class="name-box"><a href="11.html">11. Al-Khaaliq<br>Maha Pencipta</a></div>
+      <div class="name-box"><a href="12.html">12. Al-Baari<br>Maha Melepaskan</a></div>
+      <div class="name-box"><a href="13.html">13. Al-Musawwir<br>Maha Membentuk</a></div>
+      <div class="name-box"><a href="14.html">14. Al-Ghaffar<br>Maha Pengampun</a></div>
+      <div class="name-box"><a href="15.html">15. Al-Qahhaar<br>Maha Memaksa</a></div>
+      <div class="name-box"><a href="16.html">16. Al-Wahhaab<br>Pemberi Karunia</a></div>
+      <div class="name-box"><a href="17.html">17. Ar-Razzaaq<br>Pemberi Rezeki</a></div>
+      <div class="name-box"><a href="18.html">18. Al-Fattaah<br>Pembuka Rahmat</a></div>
+      <div class="name-box"><a href="19.html">19. Al-`Aleem<br>Maha Mengetahui</a></div>
+      <div class="name-box"><a href="20.html">20. Al-Qaabid<br>Maha Menyempitkan</a></div>
+      <div class="name-box"><a href="21.html">21. Al-Baasit<br>Maha Melapangkan</a></div>
+      <div class="name-box"><a href="22.html">22. Al-Khaafid<br>Maha Merendahkan</a></div>
+      <div class="name-box"><a href="23.html">23. Ar-Raafi`<br>Maha Meninggikan</a></div>
+      <div class="name-box"><a href="24.html">24. Al-Mu`izz<br>Maha Memuliakan</a></div>
+      <div class="name-box"><a href="25.html">25. Al-Mudhill<br>Maha Menghinakan</a></div>
+      <div class="name-box"><a href="26.html">26. As-Samee`<br>Maha Mendengar</a></div>
+      <div class="name-box"><a href="27.html">27. Al-Baseer<br>Maha Melihat</a></div>
+      <div class="name-box"><a href="28.html">28. Al-Hakam<br>Maha Menetapkan</a></div>
+      <div class="name-box"><a href="29.html">29. Al-`Adl<br>Maha Adil</a></div>
+      <div class="name-box"><a href="30.html">30. Al-Lateef<br>Maha Lembut</a></div>
+      <div class="name-box"><a href="31.html">31. Al-Khabeer<br>Maha Mengenal</a></div>
+      <div class="name-box"><a href="32.html">32. Al-Haleem<br>Maha Penyantun</a></div>
+      <div class="name-box"><a href="33.html">33. Al-`Azeem<br>Maha Agung</a></div>
+      <div class="name-box"><a href="34.html">34. Al-Ghafoor<br>Maha Pengampun</a></div>
+      <div class="name-box"><a href="35.html">35. Ash-Shakoor<br>Pembalas Budi</a></div>
+      <div class="name-box"><a href="36.html">36. Al-`Aliyy<br>Maha Tinggi</a></div>
+      <div class="name-box"><a href="37.html">37. Al-Kabeer<br>Maha Besar</a></div>
+      <div class="name-box"><a href="38.html">38. Al-Hafeedh<br>Maha Memelihara</a></div>
+      <div class="name-box"><a href="39.html">39. Al-Muqeet<br>Pemberi Kecukupan</a></div>
+      <div class="name-box"><a href="40.html">40. Al-Haseeb<br>Pembuat Perhitungan</a></div>
+      <div class="name-box"><a href="41.html">41. Al-Jaleel<br>Maha Luhur</a></div>
+      <div class="name-box"><a href="42.html">42. Al-Kareem<br>Maha Pemurah</a></div>
+      <div class="name-box"><a href="43.html">43. Ar-Raqeeb<br>Maha Mengawasi</a></div>
+      <div class="name-box"><a href="44.html">44. Al-Mujeeb<br>Maha Mengabulkan</a></div>
+      <div class="name-box"><a href="45.html">45. Al-Waasi`<br>Maha Luas</a></div>
+      <div class="name-box"><a href="46.html">46. Al-Hakeem<br>Maha Bijaksana</a></div>
+      <div class="name-box"><a href="47.html">47. Al-Wadud<br>Maha Mengasihi</a></div>
+      <div class="name-box"><a href="48.html">48. Al-Majeed<br>Maha Mulia</a></div>
+      <div class="name-box"><a href="49.html">49. Al-Ba'ith<br>Maha Membangkitkan</a></div>
+      <div class="name-box"><a href="50.html">50. Ash-Shaheed<br>Maha Menyaksikan</a></div>
+      <div class="name-box"><a href="51.html">51. Al-Haqq<br>Maha Benar</a></div>
+      <div class="name-box"><a href="52.html">52. Al-Wakeel<br>Maha Memelihara</a></div>
+      <div class="name-box"><a href="53.html">53. Al-Qawiyy<br>Maha Kuat</a></div>
+      <div class="name-box"><a href="54.html">54. Al-Mateen<br>Maha Kokoh</a></div>
+      <div class="name-box"><a href="55.html">55. Al-Waliyy<br>Maha Melindungi</a></div>
+      <div class="name-box"><a href="56.html">56. Al-Hameed<br>Maha Terpuji</a></div>
+      <div class="name-box"><a href="57.html">57. Al-Muhsee<br>Maha Menghitung</a></div>
+      <div class="name-box"><a href="58.html">58. Al-Mubdi'<br>Maha Memulai</a></div>
+      <div class="name-box"><a href="59.html">59. Al-Mueed<br>Mengembalikan Kehidupan</a></div>
+      <div class="name-box"><a href="60.html">60. Al-Muhyi<br>Maha Menghidupkan</a></div>
+      <div class="name-box"><a href="61.html">61. Al-Mumeet<br>Maha Mematikan</a></div>
+      <div class="name-box"><a href="62.html">62. Al-Hayy<br>Maha Hidup</a></div>
+      <div class="name-box"><a href="63.html">63. Al-Qayyoom<br>Maha Mandiri</a></div>
+      <div class="name-box"><a href="64.html">64. Al-Waajid<br>Maha Penemu</a></div>
+      <div class="name-box"><a href="65.html">65. Al-Maajid<br>Maha Mulia</a></div>
+      <div class="name-box"><a href="66.html">66. Al-Waahid<br>Maha Tunggal</a></div>
+      <div class="name-box"><a href="67.html">67. Al-Ahad<br>Maha Esa</a></div>
+      <div class="name-box"><a href="68.html">68. As-Samad<br>Maha Dibutuhkan</a></div>
+      <div class="name-box"><a href="69.html">69. Al-Qaadir<br>Maha Menentukan</a></div>
+      <div class="name-box"><a href="70.html">70. Al-Muqtadir<br>Maha Berkuasa</a></div>
+      <div class="name-box"><a href="71.html">71. Al-Muqaddim<br>Maha Mendahulukan</a></div>
+      <div class="name-box"><a href="72.html">72. Al-Mu'akhkhir<br>Maha Mengakhirkan</a></div>
+      <div class="name-box"><a href="73.html">73. Al-Awwal<br>Maha Awal</a></div>
+      <div class="name-box"><a href="74.html">74. Al-Aakhir<br>Maha Akhir</a></div>
+      <div class="name-box"><a href="75.html">75. Az-Zaahir<br>Maha Nyata</a></div>
+      <div class="name-box"><a href="76.html">76. Al-Baatin<br>Maha Ghaib</a></div>
+      <div class="name-box"><a href="77.html">77. Al-Waali<br>Maha Memerintah</a></div>
+      <div class="name-box"><a href="78.html">78. Al-Muta`aali<br>Maha Tinggi</a></div>
+      <div class="name-box"><a href="79.html">79. Al-Barr<br>Maha Penderma</a></div>
+      <div class="name-box"><a href="80.html">80. At-Tawwaab<br>Penerima Tobat</a></div>
+      <div class="name-box"><a href="81.html">81. Al-Muntaqim<br>Penuntut Balas</a></div>
+      <div class="name-box"><a href="82.html">82. Al-`Afuww<br>Maha Pemaaf</a></div>
+      <div class="name-box"><a href="83.html">83. Ar-Ra'oof<br>Maha Pengasuh</a></div>
+      <div class="name-box"><a href="84.html">84. Maalik-ul-Mulk<br>Penguasa Kerajaan</a></div>
+      <div class="name-box"><a href="85.html">85. Dhul-Jalaali<br>Pemilik Kebesaran</a></div>
+      <div class="name-box"><a href="86.html">86. Al-Muqsit<br>Maha Adil</a></div>
+      <div class="name-box"><a href="87.html">87. Al-Jaami`<br>Maha Mengumpulkan</a></div>
+      <div class="name-box"><a href="88.html">88. Al-Ghaniyy<br>Maha Kaya</a></div>
+      <div class="name-box"><a href="89.html">89. Al-Mughni<br>Pemberi Kekayaan</a></div>
+      <div class="name-box"><a href="90.html">90. Al-Maani`<br>Maha Mencegah</a></div>
+      <div class="name-box"><a href="91.html">91. Ad-Daarr<br>Pemberi Derita</a></div>
+      <div class="name-box"><a href="92.html">92. An-Naafi`<br>Pemberi Manfaat</a></div>
+      <div class="name-box"><a href="93.html">93. An-Noor<br>Maha Bercahaya</a></div>
+      <div class="name-box"><a href="94.html">94. Al-Haadi<br>Pemberi Petunjuk</a></div>
+      <div class="name-box"><a href="95.html">95. Al-Badee`<br>Maha Pencipta</a></div>
+      <div class="name-box"><a href="96.html">96. Al-Baaqi<br>Maha Kekal</a></div>
+      <div class="name-box"><a href="97.html">97. Al-Waarith<br>Maha Pewaris</a></div>
+      <div class="name-box"><a href="98.html">98. Ar-Rasheed<br>Maha Pandai</a></div>
+      <div class="name-box"><a href="99.html">99. Aṣ-Ṣabūr<br>Maha Sabar</a></div>
     </div>
 
     <div class="reference">
@@ -561,7 +521,7 @@
       const boxes = document.querySelectorAll("#english-content .name-box");
       
       if (input === '') {
-        boxes.forEach(box => box.style.display = "block");
+        boxes.forEach(box => box.style.display = "grid");
         return;
       }
       
@@ -569,7 +529,7 @@
       for (let box of boxes) {
         const text = box.innerText.toLowerCase();
         if (text.includes(input) || text.startsWith(input)) {
-          box.style.display = "block";
+          box.style.display = "grid";
           if (!found) {
             box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             found = true;
@@ -586,7 +546,7 @@
       const boxes = document.querySelectorAll("#indonesian-content .name-box");
       
       if (input === '') {
-        boxes.forEach(box => box.style.display = "block");
+        boxes.forEach(box => box.style.display = "grid");
         return;
       }
       
@@ -594,7 +554,7 @@
       for (let box of boxes) {
         const text = box.innerText.toLowerCase();
         if (text.includes(input) || text.startsWith(input)) {
-          box.style.display = "block";
+          box.style.display = "grid";
           if (!found) {
             box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             found = true;
