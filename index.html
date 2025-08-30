@@ -34,7 +34,7 @@
       margin: 4px 0;
     }
     
-    .search-box {
+    .search-container {
       text-align: center;
       margin-bottom: 15px;
       position: sticky;
@@ -42,6 +42,14 @@
       background-color: #f5f9fc;
       padding: 12px 0;
       z-index: 10;
+    }
+    
+    .search-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     
     input[type="text"] {
@@ -53,6 +61,12 @@
       border-radius: 6px;
       background-color: #fff;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    
+    .search-info {
+      font-size: 13px;
+      color: #666;
+      margin-top: 5px;
     }
     
     .names-container {
@@ -165,6 +179,14 @@
       display: none;
     }
     
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 20px;
+      font-style: italic;
+      color: #666;
+    }
+    
     /* Responsive adjustments */
     @media screen and (max-width: 768px) {
       body {
@@ -249,8 +271,11 @@
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong> — In the name of Allah, the Most Gracious, the Most Merciful</div>
     </div>
 
-    <div class="search-box">
-      <input type="text" id="searchInput" onkeyup="searchNames()" placeholder="Search Names or Numbers...">
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="searchNames()" placeholder="Search by number, Arabic, or English name...">
+      </div>
+      <div class="search-info">Search by number (1-99), Arabic name, transliteration, or English meaning</div>
     </div>
 
     <div class="intro-link">
@@ -260,105 +285,7 @@
     <div class="instruction">Click on one of the Names</div>
 
     <div class="names-container" id="englishNamesContainer">
-      <div class="name-box"><a href="01.html"><span class="arabic">ٱلرَّحْمَٰنُ</span><br>Ar-Rahmān<br>The Beneficent</a></div>
-      <div class="name-box"><a href="02.html"><span class="arabic">ٱلرَّحِيمُ</span><br>Ar-Rahīm<br>The Merciful</a></div>
-      <div class="name-box"><a href="03.html"><span class="arabic">ٱلْمَلِكُ</span><br>Al-Malik<br>The King</a></div>
-      <div class="name-box"><a href="04.html"><span class="arabic">ٱلْقُدُّوسُ</span><br>Al-Quddūs<br>The Pure</a></div>
-      <div class="name-box"><a href="05.html"><span class="arabic">ٱلسَّلَامُ</span><br>As-Salām<br>Source of Peace</a></div>
-      <div class="name-box"><a href="06.html"><span class="arabic">ٱلْمُؤْمِنُ</span><br>Al-Mu'min<br>Giver of Security</a></div>
-      <div class="name-box"><a href="07.html"><span class="arabic">ٱلْمُهَيْمِنُ</span><br>Al-Muhaymin<br>The Guardian</a></div>
-      <div class="name-box"><a href="08.html"><span class="arabic">ٱلْعَزِيزُ</span><br>Al-ʿAzīz<br>The Almighty</a></div>
-      <div class="name-box"><a href="09.html"><span class="arabic">ٱلْجَبَّارُ</span><br>Al-Jabbār<br>The Compeller</a></div>
-      <div class="name-box"><a href="10.html"><span class="arabic">ٱلْمُتَكَبِّرُ</span><br>Al-Mutakabbir<br>The Majestic</a></div>
-      <div class="name-box"><a href="11.html"><span class="arabic">ٱلْخَالِقُ</span><br>Al-Khaaliq<br>The Creator</a></div>
-      <div class="name-box"><a href="12.html"><span class="arabic">ٱلْبَارِئُ</span><br>Al-Baari<br>The Evolver</a></div>
-      <div class="name-box"><a href="13.html"><span class="arabic">ٱلْمُصَوِّرُ</span><br>Al-Musawwir<br>The Fashioner</a></div>
-      <div class="name-box"><a href="14.html"><span class="arabic">ٱلْغَفَّارُ</span><br>Al-Ghaffar<br>The Forgiver</a></div>
-      <div class="name-box"><a href="15.html"><span class="arabic">ٱلْقَهَّارُ</span><br>Al-Qahhaar<br>The Subduer</a></div>
-      <div class="name-box"><a href="16.html"><span class="arabic">ٱلْوَهَّابُ</span><br>Al-Wahhaab<br>The Bestower</a></div>
-      <div class="name-box"><a href="17.html"><span class="arabic">ٱلرَّزَّاقُ</span><br>Ar-Razzaaq<br>The Provider</a></div>
-      <div class="name-box"><a href="18.html"><span class="arabic">ٱلْفَتَّاحُ</span><br>Al-Fattaah<br>The Opener</a></div>
-      <div class="name-box"><a href="19.html"><span class="arabic">ٱلْعَلِيمُ</span><br>Al-`Aleem<br>All-Knowing</a></div>
-      <div class="name-box"><a href="20.html"><span class="arabic">ٱلْقَابِضُ</span><br>Al-Qaabid<br>The Withholder</a></div>
-      <div class="name-box"><a href="21.html"><span class="arabic">ٱلْبَاسِطُ</span><br>Al-Baasit<br>The Extender</a></div>
-      <div class="name-box"><a href="22.html"><span class="arabic">ٱلْخَافِضُ</span><br>Al-Khaafid<br>The Reducer</a></div>
-      <div class="name-box"><a href="23.html"><span class="arabic">ٱلرَّافِعُ</span><br>Ar-Raafi`<br>The Exalter</a></div>
-      <div class="name-box"><a href="24.html"><span class="arabic">ٱلْمُعِزُّ</span><br>Al-Mu`izz<br>The Honourer</a></div>
-      <div class="name-box"><a href="25.html"><span class="arabic">ٱلْمُذِلُّ</span><br>Al-Mudhill<br>The Dishonourer</a></div>
-      <div class="name-box"><a href="26.html"><span class="arabic">ٱلسَّمِيعُ</span><br>As-Samee`<br>All-Hearing</a></div>
-      <div class="name-box"><a href="27.html"><span class="arabic">ٱلْبَصِيرُ</span><br>Al-Baseer<br>All-Seeing</a></div>
-      <div class="name-box"><a href="28.html"><span class="arabic">ٱلْحَكَمُ</span><br>Al-Hakam<br>The Judge</a></div>
-      <div class="name-box"><a href="29.html"><span class="arabic">ٱلْعَدْلُ</span><br>Al-`Adl<br>The Just</a></div>
-      <div class="name-box"><a href="30.html"><span class="arabic">ٱللَّطِيفُ</span><br>Al-Lateef<br>The Gentle</a></div>
-      <div class="name-box"><a href="31.html"><span class="arabic">ٱلْخَبِيرُ</span><br>Al-Khabeer<br>All-Aware</a></div>
-      <div class="name-box"><a href="32.html"><span class="arabic">ٱلْحَلِيمُ</span><br>Al-Haleem<br>The Forbearing</a></div>
-      <div class="name-box"><a href="33.html"><span class="arabic">ٱلْعَظِيمُ</span><br>Al-`Azeem<br>The Magnificent</a></div>
-      <div class="name-box"><a href="34.html"><span class="arabic">ٱلْغَفُور</span><br>Al-Ghafoor<br>Great Forgiver</a></div>
-      <div class="name-box"><a href="35.html"><span class="arabic">ٱلشَّكُورُ</span><br>Ash-Shakoor<br>Appreciative</a></div>
-      <div class="name-box"><a href="36.html"><span class="arabic">ٱلْعَلِيُّ</span><br>Al-`Aliyy<br>The Exalted</a></div>
-      <div class="name-box"><a href="37.html"><span class="arabic">ٱلْكَبِيرُ</span><br>Al-Kabeer<br>The Most Great</a></div>
-      <div class="name-box"><a href="38.html"><span class="arabic">ٱلْحَفِيظُ</span><br>Al-Hafeedh<br>The Preserver</a></div>
-      <div class="name-box"><a href="39.html"><span class="arabic">ٱلْمُقِيت</span><br>Al-Muqeet<br>The Sustainer</a></div>
-      <div class="name-box"><a href="40.html"><span class="arabic">ٱلْحسِيبُ</span><br>Al-Haseeb<br>The Reckoner</a></div>
-      <div class="name-box"><a href="41.html"><span class="arabic">ٱلْجَلِילُ</span><br>Al-Jaleel<br>The Majestic</a></div>
-      <div class="name-box"><a href="42.html"><span class="arabic">ٱلْكَرِيمُ</span><br>Al-Kareem<br>The Generous</a></div>
-      <div class="name-box"><a href="43.html"><span class="arabic">ٱلرَّقِيبُ</span><br>Ar-Raqeeb<br>The Watchful</a></div>
-      <div class="name-box"><a href="44.html"><span class="arabic">ٱلْمُجِيبُ</span><br>Al-Mujeeb<br>The Responsive</a></div>
-      <div class="name-box"><a href="45.html"><span class="arabic">ٱلْوَاسِعُ</span><br>Al-Waasi`<br>The All-Encompassing</a></div>
-      <div class="name-box"><a href="46.html"><span class="arabic">ٱلْحَكِيمُ</span><br>Al-Hakeem<br>The All-Wise</a></div>
-      <div class="name-box"><a href="47.html"><span class="arabic">ٱلْوَدُودُ</span><br>Al-Wadud<br>The Most Loving</a></div>
-      <div class="name-box"><a href="48.html"><span class="arabic">ٱلْمَجِيدُ</span><br>Al-Majeed<br>The Glorious</a></div>
-      <div class="name-box"><a href="49.html"><span class="arabic">ٱلْبَاعِثُ</span><br>Al-Ba'ith<br>The Infuser of Life</a></div>
-      <div class="name-box"><a href="50.html"><span class="arabic">ٱلشَّهِيدُ</span><br>Ash-Shaheed<br>The Witnessing</a></div>
-      <div class="name-box"><a href="51.html"><span class="arabic">ٱلْحَقُ</span><br>Al-Haqq<br>The Truth</a></div>
-      <div class="name-box"><a href="52.html"><span class="arabic">ٱلْوَكِילُ</span><br>Al-Wakeel<br>The Trustee</a></div>
-      <div class="name-box"><a href="53.html"><span class="arabic">ٱلْقَوِي</span><br>Al-Qawiyy<br>The All-Strong</a></div>
-      <div class="name-box"><a href="54.html"><span class="arabic">ٱلْمَتِينُ</span><br>Al-Mateen<br>The Firm</a></div>
-      <div class="name-box"><a href="55.html"><span class="arabic">ٱلْوَلِيُّ</span><br>Al-Waliyy<br>The Sole Provider</a></div>
-      <div class="name-box"><a href="56.html"><span class="arabic">ٱلْحَمِيدُ</span><br>Al-Hameed<br>The Praiseworthy</a></div>
-      <div class="name-box"><a href="57.html"><span class="arabic">ٱلْمُحْصِي</span><br>Al-Muhsee<br>The Counter</a></div>
-      <div class="name-box"><a href="58.html"><span class="arabic">ٱلْمُبْدِئُ</span><br>Al-Mubdi'<br>The Originator</a></div>
-      <div class="name-box"><a href="59.html"><span class="arabic">ٱلْمُعِيدُ</span><br>Al-Mueed<br>The Restorer</a></div>
-      <div class="name-box"><a href="60.html"><span class="arabic">ٱلْمُحْيِي</span><br>Al-Muhyi<br>Giver of Life</a></div>
-      <div class="name-box"><a href="61.html"><span class="arabic">ٱلْمُمِيتُ</span><br>Al-Mumeet<br>Creator of Death</a></div>
-      <div class="name-box"><a href="62.html"><span class="arabic">ٱلْحَيُّ</span><br>Al-Hayy<br>The Ever-Living</a></div>
-      <div class="name-box"><a href="63.html"><span class="arabic">ٱلْقَيُّومُ</span><br>Al-Qayyoom<br>The Sustainer</a></div>
-      <div class="name-box"><a href="64.html"><span class="arabic">ٱلْوَاجِدُ</span><br>Al-Waajid<br>The Perceiver</a></div>
-      <div class="name-box"><a href="65.html"><span class="arabic">ٱلْمَاجِدُ</span><br>Al-Maajid<br>The Glorious</a></div>
-      <div class="name-box"><a href="66.html"><span class="arabic">ٱلْواحِدُ</span><br>Al-Waahid<br>The Only One</a></div>
-      <div class="name-box"><a href="67.html"><span class="arabic">ٱلْأَحَدُ</span><br>Al-Ahad<br>The Absolute</a></div>
-      <div class="name-box"><a href="68.html"><span class="arabic">ٱلصَّمَدُ</span><br>As-Samad<br>The Self-Sufficient</a></div>
-      <div class="name-box"><a href="69.html"><span class="arabic">ٱلْقَادِرُ</span><br>Al-Qaadir<br>The Omnipotent</a></div>
-      <div class="name-box"><a href="70.html"><span class="arabic">ٱلْمُقْتَدِرُ</span><br>Al-Muqtadir<br>Creator of Power</a></div>
-      <div class="name-box"><a href="71.html"><span class="arabic">ٱلْمُقَدِّمُ</span><br>Al-Muqaddim<br>The Expediter</a></div>
-      <div class="name-box"><a href="72.html"><span class="arabic">ٱلْمُؤَخِّرُ</span><br>Al-Mu'akhkhir<br>The Delayer</a></div>
-      <div class="name-box"><a href="73.html"><span class="arabic">ٱلأَوَّلُ</span><br>Al-Awwal<br>The First</a></div>
-      <div class="name-box"><a href="74.html"><span class="arabic">ٱلآخِرُ</span><br>Al-Aakhir<br>The Last</a></div>
-      <div class="name-box"><a href="75.html"><span class="arabic">ٱلظَّاهِرُ</span><br>Az-Zaahir<br>The Manifest</a></div>
-      <div class="name-box"><a href="76.html"><span class="arabic">ٱلْبَاطِنُ</span><br>Al-Baatin<br>The Hidden</a></div>
-      <div class="name-box"><a href="77.html"><span class="arabic">ٱلْوَالِي</span><br>Al-Waali<br>The Governor</a></div>
-      <div class="name-box"><a href="78.html"><span class="arabic">ٱلْمُتَعَالِي</span><br>Al-Muta`aali<br>The Self Exalted</a></div>
-      <div class="name-box"><a href="79.html"><span class="arabic">ٱلْبَرُّ</span><br>Al-Barr<br>Source of Goodness</a></div>
-      <div class="name-box"><a href="80.html"><span class="arabic">ٱلتَّوَابُ</span><br>At-Tawwaab<br>Accepter of Repentance</a></div>
-      <div class="name-box"><a href="81.html"><span class="arabic">ٱلْمُنْتَقِمُ</span><br>Al-Muntaqim<br>The Avenger</a></div>
-      <div class="name-box"><a href="82.html"><span class="arabic">ٱلْعَفُو</span><br>Al-`Afuww<br>The Pardoner</a></div>
-      <div class="name-box"><a href="83.html"><span class="arabic">ٱلرَّؤُوفُ</span><br>Ar-Ra'oof<br>The Most Kind</a></div>
-      <div class="name-box"><a href="84.html"><span class="arabic">ٱلْمَالِكُ ٱلْمُلْكُ</span><br>Maalik-ul-Mulk<br>Master of Kingdom</a></div>
-      <div class="name-box"><a href="85.html"><span class="arabic">ذُوالْجَلاَلِ وَالإكْرَامِ</span><br>Dhul-Jalaali<br>Lord of Majesty</a></div>
-      <div class="name-box"><a href="86.html"><span class="arabic">ٱلْمُقْسِطُ</span><br>Al-Muqsit<br>The Just</a></div>
-      <div class="name-box"><a href="87.html"><span class="arabic">ٱلْجَامِعُ</span><br>Al-Jaami`<br>The Gatherer</a></div>
-      <div class="name-box"><a href="88.html"><span class="arabic">ٱلْغَنيُ</span><br>Al-Ghaniyy<br>The Self-Sufficient</a></div>
-      <div class="name-box"><a href="89.html"><span class="arabic">ٱلْمُغْنِي</span><br>Al-Mughni<br>The Enricher</a></div>
-      <div class="name-box"><a href="90.html"><span class="arabic">ٱلْمَانِعُ</span><br>Al-Maani`<br>The Withholder</a></div>
-      <div class="name-box"><a href="91.html"><span class="arabic">ٱلضَّارَ</span><br>Ad-Daarr<br>The Distresser</a></div>
-      <div class="name-box"><a href="92.html"><span class="arabic">ٱلنَّافِعُ</span><br>An-Naafi`<br>The Benefactor</a></div>
-      <div class="name-box"><a href="93.html"><span class="arabic">ٱلنُّورُ</span><br>An-Noor<br>The Light</a></div>
-      <div class="name-box"><a href="94.html"><span class="arabic">ٱلْهَادِي</span><br>Al-Haadi<br>The Guide</a></div>
-      <div class="name-box"><a href="95.html"><span class="arabic">ٱلْبَدِيعُ</span><br>Al-Badee`<br>The Originator</a></div>
-      <div class="name-box"><a href="96.html"><span class="arabic">ٱلْبَاقِي</span><br>Al-Baaqi<br>The Everlasting</a></div>
-      <div class="name-box"><a href="97.html"><span class="arabic">ٱلْوَارِثُ</span><br>Al-Waarith<br>The Inheritor</a></div>
-      <div class="name-box"><a href="98.html"><span class="arabic">ٱلرَّشِيدُ</span><br>Ar-Rasheed<br>The Guide</a></div>
-      <div class="name-box"><a href="99.html"><span class="arabic">ٱلصَّبُورُ</span><br>Aṣ-Ṣabūr<br>The Patient</a></div>
+      <!-- Names will be populated by JavaScript -->
     </div>
 
     <div class="reference">
@@ -373,8 +300,11 @@
       <div><strong>Bismillāhir-Raḥmānir-Raḥīm</strong></div>
     </div>
 
-    <div class="search-box">
-      <input type="text" id="searchInputIndo" onkeyup="searchNamesIndo()" placeholder="Cari Nama atau Nomor...">
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="searchInputIndo" onkeyup="searchNamesIndo()" placeholder="Cari berdasarkan nomor, Arab, atau nama Indonesia...">
+      </div>
+      <div class="search-info">Cari berdasarkan nomor (1-99), nama Arab, transliterasi, atau arti Indonesia</div>
     </div>
 
     <div class="intro-link">
@@ -384,105 +314,7 @@
     <div class="instruction">Klik salah satu Nama</div>
 
     <div class="names-container" id="indonesianNamesContainer">
-      <div class="name-box"><a href="01.html"><span class="arabic">ٱلرَّحْمَٰنُ</span><br>Ar-Rahmān<br>Maha Pengasih</a></div>
-      <div class="name-box"><a href="02.html"><span class="arabic">ٱلرَّحِيمُ</span><br>Ar-Rahīm<br>Maha Penyayang</a></div>
-      <div class="name-box"><a href="03.html"><span class="arabic">ٱلْمَلِكُ</span><br>Al-Malik<br>Maha Merajai</a></div>
-      <div class="name-box"><a href="04.html"><span class="arabic">ٱلْقُدُّوسُ</span><br>Al-Quddūs<br>Maha Suci</a></div>
-      <div class="name-box"><a href="05.html"><span class="arabic">ٱلسَّلَامُ</span><br>As-Salām<br>Pemberi Kesejahteraan</a></div>
-      <div class="name-box"><a href="06.html"><span class="arabic">ٱلْمُؤْمِنُ</span><br>Al-Mu'min<br>Pemberi Keamanan</a></div>
-      <div class="name-box"><a href="07.html"><span class="arabic">ٱلْمُهَيْمِنُ</span><br>Al-Muhaymin<br>Maha Memelihara</a></div>
-      <div class="name-box"><a href="08.html"><span class="arabic">ٱلْعَزِيزُ</span><br>Al-ʿAzīz<br>Maha Perkasa</a></div>
-      <div class="name-box"><a href="09.html"><span class="arabic">ٱلْجَبَّارُ</span><br>Al-Jabbār<br>Pemilik Kegagahan</a></div>
-      <div class="name-box"><a href="10.html"><span class="arabic">ٱلْمُتَكَبِّرُ</span><br>Al-Mutakabbir<br>Maha Megah</a></div>
-      <div class="name-box"><a href="11.html"><span class="arabic">ٱلْخَالِقُ</span><br>Al-Khaaliq<br>Maha Pencipta</a></div>
-      <div class="name-box"><a href="12.html"><span class="arabic">ٱلْبَارِئُ</span><br>Al-Baari<br>Maha Melepaskan</a></div>
-      <div class="name-box"><a href="13.html"><span class="arabic">ٱلْمُصَوِّرُ</span><br>Al-Musawwir<br>Maha Membentuk</a></div>
-      <div class="name-box"><a href="14.html"><span class="arabic">ٱلْغَفَّارُ</span><br>Al-Ghaffar<br>Maha Pengampun</a></div>
-      <div class="name-box"><a href="15.html"><span class="arabic">ٱلْقَهَّارُ</span><br>Al-Qahhaar<br>Maha Memaksa</a></div>
-      <div class="name-box"><a href="16.html"><span class="arabic">ٱلْوَهَّابُ</span><br>Al-Wahhaab<br>Pemberi Karunia</a></div>
-      <div class="name-box"><a href="17.html"><span class="arabic">ٱلرَّزَّاقُ</span><br>Ar-Razzaaq<br>Pemberi Rezeki</a></div>
-      <div class="name-box"><a href="18.html"><span class="arabic">ٱلْفَتَّاحُ</span><br>Al-Fattaah<br>Pembuka Rahmat</a></div>
-      <div class="name-box"><a href="19.html"><span class="arabic">ٱلْعَلِيمُ</span><br>Al-`Aleem<br>Maha Mengetahui</a></div>
-      <div class="name-box"><a href="20.html"><span class="arabic">ٱلْقَابِضُ</span><br>Al-Qaabid<br>Maha Menyempitkan</a></div>
-      <div class="name-box"><a href="21.html"><span class="arabic">ٱلْبَاسِطُ</span><br>Al-Baasit<br>Maha Melapangkan</a></div>
-      <div class="name-box"><a href="22.html"><span class="arabic">ٱلْخَافِضُ</span><br>Al-Khaafid<br>Maha Merendahkan</a></div>
-      <div class="name-box"><a href="23.html"><span class="arabic">ٱلرَّافِعُ</span><br>Ar-Raafi`<br>Maha Meninggikan</a></div>
-      <div class="name-box"><a href="24.html"><span class="arabic">ٱلْمُعِزُّ</span><br>Al-Mu`izz<br>Maha Memuliakan</a></div>
-      <div class="name-box"><a href="25.html"><span class="arabic">ٱلْمُذِلُّ</span><br>Al-Mudhill<br>Maha Menghinakan</a></div>
-      <div class="name-box"><a href="26.html"><span class="arabic">ٱلسَّمِيعُ</span><br>As-Samee`<br>Maha Mendengar</a></div>
-      <div class="name-box"><a href="27.html"><span class="arabic">ٱلْبَصِيرُ</span><br>Al-Baseer<br>Maha Melihat</a></div>
-      <div class="name-box"><a href="28.html"><span class="arabic">ٱلْحَكَمُ</span><br>Al-Hakam<br>Maha Menetapkan</a></div>
-      <div class="name-box"><a href="29.html"><span class="arabic">ٱلْعَدْلُ</span><br>Al-`Adl<br>Maha Adil</a></div>
-      <div class="name-box"><a href="30.html"><span class="arabic">ٱللَّطِيفُ</span><br>Al-Lateef<br>Maha Lembut</a></div>
-      <div class="name-box"><a href="31.html"><span class="arabic">ٱلْخَبِيرُ</span><br>Al-Khabeer<br>Maha Mengenal</a></div>
-      <div class="name-box"><a href="32.html"><span class="arabic">ٱلْحَلِيمُ</span><br>Al-Haleem<br>Maha Penyantun</a></div>
-      <div class="name-box"><a href="33.html"><span class="arabic">ٱلْعَظِيمُ</span><br>Al-`Azeem<br>Maha Agung</a></div>
-      <div class="name-box"><a href="34.html"><span class="arabic">ٱلْغَفُور</span><br>Al-Ghafoor<br>Maha Pengampun</a></div>
-      <div class="name-box"><a href="35.html"><span class="arabic">ٱلشَّكُورُ</span><br>Ash-Shakoor<br>Pembalas Budi</a></div>
-      <div class="name-box"><a href="36.html"><span class="arabic">ٱلْعَلِيُّ</span><br>Al-`Aliyy<br>Maha Tinggi</a></div>
-      <div class="name-box"><a href="37.html"><span class="arabic">ٱلْكَبِيرُ</span><br>Al-Kabeer<br>Maha Besar</a></div>
-      <div class="name-box"><a href="38.html"><span class="arabic">ٱلْحَفِيظُ</span><br>Al-Hafeedh<br>Maha Memelihara</a></div>
-      <div class="name-box"><a href="39.html"><span class="arabic">ٱلْمُقِيت</span><br>Al-Muqeet<br>Pemberi Kecukupan</a></div>
-      <div class="name-box"><a href="40.html"><span class="arabic">ٱلْحسِيبُ</span><br>Al-Haseeb<br>Pembuat Perhitungan</a></div>
-      <div class="name-box"><a href="41.html"><span class="arabic">ٱلْجَلِيلُ</span><br>Al-Jaleel<br>Maha Luhur</a></div>
-      <div class="name-box"><a href="42.html"><span class="arabic">ٱلْكَرِيمُ</span><br>Al-Kareem<br>Maha Pemurah</a></div>
-      <div class="name-box"><a href="43.html"><span class="arabic">ٱلرَّقِيبُ</span><br>Ar-Raqeeb<br>Maha Mengawasi</a></div>
-      <div class="name-box"><a href="44.html"><span class="arabic">ٱلْمُجِيبُ</span><br>Al-Mujeeb<br>Maha Mengabulkan</a></div>
-      <div class="name-box"><a href="45.html"><span class="arabic">ٱلْوَاسِعُ</span><br>Al-Waasi`<br>Maha Luas</a></div>
-      <div class="name-box"><a href="46.html"><span class="arabic">ٱلْحَكِيمُ</span><br>Al-Hakeem<br>Maha Bijaksana</a></div>
-      <div class="name-box"><a href="47.html"><span class="arabic">ٱلْوَدُودُ</span><br>Al-Wadud<br>Maha Mengasihi</a></div>
-      <div class="name-box"><a href="48.html"><span class="arabic">ٱلْمَجِيدُ</span><br>Al-Majeed<br>Maha Mulia</a></div>
-      <div class="name-box"><a href="49.html"><span class="arabic">ٱلْبَاعِثُ</span><br>Al-Ba'ith<br>Maha Membangkitkan</a></div>
-      <div class="name-box"><a href="50.html"><span class="arabic">ٱلشَّهِيدُ</span><br>Ash-Shaheed<br>Maha Menyaksikan</a></div>
-      <div class="name-box"><a href="51.html"><span class="arabic">ٱلْحَقُ</span><br>Al-Haqq<br>Maha Benar</a></div>
-      <div class="name-box"><a href="52.html"><span class="arabic">ٱلْوَكِيلُ</span><br>Al-Wakeel<br>Maha Memelihara</a></div>
-      <div class="name-box"><a href="53.html"><span class="arabic">ٱلْقَوِي</span><br>Al-Qawiyy<br>Maha Kuat</a></div>
-      <div class="name-box"><a href="54.html"><span class="arabic">ٱلْمَتِينُ</span><br>Al-Mateen<br>Maha Kokoh</a></div>
-      <div class="name-box"><a href="55.html"><span class="arabic">ٱلْوَلِيُّ</span><br>Al-Waliyy<br>Maha Melindungi</a></div>
-      <div class="name-box"><a href="56.html"><span class="arabic">ٱلْحَمِيدُ</span><br>Al-Hameed<br>Maha Terpuji</a></div>
-      <div class="name-box"><a href="57.html"><span class="arabic">ٱلْمُحْصِي</span><br>Al-Muhsee<br>Maha Menghitung</a></div>
-      <div class="name-box"><a href="58.html"><span class="arabic">ٱلْمُبْدِئُ</span><br>Al-Mubdi'<br>Maha Memulai</a></div>
-      <div class="name-box"><a href="59.html"><span class="arabic">ٱلْمُعِيدُ</span><br>Al-Mueed<br>Mengembalikan Kehidupan</a></div>
-      <div class="name-box"><a href="60.html"><span class="arabic">ٱلْمُحْyِي</span><br>Al-Muhyi<br>Maha Menghidupkan</a></div>
-      <div class="name-box"><a href="61.html"><span class="arabic">ٱلْمُمِيتُ</span><br>Al-Mumeet<br>Maha Mematikan</a></div>
-      <div class="name-box"><a href="62.html"><span class="arabic">ٱلْحَيُّ</span><br>Al-Hayy<br>Maha Hidup</a></div>
-      <div class="name-box"><a href="63.html"><span class="arabic">ٱلْقَيُّومُ</span><br>Al-Qayyoom<br>Maha Mandiri</a></div>
-      <div class="name-box"><a href="64.html"><span class="arabic">ٱلْوَاجِdُ</span><br>Al-Waajid<br>Maha Penemu</a></div>
-      <div class="name-box"><a href="65.html"><span class="arabic">ٱلْمَاجِدُ</span><br>Al-Maajid<br>Maha Mulia</a></div>
-      <div class="name-box"><a href="66.html"><span class="arabic">ٱلْواحِدُ</span><br>Al-Waahid<br>Maha Tunggal</a></div>
-      <div class="name-box"><a href="67.html"><span class="arabic">ٱلْأَحَدُ</span><br>Al-Ahad<br>Maha Esa</a></div>
-      <div class="name-box"><a href="68.html"><span class="arabic">ٱلصَّمَدُ</span><br>As-Samad<br>Maha Dibutuhkan</a></div>
-      <div class="name-box"><a href="69.html"><span class="arabic">ٱلْقَادِرُ</span><br>Al-Qaadir<br>Maha Menentukan</a></div>
-      <div class="name-box"><a href="70.html"><span class="arabic">ٱلْمُقْتَدِرُ</span><br>Al-Muqtadir<br>Maha Berkuasa</a></div>
-      <div class="name-box"><a href="71.html"><span class="arabic">ٱلْمُقَدِّمُ</span><br>Al-Muqaddim<br>Maha Mendahulukan</a></div>
-      <div class="name-box"><a href="72.html"><span class="arabic">ٱلْمُؤَخِّرُ</span><br>Al-Mu'akhkhir<br>Maha Mengakhirkan</a></div>
-      <div class="name-box"><a href="73.html"><span class="arabic">ٱلأَوَّلُ</span><br>Al-Awwal<br>Maha Awal</a></div>
-      <div class="name-box"><a href="74.html"><span class="arabic">ٱلآخِرُ</span><br>Al-Aakhir<br>Maha Akhir</a></div>
-      <div class="name-box"><a href="75.html"><span class="arabic">ٱلظَّاهِرُ</span><br>Az-Zaahir<br>Maha Nyata</a></div>
-      <div class="name-box"><a href="76.html"><span class="arabic">ٱلْبَاطِنُ</span><br>Al-Baatin<br>Maha Ghaib</a></div>
-      <div class="name-box"><a href="77.html"><span class="arabic">ٱلْوَالِي</span><br>Al-Waali<br>Maha Memerintah</a></div>
-      <div class="name-box"><a href="78.html"><span class="arabic">ٱلْمُتَعَالِي</span><br>Al-Muta`aali<br>Maha Tinggi</a></div>
-      <div class="name-box"><a href="79.html"><span class="arabic">ٱلْبَرُّ</span><br>Al-Barr<br>Maha Penderma</a></div>
-      <div class="name-box"><a href="80.html"><span class="arabic">ٱلتَّوَابُ</span><br>At-Tawwaab<br>Penerima Tobat</a></div>
-      <div class="name-box"><a href="81.html"><span class="arabic">ٱلْمُنْتَقِمُ</span><br>Al-Muntaqim<br>Penuntut Balas</a></div>
-      <div class="name-box"><a href="82.html"><span class="arabic">ٱلْعَفُو</span><br>Al-`Afuww<br>Maha Pemaaf</a></div>
-      <div class="name-box"><a href="83.html"><span class="arabic">ٱلرَّؤُوفُ</span><br>Ar-Ra'oof<br>Maha Pengasuh</a></div>
-      <div class="name-box"><a href="84.html"><span class="arabic">ٱلْمَالِكُ ٱلْمُلْكُ</span><br>Maalik-ul-Mulk<br>Penguasa Kerajaan</a></div>
-      <div class="name-box"><a href="85.html"><span class="arabic">ذُوالْجَلاَلِ وَالإكْرَامِ</span><br>Dhul-Jalaali<br>Pemilik Kebesaran</a></div>
-      <div class="name-box"><a href="86.html"><span class="arabic">ٱلْمُقْسِطُ</span><br>Al-Muqsit<br>Maha Adil</a></div>
-      <div class="name-box"><a href="87.html"><span class="arabic">ٱلْجَامِعُ</span><br>Al-Jaami`<br>Maha Mengumpulkan</a></div>
-      <div class="name-box"><a href="88.html"><span class="arabic">ٱلْغَنيُ</span><br>Al-Ghaniyy<br>Maha Kaya</a></div>
-      <div class="name-box"><a href="89.html"><span class="arabic">ٱلْمُغْنِي</span><br>Al-Mughni<br>Pemberi Kekayaan</a></div>
-      <div class="name-box"><a href="90.html"><span class="arabic">ٱلْمَانِعُ</span><br>Al-Maani`<br>Maha Mencegah</a></div>
-      <div class="name-box"><a href="91.html"><span class="arabic">ٱلضَّارَ</span><br>Ad-Daarr<br>Pemberi Derita</a></div>
-      <div class="name-box"><a href="92.html"><span class="arabic">ٱلنَّافِعُ</span><br>An-Naafi`<br>Pemberi Manfaat</a></div>
-      <div class="name-box"><a href="93.html"><span class="arabic">ٱلنُّورُ</span><br>An-Noor<br>Maha Bercahaya</a></div>
-      <div class="name-box"><a href="94.html"><span class="arabic">ٱلْهَادِي</span><br>Al-Haadi<br>Pemberi Petunjuk</a></div>
-      <div class="name-box"><a href="95.html"><span class="arabic">ٱلْبَدِيعُ</span><br>Al-Badee`<br>Maha Pencipta</a></div>
-      <div class="name-box"><a href="96.html"><span class="arabic">ٱلْبَاقِي</span><br>Al-Baaqi<br>Maha Kekal</a></div>
-      <div class="name-box"><a href="97.html"><span class="arabic">ٱلْوَارِثُ</span><br>Al-Waarith<br>Maha Pewaris</a></div>
-      <div class="name-box"><a href="98.html"><span class="arabic">ٱلرَّشِيدُ</span><br>Ar-Rasheed<br>Maha Pandai</a></div>
-      <div class="name-box"><a href="99.html"><span class="arabic">ٱلصَّبُورُ</span><br>Aṣ-Ṣabūr<br>Maha Sabar</a></div>
+      <!-- Names will be populated by JavaScript -->
     </div>
 
     <div class="reference">
@@ -495,6 +327,109 @@
   </footer>
 
   <script>
+    // Names data structure
+    const namesData = [
+      { number: 1, arabic: "ٱلرَّحْمَٰنُ", transliteration: "Ar-Rahmān", english: "The Beneficent", indonesian: "Maha Pengasih" },
+      { number: 2, arabic: "ٱلرَّحِيمُ", transliteration: "Ar-Rahīm", english: "The Merciful", indonesian: "Maha Penyayang" },
+      { number: 3, arabic: "ٱلْمَلِكُ", transliteration: "Al-Malik", english: "The King", indonesian: "Maha Merajai" },
+      { number: 4, arabic: "ٱلْقُدُّوسُ", transliteration: "Al-Quddūs", english: "The Pure", indonesian: "Maha Suci" },
+      { number: 5, arabic: "ٱلسَّلَامُ", transliteration: "As-Salām", english: "Source of Peace", indonesian: "Pemberi Kesejahteraan" },
+      { number: 6, arabic: "ٱلْمُؤْمِنُ", transliteration: "Al-Mu'min", english: "Giver of Security", indonesian: "Pemberi Keamanan" },
+      { number: 7, arabic: "ٱلْمُهَيْمِنُ", transliteration: "Al-Muhaymin", english: "The Guardian", indonesian: "Maha Memelihara" },
+      { number: 8, arabic: "ٱلْعَزِيزُ", transliteration: "Al-ʿAzīz", english: "The Almighty", indonesian: "Maha Perkasa" },
+      { number: 9, arabic: "ٱلْجَبَّارُ", transliteration: "Al-Jabbār", english: "The Compeller", indonesian: "Pemilik Kegagahan" },
+      { number: 10, arabic: "ٱلْمُتَكَبِّرُ", transliteration: "Al-Mutakabbir", english: "The Majestic", indonesian: "Maha Megah" },
+      { number: 11, arabic: "ٱلْخَالِقُ", transliteration: "Al-Khaaliq", english: "The Creator", indonesian: "Maha Pencipta" },
+      { number: 12, arabic: "ٱلْبَارِئُ", transliteration: "Al-Baari", english: "The Evolver", indonesian: "Maha Melepaskan" },
+      { number: 13, arabic: "ٱلْمُصَوِّرُ", transliteration: "Al-Musawwir", english: "The Fashioner", indonesian: "Maha Membentuk" },
+      { number: 14, arabic: "ٱلْغَفَّارُ", transliteration: "Al-Ghaffar", english: "The Forgiver", indonesian: "Maha Pengampun" },
+      { number: 15, arabic: "ٱلْقَهَّارُ", transliteration: "Al-Qahhaar", english: "The Subduer", indonesian: "Maha Memaksa" },
+      { number: 16, arabic: "ٱلْوَهَّابُ", transliteration: "Al-Wahhaab", english: "The Bestower", indonesian: "Pemberi Karunia" },
+      { number: 17, arabic: "ٱلرَّزَّاقُ", transliteration: "Ar-Razzaaq", english: "The Provider", indonesian: "Pemberi Rezeki" },
+      { number: 18, arabic: "ٱلْفَتَّاحُ", transliteration: "Al-Fattaah", english: "The Opener", indonesian: "Pembuka Rahmat" },
+      { number: 19, arabic: "ٱلْعَلِيمُ", transliteration: "Al-`Aleem", english: "All-Knowing", indonesian: "Maha Mengetahui" },
+      { number: 20, arabic: "ٱلْقَابِضُ", transliteration: "Al-Qaabid", english: "The Withholder", indonesian: "Maha Menyempitkan" },
+      { number: 21, arabic: "ٱلْبَاسِطُ", transliteration: "Al-Baasit", english: "The Extender", indonesian: "Maha Melapangkan" },
+      { number: 22, arabic: "ٱلْخَافِضُ", transliteration: "Al-Khaafid", english: "The Reducer", indonesian: "Maha Merendahkan" },
+      { number: 23, arabic: "ٱلرَّافِعُ", transliteration: "Ar-Raafi`", english: "The Exalter", indonesian: "Maha Meninggikan" },
+      { number: 24, arabic: "ٱلْمُعِزُّ", transliteration: "Al-Mu`izz", english: "The Honourer", indonesian: "Maha Memuliakan" },
+      { number: 25, arabic: "ٱلْمُذِلُّ", transliteration: "Al-Mudhill", english: "The Dishonourer", indonesian: "Maha Menghinakan" },
+      { number: 26, arabic: "ٱلسَّمِيعُ", transliteration: "As-Samee`", english: "All-Hearing", indonesian: "Maha Mendengar" },
+      { number: 27, arabic: "ٱلْبَصِيرُ", transliteration: "Al-Baseer", english: "All-Seeing", indonesian: "Maha Melihat" },
+      { number: 28, arabic: "ٱلْحَكَمُ", transliteration: "Al-Hakam", english: "The Judge", indonesian: "Maha Menetapkan" },
+      { number: 29, arabic: "ٱلْعَدْلُ", transliteration: "Al-`Adl", english: "The Just", indonesian: "Maha Adil" },
+      { number: 30, arabic: "ٱللَّطِيفُ", transliteration: "Al-Lateef", english: "The Gentle", indonesian: "Maha Lembut" },
+      { number: 31, arabic: "ٱلْخَبِيرُ", transliteration: "Al-Khabeer", english: "All-Aware", indonesian: "Maha Mengenal" },
+      { number: 32, arabic: "ٱلْحَلِيمُ", transliteration: "Al-Haleem", english: "The Forbearing", indonesian: "Maha Penyantun" },
+      { number: 33, arabic: "ٱلْعَظِيمُ", transliteration: "Al-`Azeem", english: "The Magnificent", indonesian: "Maha Agung" },
+      { number: 34, arabic: "ٱلْغَفُور", transliteration: "Al-Ghafoor", english: "Great Forgiver", indonesian: "Maha Pengampun" },
+      { number: 35, arabic: "ٱلشَّكُورُ", transliteration: "Ash-Shakoor", english: "Appreciative", indonesian: "Pembalas Budi" },
+      { number: 36, arabic: "ٱلْعَلِيُّ", transliteration: "Al-`Aliyy", english: "The Exalted", indonesian: "Maha Tinggi" },
+      { number: 37, arabic: "ٱلْكَبِيرُ", transliteration: "Al-Kabeer", english: "The Most Great", indonesian: "Maha Besar" },
+      { number: 38, arabic: "ٱلْحَفِيظُ", transliteration: "Al-Hafeedh", english: "The Preserver", indonesian: "Maha Memelihara" },
+      { number: 39, arabic: "ٱلْمُقِيت", transliteration: "Al-Muqeet", english: "The Sustainer", indonesian: "Pemberi Kecukupan" },
+      { number: 40, arabic: "ٱلْحسِيبُ", transliteration: "Al-Haseeb", english: "The Reckoner", indonesian: "Pembuat Perhitungan" },
+      { number: 41, arabic: "ٱلْجَلِيلُ", transliteration: "Al-Jaleel", english: "The Majestic", indonesian: "Maha Luhur" },
+      { number: 42, arabic: "ٱلْكَرِيمُ", transliteration: "Al-Kareem", english: "The Generous", indonesian: "Maha Pemurah" },
+      { number: 43, arabic: "ٱلرَّقِيبُ", transliteration: "Ar-Raqeeb", english: "The Watchful", indonesian: "Maha Mengawasi" },
+      { number: 44, arabic: "ٱلْمُجِيبُ", transliteration: "Al-Mujeeb", english: "The Responsive", indonesian: "Maha Mengabulkan" },
+      { number: 45, arabic: "ٱلْوَاسِعُ", transliteration: "Al-Waasi`", english: "The All-Encompassing", indonesian: "Maha Luas" },
+      { number: 46, arabic: "ٱلْحَكِيمُ", transliteration: "Al-Hakeem", english: "The All-Wise", indonesian: "Maha Bijaksana" },
+      { number: 47, arabic: "ٱلْوَدُودُ", transliteration: "Al-Wadud", english: "The Most Loving", indonesian: "Maha Mengasihi" },
+      { number: 48, arabic: "ٱلْمَجِيدُ", transliteration: "Al-Majeed", english: "The Glorious", indonesian: "Maha Mulia" },
+      { number: 49, arabic: "ٱلْبَاعِثُ", transliteration: "Al-Ba'ith", english: "The Infuser of Life", indonesian: "Maha Membangkitkan" },
+      { number: 50, arabic: "ٱلشَّهِيدُ", transliteration: "Ash-Shaheed", english: "The Witnessing", indonesian: "Maha Menyaksikan" },
+      { number: 51, arabic: "ٱلْحَقُ", transliteration: "Al-Haqq", english: "The Truth", indonesian: "Maha Benar" },
+      { number: 52, arabic: "ٱلْوَكِيلُ", transliteration: "Al-Wakeel", english: "The Trustee", indonesian: "Maha Memelihara" },
+      { number: 53, arabic: "ٱلْقَوِي", transliteration: "Al-Qawiyy", english: "The All-Strong", indonesian: "Maha Kuat" },
+      { number: 54, arabic: "ٱلْمَتِينُ", transliteration: "Al-Mateen", english: "The Firm", indonesian: "Maha Kokoh" },
+      { number: 55, arabic: "ٱلْوَلِيُّ", transliteration: "Al-Waliyy", english: "The Sole Provider", indonesian: "Maha Melindungi" },
+      { number: 56, arabic: "ٱلْحَمِيدُ", transliteration: "Al-Hameed", english: "The Praiseworthy", indonesian: "Maha Terpuji" },
+      { number: 57, arabic: "ٱلْمُحْصِي", transliteration: "Al-Muhsee", english: "The Counter", indonesian: "Maha Menghitung" },
+      { number: 58, arabic: "ٱلْمُبْدِئُ", transliteration: "Al-Mubdi'", english: "The Originator", indonesian: "Maha Memulai" },
+      { number: 59, arabic: "ٱلْمُعِيدُ", transliteration: "Al-Mueed", english: "The Restorer", indonesian: "Mengembalikan Kehidupan" },
+      { number: 60, arabic: "ٱلْمُحْيِي", transliteration: "Al-Muhyi", english: "Giver of Life", indonesian: "Maha Menghidupkan" },
+      { number: 61, arabic: "ٱلْمُمِيتُ", transliteration: "Al-Mumeet", english: "Creator of Death", indonesian: "Maha Mematikan" },
+      { number: 62, arabic: "ٱلْحَيُّ", transliteration: "Al-Hayy", english: "The Ever-Living", indonesian: "Maha Hidup" },
+      { number: 63, arabic: "ٱلْقَيُّومُ", transliteration: "Al-Qayyoom", english: "The Sustainer", indonesian: "Maha Mandiri" },
+      { number: 64, arabic: "ٱلْوَاجِدُ", transliteration: "Al-Waajid", english: "The Perceiver", indonesian: "Maha Penemu" },
+      { number: 65, arabic: "ٱلْمَاجِدُ", transliteration: "Al-Maajid", english: "The Glorious", indonesian: "Maha Mulia" },
+      { number: 66, arabic: "ٱلْواحِدُ", transliteration: "Al-Waahid", english: "The Only One", indonesian: "Maha Tunggal" },
+      { number: 67, arabic: "ٱلْأَحَدُ", transliteration: "Al-Ahad", english: "The Absolute", indonesian: "Maha Esa" },
+      { number: 68, arabic: "ٱلصَّمَدُ", transliteration: "As-Samad", english: "The Self-Sufficient", indonesian: "Maha Dibutuhkan" },
+      { number: 69, arabic: "ٱلْقَادِرُ", transliteration: "Al-Qaadir", english: "The Omnipotent", indonesian: "Maha Menentukan" },
+      { number: 70, arabic: "ٱلْمُقْتَدِرُ", transliteration: "Al-Muqtadir", english: "Creator of Power", indonesian: "Maha Berkuasa" },
+      { number: 71, arabic: "ٱلْمُقَدِّمُ", transliteration: "Al-Muqaddim", english: "The Expediter", indonesian: "Maha Mendahulukan" },
+      { number: 72, arabic: "ٱلْمُؤَخِّرُ", transliteration: "Al-Mu'akhkhir", english: "The Delayer", indonesian: "Maha Mengakhirkan" },
+      { number: 73, arabic: "ٱلأَوَّلُ", transliteration: "Al-Awwal", english: "The First", indonesian: "Maha Awal" },
+      { number: 74, arabic: "ٱلآخِرُ", transliteration: "Al-Aakhir", english: "The Last", indonesian: "Maha Akhir" },
+      { number: 75, arabic: "ٱلظَّاهِرُ", transliteration: "Az-Zaahir", english: "The Manifest", indonesian: "Maha Nyata" },
+      { number: 76, arabic: "ٱلْبَاطِنُ", transliteration: "Al-Baatin", english: "The Hidden", indonesian: "Maha Ghaib" },
+      { number: 77, arabic: "ٱلْوَالِي", transliteration: "Al-Waali", english: "The Governor", indonesian: "Maha Memerintah" },
+      { number: 78, arabic: "ٱلْمُتَعَالِي", transliteration: "Al-Muta`aali", english: "The Self Exalted", indonesian: "Maha Tinggi" },
+      { number: 79, arabic: "ٱلْبَرُّ", transliteration: "Al-Barr", english: "Source of Goodness", indonesian: "Maha Penderma" },
+      { number: 80, arabic: "ٱلتَّوَابُ", transliteration: "At-Tawwaab", english: "Accepter of Repentance", indonesian: "Penerima Tobat" },
+      { number: 81, arabic: "ٱلْمُنْتَقِمُ", transliteration: "Al-Muntaqim", english: "The Avenger", indonesian: "Penuntut Balas" },
+      { number: 82, arabic: "ٱلْعَفُو", transliteration: "Al-`Afuww", english: "The Pardoner", indonesian: "Maha Pemaaf" },
+      { number: 83, arabic: "ٱلرَّؤُوفُ", transliteration: "Ar-Ra'oof", english: "The Most Kind", indonesian: "Maha Pengasuh" },
+      { number: 84, arabic: "ٱلْمَالِكُ ٱلْمُلْكُ", transliteration: "Maalik-ul-Mulk", english: "Master of Kingdom", indonesian: "Penguasa Kerajaan" },
+      { number: 85, arabic: "ذُوالْجَلاَلِ وَالإكْرَامِ", transliteration: "Dhul-Jalaali", english: "Lord of Majesty", indonesian: "Pemilik Kebesaran" },
+      { number: 86, arabic: "ٱلْمُقْسِطُ", transliteration: "Al-Muqsit", english: "The Just", indonesian: "Maha Adil" },
+      { number: 87, arabic: "ٱلْجَامِعُ", transliteration: "Al-Jaami`", english: "The Gatherer", indonesian: "Maha Mengumpulkan" },
+      { number: 88, arabic: "ٱلْغَنيُ", transliteration: "Al-Ghaniyy", english: "The Self-Sufficient", indonesian: "Maha Kaya" },
+      { number: 89, arabic: "ٱلْمُغْنِي", transliteration: "Al-Mughni", english: "The Enricher", indonesian: "Pemberi Kekayaan" },
+      { number: 90, arabic: "ٱلْمَانِعُ", transliteration: "Al-Maani`", english: "The Withholder", indonesian: "Maha Mencegah" },
+      { number: 91, arabic: "ٱلضَّارَ", transliteration: "Ad-Daarr", english: "The Distresser", indonesian: "Pemberi Derita" },
+      { number: 92, arabic: "ٱلنَّافِعُ", transliteration: "An-Naafi`", english: "The Benefactor", indonesian: "Pemberi Manfaat" },
+      { number: 93, arabic: "ٱلنُّورُ", transliteration: "An-Noor", english: "The Light", indonesian: "Maha Bercahaya" },
+      { number: 94, arabic: "ٱلْهَادِي", transliteration: "Al-Haadi", english: "The Guide", indonesian: "Pemberi Petunjuk" },
+      { number: 95, arabic: "ٱلْبَدِيعُ", transliteration: "Al-Badee`", english: "The Originator", indonesian: "Maha Pencipta" },
+      { number: 96, arabic: "ٱلْبَاقِي", transliteration: "Al-Baaqi", english: "The Everlasting", indonesian: "Maha Kekal" },
+      { number: 97, arabic: "ٱلْوَارِثُ", transliteration: "Al-Waarith", english: "The Inheritor", indonesian: "Maha Pewaris" },
+      { number: 98, arabic: "ٱلرَّشِيدُ", transliteration: "Ar-Rasheed", english: "The Guide", indonesian: "Maha Pandai" },
+      { number: 99, arabic: "ٱلصَّبُورُ", transliteration: "Aṣ-Ṣabūr", english: "The Patient", indonesian: "Maha Sabar" }
+    ];
+
     // Check for saved language preference or set default to Indonesian
     function getPreferredLanguage() {
       return localStorage.getItem('language') || 'indonesian';
@@ -518,6 +453,119 @@
       }
     }
 
+    // Populate names in the containers
+    function populateNames() {
+      const englishContainer = document.getElementById('englishNamesContainer');
+      const indonesianContainer = document.getElementById('indonesianNamesContainer');
+      
+      // Clear existing content
+      englishContainer.innerHTML = '';
+      indonesianContainer.innerHTML = '';
+      
+      // Add names to containers
+      namesData.forEach(name => {
+        // English version
+        const englishBox = document.createElement('div');
+        englishBox.className = 'name-box';
+        englishBox.innerHTML = `<a href="${name.number.toString().padStart(2, '0')}.html"><span class="arabic">${name.arabic}</span><br>${name.number}. ${name.transliteration}<br>${name.english}</a>`;
+        englishContainer.appendChild(englishBox);
+        
+        // Indonesian version
+        const indonesianBox = document.createElement('div');
+        indonesianBox.className = 'name-box';
+        indonesianBox.innerHTML = `<a href="${name.number.toString().padStart(2, '0')}.html"><span class="arabic">${name.arabic}</span><br>${name.number}. ${name.transliteration}<br>${name.indonesian}</a>`;
+        indonesianContainer.appendChild(indonesianBox);
+      });
+    }
+
+    // Search Function for English
+    function searchNames() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const boxes = document.querySelectorAll("#english-content .name-box");
+      let hasResults = false;
+      
+      if (input === '') {
+        boxes.forEach(box => {
+          box.style.display = "flex";
+        });
+        document.getElementById('englishNamesContainer').querySelector('.no-results')?.remove();
+        return;
+      }
+      
+      for (let box of boxes) {
+        const text = box.innerText.toLowerCase();
+        if (text.includes(input) || 
+            text.startsWith(input) || 
+            text.includes(` ${input}`) ||
+            (input.length <= 2 && text.startsWith(input + '.')) ||
+            (input.length <= 2 && text.startsWith(input + ' '))) {
+          box.style.display = "flex";
+          hasResults = true;
+        } else {
+          box.style.display = "none";
+        }
+      }
+      
+      // Show no results message if needed
+      const container = document.getElementById('englishNamesContainer');
+      const existingMessage = container.querySelector('.no-results');
+      
+      if (!hasResults) {
+        if (!existingMessage) {
+          const noResults = document.createElement('div');
+          noResults.className = 'no-results';
+          noResults.textContent = 'No names found matching your search.';
+          container.appendChild(noResults);
+        }
+      } else if (existingMessage) {
+        existingMessage.remove();
+      }
+    }
+
+    // Search Function for Indonesian
+    function searchNamesIndo() {
+      const input = document.getElementById("searchInputIndo").value.toLowerCase();
+      const boxes = document.querySelectorAll("#indonesian-content .name-box");
+      let hasResults = false;
+      
+      if (input === '') {
+        boxes.forEach(box => {
+          box.style.display = "flex";
+        });
+        document.getElementById('indonesianNamesContainer').querySelector('.no-results')?.remove();
+        return;
+      }
+      
+      for (let box of boxes) {
+        const text = box.innerText.toLowerCase();
+        if (text.includes(input) || 
+            text.startsWith(input) || 
+            text.includes(` ${input}`) ||
+            (input.length <= 2 && text.startsWith(input + '.')) ||
+            (input.length <= 2 && text.startsWith(input + ' '))) {
+          box.style.display = "flex";
+          hasResults = true;
+        } else {
+          box.style.display = "none";
+        }
+      }
+      
+      // Show no results message if needed
+      const container = document.getElementById('indonesianNamesContainer');
+      const existingMessage = container.querySelector('.no-results');
+      
+      if (!hasResults) {
+        if (!existingMessage) {
+          const noResults = document.createElement('div');
+          noResults.className = 'no-results';
+          noResults.textContent = 'Tidak ada nama yang cocok dengan pencarian Anda.';
+          container.appendChild(noResults);
+        }
+      } else if (existingMessage) {
+        existingMessage.remove();
+      }
+    }
+
     // Language Toggle
     document.getElementById('languageToggle').addEventListener('click', function() {
       const englishContent = document.getElementById('english-content');
@@ -536,58 +584,11 @@
       }
     });
 
-    // Search Function for English
-    function searchNames() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const boxes = document.querySelectorAll("#english-content .name-box");
-      
-      if (input === '') {
-        boxes.forEach(box => box.style.display = "flex");
-        return;
-      }
-      
-      let found = false;
-      for (let box of boxes) {
-        const text = box.innerText.toLowerCase();
-        if (text.includes(input) || text.startsWith(input)) {
-          box.style.display = "flex";
-          if (!found) {
-            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            found = true;
-          }
-        } else {
-          box.style.display = "none";
-        }
-      }
-    }
-
-    // Search Function for Indonesian
-    function searchNamesIndo() {
-      const input = document.getElementById("searchInputIndo").value.toLowerCase();
-      const boxes = document.querySelectorAll("#indonesian-content .name-box");
-      
-      if (input === '') {
-        boxes.forEach(box => box.style.display = "flex");
-        return;
-      }
-      
-      let found = false;
-      for (let box of boxes) {
-        const text = box.innerText.toLowerCase();
-        if (text.includes(input) || text.startsWith(input)) {
-          box.style.display = "flex";
-          if (!found) {
-            box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            found = true;
-          }
-        } else {
-          box.style.display = "none";
-        }
-      }
-    }
-
-    // Initialize the page with the preferred language
-    document.addEventListener('DOMContentLoaded', setInitialLanguage);
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      setInitialLanguage();
+      populateNames();
+    });
   </script>
 </body>
 </html>
