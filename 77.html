@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,8 @@
             margin: 20px 0;
             font-weight: bold;
             color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            line-height: 2;
         }
         .transliteration {
             font-style: italic;
@@ -136,6 +137,19 @@
             text-align: center;
             margin: 15px 0;
         }
+        .top-home-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .top-home-link:hover {
+            background-color: #ebf5fb;
+        }
         footer {
             text-align: center;
             margin-top: 40px;
@@ -168,20 +182,25 @@
                 margin: 10px 0;
                 display: inline-block;
             }
+            .top-home-link {
+                margin-bottom: 15px;
+            }
         }
     </style>
+    <!-- Adding Uthmanic Script HAFS font for proper Arabic display -->
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+        <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
+
             <h1 class="name-title">77. Al-Wali (Yang Maha Melindungi dan Memerintah)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> | <a href="https://myislam.org/99-names-of-allah/al-wali/" target="_blank">myislam.org</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> | <a href="https://myislam.org/99-names-of-allah/al-wali/" target="_blank">myislam.org</a> | <a href="https://islam.nu.or.id/akidah/asmaul-husna-al-waliy-7h6gQ" target="_blank">Kementerian Agama RI</a></div>
 
             <div class="arabic">ٱلْوَلِيُّ</div>
             <div class="transliteration">Transliterasi: Al-Wali</div>
@@ -201,7 +220,7 @@
                     <li><strong>Yang Maha Melindungi:</strong> Penjaga yang mengurus urusan hamba-hamba-Nya</li>
                     <li><strong>Yang Maha Memerintah:</strong> Penguasa yang mengatur semua ciptaan dengan hikmah sempurna</li>
                 </ul>
-                <p>Menurut <a href="https://islam.nu.or.id/akidah/asmaul-husna-al-waliy-7h6gQ" target="_blank">NU Online</a>, Al-Wali adalah Allah yang melindungi dan memimpin hamba-hamba-Nya yang beriman. Ibnu Qayyim menjelaskan: "Al-Wali adalah Yang khusus menjaga hamba-hamba-Nya yang beriman, melindungi mereka dari bahaya dan membimbing urusan mereka. Dia juga Penguasa sejati alam semesta, mengatur segala hal dengan hikmah sempurna."</p>
+                <p>Menurut <a href="https://islam.nu.or.id/akidah/asmaul-husna-al-waliy-7h6gQ" target="_blank">NU Online</a> dan <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>, Al-Wali adalah Allah yang melindungi dan memimpin hamba-hamba-Nya yang beriman. Ibnu Qayyim menjelaskan: "Al-Wali adalah Yang khusus menjaga hamba-hamba-Nya yang beriman, melindungi mereka dari bahaya dan membimbing urusan mereka. Dia juga Penguasa sejati alam semesta, mengatur segala hal dengan hikmah sempurna."</p>
             </div>
 
             <div class="section">
@@ -226,6 +245,17 @@
                     <p>"Allah Pelindung orang-orang yang beriman. Dia mengeluarkan mereka dari kegelapan kepada cahaya."</p>
                     <div class="tafsir-box">
                         <strong><a href="https://tafsirweb.com/324-surat-al-baqarah-ayat-257.html" target="_blank">Tafsir Kementerian Agama RI</a>:</strong> Ayat ini menunjukkan hubungan khusus Al-Wali dengan orang beriman, membimbing mereka dari kebodohan kepada pengetahuan, dari kesesatan kepada petunjuk, dan dari kegelapan kepada cahaya.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Referensi Al-Quran:</strong> 
+                    <a href="https://quranwbw.com/10:62" target="_blank">Surah Yunus 10:62</a>
+                    <div class="arabic">أَلَآ إِنَّ أَوْلِيَآءَ ٱللَّهِ لَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ</div>
+                    <div class="transliteration">Alā inna awliyā'a llāhi lā khawfun 'alayhim wa lā hum yaḥzanūn</div>
+                    <p>"Ingatlah, sesungguhnya wali-wali Allah itu tidak ada kekhawatiran terhadap mereka dan tidak (pula) mereka bersedih hati."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://tafsirweb.com/1900-surat-yunus-ayat-62.html" target="_blank">Tafsir Kementerian Agama RI</a>:</strong> Ayat ini menjanjikan keamanan dan ketenangan bagi para wali Allah (kekasih-kekasih-Nya), menunjukkan hasil dari perlindungan Al-Wali.
                     </div>
                 </div>
 
@@ -275,7 +305,7 @@
                         <li>Memperkuat ketergantungan pada penjagaan ilahi</li>
                         <li>Menghubungkan dengan keadaan hamba-hamba shaleh</li>
                     </ul>
-                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Orang yang penyayang akan disayangi oleh Ar-Rahman. Sayangilah yang ada di bumi, niscaya Yang di langit akan menyayangimu" (Tirmidhi). Praktik ini mengubah pemahaman tentang rahmat menjadi tindakan nyata.</p>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa yang membaca 'Hasbiyallahu la ilaha illa huwa, 'alayhi tawakkaltu, wa huwa Rabbul 'arsyil 'azim' (Cukuplah Allah bagiku, tidak ada tuhan selain Dia, hanya kepada-Nya aku bertawakal, dan Dia adalah Tuhan pemilik 'Arsy yang agung) sebanyak tujuh kali pada pagi dan sore, Allah akan mencukupkan untuknya segala urusannya." (HR. Abu Daud)</p>
                 </div>
 
                 <div class="amalan">
@@ -316,17 +346,17 @@
                 <p>Dalam Surah Al-Jathiyah (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>), Allah menyatakan: "Sesungguhnya mereka tidak akan dapat menolak dari kamu sedikit pun dari (siksaan) Allah. Dan sesungguhnya orang-orang yang zalim itu sebagian mereka menjadi penolong bagi sebagian yang lain, dan Allah adalah pelindung orang-orang yang bertakwa." Ini menunjukkan bagaimana Al-Wali membentuk ikatan khusus dengan yang berjuang di jalan-Nya.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <a href="index.html" class="top-home-link">&larr; Back to Main Menu</a>
+
             <h1 class="name-title">77. Al-Wali (The Protecting Friend, The Governor)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-wali/" target="_blank">myislam.org/99-names-of-allah/al-wali/</a></div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
-            
             <!-- Bonus section only in English -->
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
@@ -383,6 +413,17 @@
                     <p>"Allah is the Protector of those who believe. He brings them out from darknesses into the light."</p>
                     <div class="tafsir-box">
                         <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/2/257/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse shows Al-Wali's special relationship with believers, guiding them from ignorance to knowledge, from misguidance to guidance, and from darkness to light.
+                    </div>
+                </div>
+
+                <div class="dalil-item">
+                    <strong>Quranic Reference:</strong> 
+                    <a href="https://quranwbw.com/10:62" target="_blank">Surah Yunus 10:62</a>
+                    <div class="arabic">أَلَآ إِنَّ أَوْلِيَآءَ ٱللَّهِ لَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ</div>
+                    <div class="transliteration">Alā inna awliyā'a llāhi lā khawfun 'alayhim wa lā hum yaḥzanūn</div>
+                    <p>"Unquestionably, [for] the allies of Allah there will be no fear concerning them, nor will they grieve."</p>
+                    <div class="tafsir-box">
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/10/62/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse promises security and peace for Allah's awliya (close friends), showing the result of Al-Wali's protection.
                     </div>
                 </div>
 
@@ -465,86 +506,77 @@
                     <li><strong>Intimate Friendship:</strong>
                         <ul>
                             <li>Special relationship with believers (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>)</li>
-                            <li>Close to those who draw near (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>)</li>
+                            <li>Drawing near to those who draw near (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-Jathiyah (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>), Allah states: "Indeed, they will never avail you against Allah at all. And indeed, the wrongdoers are allies of one another; but Allah is the protector of the righteous." This shows how Al-Wali establishes a special bond with those who strive in His way.</p>
+                <p>In Surah Al-Jathiyah (<a href="https://quranwbw.com/45:19" target="_blank">45:19</a>), Allah states: "Indeed, they will not avail you against Allah at all. And indeed, the wrongdoers are allies of one another; but Allah is the protector of the righteous." This shows how Al-Wali forms special bonds with those who strive in His path.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">Back to Main</a></div>
-            <a href="#top" class="back-to-top">Back To Top</a>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Back to Main Menu</a></div>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
+
+        <footer>
+            <p>Sources: <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a> | <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a></p>
+            <p>© 2023 - All rights reserved</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
-                transliterations.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
-
-        // Language Toggle
+        // Language toggle functionality
         document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
             const indonesianContent = document.getElementById('indonesian-content');
+            const englishContent = document.getElementById('english-content');
+            const transliterationToggle = document.getElementById('transliterationToggle');
             
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
-            } else {
-                englishContent.classList.add('hidden');
+            if (indonesianContent.classList.contains('hidden')) {
+                // Switch to Indonesian
                 indonesianContent.classList.remove('hidden');
+                englishContent.classList.add('hidden');
                 this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                transliterationToggle.textContent = 'Tampilkan Transliterasi';
+            } else {
+                // Switch to English
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                this.textContent = 'Ganti ke Bahasa Indonesia';
+                transliterationToggle.textContent = 'Show Transliteration';
             }
         });
 
-        // Transliteration Toggle
+        // Transliteration toggle functionality
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
+            const isIndonesian = !document.getElementById('indonesian-content').classList.contains('hidden');
             
-            if (this.textContent === 'Show Transliteration') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
+            transliterations.forEach(transliteration => {
+                if (transliteration.style.display === 'block') {
+                    transliteration.style.display = 'none';
+                    this.textContent = isIndonesian ? 'Tampilkan Transliterasi' : 'Show Transliteration';
+                } else {
+                    transliteration.style.display = 'block';
+                    this.textContent = isIndonesian ? 'Sembunyikan Transliterasi' : 'Hide Transliteration';
+                }
+            });
         });
+
+        // Function to add quranwbw.com links to Quran references
+        function addQuranLinks() {
+            const elements = document.querySelectorAll('*');
+            const regex = /(\d+):(\d+)/g;
+            
+            elements.forEach(element => {
+                if (element.children.length === 0) {
+                    element.innerHTML = element.innerHTML.replace(regex, '<a href="https://quranwbw.com/$1:$2" target="_blank">$1:$2</a>');
+                }
+            });
+        }
+
+        // Run the function when the page loads
+        window.onload = function() {
+            addQuranLinks();
+        };
     </script>
 </body>
 </html>
