@@ -389,7 +389,7 @@
       { number: 58, arabic: "ٱلْمُبْدِئُ", transliteration: "Al-Mubdi'", english: "The Originator", indonesian: "Maha Memulai" },
       { number: 59, arabic: "ٱلْمُعِيدُ", transliteration: "Al-Mueed", english: "The Restorer", indonesian: "Mengembalikan Kehidupan" },
       { number: 60, arabic: "ٱلْمُحْيِي", transliteration: "Al-Muhyi", english: "Giver of Life", indonesian: "Maha Menghidupkan" },
-      { number: 61, arabic: "ٱلْمُمِيتُ", transliteration: "Al-Mumeet", english: "Creator of Death", indonesian: "Maha Mematikan" },
+      { number: 61, arabic: "ٱلْمُمِитُ", transliteration: "Al-Mumeet", english: "Creator of Death", indonesian: "Maha Mematikan" },
       { number: 62, arabic: "ٱلْحَيُّ", transliteration: "Al-Hayy", english: "The Ever-Living", indonesian: "Maha Hidup" },
       { number: 63, arabic: "ٱلْقَيُّومُ", transliteration: "Al-Qayyoom", english: "The Sustainer", indonesian: "Maha Mandiri" },
       { number: 64, arabic: "ٱلْوَاجِدُ", transliteration: "Al-Waajid", english: "The Perceiver", indonesian: "Maha Penemu" },
@@ -407,7 +407,7 @@
       { number: 76, arabic: "ٱلْبَاطِنُ", transliteration: "Al-Baatin", english: "The Hidden", indonesian: "Maha Ghaib" },
       { number: 77, arabic: "ٱلْوَالِي", transliteration: "Al-Waali", english: "The Governor", indonesian: "Maha Memerintah" },
       { number: 78, arabic: "ٱلْمُتَعَالِي", transliteration: "Al-Muta`aali", english: "The Self Exalted", indonesian: "Maha Tinggi" },
-      { number: 79, arabic: "ٱلْبَرُّ", transliteration: "Al-Barr", english: "Source of Goodness", indonesian: "Maha Penderma" },
+      { number: 79, arabic: "ٱلْبَارُّ", transliteration: "Al-Barr", english: "Source of Goodness", indonesian: "Maha Penderma" },
       { number: 80, arabic: "ٱلتَّوَابُ", transliteration: "At-Tawwaab", english: "Accepter of Repentance", indonesian: "Penerima Tobat" },
       { number: 81, arabic: "ٱلْمُنْتَقِمُ", transliteration: "Al-Muntaqim", english: "The Avenger", indonesian: "Penuntut Balas" },
       { number: 82, arabic: "ٱلْعَفُو", transliteration: "Al-`Afuww", english: "The Pardoner", indonesian: "Maha Pemaaf" },
@@ -426,7 +426,7 @@
       { number: 95, arabic: "ٱلْبَدِيعُ", transliteration: "Al-Badee`", english: "The Originator", indonesian: "Maha Pencipta" },
       { number: 96, arabic: "ٱلْبَاقِي", transliteration: "Al-Baaqi", english: "The Everlasting", indonesian: "Maha Kekal" },
       { number: 97, arabic: "ٱلْوَارِثُ", transliteration: "Al-Waarith", english: "The Inheritor", indonesian: "Maha Pewaris" },
-      { number: 98, arabic: "ٱلرَّشِيدُ", transliteration: "Ar-Rasheed", english: "The Guide", indonesian: "Maha Pandai" },
+      { number: 98, arabic: "ٱلْرَّشِيدُ", transliteration: "Ar-Rasheed", english: "The Guide", indonesian: "Maha Pandai" },
       { number: 99, arabic: "ٱلصَّبُورُ", transliteration: "Aṣ-Ṣabūr", english: "The Patient", indonesian: "Maha Sabar" }
     ];
 
@@ -467,20 +467,28 @@
         // English version
         const englishBox = document.createElement('div');
         englishBox.className = 'name-box';
+        englishBox.setAttribute('data-number', name.number);
+        englishBox.setAttribute('data-arabic', name.arabic);
+        englishBox.setAttribute('data-transliteration', name.transliteration);
+        englishBox.setAttribute('data-english', name.english);
         englishBox.innerHTML = `<a href="${name.number.toString().padStart(2, '0')}.html"><span class="arabic">${name.arabic}</span><br>${name.number}. ${name.transliteration}<br>${name.english}</a>`;
         englishContainer.appendChild(englishBox);
         
         // Indonesian version
         const indonesianBox = document.createElement('div');
         indonesianBox.className = 'name-box';
+        indonesianBox.setAttribute('data-number', name.number);
+        indonesianBox.setAttribute('data-arabic', name.arabic);
+        indonesianBox.setAttribute('data-transliteration', name.transliteration);
+        indonesianBox.setAttribute('data-indonesian', name.indonesian);
         indonesianBox.innerHTML = `<a href="${name.number.toString().padStart(2, '0')}.html"><span class="arabic">${name.arabic}</span><br>${name.number}. ${name.transliteration}<br>${name.indonesian}</a>`;
         indonesianContainer.appendChild(indonesianBox);
       });
     }
 
-    // Search Function for English
+    // Enhanced Search Function for English
     function searchNames() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
+      const input = document.getElementById("searchInput").value.trim().toLowerCase();
       const boxes = document.querySelectorAll("#english-content .name-box");
       let hasResults = false;
       
@@ -493,12 +501,20 @@
       }
       
       for (let box of boxes) {
-        const text = box.innerText.toLowerCase();
-        if (text.includes(input) || 
-            text.startsWith(input) || 
-            text.includes(` ${input}`) ||
-            (input.length <= 2 && text.startsWith(input + '.')) ||
-            (input.length <= 2 && text.startsWith(input + ' '))) {
+        const number = box.getAttribute('data-number');
+        const arabic = box.getAttribute('data-arabic');
+        const transliteration = box.getAttribute('data-transliteration').toLowerCase();
+        const english = box.getAttribute('data-english').toLowerCase();
+        
+        // Check if input matches any of the searchable fields
+        const isMatch = 
+          number === input || 
+          number.padStart(2, '0') === input.padStart(2, '0') ||
+          arabic.includes(input) ||
+          transliteration.includes(input) ||
+          english.includes(input);
+        
+        if (isMatch) {
           box.style.display = "flex";
           hasResults = true;
         } else {
@@ -514,7 +530,7 @@
         if (!existingMessage) {
           const noResults = document.createElement('div');
           noResults.className = 'no-results';
-          noResults.textContent = 'No names found matching your search.';
+          noResults.textContent = 'No matching names found. Try searching by number (1-99), Arabic, transliteration, or English meaning.';
           container.appendChild(noResults);
         }
       } else if (existingMessage) {
@@ -522,9 +538,9 @@
       }
     }
 
-    // Search Function for Indonesian
+    // Enhanced Search Function for Indonesian
     function searchNamesIndo() {
-      const input = document.getElementById("searchInputIndo").value.toLowerCase();
+      const input = document.getElementById("searchInputIndo").value.trim().toLowerCase();
       const boxes = document.querySelectorAll("#indonesian-content .name-box");
       let hasResults = false;
       
@@ -537,12 +553,20 @@
       }
       
       for (let box of boxes) {
-        const text = box.innerText.toLowerCase();
-        if (text.includes(input) || 
-            text.startsWith(input) || 
-            text.includes(` ${input}`) ||
-            (input.length <= 2 && text.startsWith(input + '.')) ||
-            (input.length <= 2 && text.startsWith(input + ' '))) {
+        const number = box.getAttribute('data-number');
+        const arabic = box.getAttribute('data-arabic');
+        const transliteration = box.getAttribute('data-transliteration').toLowerCase();
+        const indonesian = box.getAttribute('data-indonesian').toLowerCase();
+        
+        // Check if input matches any of the searchable fields
+        const isMatch = 
+          number === input || 
+          number.padStart(2, '0') === input.padStart(2, '0') ||
+          arabic.includes(input) ||
+          transliteration.includes(input) ||
+          indonesian.includes(input);
+        
+        if (isMatch) {
           box.style.display = "flex";
           hasResults = true;
         } else {
@@ -558,7 +582,7 @@
         if (!existingMessage) {
           const noResults = document.createElement('div');
           noResults.className = 'no-results';
-          noResults.textContent = 'Tidak ada nama yang cocok dengan pencarian Anda.';
+          noResults.textContent = 'Tidak ada nama yang cocok. Coba cari berdasarkan nomor (1-99), Arab, transliterasi, atau arti Indonesia.';
           container.appendChild(noResults);
         }
       } else if (existingMessage) {
@@ -566,28 +590,34 @@
       }
     }
 
-    // Language Toggle
-    document.getElementById('languageToggle').addEventListener('click', function() {
+    // Toggle language function
+    function toggleLanguage() {
       const englishContent = document.getElementById('english-content');
       const indonesianContent = document.getElementById('indonesian-content');
+      const toggleButton = document.getElementById('languageToggle');
       
       if (englishContent.classList.contains('hidden')) {
+        // Switch to English
         englishContent.classList.remove('hidden');
         indonesianContent.classList.add('hidden');
-        this.textContent = 'Switch to Indonesian';
+        toggleButton.textContent = 'Switch to Indonesian';
         localStorage.setItem('language', 'english');
       } else {
+        // Switch to Indonesian
         englishContent.classList.add('hidden');
         indonesianContent.classList.remove('hidden');
-        this.textContent = 'Switch to English';
+        toggleButton.textContent = 'Switch to English';
         localStorage.setItem('language', 'indonesian');
       }
-    });
+    }
 
     // Initialize the page
     document.addEventListener('DOMContentLoaded', function() {
       setInitialLanguage();
       populateNames();
+      
+      // Add event listener for language toggle
+      document.getElementById('languageToggle').addEventListener('click', toggleLanguage);
     });
   </script>
 </body>
