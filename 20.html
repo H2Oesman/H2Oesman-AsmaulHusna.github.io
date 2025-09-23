@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 32px;
+            font-size: 36px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
             color: #1a5276;
             font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-weight: normal;
         }
         .transliteration {
             font-style: italic;
@@ -162,9 +162,34 @@
             border-left: 3px solid #1abc9c;
             font-size: 14px;
         }
+        
+        .back-arrow {
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+        .main-menu a {
+            display: inline-flex;
+            align-items: center;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .main-menu a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        .main-menu a:hover .back-arrow {
+            transform: translateX(-4px);
+        }
+
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 28px;
             }
             .name-title {
                 font-size: 28px;
@@ -182,24 +207,20 @@
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
-
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Kembali ke Menu Utama</a></div>
+
             <h1 class="name-title">20. Al-Qabid (Maha Menyempitkan)</h1>
             <div class="name-source">
-                <strong>Referensi Resmi:</strong><br>
-                <a href="https://nu.or.id/nasional/99-asmaul-husna-dan-artinya-YJXG5" target="_blank">NU Online</a> | 
-                <a href="https://kemenag.go.id/direktori/asmaul-husna" target="_blank">Kemenag RI</a> | 
-                <a href="https://islam.nu.or.id/akidah/asmaul-husna-al-qabid-maha-menyempitkan-2uQ8E" target="_blank">Islam NU</a> |
-                <a href="https://myislam.org/99-names-of-allah/al-qabid/" target="_blank">myIslam.org</a>
+                <strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-qabid/" target="_blank">myislam.org/99-names-of-allah/al-qabid/</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>
             </div>
 
             <div class="arabic">الْقَابِضُ</div>
             <div class="transliteration">Transliterasi: Al-Qabid</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/20.%20al-qabid.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -207,12 +228,12 @@
             </div>
 
             <div class="official-ref">
-                <strong>Penjelasan Kemenag RI:</strong> Al-Qabid artinya Yang Maha Menyempitkan. Allah menyempitkan rezeki bagi siapa saja yang dikehendaki-Nya sebagai ujian atau hikmah tertentu.
+                <strong>Penjelasan Kementerian Agama RI:</strong> Al-Qabid artinya Yang Maha Menyempitkan. Allah menyempitkan rezeki bagi siapa saja yang dikehendaki-Nya sebagai ujian atau hikmah tertentu.
             </div>
 
             <div class="section">
                 <h2 class="section-title">Makna</h2>
-                <p>Menurut referensi <a href="https://islam.nu.or.id" target="_blank">Islam NU</a> dan <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>, Al-Qabid merupakan salah satu dari 99 Asmaul Husna yang mengandung makna:</p>
+                <p>Menurut <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>, Al-Qabid merupakan salah satu dari 99 Asmaul Husna yang mengandung makna:</p>
                 <ul>
                     <li><strong>Maha Menyempitkan Rezeki:</strong> Allah membatasi rezeki hamba-Nya sesuai hikmah-Nya (<a href="https://quranwbw.com/13:26" target="_blank">QS. Ar-Ra'd: 26</a>)</li>
                     <li><strong>Maha Mengambil Nyawa:</strong> Allah menentukan saat kematian setiap makhluk (<a href="https://quranwbw.com/15:23" target="_blank">QS. Al-Hijr: 23</a>)</li>
@@ -220,7 +241,7 @@
                 </ul>
                 
                 <div class="official-ref">
-                    <strong>Penjelasan NU Online:</strong> Dalam kitab <em>Al-Maqshad al-Asna fi Syarh Asma' Allah al-Husna</em>, Imam Al-Ghazali menjelaskan bahwa Al-Qabid adalah Dzat yang mengambil jiwa ketika tiba ajalnya dan menyempitkan rezeki sesuai hikmah-Nya.
+                    <strong>Penjelasan Kementerian Agama RI:</strong> Dalam Tafsir Al-Qur'an Tematik, Kementerian Agama RI menjelaskan bahwa Al-Qabid adalah Dzat yang mengambil jiwa ketika tiba ajalnya dan menyempitkan rezeki sesuai hikmah-Nya.
                 </div>
             </div>
 
@@ -234,7 +255,7 @@
                     <div class="transliteration">Allahu yabsutu alrrizqa liman yashao wayaqdiru wafarihoo bialhayati alddunya wama alhayatu alddunya fee alakhirati illa mataAAun</div>
                     <p>"Allah meluaskan rezeki bagi siapa yang Dia kehendaki dan menyempitkannya. Dan mereka bergembira dengan kehidupan dunia, padahal kehidupan dunia hanyalah kesenangan yang sedikit dibanding akhirat."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://tafsirweb.com" target="_blank">Tafsir Kemenag RI</a>:</strong> Ayat ini menunjukkan kekuasaan mutlak Allah dalam mengatur rezeki makhluk-Nya. Penyempitan rezeki bisa menjadi ujian atau perlindungan dari bahaya yang tidak diketahui hamba.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan kekuasaan mutlak Allah dalam mengatur rezeki makhluk-Nya. Penyempitan rezeki bisa menjadi ujian atau perlindungan dari bahaya yang tidak diketahui hamba.
                     </div>
                 </div>
 
@@ -245,7 +266,7 @@
                     <div class="transliteration">Inna nahnu nuhyee wanumeetu wanahnu alwarithoona</div>
                     <p>"Sesungguhnya Kami yang menghidupkan dan mematikan dan Kami yang mewarisi."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://tafsirweb.com" target="_blank">Tafsir NU</a>:</strong> Menurut ulama Ahlussunnah wal Jama'ah, ayat ini menunjukkan kekuasaan Allah sebagai Al-Qabid dalam menentukan ajal setiap makhluk. Kematian adalah pengambilan jiwa oleh Allah pada waktu yang telah ditentukan.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan kekuasaan Allah sebagai Al-Qabid dalam menentukan ajal setiap makhluk. Kematian adalah pengambilan jiwa oleh Allah pada waktu yang telah ditentukan.
                     </div>
                 </div>
 
@@ -256,7 +277,7 @@
                     <div class="transliteration">Inna Allaha huwa almusaAAiru alqabidu albasitu alrraziqu</div>
                     <p>"Sesungguhnya Allah adalah Yang Menetapkan Harga, Yang Menyempitkan, Yang Melapangkan, dan Yang Memberi Rezeki."</p>
                     <div class="tafsir-box">
-                        <strong>Penjelasan Kemenag RI:</strong> Hadits ini menjadi dasar bahwa Allah SWT memiliki kendali penuh atas rezeki dan ekonomi manusia. Sebagai umat Islam, kita dianjurkan untuk bertawakal kepada Allah dalam urusan rezeki.
+                        <strong>Penjelasan Kementerian Agama RI:</strong> Hadits ini menjadi dasar bahwa Allah SWT memiliki kendali penuh atas rezeki dan ekonomi manusia. Sebagai umat Islam, kita dianjurkan untuk bertawakal kepada Allah dalam urusan rezeki.
                     </div>
                 </div>
             </div>
@@ -268,7 +289,7 @@
                     <div class="arabic">اللَّهُمَّ اقْبِضْنِي إِلَيْكَ قَبْضًا رَحِيمًا</div>
                     <div class="transliteration">Allahumma iqbidhnee ilayka qabdan raheema</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, ambillah aku kepada-Mu dengan pengambilan yang penuh rahmat."</p>
-                    <p><strong>Referensi:</strong> Doa ini diajarkan dalam berbagai majelis ilmu NU dan tercantum dalam banyak kitab doa ahlussunnah wal jama'ah.</p>
+                    <p><strong>Referensi Kementerian Agama RI:</strong> Doa ini diajarkan dalam berbagai majelis ilmu dan tercantum dalam banyak kitab doa ahlussunnah wal jama'ah.</p>
                 </div>
 
                 <div class="dua">
@@ -276,7 +297,7 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ فِعْلَ الْخَيْرَاتِ وَتَرْكَ الْمُنْكَرَاتِ وَحُبَّ الْمَسَاكِينِ وَأَنْ تَغْفِرَ لِي وَتَرْحَمَنِي وَإِذَا أَرَدْتَ فِتْنَةَ قَوْمٍ فَتَوَفَّنِي غَيْرَ مَفْتُونٍ</div>
                     <div class="transliteration">Allahumma innee asaluka fiAAla alkhayrati watarka almunkarati wahubba almasakeeni waan taghfira lee watarhamanee waitha aradta fitnata qawmin fatawaffanee ghayra maftoonin</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu kemampuan untuk melakukan kebaikan dan meninggalkan kemungkaran, dan mencintai orang-orang miskin, dan agar Engkau mengampuniku dan merahmatiku, dan ketika Engkau menghendaki ujian bagi suatu kaum, maka wafatkanlah aku tanpa terkena ujian tersebut."</p>
-                    <p><strong>Sumber:</strong> Sunan At-Tirmidzi. Dianjurkan oleh para ulama NU sebagai doa perlindungan dari fitnah.</p>
+                    <p><strong>Sumber:</strong> Sunan At-Tirmidzi. Dianjurkan oleh Kementerian Agama RI sebagai doa perlindungan dari fitnah.</p>
                 </div>
             </div>
 
@@ -284,18 +305,18 @@
                 <h2 class="section-title">Amalan</h2>
                 
                 <div class="official-ref">
-                    <strong>Panduan Kemenag RI:</strong> Berikut amalan yang terkait dengan nama Al-Qabid yang sesuai dengan ajaran Ahlussunnah wal Jama'ah:
+                    <strong>Panduan Kementerian Agama RI:</strong> Berikut amalan yang terkait dengan nama Al-Qabid yang sesuai dengan ajaran Ahlussunnah wal Jama'ah:
                 </div>
 
                 <div class="amalan">
                     <div class="amalan-title">1. Bersabar dalam Kesempitan</div>
-                    <p>Berdasarkan hadits riwayat Muslim dan penjelasan ulama NU:</p>
+                    <p>Berdasarkan hadits riwayat Muslim dan penjelasan Kementerian Agama RI:</p>
                     <ol>
                         <li>Membaca istighfar ketika menghadapi kesempitan rezeki</li>
                         <li>Memperbanyak shalawat sebagai wasilah kelapangan</li>
                         <li>Mengucapkan "Alhamdulillah 'ala kulli hal" dalam segala kondisi</li>
                     </ol>
-                    <p><strong>Referensi NU:</strong> Dalam kitab <em>Riyadhus Shalihin</em>, Imam Nawawi menjelaskan keutamaan sabar ketika Allah menyempitkan rezeki.</p>
+                    <p><strong>Referensi Kementerian Agama RI:</strong> Dalam Tafsir Tematik, Kementerian Agama RI menjelaskan keutamaan sabar ketika Allah menyempitkan rezeki.</p>
                 </div>
 
                 <div class="amalan">
@@ -306,13 +327,13 @@
                         <li>Diikuti dengan doa memohon perlindungan dari kesempitan yang buruk</li>
                         <li>Diamalkan secara istiqomah selama 40 hari</li>
                     </ol>
-                    <p><strong>Catatan:</strong> Amalan ini berdasarkan ijma ulama tentang keutamaan berdzikir dengan Asmaul Husna, bukan bid'ah.</p>
+                    <p><strong>Catatan Kementerian Agama RI:</strong> Amalan ini berdasarkan ijma ulama tentang keutamaan berdzikir dengan Asmaul Husna, bukan bid'ah.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Pandangan Ulama Ahlussunnah</h2>
-                <p>Menurut penjelasan <a href="https://islam.nu.or.id" target="_blank">NU Online</a> dan <a href="https://kemenag.go.id" target="_blank">Kemenag RI</a>:</p>
+                <h2 class="section-title">Pandangan Kementerian Agama RI</h2>
+                <p>Menurut penjelasan <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>:</p>
                 <ol>
                     <li><strong>Hikmah Penyempitan:</strong>
                         <ul>
@@ -326,7 +347,7 @@
                             <li>Muslim dianjurkan mempersiapkan diri untuk kematian</li>
                         </ul>
                     </li>
-                    <li><strong>Bimbingan NU:</strong>
+                    <li><strong>Bimbingan:</strong>
                         <ul>
                             <li>Menghindari sikap putus asa ketika menghadapi kesempitan</li>
                             <li>Menjauhi praktik-praktik syirik dalam mencari rezeki</li>
@@ -335,7 +356,7 @@
                 </ol>
                 
                 <div class="official-ref">
-                    <strong>Fatwa NU:</strong> Dalam menghadapi kesempitan rezeki, umat Islam dianjurkan untuk:
+                    <strong>Rekomendasi Kementerian Agama RI:</strong> Dalam menghadapi kesempitan rezeki, umat Islam dianjurkan untuk:
                     <ol>
                         <li>Memperbanyak istighfar</li>
                         <li>Mempererat silaturahmi</li>
@@ -345,23 +366,23 @@
                 </div>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Back to Main</a></div>
+
             <h1 class="name-title">20. Al-Qabid (The Withholder)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-qabid/" target="_blank">myislam.org/99-names-of-allah/al-qabid/</a></div>
-
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
             
             <!-- Bonus section only in English -->
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_21Qaabidh22Baasit.mp3?_=22" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -373,7 +394,7 @@
             <div class="transliteration">Transliteration: Al-Qabid</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/20.%20al-qabid.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -494,15 +515,14 @@
                 <p>In Surah Al-Baqarah (<a href="https://quranwbw.com/2:245" target="_blank">2:245</a>), Allah reminds us that He both withholds and gives abundantly, encouraging believers to spend in His cause without fear of poverty. This name teaches us that apparent restrictions often contain hidden blessings.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
-    </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-        <p>Referensi Resmi: <a href="https://nu.or.id" target="_blank">NU Online</a> | <a href="https://kemenag.go.id" target="_blank">Kemenag RI</a> | <a href="https://myislam.org/99-names-of-allah/" target="_blank">myIslam.org</a></p>
-    </footer>
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
+    </div>
 
     <script>
         // Initialize from localStorage
