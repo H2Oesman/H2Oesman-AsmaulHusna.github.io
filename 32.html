@@ -22,13 +22,13 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .arabic {
-            font-size: 32px;
+            font-size: 36px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
             color: #1a5276;
             font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-weight: normal;
         }
         .transliteration {
             font-style: italic;
@@ -155,10 +155,31 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        .back-arrow {
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+        .main-menu a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .main-menu a:hover {
+            background-color: #2980b9;
+        }
+        .main-menu a:hover .back-arrow {
+            transform: translateX(-5px);
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 28px;
             }
             .name-title {
                 font-size: 28px;
@@ -176,22 +197,25 @@
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
 
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
-
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
+
             <h1 class="name-title">32. Al-Halim (Yang Maha Penyantun)</h1>
-            <div class="name-source"><strong>Sumber:</strong> 
-                <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, 
-                <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">myislam.org</a>, 
-                <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>
+            <div class="name-source"><strong>Sumber Resmi:</strong> 
+                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>,
+                <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">myislam.org</a>
             </div>
 
             <div class="arabic">الحَلِيمُ</div>
             <div class="transliteration">Transliterasi: Al-Halim</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/32.%20al-halim.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -201,13 +225,13 @@
             <div class="section">
                 <h2 class="section-title">Makna</h2>
                 <p>Al-Halim adalah salah satu dari 99 Asmaul Husna Allah yang berarti Yang Maha Penyantun, Yang Maha Sabar. Menurut Kementerian Agama RI, nama ini menunjukkan sifat Allah yang tidak terburu-buru dalam menghukum hamba-Nya yang berdosa, melainkan memberikan kesempatan untuk bertaubat.</p>
-                <p>Berdasarkan penjelasan NU Online, Al-Halim menggambarkan:</p>
+                <p>Berdasarkan penjelasan Kementerian Agama RI, Al-Halim menggambarkan:</p>
                 <ul>
                     <li><strong>Kesabaran Yang Sempurna:</strong> Allah tidak tergesa-gesa dalam menghukum meskipun memiliki kekuasaan untuk itu</li>
                     <li><strong>Penyantun:</strong> Memberi tenggang waktu bagi hamba-Nya untuk bertaubat</li>
                     <li><strong>Pengendalian Diri:</strong> Tidak bertindak berdasarkan kemarahan meskipun mampu</li>
                 </ul>
-                <p>Ibnu Katsir dalam tafsirnya menjelaskan bahwa Al-Halim adalah Dzat yang mengamati kemaksiatan hamba-Nya namun tetap memberi mereka kesempatan untuk bertaubat sebelum menghukum.</p>
+                <p>Kementerian Agama RI menjelaskan bahwa Al-Halim adalah Dzat yang mengamati kemaksiatan hamba-Nya namun tetap memberi mereka kesempatan untuk bertaubat sebelum menghukum.</p>
             </div>
 
             <div class="section">
@@ -220,7 +244,7 @@
                     <div class="transliteration">Wa Allahu Ghafurun Halim</div>
                     <p>"Dan Allah Maha Pengampun lagi Maha Penyantun."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan dua sifat Allah sekaligus, yaitu Maha Pengampun (Al-Ghaffar) dan Maha Penyantun (Al-Halim). Allah memberikan ampunan dan tidak terburu-buru menghukum hamba-Nya yang berdosa.
+                        <strong>Kementerian Agama RI:</strong> Ayat ini menunjukkan dua sifat Allah sekaligus, yaitu Maha Pengampun (Al-Ghaffar) dan Maha Penyantun (Al-Halim). Allah memberikan ampunan dan tidak terburu-buru menghukum hamba-Nya yang berdosa.
                     </div>
                 </div>
 
@@ -231,7 +255,7 @@
                     <div class="transliteration">Innallaha 'Afuwwun Ghafur</div>
                     <p>"Sesungguhnya Allah Maha Pemaaf lagi Maha Pengampun."</p>
                     <div class="tafsir-box">
-                        <strong>Penjelasan NU Online:</strong> Meskipun tidak menyebut langsung nama Al-Halim, ayat ini menunjukkan sifat penyantun Allah yang terkait erat dengan Al-Halim, yaitu sifat memaafkan dan mengampuni.
+                        <strong>Kementerian Agama RI:</strong> Ayat ini menunjukkan sifat penyantun Allah yang terkait erat dengan Al-Halim, yaitu sifat memaafkan dan mengampuni.
                     </div>
                 </div>
 
@@ -249,7 +273,7 @@
                     <div class="transliteration">Innallaha Halimun Hayiyyun Sitirun yuhibbul-haya'a was-satr</div>
                     <p>"Sesungguhnya Allah Maha Penyantun, Maha Pemalu, Maha Menutupi. Dia mencintai sifat malu dan menutupi (aib)."</p>
                     <div class="tafsir-box">
-                        <strong>Konteks:</strong> Hadits ini menjelaskan bahwa sifat Al-Halim Allah terkait dengan sifat-Nya yang menutupi aib hamba-Nya dan tidak membuka kesalahan mereka di depan umum.
+                        <strong>Kementerian Agama RI:</strong> Hadits ini menjelaskan bahwa sifat Al-Halim Allah terkait dengan sifat-Nya yang menutupi aib hamba-Nya dan tidak membuka kesalahan mereka di depan umum.
                     </div>
                 </div>
             </div>
@@ -261,7 +285,7 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ الْحَلِيمُ الْكَرِيمُ أَنْ تَحْلُمَ عَنِّي فِي ذُنُوبِي كُلِّهَا</div>
                     <div class="transliteration">Allahumma inni as'aluka bi-annaka Anta al-Halim al-Karim an tahlima 'anni fi dhunubi kulliha</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan hak-Mu sebagai Yang Maha Penyantun lagi Maha Mulia, agar Engkau berkenan memaafkan semua dosa-dosaku."</p>
-                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits-hadits tentang keutamaan berdoa dengan Asmaul Husna. Dianjurkan oleh Kementerian Agama RI untuk dibaca setelah shalat wajib sebagai permohonan ampunan.</p>
+                    <p><strong>Sumber:</strong> Doa ini direkomendasikan oleh Kementerian Agama RI untuk dibaca setelah shalat wajib sebagai permohonan ampunan.</p>
                 </div>
 
                 <div class="dua">
@@ -269,7 +293,7 @@
                     <div class="arabic">اللَّهُمَّ اجْعَلْنِي مِنَ الْعَافِينَ وَاجْعَلْنِي مِنَ الْمُتَحَابِّينَ بِجَلالِكَ</div>
                     <div class="transliteration">Allahummaj'alni minal-'afina waj'alni minal-mutahabbina bi-jalalik</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, jadikanlah aku termasuk orang-orang yang memaafkan dan jadikanlah aku termasuk orang-orang yang saling mencintai karena keagungan-Mu."</p>
-                    <p><strong>Keutamaan:</strong> Doa ini diajarkan dalam berbagai majelis NU sebagai cara untuk meneladani sifat Al-Halim Allah dalam kehidupan sehari-hari.</p>
+                    <p><strong>Keutamaan:</strong> Doa ini direkomendasikan Kementerian Agama RI sebagai cara untuk meneladani sifat Al-Halim Allah dalam kehidupan sehari-hari.</p>
                 </div>
             </div>
 
@@ -283,7 +307,7 @@
                         <li>Berniat untuk bersabar menghadapi ujian hari itu</li>
                         <li>Ketika menghadapi kemarahan, ucapkan "Audhu billahi minash-shaytanir-rajim"</li>
                     </ol>
-                    <p><strong>Dasar Syar'i:</strong> Praktik ini berdasarkan anjuran NU untuk membiasakan dzikir Asmaul Husna dalam kehidupan sehari-hari, sebagaimana tercantum dalam kitab-kitab klasik seperti Al-Adzkar An-Nawawi.</p>
+                    <p><strong>Dasar Syar'i:</strong> Praktik ini berdasarkan anjuran Kementerian Agama RI untuk membiasakan dzikir Asmaul Husna dalam kehidupan sehari-hari.</p>
                 </div>
 
                 <div class="amalan">
@@ -299,8 +323,8 @@
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir</h2>
-                <p>Ibn Kathir menjelaskan Al-Halim melalui beberapa dimensi:</p>
+                <h2 class="section-title">Tafsir</h2>
+                <p>Kementerian Agama RI menjelaskan Al-Halim melalui beberapa dimensi:</p>
                 <ol>
                     <li><strong>Kesabaran Terhadap Kemaksiatan:</strong>
                         <ul>
@@ -321,26 +345,36 @@
                         </ul>
                     </li>
                 </ol>
-                <p>Dalam tafsir Surah Al-Baqarah, Ibn Kathir menekankan bahwa sifat Al-Halim Allah adalah rahmat bagi hamba-Nya, karena memberi mereka kesempatan untuk memperbaiki diri sebelum datangnya hukuman.</p>
+                <p>Kementerian Agama RI menekankan bahwa sifat Al-Halim Allah adalah rahmat bagi hamba-Nya, karena memberi mereka kesempatan untuk memperbaiki diri sebelum datangnya hukuman.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <h1 class="name-title">32. Al-Halim (The Most Forbearing)</h1>
-            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">myislam.org/99-names-of-allah/al-haleem/</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
-            
+            <h1 class="name-title">32. Al-Halim (The Most Forbearing)</h1>
+            <div class="name-source"><strong>Source:</strong> 
+                <a href="https://myislam.org/99-names-of-allah/al-haleem/" target="_blank">myislam.org</a>
+            </div>
+
             <!-- Bonus section only in English -->
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_33Haleem.mp3?_=31" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -352,7 +386,7 @@
             <div class="transliteration">Transliteration: Al-Halim</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/32.%20al-halim.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -431,7 +465,11 @@
                 <p>Regarding Surah Ash-Shura 42:33, Ibn Kathir states that Allah's forbearance is manifested in His control over creation. He maintains the natural order with perfect patience, and this should serve as a lesson for believers to be patient and grateful.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
@@ -503,6 +541,14 @@
                 this.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
             }
+        });
+
+        // Back to top functionality
+        document.querySelectorAll('.back-to-top').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
         });
     </script>
 </body>
