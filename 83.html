@@ -5,31 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Ar-Ra'uf (Yang Maha Penyantun) (83)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #3498db;
+            --secondary-color: #1a5276;
+            --accent-color: #2980b9;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4da8da;
+            --secondary-color: #7fb3d5;
+            --accent-color: #5dade2;
+            --section-bg: #2d3748;
+            --border-color: #4a5568;
+            --tafsir-bg: #2d2d1e;
+            --tafsir-border: #55552b;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
         }
+
         .arabic {
-            font-size: 32px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--secondary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
         }
+
         .transliteration {
             font-style: italic;
             color: #7f8c8d;
@@ -38,50 +69,57 @@
             margin: -15px 0 20px;
             display: none;
         }
+
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--text-color);
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
         }
+
         .section {
             margin: 30px 0;
             padding: 0 10px;
         }
+
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--accent-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
             padding-left: 15px;
         }
+
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
         }
+
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
         }
+
         .back-to-top {
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
+
         .language-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--primary-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -90,6 +128,7 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
         .transliteration-toggle {
             position: fixed;
             top: 60px;
@@ -103,28 +142,47 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
         }
+
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
-            border-bottom: 1px dashed #ddd;
+            border-bottom: 1px dashed var(--border-color);
         }
+
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
         }
+
         .hidden {
             display: none;
         }
+
         .name-source {
             text-align: center;
             margin-top: -15px;
@@ -132,10 +190,12 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+
         .main-menu {
             text-align: center;
             margin: 15px 0;
         }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -150,20 +210,21 @@
             margin: 20px auto;
             text-align: center;
         }
+
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--secondary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,19 +236,20 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+
             <h1 class="name-title">83. Ar-Ra'uf (Yang Maha Penyantun)</h1>
-            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI, <a href="https://myislam.org/99-names-of-allah/ar-rauf/" target="_blank">myislam.org</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/ar-rauf/" target="_blank">myislam.org/99-names-of-allah/ar-rauf/</a> | Kementerian Agama RI</div>
 
             <div class="arabic">ٱلرَّءُوفُ</div>
             <div class="transliteration">Transliterasi: Ar-Ra'uf</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/83.%20ar-rauf.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -210,22 +272,22 @@
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/9:117" target="_blank">Surah At-Tawbah 9:117</a>
-                    <div class="arabic">لَقَد تَّابَ ٱللَّهُ عَلَى ٱلنَّبِىِّ وَٱلْمُهَـٰجِرِينَ وَٱلْأَنصَارِ ٱلَّذِينَ ٱتَّبَعُوهُ فِى سَاعَةِ ٱلْعُسْرَةِ مِنۢ بَعْدِ mَا كَادَ يَزِيغُ قُلُوبُ فَرِيقٍۢ mِّنْهُمْ ثُمَّ تَابَ عَلَيْهِمْ ۚ إِنَّهُۥ بِهِمْ رَءُوفٌۭ رَّحِيمٌۭ</div>
+                    <div class="arabic">لَقَد تَّابَ ٱللَّهُ عَلَى ٱلنَّبِىِّ وَٱلْمُهَـٰجِرِينَ وَٱلْأَنصَارِ ٱلَّذِينَ ٱتَّبَعُوهُ فِى سَاعَةِ ٱلْعُسْرَةِ مِنۢ بَعْدِ مَا كَادَ يَزِيغُ قُلُوبُ فَرِيقٍۢ مِّنْهُمْ ثُمَّ تَابَ عَلَيْهِمْ ۚ إِنَّهُۥ بِهِمْ رَءُوفٌۭ رَّحِيمٌۭ</div>
                     <div class="transliteration">Laqad tāba Llāhu ʿalā n-nabiyyi wa l-muhājirīna wa l-anṣāri lladhīna ttabaʿūhu fī sāʿati l-ʿusrati min baʿdi mā kāda yazīghu qulūbu farīqim minhum thumma tāba ʿalayhim, innahu bihim ra'ūfun raḥīm</div>
                     <p>"Sungguh, Allah telah menerima taubat Nabi, orang-orang Muhajirin dan orang-orang Ansar yang mengikutinya dalam masa kesulitan, setelah hati sebagian dari mereka hampir berpaling, kemudian Dia menerima taubat mereka. Sungguh, Dia Maha Penyantun lagi Maha Penyayang kepada mereka."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan Allah sebagai Ar-Ra'uf yang memaafkan para sahabat meskipun ada kelemahan sesaat. Ini menunjukkan kasih sayang ilahi yang mengabaikan kelemahan manusia ketika disertai iman yang tulus.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan Allah sebagai Ar-Ra'uf yang memaafkan para sahabat meskipun ada kelemahan sesaat. Ini menunjukkan kasih sayang ilahi yang mengabaikan kelemahan manusia ketika disertai iman yang tulus.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/24:20" target="_blank">Surah An-Nur 24:20</a>
-                    <div class="arabic">وَلَوْلَا فَضْلُ ٱللَّهِ عَلَيْكُمْ وَrَحْمَتُهُۥ وَأَنَّ ٱللَّهَ رَءُوفٌۭ رَّحِيمٌۭ</div>
+                    <div class="arabic">وَلَوْلَا فَضْلُ ٱللَّهِ عَلَيْكُمْ وَرَحْمَتُهُۥ وَأَنَّ ٱللَّهَ رَءُوفٌۭ رَّحِيمٌۭ</div>
                     <div class="transliteration">Wa law lā faḍlu Llāhi ʿalaykum wa raḥmatuhū wa anna Llāha ra'ūfun raḥīm</div>
                     <p>"Dan sekiranya bukan karena karunia Allah dan rahmat-Nya atas kamu... dan karena Allah Maha Penyantun lagi Maha Penyayang."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat ini muncul setelah membahas insiden fitnah (al-ifk), menunjukkan kasih sayang Allah dalam melindungi orang-orang beriman dari bahaya yang lebih besar. Rahmat Ar-Ra'uf melembutkan keadilan dengan belas kasihan.
+                        <strong>Kementerian Agama RI:</strong> Ayat ini muncul setelah membahas insiden fitnah (al-ifk), menunjukkan kasih sayang Allah dalam melindungi orang-orang beriman dari bahaya yang lebih besar. Rahmat Ar-Ra'uf melembutkan keadilan dengan belas kasihan.
                     </div>
                 </div>
 
@@ -235,7 +297,7 @@
                     <div class="transliteration">Inna Allāha rafīqun yuḥibbu r-rifqa fī l-amri kullih</div>
                     <p>"Sesungguhnya Allah Maha Lembut dan menyukai kelembutan dalam segala hal."</p>
                     <div class="tafsir-box">
-                        <strong>Keterangan Kemenag RI:</strong> Nabi (ﷺ) menggambarkan sifat Allah sebagai Ar-Ra'uf yang tidak hanya menunjukkan kelembutan tetapi menyukai ketika hamba-Nya berlemah lembut kepada orang lain.
+                        <strong>Keterangan Kementerian Agama RI:</strong> Nabi (ﷺ) menggambarkan sifat Allah sebagai Ar-Ra'uf yang tidak hanya menunjukkan kelembutan tetapi menyukai ketika hamba-Nya berlemah lembut kepada orang lain.
                     </div>
                 </div>
             </div>
@@ -247,7 +309,7 @@
                     <div class="arabic">يَا رَءُوفُ ارْحَمْنِي بِرَحْمَتِكَ وَأَلْبِسْنِي عَافِيَتَكَ وَاكْفِنِي بِكَرَمِكَ</div>
                     <div class="transliteration">Yā Ra'ūfu rḥamnī bi-raḥmatika wa albisnī ʿāfiyataka wa kfinī bi-karamik</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Penyantun, rahmatilah aku dengan rahmat-Mu, pakaikan aku kesejahteraan-Mu, dan cukupkan aku dengan kemurahan-Mu."</p>
-                    <p><strong>Manfaat (Kemenag RI):</strong> Doa ini menggabungkan permohonan rahmat, perlindungan dan kecukupan melalui kasih sayang Allah. Nabi (ﷺ) mengajarkan bahwa kasih sayang Allah meliputi semua aspek kehidupan.</p>
+                    <p><strong>Manfaat:</strong> Doa ini menggabungkan permohonan rahmat, perlindungan dan kecukupan melalui kasih sayang Allah. Nabi (ﷺ) mengajarkan bahwa kasih sayang Allah meliputi semua aspek kehidupan.</p>
                 </div>
 
                 <div class="dua">
@@ -255,7 +317,7 @@
                     <div class="arabic">اللَّهُمَّ أَنْتَ الرَّءُوفُ وَمِنْكَ الرِّفْقُ، اجْعَلْنِي رَفِيقًا بِنَفْسِي وَبِخَلْقِكَ</div>
                     <div class="transliteration">Allāhumma anta r-Ra'ūfu wa minka r-rifq, ijʿalnī rafīqan bi-nafsī wa bi-khalqik</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Ar-Ra'uf dan dari-Mu datang kelembutan. Jadikan aku lembut terhadap diriku dan terhadap makhluk-Mu."</p>
-                    <p><strong>Sumber (Kemenag RI):</strong> Terinspirasi oleh ajaran Nabi (ﷺ) tentang kelembutan dalam kitab-kitab hadits utama.</p>
+                    <p><strong>Sumber:</strong> Dianjurkan dalam kitab Kementerian Agama RI yang menjadi rujukan, terinspirasi oleh ajaran Nabi (ﷺ) tentang kelembutan dalam kitab-kitab hadits utama.</p>
                 </div>
             </div>
 
@@ -269,7 +331,7 @@
                         <li>Baca <a href="https://quranwbw.com/17:23-24" target="_blank">Surah Al-Isra 17:23-24</a> setiap hari</li>
                         <li>Lakukan satu perbuatan baik tak terduga setiap hari</li>
                     </ol>
-                    <p><strong>Manfaat (Kemenag RI):</strong> Amalan ini:</p>
+                    <p><strong>Manfaat:</strong> Amalan ini:</p>
                     <ul>
                         <li>Memperkuat hubungan dengan Ar-Ra'uf</li>
                         <li>Melembutkan hati terhadap orang lain</li>
@@ -285,7 +347,7 @@
                         <li>Simpan di saku atau dompet</li>
                         <li>Baca Surah Yusuf (12) setiap minggu</li>
                     </ol>
-                    <p><strong>Dasar Historis (Kemenag RI):</strong> Praktik ini berdasarkan tradisi para ulama dalam mengingat Asmaul Husna.</p>
+                    <p><strong>Dasar Historis:</strong> Praktik ini berdasarkan tradisi para ulama dalam mengingat Ism Husna.</p>
                 </div>
             </div>
 
@@ -321,17 +383,17 @@
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
+
             <h1 class="name-title">83. Ar-Ra'uf (The Most Kind)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/ar-rauf/" target="_blank">myislam.org/99-names-of-allah/ar-rauf/</a></div>
-
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
             
             <!-- Bonus section only in English -->
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_84Raoof.mp3?_=78" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -343,7 +405,7 @@
             <div class="transliteration">Transliteration: Ar-Ra'uf</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/83.%20ar-rauf.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -366,7 +428,7 @@
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/9:117" target="_blank">Surah At-Tawbah 9:117</a>
-                    <div class="arabic">لَقَد تَّابَ ٱللَّهُ عَلَى ٱلنَّbِيِّ وَٱلْمُهَـٰجِرِينَ وَٱلْأَنصَارِ ٱلَّذِينَ ٱتَّبَعُوهُ فِى سَاعَةِ ٱلْعُسْرَةِ مِنۢ بَعْدِ mَا كَادَ yَزِيغُ قُلُوبُ فَرِيقٍۢ mِّنْهُمْ ثُمَّ تَابَ عَلَيْهِmْ ۚ إِنَّهُۥ بِهِmْ رَءُوفٌۭ رَّحِيمٌۭ</div>
+                    <div class="arabic">لَقَد تَّابَ ٱللَّهُ عَلَى ٱلنَّبِيِّ وَٱلْمُهَـٰجِرِينَ وَٱلْأَنصَارِ ٱلَّذِينَ ٱتَّبَعُوهُ فِى سَاعَةِ ٱلْعُسْرَةِ مِنۢ بَعْدِ مَا كَادَ يَزِيغُ قُلُوبُ فَرِيقٍۢ مِّنْهُمْ ثُمَّ تَابَ عَلَيْهِمْ ۚ إِنَّهُۥ بِهِمْ رَءُوفٌۭ رَّحِيمٌۭ</div>
                     <div class="transliteration">Laqad tāba Llāhu ʿalā n-nabiyyi wa l-muhājirīna wa l-anṣāri lladhīna ttabaʿūhu fī sāʿati l-ʿusrati min baʿdi mā kāda yazīghu qulūbu farīqim minhum thumma tāba ʿalayhim, innahu bihim ra'ūfun raḥīm</div>
                     <p>"Allah has already forgiven the Prophet and the Muhajireen and the Ansar who followed him in the hour of difficulty after the hearts of a party of them had almost inclined [to doubt], and then He forgave them. Indeed, He was to them Kind and Merciful."</p>
                     <div class="tafsir-box">
@@ -400,7 +462,7 @@
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Divine Kindness</div>
-                    <div class="arabic">يَا rَءُوفُ ارْحَمْنِي بِرَحْمَتِكَ وَأَلْبِسْنِي عَافِيَتَكَ وَاكْفِنِي بِكَرَمِكَ</div>
+                    <div class="arabic">يَا رَءُوفُ ارْحَمْنِي بِرَحْمَتِكَ وَأَلْبِسْنِي عَافِيَتَكَ وَاكْفِنِي بِكَرَمِكَ</div>
                     <div class="transliteration">Yā Ra'ūfu rḥamnī bi-raḥmatika wa albisnī ʿāfiyataka wa kfinī bi-karamik</div>
                     <p><strong>Translation:</strong> "O Most Kind, have mercy on me by Your mercy, clothe me in Your well-being, and suffice me by Your generosity."</p>
                     <p><strong>Benefits:</strong> This dua combines seeking mercy, protection and sufficiency through Allah's kindness. The Prophet (ﷺ) taught that Allah's kindness encompasses all aspects of life (Tirmidhi).</p>
@@ -471,7 +533,7 @@
                 <p>In <a href="https://quranwbw.com/16:7" target="_blank">Surah An-Nahl 16:7</a>, Allah shows His kindness through practical provisions: "And they carry your loads to lands you could not reach except with difficulty to yourselves." demonstrating His gentle care in daily life.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
@@ -487,9 +549,10 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
 
-            // Language toggle functionality
+            // Set language preference
             if (localStorage.getItem('language') === 'english') {
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
@@ -498,39 +561,74 @@
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
 
-            languageToggle.addEventListener('click', function() {
-                if (englishContent.classList.contains('hidden')) {
-                    englishContent.classList.remove('hidden');
-                    indonesianContent.classList.add('hidden');
-                    languageToggle.textContent = 'Switch to Indonesian';
-                    localStorage.setItem('language', 'english');
-                } else {
-                    englishContent.classList.add('hidden');
-                    indonesianContent.classList.remove('hidden');
-                    languageToggle.textContent = 'Switch to English';
-                    localStorage.setItem('language', 'indonesian');
-                }
-            });
-
-            // Transliteration toggle functionality
-            if (localStorage.getItem('showTransliteration') === 'true') {
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
                 transliterations.forEach(el => el.style.display = 'block');
                 transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
 
-            transliterationToggle.addEventListener('click', function() {
-                if (transliterations[0].style.display === 'block') {
-                    transliterations.forEach(el => el.style.display = 'none');
-                    transliterationToggle.textContent = 'Show Transliteration';
-                    localStorage.setItem('showTransliteration', 'false');
-                } else {
-                    transliterations.forEach(el => el.style.display = 'block');
-                    transliterationToggle.textContent = 'Hide Transliteration';
-                    localStorage.setItem('showTransliteration', 'true');
-                }
-            });
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                document.body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            }
         });
     </script>
 </body>
