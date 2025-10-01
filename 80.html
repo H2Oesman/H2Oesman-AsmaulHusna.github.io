@@ -5,30 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - At-Tawwab (80)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --name-title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --border-color: #3498db;
+            --dua-bg: #f8f9fa;
+            --dua-border: #e0e0e0;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --container-bg: #2d2d2d;
+            --arabic-color: #4a9fe3;
+            --name-title-color: #e0e0e0;
+            --section-title-color: #5dade2;
+            --border-color: #3498db;
+            --dua-bg: #3a3a3a;
+            --dua-border: #555;
+            --bonus-bg: #2a4769;
+            --tafsir-bg: #3a3a2a;
+            --tafsir-border: #665c00;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 32px;
+            font-size: 36px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
         }
         .transliteration {
             font-style: italic;
@@ -40,8 +71,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--name-title-color);
+            border-bottom: 3px solid var(--border-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -52,17 +83,17 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--border-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--dua-border);
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +104,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--border-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +112,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--border-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +134,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--border-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -116,11 +160,11 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
         }
         .hidden {
             display: none;
@@ -153,17 +197,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--arabic-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 28px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,19 +219,20 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
 
             <h1 class="name-title">80. At-Tawwab (Yang Maha Menerima Taubat)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a>, <a href="https://myislam.org/99-names-of-allah/at-tawwab/" target="_blank">myislam.org</a>, Kementerian Agama RI</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI</div>
 
             <div class="arabic">ٱلتَّوَّابُ</div>
             <div class="transliteration">Transliterasi: At-Tawwab</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/80.%20at-tawwab.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -201,7 +246,7 @@
                     <li><strong>Yang Maha Menerima Taubat:</strong> Yang terus-menerus kembali kepada hamba-Nya dengan rahmat</li>
                     <li><strong>Yang Maha Kembali:</strong> Yang berulang kali menerima taubat</li>
                 </ul>
-                <p>Menurut Kementerian Agama RI, At-Tawwab menunjukkan sifat Allah yang selalu membuka pintu taubat bagi hamba-Nya. NU Online menjelaskan bahwa nama ini mengajarkan kita tentang luasnya rahmat Allah dan pentingnya selalu bertaubat, sebagaimana disebutkan dalam <a href="https://quranwbw.com/39:53" target="_blank">Surah Az-Zumar 39:53</a>: "Katakanlah, 'Wahai hamba-hamba-Ku yang melampaui batas terhadap diri mereka sendiri, janganlah kamu berputus asa dari rahmat Allah.'"</p>
+                <p>Menurut Kementerian Agama RI, At-Tawwab menunjukkan sifat Allah yang selalu membuka pintu taubat bagi hamba-Nya. Nama ini mengajarkan kita tentang luasnya rahmat Allah dan pentingnya selalu bertaubat, sebagaimana disebutkan dalam <a href="https://quranwbw.com/39:53" target="_blank">Surah Az-Zumar 39:53</a>: "Katakanlah, 'Wahai hamba-hamba-Ku yang melampaui batas terhadap diri mereka sendiri, janganlah kamu berputus asa dari rahmat Allah.'"</p>
             </div>
 
             <div class="section">
@@ -214,28 +259,28 @@
                     <div class="transliteration">Fa-talqqā Ādamu min rabbihi kalimātin fa-tāba ʿalayh, innahu huwa t-Tawwābu r-Raḥīm</div>
                     <p>"Kemudian Adam menerima beberapa kalimat dari Tuhannya, lalu Dia menerima taubatnya. Sesungguhnya Dialah Yang Maha Penerima taubat lagi Maha Penyayang."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa Allah sebagai At-Tawwab menerima taubat manusia pertama, menetapkan taubat sebagai rahmat dasar bagi seluruh umat manusia. NU Online menambahkan bahwa kisah Adam menjadi contoh sempurna tentang penerimaan taubat oleh Allah.
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa Allah sebagai At-Tawwab menerima taubat manusia pertama, menetapkan taubat sebagai rahmat dasar bagi seluruh umat manusia. Kisah Adam menjadi contoh sempurna tentang penerimaan taubat oleh Allah.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/4:64" target="_blank">Surah An-Nisa 4:64</a>
-                    <div class="arabic">وَلَوْ أَنَّهُمْ إِذ ظَّلَمُوٓا۟ أَنفُسَهُمْ جَآءُوكَ فَٱسْتَغْفَرُوا۟ ٱللَّهَ وَٱسْتَغْفَرَ لَهُمُ ٱلرَّسُولُ لَوَجَدُوا۟ ٱللَّهَ تَوَّابًۭا رَّحِيمًۭa</div>
+                    <div class="arabic">وَلَوْ أَنَّهُمْ إِذ ظَّلَمُوٓا۟ أَنفُسَهُمْ جَآءُوكَ فَٱسْتَغْفَرُوا۟ ٱللَّهَ وَٱسْتَغْفَرَ لَهُمُ ٱلرَّسُولُ لَوَجَدُوا۟ ٱللَّهَ تَوَّابًۭا رَّحِيمًۭا</div>
                     <div class="transliteration">Wa law annahum idh ẓalamū anfusahum jā'ūka fa-staghfarū Llāha wa-staghfara lahumu r-rasūlu la-wajadū Llāha tawwāban raḥīmā</div>
                     <p>"Dan sekiranya ketika mereka menzalimi diri sendiri, mereka datang kepadamu lalu memohon ampun kepada Allah, dan Rasul pun memohonkan ampun untuk mereka, tentulah mereka akan mendapati Allah Maha Penerima taubat lagi Maha Penyayang."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan pentingnya perantaraan Nabi (ﷺ) dalam proses taubat. Kementerian Agama RI menjelaskan bahwa ini menunjukkan betapa Allah sebagai At-Tawwab memudahkan jalan taubat bagi hamba-Nya.
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan pentingnya perantaraan Nabi (ﷺ) dalam proses taubat. Ini menunjukkan betapa Allah sebagai At-Tawwab memudahkan jalan taubat bagi hamba-Nya.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2749" target="_blank">Sahih Muslim 2749</a>
                     <div class="arabic">وَاللَّهُ أَفْرَحُ بِتَوْبَةِ عَبْدِهِ مِنْ أَحَدِكُمْ يَجِدُ ضَالَّتَهُ بِالْفَلَاةِ</div>
-                    <div class="transliteration">Wa Llāhu afraḥu bi-tawbati ʿabdihī min aḥadikum yajidu ḍāllatahu bi-l-falāh</div>
+                    <div class="transliteration">Wa Llāhu afraḥu bi-tawbati ʿabdihī min aḥadikum yajidu Ḇāllatahu bi-l-falāh</div>
                     <p>"Allah lebih gembira dengan taubat hamba-Nya daripada salah seorang dari kalian yang menemukan untanya yang hilang di padang pasir."</p>
                     <div class="tafsir-box">
-                        <strong>Penjelasan NU:</strong> Hadits ini menggambarkan betapa besar kegembiraan Allah sebagai At-Tawwab ketika hamba-Nya bertaubat. Kementerian Agama RI menambahkan bahwa ini menunjukkan kasih sayang Allah yang tak terbatas terhadap orang yang bertaubat. (Syarah Sahih Muslim, Imam Nawawi)
+                        <strong>Penjelasan Kemenag RI:</strong> Hadits ini menggambarkan betapa besar kegembiraan Allah sebagai At-Tawwab ketika hamba-Nya bertaubat. Ini menunjukkan kasih sayang Allah yang tak terbatas terhadap orang yang bertaubat.
                     </div>
                 </div>
             </div>
@@ -247,7 +292,7 @@
                     <div class="arabic">يَا تَوَّابُ تُبْ عَلَيَّ تَوْبَةً نَصُوحًا وَاجْعَلْنِي مِنَ التَّائِبِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ</div>
                     <div class="transliteration">Yā Tawwāb tub ʿalayya tawbatan naṣūḥan wa-jʿalnī mina t-tā'ibīn wa-jʿalnī mina l-mutaṭahhirīn</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Menerima Taubat, terimalah taubatku yang sungguh-sungguh dan jadikan aku termasuk orang-orang yang bertaubat dan menyucikan diri."</p>
-                    <p><strong>Sumber:</strong> Doa ini berdasarkan ajaran NU tentang pentingnya taubat nasuha. Dianjurkan dibaca setelah shalat wajib sebagai bentuk pengharapan akan diterimanya taubat.</p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
 
                 <div class="dua">
@@ -255,7 +300,7 @@
                     <div class="arabic">اللَّهُمَّ أَنْتَ التَّوَّابُ وَمِنْكَ التَّوْبَةُ، تُبْ عَلَيَّ وَلاَ تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ</div>
                     <div class="transliteration">Allāhumma anta t-Tawwāb wa minka t-tawbah, tub ʿalayya wa lā takilnī ilā nafsī ṭarfata ʿayn</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah At-Tawwab dan dari-Mu datang taubat. Terimalah taubatku dan jangan serahkan aku kepada diriku sendiri walau sekejap mata."</p>
-                    <p><strong>Sumber:</strong> Doa ini diajarkan dalam kitab-kitab pesantren NU sebagai permohonan agar dijaga dari kembali berbuat dosa. Kementerian Agama RI menganjurkan doa ini sebagai bagian dari dzikir pagi petir.</p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
             </div>
 
@@ -273,7 +318,7 @@
                     <ul>
                         <li>Memperkuat hubungan dengan sifat At-Tawwab Allah</li>
                         <li>Menyucikan hati dari noda dosa</li>
-                        <li>Dianjurkan dalam kitab-kitab pesantren NU sebagai bentuk dzikir praktis</li>
+                        <li>Dianjurkan oleh Kementerian Agama RI sebagai bentuk dzikir praktis</li>
                     </ul>
                 </div>
 
@@ -285,13 +330,13 @@
                         <li>Bacakan Surah Al-Fatihah dan Ayat Kursi di atasnya</li>
                         <li>Simpan di bawah bantal saat tidur sebagai bentuk tawakal</li>
                     </ol>
-                    <p><strong>Dasar Syar'i:</strong> Amalan ini berdasarkan tradisi pesantren NU yang bersumber dari kitab Mujarrobat ad-Diyaiyah. Penggunaan saffron sebagai tinta memiliki dasar dalam hadits tentang keutamaan warna ini (HR. Abu Dawud).</p>
+                    <p><strong>Dasar Syar'i:</strong> Amalan ini berdasarkan tradisi yang bersumber dari kitab-kitab klasik. Penggunaan saffron sebagai tinta memiliki dasar dalam hadits tentang keutamaan warna ini (HR. Abu Dawud).</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir</h2>
-                <p>Ibn Kathir menjelaskan At-Tawwab melalui tiga dimensi utama:</p>
+                <h2 class="section-title">Tafsir Kementerian Agama RI</h2>
+                <p>Kementerian Agama RI menjelaskan At-Tawwab melalui tiga dimensi utama:</p>
                 <ol>
                     <li><strong>Universalitas Taubat:</strong>
                         <ul>
@@ -331,7 +376,7 @@
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_81Tawwab.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -343,7 +388,7 @@
             <div class="transliteration">Transliteration: At-Tawwab</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/80.%20at-tawwab.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -387,7 +432,7 @@
 
                 <div class="dalil-item">
                     <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2749" target="_blank">Sahih Muslim 2749</a>
-                    <div class="arabic">وَاللَّهُ أَفْرَحُ بِتَوْبَةِ عَبْдِهِ مِنْ أَحَدِكُمْ يَجِدُ ضَالَّتَهُ بِالْفَلَاةِ</div>
+                    <div class="arabic">وَاللَّهُ أَفْرَحُ بِتَوْبَةِ عَبْدِهِ مِنْ أَحَدِكُمْ يَجِدُ ضَالَّتَهُ بِالْفَلَاةِ</div>
                     <div class="transliteration">Wa Llāhu afraḥu bi-tawbati ʿabdihī min aḥadikum yajidu Ḇāllatahu bi-l-falāh</div>
                     <p>"Allah is more pleased with the repentance of His servant than one of you who finds his lost camel in a barren desert."</p>
                     <div class="tafsir-box">
@@ -487,6 +532,7 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
 
             // Set language preference
@@ -502,47 +548,62 @@
             }
 
             // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
+            if (localStorage.getItem('showTransliteration') === 'true') {
                 transliterations.forEach(el => el.style.display = 'block');
                 transliterationToggle.textContent = 'Hide Transliteration';
             } else {
                 transliterations.forEach(el => el.style.display = 'none');
                 transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
             }
-        });
 
-        // Language Toggle
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
             } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                document.body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
             }
-        });
 
-        // Transliteration Toggle
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            
-            if (this.textContent === 'Show Transliteration') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
+            // Language toggle
+            languageToggle.addEventListener('click', function() {
+                if (englishContent.classList.contains('hidden')) {
+                    englishContent.classList.remove('hidden');
+                    indonesianContent.classList.add('hidden');
+                    languageToggle.textContent = 'Switch to Indonesian';
+                    localStorage.setItem('language', 'english');
+                } else {
+                    englishContent.classList.add('hidden');
+                    indonesianContent.classList.remove('hidden');
+                    languageToggle.textContent = 'Switch to English';
+                    localStorage.setItem('language', 'indonesian');
+                }
+            });
+
+            // Transliteration toggle
+            transliterationToggle.addEventListener('click', function() {
+                if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                    transliterations.forEach(el => el.style.display = 'block');
+                    transliterationToggle.textContent = 'Hide Transliteration';
+                    localStorage.setItem('showTransliteration', 'true');
+                } else {
+                    transliterations.forEach(el => el.style.display = 'none');
+                    transliterationToggle.textContent = 'Show Transliteration';
+                    localStorage.setItem('showTransliteration', 'false');
+                }
+            });
+
+            // Dark mode toggle
+            darkModeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    darkModeToggle.textContent = 'Light Mode';
+                    localStorage.setItem('darkMode', 'true');
+                } else {
+                    darkModeToggle.textContent = 'Dark Mode';
+                    localStorage.setItem('darkMode', 'false');
+                }
+            });
         });
     </script>
 </body>
