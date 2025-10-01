@@ -5,31 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Al-Malikul-Mulk (Yang Maha Memiliki Kedaulatan) (84)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #3498db;
+            --secondary-color: #1a5276;
+            --accent-color: #2980b9;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4da8da;
+            --secondary-color: #7fb3d5;
+            --accent-color: #5dade2;
+            --section-bg: #2d3748;
+            --border-color: #4a5568;
+            --tafsir-bg: #2d2d1e;
+            --tafsir-border: #55552b;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
         }
+
         .arabic {
-            font-size: 32px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--secondary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
         }
+
         .transliteration {
             font-style: italic;
             color: #7f8c8d;
@@ -38,50 +69,57 @@
             margin: -15px 0 20px;
             display: none;
         }
+
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--text-color);
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
         }
+
         .section {
             margin: 30px 0;
             padding: 0 10px;
         }
+
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--accent-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
             padding-left: 15px;
         }
+
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
         }
+
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
         }
+
         .back-to-top {
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
+
         .language-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--primary-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -90,6 +128,7 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
         .transliteration-toggle {
             position: fixed;
             top: 60px;
@@ -103,28 +142,47 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
         }
+
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
-            border-bottom: 1px dashed #ddd;
+            border-bottom: 1px dashed var(--border-color);
         }
+
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
         }
+
         .hidden {
             display: none;
         }
+
         .name-source {
             text-align: center;
             margin-top: -15px;
@@ -132,10 +190,12 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+
         .main-menu {
             text-align: center;
             margin: 15px 0;
         }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -150,20 +210,21 @@
             margin: 20px auto;
             text-align: center;
         }
+
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--secondary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,19 +236,20 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+
             <h1 class="name-title">84. Al-Malikul-Mulk (Yang Maha Memiliki Kedaulatan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI, <a href="https://myislam.org/99-names-of-allah/malikul-mulk/" target="_blank">myislam.org</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/malikul-mulk/" target="_blank">myislam.org/99-names-of-allah/malikul-mulk/</a> | Kementerian Agama RI</div>
 
             <div class="arabic">ٱلْمَالِكُ ٱلْمُلْكُ</div>
             <div class="transliteration">Transliterasi: Al-Malikul-Mulk</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/84.%20malikul%20mulk.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -211,11 +273,11 @@
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/3:26" target="_blank">Surah Ali 'Imran 3:26</a>
-                    <div class="arabic">قُلِ ٱللَّهُمَّ مَـٰلِكَ ٱلْمُلْكِ تُؤْتِى ٱلْمُلْكَ مَن تَشَآءُ وَتَنزِعُ ٱلْمُلْكَ مِمَّن تَشَآءُ وَتُعِزُّ mَن تَشَآءُ وَتُذِلُّ mَن تَشَآءُ ۖ بِيَدِكَ ٱلْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ</div>
+                    <div class="arabic">قُلِ ٱللَّهُمَّ مَـٰلِكَ ٱلْمُلْكِ تُؤْتِى ٱلْمُلْكَ مَن تَشَآءُ وَتَنزِعُ ٱلْمُلْكَ مِمَّن تَشَآءُ وَتُعِزُّ مَن تَشَآءُ وَتُذِلُّ مَن تَشَآءُ ۖ بِيَدِكَ ٱلْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ</div>
                     <div class="transliteration">Quli allahumma malika almulki tu/tee almulka man tashao watanziAAu almulka mimman tashao watuAAizzu man tashao watuthillu man tashao biyadika alkhayru innaka AAala kulli shayin qadeerun</div>
                     <p>"Katakanlah: 'Wahai Allah Pemilik segala kekuasaan, Engkau berikan kekuasaan kepada siapa yang Engkau kehendaki dan Engkau cabut kekuasaan dari siapa yang Engkau kehendaki. Engkau muliakan siapa yang Engkau kehendaki dan Engkau hinakan siapa yang Engkau kehendaki. Di tangan Engkaulah segala kebaikan. Sesungguhnya Engkau Maha Kuasa atas segala sesuatu.'"</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan kendali mutlak Allah atas semua kekuasaan. Ayat ini mencakup kerajaan duniawi dan otoritas spiritual, menunjukkan kedaulatan Allah yang sempurna dalam memberi, mempertahankan, dan mencabut kekuasaan.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan kendali mutlak Allah atas semua kekuasaan. Ayat ini mencakup kerajaan duniawi dan otoritas spiritual, menunjukkan kedaulatan Allah yang sempurna dalam memberi, mempertahankan, dan mencabut kekuasaan.
                     </div>
                 </div>
 
@@ -226,7 +288,7 @@
                     <div class="transliteration">Tabaraka allathee biyadihi almulku wahuwa AAala kulli shayin qadeerun</div>
                     <p>"Maha Suci Allah yang di tangan-Nyalah segala kerajaan, dan Dia Maha Kuasa atas segala sesuatu."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kemenag RI:</strong> Ayat pembuka surah ini menegaskan kepemilikan sempurna Allah. Kata "Tabaraka" menunjukkan Dia sumber segala berkah dalam kedaulatan. Berbeda dengan penguasa manusia, kekuasaan Allah bersifat mandiri dan mutlak.
+                        <strong>Kementerian Agama RI:</strong> Ayat pembuka surah ini menegaskan kepemilikan sempurna Allah. Kata "Tabaraka" menunjukkan Dia sumber segala berkah dalam kedaulatan. Berbeda dengan penguasa manusia, kekuasaan Allah bersifat mandiri dan mutlak.
                     </div>
                 </div>
 
@@ -236,7 +298,7 @@
                     <div class="transliteration">Inna Allaha huwa al-Maliku al-haqeeqiyyu wa ma fi as-samawati wal-ardi lahu</div>
                     <p>"Sesungguhnya Allah adalah Pemilik sejati, dan apa yang ada di langit dan bumi adalah milik-Nya."</p>
                     <div class="tafsir-box">
-                        <strong>Konteks (Kemenag RI):</strong> Nabi (ﷺ) menekankan hal ini ketika seorang sahabat membanggakan kekayaannya. Hadits ini mengingatkan bahwa semua kepemilikan adalah amanah sementara dari Al-Malikul-Mulk, Pemilik sejati.
+                        <strong>Keterangan Kementerian Agama RI:</strong> Nabi (ﷺ) menekankan hal ini ketika seorang sahabat membanggakan kekayaannya. Hadits ini mengingatkan bahwa semua kepemilikan adalah amanah sementara dari Al-Malikul-Mulk, Pemilik sejati.
                     </div>
                 </div>
             </div>
@@ -248,15 +310,15 @@
                     <div class="arabic">يَا مَالِكَ الْمُلْكِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، أَسْأَلُكَ مُلْكًا لَا يَنْفَدُ، وَعِزًّا لَا يُضَامُ</div>
                     <div class="transliteration">Ya Malik al-Mulk, ya Dhal-Jalali wal-Ikram, as'aluka mulkan la yanfadu, wa 'izzan la yudamu</div>
                     <p><strong>Terjemahan:</strong> "Wahai Pemilik Kedaulatan, Wahai Pemilik Keagungan dan Kemuliaan, aku memohon kepada-Mu kerajaan yang tidak akan lenyap, dan kemuliaan yang tidak akan pudar."</p>
-                    <p><strong>Manfaat (Kemenag RI):</strong> Doa ini dianjurkan dibaca setiap hari untuk memperkuat pengakuan atas kepemilikan mutlak Allah. Nabi (ﷺ) mengajarkan bahwa mengingat kedaulatan Allah melindungi dari kesombongan.</p>
+                    <p><strong>Manfaat:</strong> Doa ini dianjurkan dibaca setiap hari untuk memperkuat pengakuan atas kepemilikan mutlak Allah. Nabi (ﷺ) mengajarkan bahwa mengingat kedaulatan Allah melindungi dari kesombongan.</p>
                 </div>
 
                 <div class="dua">
                     <div class="dua-title">Untuk Kepemimpinan yang Baik</div>
-                    <div class="arabic">اللَّهُمَّ mَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَنْ تَشَاءُ، أَعِزَّنِي بِعِزِّكَ وَاجْعَلْنِي مِنْ عِبَادِكَ الصَّالِحِينَ</div>
+                    <div class="arabic">اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَنْ تَشَاءُ، أَعِزَّنِي بِعِزِّكَ وَاجْعَلْنِي مِنْ عِبَادِكَ الصَّالِحِينَ</div>
                     <div class="transliteration">Allahumma Malik al-Mulk tu'ti al-mulka man tasha', a'izzani bi 'izzika waj'alni min 'ibadika as-salihin</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, Pemilik Kedaulatan yang memberikan kekuasaan kepada siapa yang Engkau kehendaki, muliakan aku melalui kekuatan-Mu dan jadikan aku termasuk hamba-hamba-Mu yang shaleh."</p>
-                    <p><strong>Sumber (Kemenag RI):</strong> Terinspirasi oleh <a href="https://quranwbw.com/3:26" target="_blank">Quran 3:26</a> dan ajaran Nabi tentang mencari kemuliaan melalui kepatuhan kepada Allah.</p>
+                    <p><strong>Sumber:</strong> Terinspirasi oleh <a href="https://quranwbw.com/3:26" target="_blank">Quran 3:26</a> dan ajaran Nabi tentang mencari kemuliaan melalui kepatuhan kepada Allah.</p>
                 </div>
             </div>
 
@@ -270,7 +332,7 @@
                         <li>Renungkan tiga hal yang Anda "miliki" dan akui bahwa itu sebenarnya milik Allah</li>
                         <li>Sedekahkan sesuatu yang Anda hargai sebagai bentuk pengakuan</li>
                     </ol>
-                    <p><strong>Manfaat (Kemenag RI):</strong> Amalan ini:</p>
+                    <p><strong>Manfaat:</strong> Amalan ini:</p>
                     <ul>
                         <li>Mengembangkan tauhid yang murni</li>
                         <li>Mengurangi keterikatan pada harta duniawi</li>
@@ -287,7 +349,7 @@
                         <li>Baca Surah Al-Mulk setiap hari</li>
                         <li>Konsultasikan dengan tiga orang sebelum keputusan besar</li>
                     </ol>
-                    <p><strong>Dasar Historis (Kemenag RI):</strong> Khalifah Umar (RA) biasa berkata: "Aku hanyalah wali dari Pemilik sejati" ketika membuat keputusan, menunjukkan kesadaran akan realitas nama ini.</p>
+                    <p><strong>Dasar Historis:</strong> Khalifah Umar (RA) biasa berkata: "Aku hanyalah wali dari Pemilik sejati" ketika membuat keputusan, menunjukkan kesadaran akan realitas nama ini.</p>
                 </div>
             </div>
 
@@ -323,17 +385,17 @@
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
+
             <h1 class="name-title">84. Al-Malikul-Mulk (The Owner of Sovereignty)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/malikul-mulk/" target="_blank">myislam.org/99-names-of-allah/malikul-mulk/</a></div>
-
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
             
             <!-- Bonus section only in English -->
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_85MalikulMulk.mp3?_=79" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -345,7 +407,7 @@
             <div class="transliteration">Transliteration: Al-Malikul-Mulk</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/84.%20malikul%20mulk.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -369,7 +431,7 @@
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/3:26" target="_blank">Surah Ali 'Imran 3:26</a>
-                    <div class="arabic">قُلِ ٱللَّهُمَّ مَـٰلِكَ ٱلْمُلْكِ تُؤْتِى ٱلْمُلْكَ mَن تَشَآءُ وَتَنزِعُ ٱلْمُلْكَ mِمَّن تَشَآءُ وَتُعِزُّ mَن تَشَآءُ وَتُذِلُّ mَن تَشَآءُ ۖ بِيَدِكَ ٱلْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ</div>
+                    <div class="arabic">قُلِ ٱللَّهُمَّ مَـٰلِكَ ٱلْمُلْكِ تُؤْتِى ٱلْمُلْكَ مَن تَشَآءُ وَتَنزِعُ ٱلْمُلْكَ مِمَّن تَشَآءُ وَتُعِزُّ مَن تَشَآءُ وَتُذِلُّ مَن تَشَآءُ ۖ بِيَدِكَ ٱلْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ</div>
                     <div class="transliteration">Quli allahumma malika almulki tu/tee almulka man tashao watanziAAu almulka mimman tashao watuAAizzu man tashao watuthillu man tashao biyadika alkhayru innaka AAala kulli shayin qadeerun</div>
                     <p>"Say, 'O Allah, Owner of Sovereignty, You give sovereignty to whom You will and You take sovereignty away from whom You will. You honor whom You will and You humble whom You will. In Your hand is [all] good. Indeed, You are over all things competent.'"</p>
                     <div class="tafsir-box">
@@ -380,7 +442,7 @@
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/67:1" target="_blank">Surah Al-Mulk 67:1</a>
-                    <div class="arabic">تَبَارَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْkُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ</div>
+                    <div class="arabic">تَبَارَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ</div>
                     <div class="transliteration">Tabaraka allathee biyadihi almulku wahuwa AAala kulli shayin qadeerun</div>
                     <p>"Blessed is He in whose hand is dominion, and He is over all things competent."</p>
                     <div class="tafsir-box">
@@ -403,7 +465,7 @@
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Recognizing Divine Sovereignty</div>
-                    <div class="arabic">يَا مَالِكَ الْمُلْكِ، يَا ذَا الْجَلَالِ وَالْإِkْرَامِ، أَسْأَلُكَ مُلْkًا لَا يَنْفَدُ، وَعِزًّا لَا يُضَامُ</div>
+                    <div class="arabic">يَا مَالِكَ الْمُلْكِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، أَسْأَلُكَ مُلْكًا لَا يَنْفَدُ، وَعِزًّا لَا يُضَامُ</div>
                     <div class="transliteration">Ya Malik al-Mulk, ya Dhal-Jalali wal-Ikram, as'aluka mulkan la yanfadu, wa 'izzan la yudamu</div>
                     <p><strong>Translation:</strong> "O Owner of Sovereignty, O Possessor of Majesty and Honor, I ask You for everlasting dominion and honor that will never fade."</p>
                     <p><strong>Benefits:</strong> Recite this daily to strengthen recognition of Allah's absolute ownership. The Prophet (ﷺ) taught that remembering Allah's sovereignty protects from arrogance (Tirmidhi).</p>
@@ -411,7 +473,7 @@
 
                 <div class="dua">
                     <div class="dua-title">For Righteous Authority</div>
-                    <div class="arabic">اللَّهُمَّ mَالِكَ الْمُلْkِ تُؤْتِي الْمُلْkَ mَنْ تَشَاءُ، أَعِزَّنِي بِعِزِّكَ وَاجْعَلْنِي مِنْ عِبَادِكَ الصَّالِحِينَ</div>
+                    <div class="arabic">اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَنْ تَشَاءُ، أَعِزَّنِي بِعِزِّكَ وَاجْعَلْنِي مِنْ عِبَادِكَ الصَّالِحِينَ</div>
                     <div class="transliteration">Allahumma Malik al-Mulk tu'ti al-mulka man tasha', a'izzani bi 'izzika waj'alni min 'ibadika as-salihin</div>
                     <p><strong>Translation:</strong> "O Allah, Owner of Sovereignty who grants authority to whom You will, honor me through Your might and make me among Your righteous servants."</p>
                     <p><strong>Source:</strong> Inspired by Quran 3:26 and the Prophet's teachings on seeking honor through submission (Ibn Majah).</p>
@@ -475,7 +537,7 @@
                 <p>In Surah Al-Jathiyah (<a href="https://quranwbw.com/45:27" target="_blank">45:27</a>), Allah reminds that all kingdoms will ultimately return to Him, showing the temporary nature of human authority compared to His eternal dominion.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
@@ -491,9 +553,10 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
 
-            // Language toggle functionality
+            // Set language preference
             if (localStorage.getItem('language') === 'english') {
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
@@ -502,39 +565,74 @@
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
 
-            languageToggle.addEventListener('click', function() {
-                if (englishContent.classList.contains('hidden')) {
-                    englishContent.classList.remove('hidden');
-                    indonesianContent.classList.add('hidden');
-                    languageToggle.textContent = 'Switch to Indonesian';
-                    localStorage.setItem('language', 'english');
-                } else {
-                    englishContent.classList.add('hidden');
-                    indonesianContent.classList.remove('hidden');
-                    languageToggle.textContent = 'Switch to English';
-                    localStorage.setItem('language', 'indonesian');
-                }
-            });
-
-            // Transliteration toggle functionality
-            if (localStorage.getItem('showTransliteration') === 'true') {
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
                 transliterations.forEach(el => el.style.display = 'block');
                 transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
 
-            transliterationToggle.addEventListener('click', function() {
-                if (transliterations[0].style.display === 'block') {
-                    transliterations.forEach(el => el.style.display = 'none');
-                    transliterationToggle.textContent = 'Show Transliteration';
-                    localStorage.setItem('showTransliteration', 'false');
-                } else {
-                    transliterations.forEach(el => el.style.display = 'block');
-                    transliterationToggle.textContent = 'Hide Transliteration';
-                    localStorage.setItem('showTransliteration', 'true');
-                }
-            });
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                document.body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            }
         });
     </script>
 </body>
