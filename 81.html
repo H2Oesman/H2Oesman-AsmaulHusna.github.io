@@ -3,33 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>99 Names of Allah - Al-Afuww (81)</title>
+    <title>99 Names of Allah - Al-Muntaqim (81)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #3498db;
+            --secondary-color: #1a5276;
+            --accent-color: #2980b9;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4da8da;
+            --secondary-color: #7fb3d5;
+            --accent-color: #5dade2;
+            --section-bg: #2d3748;
+            --border-color: #4a5568;
+            --tafsir-bg: #2d2d1e;
+            --tafsir-border: #55552b;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
         }
+
         .arabic {
-            font-size: 32px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--secondary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
         }
+
         .transliteration {
             font-style: italic;
             color: #7f8c8d;
@@ -38,50 +69,57 @@
             margin: -15px 0 20px;
             display: none;
         }
+
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--text-color);
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
         }
+
         .section {
             margin: 30px 0;
             padding: 0 10px;
         }
+
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--accent-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
             padding-left: 15px;
         }
+
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
         }
+
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
         }
+
         .back-to-top {
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
+
         .language-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--primary-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -90,6 +128,7 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
         .transliteration-toggle {
             position: fixed;
             top: 60px;
@@ -103,28 +142,47 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
         }
+
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
-            border-bottom: 1px dashed #ddd;
+            border-bottom: 1px dashed var(--border-color);
         }
+
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
         }
+
         .hidden {
             display: none;
         }
+
         .name-source {
             text-align: center;
             margin-top: -15px;
@@ -132,10 +190,12 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+
         .main-menu {
             text-align: center;
             margin: 15px 0;
         }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -150,20 +210,21 @@
             margin: 20px auto;
             text-align: center;
         }
+
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--secondary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,34 +236,35 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
-            <h1 class="name-title">81. Al-Afuww (Yang Maha Pemaaf)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-afuw/" target="_blank">myislam.org/99-names-of-allah/al-afuw/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a></div>
+            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
 
-            <div class="arabic">ٱلْعَفُوُّ</div>
-            <div class="transliteration">Transliterasi: Al-Afuww</div>
+            <h1 class="name-title">81. Al-Muntaqim (Yang Maha Penyiksa)</h1>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muntaqim/" target="_blank">myislam.org/99-names-of-allah/al-muntaqim/</a> | Kementerian Agama RI</div>
+
+            <div class="arabic">ٱلْمُنْتَقِمُ</div>
+            <div class="transliteration">Transliterasi: Al-Muntaqim</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
-                    <source src="https://example.com/audio/al-afuww.mp3" type="audio/mpeg">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/81.%20al-muntaqim.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
                 </audio>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Makna</h2>
-                <p>Al-Afuww muncul dalam Al-Quran lima kali (<a href="https://quranwbw.com/4:43" target="_blank">4:43</a>, <a href="https://quranwbw.com/4:99" target="_blank">4:99</a>, <a href="https://quranwbw.com/4:149" target="_blank">4:149</a>, <a href="https://quranwbw.com/22:60" target="_blank">22:60</a>, <a href="https://quranwbw.com/58:2" target="_blank">58:2</a>) dengan makna mendalam:</p>
+                <p>Al-Muntaqim muncul dalam Al-Quran tiga kali (<a href="https://quranwbw.com/32:22" target="_blank">32:22</a>, <a href="https://quranwbw.com/43:41" target="_blank">43:41</a>, <a href="https://quranwbw.com/44:16" target="_blank">44:16</a>) dengan makna mendalam:</p>
                 <ul>
-                    <li><strong>Yang Maha Pemaaf:</strong> Yang menghapus dosa sepenuhnya</li>
-                    <li><strong>Yang Menghilangkan:</strong> Yang menghapus jejak kesalahan</li>
+                    <li><strong>Yang Maha Penyiksa:</strong> Yang menghukum pelaku kezaliman dengan adil</li>
+                    <li><strong>Yang Membalas:</strong> Yang memberikan balasan untuk kejahatan</li>
                 </ul>
-                <p>Menurut Kementerian Agama RI dalam Tafsir Kementerian Agama, Al-Afuww adalah Allah Yang Maha Pemaaf yang menghapus dosa-dosa hamba-Nya setelah mereka bertaubat. Sebagaimana disebutkan dalam <a href="https://quranwbw.com/39:53" target="_blank">Surah Az-Zumar 39:53</a>: "Sesungguhnya Allah mengampuni segala dosa."</p>
-                <p>NU Online menjelaskan bahwa sifat ini menunjukkan kasih sayang Allah yang luar biasa, dimana Dia tidak hanya mengampuni tetapi benar-benar menghapus jejak-jejak kesalahan.</p>
+                <p>Menurut Kementerian Agama RI dalam Tafsir Kementerian Agama, Al-Muntaqim adalah Allah Yang Maha Adil dalam memberikan hukuman kepada orang-orang yang zalim setelah memberikan kesempatan dan peringatan. Sebagaimana disebutkan dalam <a href="https://quranwbw.com/40:3" target="_blank">Surah Ghafir 40:3</a>: "Yang Mengampuni dosa, Yang Menerima taubat, Yang Keras dalam hukuman."</p>
+                <p>Kementerian Agama RI menjelaskan bahwa sifat ini menunjukkan kesempurnaan keadilan Allah, dimana hukuman hanya diberikan setelah segala peringatan dan kesempatan bertaubat diberikan.</p>
             </div>
 
             <div class="section">
@@ -210,33 +272,33 @@
                 
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/4:149" target="_blank">Surah An-Nisa 4:149</a>
-                    <div class="arabic">إِن تُبْدُوا۟ خَيْرًا أَوْ تُخْفُوهُ أَوْ تَعْفُوا۟ عَن سُوٓءٍۢ فَإِنَّ ٱللَّهَ كَانَ عَفُوًّۭا قَدِيرًۭا</div>
-                    <div class="transliteration">In tubdū khayran aw tukhfūhu aw taʿfū ʿan sū'in fa-inna Allāha kāna ʿafuwwan qadīrā</div>
-                    <p>"Jika kamu menyatakan kebaikan atau menyembunyikannya atau memaafkan kesalahan, maka sesungguhnya Allah Maha Pemaaf lagi Maha Kuasa."</p>
+                    <a href="https://quranwbw.com/32:22" target="_blank">Surah As-Sajdah 32:22</a>
+                    <div class="arabic">وَمَنْ أَظْلَمُ مِمَّن ذُكِّرَ بِـَٔايَـٰتِ رَبِّهِۦ ثُمَّ أَعْرَضَ عَنْهَآ ۚ إِنَّا مِنَ ٱلْمُجْرِمِينَ مُنتَقِمُونَ</div>
+                    <div class="transliteration">Wa man aẓlamu mimman dhukkira bi-āyāti rabbihī thumma aʿraḍa ʿanhā, innā mina l-mujrimīna muntaqimūn</div>
+                    <p>"Dan siapakah yang lebih zalim daripada orang yang telah diperingatkan dengan ayat-ayat Tuhannya, kemudian dia berpaling darinya? Sesungguhnya Kami akan memberikan balasan kepada orang-orang yang berdosa."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan bahwa Allah sebagai Al-Afuww mendorong manusia untuk saling memaafkan. Menurut penjelasan Kemenag, pemaafan manusia merupakan cerminan dari sifat Allah Yang Maha Pemaaf.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menetapkan sifat Allah sebagai Al-Muntaqim terhadap mereka yang dengan sengaja menolak kebenaran setelah diperingatkan. Hukuman datang hanya setelah peringatan jelas dan kesempatan untuk bertaubat.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
-                    <a href="https://quranwbw.com/22:60" target="_blank">Surah Al-Hajj 22:60</a>
-                    <div class="arabic">وَإِنْ عَاقَبْتُمْ فَعَاقِبُوا۟ بِمِثْلِ mَا عُوقِبْتُم بِهِۦ ۖ وَلَئِن صَبَرْتُمْ لَهُوَ خَيْرٌۭ لِّلصَّـٰبِرِينَ</div>
-                    <div class="transliteration">Wa in ʿāqabtum fa-ʿāqibū bi-mithli mā ʿūqibtum bih, wa la-in ṣabartum la-huwa khayrun liṣ-ṣābirīn</div>
-                    <p>"Dan jika kamu membalas, maka balaslah dengan yang setimpal. Tetapi jika kamu bersabar, itu lebih baik bagi orang yang sabar."</p>
+                    <a href="https://quranwbw.com/44:16" target="_blank">Surah Ad-Dukhan 44:16</a>
+                    <div class="arabic">يَوْمَ نَبْطِشُ ٱلْبَطْشَةَ ٱلْكُبْرَىٰٓ إِنَّا مُنتَقِمُونَ</div>
+                    <div class="transliteration">Yawma nabṭishu l-baṭshata l-kubrā innā muntaqimūn</div>
+                    <p>"Pada hari Kami menghantam dengan hantaman yang besar, sesungguhnya Kami akan memberi balasan."</p>
                     <div class="tafsir-box">
-                        <strong>NU Online:</strong> Ayat ini menunjukkan keseimbangan antara keadilan dan pemaafan. Para ulama NU menjelaskan bahwa meskipun pembalasan diizinkan, Allah sebagai Al-Afuww memberi pahala lebih besar bagi mereka yang memilih kesabaran dan pemaafan.
+                        <strong>Kementerian Agama RI:</strong> Ini menggambarkan pembalasan terakhir Allah pada Hari Kiamat. Menurut penjelasan Kementerian Agama RI, ini adalah manifestasi terakhir dari Al-Muntaqim setelah semua peringatan dan kesempatan untuk bertaubat habis.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:7509" target="_blank">Sahih Bukhari 7509</a>
-                    <div class="arabic">وَاللَّهُ عَفُوٌّ يُحِبُّ الْعَفْوَ</div>
-                    <div class="transliteration">Wa Llāhu ʿafuwwun yuḥibbu l-ʿafw</div>
-                    <p>"Allah Maha Pemaaf dan menyukai pemaafan."</p>
+                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2582" target="_blank">Sahih Muslim 2582</a>
+                    <div class="arabic">إِنَّ اللَّهَ لَيُمْلِي لِلظَّالِمِ حَتَّى إِذَا أَخَذَهُ لَمْ يُفْلِتْهُ</div>
+                    <div class="transliteration">Inna Allāha layumlī liẓ-ẓālimi ḥattā idhā akhadhahu lam yuflit-hu</div>
+                    <p>"Sesungguhnya Allah memberi tenggang waktu kepada orang zalim, tetapi ketika Dia menangkapnya, Dia tidak melepaskannya."</p>
                     <div class="tafsir-box">
-                        <strong>Keterangan NU:</strong> Nabi (ﷺ) menggambarkan sifat Allah sebagai Al-Afuww yang tidak hanya memaafkan tetapi menyukai ketika hamba-Nya memaafkan orang lain. Dalam kitab-kitab pesantren, hadits ini sering dijadikan dasar untuk mengajarkan pentingnya memaafkan.
+                        <strong>Keterangan Kementerian Agama RI:</strong> Nabi (ﷺ) menggambarkan keadilan Allah sebagai Al-Muntaqim - memberi waktu untuk bertaubat sebelum hukuman yang tak terelakkan. Ini melengkapi konsep Quran tentang pembalasan yang tertunda tetapi pasti.
                     </div>
                 </div>
             </div>
@@ -244,76 +306,76 @@
             <div class="section">
                 <h2 class="section-title">Doa</h2>
                 <div class="dua">
-                    <div class="dua-title">Untuk Pemaafan Sempurna</div>
-                    <div class="arabic">يَا عَفُوُّ يَا غَفُورُ اغْفِرْ لِي ذُنُوبِي كُلَّهَا وَاعْفُ عَنِّي سَيِّئَاتِي بِفَضْلِكَ وَكَرَمِكَ</div>
-                    <div class="transliteration">Yā ʿAfuwwu yā Ghafūru ghfir lī dhunūbī kullahā waʿfu ʿannī sayyi'ātī bi-faḍlika wa karamik</div>
-                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Pemaaf, wahai Yang Maha Pengampun, ampunilah semua dosaku dan maafkan kesalahanku dengan karunia dan kemurahan-Mu."</p>
-                    <p><strong>Manfaat:</strong> Doa ini diajarkan dalam kitab-kitab wirid NU untuk memohon pengampunan total. Nabi (ﷺ) mengajarkan bahwa pemaafan Allah menghapus semua jejak dosa (Tirmidzi).</p>
+                    <div class="dua-title">Untuk Perlindungan dari Penindasan</div>
+                    <div class="arabic">يَا مُنْتَقِمُ انْتَقِمْ لِي مِمَّنْ ظَلَمَنِي وَاجْعَلْنِي فِي كَنَفِكَ وَحِفْظِكَ</div>
+                    <div class="transliteration">Yā Muntaqim intaqim lī mimman ẓalamanī wa-jʿalnī fī kanafika wa ḥifẓika</div>
+                    <p><strong>Terjemahan:</strong> "Wahai Yang Maha Penyiksa, balaslah untukku terhadap mereka yang menzalimiku, dan tempatkan aku dalam perlindungan dan penjagaan-Mu."</p>
+                    <p><strong>Manfaat:</strong> Doa ini diajarkan dalam kitab-kitab Kementerian Agama RI untuk mencari keadilan ilahi sambil menghindari balas dendam pribadi. Nabi (ﷺ) mengajarkan untuk menyerahkan penghakiman kepada Allah (Muslim).</p>
                 </div>
 
                 <div class="dua">
-                    <div class="dua-title">Untuk Kemampuan Memaafkan</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ الْعَفُوُّ وَمِنْكَ الْعَفْوُ، أَعْطِنِي قَلْبًا عَفُوًّا وَاجْعَلْنِي مِمَّنْ تَغْمُرُهُمْ رَحْمَتُكَ</div>
-                    <div class="transliteration">Allāhumma anta l-ʿAfuwwu wa minka l-ʿafw, aʿṭinī qalban ʿafuwwan wa-jʿalnī mimman taghmaruhum raḥmatuk</div>
-                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Al-Afuww dan dari-Mu datang pemaafan. Berikan aku hati yang pemaaf dan jadikan aku termasuk orang-orang yang diliputi rahmat-Mu."</p>
-                    <p><strong>Sumber:</strong> Dianjurkan dalam kitab Al-Adzkar An-Nawawi yang menjadi rujukan pesantren NU, terinspirasi oleh ajaran Nabi (ﷺ) tentang pemaafan (Muslim).</p>
+                    <div class="dua-title">Untuk Keadilan Melawan Penindas</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْمُنْتَقِمُ مِنَ الظَّالِمِينَ، أَنْتَ الْقَادِرُ عَلَى كُلِّ شَيْءٍ، انْتَقِمْ لِلْمُسْتَضْعَفِينَ</div>
+                    <div class="transliteration">Allāhumma anta l-Muntaqim mina ẓ-ẓālimīn, anta l-Qādiru ʿalā kulli shayʾ, intaqim li-l-mustaḍʿafīn</div>
+                    <p><strong>Terjemahan:</strong> "Ya Allah, Engkau adalah Pembalas terhadap para penindas, Engkau Maha Kuasa atas segala sesuatu, balaslah untuk orang-orang yang tertindas."</p>
+                    <p><strong>Sumber:</strong> Dianjurkan dalam kitab Kementerian Agama RI yang menjadi rujukan, terinspirasi oleh doa Nabi (ﷺ) untuk orang tertindas (Ibnu Majah).</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Amalan</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Amalan Mencari Pemaafan</div>
-                    <p>Untuk pembersihan spiritual sempurna menurut panduan Kementerian Agama RI:</p>
+                    <div class="amalan-title">Amalan Mencari Keadilan</div>
+                    <p>Untuk mencari keadilan ilahi menurut panduan Kementerian Agama RI:</p>
                     <ol>
-                        <li>Baca "Yā ʿAfuww" 100 kali sebelum Subuh</li>
-                        <li>Baca <a href="https://quranwbw.com/3:133-136" target="_blank">Surah Al-Imran 3:133-136</a> setiap hari</li>
-                        <li>Maafkan seseorang yang menyakitimu setiap hari</li>
+                        <li>Baca "Yā Muntaqim" 100 kali pada malam Jumat</li>
+                        <li>Baca <a href="https://quranwbw.com/42:40-43" target="_blank">Surah Ash-Shura 42:40-43</a> setiap hari</li>
+                        <li>Lakukan shalat hajat dua rakaat</li>
                     </ol>
                     <p><strong>Manfaat:</strong> Amalan ini:</p>
                     <ul>
-                        <li>Menghubungkan dengan sifat Allah yang memaafkan sepenuhnya</li>
-                        <li>Menyucikan hati dari dendam</li>
-                        <li>Mendatangkan rahmat dan pengampunan ilahi</li>
+                        <li>Memperkuat kepercayaan pada keadilan ilahi</li>
+                        <li>Menyucikan dari keinginan untuk balas dendam pribadi</li>
+                        <li>Menghubungkan dengan sifat Allah yang sempurna dalam keadilan</li>
                     </ul>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Malam Pemaafan</div>
-                    <p>Amalan khusus pada malam Jumat menurut tradisi pesantren NU:</p>
+                    <div class="amalan-title">Perlindungan dari Penindasan</div>
+                    <p>Untuk perlindungan dari penindas menurut amalan Kementerian Agama RI:</p>
                     <ol>
-                        <li>Tulis "Al-Afuww" dengan air mawar</li>
-                        <li>Simpan di bawah bantal saat tidur</li>
-                        <li>Baca Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) sebelum tidur</li>
+                        <li>Tulis "Al-Muntaqim" dengan air za'faran</li>
+                        <li>Simpan di rumah atau tempat kerja</li>
+                        <li>Baca Surah Al-Falaq (113) setiap hari</li>
                     </ol>
-                    <p><strong>Dasar Historis:</strong> Orang-orang shaleh biasa mencari pemaafan Allah terutama pada malam Jumat, sebagaimana tercatat dalam kitab-kitab klasik yang menjadi rujukan pesantren NU.</p>
+                    <p><strong>Dasar Historis:</strong> Kementerian Agama RI meriwayatkan bahwa para Sahabat mencari perlindungan Allah melalui nama-nama-Nya, sebagaimana tercatat dalam kitab-kitab klasik.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Tafsir Ibn Kathir</h2>
-                <p>Ibnu Katsir menjelaskan Al-Afuww melalui tiga dimensi:</p>
+                <p>Ibn Kathir menjelaskan Al-Muntaqim melalui tiga dimensi:</p>
                 <ol>
-                    <li><strong>Penghapusan Sempurna:</strong>
+                    <li><strong>Keadilan Tertunda:</strong>
                         <ul>
-                            <li>Menghapus dosa sepenuhnya (<a href="https://quranwbw.com/39:53" target="_blank">39:53</a>)</li>
-                            <li>Menghilangkan jejak kesalahan (<a href="https://quranwbw.com/4:31" target="_blank">4:31</a>)</li>
+                            <li>Memberi waktu untuk bertaubat (<a href="https://quranwbw.com/3:178" target="_blank">3:178</a>)</li>
+                            <li>Tidak terburu-buru dalam hukuman (<a href="https://quranwbw.com/22:47" target="_blank">22:47</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Melampaui Pengampunan:</strong>
+                    <li><strong>Takaran Sempurna:</strong>
                         <ul>
-                            <li>Tidak hanya menutupi tetapi menghilangkan dosa (<a href="https://quranwbw.com/42:25" target="_blank">42:25</a>)</li>
-                            <li>Mengubah perbuatan buruk menjadi baik (<a href="https://quranwbw.com/25:70" target="_blank">25:70</a>)</li>
+                            <li>Hukuman sesuai kejahatan (<a href="https://quranwbw.com/16:126" target="_blank">16:126</a>)</li>
+                            <li>Tidak melebihi yang pantas (<a href="https://quranwbw.com/6:160" target="_blank">6:160</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Pemaafan Bersyarat:</strong>
+                    <li><strong>Keadilan Tertinggi:</strong>
                         <ul>
-                            <li>Memerlukan taubat yang tulus (<a href="https://quranwbw.com/66:8" target="_blank">66:8</a>)</li>
-                            <li>Perlu memaafkan orang lain (<a href="https://quranwbw.com/24:22" target="_blank">24:22</a>)</li>
+                            <li>Tidak ada pelarian pada Hari Kiamat (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
+                            <li>Balasan sempurna (<a href="https://quranwbw.com/99:6-8" target="_blank">99:6-8</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>Dalam <a href="https://quranwbw.com/64:14" target="_blank">Surah At-Taghabun 64:14</a>, Allah menyeimbangkan sifat ini: "Jika kamu memaafkan dan tidak mempersoalkan dan mengampuni, maka sungguh, Allah Maha Pengampun lagi Maha Penyayang." menunjukkan bagaimana pemaafan manusia terhubung dengan pemaafan ilahi.</p>
+                <p>Dalam <a href="https://quranwbw.com/42:40" target="_blank">Surah Ash-Shura 42:40</a>, Allah menyeimbangkan sifat ini: "Balasan suatu kejahatan adalah kejahatan yang serupa, tetapi barang siapa memaafkan dan berbuat baik, maka pahalanya atas (tanggungan) Allah." menunjukkan keadilan yang dilunakkan dengan rahmat.</p>
             </div>
 
             <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
@@ -322,43 +384,43 @@
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <h1 class="name-title">81. Al-Afuww (The Pardoner)</h1>
-            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-afuw/" target="_blank">myislam.org/99-names-of-allah/al-afuw/</a></div>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <h1 class="name-title">81. Al-Muntaqim (The Avenger)</h1>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muntaqim/" target="_blank">myislam.org/99-names-of-allah/al-muntaqim/</a></div>
             
             <!-- Bonus section only in English -->
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
-                        <source src="https://example.com/audio/explanation-al-afuww.mp3" type="audio/mpeg">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_79Mutaali.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
             </div>
 
-            <div class="arabic">ٱلْعَفُوُّ</div>
-            <div class="transliteration">Transliteration: Al-Afuww</div>
+            <div class="arabic">ٱلْمُنْتَقِمُ</div>
+            <div class="transliteration">Transliteration: Al-Muntaqim</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
-                    <source src="https://example.com/audio/al-afuww.mp3" type="audio/mpeg">
+                    <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/81.%20al-muntaqim.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Meaning</h2>
-                <p>Al-Afuww appears in the Quran five times (<a href="https://quranwbw.com/4:43" target="_blank">4:43</a>, <a href="https://quranwbw.com/4:99" target="_blank">4:99</a>, <a href="https://quranwbw.com/4:149" target="_blank">4:149</a>, <a href="https://quranwbw.com/22:60" target="_blank">22:60</a>, <a href="https://quranwbw.com/58:2" target="_blank">58:2</a>) with profound meanings:</p>
+                <p>Al-Muntaqim appears in the Quran three times (<a href="https://quranwbw.com/32:22" target="_blank">32:22</a>, <a href="https://quranwbw.com/43:41" target="_blank">43:41</a>, <a href="https://quranwbw.com/44:16" target="_blank">44:16</a>) with profound meanings:</p>
                 <ul>
-                    <li><strong>The Pardoner:</strong> The One who erases sins completely</li>
-                    <li><strong>The Eliminator:</strong> The One who removes the traces of wrongdoing</li>
+                    <li><strong>The Avenger:</strong> The One who justly punishes the wrongdoers</li>
+                    <li><strong>The Retaliator:</strong> The One who gives recompense for evil</li>
                 </ul>
-                <p>Ibn Kathir explains: "He pardons sins and overlooks faults, wiping them away as if they never occurred." This name reminds us of Allah's supreme forgiveness, as mentioned in <a href="https://quranwbw.com/39:53" target="_blank">Surah Az-Zumar 39:53</a>: "Indeed, Allah forgives all sins."</p>
+                <p>Ibn Kathir explains: "He punishes the wrongdoers after giving them respite and sending warnings." This name reminds us of Allah's perfect justice, as mentioned in <a href="https://quranwbw.com/40:3" target="_blank">Surah Ghafir 40:3</a>: "The Forgiver of sin, the Acceptor of repentance, the Severe in punishment."</p>
             </div>
 
             <div class="section">
@@ -366,33 +428,33 @@
                 
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
-                    <a href="https://quranwbw.com/4:149" target="_blank">Surah An-Nisa 4:149</a>
-                    <div class="arabic">إِن تُبْدُوا۟ خَيْرًا أَوْ تُخْفُوهُ أَوْ تَعْفُوا۟ عَن سُوٓءٍۢ فَإِنَّ ٱللَّهَ كَانَ عَفُوًّۭا قَدِيرًۭا</div>
-                    <div class="transliteration">In tubdū khayran aw tukhfūhu aw taʿfū ʿan sū'in fa-inna Allāha kāna ʿafuwwan qadīrā</div>
-                    <p>"Whether you show what is good or conceal it or pardon evil - indeed, Allah is ever Pardoning and Competent."</p>
+                    <a href="https://quranwbw.com/32:22" target="_blank">Surah As-Sajdah 32:22</a>
+                    <div class="arabic">وَمَنْ أَظْلَمُ مِمَّن ذُكِّرَ بِـَٔايَـٰتِ رَبِّهِۦ ثُمَّ أَعْرَضَ عَنْهَآ ۚ إِنَّا مِنَ ٱلْمُجْرِمِينَ مُنتَقِمُونَ</div>
+                    <div class="transliteration">Wa man aẓlamu mimman dhukkira bi-āyāti rabbihī thumma aʿraḍa ʿanhā, innā mina l-mujrimīna muntaqimūn</div>
+                    <p>"And who is more unjust than one who is reminded of the verses of his Lord; then he turns away from them? Indeed We, from the criminals, will take retribution."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This verse connects human forgiveness with divine pardon. Ibn Kathir notes that Allah's attribute as Al-Afuww encourages believers to forgive others, with the promise of greater divine forgiveness.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse establishes Allah's attribute as Al-Muntaqim against those who knowingly reject truth after being reminded. Ibn Kathir notes the punishment comes only after clear warnings and opportunities to repent.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
-                    <a href="https://quranwbw.com/22:60" target="_blank">Surah Al-Hajj 22:60</a>
-                    <div class="arabic">وَإِنْ عَاقَبْتُمْ فَعَاقِبُوا۟ بِمِثْلِ mَا عُوقِبْتُم بِهِۦ ۖ وَلَئِن صَبَرْتُمْ لَهُوَ خَيْرٌۭ لِّلصَّـٰبِرِينَ</div>
-                    <div class="transliteration">Wa in ʿāqabtum fa-ʿāqibū bi-mithli mā ʿūqibtum bih, wa la-in ṣabartum la-huwa khayrun liṣ-ṣābirīn</div>
-                    <p>"And if you punish, then punish with the like of that with which you were harmed. But if you are patient - it is better for those who are patient."</p>
+                    <a href="https://quranwbw.com/44:16" target="_blank">Surah Ad-Dukhan 44:16</a>
+                    <div class="arabic">يَوْمَ نَبْطِشُ ٱلْبَطْشَةَ ٱلْكُبْرَىٰٓ إِنَّا مُنتَقِمُونَ</div>
+                    <div class="transliteration">Yawma nabṭishu l-baṭshata l-kubrā innā muntaqimūn</div>
+                    <p>"The Day We will strike with the greatest assault, indeed, We will take retribution."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Ibn Kathir:</strong> This passage shows the balance between justice and forgiveness. Ibn Kathir explains that while retaliation is permitted, Allah as Al-Afuww rewards those who choose patience and pardon.
+                        <strong>Tafsir Ibn Kathir:</strong> This describes Allah's ultimate retribution on Judgment Day. Ibn Kathir explains this is the final manifestation of Al-Muntaqim after all warnings and opportunities for repentance are exhausted.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:7509" target="_blank">Sahih Bukhari 7509</a>
-                    <div class="arabic">وَاللَّهُ عَفُوٌّ يُحِبُّ الْعَفْوَ</div>
-                    <div class="transliteration">Wa Llāhu ʿafuwwun yuḥibbu l-ʿafw</div>
-                    <p>"Allah is Pardoning and loves forgiveness."</p>
+                    <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2582" target="_blank">Sahih Muslim 2582</a>
+                    <div class="arabic">إِنَّ اللَّهَ لَيُمْلِي لِلظَّالِمِ حَتَّى إِذَا أَخَذَهُ لَمْ يُفْلِتْهُ</div>
+                    <div class="transliteration">Inna Allāha layumlī liẓ-ẓālimi ḥattā idhā akhadhahu lam yuflit-hu</div>
+                    <p>"Allah gives respite to the oppressor, but when He seizes him, He does not let him escape."</p>
                     <div class="tafsir-box">
-                        <strong>Context:</strong> The Prophet (ﷺ) described Allah's nature as Al-Afuww who not only forgives but loves when His servants forgive others. This complements the Quranic concept of divine pardon.
+                        <strong>Context:</strong> The Prophet (ﷺ) described Allah's justice as Al-Muntaqim - giving time for repentance before inevitable punishment. This complements the Quranic concept of delayed but certain retribution.
                     </div>
                 </div>
             </div>
@@ -400,79 +462,79 @@
             <div class="section">
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
-                    <div class="dua-title">For Complete Pardon</div>
-                    <div class="arabic">يَا عَفُوُّ يَا غَفُورُ اغْفِرْ لِي ذُنُوبِي كُلَّهَا وَاعْفُ عَنِّي سَيِّئَاتِي بِفَضْلِكَ وَكَرَمِكَ</div>
-                    <div class="transliteration">Yā ʿAfuwwu yā Ghafūru ghfir lī dhunūbī kullahā waʿfu ʿannī sayyi'ātī bi-faḍlika wa karamik</div>
-                    <p><strong>Translation:</strong> "O Pardoner, O Forgiver, forgive all my sins and pardon my misdeeds by Your favor and generosity."</p>
-                    <p><strong>Benefits:</strong> This comprehensive dua combines seeking both forgiveness (maghfirah) and complete pardon (ʿafw). The Prophet (ﷺ) taught that Allah's pardon removes all traces of sin (Tirmidzi).</p>
+                    <div class="dua-title">For Protection from Oppression</div>
+                    <div class="arabic">يَا مُنْتَقِمُ انْتَقِمْ لِي مِمَّنْ ظَلَمَنِي وَاجْعَلْنِي فِي كَنَفِكَ وَحِفْظِكَ</div>
+                    <div class="transliteration">Yā Muntaqim intaqim lī mimman ẓalamanī wa-jʿalnī fī kanafika wa ḥifẓika</div>
+                    <p><strong>Translation:</strong> "O Avenger, take retribution for me against those who wronged me, and place me under Your protection and care."</p>
+                    <p><strong>Benefits:</strong> This dua seeks divine justice while avoiding personal vengeance. The Prophet (ﷺ) taught to leave judgment to Allah (Muslim).</p>
                 </div>
 
                 <div class="dua">
-                    <div class="dua-title">For the Ability to Forgive</div>
-                    <div class="arabic">اللَّهُمَّ أَنْتَ الْعَفُوُّ وَمِنْكَ الْعَفْوُ، أَعْطِنِي قَلْبًا عَفُوًّا وَاجْعَلْنِي mِمَّنْ تَغْمُرُهُمْ رَحْمَتُكَ</div>
-                    <div class="transliteration">Allāhumma anta l-ʿAfuwwu wa minka l-ʿafw, aʿṭinī qalban ʿafuwwan wa-jʿalnī mimman taghmaruhum raḥmatuk</div>
-                    <p><strong>Translation:</strong> "O Allah, You are Al-Afuww and from You comes pardon. Grant me a forgiving heart and make me among those overwhelmed by Your mercy."</p>
-                    <p><strong>Source:</strong> Inspired by the Prophet's (ﷺ) teachings on forgiveness (Muslim).</p>
+                    <div class="dua-title">For Justice Against Oppressors</div>
+                    <div class="arabic">اللَّهُمَّ أَنْتَ الْمُنْتَقِمُ مِنَ الظَّالِمِينَ، أَنْتَ الْقَادِرُ عَلَى كُلِّ شَيْءٍ، انْتَقِمْ لِلْمُسْتَضْعَفِينَ</div>
+                    <div class="transliteration">Allāhumma anta l-Muntaqim mina ẓ-ẓālimīn, anta l-Qādiru ʿalā kulli shayʾ, intaqim li-l-mustaḍʿafīn</div>
+                    <p><strong>Translation:</strong> "O Allah, You are the Avenger against the oppressors, You are Capable of all things, take retribution for the oppressed."</p>
+                    <p><strong>Source:</strong> Inspired by the Prophet's (ﷺ) prayers for the oppressed (Ibn Majah).</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Amalan (Practices)</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Pardon Seeking Practice</div>
-                    <p>For complete spiritual cleansing:</p>
+                    <div class="amalan-title">Justice Seeking Practice</div>
+                    <p>For seeking divine justice:</p>
                     <ol>
-                        <li>Recite "Yā ʿAfuww" 100 times before Fajr</li>
-                        <li>Read <a href="https://quranwbw.com/3:133-136" target="_blank">Surah Al-Imran 3:133-136</a> daily</li>
-                        <li>Forgive someone who wronged you each day</li>
+                        <li>Recite "Yā Muntaqim" 100 times on Friday nights</li>
+                        <li>Read <a href="https://quranwbw.com/42:40-43" target="_blank">Surah Ash-Shura 42:40-43</a> daily</li>
+                        <li>Perform two rak'ahs of hajat prayer</li>
                     </ol>
                     <p><strong>Benefits:</strong> This practice:</p>
                     <ul>
-                        <li>Connects with Allah's attribute of complete pardon</li>
-                        <li>Purifies the heart from resentment</li>
-                        <li>Attracts divine mercy and forgiveness</li>
+                        <li>Strengthens trust in divine justice</li>
+                        <li>Purifies from desire for personal vengeance</li>
+                        <li>Connects with Allah's attribute of perfect justice</li>
                     </ul>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Night of Pardon</div>
-                    <p>Special practice on Friday nights:</p>
+                    <div class="amalan-title">Oppression Protection</div>
+                    <p>For protection from oppressors:</p>
                     <ol>
-                        <li>Write "Al-Afuww" with rose water</li>
-                        <li>Keep it under your pillow while sleeping</li>
-                        <li>Recite Ayat al-Kursi (<a href="https://quranwbw.com/2:255" target="_blank">2:255</a>) before sleep</li>
+                        <li>Write "Al-Muntaqim" with saffron water</li>
+                        <li>Keep in your home or workplace</li>
+                        <li>Recite Surah Al-Falaq (113) daily</li>
                     </ol>
-                    <p><strong>Historical Basis:</strong> The righteous would seek Allah's complete pardon especially on Friday nights, as recorded in Ibn Sunni's 'Amal al-Yawm wal-Laylah.</p>
+                    <p><strong>Historical Basis:</strong> The Companions would seek Allah's protection through His names, as recorded in Ibn Sunni's 'Amal al-Yawm wal-Laylah.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
-                <p>Ibn Kathir explains Al-Afuww through three dimensions:</p>
+                <p>Ibn Kathir explains Al-Muntaqim through three dimensions:</p>
                 <ol>
-                    <li><strong>Complete Erasure:</strong>
+                    <li><strong>Delayed Justice:</strong>
                         <ul>
-                            <li>Removes sins entirely (<a href="https://quranwbw.com/39:53" target="_blank">39:53</a>)</li>
-                            <li>Wipes traces of wrongdoing (<a href="https://quranwbw.com/4:31" target="_blank">4:31</a>)</li>
+                            <li>Gives time for repentance (<a href="https://quranwbw.com/3:178" target="_blank">3:178</a>)</li>
+                            <li>Never hasty in punishment (<a href="https://quranwbw.com/22:47" target="_blank">22:47</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Beyond Forgiveness:</strong>
+                    <li><strong>Perfect Measure:</strong>
                         <ul>
-                            <li>Not just covering but eliminating sins (<a href="https://quranwbw.com/42:25" target="_blank">42:25</a>)</li>
-                            <li>Transforming bad deeds into good (<a href="https://quranwbw.com/25:70" target="_blank">25:70</a>)</li>
+                            <li>Punishment fits the crime (<a href="https://quranwbw.com/16:126" target="_blank">16:126</a>)</li>
+                            <li>Never exceeds what is deserved (<a href="https://quranwbw.com/6:160" target="_blank">6:160</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Conditional Pardon:</strong>
+                    <li><strong>Ultimate Justice:</strong>
                         <ul>
-                            <li>Requires sincere repentance (<a href="https://quranwbw.com/66:8" target="_blank">66:8</a>)</li>
-                            <li>Needs forgiving others (<a href="https://quranwbw.com/24:22" target="_blank">24:22</a>)</li>
+                            <li>No escape on Judgment Day (<a href="https://quranwbw.com/40:16" target="_blank">40:16</a>)</li>
+                            <li>Complete recompense (<a href="https://quranwbw.com/99:6-8" target="_blank">99:6-8</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In <a href="https://quranwbw.com/64:14" target="_blank">Surah At-Taghabun 64:14</a>, Allah balances this attribute: "If you pardon and overlook and forgive, then indeed, Allah is Forgiving and Merciful." showing how human forgiveness connects with divine pardon.</p>
+                <p>In <a href="https://quranwbw.com/42:40" target="_blank">Surah Ash-Shura 42:40</a>, Allah balances this attribute: "The recompense for an evil is an evil like thereof; but whoever forgives and makes reconciliation, his reward is with Allah." showing justice tempered with mercy.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
@@ -488,9 +550,10 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
 
-            // Language toggle functionality
+            // Set language preference
             if (localStorage.getItem('language') === 'english') {
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
@@ -499,39 +562,74 @@
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
             }
 
-            languageToggle.addEventListener('click', function() {
-                if (englishContent.classList.contains('hidden')) {
-                    englishContent.classList.remove('hidden');
-                    indonesianContent.classList.add('hidden');
-                    languageToggle.textContent = 'Switch to Indonesian';
-                    localStorage.setItem('language', 'english');
-                } else {
-                    englishContent.classList.add('hidden');
-                    indonesianContent.classList.remove('hidden');
-                    languageToggle.textContent = 'Switch to English';
-                    localStorage.setItem('language', 'indonesian');
-                }
-            });
-
-            // Transliteration toggle functionality
-            if (localStorage.getItem('showTransliteration') === 'true') {
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
                 transliterations.forEach(el => el.style.display = 'block');
                 transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
             }
 
-            transliterationToggle.addEventListener('click', function() {
-                if (transliterations[0].style.display === 'block') {
-                    transliterations.forEach(el => el.style.display = 'none');
-                    transliterationToggle.textContent = 'Show Transliteration';
-                    localStorage.setItem('showTransliteration', 'false');
-                } else {
-                    transliterations.forEach(el => el.style.display = 'block');
-                    transliterationToggle.textContent = 'Hide Transliteration';
-                    localStorage.setItem('showTransliteration', 'true');
-                }
-            });
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                document.body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            
+            if (englishContent.classList.contains('hidden')) {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                this.textContent = 'Switch to Indonesian';
+                localStorage.setItem('language', 'english');
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                this.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            
+            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                transliterations.forEach(el => el.style.display = 'block');
+                this.textContent = 'Hide Transliteration';
+                localStorage.setItem('transliteration', 'show');
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                this.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            }
         });
     </script>
 </body>
