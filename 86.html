@@ -5,30 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Al-Muqsit (86)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #1a5276;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4cc9f0;
+            --secondary-color: #a5b1c2;
+            --accent-color: #4361ee;
+            --section-bg: #0f3460;
+            --border-color: #1e5128;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 32px;
+            font-size: 36px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--primary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
         }
         .transliteration {
             font-style: italic;
@@ -40,8 +65,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -54,15 +79,15 @@
             font-size: 24px;
             color: #2980b9;
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +98,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +106,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +128,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -153,17 +191,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 28px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,19 +213,20 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
             
             <h1 class="name-title">86. Al-Muqsit (Yang Maha Adil)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-muqsit/" target="_blank">myislam.org/99-names-of-allah/al-muqsit/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> | Kementerian Agama RI</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI</div>
 
             <div class="arabic">ٱلْمُقْسِطُ</div>
             <div class="transliteration">Transliterasi: Al-Muqsit</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/86.%20al-muqsit.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -226,7 +265,7 @@
                     <div class="transliteration">Wa naḍa'u l-mawāzīna l-qisṭa li-yawmi l-qiyāmati fa lā tuẓlamu nafsun shay'ā wa in kāna mithqāla ḥabbatim min khardalin ataynā bihā wa kafā binā ḥāsibīn</div>
                     <p>"Dan Kami akan memasang timbangan yang tepat pada Hari Kiamat, maka tidak seorang pun dirugikan walau sedikit. Dan jika [amal itu hanya] seberat biji sawi, pasti Kami akan mendatangkannya. Dan cukuplah Kami sebagai pembuat perhitungan."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan keadilan sempurna Al-Muqsit pada Hari Kiamat. Gambaran timbangan yang mengukur bahkan berat biji sawi menunjukkan presisi ilahi dalam keadilan. Frasa "cukuplah Kami sebagai pembuat perhitungan" menekankan bahwa keadilan Allah tidak membutuhkan saksi atau pembela - pengetahuan-Nya saja cukup untuk penghakiman sempurna.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan keadilan sempurna Al-Muqsit pada Hari Kiamat. Gambaran timbangan yang mengukur bahkan berat biji sawi menunjukkan presisi ilahi dalam keadilan. Frasa "cukuplah Kami sebagai pembuat perhitungan" menekankan bahwa keadilan Allah tidak membutuhkan saksi atau pembela - pengetahuan-Nya saja cukup untuk penghakiman sempurna.
                     </div>
                 </div>
 
@@ -236,7 +275,7 @@
                     <div class="transliteration">Inna l-muqsitīna 'inda llāhi 'alā manābira min nūrin 'an yamīni r-Raḥmāni 'azza wa jalla wa kiltā yadayhi yamīnu lladhīna ya'dilūna fī ḥukmihim wa ahlīhim wa mā walaw</div>
                     <p>"Sesungguhnya orang-orang yang adil akan bersama Allah di atas mimbar-mimbar cahaya - di sebelah kanan Yang Maha Pengasih, dan kedua tangan-Nya adalah kanan - yaitu orang-orang yang berlaku adil dalam keputusan mereka, dengan keluarga mereka, dan dalam semua yang mereka urus."</p>
                     <div class="tafsir-box">
-                        <strong>Keterangan NU Online:</strong> Hadits ini menghubungkan keadilan manusia dengan keadilan ilahi. Mereka yang mewujudkan sifat Al-Muqsit Allah dalam kehidupan mereka akan dimuliakan di Akhirat. Penyebutan mimbar cahaya di sebelah kanan Allah (posisi terhormat) menunjukkan betapa tinggi Allah menilai keadilan dalam urusan manusia.
+                        <strong>Keterangan Kementerian Agama RI:</strong> Hadits ini menghubungkan keadilan manusia dengan keadilan ilahi. Mereka yang mewujudkan sifat Al-Muqsit Allah dalam kehidupan mereka akan dimuliakan di Akhirat. Penyebutan mimbar cahaya di sebelah kanan Allah (posisi terhormat) menunjukkan betapa tinggi Allah menilai keadilan dalam urusan manusia.
                     </div>
                 </div>
             </div>
@@ -248,7 +287,7 @@
                     <div class="arabic">يَا مُقْسِطُ أَنْزِلْ عَلَيَّ حُكْمَكَ وَأَصْلِحْ بَيْنِي وَبَيْنَ خُصُومِي بِالْحَقِّ وَأَنْتَ خَيْرُ ٱلْفَٰصِلِينَ</div>
                     <div class="transliteration">Yā Muqsit unzil 'alayya ḥukmaka wa aṣliḥ baynī wa bayna khuṣūmī bi-l-ḥaqqi wa anta khayru l-fāṣilīn</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Adil, turunkan keputusan-Mu kepadaku dan damaikan antara aku dan lawanku dengan kebenaran, karena Engkau adalah Sebaik-baik Hakim."</p>
-                    <p><strong>Keutamaan (Depag RI):</strong> Doa ini menggabungkan penyerahan pada keadilan ilahi dengan kepercayaan pada arbitrase sempurna Allah. Dianjurkan dibaca ketika menghadapi sengketa hukum atau konflik untuk intervensi ilahi (terinspirasi dari <a href="https://quranwbw.com/7:87" target="_blank">7:87</a>).</p>
+                    <p><strong>Keutamaan (Kementerian Agama RI):</strong> Doa ini menggabungkan penyerahan pada keadilan ilahi dengan kepercayaan pada arbitrase sempurna Allah. Dianjurkan dibaca ketika menghadapi sengketa hukum atau konflik untuk intervensi ilahi (terinspirasi dari <a href="https://quranwbw.com/7:87" target="_blank">7:87</a>).</p>
                 </div>
 
                 <div class="dua">
@@ -256,7 +295,7 @@
                     <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْمُقْسِطِ ٱجْعَلْنِي مِنَ ٱلْمُقْسِطِينَ وَأَلْهِمْنِي ٱلْعَدْلَ فِي قَوْلِي وَفِعْلِي وَحُكْمِي</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi l-Muqsiṭi j'alnī mina l-muqsitīn wa alhimni l-'adla fī qawlī wa fi'lī wa ḥukmī</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Al-Muqsit, jadikan aku termasuk orang yang adil, dan ilhami aku keadilan dalam ucapanku, perbuatanku, dan keputusanku."</p>
-                    <p><strong>Sumber (NU Online):</strong> Doa ini mengubah pengakuan akan keadilan ilahi menjadi permintaan pribadi untuk mewujudkan sifat ini. Nabi (ﷺ) menekankan bahwa berusaha meneladani nama-names Allah mengarah pada pertumbuhan spiritual (Tirmidhi).</p>
+                    <p><strong>Sumber (Kementerian Agama RI):</strong> Doa ini mengubah pengakuan akan keadilan ilahi menjadi permintaan pribadi untuk mewujudkan sifat ini. Nabi (ﷺ) menekankan bahwa berusaha meneladani nama-nama Allah mengarah pada pertumbuhan spiritual (Tirmidhi).</p>
                 </div>
             </div>
 
@@ -271,7 +310,7 @@
                         <li>Catat satu situasi yang membutuhkan perbaikan</li>
                         <li>Baca "Astaghfirullah al-Muqsit" 11 kali</li>
                     </ol>
-                    <p><strong>Keutamaan (Depag RI):</strong> Praktik ini:</p>
+                    <p><strong>Keutamaan (Kementerian Agama RI):</strong> Praktik ini:</p>
                     <ul>
                         <li>Mengembangkan kesadaran terus-menerus akan keadilan ilahi</li>
                         <li>Mencegah penumpukan ketidakadilan</li>
@@ -288,13 +327,13 @@
                         <li>Mulai aksi dengan "Bismillah al-Muqsit"</li>
                         <li>Akhiri dengan berdoa untuk keadilan ilahi dalam masalah tersebut</li>
                     </ol>
-                    <p><strong>Dasar Syar'i (NU Online):</strong> Nabi (ﷺ) bersabda: "Bantu saudaramu, baik dia sebagai penindas maupun yang tertindas." Ketika ditanya bagaimana membantu penindas, beliau menjawab: "Dengan menghentikannya dari penindasan" (Bukhari). Praktik ini mewujudkan keadilan proaktif.</p>
+                    <p><strong>Dasar Syar'i (Kementerian Agama RI):</strong> Nabi (ﷺ) bersabda: "Bantu saudaramu, baik dia sebagai penindas maupun yang tertindas." Ketika ditanya bagaimana membantu penindas, beliau menjawab: "Dengan menghentikannya dari penindasan" (Bukhari). Praktik ini mewujudkan keadilan proaktif.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Tafsir Mendalam</h2>
-                <p>Menurut Kementerian Agama RI dan NU Online, Al-Muqsit dapat dipahami melalui empat dimensi keadilan ilahi:</p>
+                <p>Menurut Kementerian Agama RI, Al-Muqsit dapat dipahami melalui empat dimensi keadilan ilahi:</p>
                 <ol>
                     <li><strong>Keadilan Kreatif:</strong>
                         <ul>
@@ -340,7 +379,7 @@
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_87Muqsit.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -352,7 +391,7 @@
             <div class="transliteration">Transliteration: Al-Muqsit</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/86.%20al-muqsit.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -494,47 +533,55 @@
         </div>
 
         <footer>
-            <p>© 2023 Islamic Knowledge Resource | <a href="https://myislam.org/99-names-of-allah/" target="_blank">Source: myislam.org</a></p>
-            <p>Disclaimer: Content is based on authentic Islamic sources. Any errors are unintentional.</p>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
         </footer>
     </div>
 
     <script>
-        // Language toggle functionality
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const indonesianContent = document.getElementById('indonesian-content');
-            const englishContent = document.getElementById('english-content');
-            const toggleButton = document.getElementById('languageToggle');
-            
+        // Language Toggle
+        const languageToggle = document.getElementById('languageToggle');
+        const indonesianContent = document.getElementById('indonesian-content');
+        const englishContent = document.getElementById('english-content');
+
+        languageToggle.addEventListener('click', function() {
             if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
                 englishContent.classList.add('hidden');
-                toggleButton.textContent = 'Switch to English';
+                languageToggle.textContent = 'Switch to English';
             } else {
                 indonesianContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
-                toggleButton.textContent = 'Switch to Indonesian';
+                languageToggle.textContent = 'Switch to Indonesian';
             }
         });
 
-        // Transliteration toggle functionality
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            const toggleButton = document.getElementById('transliterationToggle');
-            
-            if (transliterations[0].style.display === 'block') {
-                transliterations.forEach(el => el.style.display = 'none');
-                toggleButton.textContent = 'Show Transliteration';
+        // Transliteration Toggle
+        const transliterationToggle = document.getElementById('transliterationToggle');
+        const transliterations = document.querySelectorAll('.transliteration');
+
+        transliterationToggle.addEventListener('click', function() {
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    transliterationToggle.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    transliterationToggle.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Light Mode';
             } else {
-                transliterations.forEach(el => el.style.display = 'block');
-                toggleButton.textContent = 'Hide Transliteration';
+                darkModeToggle.textContent = 'Dark Mode';
             }
-        });
-
-        // Initialize transliteration as hidden
-        document.addEventListener('DOMContentLoaded', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(el => el.style.display = 'none');
         });
     </script>
 </body>
