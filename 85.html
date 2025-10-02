@@ -5,30 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Dhul-Jalali wal-Ikram (85)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #1a5276;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4cc9f0;
+            --secondary-color: #a5b1c2;
+            --accent-color: #4361ee;
+            --section-bg: #0f3460;
+            --border-color: #1e5128;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 32px;
+            font-size: 36px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--primary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
         }
         .transliteration {
             font-style: italic;
@@ -40,8 +65,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -54,15 +79,15 @@
             font-size: 24px;
             color: #2980b9;
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +98,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +106,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +128,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -153,17 +191,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 28px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,19 +213,20 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
             
             <h1 class="name-title">85. Dhul-Jalali wal-Ikram (Yang Memiliki Keagungan dan Kemuliaan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/zul-jalaali-wal-ikram/" target="_blank">myislam.org/99-names-of-allah/zul-jalaali-wal-ikram/</a> | <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> | Kementerian Agama RI</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI</div>
 
             <div class="arabic">ذُو ٱلْجَلَـٰلِ وَٱلْإِكْرَامِ</div>
             <div class="transliteration">Transliterasi: Dhul-Jalali wal-Ikram</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/85.%20dhul-jalali-wal-ikram.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -202,7 +241,7 @@
                     <li><strong>wal-Ikram:</strong> Yang Memberikan Kehormatan, Kemuliaan, dan Kedermawanan</li>
                 </ul>
                 <p>Menurut Kementerian Agama RI dalam Tafsir Al-Quran, nama ini menunjukkan bahwa seluruh keagungan dan kemuliaan hanya milik Allah semata. Ibnu Qayyim menjelaskan: "Keagungan-Nya (Jalali) menuntut rasa takut dan hormat kita, sementara Kemuliaan-Nya (Ikram) mengundang harapan dan cinta kita."</p>
-                <p>Nama ini muncul di akhir Surah Ar-Rahman, mengingatkan bahwa seluruh keberadaan makhluk bergantung pada keagungan-Nya yang menopang dan pemberian kemuliaan-Nya yang terus-menerus (Sumber: NU Online).</p>
+                <p>Nama ini muncul di akhir Surah Ar-Rahman, mengingatkan bahwa seluruh keberadaan makhluk bergantung pada keagungan-Nya yang menopang dan pemberian kemuliaan-Nya yang terus-menerus.</p>
             </div>
 
             <div class="section">
@@ -215,7 +254,7 @@
                     <div class="transliteration">Wa yabqā wajhu rabbika dhū l-jalāli wa l-ikrām</div>
                     <p>"Dan tetap kekal Wajah Tuhanmu yang mempunyai kebesaran dan kemuliaan."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini muncul setelah menggambarkan sifat sementara kehidupan dunia, menekankan keagungan abadi Allah. Menurut Tafsir NU, "Wajah" di sini merujuk pada Dzat Allah - satu-satunya realitas yang tetap ketika yang lain binasa. Kombinasi Jalali dan Ikram menunjukkan bahwa keagungan Allah tidak menjauhkan-Nya dari ciptaan tetapi justru terwujud melalui pemberian kemuliaan-Nya yang dermawan kepada orang beriman.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini muncul setelah menggambarkan sifat sementara kehidupan dunia, menekankan keagungan abadi Allah. "Wajah" di sini merujuk pada Dzat Allah - satu-satunya realitas yang tetap ketika yang lain binasa. Kombinasi Jalali dan Ikram menunjukkan bahwa keagungan Allah tidak menjauhkan-Nya dari ciptaan tetapi justru terwujud melalui pemberian kemuliaan-Nya yang dermawan kepada orang beriman.
                     </div>
                 </div>
 
@@ -226,7 +265,7 @@
                     <div class="transliteration">Tabāraka smu rabbika dhī l-jalāli wa l-ikrām</div>
                     <p>"Maha Agung nama Tuhanmu Pemilik Keagungan dan Kemuliaan."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir NU Online:</strong> Ayat penutup Surah Ar-Rahman ini mengikuti pengulangan terkenal "Maka nikmat Tuhanmu yang manakah yang kamu dustakan?" menunjukkan bahwa semua berkah berasal dari kedermawanan agung Allah. Kata "Tabāraka" menunjukkan berkah yang terus-menerus dan meningkat, terkait erat dengan sifat agung-Nya menurut penjelasan Kementerian Agama RI.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat penutup Surah Ar-Rahman ini mengikuti pengulangan terkenal "Maka nikmat Tuhanmu yang manakah yang kamu dustakan?" menunjukkan bahwa semua berkah berasal dari kedermawanan agung Allah. Kata "Tabāraka" menunjukkan berkah yang terus-menerus dan meningkat, terkait erat dengan sifat agung-Nya.
                     </div>
                 </div>
 
@@ -236,7 +275,7 @@
                     <div class="transliteration">Inna li-llāhi mi'ata raḥmatin anzala minhā raḥmatan wāḥidatan bayna l-jinni wa l-insi wa l-bahā'imi wa l-hawāmmi fa bihā yata'āṭafūna wa bihā yatarāḥamūna wa bihā ta'ṭifu l-waḥshu 'alā waladihā wa akhkharu llāhu tis'an wa tis'īna raḥmatan yarḥamu bihā 'ibādahu yawma l-qiyāmah</div>
                     <p>"Sesungguhnya Allah memiliki seratus rahmat. Darinya, Dia menurunkan satu rahmat kepada jin, manusia, hewan ternak dan serangga, yang dengan rahmat itu mereka saling berbuat baik dan menyayangi; dan dengannya pula binatang buas menyayangi anaknya. Dan Allah menyimpan sembilan puluh sembilan rahmat untuk menyayangi hamba-hamba-Nya pada Hari Kiamat."</p>
                     <div class="tafsir-box">
-                        <strong>Konteks (NU Online):</strong> Hadits Qudsi ini menunjukkan keluasan rahmat Allah yang bersumber dari sifat Dhul-Jalali wal-Ikram. Menurut penjelasan Kementerian Agama, apa yang kita alami di dunia hanyalah 1% dari total rahmat-Nya, sedangkan 99% disimpan untuk akhirat, menunjukkan bahwa semua bentuk kasih sayang di alam semesta bersumber dari sifat ilahi ini.
+                        <strong>Konteks (Kementerian Agama RI):</strong> Hadits Qudsi ini menunjukkan keluasan rahmat Allah yang bersumber dari sifat Dhul-Jalali wal-Ikram. Apa yang kita alami di dunia hanyalah 1% dari total rahmat-Nya, sedangkan 99% disimpan untuk akhirat, menunjukkan bahwa semua bentuk kasih sayang di alam semesta bersumber dari sifat ilahi ini.
                     </div>
                 </div>
             </div>
@@ -248,7 +287,7 @@
                     <div class="arabic">يَا ذَا ٱلْجَلَالِ وَٱلْإِكْرَامِ أَحْيِنِي مَا كَانَتِ ٱلْحَيَاةُ خَيْرًا لِّي وَتَوَفَّنِي إِذَا كَانَتِ ٱلْوَفَاةُ خَيْرًا لِّي</div>
                     <div class="transliteration">Yā Dhā l-jalāli wa l-ikrām aḥyinī mā kānati l-ḥayātu khayran lī wa tawaffanī idhā kānati l-wafātu khayran lī</div>
                     <p><strong>Terjemahan:</strong> "Wahai Pemilik Keagungan dan Kemuliaan, hidupkan aku selama hidup baik bagiku, dan wafatkan aku ketika kematian baik bagiku."</p>
-                    <p><strong>Keutamaan (Depag RI):</strong> Nabi (ﷺ) mengajarkan doa ini untuk menggabungkan penyerahan diri sepenuhnya pada hikmah Allah dengan kepercayaan pada perlakuan-Nya yang mulia terhadap orang beriman. Dianjurkan dibaca pagi dan petang untuk perlindungan ilahi (Bukhari).</p>
+                    <p><strong>Keutamaan (Kementerian Agama RI):</strong> Nabi (ﷺ) mengajarkan doa ini untuk menggabungkan penyerahan diri sepenuhnya pada hikmah Allah dengan kepercayaan pada perlakuan-Nya yang mulia terhadap orang beriman. Dianjurkan dibaca pagi dan petang untuk perlindungan ilahi (Bukhari).</p>
                 </div>
 
                 <div class="dua">
@@ -256,7 +295,7 @@
                     <div class="arabic">اللَّهُمَّ بِحَقِّ ذِي ٱلْجَلَالِ وَٱلْإِكْرَامِ أَكْرِمْنِي بِطَاعَتِكَ وَلَا تُهِنِّي بِمَعْصِيَتِكَ وَٱرْزُقْنِي ٱلْمُعَافَاةَ فِي ٱلدُّنْيَا وَٱلْآخِرَةِ</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi dhī l-jalāli wa l-ikrām akrimnī bi-ṭā'atika wa lā tuhinnī bi-ma'ṣiyatika wa rzuqnī l-mu'āfāta fi d-dunyā wa l-ākhirah</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Pemilik Keagungan dan Kemuliaan, muliakan aku melalui ketaatan kepada-Mu dan jangan hinakan aku melalui kemaksiatan, dan berilah aku kesejahteraan di dunia dan akhirat."</p>
-                    <p><strong>Sumber (NU Online):</strong> Doa ini menggabungkan pengakuan akan keagungan Allah dengan mencari kehormatan khusus-Nya di kedua dunia. Nabi (ﷺ) menekankan bahwa kehormatan sejati hanya datang melalui pemberian ilahi (Muslim).</p>
+                    <p><strong>Sumber (Kementerian Agama RI):</strong> Doa ini menggabungkan pengakuan akan keagungan Allah dengan mencari kehormatan khusus-Nya di kedua dunia. Nabi (ﷺ) menekankan bahwa kehormatan sejati hanya datang melalui pemberian ilahi (Muslim).</p>
                 </div>
             </div>
 
@@ -270,7 +309,7 @@
                         <li>Renungkan satu manifestasi keagungan Allah dalam penciptaan</li>
                         <li>Identifikasi satu cara Allah memuliakanmu minggu itu</li>
                     </ol>
-                    <p><strong>Keutamaan (Depag RI):</strong> Praktik ini:</p>
+                    <p><strong>Keutamaan (Kementerian Agama RI):</strong> Praktik ini:</p>
                     <ul>
                         <li>Mengembangkan rasa takut dan cinta seimbang kepada Allah</li>
                         <li>Meningkatkan pengakuan akan nikmat ilahi</li>
@@ -291,13 +330,13 @@
                         <li>Lakukan tindakan nyata memuliakan (hadiah, pelayanan, kata-kata baik)</li>
                         <li>Sebelum berbuat, ucapkan "Bismillah Dhil-Jalali wal-Ikram"</li>
                     </ol>
-                    <p><strong>Dasar Syar'i (NU Online):</strong> Nabi (ﷺ) bersabda: "Barangsiapa tidak memuliakan yang muda, menyayangi yang tua, dan mengakui hak ulama di antara kita, bukan termasuk golongan kami" (Ahmad). Praktik ini mengubah pemahaman tentang kemuliaan menjadi tindakan nyata.</p>
+                    <p><strong>Dasar Syar'i (Kementerian Agama RI):</strong> Nabi (ﷺ) bersabda: "Barangsiapa tidak memuliakan yang muda, menyayangi yang tua, dan mengakui hak ulama di antara kita, bukan termasuk golongan kami" (Ahmad). Praktik ini mengubah pemahaman tentang kemuliaan menjadi tindakan nyata.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Tafsir Mendalam</h2>
-                <p>Menurut Kementerian Agama RI dan NU Online, Dhul-Jalali wal-Ikram dapat dipahami melalui tiga dimensi:</p>
+                <p>Menurut Kementerian Agama RI, Dhul-Jalali wal-Ikram dapat dipahami melalui tiga dimensi:</p>
                 <ol>
                     <li><strong>Keagungan Kosmik:</strong>
                         <ul>
@@ -349,7 +388,7 @@
             <div class="transliteration">Transliteration: Dhul-Jalali wal-Ikram</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/85.%20dhul-jalali-wal-ikram.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -417,12 +456,12 @@
                     <div class="arabic">اللَّهُمَّ بِحَقِّ ذِي ٱلْجَلَالِ وَٱلْإِكْرَامِ أَكْرِمْنِي بِطَاعَتِكَ وَلَا تُهِنِّي بِمَعْصِيَتِكَ وَٱرْزُقْنِي ٱلْمُعَافَاةَ فِي ٱلدُّنْيَا وَٱلْآخِرَةِ</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi dhī l-jalāli wa l-ikrām akrimnī bi-ṭā'atika wa lā tuhinnī bi-ma'ṣiyatika wa rzuqnī l-mu'āfāta fi d-dunyā wa l-ākhirah</div>
                     <p><strong>Translation:</strong> "O Allah, by the right of the Possessor of Majesty and Honor, honor me through obedience to You and do not disgrace me through disobedience, and grant me well-being in this world and the next."</p>
-                    <p><strong>Benefits:</strong> This dua combines recognition of Allah's majesty with seeking His special honor in both worlds. The Prophet (ﷺ) emphasized that true honor comes only through divine bestowal (Muslim).</p>
+                    <p><strong>Source:</strong> This dua combines recognition of Allah's majesty with seeking His special honor in both worlds. The Prophet (ﷺ) emphasized that true honor comes only through divine bestowal (Muslim).</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Amal (Practices)</h2>
+                <h2 class="section-title">Practices (Amalan)</h2>
                 <div class="amalan">
                     <div class="amalan-title">Practice of Reflecting on Majesty</div>
                     <p>Weekly routine to develop awareness of divine majesty:</p>
@@ -435,13 +474,13 @@
                     <ul>
                         <li>Develops balanced fear and love of Allah</li>
                         <li>Increases recognition of divine favors</li>
-                        <li>Follows the Sunnah of the Companions in Friday remembrance</li>
+                        <li>Follows the Sunnah of Companions in Friday remembrance</li>
                     </ul>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Practice of Spreading Honor</div>
-                    <p>Monthly practice to embody Allah's honoring nature:</p>
+                    <div class="amalan-title">Ritual of Spreading Honor</div>
+                    <p>Monthly practice to embody Allah's honoring attribute:</p>
                     <ol>
                         <li>Select three people to honor each month:</li>
                         <ul>
@@ -452,18 +491,18 @@
                         <li>Perform concrete honoring actions (gift, service, kind words)</li>
                         <li>Before acting, say "Bismillah Dhil-Jalali wal-Ikram"</li>
                     </ol>
-                    <p><strong>Spiritual Basis:</strong> The Prophet (ﷺ) said: "Whoever does not honor our young, show mercy to our elders, and acknowledge the rights of our scholars is not from us" (Ahmad). This practice transforms understanding of honor into concrete action.</p>
+                    <p><strong>Shari'i Basis:</strong> The Prophet (ﷺ) said: "Whoever does not honor our young, show mercy to our old, and acknowledge the right of our scholars is not from us" (Ahmad). This practice transforms understanding of honor into concrete action.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Deep Tafsir</h2>
+                <h2 class="section-title">In-depth Tafsir</h2>
                 <p>Dhul-Jalali wal-Ikram can be understood through three dimensions:</p>
                 <ol>
                     <li><strong>Cosmic Majesty:</strong>
                         <ul>
                             <li>Grandeur of creation (<a href="https://quranwbw.com/40:57" target="_blank">40:57</a>)</li>
-                            <li>Sustenance of all creatures (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Sustenance of all beings (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Revelatory Honor:</strong>
@@ -487,47 +526,55 @@
         </div>
 
         <footer>
-            <p>© 2023 Islamic Knowledge Resource | <a href="https://myislam.org/99-names-of-allah/" target="_blank">Source: myislam.org</a></p>
-            <p>Disclaimer: Content is based on authentic Islamic sources. Any errors are unintentional.</p>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
         </footer>
     </div>
 
     <script>
-        // Language toggle functionality
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const indonesianContent = document.getElementById('indonesian-content');
-            const englishContent = document.getElementById('english-content');
-            const toggleButton = document.getElementById('languageToggle');
-            
+        // Language Toggle
+        const languageToggle = document.getElementById('languageToggle');
+        const indonesianContent = document.getElementById('indonesian-content');
+        const englishContent = document.getElementById('english-content');
+
+        languageToggle.addEventListener('click', function() {
             if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
                 englishContent.classList.add('hidden');
-                toggleButton.textContent = 'Switch to English';
+                languageToggle.textContent = 'Switch to English';
             } else {
                 indonesianContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
-                toggleButton.textContent = 'Switch to Indonesian';
+                languageToggle.textContent = 'Switch to Indonesian';
             }
         });
 
-        // Transliteration toggle functionality
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            const toggleButton = document.getElementById('transliterationToggle');
-            
-            if (transliterations[0].style.display === 'block') {
-                transliterations.forEach(el => el.style.display = 'none');
-                toggleButton.textContent = 'Show Transliteration';
+        // Transliteration Toggle
+        const transliterationToggle = document.getElementById('transliterationToggle');
+        const transliterations = document.querySelectorAll('.transliteration');
+
+        transliterationToggle.addEventListener('click', function() {
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    transliterationToggle.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    transliterationToggle.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Light Mode';
             } else {
-                transliterations.forEach(el => el.style.display = 'block');
-                toggleButton.textContent = 'Hide Transliteration';
+                darkModeToggle.textContent = 'Dark Mode';
             }
-        });
-
-        // Initialize transliteration as hidden
-        document.addEventListener('DOMContentLoaded', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(el => el.style.display = 'none');
         });
     </script>
 </body>
