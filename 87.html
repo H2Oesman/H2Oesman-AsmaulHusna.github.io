@@ -5,30 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Al-Jami (87)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #1a5276;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4cc9f0;
+            --secondary-color: #a5b1c2;
+            --accent-color: #4361ee;
+            --section-bg: #0f3460;
+            --border-color: #1e5128;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 32px;
+            font-size: 36px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--primary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
         }
         .transliteration {
             font-style: italic;
@@ -40,8 +65,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -54,15 +79,15 @@
             font-size: 24px;
             color: #2980b9;
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +98,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +106,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +128,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -153,17 +191,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 28px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,19 +213,20 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">Kembali ke Menu Utama</a></div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            
             <h1 class="name-title">87. Al-Jami (Yang Maha Pengumpul)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> dan <a href="https://myislam.org/99-names-of-allah/al-jami/" target="_blank">myislam.org</a></div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI</div>
 
             <div class="arabic">ٱلْجَامِعُ</div>
             <div class="transliteration">Transliterasi: Al-Jami</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/87.%20al-jami.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -226,7 +265,7 @@
                     <div class="transliteration">Inna llāha jāmi'u l-munāfiqīna wa l-kāfirīna fī jahannama jamī'ā</div>
                     <p>"Sesungguhnya Allah akan mengumpulkan orang-orang munafik dan kafir di Neraka Jahanam semuanya."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir NU Online:</strong> Ayat ini menunjukkan pengumpulan orang-orang jahat oleh Al-Jami, berlawanan dengan pengumpulan mukmin di Surga. Sifat menyeluruh dari "semuanya" menunjukkan keadilan sempurna - tak seorang pun akan luput dari pengumpulan ini. Para ulama NU menekankan bahwa ini menunjukkan keadilan Allah yang sempurna.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan pengumpulan orang-orang jahat oleh Al-Jami, berlawanan dengan pengumpulan mukmin di Surga. Sifat menyeluruh dari "semuanya" menunjukkan keadilan sempurna - tak seorang pun akan luput dari pengumpulan ini. Ini menunjukkan keadilan Allah yang sempurna.
                     </div>
                 </div>
 
@@ -236,7 +275,7 @@
                     <div class="transliteration">Yajma'u llāhu l-awwalīna wa l-ākhirīna fī ṣa'īdin wāḥidin yusmi'uhumu d-dā'ī wa yanfudhuhumu l-baṣar</div>
                     <p>"Allah akan mengumpulkan orang-orang terdahulu dan terakhir di satu dataran di mana penyeru akan membuat mereka mendengar dan pandangan akan menembus."</p>
                     <div class="tafsir-box">
-                        <strong>Keterangan NU Online:</strong> Hadits ini menggambarkan adegan kebangkitan di mana Al-Jami membawa semua generasi bersama. Nabi (ﷺ) menekankan realitas pengumpulan ini, mencatat bahwa manusia akan berdiri tanpa alas kaki, telanjang, dan tidak berkhitan, menunjukkan kekuatan ilahi yang sempurna atas ciptaan.
+                        <strong>Keterangan Kementerian Agama RI:</strong> Hadits ini menggambarkan adegan kebangkitan di mana Al-Jami membawa semua generasi bersama. Nabi (ﷺ) menekankan realitas pengumpulan ini, mencatat bahwa manusia akan berdiri tanpa alas kaki, telanjang, dan tidak berkhitan, menunjukkan kekuatan ilahi yang sempurna atas ciptaan.
                     </div>
                 </div>
             </div>
@@ -248,7 +287,7 @@
                     <div class="arabic">يَا جَامِعَ النَّاسِ لِيَوْمٍ لَّا رَيْبَ فِيهِ ٱجْمَعْ بَيْنِي وَبَيْنَ أَحِبَّتِي فِي دَارِ ٱلْكَرَامَةِ</div>
                     <div class="transliteration">Yā Jāmi'a n-nāsi li-yawmin lā rayba fīh ijma' baynī wa bayna aḥibbati fī dāri l-karāmah</div>
                     <p><strong>Terjemahan:</strong> "Wahai Pengumpul manusia untuk hari yang tidak ada keraguan padanya, kumpulkan aku dengan orang-orang yang kucintai di Negeri Kemuliaan."</p>
-                    <p><strong>Manfaat:</strong> Doa ini menggabungkan pengakuan pengumpulan ilahi dengan permintaan pribadi untuk reuni di Surga. Nabi (ﷺ) mengajarkan bahwa orang beriman akan dikumpulkan sesuai niat dan kecintaan mereka (Muslim).</p>
+                    <p><strong>Keutamaan (Kementerian Agama RI):</strong> Doa ini menggabungkan pengakuan pengumpulan ilahi dengan permintaan pribadi untuk reuni di Surga. Nabi (ﷺ) mengajarkan bahwa orang beriman akan dikumpulkan sesuai niat dan kecintaan mereka (Muslim).</p>
                 </div>
 
                 <div class="dua">
@@ -256,7 +295,7 @@
                     <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْجَامِعِ أَلِّفْ بَيْنَ قُلُوبِنَا وَأَصْلِحْ ذَاتَ بَيْنِنَا وَٱجْمَعْنَا عَلَى ٱلْهُدَى وَٱلتَّقْوَى</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi l-Jāmi'i allif bayna qulūbinā wa aṣliḥ dhāta bayninā wa jma'nā 'alā l-hudā wa t-taqwā</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, demi hak Al-Jami, satukan hati kami, damaikan hubungan kami, dan kumpulkan kami di atas petunjuk dan ketakwaan."</p>
-                    <p><strong>Sumber:</strong> Terinspirasi dari doa Nabi (ﷺ) untuk persatuan umat Islam (<a href="https://quranwbw.com/8:63" target="_blank">8:63</a>). Doa ini mengubah sifat ilahi menjadi aplikasi praktis untuk harmoni masyarakat.</p>
+                    <p><strong>Sumber (Kementerian Agama RI):</strong> Terinspirasi dari doa Nabi (ﷺ) untuk persatuan umat Islam (<a href="https://quranwbw.com/8:63" target="_blank">8:63</a>). Doa ini mengubah sifat ilahi menjadi aplikasi praktis untuk harmoni masyarakat.</p>
                 </div>
             </div>
 
@@ -270,7 +309,7 @@
                         <li>Atur atau hadiri majelis ilmu atau dzikir</li>
                         <li>Damaikan antara dua orang atau kelompok</li>
                     </ol>
-                    <p><strong>Manfaat:</strong> Praktik ini:</p>
+                    <p><strong>Keutamaan (Kementerian Agama RI):</strong> Praktik ini:</p>
                     <ul>
                         <li>Memperkuat ikatan masyarakat</li>
                         <li>Mengikuti sunnah pertemuan Jumat</li>
@@ -287,42 +326,71 @@
                         <li>Diskusikan satu cara memperkuat ikatan keluarga</li>
                         <li>Akhiri dengan doa: "Allahumma ijma' baynana 'ala khayr"</li>
                     </ol>
-                    <p><strong>Dasar Historis:</strong> Nabi (ﷺ) bersabda: "Perumpamaan orang beriman dalam cinta mereka seperti satu tubuh" (Muslim). Praktik ini mewujudkan semangat pengumpulan ilahi dalam kehidupan keluarga.</p>
+                    <p><strong>Dasar Syar'i (Kementerian Agama RI):</strong> Nabi (ﷺ) bersabda: "Perumpamaan orang beriman dalam cinta mereka seperti satu tubuh" (Muslim). Praktik ini mewujudkan semangat pengumpulan ilahi dalam kehidupan keluarga.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Pembahasan Mendalam)</h2>
-                <p>Ibn Kathir menjelaskan dalam tafsirnya tentang Surah Al-Imran ayat 9:</p>
-                <div class="arabic">"فيه إثبات المعاد والجزاء، وأن الله يجمع الأولين والآخرين في صعيد واحد، ويحاسبهم على أعمالهم"</div>
-                <p>"Ayat ini menetapkan kebangkitan dan pembalasan, dan bahwa Allah akan mengumpulkan orang-orang terdahulu dan terakhir di satu dataran, dan menghisab mereka atas perbuatan mereka."</p>
-                <p>Ibn Kathir menekankan bahwa pengumpulan ini mencakup semua manusia tanpa terkecuali, dan bahwa itu adalah manifestasi dari keadilan dan kekuasaan Allah yang sempurna.</p>
+                <h2 class="section-title">Tafsir Mendalam</h2>
+                <p>Menurut Kementerian Agama RI, Al-Jami dapat dipahami melalui empat dimensi pengumpulan ilahi:</p>
+                <ol>
+                    <li><strong>Pengumpulan Eskatologis:</strong>
+                        <ul>
+                            <li>Kebangkitan semua manusia (<a href="https://quranwbw.com/75:3-4" target="_blank">75:3-4</a>)</li>
+                            <li>Pengadilan di Padang Mahsyar (<a href="https://quranwbw.com/18:47" target="_blank">18:47</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pengumpulan Komunal:</strong>
+                        <ul>
+                            <li>Penyatuan hati orang beriman (<a href="https://quranwbw.com/8:63" target="_blank">8:63</a>)</li>
+                            <li>Perkumpulan untuk ibadah (<a href="https://quranwbw.com/62:9" target="_blank">62:9</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pengumpulan Pengetahuan:</strong>
+                        <ul>
+                            <li>Kumpulan semua ilmu (<a href="https://quranwbw.com/6:59" target="_blank">6:59</a>)</li>
+                            <li>Penyimpanan catatan amal (<a href="https://quranwbw.com/78:29" target="_blank">78:29</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pengumpulan Ciptaan:</strong>
+                        <ul>
+                            <li>Penyatuan unsur-unsur alam (<a href="https://quranwbw.com/21:30" target="_blank">21:30</a>)</li>
+                            <li>Keteraturan kosmos (<a href="https://quranwbw.com/36:40" target="_blank">36:40</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-An'am (<a href="https://quranwbw.com/6:38" target="_blank">6:38</a>), Allah menyatakan bahwa tidak ada satupun makhluk di bumi atau burung yang terbang dengan kedua sayapnya, melainkan umat-umat seperti kamu. Tidak ada yang Kami alpakan di dalam Kitab, kemudian kepada Tuhanlah mereka dihimpunkan. Ini menunjukkan sifat Al-Jami yang mengumpulkan semua pengetahuan dan ciptaan.</p>
             </div>
 
-            <div class="bonus">
-                <h3>Fakta Menarik tentang Al-Jami</h3>
-                <p>Nama Al-Jami muncul dalam konteks yang berbeda dalam Al-Quran:</p>
-                <ul>
-                    <li>Sebagai pengumpul manusia untuk Hari Kiamat (3:9)</li>
-                    <li>Sebagai pengumpul orang munafik dan kafir di Neraka (4:140)</li>
-                    <li>Sebagai pengumpul hati manusia (8:63)</li>
-                </ul>
-                <p>Nama ini mengingatkan kita bahwa Allah akan mengumpulkan semua manusia, baik dan buruk, untuk pertanggungjawaban di akhirat.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
+            
             <h1 class="name-title">87. Al-Jami (The Gatherer)</h1>
-            <div class="name-source"><strong>Source:</strong> <a href="https://jabar.nu.or.id/tauhid/tabel-99-asmaul-husna-lengkap-dengan-dalil-doa-dan-wiridnya-pYpyR" target="_blank">NU Online</a> and <a href="https://myislam.org/99-names-of-allah/al-jami/" target="_blank">myislam.org</a></div>
+            <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-jami/" target="_blank">myislam.org/99-names-of-allah/al-jami/</a></div>
+
+            <!-- Bonus section only in English -->
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_87Jami.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
 
             <div class="arabic">ٱلْجَامِعُ</div>
             <div class="transliteration">Transliteration: Al-Jami</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to the Pronunciation</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/87.%20al-jami.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -337,31 +405,31 @@
                     <li><strong>The Unifier:</strong> Who unites compatible things and hearts in this life</li>
                     <li><strong>The Comprehensive:</strong> Who contains all perfect attributes and knowledge</li>
                 </ul>
-                <p>According to the Indonesian Ministry of Religious Affairs in Quranic Tafsir, "Al-Jami gathers His servants for accountability, gathers scattered remains for resurrection, gathers believers in Paradise and disbelievers in Hell, and gathers all perfect names and attributes in His essence." This name is particularly meaningful in times of division, as the Prophet (ﷺ) said: "Allah will gather the nations, and believers will recognize each other by the light on their faces" (Bukhari).</p>
+                <p>Ibn Qayyim explained: "Al-Jami gathers His servants for accountability, gathers scattered remains for resurrection, gathers believers in Paradise and disbelievers in Hell, and gathers all perfect names and attributes in His essence." This name is particularly meaningful in times of division, as the Prophet (ﷺ) said: "Allah will gather the nations, and believers will recognize each other by the light on their faces" (Bukhari).</p>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Evidence (From Quran & Hadith)</h2>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
                 <div class="dalil-item">
-                    <strong>Primary Quran Reference:</strong> 
+                    <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/3:9" target="_blank">Surah Al-Imran 3:9</a>
                     <div class="arabic">رَبَّنَآ إِنَّكَ جَامِعُ ٱلنَّاسِ لِيَوْمٍۢ لَّا رَيْبَ فِيهِ ۚ إِنَّ ٱللَّهَ لَا يُخْلِفُ ٱلْمِيعَادَ</div>
                     <div class="transliteration">Rabbanā innaka jāmi'u n-nāsi li-yawmin lā rayba fīh innā llāha lā yukhlifu l-mī'ād</div>
                     <p>"Our Lord, indeed You will gather the people for a Day about which there is no doubt. Indeed, Allah does not fail in His promise."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir by Indonesian Ministry of Religious Affairs:</strong> This verse establishes Allah as Al-Jami who will gather all humanity for judgment. The context is a prayer of righteous people, showing that faith in divine gathering is a sign of belief. The connection between Al-Jami and keeping promises emphasizes that the gathering is certain, just as Allah's promise is certain.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse establishes Allah as Al-Jami who will gather all humanity for judgment. The context is a prayer of righteous people, showing that faith in divine gathering is a sign of belief. The connection between Al-Jami and keeping promises emphasizes that the gathering is certain, just as Allah's promise is certain.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Quran Reference:</strong> 
+                    <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/4:140" target="_blank">Surah An-Nisa 4:140</a>
                     <div class="arabic">إِنَّ ٱللَّهَ جَامِعُ ٱلْمُنَـٰفِقِينَ وَٱلْكَـٰفِرِينَ فِى جَهَنَّمَ جَمِيعًا</div>
                     <div class="transliteration">Inna llāha jāmi'u l-munāfiqīna wa l-kāfirīna fī jahannama jamī'ā</div>
                     <p>"Indeed, Allah will gather the hypocrites and disbelievers in Hell all together."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir from NU Online:</strong> This verse shows the gathering of evil people by Al-Jami, in contrast to the gathering of believers in Paradise. The comprehensive nature of "all together" shows perfect justice - no one will escape this gathering. NU scholars emphasize that this demonstrates Allah's perfect justice.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse shows the gathering of evil people by Al-Jami, in contrast to the gathering of believers in Paradise. The comprehensive nature of "all together" shows perfect justice - no one will escape this gathering. This demonstrates Allah's perfect justice.
                     </div>
                 </div>
 
@@ -371,19 +439,19 @@
                     <div class="transliteration">Yajma'u llāhu l-awwalīna wa l-ākhirīna fī ṣa'īdin wāḥidin yusmi'uhumu d-dā'ī wa yanfudhuhumu l-baṣar</div>
                     <p>"Allah will gather the earlier and later generations on one plateau where the caller will make them hear and the sight will penetrate."</p>
                     <div class="tafsir-box">
-                        <strong>Explanation from NU Online:</strong> This hadith describes the scene of resurrection where Al-Jami brings all generations together. The Prophet (ﷺ) emphasized the reality of this gathering, noting that humans will stand barefoot, naked, and uncircumcised, showing perfect divine power over creation.
+                        <strong>Context:</strong> This hadith describes the scene of resurrection where Al-Jami brings all generations together. The Prophet (ﷺ) emphasized the reality of this gathering, noting that humans will stand barefoot, naked, and uncircumcised, showing perfect divine power over creation.
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Prayers</h2>
+                <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Divine Gathering of Goodness</div>
                     <div class="arabic">يَا جَامِعَ النَّاسِ لِيَوْمٍ لَّا رَيْبَ فِيهِ ٱجْمَعْ بَيْنِي وَبَيْنَ أَحِبَّتِي فِي دَارِ ٱلْكَرَامَةِ</div>
                     <div class="transliteration">Yā Jāmi'a n-nāsi li-yawmin lā rayba fīh ijma' baynī wa bayna aḥibbati fī dāri l-karāmah</div>
                     <p><strong>Translation:</strong> "O Gatherer of people for a day about which there is no doubt, gather me with my loved ones in the Abode of Honor."</p>
-                    <p><strong>Benefit:</strong> This prayer combines recognition of divine gathering with a personal request for reunion in Paradise. The Prophet (ﷺ) taught that believers will be gathered according to their intentions and loves (Muslim).</p>
+                    <p><strong>Benefits:</strong> This prayer combines recognition of divine gathering with a personal request for reunion in Paradise. The Prophet (ﷺ) taught that believers will be gathered according to their intentions and loves (Muslim).</p>
                 </div>
 
                 <div class="dua">
@@ -396,7 +464,7 @@
             </div>
 
             <div class="section">
-                <h2 class="section-title">Practices</h2>
+                <h2 class="section-title">Amalan (Practices)</h2>
                 <div class="amalan">
                     <div class="amalan-title">Weekly Gathering of Goodness</div>
                     <p>Friday practice to embody the attribute of Al-Jami:</p>
@@ -405,7 +473,7 @@
                         <li>Organize or attend a knowledge or remembrance gathering</li>
                         <li>Reconcile between two people or groups</li>
                     </ol>
-                    <p><strong>Benefit:</strong> This practice:</p>
+                    <p><strong>Benefits:</strong> This practice:</p>
                     <ul>
                         <li>Strengthens community bonds</li>
                         <li>Follows the sunnah of Friday gatherings</li>
@@ -427,39 +495,51 @@
             </div>
 
             <div class="section">
-                <h2 class="section-title">Ibn Kathir's Tafsir (In-depth Discussion)</h2>
-                <p>Ibn Kathir explains in his tafsir of Surah Al-Imran verse 9:</p>
-                <div class="arabic">"فيه إثبات المعاد والجزاء، وأن الله يجمع الأولين والآخرين في صعيد واحد، ويحاسبهم على أعمالهم"</div>
-                <p>"This verse establishes resurrection and recompense, and that Allah will gather the earlier and later generations on one plateau, and account them for their deeds."</p>
-                <p>Ibn Kathir emphasizes that this gathering includes all humans without exception, and that it is a manifestation of Allah's perfect justice and power.</p>
+                <h2 class="section-title">In-depth Tafsir</h2>
+                <p>Al-Jami can be understood through four dimensions of divine gathering:</p>
+                <ol>
+                    <li><strong>Eschatological Gathering:</strong>
+                        <ul>
+                            <li>Resurrection of all humanity (<a href="https://quranwbw.com/75:3-4" target="_blank">75:3-4</a>)</li>
+                            <li>Judgment on the Plain of Assembly (<a href="https://quranwbw.com/18:47" target="_blank">18:47</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Communal Gathering:</strong>
+                        <ul>
+                            <li>Uniting believers' hearts (<a href="https://quranwbw.com/8:63" target="_blank">8:63</a>)</li>
+                            <li>Gathering for worship (<a href="https://quranwbw.com/62:9" target="_blank">62:9</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Knowledge Gathering:</strong>
+                        <ul>
+                            <li>Collection of all knowledge (<a href="https://quranwbw.com/6:59" target="_blank">6:59</a>)</li>
+                            <li>Preservation of deeds records (<a href="https://quranwbw.com/78:29" target="_blank">78:29</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Creation Gathering:</strong>
+                        <ul>
+                            <li>Unification of natural elements (<a href="https://quranwbw.com/21:30" target="_blank">21:30</a>)</li>
+                            <li>Cosmic order (<a href="https://quranwbw.com/36:40" target="_blank">36:40</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Al-An'am (<a href="https://quranwbw.com/6:38" target="_blank">6:38</a>), Allah states that there is no creature on earth or bird that flies with its wings except that they are nations like you. We have not neglected in the Register a thing. Then unto their Lord they will be gathered. This shows the attribute of Al-Jami who gathers all knowledge and creation.</p>
             </div>
 
-            <div class="bonus">
-                <h3>Interesting Facts about Al-Jami</h3>
-                <p>The name Al-Jami appears in different contexts in the Quran:</p>
-                <ul>
-                    <li>As the gatherer of humanity for the Day of Judgment (3:9)</li>
-                    <li>As the gatherer of hypocrites and disbelievers in Hell (4:140)</li>
-                    <li>As the gatherer of human hearts (8:63)</li>
-                </ul>
-                <p>This name reminds us that Allah will gather all humans, good and bad, for accountability in the Hereafter.</p>
-            </div>
-
-            <a href="#" class="back-to-top">Back to Top</a>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
 
         <footer>
-            <p>© 2023 99 Names of Allah - Al-Jami (The Gatherer)</p>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
         </footer>
     </div>
 
     <script>
-        // Language toggle functionality
+        // Language Toggle
         const languageToggle = document.getElementById('languageToggle');
-        const transliterationToggle = document.getElementById('transliterationToggle');
         const indonesianContent = document.getElementById('indonesian-content');
         const englishContent = document.getElementById('english-content');
-        const transliterationElements = document.querySelectorAll('.transliteration');
 
         languageToggle.addEventListener('click', function() {
             if (indonesianContent.classList.contains('hidden')) {
@@ -469,30 +549,37 @@
             } else {
                 indonesianContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
-                languageToggle.textContent = 'Ganti ke Bahasa Indonesia';
+                languageToggle.textContent = 'Switch to Indonesian';
             }
         });
 
+        // Transliteration Toggle
+        const transliterationToggle = document.getElementById('transliterationToggle');
+        const transliterations = document.querySelectorAll('.transliteration');
+
         transliterationToggle.addEventListener('click', function() {
-            transliterationElements.forEach(el => {
-                if (el.style.display === 'block') {
-                    el.style.display = 'none';
-                    transliterationToggle.textContent = indonesianContent.classList.contains('hidden') ? 
-                        'Show Transliteration' : 'Tampilkan Transliterasi';
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    transliterationToggle.textContent = 'Show Transliteration';
                 } else {
-                    el.style.display = 'block';
-                    transliterationToggle.textContent = indonesianContent.classList.contains('hidden') ? 
-                        'Hide Transliteration' : 'Sembunyikan Transliterasi';
+                    element.style.display = 'block';
+                    transliterationToggle.textContent = 'Hide Transliteration';
                 }
             });
         });
 
-        // Back to top functionality
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                darkModeToggle.textContent = 'Dark Mode';
+            }
         });
     </script>
 </body>
