@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            color: #e0e0e0;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 32px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+        }
+        body.dark-mode .arabic {
+            color: #4a9fe3;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +51,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +61,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4a9fe3;
         }
         .section {
             margin: 30px 0;
@@ -57,6 +77,10 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4a9fe3;
+            border-left-color: #4a9fe3;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
@@ -64,10 +88,17 @@
             margin: 25px 0;
             border: 1px solid #e0e0e0;
         }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
+        }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #1abc9c;
         }
         .back-to-top {
             display: block;
@@ -76,6 +107,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4a9fe3;
         }
         .language-toggle {
             position: fixed;
@@ -103,6 +137,19 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
@@ -110,10 +157,17 @@
             margin: 20px 0;
             border-left: 5px solid #3498db;
         }
+        body.dark-mode .bonus {
+            background-color: #2a3a4a;
+            border-left-color: #4a9fe3;
+        }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +175,10 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #555;
         }
         .hidden {
             display: none;
@@ -132,9 +190,20 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
+        }
         .main-menu {
             text-align: center;
             margin: 15px 0;
+        }
+        .main-menu a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        body.dark-mode .main-menu a {
+            color: #4a9fe3;
         }
         footer {
             text-align: center;
@@ -142,6 +211,9 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
+        }
+        body.dark-mode footer {
+            color: #a0a0a0;
         }
 
         .audio-player {
@@ -155,17 +227,20 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4a9fe3;
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 30px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
-                margin: 10px 0;
+                margin: 10px 5px;
                 display: inline-block;
             }
         }
@@ -175,19 +250,20 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <h1 class="name-title">91. Ad-Darr (Yang Maha Pemberi Bahaya)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/ad-darr/" target="_blank">myislam.org/99-names-of-allah/ad-darr/</a> | Kementerian Agama RI</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI dan <a href="https://myislam.org/99-names-of-allah/ad-darr/" target="_blank">myislam.org</a></div>
 
             <div class="arabic">ٱلضَّارُ</div>
             <div class="transliteration">Transliterasi: Ad-Darr</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/91.%20ad-darr.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -201,7 +277,7 @@
                     <li><strong>Yang Maha Pemberi Bahaya:</strong> Pembawa mudarat ketika hikmah menghendaki</li>
                     <li><strong>Yang Menimpakan Musibah:</strong> Pencipta ujian sebagai kebijaksanaan ilahi</li>
                 </ul>
-                <p>Ibnu Qayyim menjelaskan: "Sifat Allah dalam menimpakan bahaya selalu disertai hikmah dan rahmat. Bahkan musibah dari-Nya pada akhirnya bermanfaat." Nama ini mengingatkan kita bahwa semua kesulitan dari Allah mengandung hikmah tersembunyi, sebagaimana Nabi (ﷺ) bersabda: "Sungguh menakjubkan urusan seorang mukmin! Jika sesuatu yang baik menimpanya dia bersyukur, dan jika sesuatu yang buruk menimpanya dia bersabar - dan keduanya baik baginya" (Muslim).</p>
+                <p>Menurut Kementerian Agama RI, Ad-Darr adalah salah satu nama Allah yang menunjukkan kekuasaan-Nya dalam memberikan ujian dan musibah sesuai dengan hikmah-Nya. Ibnu Qayyim menjelaskan: "Sifat Allah dalam menimpakan bahaya selalu disertai hikmah dan rahmat. Bahkan musibah dari-Nya pada akhirnya bermanfaat." Nama ini mengingatkan kita bahwa semua kesulitan dari Allah mengandung hikmah tersembunyi, sebagaimana Nabi (ﷺ) bersabda: "Sungguh menakjubkan urusan seorang mukmin! Jika sesuatu yang baik menimpanya dia bersyukur, dan jika sesuatu yang buruk menimpanya dia bersabar - dan keduanya baik baginya" (Muslim).</p>
             </div>
 
             <div class="section">
@@ -235,7 +311,7 @@
                     <div class="transliteration">Mā yuṣību l-muslima min naṣabin wa lā waṣabin wa lā hammi wa lā ḥuznin wa lā adhan wa lā ghammin ḥattā sh-shawkati yushākuhā illā kaffara Llāhu bihā min khaṭāyāhu</div>
                     <p>"Tidak ada kelelahan, penyakit, kecemasan, kesedihan, bahaya atau kesedihan yang menimpa seorang Muslim, bahkan duri yang menusuknya, melainkan Allah menghapus sebagian dosa-dosanya karenanya."</p>
                     <div class="tafsir-box">
-                        <strong>Konteks:</strong> Nabi (ﷺ) mengungkap rahmat tersembunyi dalam musibah dari Ad-Darr - mereka berfungsi sebagai penghapus dosa dan peningkat derajat spiritual. Ini mengubah pemahaman kita tentang bahaya ilahi dari hukuman menjadi penyucian.
+                        <strong>Keterangan Kementerian Agama RI:</strong> Nabi (ﷺ) mengungkap rahmat tersembunyi dalam musibah dari Ad-Darr - mereka berfungsi sebagai penghapus dosa dan peningkat derajat spiritual. Ini mengubah pemahaman kita tentang bahaya ilahi dari hukuman menjadi penyucian.
                     </div>
                 </div>
             </div>
@@ -247,8 +323,7 @@
                     <div class="arabic">يَا ضَارُّ يَا نَافِعُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا أَنْتَ ضَارٌّ بِهِ، وَأَسْأَلُكَ خَيْرَ مَا أَنْتَ نَافِعٌ بِهِ</div>
                     <div class="transliteration">Yā Ḍārru yā Nāfi', a'ūdhu bika min sharri mā anta ḍārrun bih, wa as'aluka khayra mā anta nāfi'un bih</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Pemberi Bahaya, Wahai Yang Maha Pemberi Manfaat, aku berlindung kepada-Mu dari keburukan apa yang Engkau timpakan, dan aku memohon kepada-Mu kebaikan apa yang Engkau berikan."</p>
-                    <p><strong>Manfaat:</strong> Baca ini saat cemas. Nabi (ﷺ) mengajarkan doa komprehensif yang mengakui kendali Allah atas manfaat dan mudarat (Ibnu Majah).</p>
-                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI - Doa komprehensif yang mengakui kendali Allah atas manfaat dan mudarat. Baca saat cemas untuk perlindungan ilahi (Ibnu Majah).</p>
                 </div>
 
                 <div class="dua">
@@ -256,33 +331,80 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَدْمِ، وَأَعُوذُ بِكَ مِنَ التَّرَدِّي، وَأَعُوذُ بِكَ مِنَ الْغَرَقِ وَالْحَرَقِ وَالْهَرَمِ، وَأَعُوذُ بِكَ أَنْ يَتَخَبَّطَنِي الشَّيْطَانُ عِنْدَ الْمَوْتِ، وَأَعُوذُ بِكَ أَنْ أَمُوتَ فِي سَبِيلِكَ مُدْبِرًا، وَأَعُوذُ بِكَ أَنْ أَمُوتَ لَدِيغًا</div>
                     <div class="transliteration">Allāhumma innī a'ūdhu bika mina l-hadm, wa a'ūdhu bika mina t-taradd, wa a'ūdhu bika mina l-gharaq wa l-ḥaraq wa l-haram, wa a'ūdhu bika an yatakhabbaṭanī sh-shayṭānu 'inda l-mawt, wa a'ūdhu bika an amūta fī sabīlika mudbiran, wa a'ūdhu bika an amūta ladīghā</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku berlindung kepada-Mu dari runtuhan, dari jatuh, dari tenggelam, terbakar dan penuaan. Aku berlindung kepada-Mu dari gangguan setan saat kematian, dari mati dalam keadaan mundur dari jalan-Mu, dan dari mati karena sengatan berbisa."</p>
-                    <p><strong>Manfaat:</strong> Doa komprehensif untuk perlindungan dari berbagai bentuk bahaya (Abu Dawud).</p>
-                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI - Doa komprehensif untuk perlindungan dari berbagai bentuk bahaya (Abu Dawud).</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Amalan & Hikmah</h2>
+                <h2 class="section-title">Amalan</h2>
                 <div class="amalan">
                     <div class="amalan-title">Refleksi Spiritual</div>
-                    <p>1. <strong>Mencari Hikmah dalam Kesulitan:</strong> Ketika menghadapi kesulitan, ingat bahwa Ad-Darr hanya menimpakan bahaya yang mengandung hikmah. Nabi Ayyub (AS) menghadapi ujian berat tetapi tetap sabar, dan Allah kemudian menghapus penderitaannya (<a href="https://quranwbw.com/21:83-84" target="_blank">Surah Al-Anbiya 21:83-84</a>).</p>
-                    <p>2. <strong>Keseimbangan:</strong> Ad-Darr selalu berpasangan dengan An-Nafi' (Yang Maha Pemberi Manfaat). Ini mengajarkan bahwa kehidupan adalah campuran ujian dan rahmat, keduanya dari Allah dan keduanya mengandung kebaikan.</p>
-                    <p>3. <strong>Perspektif Eternitas:</strong> Bahkan bahaya terberat di dunia ini sementara, sementara rahmat Allah di akhirat abadi. Nabi (ﷺ) mengingatkan: "Dunia adalah penjara bagi orang beriman dan surga bagi orang kafir" (Muslim).</p>
+                    <p>Rutinitas harian untuk mengembangkan kesabaran dan pemahaman:</p>
+                    <ol>
+                        <li>Setiap pagi, baca "Ya Darr" 11 kali</li>
+                        <li>Renungkan satu kesulitan yang sedang dihadapi</li>
+                        <li>Cari hikmah tersembunyi dalam ujian tersebut</li>
+                    </ol>
+                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
+                    <ul>
+                        <li>Mengembangkan kesabaran dan penerimaan</li>
+                        <li>Membuka mata terhadap hikmah ilahi</li>
+                        <li>Mengikuti sunnah Nabi (ﷺ) dalam menghadapi ujian</li>
+                    </ul>
                 </div>
 
-                <div class="bonus">
-                    <h3>Hikmah Praktis:</h3>
-                    <p>Ketika menghadapi kesulitan:</p>
-                    <ul>
-                        <li>Ucapkan "Inna lillahi wa inna ilaihi raji'un" (Sesungguhnya kami milik Allah dan kepada-Nya kami kembali) (<a href="https://quranwbw.com/2:156" target="_blank">Surah Al-Baqarah 2:156</a>)</li>
-                        <li>Perbanyak doa memohon perlindungan kepada Ad-Darr</li>
-                        <li>Ingat bahwa setiap kesulitan menghapus dosa</li>
-                        <li>Carilah pelajaran dan pertumbuhan dalam ujian</li>
-                    </ul>
+                <div class="amalan">
+                    <div class="amalan-title">Amalan Mencari Hikmah</div>
+                    <p>Praktik mingguan untuk memahami musibah:</p>
+                    <ol>
+                        <li>Identifikasi satu musibah yang dialami</li>
+                        <li>Tulis tiga kemungkinan hikmah di baliknya</li>
+                        <li>Baca doa memohon pemahaman</li>
+                        <li>Ucapkan syukur atas pelajaran yang didapat</li>
+                    </ol>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Tidaklah seorang muslim ditimpa musibah, lalu mengucapkan 'Inna lillahi wa inna ilaihi raji'un' dan berdoa, melainkan Allah akan memberikan ganti yang lebih baik" (Muslim).</p>
                 </div>
             </div>
 
+            <div class="section">
+                <h2 class="section-title">Tafsir Kementerian Agama RI</h2>
+                <p>Menurut sumber-sumber resmi Kementerian Agama RI, Ad-Darr dapat dipahami melalui tiga dimensi:</p>
+                <ol>
+                    <li><strong>Ujian sebagai Penyucian:</strong>
+                        <ul>
+                            <li>Musibah menghapus dosa-dosa (<a href="https://quranwbw.com/42:30" target="_blank">42:30</a>)</li>
+                            <li>Kesulitan meningkatkan derajat spiritual (<a href="https://quranwbw.com/2:155" target="_blank">2:155</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Keseimbangan Ilahi:</strong>
+                        <ul>
+                            <li>Ad-Darr selalu berpasangan dengan An-Nafi' (<a href="https://quranwbw.com/6:17" target="_blank">6:17</a>)</li>
+                            <li>Setiap kesulitan ada kemudahan (<a href="https://quranwbw.com/94:5-6" target="_blank">94:5-6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hikmah Tersembunyi:</strong>
+                        <ul>
+                            <li>Musibah mengandung pelajaran (<a href="https://quranwbw.com/30:41" target="_blank">30:41</a>)</li>
+                            <li>Ujian menguji keimanan (<a href="https://quranwbw.com/29:2" target="_blank">29:2</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Dalam Surah Al-Baqarah (<a href="https://quranwbw.com/2:155-157" target="_blank">2:155-157</a>), Allah menjelaskan bahwa ujian adalah bagian tak terpisahkan dari kehidupan beriman, dan kesabaran menghadapinya membawa rahmat dan petunjuk. Nabi (ﷺ) mencontohkan penerimaan sempurna terhadap takdir, bahkan dalam penderitaan terberat.</p>
+            </div>
+
+            <div class="bonus">
+                <h3>Fakta Menarik tentang Ad-Darr</h3>
+                <p>Nama Ad-Darr selalu disebutkan berpasangan dengan An-Nafi':</p>
+                <ul>
+                    <li>Ad-Darr menunjukkan kekuasaan Allah dalam menimpakan musibah</li>
+                    <li>An-Nafi' menunjukkan kekuasaan Allah dalam memberikan manfaat</li>
+                    <li>Kedua nama ini menunjukkan keseimbangan sempurna dalam sifat ilahi</li>
+                </ul>
+                <p>Nama ini mengingatkan kita bahwa semua yang terjadi - baik manfaat maupun mudarat - berasal dari Allah dan mengandung hikmah yang sempurna.</p>
+            </div>
+
             <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
@@ -290,11 +412,26 @@
             <h1 class="name-title">91. Ad-Darr (The Distresser / The Afflicter)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/ad-darr/" target="_blank">myislam.org/99-names-of-allah/ad-darr/</a></div>
 
+            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            
+            <!-- Bonus section only in English -->
+            <div class="bonus">
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+
+                <div class="audio-player">
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
+                    <audio controls style="width: 100%;">
+                        <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_92Daar.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
             <div class="arabic">ٱلضَّارُ</div>
             <div class="transliteration">Transliteration: Ad-Darr</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to the Pronunciation</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/91.%20ad-darr.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -312,7 +449,7 @@
             </div>
 
             <div class="section">
-                <h2 class="section-title">Evidence (From Quran & Hadith)</h2>
+                <h2 class="section-title">Dalil (Evidence from Quran & Hadith)</h2>
                 
                 <div class="dalil-item">
                     <strong>Primary Quran Reference:</strong> 
@@ -320,6 +457,9 @@
                     <div class="arabic">وَإِن يَمْسَسْكَ ٱللَّهُ بِضُرٍّۢ فَلَا كَاشِفَ لَهُۥٓ إِلَّا هُوَ ۖ وَإِن يُرِدْكَ بِخَيْرٍۢ فَلَا رَآدَّ لِفَضْلِهِۦ ۚ يُصِيبُ بِهِۦ مَن يَشَآءُ مِنْ عِبَادِهِۦ ۚ وَهُوَ ٱلْغَفُورُ ٱلرَّحِيمُ</div>
                     <div class="transliteration">Wa in yamsaska Llāhu bi-ḍurrin fa-lā kāshifa lahu illā huwa, wa in yuridka bi-khayrin fa-lā rāddda li-faḍlih, yuṣību bih man yashā'u min 'ibādih, wa huwa l-Ghafūru r-Raḥīm</div>
                     <p>"And if Allah should touch you with adversity, there is no remover of it except Him. And if He intends for you good, then there is no repeller of His bounty. He causes it to reach whom He wills of His servants. And He is the Forgiving, the Merciful."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse establishes Allah's complete control over benefit and harm. The action of Ad-Darr is always accompanied by His forgiving and merciful nature, showing that even divine afflictions serve higher purposes of purification and spiritual growth.
+                    </div>
                 </div>
 
                 <div class="dalil-item">
@@ -328,6 +468,9 @@
                     <div class="arabic">مَآ أَصَابَ مِن مُّصِيبَةٍۢ فِى ٱلْأَرْضِ وَلَا فِىٓ أَنفُسِكُمْ إِلَّا فِى كِتَـٰبٍۢ مِّن قَبْلِ أَن نَّبْرَأَهَآ ۚ إِنَّ ذَٰلِكَ عَلَى ٱللَّهِ يَسِيرٌۭ</div>
                     <div class="transliteration">Mā aṣāba min muṣībatin fī l-arḍi wa lā fī anfusikum illā fī kitābin min qabli an nabra'ahā, inna dhālika 'alā Llāhi yasīr</div>
                     <p>"No disaster strikes upon the earth or among yourselves except that it is in a register before We bring it into being - indeed that, for Allah, is easy."</p>
+                    <div class="tafsir-box">
+                        <strong>Tafsir Ibn Kathir:</strong> This verse explains that all afflictions from Ad-Darr are decreed with divine wisdom. The mentioned ease refers to Allah's complete control over benefit and harm, showing that what appears as hardship is part of a greater divine plan.
+                    </div>
                 </div>
 
                 <div class="dalil-item">
@@ -335,17 +478,20 @@
                     <div class="arabic">مَا يُصِيبُ الْمُسْلِمَ مِنْ نَصَبٍ وَلَا وَصَبٍ وَلَا هَمٍّ وَلَا حُزْنٍ وَلَا أَذًى وَلَا غَمٍّ حَتَّى الشَّوْكَةِ يُشَاكُهَا إِلَّا كَفَّرَ اللَّهُ بِهَا مِنْ خَطَايَاهُ</div>
                     <div class="transliteration">Mā yuṣību l-muslima min naṣabin wa lā waṣabin wa lā hammi wa lā ḥuznin wa lā adhan wa lā ghammin ḥattā sh-shawkati yushākuhā illā kaffara Llāhu bihā min khaṭāyāhu</div>
                     <p>"No fatigue, nor disease, nor sorrow, nor sadness, nor hurt, nor distress befalls a Muslim, even if it were the prick he receives from a thorn, but that Allah expiates some of his sins for that."</p>
+                    <div class="tafsir-box">
+                        <strong>Context:</strong> The Prophet (ﷺ) reveals the hidden mercy in afflictions from Ad-Darr - they serve as sin expiators and spiritual status elevators. This transforms our understanding of divine harm from punishment to purification.
+                    </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Duas</h2>
+                <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Protection from Harm</div>
                     <div class="arabic">يَا ضَارُّ يَا نَافِعُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا أَنْتَ ضَارٌّ بِهِ، وَأَسْأَلُكَ خَيْرَ مَا أَنْتَ نَافِعٌ بِهِ</div>
                     <div class="transliteration">Yā Ḍārru yā Nāfi', a'ūdhu bika min sharri mā anta ḍārrun bih, wa as'aluka khayra mā anta nāfi'un bih</div>
                     <p><strong>Translation:</strong> "O Afflicter, O Benefiter, I seek refuge in You from the evil of what You afflict, and I ask You for the good of what You benefit."</p>
-                    <p><strong>Benefit:</strong> Recite this when anxious. The Prophet (ﷺ) taught this comprehensive prayer acknowledging Allah's control over benefit and harm (Ibn Majah).</p>
+                    <p><strong>Benefits:</strong> This comprehensive dua acknowledges Allah's control over benefit and harm. Recite when anxious for divine protection (Ibn Majah).</p>
                 </div>
 
                 <div class="dua">
@@ -353,67 +499,125 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَدْمِ، وَأَعُوذُ بِكَ مِنَ التَّرَدِّي، وَأَعُوذُ بِكَ مِنَ الْغَرَقِ وَالْحَرَقِ وَالْهَرَمِ، وَأَعُوذُ بِكَ أَنْ يَتَخَبَّطَنِي الشَّيْطَانُ عِنْدَ الْمَوْتِ، وَأَعُوذُ بِكَ أَنْ أَمُوتَ فِي سَبِيلِكَ مُدْبِرًا، وَأَعُوذُ بِكَ أَنْ أَمُوتَ لَدِيغًا</div>
                     <div class="transliteration">Allāhumma innī a'ūdhu bika mina l-hadm, wa a'ūdhu bika mina t-taradd, wa a'ūdhu bika mina l-gharaq wa l-ḥaraq wa l-haram, wa a'ūdhu bika an yatakhabbaṭanī sh-shayṭānu 'inda l-mawt, wa a'ūdhu bika an amūta fī sabīlika mudbiran, wa a'ūdhu bika an amūta ladīghā</div>
                     <p><strong>Translation:</strong> "O Allah, I seek refuge in You from being demolished, from falling, from drowning, burning and aging. I seek refuge in You from being possessed by Satan at the time of death, from dying while retreating from Your cause, and from dying of a poisonous sting."</p>
-                    <p><strong>Benefit:</strong> Comprehensive prayer for protection from various forms of harm (Abu Dawud).</p>
+                    <p><strong>Source:</strong> Comprehensive prayer for protection from various forms of harm (Abu Dawud).</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Practices & Wisdom</h2>
+                <h2 class="section-title">Amalan (Practices)</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Spiritual Reflection</div>
-                    <p>1. <strong>Seeking Wisdom in Hardship:</strong> When facing difficulties, remember that Ad-Darr only inflicts harm containing wisdom. Prophet Ayyub (AS) faced severe trials but remained patient, and Allah later removed his suffering (<a href="https://quranwbw.com/21:83-84" target="_blank">Surah Al-Anbiya 21:83-84</a>).</p>
-                    <p>2. <strong>Balance:</strong> Ad-Darr is always paired with An-Nafi' (The Benefiter). This teaches that life is a mixture of trials and mercies, both from Allah and both containing good.</p>
-                    <p>3. <strong>Eternal Perspective:</strong> Even the heaviest harm in this world is temporary, while Allah's mercy in the Hereafter is eternal. The Prophet (ﷺ) reminded: "The world is a prison for the believer and paradise for the disbeliever" (Muslim).</p>
+                    <div class="amalan-title">Spiritual Reflection Practice</div>
+                    <p>Daily routine to develop patience and understanding:</p>
+                    <ol>
+                        <li>Every morning, recite "Ya Darr" 11 times</li>
+                        <li>Reflect on one difficulty you're facing</li>
+                        <li>Seek the hidden wisdom in that trial</li>
+                    </ol>
+                    <p><strong>Benefits:</strong> This practice:</p>
+                    <ul>
+                        <li>Develops patience and acceptance</li>
+                        <li>Opens eyes to divine wisdom</li>
+                        <li>Follows the Prophet's (ﷺ) sunnah in facing trials</li>
+                    </ul>
                 </div>
 
-                <div class="bonus">
-                    <h3>Practical Wisdom:</h3>
-                    <p>When facing difficulties:</p>
-                    <ul>
-                        <li>Say "Inna lillahi wa inna ilaihi raji'un" (Indeed we belong to Allah, and indeed to Him we will return) (<a href="https://quranwbw.com/2:156" target="_blank">Surah Al-Baqarah 2:156</a>)</li>
-                        <li>Increase prayers seeking protection from Ad-Darr</li>
-                        <li>Remember that every difficulty expiates sins</li>
-                        <li>Seek lessons and growth in trials</li>
-                    </ul>
+                <div class="amalan">
+                    <div class="amalan-title">Wisdom Seeking Practice</div>
+                    <p>Weekly practice to understand afflictions:</p>
+                    <ol>
+                        <li>Identify one affliction you've experienced</li>
+                        <li>Write three potential wisdoms behind it</li>
+                        <li>Recite dua for understanding</li>
+                        <li>Express gratitude for lessons learned</li>
+                    </ol>
+                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "No Muslim is afflicted with any harm, then says 'Inna lillahi wa inna ilaihi raji'un' and makes dua, except that Allah will give him something better in return" (Muslim).</p>
                 </div>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
+            <div class="section">
+                <h2 class="section-title">Tafsir (Explanation)</h2>
+                <p>According to classical scholars, Ad-Darr can be understood through three dimensions:</p>
+                <ol>
+                    <li><strong>Trial as Purification:</strong>
+                        <ul>
+                            <li>Afflictions expiate sins (<a href="https://quranwbw.com/42:30" target="_blank">42:30</a>)</li>
+                            <li>Hardships elevate spiritual status (<a href="https://quranwbw.com/2:155" target="_blank">2:155</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Divine Balance:</strong>
+                        <ul>
+                            <li>Ad-Darr is always paired with An-Nafi' (<a href="https://quranwbw.com/6:17" target="_blank">6:17</a>)</li>
+                            <li>With every difficulty comes ease (<a href="https://quranwbw.com/94:5-6" target="_blank">94:5-6</a>)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hidden Wisdom:</strong>
+                        <ul>
+                            <li>Afflictions contain lessons (<a href="https://quranwbw.com/30:41" target="_blank">30:41</a>)</li>
+                            <li>Trials test faith (<a href="https://quranwbw.com/29:2" target="_blank">29:2</a>)</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>In Surah Al-Baqarah (<a href="https://quranwbw.com/2:155-157" target="_blank">2:155-157</a>), Allah explains that trials are an inseparable part of faithful life, and patience in facing them brings mercy and guidance. The Prophet (ﷺ) exemplified perfect acceptance of destiny, even in the heaviest suffering.</p>
+            </div>
+
+            <div class="bonus">
+                <h3>Interesting Facts about Ad-Darr</h3>
+                <p>The name Ad-Darr is always mentioned paired with An-Nafi':</p>
+                <ul>
+                    <li>Ad-Darr shows Allah's power in inflicting afflictions</li>
+                    <li>An-Nafi' shows Allah's power in granting benefits</li>
+                    <li>Both names show perfect balance in divine attributes</li>
+                </ul>
+                <p>This name reminds us that everything that happens - both benefit and harm - comes from Allah and contains perfect wisdom.</p>
+            </div>
+
+            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
 
         <footer>
-            <p>© 2023 99 Names of Allah Project | Sumber: <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a> dan Kementerian Agama RI</p>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
         </footer>
     </div>
 
     <script>
-        // Toggle between languages
-        document.getElementById('languageToggle').addEventListener('click', function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const indonesianContent = document.getElementById('indonesian-content');
             const englishContent = document.getElementById('english-content');
-            
-            if (indonesianContent.classList.contains('hidden')) {
-                indonesianContent.classList.remove('hidden');
-                englishContent.classList.add('hidden');
-                this.textContent = 'Switch to English';
-            } else {
-                indonesianContent.classList.add('hidden');
-                englishContent.classList.remove('hidden');
-                this.textContent = 'Switch to Indonesian';
-            }
-        });
+            const transliterationElements = document.querySelectorAll('.transliteration');
 
-        // Toggle transliteration
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            
-            if (transliterations[0].style.display === 'block') {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-            } else {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-            }
+            // Language Toggle
+            languageToggle.addEventListener('click', function() {
+                if (indonesianContent.classList.contains('hidden')) {
+                    indonesianContent.classList.remove('hidden');
+                    englishContent.classList.add('hidden');
+                    languageToggle.textContent = 'Switch to English';
+                } else {
+                    indonesianContent.classList.add('hidden');
+                    englishContent.classList.remove('hidden');
+                    languageToggle.textContent = 'Switch to Indonesian';
+                }
+            });
+
+            // Transliteration Toggle
+            transliterationToggle.addEventListener('click', function() {
+                const isShowing = transliterationElements[0].style.display === 'block';
+                
+                transliterationElements.forEach(element => {
+                    element.style.display = isShowing ? 'none' : 'block';
+                });
+                
+                transliterationToggle.textContent = isShowing ? 'Show Transliteration' : 'Hide Transliteration';
+            });
+
+            // Dark Mode Toggle
+            darkModeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+            });
         });
     </script>
 </body>
