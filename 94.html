@@ -5,30 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Al-Hadi (94)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #1a5276;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4da8da;
+            --secondary-color: #e6e6e6;
+            --accent-color: #4da8da;
+            --section-bg: #0f3460;
+            --border-color: #2d4059;
+            --bonus-bg: #1b3b5e;
+            --tafsir-bg: #2d2d1e;
+            --tafsir-border: #5d5d3a;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 32px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--primary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            font-weight: normal;
         }
         .transliteration {
             font-style: italic;
@@ -40,8 +72,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -54,15 +86,16 @@
             font-size: 24px;
             color: #2980b9;
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +106,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +114,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +136,26 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
+            transition: all 0.3s ease;
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -116,11 +163,12 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
+            transition: all 0.3s ease;
         }
         .hidden {
             display: none;
@@ -153,17 +201,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,19 +223,23 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+        <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <h1 class="name-title">94. Al-Hadi (Yang Maha Pemberi Petunjuk)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-hadi/" target="_blank">myislam.org</a> dan <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
+            <div class="name-source"><strong>Sumber:</strong> 
+                <a href="https://myislam.org/99-names-of-allah/al-hadi/" target="_blank">myislam.org</a>, 
+                <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>
+            </div>
 
             <div class="arabic">ٱلْهَادِي</div>
             <div class="transliteration">Transliterasi: Al-Hadi</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/94.%20al-hadi.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -196,12 +248,12 @@
 
             <div class="section">
                 <h2 class="section-title">Makna</h2>
-                <p>Al-Hadi muncul dalam Al-Quran beberapa kali (<a href="https://quranwbw.com/22:54" target="_blank">22:54</a>, <a href="https://quranwbw.com/25:31" target="_blank">25:31</a>, <a href="https://quranwbw.com/72:10" target="_blank">72:10</a>) dengan makna mendalam:</p>
+                <p>Al-Hadi muncul dalam Al-Quran beberapa kali (<a href="https://quranwbw.com/22:54" target="_blank">Surah Al-Hajj 22:54</a>, <a href="https://quranwbw.com/25:31" target="_blank">Surah Al-Furqan 25:31</a>, <a href="https://quranwbw.com/72:10" target="_blank">Surah Al-Jinn 72:10</a>) dengan makna mendalam:</p>
                 <ul>
                     <li><strong>Yang Maha Pemberi Petunjuk:</strong> Allah yang menunjukkan jalan kebenaran kepada seluruh makhluk-Nya</li>
                     <li><strong>Pemberi Hidayah:</strong> Yang memberikan petunjuk dan bimbingan kepada hati manusia</li>
                 </ul>
-                <p>Menurut <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>, Al-Hadi menunjukkan bahwa Allah SWT memberikan petunjuk kepada hamba-Nya melalui berbagai cara, baik melalui wahyu, ilham, maupun tanda-tanda alam. Nabi (ﷺ) bersabda: "Semua hati berada di antara dua jari Ar-Rahman yang memalingkannya sesuai kehendak-Nya" (HR Muslim).</p>
+                <p>Menurut Kementerian Agama RI dalam Tafsir Al-Quran, Al-Hadi menunjukkan bahwa Allah SWT memberikan petunjuk kepada hamba-Nya melalui berbagai cara, baik melalui wahyu, ilham, maupun tanda-tanda alam. Nabi (ﷺ) bersabda: "Semua hati berada di antara dua jari Ar-Rahman yang memalingkannya sesuai kehendak-Nya" (HR Muslim).</p>
             </div>
 
             <div class="section">
@@ -214,8 +266,7 @@
                     <div class="transliteration">Wa inna Llāha lahādi lladhīna āmanū ilā ṣirāṭin mustaqīm</div>
                     <p>"Dan sungguh, Allah adalah Pemberi Petunjuk bagi orang-orang yang beriman kepada jalan yang lurus."</p>
                     <div class="tafsir-box">
-                        <strong>Sumber:</strong> <a href="https://tafsirweb.com/3734-surat-al-hajj-ayat-54.html" target="_blank">Kementerian Agama RI</a><br>
-                        Ayat ini menegaskan bahwa Allah SWT adalah sumber petunjuk bagi orang-orang beriman. Petunjuk Allah mencakup petunjuk melalui Al-Quran, Sunnah Nabi, dan ilham yang diberikan kepada hati hamba-Nya yang bertakwa.
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menegaskan bahwa Allah SWT adalah sumber petunjuk bagi orang-orang beriman. Petunjuk Allah mencakup petunjuk melalui Al-Quran, Sunnah Nabi, dan ilham yang diberikan kepada hati hamba-Nya yang bertakwa.
                     </div>
                 </div>
 
@@ -226,8 +277,7 @@
                     <div class="transliteration">Wa kadhalika ja'alnā li-kulli nabiyyin 'aduwwan mina l-mujrimīn, wa kafā bi-rabbika hādiyan wa naṣīrā</div>
                     <p>"Dan demikianlah Kami jadikan bagi setiap nabi musuh dari orang-orang yang berdosa. Dan cukuplah Tuhanmu menjadi pemberi petunjuk dan penolong."</p>
                     <div class="tafsir-box">
-                        <strong>Sumber:</strong> <a href="https://tafsirweb.com/3734-surat-al-hajj-ayat-54.html" target="_blank">Kementerian Agama RI</a><br>
-                        Ayat ini menunjukkan bahwa petunjuk Allah (Al-Hadi) mencukupi bagi para nabi dalam menghadapi musuh-musuh mereka. Petunjuk Allah selalu disertai dengan pertolongan-Nya.
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menunjukkan bahwa petunjuk Allah (Al-Hadi) mencukupi bagi para nabi dalam menghadapi musuh-musuh mereka. Petunjuk Allah selalu disertai dengan pertolongan-Nya.
                     </div>
                 </div>
 
@@ -237,7 +287,7 @@
                     <div class="transliteration">Inna Llāha khalaqa l-khalqa fī ẓulmatin fa-alqā 'alayhim min nūrih, fa-man aṣābah min dhālika n-nūri htadā wa man akhṭa'ahu ḍall</div>
                     <p>"Sesungguhnya Allah menciptakan makhluk dalam kegelapan, kemudian Dia menurunkan kepada mereka cahaya-Nya. Barangsiapa terkena cahaya itu menjadi terbimbing, dan barangsiapa luput darinya menjadi tersesat."</p>
                     <div class="tafsir-box">
-                        <strong>Konteks:</strong> Hadits ini menjelaskan bahwa petunjuk Allah bagaikan cahaya yang menerangi kegelapan. Menurut <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>, petunjuk Allah dapat berupa hidayah taufik (petunjuk untuk menerima kebenaran) dan hidayah irsyad (petunjuk berupa penjelasan kebenaran).
+                        <strong>Keterangan:</strong> Hadits ini menjelaskan bahwa petunjuk Allah bagaikan cahaya yang menerangi kegelapan. Menurut Kementerian Agama RI, petunjuk Allah dapat berupa hidayah taufik (petunjuk untuk menerima kebenaran) dan hidayah irsyad (petunjuk berupa penjelasan kebenaran).
                     </div>
                 </div>
             </div>
@@ -249,7 +299,8 @@
                     <div class="arabic">يَا هَادِيَ ٱلْقُلُوبِ، ثَبِّتْ قَلْبِي عَلَى دِينِكَ، وَٱجْعَلْهُ قَلْبًا سَلِيمًا، وَٱهْدِنِي صِرَٰطَكَ ٱلْمُسْتَقِيمَ</div>
                     <div class="transliteration">Yā Hādiya l-qulūb, thabbit qalbī 'alā dīnik, wa j'alhu qalban salīmā, wa hidnī ṣirāṭaka l-mustaqīm</div>
                     <p><strong>Terjemahan:</strong> "Wahai Pemberi Petunjuk hati, teguhkan hatiku pada agama-Mu, jadikan ia hati yang selamat, dan tunjukilah aku jalan-Mu yang lurus."</p>
-                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh ulama Ahlussunnah wal Jamaah untuk memohon keteguhan iman. Dianjurkan dibaca setelah shalat lima waktu, terutama ketika menghadapi ujian hidup (<a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>).</p>
+                    <p><strong>Keutamaan:</strong> Doa ini untuk memohon keteguhan iman. Dianjurkan dibaca setelah shalat lima waktu, terutama ketika menghadapi ujian hidup.</p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
 
                 <div class="dua">
@@ -257,12 +308,13 @@
                     <div class="arabic">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَٱجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا</div>
                     <div class="transliteration">Rabbanā hab lanā min azwājinā wa dhurriyyātinā qurrata a'yunin wa j'alnā li-l-muttaqīna imāmā</div>
                     <p><strong>Terjemahan:</strong> "Ya Tuhan kami, anugerahkanlah kepada kami pasangan kami dan keturunan kami sebagai penyenang hati, dan jadikanlah kami pemimpin bagi orang-orang yang bertakwa."</p>
-                    <p><strong>Sumber:</strong> Doa Quran ini (<a href="https://quranwbw.com/25:74" target="_blank">25:74</a>) diajarkan oleh <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a> sebagai doa untuk memohon petunjuk bagi keluarga. Dianjurkan dibaca setiap selesai shalat.</p>
+                    <p><strong>Keutamaan:</strong> Doa Quran ini (<a href="https://quranwbw.com/25:74" target="_blank">QS. Al-Furqan: 74</a>) diajarkan sebagai doa untuk memohon petunjuk bagi keluarga. Dianjurkan dibaca setiap selesai shalat.</p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Amalan</h2>
+                <h2 class="section-title">Amalan & Hikmah</h2>
                 <div class="amalan">
                     <div class="amalan-title">Praktik Mencari Petunjuk</div>
                     <p>Amalan harian untuk mendapatkan petunjuk Allah:</p>
@@ -275,50 +327,51 @@
                     <ul>
                         <li>Membuka pintu hidayah dari Allah</li>
                         <li>Menjaga hati tetap istiqomah di jalan yang lurus</li>
-                        <li>Diamalkan oleh ulama salaf seperti Imam Nawawi</li>
+                        <li>Diamalkan oleh ulama salaf</li>
                     </ul>
                 </div>
 
-                <div class="amalan">
-                    <div class="amalan-title">Ritual Petunjuk untuk Keluarga</div>
-                    <p>Amalan mingguan untuk memohon petunjuk bagi keluarga:</p>
-                    <ol>
-                        <li>Setiap malam Jumat, bacakan Surah Yasin untuk keluarga</li>
-                        <li>Letakkan tangan di dada anak-anak sambil membaca doa memohon petunjuk</li>
-                        <li>Biasakan membaca basmalah sebelum memulai aktivitas</li>
-                    </ol>
-                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa membaca Surah Yasin di malam hari karena mengharap ridha Allah, maka diampuni dosa-dosanya" (HR Ibnu Hibban). Amalan ini dianjurkan oleh <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a> untuk memohon petunjuk bagi keluarga.</p>
+                <div class="bonus">
+                    <h3>Hikmah Praktis:</h3>
+                    <p>Untuk meningkatkan petunjuk ilahi dalam kehidupan:</p>
+                    <ul>
+                        <li>Membaca Al-Quran dengan pemahaman dan tadabbur</li>
+                        <li>Menjaga shalat berjamaah dan shalat malam</li>
+                        <li>Memperbanyak istighfar dan dzikir</li>
+                        <li>Menjauhi maksiat yang menutup hati dari petunjuk</li>
+                        <li>Bergaul dengan orang-orang shaleh yang memberi pencerahan</li>
+                    </ul>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir</h2>
-                <p>Ibn Kathir menjelaskan Al-Hadi melalui tiga dimensi petunjuk:</p>
+                <h2 class="section-title">Tafsir Mendalam</h2>
+                <p>Berdasarkan kajian Kementerian Agama RI, Al-Hadi dapat dipahami melalui tiga dimensi:</p>
                 <ol>
                     <li><strong>Petunjuk Penciptaan:</strong>
                         <ul>
-                            <li>Insting pada hewan (<a href="https://quranwbw.com/20:50" target="_blank">20:50</a>)</li>
+                            <li>Insting pada hewan (<a href="https://quranwbw.com/20:50" target="_blank">QS. Taha: 50</a>)</li>
                             <li>Hukum alam yang teratur</li>
                         </ul>
                     </li>
                     <li><strong>Petunjuk Wahyu:</strong>
                         <ul>
-                            <li>Melalui kitab suci dan nabi (<a href="https://quranwbw.com/6:91" target="_blank">6:91</a>)</li>
-                            <li>Tanda-tanda kebesaran Allah di alam (<a href="https://quranwbw.com/3:190" target="_blank">3:190</a>)</li>
+                            <li>Melalui kitab suci dan nabi (<a href="https://quranwbw.com/6:91" target="_blank">QS. Al-An'am: 91</a>)</li>
+                            <li>Tanda-tanda kebesaran Allah di alam (<a href="https://quranwbw.com/3:190" target="_blank">QS. Ali Imran: 190</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Petunjuk Hati:</strong>
                         <ul>
-                            <li>Ilham kepada hati yang bersih (<a href="https://quranwbw.com/64:11" target="_blank">64:11</a>)</li>
-                            <li>Jawaban bagi yang sungguh-sungguh mencari (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>)</li>
+                            <li>Ilham kepada hati yang bersih (<a href="https://quranwbw.com/64:11" target="_blank">QS. At-Taghabun: 11</a>)</li>
+                            <li>Jawaban bagi yang sungguh-sungguh mencari (<a href="https://quranwbw.com/2:186" target="_blank">QS. Al-Baqarah: 186</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>Dalam <a href="https://quranwbw.com/42:13" target="_blank">Surah Ash-Shura 42:13</a>, Allah berfirman: "Dia telah mensyariatkan bagi kamu tentang agama apa yang telah diwasiatkan-Nya kepada Nuh dan apa yang telah Kami wahyukan kepadamu dan apa yang telah Kami wasiatkan kepada Ibrahim, Musa dan Isa." Ayat ini menunjukkan konsistensi petunjuk Allah sepanjang sejarah.</p>
+                <p>Dalam <a href="https://quranwbw.com/42:13" target="_blank">QS. Ash-Shura: 13</a>, Allah berfirman: "Dia telah mensyariatkan bagi kamu tentang agama apa yang telah diwasiatkan-Nya kepada Nuh dan apa yang telah Kami wahyukan kepadamu dan apa yang telah Kami wasiatkan kepada Ibrahim, Musa dan Isa." Ayat ini menunjukkan konsistensi petunjuk Allah sepanjang sejarah.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
-            <a href="#top" class="back-to-top">Kembali ke Atas</a>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
         </div>
 
         <!-- English Content (Hidden by Default) -->
@@ -333,7 +386,7 @@
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_95Haadi.mp3?_=89" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -345,7 +398,7 @@
             <div class="transliteration">Transliteration: Al-Hadi</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/94.%20al-hadi.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -354,7 +407,7 @@
 
             <div class="section">
                 <h2 class="section-title">Meaning</h2>
-                <p>Al-Hadi appears in the Quran multiple times (<a href="https://quranwbw.com/22:54" target="_blank">22:54</a>, <a href="https://quranwbw.com/25:31" target="_blank">25:31</a>, <a href="https://quranwbw.com/72:10" target="_blank">72:10</a>) with profound meanings:</p>
+                <p>Al-Hadi appears in the Quran multiple times (<a href="https://quranwbw.com/22:54" target="_blank">Surah Al-Hajj 22:54</a>, <a href="https://quranwbw.com/25:31" target="_blank">Surah Al-Furqan 25:31</a>, <a href="https://quranwbw.com/72:10" target="_blank">Surah Al-Jinn 72:10</a>) with profound meanings:</p>
                 <ul>
                     <li><strong>The Guide:</strong> Who directs hearts to truth and righteousness</li>
                     <li><strong>The Provider of Guidance:</strong> Who grants spiritual direction and clarity</li>
@@ -372,7 +425,7 @@
                     <div class="transliteration">Wa inna Llāha lahādi lladhīna āmanū ilā ṣirāṭin mustaqīm</div>
                     <p>"And indeed, Allah is the Guide of those who have believed to a straight path."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/22/54/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse establishes Allah's role as the ultimate guide. Al-Hadi's guidance operates through both internal inspiration (ilham) and external revelation (wahy), showing His comprehensive direction for believers.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse establishes Allah's role as the ultimate guide. Al-Hadi's guidance operates through both internal inspiration (ilham) and external revelation (wahy), showing His comprehensive direction for believers.
                     </div>
                 </div>
 
@@ -383,7 +436,7 @@
                     <div class="transliteration">Wa kadhalika ja'alnā li-kulli nabiyyin 'aduwwan mina l-mujrimīn, wa kafā bi-rabbika hādiyan wa naṣīrā</div>
                     <p>"And thus We have made for every prophet an enemy from among the criminals. But sufficient is your Lord as a guide and a helper."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/25/31/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Here Al-Hadi is described as sufficient guidance against all opposition. The pairing with "helper" (naseer) shows that divine guidance includes both direction and support through challenges.
+                        <strong>Tafsir Ibn Kathir:</strong> Here Al-Hadi is described as sufficient guidance against all opposition. The pairing with "helper" (naseer) shows that divine guidance includes both direction and support through challenges.
                     </div>
                 </div>
 
@@ -474,77 +527,65 @@
             </div>
 
             <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
-            <a href="#top" class="back-to-top">Back To Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
-                transliterations.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
-
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
             const indonesianContent = document.getElementById('indonesian-content');
+            const englishContent = document.getElementById('english-content');
+            const toggleButton = document.getElementById('languageToggle');
             
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
-            } else {
-                englishContent.classList.add('hidden');
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                englishContent.classList.add('hidden');
+                toggleButton.textContent = 'Switch to English';
+            } else {
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
         // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
+            const toggleButton = document.getElementById('transliterationToggle');
             
-            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
+            transliterations.forEach(element => {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    toggleButton.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    toggleButton.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
             } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
+                toggleButton.textContent = 'Dark Mode';
             }
+        });
+
+        // Initialize transliteration as hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            transliterations.forEach(element => {
+                element.style.display = 'none';
+            });
         });
     </script>
 </body>
