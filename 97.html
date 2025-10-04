@@ -5,30 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Names of Allah - Al-Warith (97)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #1a5276;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #4da8da;
+            --secondary-color: #e6e6e6;
+            --accent-color: #4da8da;
+            --section-bg: #0f3460;
+            --border-color: #1e3a5f;
+            --tafsir-bg: #2d3746;
+            --tafsir-border: #4a5568;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 32px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--primary-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            font-weight: normal;
         }
         .transliteration {
             font-style: italic;
@@ -40,8 +70,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -54,15 +84,16 @@
             font-size: 24px;
             color: #2980b9;
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +104,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +112,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +134,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -116,11 +160,12 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
+            transition: all 0.3s ease;
         }
         .hidden {
             display: none;
@@ -153,17 +198,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--primary-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,6 +220,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
 
@@ -210,7 +256,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/15:23" target="_blank">Surah Al-Hijr 15:23</a>
-                    <div class="arabic">وَإِنَّا لَنَحْنُ نُحْىِۦ وَنُمِيتُ وَنَحْنُ ٱلْوَٰrِثُونَ</div>
+                    <div class="arabic">وَإِنَّا لَنَحْنُ نُحْىِۦ وَنُمِيتُ وَنَحْنُ ٱلْوَٰرِثُونَ</div>
                     <div class="transliteration">Wa innā la-naḥnu nuḥyī wa numītu wa naḥnu l-wārithūn</div>
                     <p>"Dan sungguh, Kamilah yang menghidupkan dan mematikan dan Kamilah yang mewarisi."</p>
                     <div class="tafsir-box">
@@ -233,7 +279,7 @@
 
                 <div class="dalil-item">
                     <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/bukhari:7312" target="_blank">Sahih Bukhari 7312</a>
-                    <div class="arabic">يَقُولُ ٱبْنُ آدَمَ مَالِى مَالِى وَهَلْ لَكَ يَا بْنَ آdَمَ مِنْ مَالِكَ إِلَّا مَا أَكَلْتَ فَأَفْنَيْتَ أَوْ لَبِسْتَ فَأَبْلَيْتَ أَوْ تَصَدَّقْتَ فَأَمْضَيْتَ</div>
+                    <div class="arabic">يَقُولُ ٱبْنُ آدَمَ مَالِى مَالِى وَهَلْ لَكَ يَا بْنَ آدَمَ مِنْ مَالِكَ إِلَّا مَا أَكَلْتَ فَأَفْنَيْتَ أَوْ لَبِسْتَ فَأَبْلَيْتَ أَوْ تَصَدَّقْتَ فَأَمْضَيْتَ</div>
                     <div class="transliteration">Yaqūlu bnu Ādama mālī mālī, wa hal laka yā bna Ādama min mālika illā mā akalta fa afnayta aw labista fa ablayta aw taṣaddaqta fa amḍayta</div>
                     <p>"Anak Adam berkata: 'Hartaku, hartaku!' Tetapi wahai anak Adam, apakah kamu memiliki sesuatu dari hartamu kecuali apa yang kamu makan lalu habis, atau yang kamu pakai lalu usang, atau yang kamu sedekahkan lalu tetap ada?"</p>
                     <div class="tafsir-box">
@@ -255,7 +301,7 @@
 
                 <div class="dua">
                     <div class="dua-title">Untuk Perlindungan dari Keserakahan</div>
-                    <div class="arabic">اللَّهُمَّ قَنِّعْنِي بِمَا رَزَقْتَنِي وَbَارِكْ لِي فِيهِ وَاخْلُفْ عَلَىٰ كُلِّ غَائِبَةٍ لِي بِخَيْرٍ</div>
+                    <div class="arabic">اللَّهُمَّ قَنِّعْنِي بِمَا رَزَقْتَنِي وَبَارِكْ لِي فِيهِ وَاخْلُفْ عَلَىٰ كُلِّ غَائِبَةٍ لِي بِخَيْرٍ</div>
                     <div class="transliteration">Allāhumma qanni'nī bimā razaqtanī wa bārik lī fīhi wa khluf 'alā kulli ghā'ibatin lī bi-khayr</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, buatlah aku puas dengan apa yang Engkau berikan kepadaku, berkahilah untukku, dan gantilah segala yang hilang dariku dengan kebaikan."</p>
                     <p><strong>Sumber:</strong> Berdasarkan <a href="https://quranwbw.com/2:152" target="_blank">Quran 2:152</a> dan ajaran Nabi (ﷺ) tentang qana'ah (merasa cukup) sebagaimana diajarkan oleh <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>.</p>
@@ -369,7 +415,7 @@
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/15:23" target="_blank">Surah Al-Hijr 15:23</a>
-                    <div class="arabic">وَإِنَّا لَنَحْنُ نُحْىِۦ وَنُمِيتُ وَنَحْنُ ٱلْوَٰrِثُونَ</div>
+                    <div class="arabic">وَإِنَّا لَنَحْنُ نُحْىِۦ وَنُمِيتُ وَنَحْنُ ٱلْوَٰرِثُونَ</div>
                     <div class="transliteration">Wa innā la-naḥnu nuḥyī wa numītu wa naḥnu l-wārithūn</div>
                     <p>"And indeed, it is We who give life and cause death, and We are the Inheritor."</p>
                     <div class="tafsir-box">
@@ -390,7 +436,7 @@
 
                 <div class="dalil-item">
                     <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:7312" target="_blank">Sahih Bukhari 7312</a>
-                    <div class="arabic">يَقُولُ ٱبْنُ آدَمَ مَالِى mَالِى وَهَلْ لَكَ يَا بْنَ آدَمَ مِنْ مَالِكَ إِلَّا مَا أَكَلْتَ فَأَفْنَيْتَ أَوْ لَبِسْتَ فَأَبْلَيْتَ أَوْ تَصَدَّقْتَ فَأَمْضَيْتَ</div>
+                    <div class="arabic">يَقُولُ ٱبْنُ آدَمَ مَالِى مَالِى وَهَلْ لَكَ يَا بْنَ آدَمَ مِنْ مَالِكَ إِلَّا مَا أَكَلْتَ فَأَفْنَيْتَ أَوْ لَبِسْتَ فَأَبْلَيْتَ أَوْ تَصَدَّقْتَ فَأَمْضَيْتَ</div>
                     <div class="transliteration">Yaqūlu bnu Ādama mālī mālī, wa hal laka yā bna Ādama min mālika illā mā akalta fa afnayta aw labista fa ablayta aw taṣaddaqta fa amḍayta</div>
                     <p>"The son of Adam says: 'My wealth, my wealth!' But O son of Adam, do you have anything of your wealth except what you ate and finished, or what you wore and wore out, or what you gave in charity and sent forth?"</p>
                     <div class="tafsir-box">
@@ -403,7 +449,7 @@
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Contentment with Divine Decree</div>
-                    <div class="arabic">يَا وَارِثَ كُلِّ شَيْءٍ، اجْعَلْنَا مِنَ ٱلَّذِينَ يَرِثُونَ ٱلْفِرْدَوْsَ وَيَخْلُدُونَ فِيهَا</div>
+                    <div class="arabic">يَا وَارِثَ كُلِّ شَيْءٍ، اجْعَلْنَا مِنَ ٱلَّذِينَ يَرِثُونَ ٱلْفِرْدَوْسَ وَيَخْلُدُونَ فِيهَا</div>
                     <div class="transliteration">Yā Wāritha kulli shay'in, ij'alnā mina lladhīna yarithūna l-firdawsa wa yakhludūna fīhā</div>
                     <p><strong>Translation:</strong> "O Inheritor of all things, make us among those who will inherit Paradise and abide therein eternally."</p>
                     <p><strong>Benefits:</strong> This dua helps focus on eternal inheritance rather than temporary worldly possessions. Recite it after obligatory prayers to cultivate detachment from material wealth.</p>
@@ -411,7 +457,7 @@
 
                 <div class="dua">
                     <div class="dua-title">For Protection from Greed</div>
-                    <div class="arabic">اللَّهُمَّ قَنِّعْنِي بِمَا رَزَقْتَنِي وَبَارِكْ لِي فِيهِ وَاخْلُfْ عَلَىٰ كُلِّ غَائِبَةٍ لِي بِخَيْرٍ</div>
+                    <div class="arabic">اللَّهُمَّ قَنِّعْنِي بِمَا رَزَقْتَنِي وَبَارِكْ لِي فِيهِ وَاخْلُفْ عَلَىٰ كُلِّ غَائِبَةٍ لِي بِخَيْرٍ</div>
                     <div class="transliteration">Allāhumma qanni'nī bimā razaqtanī wa bārik lī fīhi wa khluf 'alā kulli ghā'ibatin lī bi-khayr</div>
                     <p><strong>Translation:</strong> "O Allah, make me content with what You have provided me, bless it for me, and compensate me with good for whatever I lose."</p>
                     <p><strong>Source:</strong> Based on authentic supplications of the Prophet (ﷺ) regarding contentment with provision (Ibn Majah).</p>
@@ -454,97 +500,78 @@
                 <ol>
                     <li><strong>Divine Ownership:</strong>
                         <ul>
-                            <li>Allah inherits all creation (3:180)</li>
-                            <li>Earthly inheritance is temporary (28:58)</li>
+                            <li>Allah inherits all creation (<a href="https://quranwbw.com/3:180" target="_blank">3:180</a>)</li>
+                            <li>Earthly inheritance is temporary (<a href="https://quranwbw.com/28:58" target="_blank">28:58</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Human Stewardship:</strong>
                         <ul>
-                            <li>Wealth is a test (64:15)</li>
-                            <li>True success is in righteous deeds (18:46)</li>
+                            <li>Wealth is a test (<a href="https://quranwbw.com/64:15" target="_blank">64:15</a>)</li>
+                            <li>True success is in righteous deeds (<a href="https://quranwbw.com/18:46" target="_blank">18:46</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Eternal Inheritance:</strong>
                         <ul>
-                            <li>Paradise as eternal reward (19:63)</li>
-                            <li>Deeds as true capital (18:46)</li>
+                            <li>Paradise as eternal reward (<a href="https://quranwbw.com/19:63" target="_blank">19:63</a>)</li>
+                            <li>Deeds as true capital (<a href="https://quranwbw.com/18:46" target="_blank">18:46</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-Qasas (28:58), Allah mentions how He made nations inherit what others had built, showing the temporary nature of worldly possessions and Allah's ultimate ownership.</p>
+                <p>In <a href="https://quranwbw.com/28:58" target="_blank">Surah Al-Qasas 28:58</a>, Allah mentions how He made nations inherit what others had built, showing the temporary nature of worldly possessions and Allah's ultimate ownership.</p>
             </div>
 
             <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
-            <a href="#top" class="back-to-top">Back To Top</a>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
-                transliterations.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
-
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
             const indonesianContent = document.getElementById('indonesian-content');
+            const englishContent = document.getElementById('english-content');
+            const toggleButton = document.getElementById('languageToggle');
             
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
-            } else {
-                englishContent.classList.add('hidden');
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                englishContent.classList.add('hidden');
+                toggleButton.textContent = 'Switch to English';
+            } else {
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
         // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
+            const toggleButton = document.getElementById('transliterationToggle');
             
-            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
+            transliterations.forEach(transliteration => {
+                if (transliteration.style.display === 'block') {
+                    transliteration.style.display = 'none';
+                    toggleButton.textContent = 'Show Transliteration';
+                } else {
+                    transliteration.style.display = 'block';
+                    toggleButton.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
             } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
+                toggleButton.textContent = 'Dark Mode';
             }
         });
     </script>
