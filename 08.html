@@ -1,33 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>99 Names of Allah - Al-Aziz (8)</title>
+    <title>99 Asmaul Husna - Al-Aziz (8)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --name-title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --dua-bg: #f8f9fa;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --arabic-color: #4cc9f0;
+            --name-title-color: #e6e6e6;
+            --section-title-color: #4cc9f0;
+            --dua-bg: #1f4068;
+            --bonus-bg: #1b3a57;
+            --tafsir-bg: #2d3746;
+            --border-color: #2d3746;
+            --shadow-color: rgba(0,0,0,0.3);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            line-height: 2;
         }
         .transliteration {
             font-style: italic;
@@ -39,7 +70,7 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
+            color: var(--name-title-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
             text-align: center;
@@ -51,17 +82,18 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, border-color 0.3s;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -102,12 +134,26 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: background-color 0.3s;
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -115,11 +161,12 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: background-color 0.3s;
         }
         .hidden {
             display: none;
@@ -155,6 +202,7 @@
             color: #7f8c8d;
             font-size: 14px;
         }
+
         .audio-player {
             width: 100%;
             max-width: 400px;
@@ -166,14 +214,15 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -183,18 +232,21 @@
             }
         }
     </style>
+    <!-- Adding Uthmanic Script font for proper Arabic display -->
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
 
             <h1 class="name-title">8. Al-Aziz (Yang Maha Mulia)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-aziz/" target="_blank">myislam.org/99-names-of-allah/al-aziz/</a></div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI</div>
 
             <div class="arabic">ٱلْعَزِيزُ</div>
             <div class="transliteration">Transliterasi: Al-Aziz</div>
@@ -330,7 +382,7 @@
                 <p>Dalam Surah Fatir (<a href="https://quranwbw.com/35:10" target="_blank">35:10</a>), Allah menegaskan bahwa semua kemuliaan hanya milik-Nya. Penyebutan Al-Aziz bersama Al-Hakim dalam 46 ayat menunjukkan bahwa segala ketetapan Allah mengandung hikmah dan kemuliaan.</p>
             </div>
 
-            <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
@@ -424,7 +476,7 @@
 
                 <div class="dua">
                     <div class="dua-title">For Protection Through Might</div>
-                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْعَزِيزِ ٱجْعَلْنِي عَزِيزًا بِعِزِّكَ وَاحْفَظْنِي بِقُ�ْرَتِكَ</div>
+                    <div class="arabic">اللَّهُمَّ بِحَقِّ ٱلْعَزِيزِ ٱجْعَلْنِي عَزِيزًا بِعِزِّكَ وَاحْفَظْنِي بِقُدْرَتِكَ</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi l-'Azīzi j'alnī 'azīzan bi'izzika wa ḥfaẓnī biqudratika</div>
                     <p><strong>Translation:</strong> "O Allah, by the right of Al-Aziz, make me honorable through Your might and protect me with Your power."</p>
                     <p><strong>Source:</strong> Inspired by the Prophet's (ﷺ) teachings on seeking divine protection (Tirmidhi).</p>
@@ -487,7 +539,7 @@
                 <p>In Surah Fatir (<a href="https://quranwbw.com/35:10" target="_blank">35:10</a>), Allah states that all honor belongs to Him, showing that true honor comes only through connection to Al-Aziz. The frequent pairing with Al-Hakim (46 times) demonstrates that divine might is always perfectly wise.</p>
             </div>
 
-            <a href="index.html" class="top-home-link">&larr; Back to Main Menu</a>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
@@ -503,7 +555,9 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
+            const body = document.body;
 
             // Set language preference
             if (localStorage.getItem('language') === 'english') {
@@ -526,39 +580,58 @@
                 transliterationToggle.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
             }
-        });
 
-        // Language Toggle
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
             } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
             }
-        });
 
-        // Transliteration Toggle
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            
-            if (this.textContent === 'Show Transliteration') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
+            // Language toggle functionality
+            languageToggle.addEventListener('click', function() {
+                if (englishContent.classList.contains('hidden')) {
+                    // Switch to English
+                    englishContent.classList.remove('hidden');
+                    indonesianContent.classList.add('hidden');
+                    languageToggle.textContent = 'Switch to Indonesian';
+                    localStorage.setItem('language', 'english');
+                } else {
+                    // Switch to Indonesian
+                    englishContent.classList.add('hidden');
+                    indonesianContent.classList.remove('hidden');
+                    languageToggle.textContent = 'Switch to English';
+                    localStorage.setItem('language', 'indonesian');
+                }
+            });
+
+            // Transliteration toggle functionality
+            transliterationToggle.addEventListener('click', function() {
+                if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                    transliterations.forEach(el => el.style.display = 'block');
+                    transliterationToggle.textContent = 'Hide Transliteration';
+                    localStorage.setItem('transliteration', 'show');
+                } else {
+                    transliterations.forEach(el => el.style.display = 'none');
+                    transliterationToggle.textContent = 'Show Transliteration';
+                    localStorage.setItem('transliteration', 'hide');
+                }
+            });
+
+            // Dark mode toggle functionality
+            darkModeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    darkModeToggle.textContent = 'Light Mode';
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    darkModeToggle.textContent = 'Dark Mode';
+                    localStorage.setItem('darkMode', 'disabled');
+                }
+            });
         });
     </script>
 </body>
