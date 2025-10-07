@@ -5,32 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Asmaul Husna - Al-Bari' (12)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --name-title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --border-color: #3498db;
+            --dua-bg: #f8f9fa;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --container-bg: #2d2d2d;
+            --arabic-color: #4a9fe3;
+            --name-title-color: #e0e0e0;
+            --section-title-color: #5dade2;
+            --border-color: #3498db;
+            --dua-bg: #3a3a3a;
+            --bonus-bg: #2a4d6e;
+            --tafsir-bg: #4a4530;
+            --tafsir-border: #665c34;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
+
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             font-weight: normal;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Scheherazade New', serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             line-height: 2;
         }
+
         .transliteration {
             font-style: italic;
             color: #7f8c8d;
@@ -39,50 +72,57 @@
             margin: -15px 0 20px;
             display: none;
         }
+
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--name-title-color);
+            border-bottom: 3px solid var(--border-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
         }
+
         .section {
             margin: 30px 0;
             padding: 0 10px;
         }
+
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--border-color);
             padding-left: 15px;
         }
+
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
         }
+
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
         }
+
         .back-to-top {
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--border-color);
             text-decoration: none;
             font-weight: bold;
         }
+
         .language-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--border-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -91,6 +131,7 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
         .transliteration-toggle {
             position: fixed;
             top: 60px;
@@ -104,28 +145,47 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #7d3c98;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--border-color);
         }
+
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
         }
+
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
         }
+
         .hidden {
             display: none;
         }
+
         .name-source {
             text-align: center;
             margin-top: -15px;
@@ -133,23 +193,27 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+
         .main-menu {
             text-align: center;
             margin: 15px 0;
         }
+
         .top-home-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: #3498db;
+            color: var(--border-color);
             text-decoration: none;
             font-weight: bold;
             padding: 5px 10px;
             border-radius: 4px;
             transition: background-color 0.3s;
         }
+
         .top-home-link:hover {
-            background-color: #ebf5fb;
+            background-color: rgba(52, 152, 219, 0.1);
         }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -157,25 +221,28 @@
             color: #7f8c8d;
             font-size: 14px;
         }
+
         .audio-player {
             width: 100%;
             max-width: 400px;
             margin: 20px auto;
             text-align: center;
         }
+
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--arabic-color);
         }
+
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -192,13 +259,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Mode Gelap</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
 
             <h1 class="name-title">12. Al-Bari' (Yang Maha Mengadakan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-bari/" target="_blank">myislam.org/99-names-of-allah/al-bari/</a> & Kementerian Agama Republik Indonesia</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama Republik Indonesia</div>
 
             <div class="arabic">ٱلْبَارِئُ</div>
             <div class="transliteration">Transliterasi: Al-Bari'</div>
@@ -251,7 +319,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/23:12" target="_blank">Surah Al-Mu'minun 23:12-14</a>
-                    <div class="arabic">وَلَقَدْ خَلَقْنَا ٱلْإِنسَـٰnَ مِن سُلَـٰلَةٍۢ مِّن طِينٍۢ ۝ ثُمَّ جَعَلْنَـٰهُ نُطْفَةًۭ فِى قَرَارٍۢ مَّكِينٍۢ ۝ ثُمَّ خَلَقْنَا ٱلنُّطْفَةَ عَلَقَةًۭ فَخَلَقْنَا ٱلْعَلَقَةَ مُضْغَةًۭ فَخَلَقْنَا ٱلْمُضْغَةَ عِظَـٰمًۭا فَكَسَوْنَا ٱلْعِظَـٰمَ لَحْمًۭa ثُمَّ أَنشَأْنَـٰهُ خَلْقًۭا ءَاخَرَ ۚ فَتَبَارَكَ ٱللَّهُ أَحْsَنُ ٱلْخَـٰلِقِينَ ۝</div>
+                    <div class="arabic">وَلَقَدْ خَلَقْنَا ٱلْإِنسَـٰنَ مِن سُلَـٰلَةٍۢ مِّن طِينٍۢ ۝ ثُمَّ جَعَلْنَـٰهُ نُطْفَةًۭ فِى قَرَارٍۢ مَّكِينٍۢ ۝ ثُمَّ خَلَقْنَا ٱلنُّطْفَةَ عَلَقَةًۭ فَخَلَقْنَا ٱلْعَلَقَةَ مُضْغَةًۭ فَخَلَقْنَا ٱلْمُضْغَةَ عِظَـٰمًۭا فَكَسَوْنَا ٱلْعِظَـٰمَ لَحْمًۭا ثُمَّ أَنشَأْنَـٰهُ خَلْقًۭا ءَاخَرَ ۚ فَتَبَارَكَ ٱللَّهُ أَحْسَنُ ٱلْخَـٰلِقِينَ ۝</div>
                     <div class="transliteration">Wa laqad khalaqnā al-insāna min sulālatin min ṭīn. Thumma ja'alnāhu nuṭfatan fī qarārin makīn. Thumma khalaqnā an-nuṭfata 'alaqatan fa khalaqnā al-'alaqata muḍghatan fa khalaqnā al-muḍghata 'iẓāman fa kasawnā al-'iẓāma laḥman thumma ansha'nāhu khalqan ākhar. Fa tabāraka Allāhu aḥsanu al-khāliqīn</div>
                     <p>"Dan sungguh, Kami telah menciptakan manusia dari saripati tanah. Kemudian Kami menjadikannya air mani (yang disimpan) dalam tempat yang kokoh (rahim). Kemudian air mani itu Kami jadikan segumpal darah, lalu segumpal darah itu Kami jadikan segumpal daging, dan segumpal daging itu Kami jadikan tulang belulang, lalu tulang belulang itu Kami bungkus dengan daging. Kemudian Kami menjadikannya makhluk yang (berbentuk) lain. Mahasuci Allah, Pencipta yang paling baik."</p>
                     <div class="tafsir-box">
@@ -415,7 +483,7 @@
                 <div class="dalil-item">
                     <strong>Primary Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/59:24" target="_blank">Surah Al-Hashr 59:24</a>
-                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُsْنَىٰ ۚ يُسَبِّحُ لَهُۥ مَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
+                    <div class="arabic">هُوَ ٱللَّهُ ٱلْخَـٰلِقُ ٱلْبَارِئُ ٱلْمُصَوِّرُ ۖ لَهُ ٱلْأَسْمَآءُ ٱلْحُسْنَىٰ ۚ يُسَبِّحُ لَهُۥ mَا فِى ٱلسَّمَـٰوَٰتِ وَٱلْأَرْضِ ۖ وَهُوَ ٱلْعَزِيزُ ٱلْحَكِيمُ</div>
                     <div class="transliteration">Huwa Allāhu al-Khāliqu al-Bāri'u al-Muṣawwiru, lahu al-asmā'u al-ḥusnā, yusabbiḥu lahu mā fī as-samāwāti wal-arḍ, wa huwa al-'Azīzu al-Ḥakīm</div>
                     <p>"He is Allah, the Creator, the Inventor, the Fashioner; to Him belong the best names. Whatever is in the heavens and earth is exalting Him. And He is the Exalted in Might, the Wise."</p>
                     <div class="tafsir-box">
@@ -426,7 +494,7 @@
                 <div class="dalil-item">
                     <strong>Quranic Reference:</strong> 
                     <a href="https://quranwbw.com/2:54" target="_blank">Surah Al-Baqarah 2:54</a>
-                    <div class="arabic">وَإِذْ قَالَ مُوسَىٰ لِقَوْمِهِۦ يَـٰقَوْمِ إِنَّكُمْ ظَلَمْتُمْ أَنفُسَكُم بِٱتِّخَاذِكُمُ ٱلْعِجْلَ فَتُوبُوٓا۟ إِلَىٰ بَارِئِكُمْ فَٱقْتُلُوٓا۟ أَنفُsَكُمْ</div>
+                    <div class="arabic">وَإِذْ قَالَ مُوسَىٰ لِقَوْمِهِۦ يَـٰقَوْمِ إِنَّكُمْ ظَلَمْتُمْ أَنفُسَكُم بِٱتِّخَاذِكُمُ ٱلْعِجْلَ فَتُوبُوٓا۟ إِلَىٰ بَارِئِكُمْ فَٱقْتُلُوٓا۟ أَنفُسَكُمْ</div>
                     <div class="transliteration">Wa idh qāla Mūsā liqawmihī yā qawmi innakum ẓalamtum anfusakum bittikhādhikumu al-'ijla fatūbū ilā bāri'ikum faqtulū anfusakum</div>
                     <p>"And [recall] when Moses said to his people, 'O my people, indeed you have wronged yourselves by your taking of the calf [for worship]. So repent to your Creator and kill yourselves.'"</p>
                     <div class="tafsir-box">
@@ -450,7 +518,7 @@
                 <h2 class="section-title">Du'a (Supplications)</h2>
                 <div class="dua">
                     <div class="dua-title">For Divine Innovation in Affairs</div>
-                    <div class="arabic">يَا بَارِئُ، أَبْدِعْ فِي أَمْرِي mَا تُحِبُّ وَتَرْضَىٰ وَأَصْلِحْ لِي ذَاتَ بَيْنِي</div>
+                    <div class="arabic">يَا بَارِئُ، أَبْدِعْ فِي أَمْرِي مَا تُحِبُّ وَتَرْضَىٰ وَأَصْلِحْ لِي ذَاتَ بَيْنِي</div>
                     <div class="transliteration">Yā Bāri'u, abdi' fī amrī mā tuḥibbu wa tarḍā wa aṣliḥ lī dhāta baynī</div>
                     <p><strong>Translation:</strong> "O Evolver, innovate in my affairs what You love and are pleased with, and rectify my relationships."</p>
                     <p><strong>When to Recite:</strong></p>
@@ -528,7 +596,7 @@
     </div>
 
     <footer>
-        <p>© 2023 Islamic Knowledge Portal | Sources: <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a>, Kementerian Agama Republik Indonesia, and authentic Islamic sources</p>
+        <p>© (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
     </footer>
 
     <script>
@@ -551,18 +619,36 @@
 
         // Transliteration Toggle Functionality
         document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterationElements = document.querySelectorAll('.transliteration');
+            const transliterations = document.querySelectorAll('.transliteration');
             const toggleButton = document.getElementById('transliterationToggle');
             
-            transliterationElements.forEach(function(element) {
-                if (element.style.display === 'block') {
-                    element.style.display = 'none';
-                    toggleButton.textContent = 'Tampilkan Transliterasi';
-                } else {
-                    element.style.display = 'block';
-                    toggleButton.textContent = 'Sembunyikan Transliterasi';
-                }
-            });
+            const isShowing = transliterations[0].style.display !== 'none';
+            
+            if (isShowing) {
+                transliterations.forEach(el => el.style.display = 'none');
+                toggleButton.textContent = 'Show Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'block');
+                toggleButton.textContent = 'Hide Transliteration';
+            }
+        });
+
+        // Dark Mode Toggle Functionality
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
+            } else {
+                toggleButton.textContent = 'Dark Mode';
+            }
+        });
+
+        // Initialize transliteration as hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            transliterations.forEach(el => el.style.display = 'none');
         });
     </script>
 </body>
