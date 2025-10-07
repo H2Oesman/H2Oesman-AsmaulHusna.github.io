@@ -5,30 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Asmaul Husna - Al-Jabbar (9)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --name-title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --dua-bg: #f8f9fa;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --arabic-color: #4cc9f0;
+            --name-title-color: #e6e6e6;
+            --section-title-color: #4cc9f0;
+            --dua-bg: #1f4068;
+            --bonus-bg: #1b3a57;
+            --tafsir-bg: #2d3746;
+            --border-color: #2d3746;
+            --shadow-color: rgba(0,0,0,0.3);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: normal;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Scheherazade New', serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             line-height: 2;
         }
         .transliteration {
@@ -41,7 +70,7 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
+            color: var(--name-title-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
             text-align: center;
@@ -53,17 +82,18 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, border-color 0.3s;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -104,12 +134,26 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: background-color 0.3s;
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -117,11 +161,12 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: background-color 0.3s;
         }
         .hidden {
             display: none;
@@ -172,12 +217,12 @@
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -194,13 +239,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
 
             <h1 class="name-title">9. Al-Jabbar (Yang Maha Perkasa)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-jabbar/" target="_blank">myislam.org/99-names-of-allah/al-jabbar/</a> & Kementerian Agama Republik Indonesia</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama Republik Indonesia</div>
 
             <div class="arabic">ٱلْجَبَّارُ</div>
             <div class="transliteration">Transliterasi: Al-Jabbar</div>
@@ -348,7 +394,7 @@
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <a href="index.html" class="top-home-link">&larr; Back to Home</a>
+            <a href="index.html" class="top-home-link">&larr; Back to Main Menu</a>
 
             <h1 class="name-title">9. Al-Jabbar (The Compeller, The Restorer, The Repairer)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-jabbar/" target="_blank">myislam.org/99-names-of-allah/al-jabbar/</a></div>
@@ -378,14 +424,14 @@
 
             <div class="section">
                 <h2 class="section-title">Meaning</h2>
-                <p>Al-Jabbar combines three profound meanings according to Indonesian Ministry of Religious Affairs and Nahdlatul Ulama scholars:</p>
+                <p>Al-Jabbar combines three profound meanings according to Indonesian Ministry of Religious Affairs:</p>
                 <ul>
                     <li><strong>The Compeller:</strong> Who enforces His will on creation</li>
                     <li><strong>The Restorer:</strong> Who repairs broken hearts and situations</li>
                     <li><strong>The Repairer:</strong> Who mends the affairs of creation</li>
                 </ul>
                 <p>This name reminds us of Allah's power to rectify all situations, bring comfort to the broken-hearted, and help in overcoming difficulties. Unlike human power that is limited, Allah's compelling power is complete and encompasses all things.</p>
-                <p>According to tafsir developed by Nahdlatul Ulama scholars, Ibn Abbas explained: "Al-Jabbar is the One who compels the tyrants and oppressors, and repairs the broken-hearted." This name appears in the Quran emphasizing Allah's absolute power over all creation.</p>
+                <p>According to tafsir developed by Indonesian Ministry of Religious Affairs, Al-Jabbar demonstrates that Allah is able to compel everything according to His will, yet always accompanied by wisdom and mercy. Allah has the power to repair what seems irreparable.</p>
             </div>
 
             <div class="section">
@@ -398,7 +444,7 @@
                     <div class="transliteration">Huwa llāhu lladhī lā ilāha illā huwa l-Maliku l-Quddūsu s-Salāmu l-Mu'minu l-Muhayminu l-'Azīzu l-Jabbāru l-Mutakabbir</div>
                     <p>"He is Allah, other than whom there is no deity, the Sovereign, the Pure, the Perfection, the Bestower of Faith, the Overseer, the Exalted in Might, the Compeller, the Superior."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/59/23/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse shows Al-Jabbar appearing alongside Al-Aziz and Al-Mutakabbir, demonstrating that true power belongs only to Allah. Ibn Kathir explains how Allah demonstrates this attribute when He repairs what seems irreparable, as with the story of Musa (AS) when his heart was heavy before confronting Pharaoh.
+                        <strong>Tafsir Ibn Kathir:</strong> This verse shows Al-Jabbar appearing alongside Al-Aziz and Al-Mutakabbir, demonstrating that true power belongs only to Allah. Ibn Kathir explains how Allah demonstrates this attribute when He repairs what seems irreparable, as with the story of Musa (AS) when his heart was heavy before confronting Pharaoh.
                     </div>
                 </div>
 
@@ -420,7 +466,7 @@
                     <div class="transliteration">Inna baṭsha rabbika lashadīd, innahu huwa yubdi'u wa yu'īd, wa huwa al-Ghafūru al-Wadūd, dhū al-'arshi al-majīd, fa''ālun limā yurīd</div>
                     <p>"Indeed, the grasp of your Lord is severe. Indeed, it is He who originates and repeats. And He is the Forgiving, the Affectionate, Honorable Owner of the Throne, Effecter of what He intends."</p>
                     <div class="tafsir-box">
-                        <strong>Connection:</strong> These verses demonstrate Allah's compelling power (Al-Jabbar) combined with His mercy and wisdom, showing the perfect balance of His attributes. According to Nahdlatul Ulama scholars, this teaches that although Allah is The Compeller, His power is always accompanied by compassion.
+                        <strong>Connection:</strong> These verses demonstrate Allah's compelling power (Al-Jabbar) combined with His mercy and wisdom, showing the perfect balance of His attributes. According to Indonesian Ministry of Religious Affairs, this teaches that although Allah is The Compeller, His power is always accompanied by compassion.
                     </div>
                 </div>
 
@@ -430,7 +476,7 @@
                     <div class="transliteration">Inna llāha 'azīzun yuḥibbu l-'izzata wa yuḥibbu an yarā athara ni'matihī 'alā 'abdih</div>
                     <p>"Indeed, Allah is Mighty and loves might, and He loves to see the effect of His blessing on His servant."</p>
                     <div class="tafsir-box">
-                        <strong>Context:</strong> This hadith shows that Allah as Al-Jabbar loves honor and wants to see His servants enjoying His blessings. According to Sheikh Nawawi Al-Bantani of Nahdlatul Ulama, this indicates that Allah's power is always accompanied by compassion and the desire to see His servants in a good state.
+                        <strong>Context:</strong> This hadith shows that Allah as Al-Jabbar loves honor and wants to see His servants enjoying His blessings. According to Indonesian Ministry of Religious Affairs, this indicates that Allah's power is always accompanied by compassion and the desire to see His servants in a good state.
                     </div>
                 </div>
             </div>
@@ -450,7 +496,7 @@
                     <div class="arabic">يَا جَبَّارُ، يَا مُقَلِّبَ ٱلْقُلُوبِ، ثَبِّتْ قَلْبِى عَلَىٰ دِينِكَ</div>
                     <div class="transliteration">Yā Jabbāru, ya muqalliba al-qulūb, thabbit qalbī 'alā dīnik</div>
                     <p><strong>Translation:</strong> "O Compeller, O Turner of Hearts, make my heart firm upon Your religion."</p>
-                    <p><strong>Source:</strong> This combines two authentic practices: invoking Allah by His name Al-Jabbar and the known dua for heart steadfastness taught by the Prophet (SAW). According to Nahdlatul Ulama, combining Allah's names in supplication increases its power.</p>
+                    <p><strong>Source:</strong> This combines two authentic practices: invoking Allah by His name Al-Jabbar and the known dua for heart steadfastness taught by the Prophet (SAW). According to Indonesian Ministry of Religious Affairs, combining Allah's names in supplication increases its power.</p>
                 </div>
             </div>
 
@@ -464,12 +510,12 @@
                         <li>Blow gently on the water</li>
                         <li>Drink or apply to affected areas</li>
                     </ol>
-                    <p><strong>Benefits:</strong> This practice, derived from Tibb an-Nabawi, provides protection from harm and strengthens faith in Allah's power to heal and restore. According to Nahdlatul Ulama, this practice reinforces trust in Allah's ability to repair what seems broken.</p>
+                    <p><strong>Benefits:</strong> This practice, derived from Tibb an-Nabawi, provides protection from harm and strengthens faith in Allah's power to heal and restore. According to Indonesian Ministry of Religious Affairs, this practice reinforces trust in Allah's ability to repair what seems broken.</p>
                 </div>
 
                 <div class="amalan">
                     <div class="amalan-title">Problem-Solving Dhikr</div>
-                    <p>For divine assistance in difficulties according to Ahlussunnah wal Jamaah teachings:</p>
+                    <p>For divine assistance in difficulties according to Indonesian Ministry of Religious Affairs teachings:</p>
                     <ol>
                         <li>Perform wudu and face qiblah</li>
                         <li>Recite "Yā Jabbāru" 100 times after Isha</li>
@@ -505,45 +551,97 @@
                 <p>In the story of Musa (<a href="https://quranwbw.com/20:25-28" target="_blank">20:25-28</a>), Allah demonstrated His attribute as Al-Jabbar by repairing Musa's speech difficulty before confronting Pharaoh. The repetition of "Al-Jabbar" in the Quran emphasizes the importance of remembering Allah's absolute power in all situations.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Back to Home</a></div>
+            <div class="main-menu"><a href="index.html" class="top-home-link">&larr; Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back to Top</a>
         </div>
-
-        <footer>
-            <p>© 2023 Islamic Knowledge Portal | Sources: <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a>, Kementerian Agama Republik Indonesia, and authentic Islamic sources</p>
-        </footer>
     </div>
 
-    <script>
-        // Language Toggle Functionality
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const indonesianContent = document.getElementById('indonesian-content');
-            const englishContent = document.getElementById('english-content');
-            const toggleButton = document.getElementById('languageToggle');
-            
-            if (indonesianContent.classList.contains('hidden')) {
-                indonesianContent.classList.remove('hidden');
-                englishContent.classList.add('hidden');
-                toggleButton.textContent = 'Switch to English';
-            } else {
-                indonesianContent.classList.add('hidden');
-                englishContent.classList.remove('hidden');
-                toggleButton.textContent = 'Switch to Indonesian';
-            }
-        });
+    <footer>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+    </footer>
 
-        // Transliteration Toggle Functionality
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterationElements = document.querySelectorAll('.transliteration');
-            const toggleButton = document.getElementById('transliterationToggle');
-            
-            transliterationElements.forEach(function(element) {
-                if (element.style.display === 'block') {
-                    element.style.display = 'none';
-                    toggleButton.textContent = 'Tampilkan Transliterasi';
+    <script>
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const englishContent = document.getElementById('english-content');
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+            const body = document.body;
+
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+
+            // Language toggle functionality
+            languageToggle.addEventListener('click', function() {
+                if (englishContent.classList.contains('hidden')) {
+                    // Switch to English
+                    englishContent.classList.remove('hidden');
+                    indonesianContent.classList.add('hidden');
+                    languageToggle.textContent = 'Switch to Indonesian';
+                    localStorage.setItem('language', 'english');
                 } else {
-                    element.style.display = 'block';
-                    toggleButton.textContent = 'Sembunyikan Transliterasi';
+                    // Switch to Indonesian
+                    englishContent.classList.add('hidden');
+                    indonesianContent.classList.remove('hidden');
+                    languageToggle.textContent = 'Switch to English';
+                    localStorage.setItem('language', 'indonesian');
+                }
+            });
+
+            // Transliteration toggle functionality
+            transliterationToggle.addEventListener('click', function() {
+                if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                    transliterations.forEach(el => el.style.display = 'block');
+                    transliterationToggle.textContent = 'Hide Transliteration';
+                    localStorage.setItem('transliteration', 'show');
+                } else {
+                    transliterations.forEach(el => el.style.display = 'none');
+                    transliterationToggle.textContent = 'Show Transliteration';
+                    localStorage.setItem('transliteration', 'hide');
+                }
+            });
+
+            // Dark mode toggle functionality
+            darkModeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    darkModeToggle.textContent = 'Light Mode';
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    darkModeToggle.textContent = 'Dark Mode';
+                    localStorage.setItem('darkMode', 'disabled');
                 }
             });
         });
