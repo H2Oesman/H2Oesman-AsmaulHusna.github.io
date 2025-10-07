@@ -5,30 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Asmaul Husna - Al-Mutakabbir (10)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --name-title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --dua-bg: #f8f9fa;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --arabic-color: #4cc9f0;
+            --name-title-color: #e6e6e6;
+            --section-title-color: #4cc9f0;
+            --dua-bg: #1f4068;
+            --bonus-bg: #1b3a57;
+            --tafsir-bg: #2d3746;
+            --border-color: #2d3746;
+            --shadow-color: rgba(0,0,0,0.3);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: normal;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Scheherazade New', serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             line-height: 2;
         }
         .transliteration {
@@ -41,7 +70,7 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
+            color: var(--name-title-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
             text-align: center;
@@ -53,17 +82,18 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, border-color 0.3s;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -104,12 +134,26 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: background-color 0.3s;
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -117,11 +161,12 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: background-color 0.3s;
         }
         .hidden {
             display: none;
@@ -170,12 +215,12 @@
         }
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -192,13 +237,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <a href="index.html" class="top-home-link">&larr; Kembali ke Menu Utama</a>
 
             <h1 class="name-title">10. Al-Mutakabbir (Yang Maha Megah)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-mutakabbir/" target="_blank">myislam.org/99-names-of-allah/al-mutakabbir/</a> & Kementerian Agama Republik Indonesia</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama Republik Indonesia</div>
 
             <div class="arabic">ٱلْمُتَكَبِّرُ</div>
             <div class="transliteration">Transliterasi: Al-Mutakabbir</div>
@@ -456,39 +502,91 @@
     </div>
 
     <footer>
-        <p>© 2023 Islamic Knowledge Portal | Sources: <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a>, Kementerian Agama Republik Indonesia, and authentic Islamic sources</p>
+        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
     </footer>
 
     <script>
-        // Language Toggle Functionality
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const indonesianContent = document.getElementById('indonesian-content');
+        // Initialize from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
             const englishContent = document.getElementById('english-content');
-            const toggleButton = document.getElementById('languageToggle');
-            
-            if (indonesianContent.classList.contains('hidden')) {
-                indonesianContent.classList.remove('hidden');
-                englishContent.classList.add('hidden');
-                toggleButton.textContent = 'Switch to English';
-            } else {
-                indonesianContent.classList.add('hidden');
-                englishContent.classList.remove('hidden');
-                toggleButton.textContent = 'Switch to Indonesian';
-            }
-        });
+            const indonesianContent = document.getElementById('indonesian-content');
+            const languageToggle = document.getElementById('languageToggle');
+            const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const transliterations = document.querySelectorAll('.transliteration');
+            const body = document.body;
 
-        // Transliteration Toggle Functionality
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterationElements = document.querySelectorAll('.transliteration');
-            const toggleButton = document.getElementById('transliterationToggle');
-            
-            transliterationElements.forEach(function(element) {
-                if (element.style.display === 'block') {
-                    element.style.display = 'none';
-                    toggleButton.textContent = 'Tampilkan Transliterasi';
+            // Set language preference
+            if (localStorage.getItem('language') === 'english') {
+                englishContent.classList.remove('hidden');
+                indonesianContent.classList.add('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
+            } else {
+                englishContent.classList.add('hidden');
+                indonesianContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to English';
+                localStorage.setItem('language', 'indonesian');
+            }
+
+            // Set transliteration preference
+            if (localStorage.getItem('transliteration') === 'show') {
+                transliterations.forEach(el => el.style.display = 'block');
+                transliterationToggle.textContent = 'Hide Transliteration';
+            } else {
+                transliterations.forEach(el => el.style.display = 'none');
+                transliterationToggle.textContent = 'Show Transliteration';
+                localStorage.setItem('transliteration', 'hide');
+            }
+
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+
+            // Language toggle functionality
+            languageToggle.addEventListener('click', function() {
+                if (englishContent.classList.contains('hidden')) {
+                    // Switch to English
+                    englishContent.classList.remove('hidden');
+                    indonesianContent.classList.add('hidden');
+                    languageToggle.textContent = 'Switch to Indonesian';
+                    localStorage.setItem('language', 'english');
                 } else {
-                    element.style.display = 'block';
-                    toggleButton.textContent = 'Sembunyikan Transliterasi';
+                    // Switch to Indonesian
+                    englishContent.classList.add('hidden');
+                    indonesianContent.classList.remove('hidden');
+                    languageToggle.textContent = 'Switch to English';
+                    localStorage.setItem('language', 'indonesian');
+                }
+            });
+
+            // Transliteration toggle functionality
+            transliterationToggle.addEventListener('click', function() {
+                if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                    transliterations.forEach(el => el.style.display = 'block');
+                    transliterationToggle.textContent = 'Hide Transliteration';
+                    localStorage.setItem('transliteration', 'show');
+                } else {
+                    transliterations.forEach(el => el.style.display = 'none');
+                    transliterationToggle.textContent = 'Show Transliteration';
+                    localStorage.setItem('transliteration', 'hide');
+                }
+            });
+
+            // Dark mode toggle functionality
+            darkModeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    darkModeToggle.textContent = 'Light Mode';
+                    localStorage.setItem('darkMode', 'enabled');
+                } else {
+                    darkModeToggle.textContent = 'Dark Mode';
+                    localStorage.setItem('darkMode', 'disabled');
                 }
             });
         });
