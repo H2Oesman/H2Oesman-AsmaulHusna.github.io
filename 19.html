@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4a9eda;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +51,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +61,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4a9eda;
         }
         .section {
             margin: 30px 0;
@@ -57,6 +77,10 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4a9eda;
+            border-left-color: #4a9eda;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
@@ -64,10 +88,17 @@
             margin: 25px 0;
             border: 1px solid #e0e0e0;
         }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
+        }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #1abc9c;
         }
         .back-to-top {
             display: block;
@@ -76,6 +107,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4a9eda;
         }
         .language-toggle {
             position: fixed;
@@ -103,6 +137,19 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
@@ -110,10 +157,17 @@
             margin: 20px 0;
             border-left: 5px solid #3498db;
         }
+        body.dark-mode .bonus {
+            background-color: #2a3a4a;
+            border-left-color: #4a9eda;
+        }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +175,10 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #555540;
         }
         .hidden {
             display: none;
@@ -131,6 +189,9 @@
             margin-bottom: 20px;
             color: #7f8c8d;
             font-size: 16px;
+        }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
         }
         .main-menu {
             text-align: center;
@@ -143,6 +204,9 @@
             color: #7f8c8d;
             font-size: 14px;
         }
+        body.dark-mode footer {
+            color: #a0a0a0;
+        }
 
         .audio-player {
             width: 100%;
@@ -154,6 +218,9 @@
             font-weight: bold;
             margin-bottom: 10px;
             color: #1a5276;
+        }
+        body.dark-mode .audio-title {
+            color: #4a9eda;
         }
         
         .back-arrow {
@@ -172,9 +239,17 @@
             border-radius: 25px;
             transition: all 0.3s ease;
         }
+        body.dark-mode .main-menu a {
+            color: #4a9eda;
+            border-color: #4a9eda;
+        }
         .main-menu a:hover {
             background-color: #3498db;
             color: white;
+        }
+        body.dark-mode .main-menu a:hover {
+            background-color: #4a9eda;
+            color: #1a1a1a;
         }
         .main-menu a:hover .back-arrow {
             transform: translateX(-4px);
@@ -182,12 +257,12 @@
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -199,13 +274,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Kembali ke Menu Utama</a></div>
 
             <h1 class="name-title">19. Al-Alim (Maha Mengetahui)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-alim/" target="_blank">myislam.org/99-names-of-allah/al-alim/</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
 
             <div class="arabic">الْعَلِيمُ</div>
             <div class="transliteration">Transliterasi: Al-Alim</div>
@@ -457,55 +533,55 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عِلْمٍ لَا يَنْفَعُ، وَمِنْ قَلْبٍ لَا يَخْشَعُ، وَمِنْ نَفْسٍ لَا تَشْبَعُ، وَمِنْ دَعْوَةٍ لَا يُسْتَجَابُ لَهَا</div>
                     <div class="transliteration">Allahumma innee aAAoothu bika min AAilmin la yanfaAAu, wa min qalbin la yakhshaAAu, wa min nafsin la tashbaAAu, wa min daAAwatin la yustajabu laha</div>
                     <p><strong>Translation:</strong> "O Allah, I seek refuge in You from knowledge that does not benefit, from a heart that does not fear, from a soul that is not satisfied, and from a supplication that is not answered."</p>
-                    <p><strong>Source:</strong> Sunan Ibn Majah. The Prophet (ﷺ) taught that this comprehensive du'a seeks protection from useless knowledge and other spiritual ailments.</p>
+                    <p><strong>Source:</strong> Sunan Ibn Majah. This comprehensive du'a seeks protection from Allah (Al-Alim) against useless knowledge and other spiritual ailments. It acknowledges that true beneficial knowledge comes only from Allah.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Amalan (Practices)</h2>
+                <h2 class="section-title">Practical Applications</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Seeking Beneficial Knowledge</div>
-                    <p>Since Allah is Al-Alim, the All-Knowing, Muslims are encouraged to constantly seek beneficial knowledge:</p>
+                    <div class="amalan-title">Seeking Knowledge</div>
+                    <p>The Prophet ﷺ said: "Seeking knowledge is obligatory upon every Muslim." (Sunan Ibn Majah). Practical ways to implement this:</p>
                     <ol>
-                        <li>Dedicate time daily to study Islamic knowledge</li>
-                        <li>Start with the basics of faith, purification, and prayer</li>
-                        <li>Gradually expand to other obligatory acts of worship</li>
+                        <li>Dedicate specific time daily for learning Islamic knowledge</li>
+                        <li>Start with foundational knowledge: Tawheed, Fiqh of worship, and Akhlaq</li>
+                        <li>Learn from qualified scholars with sound Aqeedah</li>
                     </ol>
-                    <p><strong>Benefits:</strong> The Prophet Muhammad (ﷺ) said: "Seeking knowledge is an obligation upon every Muslim." (Sunan Ibn Majah). This practice connects us with the source of all knowledge, Al-Alim.</p>
+                    <p><strong>Benefits:</strong> Seeking knowledge with sincere intention opens doors of guidance from Al-Alim and improves the quality of worship.</p>
                 </div>
 
                 <div class="amalan">
                     <div class="amalan-title">Reflecting on Allah's Creation</div>
-                    <p>Practice to develop awareness of Allah's infinite knowledge:</p>
+                    <p>Allah says: "Indeed, in the creation of the heavens and the earth are signs for those of understanding." (<a href="https://quranwbw.com/3:190" target="_blank">3:190</a>). Practical implementation:</p>
                     <ol>
-                        <li>Spend time in nature observing Allah's creation</li>
-                        <li>Study the perfect systems in plants, animals, and celestial bodies</li>
-                        <li>Reflect on how everything points to Allah's infinite knowledge</li>
+                        <li>Take time to contemplate the wonders of the universe</li>
+                        <li>Study the intricate systems in nature as evidence of Allah's knowledge</li>
+                        <li>Connect every scientific discovery with the greatness of Al-Alim</li>
                     </ol>
-                    <p><strong>Historical Basis:</strong> Allah says in the Quran: "Indeed, in the creation of the heavens and the earth and the alternation of the night and the day are signs for those of understanding." (<a href="https://quranwbw.com/3:190" target="_blank">3:190</a>). This practice transforms our understanding of Al-Alim from concept to tangible reality.</p>
+                    <p><strong>Scholarly Basis:</strong> Reflection (Tafakkur) is a form of worship that leads to recognizing the vastness of Allah's knowledge.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
-                <p>Ibn Kathir explains Al-Alim through four dimensions of divine knowledge:</p>
+                <h2 class="section-title">Tafsir Ibn Kathir</h2>
+                <p>Ibn Kathir explains Al-Alim through four dimensions:</p>
                 <ol>
-                    <li><strong>Comprehensive Knowledge:</strong>
+                    <li><strong>Universal Knowledge:</strong>
                         <ul>
-                            <li>Encompassing the heavens and the earth (<a href="https://quranwbw.com/59:22" target="_blank">59:22</a>)</li>
-                            <li>Knowing the unseen and the witnessed (<a href="https://quranwbw.com/6:73" target="_blank">6:73</a>)</li>
+                            <li>Encompassing the heavens and earth (<a href="https://quranwbw.com/59:22" target="_blank">59:22</a>)</li>
+                            <li>Knowing the unseen and witnessed (<a href="https://quranwbw.com/6:73" target="_blank">6:73</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Detailed Knowledge:</strong>
                         <ul>
-                            <li>Knowing when a leaf falls (<a href="https://quranwbw.com/6:59" target="_blank">6:59</a>)</li>
-                            <li>Knowing what is in people's hearts (<a href="https://quranwbw.com/64:4" target="_blank">64:4</a>)</li>
+                            <li>Knowing the falling of leaves (<a href="https://quranwbw.com/6:59" target="_blank">6:59</a>)</li>
+                            <li>Knowing what hearts conceal (<a href="https://quranwbw.com/64:4" target="_blank">64:4</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Eternal Knowledge:</strong>
                         <ul>
-                            <li>Knowing the past and future (<a href="https://quranwbw.com/57:22" target="_blank">57:22</a>)</li>
-                            <li>Knowing what is in the wombs (<a href="https://quranwbw.com/31:34" target="_blank">31:34</a>)</li>
+                            <li>Knowing past and future (<a href="https://quranwbw.com/57:22" target="_blank">57:22</a>)</li>
+                            <li>Knowing what wombs contain (<a href="https://quranwbw.com/31:34" target="_blank">31:34</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Source of Knowledge:</strong>
@@ -516,7 +592,7 @@
                     </li>
                 </ol>
                 <p>In Surah Al-Baqarah (<a href="https://quranwbw.com/2:32" target="_blank">2:32</a>), the angels acknowledge: "Exalted are You; we have no knowledge except what You have taught us. Indeed, it is You who is the Knowing, the Wise."</p>
-                <p>Practical applications of this name include: (1) Being conscious that Allah knows our every thought and action, (2) Constantly seeking beneficial knowledge, (3) Avoiding arrogance about what we know, (4) Trusting in Allah's wisdom when we face things we don't understand.</p>
+                <p>Practical implementation of Al-Alim in daily life includes: (1) Being conscious that Allah is watching us always, (2) Seeking beneficial knowledge continuously, (3) Avoiding arrogance about whatever knowledge we possess.</p>
             </div>
 
             <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Back to Main</a></div>
@@ -530,41 +606,52 @@
 
     <script>
         // Language Toggle
-        const languageToggle = document.getElementById('languageToggle');
-        const indonesianContent = document.getElementById('indonesian-content');
-        const englishContent = document.getElementById('english-content');
-
-        languageToggle.addEventListener('click', function() {
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const indonesianContent = document.getElementById('indonesian-content');
+            const englishContent = document.getElementById('english-content');
+            const toggleButton = document.getElementById('languageToggle');
+            
             if (indonesianContent.classList.contains('hidden')) {
-                // Switch to Indonesian
                 indonesianContent.classList.remove('hidden');
                 englishContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to English';
+                toggleButton.textContent = 'Switch to English';
             } else {
-                // Switch to English
                 indonesianContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
+                toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
         // Transliteration Toggle
-        const transliterationToggle = document.getElementById('transliterationToggle');
-        const transliterationElements = document.querySelectorAll('.transliteration');
-
-        transliterationToggle.addEventListener('click', function() {
-            const isHidden = transliterationElements[0].style.display === 'none' || 
-                            transliterationElements[0].style.display === '';
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            const toggleButton = document.getElementById('transliterationToggle');
             
-            if (isHidden) {
-                // Show transliteration
-                transliterationElements.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
+            if (transliterations[0].style.display === 'block') {
+                transliterations.forEach(el => el.style.display = 'none');
+                toggleButton.textContent = 'Show Transliteration';
             } else {
-                // Hide transliteration
-                transliterationElements.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
+                transliterations.forEach(el => el.style.display = 'block');
+                toggleButton.textContent = 'Hide Transliteration';
             }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
+            } else {
+                toggleButton.textContent = 'Dark Mode';
+            }
+        });
+
+        // Initialize transliteration as hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            transliterations.forEach(el => el.style.display = 'none');
         });
     </script>
 </body>
