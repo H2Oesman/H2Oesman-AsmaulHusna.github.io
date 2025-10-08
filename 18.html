@@ -5,30 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Asmaul Husna - Al-Fattah (18)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --name-title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --border-color: #3498db;
+            --dua-bg: #f8f9fa;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --arabic-color: #4cc9f0;
+            --name-title-color: #e6e6e6;
+            --section-title-color: #4cc9f0;
+            --border-color: #4361ee;
+            --dua-bg: #2d3748;
+            --bonus-bg: #1e3a5f;
+            --tafsir-bg: #2d3748;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 38px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Scheherazade New', serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             line-height: 2;
+            font-weight: normal;
         }
         .transliteration {
             font-style: italic;
@@ -40,8 +69,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--name-title-color);
+            border-bottom: 3px solid var(--border-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -52,13 +81,13 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--border-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
@@ -73,7 +102,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--border-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +110,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--border-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +132,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--border-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -116,7 +158,7 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
@@ -139,7 +181,7 @@
         .top-home-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: #3498db;
+            color: var(--border-color);
             text-decoration: none;
             font-weight: bold;
             padding: 5px 10px;
@@ -147,7 +189,7 @@
             transition: background-color 0.3s;
         }
         .top-home-link:hover {
-            background-color: #ebf5fb;
+            background-color: rgba(52, 152, 219, 0.1);
         }
         footer {
             text-align: center;
@@ -166,17 +208,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--arabic-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -193,6 +235,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Tampilkan Transliterasi</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Mode Gelap</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -241,7 +284,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/48:1" target="_blank">Surah Al-Fath 48:1</a>
-                    <div class="arabic">إِنَّا فَتَحْنَا لَكَ فَتْحًۭا مُّbِينًۭا</div>
+                    <div class="arabic">إِنَّا فَتَحْنَا لَكَ فَتْحًۭا مُّبِينًۭا</div>
                     <div class="transliteration">Innā fataḥnā laka fatḥan mubīnā</div>
                     <p>"Sesungguhnya Kami telah memberikan kepadamu kemenangan yang nyata."</p>
                     <div class="tafsir-box">
@@ -252,7 +295,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/7:89" target="_blank">Surah Al-A'raf 7:89</a>
-                    <div class="arabic">رَبَّنَا ٱفْتَحْ بَيْنَنَا وَbَيْنَ قَوْمِنَا بِٱلْحَقِّ وَأَنتَ خَيْرُ ٱلْفَاتِحِينَ</div>
+                    <div class="arabic">رَبَّنَا ٱفْتَحْ بَيْنَنَا وَبَيْنَ قَوْمِنَا بِٱلْحَقِّ وَأَنتَ خَيْرُ ٱلْفَاتِحِينَ</div>
                     <div class="transliteration">Rabbana iftaḥ baynanā wa bayna qawminā bil-ḥaqqi wa anta khayrul-fātiḥīn</div>
                     <p>"Ya Tuhan kami, berilah keputusan antara kami dan kaum kami dengan hak (adil). Dan Engkaulah Pemberi keputusan yang sebaik-baiknya."</p>
                     <div class="tafsir-box">
@@ -374,7 +417,7 @@
             <div class="transliteration">Transliteration: Al-Fattah</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
+                <div class="audio-title">Listen to Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/18.%20al-fattah.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -442,7 +485,7 @@
 
                 <div class="dalil-item">
                     <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:2658" target="_blank">Sahih Muslim 2658</a>
-                    <div class="arabic">إِنَّ فِي الْجَنَّةِ bَابًا يُقَالُ لَهُ الصَّلَاةُ فَيُفْتَحُ لِأَهْلِ الصَّلَاةِ</div>
+                    <div class="arabic">إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الصَّلَاةُ فَيُفْتَحُ لِأَهْلِ الصَّلَاةِ</div>
                     <div class="transliteration">Inna fil-jannati bāban yuqālu lahu ṣ-ṣalātu fayuftaḥu li-ahli ṣ-ṣalāti</div>
                     <p>"Indeed in Paradise there is a gate called 'Prayer' which will be opened for those who are regular in prayer."</p>
                     <div class="tafsir-box">
@@ -544,13 +587,12 @@
         </div>
 
         <footer>
-            <p>© 2023 Asmaul Husna Project. All rights reserved.</p>
-            <p>Sources: <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a>, <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></p>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
         </footer>
     </div>
 
     <script>
-        // Language toggle functionality
+        // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const indonesianContent = document.getElementById('indonesian-content');
             const englishContent = document.getElementById('english-content');
@@ -567,21 +609,29 @@
             }
         });
 
-        // Transliteration toggle functionality
+        // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             const toggleButton = document.getElementById('transliterationToggle');
             
             if (transliterations[0].style.display === 'block') {
-                transliterations.forEach(function(el) {
-                    el.style.display = 'none';
-                });
-                toggleButton.textContent = 'Tampilkan Transliterasi';
+                transliterations.forEach(el => el.style.display = 'none');
+                toggleButton.textContent = 'Show Transliteration';
             } else {
-                transliterations.forEach(function(el) {
-                    el.style.display = 'block';
-                });
-                toggleButton.textContent = 'Sembunyikan Transliterasi';
+                transliterations.forEach(el => el.style.display = 'block');
+                toggleButton.textContent = 'Hide Transliteration';
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
+            } else {
+                toggleButton.textContent = 'Dark Mode';
             }
         });
     </script>
