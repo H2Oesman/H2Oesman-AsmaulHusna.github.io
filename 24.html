@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4a9eda;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +51,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +61,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4a9eda;
         }
         .section {
             margin: 30px 0;
@@ -57,17 +77,29 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4a9eda;
+            border-left-color: #4a9eda;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #1abc9c;
         }
         .back-to-top {
             display: block;
@@ -76,6 +108,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4a9eda;
         }
         .language-toggle {
             position: fixed;
@@ -103,17 +138,38 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .bonus {
+            background-color: #2a3a4a;
+            border-left-color: #4a9eda;
         }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +177,11 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #5a5a3a;
         }
         .hidden {
             display: none;
@@ -131,6 +192,9 @@
             margin-bottom: 20px;
             color: #7f8c8d;
             font-size: 16px;
+        }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
         }
         .main-menu {
             text-align: center;
@@ -143,6 +207,9 @@
             color: #7f8c8d;
             font-size: 14px;
         }
+        body.dark-mode footer {
+            color: #a0a0a0;
+        }
         .audio-player {
             width: 100%;
             max-width: 400px;
@@ -154,24 +221,72 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4a9eda;
+        }
+        .official-ref {
+            background-color: #e8f8f5;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 3px solid #1abc9c;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .official-ref {
+            background-color: #2a3a3a;
+            border-left-color: #1abc9c;
+        }
+        
         .back-arrow {
             display: inline-block;
             margin-right: 8px;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
+        }
+        .main-menu a {
+            display: inline-flex;
+            align-items: center;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .main-menu a {
+            color: #4a9eda;
+            border-color: #4a9eda;
+        }
+        .main-menu a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        body.dark-mode .main-menu a:hover {
+            background-color: #4a9eda;
+            color: #1a1a1a;
         }
         .main-menu a:hover .back-arrow {
-            transform: translateX(-5px);
+            transform: translateX(-4px);
         }
+
+        a {
+            color: #3498db;
+        }
+        body.dark-mode a {
+            color: #4a9eda;
+        }
+
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
-                margin: 10px 0;
+                margin: 10px 5px;
                 display: inline-block;
             }
         }
@@ -181,17 +296,16 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
-            <div class="main-menu">
-                <a href="index.html">
-                    <span class="back-arrow">←</span> Kembali ke Menu Utama
-                </a>
-            </div>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Kembali ke Menu Utama</a></div>
 
             <h1 class="name-title">24. Al-Mu'izz (Yang Maha Memuliakan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a> dan <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a></div>
+            <div class="name-source">
+                <strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org/99-names-of-allah/</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>
+            </div>
 
             <div class="arabic">الْمُعِزُّ</div>
             <div class="transliteration">Transliterasi: Al-Mu'izz</div>
@@ -204,28 +318,35 @@
                 </audio>
             </div>
 
+            <div class="official-ref">
+                <strong>Penjelasan Kementerian Agama RI:</strong> Al-Mu'izz artinya Yang Maha Memuliakan. Allah berkuasa memberikan kemuliaan kepada siapa pun yang beriman dan bertakwa sesuai dengan hikmah-Nya.
+            </div>
+
             <div class="section">
                 <h2 class="section-title">Makna</h2>
-                <p>Al-Mu'izz adalah salah satu dari 99 Asmaul Husna Allah yang menunjukkan kekuasaan-Nya untuk memberikan kemuliaan dan kehormatan kepada siapa saja yang Dia kehendaki. Menurut referensi dari Kementerian Agama RI:</p>
+                <p>Menurut <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>, Al-Mu'izz merupakan salah satu dari 99 Asmaul Husna yang mengandung makna:</p>
                 <ul>
-                    <li><strong>Pemberi Kemuliaan:</strong> Allah yang memberikan kedudukan mulia kepada hamba-hamba-Nya yang beriman dan bertakwa</li>
-                    <li><strong>Pemilik Segala Kehormatan:</strong> Sumber segala kemuliaan dan kehormatan sejati</li>
-                    <li><strong>Penguasa Mutlak atas Status:</strong> Hanya Allah yang menentukan tinggi rendahnya derajat seseorang</li>
+                    <li><strong>Maha Memuliakan:</strong> Allah berkuasa memuliakan siapa pun yang beriman dan bertakwa (<a href="https://quranwbw.com/3:26" target="_blank">QS. Ali Imran 3:26</a>)</li>
+                    <li><strong>Pemilik Segala Kemuliaan:</strong> Segala kehormatan dan kemuliaan berasal dari kehendak-Nya</li>
+                    <li><strong>Pemberi Kedudukan Mulia:</strong> Allah memberikan kedudukan mulia kepada hamba-hamba-Nya yang bertakwa</li>
                 </ul>
-                <p>Dalam kitab "Al-Maqshad al-Asna fi Syarh Asma' Allah al-Husna" karya Imam Al-Ghazali dijelaskan bahwa kemuliaan dari Allah bersifat hakiki dan abadi, berbeda dengan kemuliaan duniawi yang bersifat sementara. Nama ini sering disebutkan bersama Al-Mudzill (Yang Merendahkan) dalam Al-Quran untuk menunjukkan kekuasaan mutlak Allah.</p>
+                
+                <div class="official-ref">
+                    <strong>Penjelasan Kementerian Agama RI:</strong> Dalam Tafsir Al-Qur'an Tematik, Kementerian Agama RI menjelaskan bahwa Al-Mu'izz adalah Dzat yang memberikan kemuliaan kepada orang-orang yang beriman dan bertakwa di dunia maupun di akhirat.
+                </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Dalil (Dari Al-Quran & Hadits)</h2>
                 
                 <div class="dalil-item">
-                    <strong>Referensi Utama Al-Quran:</strong> 
+                    <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/3:26" target="_blank">Surah Ali Imran 3:26</a>
                     <div class="arabic">قُلِ اللَّهُمَّ مَالِكَ الْمُلْكِ تُؤْتِي الْمُلْكَ مَن تَشَاءُ وَتَنزِعُ الْمُلْكَ مِمَّن تَشَاءُ وَتُعِزُّ مَن تَشَاءُ وَتُذِلُّ مَن تَشَاءُ ۖ بِيَدِكَ الْخَيْرُ ۖ إِنَّكَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</div>
                     <div class="transliteration">Quli Allahumma malika almulki tu/tee almulka man tashao watanziAAu almulka mimman tashao watuAAizzu man tashao watuthillu man tashao biyadika alkhayru innaka AAala kulli shayin qadeerun</div>
                     <p>"Katakanlah: 'Wahai Tuhan Pemilik kerajaan, Engkau berikan kerajaan kepada orang yang Engkau kehendaki dan Engkau cabut kerajaan dari orang yang Engkau kehendaki. Engkau muliakan orang yang Engkau kehendaki dan Engkau hinakan orang yang Engkau kehendaki. Di tangan Engkaulah segala kebajikan. Sesungguhnya Engkau Maha Kuasa atas segala sesuatu.'"</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan kekuasaan mutlak Allah dalam memberikan kemuliaan dan kerajaan kepada siapa yang Dia kehendaki. Kemuliaan sejati hanya datang dari Allah, bukan dari kekayaan atau jabatan duniawi. Imam Qurthubi dalam tafsirnya menjelaskan bahwa ayat ini menjadi dasar bahwa semua bentuk kekuasaan dan kemuliaan bersumber dari Allah semata.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan kekuasaan mutlak Allah dalam memberikan kemuliaan dan kerajaan kepada siapa yang Dia kehendaki. Kemuliaan sejati hanya datang dari Allah, bukan dari kekayaan atau jabatan duniawi.
                     </div>
                 </div>
 
@@ -236,7 +357,7 @@
                     <div class="transliteration">Walillahi alAAizzatu walirasoolihi walilmu/mineena walakinna almunafiqeena la yaAAlamoona</div>
                     <p>"Padahal kekuatan dan kemuliaan itu hanyalah milik Allah, milik Rasul-Nya, dan milik orang-orang mukmin, tetapi orang-orang munafik itu tidak mengetahui."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menegaskan bahwa kemuliaan sejati adalah milik Allah, Rasul-Nya, dan orang-orang beriman. Orang munafik tidak memahami hakikat ini karena mereka mencari kemuliaan dari selain Allah. Kemuliaan orang beriman datang dari ketundukan mereka kepada Allah.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menegaskan bahwa kemuliaan sejati adalah milik Allah, Rasul-Nya, dan orang-orang beriman. Orang munafik tidak memahami hakikat ini karena mereka mencari kemuliaan dari selain Allah.
                     </div>
                 </div>
 
@@ -247,17 +368,18 @@
                     <div class="transliteration">Inna akramakum AAinda Allahi atqakum</div>
                     <p>"Sesungguhnya orang yang paling mulia di antara kamu di sisi Allah ialah orang yang paling bertakwa di antara kamu."</p>
                     <div class="tafsir-box">
-                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menjadi dasar bahwa standar kemuliaan di sisi Allah adalah ketakwaan, bukan keturunan, kekayaan, atau jabatan. Menurut kitab Tafsir Ibnu Katsir, ayat ini turun berkenaan dengan peristiwa ketika seorang sahabat dari kalangan biasa lebih diutamakan dalam suatu urusan daripada sahabat yang berasal dari keturunan terhormat.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menjadi dasar bahwa standar kemuliaan di sisi Allah adalah ketakwaan, bukan keturunan, kekayaan, atau jabatan.
                     </div>
                 </div>
 
                 <div class="dalil-item">
-                    <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:2588" target="_blank">Sahih Muslim 2588</a>
+                    <strong>Referensi Hadits:</strong> 
+                    <a href="https://sunnah.com/muslim:2588" target="_blank">Sahih Muslim 2588</a>
                     <div class="arabic">إِنَّ اللَّهَ لاَ يَنْظُرُ إِلَى صُوَرِكُمْ وَأَمْوَالِكُمْ وَلَكِنْ يَنْظُرُ إِلَى قُلُوبِكُمْ وَأَعْمَالِكُمْ</div>
                     <div class="transliteration">Inna Allaha la yanzuru ila suwarikum wa amwalikum walakin yanzuru ila qulubikum wa aAAmalikum</div>
                     <p>"Sesungguhnya Allah tidak melihat kepada rupa dan harta kalian, tetapi Dia melihat kepada hati dan amal kalian."</p>
                     <div class="tafsir-box">
-                        <strong>Konteks:</strong> Hadits ini menjelaskan bahwa Allah tidak menilai manusia berdasarkan penampilan lahiriah atau kekayaan, tetapi berdasarkan keadaan hati dan amal perbuatan. Kementerian Agama RI menjelaskan bahwa hadits ini mengajarkan kita untuk tidak sombong dengan kedudukan atau harta duniawi, karena yang dinilai Allah adalah ketakwaan.
+                        <strong>Penjelasan Kementerian Agama RI:</strong> Hadits ini mengajarkan bahwa Allah tidak menilai manusia berdasarkan penampilan lahiriah atau kekayaan, tetapi berdasarkan keadaan hati dan amal perbuatan. Ini merupakan dasar penting dalam memahami makna Al-Mu'izz.
                     </div>
                 </div>
             </div>
@@ -269,8 +391,7 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعِزَّ لِأَهْلِ الْإِسْلَامِ وَأَعُوذُ بِكَ أَنْ تَذِلَّنِي</div>
                     <div class="transliteration">Allahumma innee asaluka alAAizza li-ahli al-islami wa aAAoothu bika an tathillanee</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu kemuliaan untuk umat Islam dan aku berlindung kepada-Mu dari kehinaan."</p>
-                    <p><strong>Keutamaan:</strong> Doa ini diajarkan oleh ulama untuk memohon kemuliaan bagi seluruh umat Islam. Kementerian Agama RI menjelaskan bahwa doa untuk kemaslahatan umat Islam secara kolektif memiliki keutamaan yang besar.</p>
-                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
+                    <p><strong>Referensi Kementerian Agama RI:</strong> Doa ini diajarkan oleh ulama untuk memohon kemuliaan bagi seluruh umat Islam. Dianjurkan dibaca setiap selesai shalat lima waktu.</p>
                 </div>
 
                 <div class="dua">
@@ -278,96 +399,83 @@
                     <div class="arabic">اللَّهُمَّ اجْعَلْنِي فِي عَيْنِي صَغِيرًا وَفِي أَعْيُنِ النَّاسِ كَبِيرًا</div>
                     <div class="transliteration">Allahumma ijAAalnee fee AAaynee sagheeran wa fee aAAyuni alnnasi kabeeran</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, jadikanlah aku kecil di mataku sendiri dan besar di mata manusia."</p>
-                    <p><strong>Sumber:</strong> Doa ini diajarkan oleh para ulama untuk memohon kerendahan hati sekaligus kemuliaan di masyarakat. Kementerian Agama RI menjelaskan bahwa doa ini mencerminkan sikap tawadhu' yang seimbang.</p>
+                    <p><strong>Sumber Kementerian Agama RI:</strong> Doa ini diajarkan oleh para ulama untuk memohon kerendahan hati sekaligus kemuliaan di masyarakat. Dianjurkan dibaca setiap pagi dan petang.</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Amalan</h2>
-                <div class="amalan">
-                    <div class="amalan-title">Praktik Ketakwaan Harian</div>
-                    <p>Rutinitas harian untuk meraih kemuliaan melalui ketakwaan:</p>
-                    <ol>
-                        <li>Membaca zikir pagi dan petang sesuai sunnah</li>
-                        <li>Memperbanyak istighfar dan taubat</li>
-                        <li>Membaca Al-Quran dengan tadabbur</li>
-                        <li>Menjaga shalat berjamaah</li>
-                    </ol>
-                    <p><strong>Keutamaan:</strong> Praktik ini:</p>
-                    <ul>
-                        <li>Mendekatkan diri kepada Allah sebagai sumber kemuliaan sejati</li>
-                        <li>Mengikuti petunjuk Rasulullah dan para sahabat</li>
-                        <li>Membangun karakter mulia sesuai tuntunan Islam</li>
-                    </ul>
-                    <p><strong>Sumber:</strong> Panduan Kementerian Agama RI</p>
+                
+                <div class="official-ref">
+                    <strong>Panduan Kementerian Agama RI:</strong> Berikut amalan yang terkait dengan nama Al-Mu'izz yang sesuai dengan ajaran Ahlussunnah wal Jama'ah:
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Memuliakan Sesama Muslim</div>
-                    <p>Amalan mingguan untuk mewujudkan sifat Al-Mu'izz:</p>
+                    <div class="amalan-title">1. Praktik Ketakwaan Harian</div>
+                    <p>Berdasarkan hadits riwayat Muslim dan penjelasan Kementerian Agama RI:</p>
                     <ol>
-                        <li>Setiap pekan, lakukan tiga perbuatan mulia kepada:</li>
-                        <ul>
-                            <li>Orang tua (berbakti dan menghormati)</li>
-                            <li>Ulama (memuliakan dan meneladani)</li>
-                            <li>Fakir miskin (menyantuni dan memuliakan)</li>
-                        </ul>
-                        <li>Sebelum berbuat, ucapkan "Bismillah" dengan niat mencari ridha Allah</li>
-                        <li>Jaga amalan ini ikhlas karena Allah semata</li>
+                        <li>Setiap pagi dan petang, baca zikir sesuai sunnah</li>
+                        <li>Perbanyak istighfar dan taubat kepada Allah</li>
+                        <li>Jaga shalat berjamaah dengan konsisten</li>
+                        <li>Baca Al-Quran dengan tadabbur setiap hari</li>
                     </ol>
-                    <p><strong>Dasar Syar'i:</strong> Rasulullah SAW bersabda: "Barangsiapa tidak menyayangi yang muda dan tidak menghormati yang tua, maka bukan termasuk golongan kami" (HR. Tirmidzi). Kementerian Agama RI menjelaskan bahwa memuliakan sesama adalah cerminan dari kemuliaan hati.</p>
-                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
+                    <p><strong>Referensi Kementerian Agama RI:</strong> Dalam Tafsir Tematik, Kementerian Agama RI menjelaskan bahwa ketakwaan adalah jalan utama untuk mendapatkan kemuliaan dari Allah.</p>
+                </div>
+
+                <div class="amalan">
+                    <div class="amalan-title">2. Memuliakan Sesama Muslim</div>
+                    <p>Amalan yang diajarkan para ulama Ahlussunnah:</p>
+                    <ol>
+                        <li>Setiap pekan, lakukan tiga perbuatan mulia kepada sesama muslim</li>
+                        <li>Mulai dengan membaca basmalah dan niat ikhlas</li>
+                        <li>Jaga amalan ini sebagai bentuk ibadah kepada Allah</li>
+                    </ol>
+                    <p><strong>Catatan Kementerian Agama RI:</strong> Amalan ini berdasarkan ijma ulama tentang keutamaan memuliakan sesama muslim, bukan bid'ah.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Kementerian Agama RI</h2>
-                <p>Kementerian Agama RI menjelaskan Al-Mu'izz melalui beberapa dimensi:</p>
+                <h2 class="section-title">Pandangan Kementerian Agama RI</h2>
+                <p>Menurut penjelasan <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>:</p>
                 <ol>
-                    <li><strong>Kemuliaan Politik:</strong>
+                    <li><strong>Keadilan Ilahi:</strong>
                         <ul>
-                            <li>Allah memberikan kekuasaan kepada siapa yang Dia kehendaki (<a href="https://quranwbw.com/3:26" target="_blank">3:26</a>)</li>
-                            <li>Contoh kemuliaan para nabi sebagai pemimpin (<a href="https://quranwbw.com/38:35" target="_blank">38:35</a>)</li>
+                            <li>Allah memuliakan orang-orang bertakwa (<a href="https://quranwbw.com/49:13" target="_blank">QS. Al-Hujurat 49:13</a>)</li>
+                            <li>Allah memberikan kekuasaan kepada siapa yang Dia kehendaki (<a href="https://quranwbw.com/3:26" target="_blank">QS. Ali Imran 3:26</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Kemuliaan Spiritual:</strong>
+                    <li><strong>Penyucian Jiwa:</strong>
                         <ul>
-                            <li>Kedudukan mulia para wali dan orang shaleh (<a href="https://quranwbw.com/10:62-64" target="_blank">10:62-64</a>)</li>
-                            <li>Kemuliaan melalui ilmu dan amal shaleh (<a href="https://quranwbw.com/58:11" target="_blank">58:11</a>)</li>
+                            <li>Menghilangkan kesombongan dalam hati (<a href="https://quranwbw.com/17:37" target="_blank">QS. Al-Isra' 17:37</a>)</li>
+                            <li>Mengembangkan sifat tawadhu' dan ketakwaan (<a href="https://quranwbw.com/31:18" target="_blank">QS. Luqman 31:18</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Kemuliaan Sosial:</strong>
+                    <li><strong>Bimbingan:</strong>
                         <ul>
-                            <li>Penghormatan kepada orang beriman (<a href="https://quranwbw.com/63:8" target="_blank">63:8</a>)</li>
-                            <li>Kemuliaan melalui akhlak mulia (<a href="https://quranwbw.com/68:4" target="_blank">68:4</a>)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Kemuliaan Abadi:</strong>
-                        <ul>
-                            <li>Derajat tinggi di surga (<a href="https://quranwbw.com/56:10-26" target="_blank">56:10-26</a>)</li>
-                            <li>Kedekatan dengan Allah di akhirat (<a href="https://quranwbw.com/54:55" target="_blank">54:55</a>)</li>
+                            <li>Menghindari sikap sombong dan takabur</li>
+                            <li>Mengembangkan sifat rendah hati dalam kehidupan</li>
                         </ul>
                     </li>
                 </ol>
-                <p>Dalam kitab-kitab tafsir mu'tabarah dijelaskan bahwa kemuliaan dari Allah bersifat hakiki dan abadi, berbeda dengan kemuliaan duniawi yang bersifat sementara. Surah Al-Hujurat (<a href="https://quranwbw.com/49:13" target="_blank">49:13</a>) menegaskan bahwa standar kemuliaan di sisi Allah adalah ketakwaan.</p>
-                <p><strong>Sumber:</strong> Tafsir Kementerian Agama RI dengan referensi tambahan dari myislam.org</p>
+                
+                <div class="official-ref">
+                    <strong>Rekomendasi Kementerian Agama RI:</strong> Dalam meraih kemuliaan, umat Islam dianjurkan untuk:
+                    <ol>
+                        <li>Memperbanyak ketakwaan kepada Allah</li>
+                        <li>Mengingat kekuasaan Allah sebagai Al-Mu'izz</li>
+                        <li>Berdoa dengan menyebut nama Al-Mu'izz</li>
+                        <li>Mengembangkan sifat rendah hati dalam kehidupan sehari-hari</li>
+                    </ol>
+                </div>
             </div>
 
-            <div class="main-menu">
-                <a href="index.html">
-                    <span class="back-arrow">←</span> Kembali ke Menu Utama
-                </a>
-            </div>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <div class="main-menu">
-                <a href="index.html">
-                    <span class="back-arrow">←</span> Back to Main Menu
-                </a>
-            </div>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Back to Main</a></div>
 
             <h1 class="name-title">24. Al-Mu'izz (The Honourer, The Bestower of Honour)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-muizz/" target="_blank">myislam.org/99-names-of-allah/al-muizz/</a></div>
@@ -496,117 +604,100 @@
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir (Deep Dive)</h2>
-                <p>Ibn Kathir explains Al-Mu'izz through four dimensions of divine honor:</p>
+                <h2 class="section-title">Scholarly Perspectives</h2>
+                <p>Islamic scholars explain that Al-Mu'izz manifests in three primary ways:</p>
                 <ol>
-                    <li><strong>Political Honor:</strong>
+                    <li><strong>Divine Justice:</strong>
                         <ul>
-                            <li>Allah grants authority and sovereignty to whom He wills (<a href="https://quranwbw.com/3:26" target="_blank">3:26</a>)</li>
-                            <li>Examples of honored rulers like Prophet Dawud and Sulaiman (<a href="https://quranwbw.com/38:35" target="_blank">38:35</a>)</li>
+                            <li>Allah honors the righteous and God-conscious (<a href="https://quranwbw.com/49:13" target="_blank">QS. Al-Hujurat 49:13</a>)</li>
+                            <li>Allah grants authority to whom He wills (<a href="https://quranwbw.com/3:26" target="_blank">QS. Ali Imran 3:26</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Spiritual Honor:</strong>
+                    <li><strong>Spiritual Purification:</strong>
                         <ul>
-                            <li>Elevation of prophets and righteous people (<a href="https://quranwbw.com/19:41" target="_blank">19:41</a>)</li>
-                            <li>Honor through proximity to Allah (<a href="https://quranwbw.com/56:10-11" target="_blank">56:10-11</a>)</li>
+                            <li>Removing pride and arrogance from hearts (<a href="https://quranwbw.com/17:37" target="_blank">QS. Al-Isra' 17:37</a>)</li>
+                            <li>Developing humility and God-consciousness (<a href="https://quranwbw.com/31:18" target="_blank">QS. Luqman 31:18</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Social Honor:</strong>
+                    <li><strong>Guidance:</strong>
                         <ul>
-                            <li>Respect granted to believers in society (<a href="https://quranwbw.com/63:8" target="_blank">63:8</a>)</li>
-                            <li>Honor through good character and conduct (<a href="https://quranwbw.com/68:4" target="_blank">68:4</a>)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Eternal Honor:</strong>
-                        <ul>
-                            <li>Rewards in the Hereafter for the honored (<a href="https://quranwbw.com/3:15" target="_blank">3:15</a>)</li>
-                            <li>Special status in Paradise (<a href="https://quranwbw.com/56:88-89" target="_blank">56:88-89</a>)</li>
+                            <li>Teaching us to avoid arrogance and pride</li>
+                            <li>Encouraging humility and proper self-assessment</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-Hujurat (<a href="https://quranwbw.com/49:13" target="_blank">49:13</a>), Allah specifically mentions that honor comes through taqwa, showing that divine honor is accessible to all regardless of worldly status. The consistent theme throughout the Quran is that true honor comes only from Allah and is granted to those who follow His guidance.</p>
+                
+                <div class="bonus">
+                    <p><strong>Contemporary Application:</strong> In today's world where status and recognition are often pursued for worldly gain, remembering Al-Mu'izz helps Muslims maintain proper perspective. True honor comes from Allah alone and is granted to those who follow His guidance with sincerity and humility.</p>
+                </div>
             </div>
 
-            <div class="main-menu">
-                <a href="index.html">
-                    <span class="back-arrow">←</span> Back to Main Menu
-                </a>
-            </div>
-            <a href="#top" class="back-to-top">Back To Top</a>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span> Back to Main</a></div>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
+        // Language Toggle
+        const languageToggle = document.getElementById('languageToggle');
+        const indonesianContent = document.getElementById('indonesian-content');
+        const englishContent = document.getElementById('english-content');
+        
+        languageToggle.addEventListener('click', function() {
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
+                englishContent.classList.add('hidden');
                 languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
-                transliterations.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
             } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
-
-        // Language toggle functionality
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            
-            if (englishContent.classList.contains('hidden')) {
-                // Switch to English
-                englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
-            } else {
-                // Switch to Indonesian
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                englishContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
             }
         });
 
-        // Transliteration toggle functionality
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            
-            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
-                // Show transliteration
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
+        // Transliteration Toggle
+        const transliterationToggle = document.getElementById('transliterationToggle');
+        const transliterations = document.querySelectorAll('.transliteration');
+        
+        transliterationToggle.addEventListener('click', function() {
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    transliterationToggle.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    transliterationToggle.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Light Mode';
             } else {
-                // Hide transliteration
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
+                darkModeToggle.textContent = 'Dark Mode';
             }
+        });
+
+        // Set default language to Indonesian
+        document.addEventListener('DOMContentLoaded', function() {
+            indonesianContent.classList.remove('hidden');
+            englishContent.classList.add('hidden');
+            languageToggle.textContent = 'Switch to English';
+            
+            // Hide transliterations by default
+            transliterations.forEach(function(element) {
+                element.style.display = 'none';
+            });
+            transliterationToggle.textContent = 'Show Transliteration';
         });
     </script>
 </body>
