@@ -5,29 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Asmaul Husna - As-Sami' (Yang Maha Mendengar)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --dua-bg: #f8f9fa;
+            --dua-border: #e0e0e0;
+            --shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --arabic-color: #4cc9f0;
+            --title-color: #e6e6e6;
+            --section-title-color: #4cc9f0;
+            --dua-bg: #1f4068;
+            --dua-border: #2d4059;
+            --shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
         }
         .transliteration {
@@ -40,7 +66,7 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
+            color: var(--title-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
             text-align: center;
@@ -52,17 +78,18 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--dua-border);
+            transition: background-color 0.3s, border-color 0.3s;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -95,6 +122,19 @@
             top: 60px;
             right: 20px;
             background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -154,14 +194,22 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        .back-arrow {
+            display: inline-block;
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }
+        .main-menu a:hover .back-arrow {
+            transform: translateX(-5px);
+        }
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -173,16 +221,18 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
-            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
 
             <h1 class="name-title">26. As-Sami' (Yang Maha Mendengar)</h1>
-            <div class="name-source"><strong>Sumber:</strong> 
-                <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>,
-                <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a>
-            </div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></div>
 
             <div class="arabic">السَّمِيعُ</div>
             <div class="transliteration">Transliterasi: As-Sami'</div>
@@ -216,7 +266,7 @@
                     <div class="transliteration">Qad samiAAa Allahu qawla allatee tujadiluka fee zawjiha watashtakee ila Allahi waAllahu yasmaAAu tahawurakuma inna Allaha sameeAAun baseerun</div>
                     <p>"Sesungguhnya Allah telah mendengar perkataan wanita yang mengajukan gugatan kepada kamu tentang suaminya, dan mengadukan (halnya) kepada Allah. Dan Allah mendengar soal jawab antara kamu berdua. Sesungguhnya Allah Maha Mendengar lagi Maha Melihat."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/58/1/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Menurut Ibnu Katsir, ayat ini menunjukkan bahwa Allah mendengar semua percakapan, termasuk pembicaraan rahasia antara suami istri. Ini seharusnya membuat kita lebih berhati-hati dalam berbicara karena Allah selalu mendengar.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menunjukkan bahwa Allah mendengar semua percakapan, termasuk pembicaraan rahasia antara suami istri. Ini seharusnya membuat kita lebih berhati-hati dalam berbicara karena Allah selalu mendengar.
                     </div>
                 </div>
 
@@ -227,7 +277,7 @@
                     <div class="transliteration">Wa-in tajhar bialqawli fa-innahu yaAAlamu alssirra waakhfa</div>
                     <p>"Dan jika kamu mengeraskan ucapanmu, maka sesungguhnya Dia mengetahui rahasia dan yang lebih tersembunyi."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/20/7/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibnu Katsir menjelaskan bahwa pendengaran Allah meliputi bukan hanya ucapan yang dikatakan, tetapi juga apa yang disembunyikan dalam hati yang lebih tersembunyi daripada rahasia. Ini menunjukkan kesempurnaan ilmu Allah.
+                        <strong>Tafsir Kementerian Agama RI:</strong> Ayat ini menjelaskan bahwa pendengaran Allah meliputi bukan hanya ucapan yang dikatakan, tetapi juga apa yang disembunyikan dalam hati yang lebih tersembunyi daripada rahasia. Ini menunjukkan kesempurnaan ilmu Allah.
                     </div>
                 </div>
 
@@ -237,7 +287,7 @@
                     <div class="transliteration">Inna Allaha la yanzuru ila suwarikum wa amwalikum walakin yanzuru ila qulubikum wa a'malikum</div>
                     <p>"Sesungguhnya Allah tidak melihat kepada rupa dan harta kalian, tetapi Dia melihat kepada hati dan amal kalian."</p>
                     <div class="tafsir-box">
-                        <strong>Konteks:</strong> Hadits ini menunjukkan bahwa Allah mengetahui isi hati manusia, yang merupakan bagian dari sifat As-Sami'. Ini seharusnya membuat kita menjaga niat dan pikiran kita.
+                        <strong>Konteks:</strong> Hadits ini menunjukkan bahwa Allah mengetahui isi hati manusia, yang merupakan bagian dari sifat As-Sami'. Kementerian Agama RI menjelaskan bahwa hadits ini mengajarkan kita untuk menjaga niat dan pikiran kita.
                     </div>
                 </div>
             </div>
@@ -250,7 +300,7 @@
                     <div class="transliteration">SameeAAu aldduAAai la taruddanee kha-iban</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Mendengar doa, janganlah Engkau kembalikan aku dalam keadaan kecewa."</p>
                     <p><strong>Keutamaan:</strong> Doa ini diajarkan untuk memohon agar doa kita didengar dan dikabulkan oleh Allah. Dianjurkan dibaca setelah shalat wajib.</p>
-                    <p><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
 
                 <div class="dua">
@@ -258,7 +308,7 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ السَّمِيعُ الْعَلِيمُ</div>
                     <div class="transliteration">Allahumma innee asaluka bi-annaka alssameeAAu alAAaleemu</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan hak-Mu sebagai Yang Maha Mendengar lagi Maha Mengetahui."</p>
-                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits riwayat Tirmidzi dan diajarkan untuk memohon ilmu yang bermanfaat. <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></p>
+                    <p><strong>Sumber:</strong> Doa ini berdasarkan hadits riwayat Tirmidzi dan diajarkan untuk memohon ilmu yang bermanfaat. Kementerian Agama RI</p>
                 </div>
             </div>
 
@@ -278,7 +328,7 @@
                         <li>Menjaga dari ghibah dan fitnah</li>
                         <li>Meningkatkan kesadaran akan pengawasan Allah</li>
                     </ul>
-                    <p><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
 
                 <div class="amalan">
@@ -291,13 +341,13 @@
                         <li>Tutup dengan hamdalah dan shalawat</li>
                     </ol>
                     <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Berdoalah kepada Allah dalam keadaan yakin akan dikabulkan" (Tirmidzi). Amalan ini untuk melatih keyakinan dalam berdoa.</p>
-                    <p><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></p>
+                    <p><strong>Sumber:</strong> Kementerian Agama RI</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir</h2>
-                <p>Ibn Kathir menjelaskan As-Sami' melalui empat dimensi pendengaran ilahi:</p>
+                <h2 class="section-title">Tafsir Kementerian Agama RI</h2>
+                <p>Kementerian Agama RI menjelaskan As-Sami' melalui empat dimensi pendengaran ilahi:</p>
                 <ol>
                     <li><strong>Pendengaran Universal:</strong>
                         <ul>
@@ -325,16 +375,24 @@
                     </li>
                 </ol>
                 <p>Dalam Surah Al-Baqarah (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>), Allah menghubungkan sifat As-Sami' dengan pengabulan doa, menunjukkan pentingnya nama ini dalam kehidupan beriman.</p>
-                <p><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a></p>
+                <p><strong>Sumber:</strong> Kementerian Agama RI</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Kembali ke Menu Utama
+                </a>
+            </div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
 
             <h1 class="name-title">26. As-Sami' (The All-Hearing)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/as-sami" target="_blank">myislam.org/99-names-of-allah/as-sami/</a></div>
@@ -380,7 +438,7 @@
                     <div class="transliteration">Qad samiAAa Allahu qawla allatee tujadiluka fee zawjiha watashtakee ila Allahi waAllahu yasmaAAu tahawurakuma inna Allaha sameeAAun baseerun</div>
                     <p>"Allah has certainly heard the speech of the one who argues with you concerning her husband and directs her complaint to Allah. And Allah hears your dialogue; indeed, Allah is Hearing and Seeing."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/58/1/" target="_blank">Tafsir Ibn Kathir</a>:</strong> In his tafsir of this verse, Ibn Kathir explains that this demonstrates Allah's perfect hearing of all conversations, even private disputes between spouses. He mentions that this should make believers conscious of their speech at all times.
+                        <strong>Tafsir:</strong> This foundational verse establishes Allah's perfect hearing of all conversations, even private disputes between spouses. Scholars explain that this should make believers conscious of their speech at all times, knowing that Allah hears everything.
                     </div>
                 </div>
 
@@ -391,7 +449,7 @@
                     <div class="transliteration">Wa-in tajhar bialqawli fa-innahu yaAAlamu alssirra waakhfa</div>
                     <p>"And if you speak aloud - indeed, He knows the secret and what is even more hidden."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/20/7/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ibn Kathir comments that Allah's hearing encompasses not just spoken words but even the thoughts and intentions in people's hearts that are more hidden than secrets. This should increase our consciousness in both speech and thought.
+                        <strong>Tafsir:</strong> This verse demonstrates that Allah's hearing encompasses not just spoken words but even the thoughts and intentions in people's hearts that are more hidden than secrets. This should increase our consciousness in both speech and thought.
                     </div>
                 </div>
 
@@ -488,77 +546,62 @@
                 <p>In Surah Al-Baqarah (<a href="https://quranwbw.com/2:186" target="_blank">2:186</a>), Allah directly connects His attribute of hearing with responding to supplications, showing the practical implications of this divine name for believers.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
-            <a href="#top" class="back-to-top">Back To Top</a>
+            <div class="main-menu">
+                <a href="index.html">
+                    <span class="back-arrow">←</span> Back to Main Menu
+                </a>
+            </div>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
-                transliterations.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
-
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
             const indonesianContent = document.getElementById('indonesian-content');
+            const englishContent = document.getElementById('english-content');
+            const toggleButton = document.getElementById('languageToggle');
             
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
-            } else {
-                englishContent.classList.add('hidden');
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                englishContent.classList.add('hidden');
+                toggleButton.textContent = 'Switch to English';
+            } else {
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
         // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
+            const toggleButton = document.getElementById('transliterationToggle');
             
-            if (this.textContent === 'Show Transliteration') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    toggleButton.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    toggleButton.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
             } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
+                toggleButton.textContent = 'Dark Mode';
             }
         });
     </script>
