@@ -5,29 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>99 Asmaul Husna - Al-Mudhill (Yang Maha Menghinakan)</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --dua-bg: #f8f9fa;
+            --dua-border: #e0e0e0;
+            --shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --arabic-color: #4cc9f0;
+            --title-color: #e6e6e6;
+            --section-title-color: #4cc9f0;
+            --dua-bg: #1f4068;
+            --dua-border: #2d4059;
+            --shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
         }
         .transliteration {
@@ -40,7 +66,7 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
+            color: var(--title-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
             text-align: center;
@@ -52,17 +78,18 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--dua-border);
+            transition: background-color 0.3s, border-color 0.3s;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -95,6 +122,19 @@
             top: 60px;
             right: 20px;
             background: #2ecc71;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -164,12 +204,12 @@
         }
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -181,6 +221,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -191,7 +232,7 @@
             </div>
 
             <h1 class="name-title">25. Al-Mudhill (Yang Maha Menghinakan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a> dan <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></div>
 
             <div class="arabic">المُذِلُّ</div>
             <div class="transliteration">Transliterasi: Al-Mudhill</div>
@@ -336,7 +377,7 @@
                     </li>
                 </ol>
                 <p>Dalam kitab-kitab tafsir mu'tabarah dijelaskan bahwa kehinaan dari Allah selalu mengandung hikmah dan pelajaran. Surah Al-Hajj (<a href="https://quranwbw.com/22:18" target="_blank">22:18</a>) menegaskan bahwa semua makhluk akan tunduk kepada Allah, baik secara sukarela maupun terpaksa.</p>
-                <p><strong>Sumber:</strong> Tafsir Kementerian Agama RI dengan referensi tambahan dari myislam.org</p>
+                <p><strong>Sumber:</strong> Tafsir Kementerian Agama RI</p>
             </div>
 
             <div class="main-menu">
@@ -493,20 +534,21 @@
                             <li>Punishment of the people of Thamud (<a href="https://quranwbw.com/7:78" target="_blank">7:78</a>)</li>
                         </ul>
                     </li>
-                    <li><strong>Historical Patterns:</strong>
+                    <li><strong>Historical Lessons:</strong>
                         <ul>
-                            <li>Allah's sunnah of humbling arrogant civilizations (<a href="https://quranwbw.com/3:140" target="_blank">3:140</a>)</li>
-                            <li>The rise and fall of nations as divine lessons (<a href="https://quranwbw.com/6:6" target="_blank">6:6</a>)</li>
+                            <li>Divine law of alternating periods (<a href="https://quranwbw.com/3:140" target="_blank">3:140</a>)</li>
+                            <li>Destruction of arrogant civilizations (<a href="https://quranwbw.com/6:6" target="_blank">6:6</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Eschatological Humiliation:</strong>
                         <ul>
-                            <li>Disgrace of disbelievers on Judgment Day (<a href="https://quranwbw.com/40:60" target="_blank">40:60</a>)</li>
-                            <li>Humiliation of hypocrites (<a href="https://quranwbw.com/4:145" target="_blank">4:145</a>)</li>
+                            <li>Disbelievers on Judgment Day (<a href="https://quranwbw.com/40:60" target="_blank">40:60</a>)</li>
+                            <li>Hypocrites in Hellfire (<a href="https://quranwbw.com/4:145" target="_blank">4:145</a>)</li>
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-Hajj (<a href="https://quranwbw.com/22:18" target="_blank">22:18</a>), Allah describes all creation prostrating to Him, showing that ultimate honor comes from submission while humiliation comes from arrogance. The consistent Quranic theme is that Allah's humiliation is always just and serves as a warning to humanity.</p>
+                <p>In classical tafsir works, scholars emphasize that Allah's humiliation is always preceded by human transgression. Surah Al-Hajj (<a href="https://quranwbw.com/22:18" target="_blank">22:18</a>) reminds us that all creation submits to Allah willingly or unwillingly, and those who refuse voluntary submission will face compelled submission through humiliation.</p>
+                <p><strong>Source:</strong> Tafsir Ibn Kathir, Al-Muyassar, and classical tafsir works</p>
             </div>
 
             <div class="main-menu">
@@ -514,80 +556,57 @@
                     <span class="back-arrow">←</span> Back to Main Menu
                 </a>
             </div>
-            <a href="#top" class="back-to-top">Back To Top</a>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
-                transliterations.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
-
-        // Language toggle functionality
+        // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
             const indonesianContent = document.getElementById('indonesian-content');
+            const englishContent = document.getElementById('english-content');
+            const toggleButton = document.getElementById('languageToggle');
             
-            if (englishContent.classList.contains('hidden')) {
-                // Switch to English
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
-            } else {
-                // Switch to Indonesian
-                englishContent.classList.add('hidden');
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                englishContent.classList.add('hidden');
+                toggleButton.textContent = 'Switch to English';
+            } else {
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
-        // Transliteration toggle functionality
+        // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
+            const toggleButton = document.getElementById('transliterationToggle');
             
-            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
-                // Show transliteration
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    toggleButton.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    toggleButton.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
             } else {
-                // Hide transliteration
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
+                toggleButton.textContent = 'Dark Mode';
             }
         });
     </script>
