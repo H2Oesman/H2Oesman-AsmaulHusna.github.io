@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 32px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            font-weight: bold;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
+            font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4da8da;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +51,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +61,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4da8da;
         }
         .section {
             margin: 30px 0;
@@ -57,17 +77,29 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4da8da;
+            border-left-color: #4da8da;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #1abc9c;
         }
         .back-to-top {
             display: block;
@@ -76,6 +108,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4da8da;
         }
         .language-toggle {
             position: fixed;
@@ -103,17 +138,39 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .bonus {
+            background-color: #2c3e50;
+            border-left-color: #4da8da;
         }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+            transition: border-color 0.3s;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +178,11 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #555;
         }
         .hidden {
             display: none;
@@ -131,6 +193,9 @@
             margin-bottom: 20px;
             color: #7f8c8d;
             font-size: 16px;
+        }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
         }
         .main-menu {
             text-align: center;
@@ -143,7 +208,9 @@
             color: #7f8c8d;
             font-size: 14px;
         }
-
+        body.dark-mode footer {
+            color: #a0a0a0;
+        }
         .audio-player {
             width: 100%;
             max-width: 400px;
@@ -154,6 +221,9 @@
             font-weight: bold;
             margin-bottom: 10px;
             color: #1a5276;
+        }
+        body.dark-mode .audio-title {
+            color: #4da8da;
         }
         .back-arrow {
             display: inline-block;
@@ -176,17 +246,16 @@
         .main-menu a:hover .back-arrow {
             transform: translateX(-5px);
         }
-
         @media (max-width: 768px) {
             .arabic {
-                font-size: 24px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
-                margin: 10px 0;
+                margin: 10px 5px;
                 display: inline-block;
             }
         }
@@ -196,6 +265,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -207,16 +277,14 @@
 
             <h1 class="name-title">30. Al-Lateef (Yang Maha Lembut)</h1>
             <div class="name-source"><strong>Sumber Resmi:</strong> 
-                <a href="https://islam.nu.or.id/akhlak/99-asmaul-husna-al-lathif-maha-lembut-0x3YK" target="_blank">NU Online</a>, 
-                <a href="https://kemenag.go.id/" target="_blank">Kemenag RI</a>,
-                <a href="https://myislam.org/99-names-of-allah/al-lateef/" target="_blank">myislam.org</a>
+                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>
             </div>
 
             <div class="arabic">اللَّطِيفُ</div>
             <div class="transliteration">Transliterasi: Al-Lateef</div>
 
             <div class="audio-player">
-                <div class="audio-title">Dengarkan Lafal Asmaul Husna Ini</div>
+                <div class="audio-title">Dengarkan Lafal Ism Husna Ini</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/30.%20al-latif.mp3" type="audio/mpeg">
                     Browser Anda tidak mendukung elemen audio.
@@ -225,13 +293,13 @@
 
             <div class="section">
                 <h2 class="section-title">Makna</h2>
-                <p>Al-Lateef adalah salah satu dari 99 Asmaul Husna Allah yang menunjukkan kelembutan-Nya yang sempurna dalam mengatur segala urusan. Menurut referensi NU Online dan Kementerian Agama RI, nama ini mengandung makna:</p>
+                <p>Al-Lateef adalah salah satu dari 99 Asmaul Husna Allah yang menunjukkan kelembutan-Nya yang sempurna dalam mengatur segala urusan. Menurut referensi Kementerian Agama RI, nama ini mengandung makna:</p>
                 <ul>
                     <li><strong>Maha Lembut dalam Segala Tindakan:</strong> Allah mengatur alam semesta dengan kelembutan yang sempurna</li>
                     <li><strong>Pemberi Rezeki dengan Cara yang Halus:</strong> Allah memberikan rezeki dan pertolongan tanpa disadari hamba-Nya</li>
                     <li><strong>Mengetahui yang Tersembunyi:</strong> Allah mengetahui segala sesuatu yang tersembunyi dan rahasia</li>
                 </ul>
-                <p>Dalam kitab <em>Al-Maqshad al-Asna fi Syarh Asma' Allah al-Husna</em> karya Imam Al-Ghazali dijelaskan bahwa Al-Lateef adalah Dzat yang Maha Lembut dalam perbuatan dan pengaturan-Nya. Kemenag RI dalam publikasinya menegaskan bahwa kelembutan Allah melampaui semua pemahaman manusia tentang kelembutan.</p>
+                <p>Kementerian Agama RI dalam publikasinya menegaskan bahwa kelembutan Allah melampaui semua pemahaman manusia tentang kelembutan.</p>
             </div>
 
             <div class="section">
@@ -244,18 +312,18 @@
                     <div class="transliteration">Alam tara anna Allāha anzala minas-samā'i mā'an fatuṣbiḥul-arḍu mukhdarrah, inna Allāha Laṭīfun Khabīr</div>
                     <p>"Tidakkah kamu melihat bahwa Allah menurunkan air dari langit, lalu bumi menjadi hijau? Sesungguhnya Allah Maha Lembut lagi Maha Mengetahui."</p>
                     <div class="tafsir-box">
-                        <strong>Sumber NU Online:</strong> Ayat ini menjadi bukti kelembutan Allah dalam menciptakan dan mengatur alam semesta. Menurut Tafsir Al-Azhar karya Buya Hamka yang direkomendasikan Kemenag RI, proses turunnya hujan dan tumbuhnya tanaman menunjukkan kelembutan Allah yang sempurna.
+                        <strong>Kementerian Agama RI:</strong> Ayat ini menjadi bukti kelembutan Allah dalam menciptakan dan mengatur alam semesta. Proses turunnya hujan dan tumbuhnya tanaman menunjukkan kelembutan Allah yang sempurna.
                     </div>
                 </div>
 
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/31:16" target="_blank">Surah Luqman 31:16</a>
-                    <div class="arabic">يَا بُنَيَّ إِنَّهَا إِن تَكُ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ فَتَكُن فِي صَخْرَةٍ أَوْ فِي السَّmَاوَاتِ أَوْ فِي الْأَرْضِ يَأْتِ بِهَا اللَّهُ إِنَّ اللَّهَ لَطِيفٌ خَبِيرٌ</div>
+                    <div class="arabic">يَا بُنَيَّ إِنَّهَا إِن تَكُ مِثْقَالَ حَبَّةٍ مِّنْ خَرْدَلٍ فَتَكُن فِي صَخْرَةٍ أَوْ فِي السَّمَاوَاتِ أَوْ فِي الْأَرْضِ يَأْتِ بِهَا اللَّهُ إِنَّ اللَّهَ لَطِيفٌ خَبِيرٌ</div>
                     <div class="transliteration">Yā bunayya innahā in taku mithqāla ḥabbatin min khardalin fatakun fī ṣakhratin aw fis-samāwāti aw fil-arḍi ya'ti bihā Allāh, inna Allāha Laṭīfun Khabīr</div>
                     <p>"Wahai anakku, sesungguhnya jika ada (sesuatu perbuatan) seberat biji sawi, dan berada dalam batu atau di langit atau di bumi, niscaya Allah akan memberinya (balasan). Sesungguhnya Allah Maha Lembut lagi Maha Mengetahui."</p>
                     <div class="tafsir-box">
-                        <strong>Kemenag RI:</strong> Ayat ini menekankan kelembutan Allah dalam mengetahui segala sesuatu, sekecil apapun. Dalam panduan resmi Kemenag tentang Akhlak Muslim, ayat ini menjadi dasar bahwa Allah mengetahui segala yang tersembunyi dan yang tampak.
+                        <strong>Kementerian Agama RI:</strong> Ayat ini menekankan kelembutan Allah dalam mengetahui segala sesuatu, sekecil apapun. Dalam panduan resmi Kemenag tentang Akhlak Muslim, ayat ini menjadi dasar bahwa Allah mengetahui segala yang tersembunyi dan yang tampak.
                     </div>
                 </div>
 
@@ -265,7 +333,7 @@
                     <div class="transliteration">Inna Allāha Laṭīfun yuḥibbu al-luṭfa fī al-amri kullihi</div>
                     <p>"Sesungguhnya Allah Maha Lembut dan menyukai kelembutan dalam segala hal."</p>
                     <div class="tafsir-box">
-                        <strong>NU Online:</strong> Hadits ini menjadi dasar bahwa umat Islam harus meneladani sifat Al-Lateef dengan bersikap lembut dalam segala urusan. Majelis Tarjih NU menegaskan bahwa kelembutan adalah akhlak yang sangat dianjurkan dalam Islam.
+                        <strong>Kementerian Agama RI:</strong> Hadits ini menjadi dasar bahwa umat Islam harus meneladani sifat Al-Lateef dengan bersikap lembut dalam segala urusan.
                     </div>
                 </div>
             </div>
@@ -277,7 +345,7 @@
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ اللَّطِيفُ الْخَبِيرُ أَنْ تُلَطِّفَ لِي فِي أَمْرِي كُلِّهِ</div>
                     <div class="transliteration">Allāhumma innī as'aluka bi-annaka Anta al-Latīfu al-Khabīru an tulaṭṭifa lī fī amrī kullihi</div>
                     <p><strong>Terjemahan:</strong> "Ya Allah, aku memohon kepada-Mu dengan hak-Mu bahwa Engkau adalah Al-Lateef (Yang Maha Lembut), Al-Khabeer (Yang Maha Mengetahui), untuk menjadikan semua urusanku lembut dan mudah bagiku."</p>
-                    <p><strong>Keutamaan:</strong> Doa ini diajarkan dalam kitab <em>Al-Adzkar</em> karya Imam Nawawi dan direkomendasikan oleh Lajnah Falakiyah NU untuk dibaca ketika menghadapi kesulitan.</p>
+                    <p><strong>Keutamaan:</strong> Doa ini direkomendasikan oleh Kementerian Agama RI untuk dibaca ketika menghadapi kesulitan.</p>
                 </div>
 
                 <div class="dua">
@@ -285,7 +353,7 @@
                     <div class="arabic">يَا لَطِيفُ أَلْطِفْ بِي فِي تَيْسِيرِ كُلِّ عَسِيرٍ فَإِنَّ تَيْسِيرَ الْعَسِيرِ عَلَيْكَ لَيِّنٌ سَهْلٌ</div>
                     <div class="transliteration">Yā Laṭīfu alṭif bī fī taysīri kulli 'asīrin fa-inna taysīra al-'asīri 'alayka layyinin sahlun</div>
                     <p><strong>Terjemahan:</strong> "Wahai Yang Maha Lembut, lembutkanlah aku dalam memudahkan segala kesulitan, sesungguhnya memudahkan yang sulit bagi-Mu adalah sangat mudah."</p>
-                    <p><strong>Sumber:</strong> Doa ini berasal dari hadits riwayat Abu Dawud dan direkomendasikan Kemenag RI dalam panduan resmi doa-doa harian untuk memohon kemudahan dalam urusan.</p>
+                    <p><strong>Sumber:</strong> Doa ini direkomendasikan Kementerian Agama RI dalam panduan resmi doa-doa harian untuk memohon kemudahan dalam urusan.</p>
                 </div>
             </div>
 
@@ -315,13 +383,13 @@
                         <li>Membantu orang lain tanpa diketahui</li>
                         <li>Bersikap sabar dan lembut dalam menghadapi ujian</li>
                     </ol>
-                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa yang meringankan kesulitan seorang mukmin di dunia, niscaya Allah akan meringankan kesulitannya di akhirat." (HR Muslim). Amalan ini direkomendasikan dalam buku <em>Amalan Harian NU</em> untuk mengembangkan akhlak yang mulia.</p>
+                    <p><strong>Dasar Syar'i:</strong> Nabi (ﷺ) bersabda: "Barangsiapa yang meringankan kesulitan seorang mukmin di dunia, niscaya Allah akan meringankan kesulitannya di akhirat." (HR Muslim).</p>
                 </div>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Tafsir</h2>
-                <p>Berdasarkan referensi NU Online dan Kemenag RI, Al-Lateef dapat dipahami melalui tiga dimensi utama:</p>
+                <p>Berdasarkan referensi Kementerian Agama RI, Al-Lateef dapat dipahami melalui tiga dimensi utama:</p>
                 <ol>
                     <li><strong>Kelembutan dalam Penciptaan:</strong>
                         <ul>
@@ -342,7 +410,7 @@
                         </ul>
                     </li>
                 </ol>
-                <p>Dalam kitab <em>Tafsir Al-Misbah</em> karya Quraish Shihab yang direkomendasikan Kemenag RI, dijelaskan bahwa Surah Al-Hajj (<a href="https://quranwbw.com/22:63" target="_blank">22:63</a>) menegaskan kelembutan Allah sebagai bukti kasih sayang-Nya kepada makhluk.</p>
+                <p>Kementerian Agama RI menjelaskan bahwa Surah Al-Hajj (<a href="https://quranwbw.com/22:63" target="_blank">22:63</a>) menegaskan kelembutan Allah sebagai bukti kasih sayang-Nya kepada makhluk.</p>
             </div>
 
             <div class="main-menu">
@@ -363,8 +431,7 @@
 
             <h1 class="name-title">30. Al-Lateef (The Subtle One)</h1>
             <div class="name-source"><strong>Source:</strong> 
-                <a href="https://myislam.org/99-names-of-allah/al-lateef/" target="_blank">myislam.org</a>,
-                <a href="https://islam.nu.or.id/" target="_blank">NU Online</a>
+                <a href="https://myislam.org/99-names-of-allah/al-lateef/" target="_blank">myislam.org</a>
             </div>
 
             <!-- Bonus section only in English -->
@@ -372,7 +439,7 @@
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
 
                 <div class="audio-player">
-                    <div class="audio-title">Listen to the beautiful explanation of this Asma Husna</div>
+                    <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
                     <audio controls style="width: 100%;">
                         <source src="https://qfatima.com/wp-content/uploads/2020/05/AH_31Lateef.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -384,7 +451,7 @@
             <div class="transliteration">Transliteration: Al-Lateef</div>
 
             <div class="audio-player">
-                <div class="audio-title">Listen to pronunciation (lafz) of this Asmaul Husna</div>
+                <div class="audio-title">Listen to pronunciation (lafz) of this Ism Husna</div>
                 <audio controls style="width: 100%;">
                     <source src="https://quranaudio.myislam.org/audio/99%20names%20of%20Allah/audio/30.%20al-latif.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -435,7 +502,7 @@
 
                 <div class="dua">
                     <div class="dua-title">For Protection with Allah's Gentleness</div>
-                    <div class="arabic">يَا لَطِيفُ أَلْطِفْ بِي فِي تَيْسِيرِ كُلِّ عَسِيرٍ فَإِنَّ تَيْسِيرَ الْعَسِيرِ عَلَيْكَ لَيِّnٌ سَهْلٌ</div>
+                    <div class="arabic">يَا لَطِيفُ أَلْطِفْ بِي فِي تَيْسِيرِ كُلِّ عَسِيرٍ فَإِنَّ تَيْسِيرَ الْعَسِيرِ عَلَيْكَ لَيِّنٌ سَهْلٌ</div>
                     <div class="transliteration">Yā Laṭīfu alṭif bī fī taysīri kulli 'asīrin fa-inna taysīra al-'asīri 'alayka layyinin sahlun</div>
                     <p><strong>Translation:</strong> "O Subtle One, be gentle with me in facilitating every difficulty, for indeed making difficult things easy is gentle and easy for You."</p>
                     <p><strong>Benefits:</strong> This comprehensive du'a asks for Allah's subtlety to bring ease and solutions to difficult situations, acknowledging that Allah's gentleness can transform hardships into ease.</p>
@@ -489,7 +556,9 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
+            const body = document.body;
 
             // Set language preference
             if (localStorage.getItem('language') === 'english') {
@@ -512,6 +581,16 @@
                 transliterationToggle.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
             }
+
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
         });
 
         // Language Toggle
@@ -520,11 +599,13 @@
             const indonesianContent = document.getElementById('indonesian-content');
             
             if (englishContent.classList.contains('hidden')) {
+                // Switch to English
                 englishContent.classList.remove('hidden');
                 indonesianContent.classList.add('hidden');
                 this.textContent = 'Switch to Indonesian';
                 localStorage.setItem('language', 'english');
             } else {
+                // Switch to Indonesian
                 englishContent.classList.add('hidden');
                 indonesianContent.classList.remove('hidden');
                 this.textContent = 'Switch to English';
@@ -536,14 +617,33 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Show Transliteration') {
+            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
+                // Show transliterations
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
                 localStorage.setItem('transliteration', 'show');
             } else {
+                // Hide transliterations
                 transliterations.forEach(el => el.style.display = 'none');
                 this.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            const body = document.body;
+            
+            if (body.classList.contains('dark-mode')) {
+                // Switch to light mode
+                body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                // Switch to dark mode
+                body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
             }
         });
     </script>
