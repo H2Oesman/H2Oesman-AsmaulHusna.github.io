@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,24 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            color: #e0e0e0;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4a9eda;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +52,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +62,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4a9eda;
         }
         .section {
             margin: 30px 0;
@@ -57,6 +78,10 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4a9eda;
+            border-left-color: #4a9eda;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
@@ -64,10 +89,17 @@
             margin: 25px 0;
             border: 1px solid #e0e0e0;
         }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
+        }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #1abc9c;
         }
         .back-to-top {
             display: block;
@@ -76,6 +108,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4a9eda;
         }
         .language-toggle {
             position: fixed;
@@ -103,6 +138,19 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
@@ -110,10 +158,17 @@
             margin: 20px 0;
             border-left: 5px solid #3498db;
         }
+        body.dark-mode .bonus {
+            background-color: #2a3a4a;
+            border-left-color: #4a9eda;
+        }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +176,10 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #555;
         }
         .hidden {
             display: none;
@@ -132,6 +191,9 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
+        }
         .main-menu {
             text-align: center;
             margin: 15px 0;
@@ -142,6 +204,9 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
+        }
+        body.dark-mode footer {
+            color: #a0a0a0;
         }
 
         .audio-player {
@@ -155,15 +220,18 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4a9eda;
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,6 +243,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -182,8 +251,7 @@
 
             <h1 class="name-title">36. Al-Aliyy (Yang Maha Tinggi)</h1>
             <div class="name-source"><strong>Sumber:</strong> 
-                <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>,
-                <a href="https://myislam.org/99-names-of-allah/" target="_blank">myislam.org</a>
+                <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>
             </div>
 
             <div class="arabic">العَلِيُّ</div>
@@ -457,7 +525,7 @@
                         <li>Before worship, say "Bismillah" with awareness of Allah's highness</li>
                         <li>Maintain consistency in worship</li>
                     </ol>
-                    <p><strong>Historical Basis:</strong> The Prophet (peace be upon him) said: "Allah the Most High says: 'My servant continues to draw near to Me with voluntary worship until I love him.'" (Bukhari). This practice helps us draw closer to The Most High.</p>
+                    <p><strong>Historical Basis:</strong> Prophet Muhammad (peace be upon him) said: "Allah the Most High says: 'My servant continues to draw near to Me with supererogatory works so that I shall love him.'" (Bukhari). This practice helps draw closer to Allah Al-Aliyy through consistent voluntary worship.</p>
                 </div>
             </div>
 
@@ -468,13 +536,13 @@
                     <li><strong>Elevation of Essence:</strong>
                         <ul>
                             <li>Allah is above the Throne (<a href="https://quranwbw.com/20:5" target="_blank">20:5</a>)</li>
-                            <li>Exalted above all His creation (<a href="https://quranwbw.com/16:50" target="_blank">16:50</a>)</li>
+                            <li>Most High above all creation (<a href="https://quranwbw.com/16:50" target="_blank">16:50</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Elevation of Attributes:</strong>
                         <ul>
                             <li>His attributes are perfect without deficiency (<a href="https://quranwbw.com/42:11" target="_blank">42:11</a>)</li>
-                            <li>Exalted above any likeness to creation (<a href="https://quranwbw.com/112:4" target="_blank">112:4</a>)</li>
+                            <li>Most High from any resemblance to creation (<a href="https://quranwbw.com/112:4" target="_blank">112:4</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Elevation of Dominion:</strong>
@@ -484,83 +552,57 @@
                         </ul>
                     </li>
                 </ol>
-                <p>In Surah Al-Mulk (<a href="https://quranwbw.com/67:16-17" target="_blank">67:16-17</a>), Allah reminds that He as The Most High has power to destroy the earth and its contents. The repetition of "Al-Aliyy" in the Quran emphasizes Allah's elevation in all aspects.</p>
+                <p>In Surah Al-Mulk (<a href="https://quranwbw.com/67:16-17" target="_blank">67:16-17</a>), Allah reminds that He as Al-Aliyy has power to destroy the earth and its inhabitants. The repetition of "Al-Aliyy" in the Quran emphasizes Allah's supremacy in all aspects.</p>
             </div>
 
             <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
-            <a href="#top" class="back-to-top">Back To Top</a>
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            // Language toggle
-            const languageToggle = document.getElementById('languageToggle');
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
             const indonesianContent = document.getElementById('indonesian-content');
             const englishContent = document.getElementById('english-content');
             
-            // Check saved language preference
-            const savedLanguage = localStorage.getItem('languagePreference');
-            if (savedLanguage === 'english') {
-                indonesianContent.classList.add('hidden');
-                englishContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
                 englishContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to English';
-            }
-            
-            // Language toggle functionality
-            languageToggle.addEventListener('click', function() {
-                if (indonesianContent.classList.contains('hidden')) {
-                    // Switch to Indonesian
-                    indonesianContent.classList.remove('hidden');
-                    englishContent.classList.add('hidden');
-                    languageToggle.textContent = 'Switch to English';
-                    localStorage.setItem('languagePreference', 'indonesian');
-                } else {
-                    // Switch to English
-                    indonesianContent.classList.add('hidden');
-                    englishContent.classList.remove('hidden');
-                    languageToggle.textContent = 'Switch to Indonesian';
-                    localStorage.setItem('languagePreference', 'english');
-                }
-            });
-            
-            // Transliteration toggle
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterationElements = document.querySelectorAll('.transliteration');
-            
-            // Check saved transliteration preference
-            const savedTransliteration = localStorage.getItem('transliterationPreference');
-            if (savedTransliteration === 'show') {
-                transliterationElements.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
+                this.textContent = 'Switch to English';
             } else {
-                transliterationElements.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                this.textContent = 'Switch to Indonesian';
             }
-            
-            // Transliteration toggle functionality
-            transliterationToggle.addEventListener('click', function() {
-                if (transliterationElements[0].style.display === 'none' || transliterationElements[0].style.display === '') {
-                    // Show transliteration
-                    transliterationElements.forEach(el => el.style.display = 'block');
-                    transliterationToggle.textContent = 'Hide Transliteration';
-                    localStorage.setItem('transliterationPreference', 'show');
+        });
+
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            transliterations.forEach(trans => {
+                if (trans.style.display === 'block') {
+                    trans.style.display = 'none';
+                    this.textContent = 'Show Transliteration';
                 } else {
-                    // Hide transliteration
-                    transliterationElements.forEach(el => el.style.display = 'none');
-                    transliterationToggle.textContent = 'Show Transliteration';
-                    localStorage.setItem('transliterationPreference', 'hide');
+                    trans.style.display = 'block';
+                    this.textContent = 'Hide Transliteration';
                 }
             });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = 'Light Mode';
+            } else {
+                this.textContent = 'Dark Mode';
+            }
         });
     </script>
 </body>
