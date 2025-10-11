@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,24 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            color: #e0e0e0;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4dabf7;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +52,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +62,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4dabf7;
         }
         .section {
             margin: 30px 0;
@@ -57,6 +78,10 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4dabf7;
+            border-left-color: #4dabf7;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
@@ -64,10 +89,17 @@
             margin: 25px 0;
             border: 1px solid #e0e0e0;
         }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
+        }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #20c997;
         }
         .back-to-top {
             display: block;
@@ -76,6 +108,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4dabf7;
         }
         .language-toggle {
             position: fixed;
@@ -103,6 +138,19 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
@@ -110,10 +158,17 @@
             margin: 20px 0;
             border-left: 5px solid #3498db;
         }
+        body.dark-mode .bonus {
+            background-color: #2c3e50;
+            border-left-color: #4dabf7;
+        }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +176,10 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #666652;
         }
         .hidden {
             display: none;
@@ -131,6 +190,9 @@
             margin-bottom: 20px;
             color: #7f8c8d;
             font-size: 16px;
+        }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
         }
         .main-menu {
             text-align: center;
@@ -143,6 +205,9 @@
             color: #7f8c8d;
             font-size: 14px;
         }
+        body.dark-mode footer {
+            color: #a0a0a0;
+        }
 
         .audio-player {
             width: 100%;
@@ -154,6 +219,9 @@
             font-weight: bold;
             margin-bottom: 10px;
             color: #1a5276;
+        }
+        body.dark-mode .audio-title {
+            color: #4dabf7;
         }
         .back-arrow {
             display: inline-block;
@@ -179,14 +247,14 @@
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
-                margin: 10px 0;
+                margin: 10px 5px;
                 display: inline-block;
             }
         }
@@ -196,6 +264,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -207,8 +276,7 @@
 
             <h1 class="name-title">33. Al-Azeem (Yang Maha Agung)</h1>
             <div class="name-source"><strong>Sumber Resmi:</strong> 
-                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>,
-                <a href="https://myislam.org/99-names-of-allah/al-azeem/" target="_blank">myislam.org</a>
+                <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a>
             </div>
 
             <div class="arabic">العَظِيمُ</div>
@@ -485,7 +553,9 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
+            const body = document.body;
 
             // Set language preference
             if (localStorage.getItem('language') === 'english') {
@@ -507,6 +577,16 @@
                 transliterations.forEach(el => el.style.display = 'none');
                 transliterationToggle.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
             }
         });
 
@@ -532,7 +612,7 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Show Transliteration') {
+            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
                 localStorage.setItem('transliteration', 'show');
@@ -543,12 +623,19 @@
             }
         });
 
-        // Back to top functionality
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            });
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            const body = document.body;
+            
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            }
         });
     </script>
 </body>
