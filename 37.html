@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,24 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            color: #e0e0e0;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4a9eda;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +52,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +62,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4a9eda;
         }
         .section {
             margin: 30px 0;
@@ -57,6 +78,10 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4a9eda;
+            border-left-color: #4a9eda;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
@@ -64,10 +89,17 @@
             margin: 25px 0;
             border: 1px solid #e0e0e0;
         }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
+        }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #1abc9c;
         }
         .back-to-top {
             display: block;
@@ -76,6 +108,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4a9eda;
         }
         .language-toggle {
             position: fixed;
@@ -103,6 +138,19 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
@@ -110,10 +158,17 @@
             margin: 20px 0;
             border-left: 5px solid #3498db;
         }
+        body.dark-mode .bonus {
+            background-color: #2a3a4a;
+            border-left-color: #4a9eda;
+        }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +176,10 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #555;
         }
         .hidden {
             display: none;
@@ -132,6 +191,9 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
+        }
         .main-menu {
             text-align: center;
             margin: 15px 0;
@@ -142,6 +204,9 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
+        }
+        body.dark-mode footer {
+            color: #a0a0a0;
         }
 
         .audio-player {
@@ -155,15 +220,18 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4a9eda;
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -174,14 +242,17 @@
 <body>
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</div>
+        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
             
             <h1 class="name-title">37. Al-Kabeer (Yang Maha Besar)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-kabeer/" target="_blank">myislam.org/99-names-of-allah/al-kabeer/</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
+            <div class="name-source"><strong>Sumber:</strong> 
+                <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>
+            </div>
 
             <div class="arabic">الكَبِيرُ</div>
             <div class="transliteration">Transliterasi: Al-Kabeer</div>
@@ -215,7 +286,7 @@
                     <div class="transliteration">Dhalika bi-anna Allaha huwa al-Haqq wa anna ma yad'una min dunihi al-batilu wa anna Allaha huwa al-'Aliyy al-Kabeer</div>
                     <p>"Demikianlah, karena sesungguhnya Allah, Dialah Yang Hak dan sesungguhnya apa saja yang mereka seru selain dari Allah, itulah yang batil, dan sesungguhnya Allah, Dialah Yang Maha Tinggi lagi Maha Besar."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/31/30/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Ayat ini menegaskan kebesaran mutlak Allah yang bertentangan dengan kebatilan semua objek penyembahan selain-Nya. Menurut Kementerian Agama RI, kebesaran Allah ini mencakup segala aspek keberadaan dan kekuasaan-Nya.
+                        <strong>Tafsir Kemenag RI:</strong> Ayat ini menegaskan kebesaran mutlak Allah yang bertentangan dengan kebatilan semua objek penyembahan selain-Nya. Menurut Kementerian Agama RI, kebesaran Allah ini mencakup segala aspek keberadaan dan kekuasaan-Nya.
                     </div>
                 </div>
 
@@ -226,7 +297,7 @@
                     <div class="transliteration">Dhalika bi-anna Allaha huwa al-Haqq wa anna ma yad'una min dunihi huwa al-batilu wa anna Allaha huwa al-'Aliyy al-Kabeer</div>
                     <p>"Demikianlah, karena sesungguhnya Allah, Dialah Yang Hak dan sesungguhnya apa saja yang mereka seru selain dari Allah, itulah yang batil, dan sesungguhnya Allah, Dialah Yang Maha Tinggi lagi Maha Besar."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/22/62/" target="_blank">Tafsir Ibn Kathir</a>:</strong> Menurut Kementerian Agama RI, pengulangan penyebutan nama Al-Kabeer dalam ayat ini menunjukkan pentingnya menyadari kebesaran Allah dalam kehidupan sehari-hari.
+                        <strong>Penjelasan Kemenag RI:</strong> Menurut Kementerian Agama RI, pengulangan penyebutan nama Al-Kabeer dalam ayat ini menunjukkan pentingnya menyadari kebesaran Allah dalam kehidupan sehari-hari.
                     </div>
                 </div>
 
@@ -237,7 +308,7 @@
                     <div class="transliteration">'Alimul-ghaybi wash-shahadati al-Kabeeru al-Muta'al</div>
                     <p>"Yang mengetahui semua yang ghaib dan yang nyata, Yang Maha Besar, Maha Tinggi."</p>
                     <div class="tafsir-box">
-                        <strong>Keterangan:</strong> Menurut Kementerian Agama RI, ayat ini menunjukkan bahwa kebesaran Allah mencakup pengetahuan-Nya atas segala yang tersembunyi dan yang tampak.
+                        <strong>Keterangan Kemenag RI:</strong> Menurut Kementerian Agama RI, ayat ini menunjukkan bahwa kebesaran Allah mencakup pengetahuan-Nya atas segala yang tersembunyi dan yang tampak.
                     </div>
                 </div>
 
@@ -247,7 +318,7 @@
                     <div class="transliteration">Inna Allaha 'azza wa jalla kataba kitaban qabla an yakhluqa as-samawati wal-arda bi-alfay 'am wa huwa manzilun 'indahu fawqa al-'arshi inna rahmati sabaqat ghadabi</div>
                     <p>"Sesungguhnya Allah 'Azza wa Jalla telah menulis suatu kitab sebelum menciptakan langit dan bumi dua ribu tahun, dan kitab itu berada di sisi-Nya di atas 'Arsy, (yang berbunyi): 'Sesungguhnya rahmat-Ku mendahului kemurkaan-Ku.'"</p>
                     <div class="tafsir-box">
-                        <strong>Konteks:</strong> Hadits Qudsi ini menunjukkan kebesaran Allah dalam pengaturan segala urusan. Menurut Kementerian Agama RI, meskipun Allah Maha Besar, rahmat-Nya sangat dekat dengan hamba-Nya yang beriman.
+                        <strong>Konteks Kemenag RI:</strong> Hadits Qudsi ini menunjukkan kebesaran Allah dalam pengaturan segala urusan. Menurut Kementerian Agama RI, meskipun Allah Maha Besar, rahmat-Nya sangat dekat dengan hamba-Nya yang beriman.
                     </div>
                 </div>
             </div>
@@ -287,6 +358,7 @@
                         <li>Meningkatkan kesadaran akan keagungan Allah</li>
                         <li>Mengembangkan sikap tawadhu' (rendah hati)</li>
                         <li>Mengikuti sunnah Nabi Muhammad SAW dalam berdzikir</li>
+                        <li>Dianjurkan dalam panduan ibadah Kementerian Agama RI</li>
                     </ul>
                 </div>
 
@@ -339,7 +411,7 @@
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
             
             <h1 class="name-title">37. Al-Kabeer (The All-Great)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-kabeer/" target="_blank">myislam.org/99-names-of-allah/al-kabeer/</a></div>
@@ -389,7 +461,7 @@
                     <div class="transliteration">Dhalika bi-anna Allaha huwa al-Haqq wa anna ma yad'una min dunihi al-batilu wa anna Allaha huwa al-'Aliyy al-Kabeer</div>
                     <p>"That is because Allah is the Truth, and that which they call upon other than Him is falsehood, and because Allah is the Most High, the Grand."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/31/30/" target="_blank">Tafsir Ibn Kathir</a>:</strong> This verse establishes Allah's absolute greatness in contrast to the falsehood of all other objects of worship. Scholars explain that Allah's greatness encompasses all aspects of existence and dominion.
+                        <strong>Explanation:</strong> This verse establishes Allah's absolute greatness in contrast to the falsehood of all other objects of worship. Scholars explain that Allah's greatness encompasses all aspects of existence and dominion.
                     </div>
                 </div>
 
@@ -400,7 +472,7 @@
                     <div class="transliteration">Dhalika bi-anna Allaha huwa al-Haqq wa anna ma yad'una min dunihi huwa al-batilu wa anna Allaha huwa al-'Aliyy al-Kabeer</div>
                     <p>"That is because Allah is the Truth, and that which they call upon other than Him is falsehood, and because Allah is the Most High, the Grand."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/22/62/" target="_blank">Tafsir Ibn Kathir</a>:</strong> The repetition of the name Al-Kabeer in this verse shows the importance of recognizing Allah's greatness in daily life.
+                        <strong>Explanation:</strong> The repetition of the name Al-Kabeer in this verse shows the importance of recognizing Allah's greatness in daily life.
                     </div>
                 </div>
 
@@ -503,73 +575,54 @@
                 <p>In Surah Saba (<a href="https://quranwbw.com/34:23" target="_blank">34:23</a>), Allah affirms that intercession with Him is of no benefit except for whom He permits. This shows the greatness of Allah's authority in arranging all matters.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
+        // Language Toggle
+        document.getElementById('languageToggle').addEventListener('click', function() {
             const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
+            const englishContent = document.getElementById('english-content');
+            
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('showTransliteration') === 'false') {
-                transliterations.forEach(t => t.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
+                englishContent.classList.add('hidden');
+                this.textContent = 'Switch to English';
             } else {
-                transliterations.forEach(t => t.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
-                localStorage.setItem('showTransliteration', 'true');
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                this.textContent = 'Switch to Indonesian';
             }
+        });
 
-            // Language toggle functionality
-            languageToggle.addEventListener('click', function() {
-                if (englishContent.classList.contains('hidden')) {
-                    englishContent.classList.remove('hidden');
-                    indonesianContent.classList.add('hidden');
-                    languageToggle.textContent = 'Switch to Indonesian';
-                    localStorage.setItem('language', 'english');
+        // Transliteration Toggle
+        document.getElementById('transliterationToggle').addEventListener('click', function() {
+            const transliterations = document.querySelectorAll('.transliteration');
+            transliterations.forEach(trans => {
+                if (trans.style.display === 'block') {
+                    trans.style.display = 'none';
+                    this.textContent = 'Show Transliteration';
                 } else {
-                    englishContent.classList.add('hidden');
-                    indonesianContent.classList.remove('hidden');
-                    languageToggle.textContent = 'Switch to English';
-                    localStorage.setItem('language', 'indonesian');
+                    trans.style.display = 'block';
+                    this.textContent = 'Hide Transliteration';
                 }
             });
+        });
 
-            // Transliteration toggle functionality
-            transliterationToggle.addEventListener('click', function() {
-                if (transliterations[0].style.display === 'none') {
-                    transliterations.forEach(t => t.style.display = 'block');
-                    transliterationToggle.textContent = 'Hide Transliteration';
-                    localStorage.setItem('showTransliteration', 'true');
-                } else {
-                    transliterations.forEach(t => t.style.display = 'none');
-                    transliterationToggle.textContent = 'Show Transliteration';
-                    localStorage.setItem('showTransliteration', 'false');
-                }
-            });
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = 'Light Mode';
+            } else {
+                this.textContent = 'Dark Mode';
+            }
         });
     </script>
 </body>
