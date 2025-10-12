@@ -5,29 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>40. Al-Haseeb (Yang Maha Membuat Perhitungan) - 99 Nama Allah</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --shadow-color: rgba(0,0,0,0.1);
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #16a085;
+            --arabic-color: #1a5276;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --container-bg: #2d2d2d;
+            --shadow-color: rgba(0,0,0,0.3);
+            --primary-color: #5dade2;
+            --secondary-color: #3498db;
+            --accent-color: #1abc9c;
+            --arabic-color: #5dade2;
+            --section-bg: #3d3d3d;
+            --border-color: #555;
+            --tafsir-bg: #3d3d2d;
+            --tafsir-border: #665c00;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px var(--shadow-color);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'KFGQPC Uthmanic Script HAFS', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
         }
         .transliteration {
@@ -40,8 +72,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--text-color);
+            border-bottom: 3px solid var(--primary-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -52,28 +84,29 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--secondary-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--section-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s, border-color 0.3s;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
-            color: #16a085;
+            color: var(--accent-color);
             margin-bottom: 10px;
         }
         .back-to-top {
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +114,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--primary-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -89,6 +122,7 @@
             z-index: 100;
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: none;
         }
         .transliteration-toggle {
             position: fixed;
@@ -102,25 +136,41 @@
             z-index: 100;
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: none;
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: none;
         }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--primary-color);
         }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
-            border-bottom: 1px dashed #ddd;
+            border-bottom: 1px dashed var(--border-color);
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
+            transition: background-color 0.3s, border-color 0.3s;
         }
         .hidden {
             display: none;
@@ -153,7 +203,7 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--arabic-color);
         }
 
         @media (max-width: 768px) {
@@ -163,7 +213,7 @@
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -173,13 +223,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="language-toggle" id="languageToggle">Switch to English</div>
-        <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
-
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+        <button class="language-toggle" id="languageToggle">Switch to English</button>
+        <button class="transliteration-toggle" id="transliterationToggle">Hide Transliteration</button>
+        <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
+            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            
             <h1 class="name-title">40. Al-Haseeb (Yang Maha Membuat Perhitungan)</h1>
             <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-haseeb/" target="_blank">myislam.org/99-names-of-allah/al-haseeb/</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
 
@@ -222,7 +273,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Al-Quran:</strong> 
                     <a href="https://quranwbw.com/33:39" target="_blank">Surah Al-Ahzab 33:39</a>
-                    <div class="arabic">ٱلَّذِينَ يُبَلِّغُونَ رِسَـٰلَـٰتِ ٱللَّهِ وَيَخْشَوْنَهُۥ وَلَا يَخْشَوْنَ أَحَدًا إِلَّا ٱللَّهَ ۗ وَكَفَىٰ بِٱللَّهِ حَسِيبًۭا</div>
+                    <div class="arabic">ٱلَّذِينَ يُبَلِّغُونَ رِسَـٰلَـٰتِ ٱللَّهِ وَيَخْشَوْنَهُۥ وَلَا يَخْشَوْنَ أَحَدًا إِلَّا ٱللَّهَ ۗ وَكَفَىٰ بِٱللَّهِ حَسِيبًۭa</div>
                     <div class="transliteration">Alladhīna yuballighūna risālāti llāhi wa yakhshawnahū wa lā yakhshawna aḥadan illā llāh, wa kafā bi-llāhi ḥasībā</div>
                     <p>"(Yaitu) orang-orang yang menyampaikan risalah-risalah Allah, mereka takut kepada-Nya dan mereka tidak merasa takut kepada siapa pun selain kepada Allah. Dan cukuplah Allah sebagai pembuat perhitungan."</p>
                     <div class="tafsir-box">
@@ -333,11 +384,11 @@
 
         <!-- English Content (Hidden by Default) -->
         <div id="english-content" class="hidden">
+            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            
             <h1 class="name-title">40. Al-Haseeb (The Reckoner)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-haseeb/" target="_blank">myislam.org/99-names-of-allah/al-haseeb/</a></div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
-            
             <!-- Bonus section only in English -->
             <div class="bonus">
                 <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
@@ -493,73 +544,56 @@
     </div>
 
     <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
+        © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
     </footer>
 
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
+        // Language Toggle
+        const languageToggle = document.getElementById('languageToggle');
+        const indonesianContent = document.getElementById('indonesian-content');
+        const englishContent = document.getElementById('english-content');
 
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
+        languageToggle.addEventListener('click', function() {
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
+                englishContent.classList.add('hidden');
                 languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+            } else {
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                languageToggle.textContent = 'Switch to Indonesian';
             }
+        });
 
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
+        // Transliteration Toggle
+        const transliterationToggle = document.getElementById('transliterationToggle');
+        const transliterations = document.querySelectorAll('.transliteration');
+
+        transliterationToggle.addEventListener('click', function() {
+            if (transliterations[0].style.display === 'none') {
                 transliterations.forEach(el => el.style.display = 'block');
                 transliterationToggle.textContent = 'Hide Transliteration';
             } else {
                 transliterations.forEach(el => el.style.display = 'none');
                 transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
             }
         });
 
-        // Language Toggle
-        document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                darkModeToggle.textContent = 'Light Mode';
             } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                darkModeToggle.textContent = 'Dark Mode';
             }
         });
 
-        // Transliteration Toggle
-        document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            
-            if (this.textContent === 'Show Transliteration') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
+        // Initialize transliteration state
+        transliterations.forEach(el => el.style.display = 'block');
     </script>
 </body>
 </html>
