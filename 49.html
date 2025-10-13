@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4dabf7;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +51,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +61,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4dabf7;
         }
         .section {
             margin: 30px 0;
@@ -57,18 +77,30 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4dabf7;
+            border-left-color: #4dabf7;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
             font-size: 18px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #20c997;
         }
         .back-to-top {
             display: block;
@@ -77,6 +109,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4dabf7;
         }
         .language-toggle {
             position: fixed;
@@ -104,17 +139,38 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .bonus {
+            background-color: #2c3e50;
+            border-left-color: #4dabf7;
         }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -122,6 +178,11 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #555;
         }
         .hidden {
             display: none;
@@ -133,6 +194,9 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
+        }
         .main-menu {
             text-align: center;
             margin: 15px 0;
@@ -143,6 +207,9 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
+        }
+        body.dark-mode footer {
+            color: #a0a0a0;
         }
 
         .audio-player {
@@ -156,15 +223,18 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4dabf7;
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -176,13 +246,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <h1 class="name-title">49. Al-Ba'ith - Yang Membangkitkan</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-baith/" target="_blank">myislam.org/99-names-of-allah/al-baith/</a> | Kementerian Agama RI</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI</div>
 
             <div class="arabic">ٱلْبَاعِثُ</div>
             <div class="transliteration">Transliterasi: Al-Ba'ith</div>
@@ -582,47 +653,62 @@
     </div>
 
     <script>
-        // Language Toggle Functionality
+        // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const indonesianContent = document.getElementById('indonesian-content');
             const englishContent = document.getElementById('english-content');
             const toggleButton = document.getElementById('languageToggle');
             
             if (indonesianContent.classList.contains('hidden')) {
-                // Switch to Indonesian
                 indonesianContent.classList.remove('hidden');
                 englishContent.classList.add('hidden');
                 toggleButton.textContent = 'Switch to English';
             } else {
-                // Switch to English
                 indonesianContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
                 toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
-        // Transliteration Toggle Functionality
+        // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             const toggleButton = document.getElementById('transliterationToggle');
             
-            if (transliterations[0].style.display === 'block' || transliterations[0].style.display === '') {
-                // Hide transliterations
-                transliterations.forEach(function(el) {
-                    el.style.display = 'none';
-                });
-                toggleButton.textContent = 'Show Transliteration';
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    toggleButton.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    toggleButton.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
             } else {
-                // Show transliterations
-                transliterations.forEach(function(el) {
-                    el.style.display = 'block';
-                });
-                toggleButton.textContent = 'Hide Transliteration';
+                toggleButton.textContent = 'Dark Mode';
             }
         });
 
-        // Ensure transliterations are hidden by default
+        // Ensure all Quran references are properly linked
         document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                if (link.href.includes('quranwbw.com')) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+            });
+            
+            // Ensure transliterations are hidden by default
             const transliterations = document.querySelectorAll('.transliteration');
             transliterations.forEach(function(el) {
                 el.style.display = 'none';
