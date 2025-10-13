@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4dabf7;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +51,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +61,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4dabf7;
         }
         .section {
             margin: 30px 0;
@@ -57,18 +77,30 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4dabf7;
+            border-left-color: #4dabf7;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
             font-size: 18px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #20c997;
         }
         .back-to-top {
             display: block;
@@ -77,6 +109,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4dabf7;
         }
         .language-toggle {
             position: fixed;
@@ -104,17 +139,38 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #34495e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .bonus {
+            background-color: #2c3e50;
+            border-left-color: #4dabf7;
         }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -122,6 +178,11 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: all 0.3s ease;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #555;
         }
         .hidden {
             display: none;
@@ -133,6 +194,9 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
+        }
         .main-menu {
             text-align: center;
             margin: 15px 0;
@@ -143,6 +207,9 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
+        }
+        body.dark-mode footer {
+            color: #a0a0a0;
         }
 
         .audio-player {
@@ -156,15 +223,18 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4dabf7;
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -176,13 +246,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <h1 class="name-title">48. Al-Majeed - Yang Maha Mulia</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-majeed/" target="_blank">myislam.org/99-names-of-allah/al-majeed/</a> | Kementerian Agama RI</div>
+            <div class="name-source"><strong>Sumber:</strong> Kementerian Agama RI</div>
 
             <div class="arabic">ٱلْمَجِيدُ</div>
             <div class="transliteration">Transliterasi: Al-Majeed</div>
@@ -241,7 +312,7 @@
 
                 <div class="dalil-item">
                     <strong>Referensi Hadits:</strong> <a href="https://sunnah.com/muslim:179" target="_blank">Sahih Muslim 179</a>
-                    <div class="arabic">إِنَّ اللَّهَ عَزَّ وَجَلَّ لاَ يَنَامُ وَلاَ يَنْبَغِي لَهُ أَنْ يَنَامَ يَخْفِضُ الْقِسْطَ وَيَرْفَعُهُ يُرْفَعُ إِلَيْهِ عَمَلُ اللَّيْلِ قَبْلَ النَّهَارِ وَعَمَلُ النَّهَارِ قَبْلَ اللَّيْلِ حِجَابُهُ النُّورُ لَوْ كَشَفَهُ لَأَحْرَقَتْ سُبُحَاتُ وَجْهِهِ مَا انْتَهَى إِلَيْهِ bَصَرُهُ مِنْ خَلْقِهِ</div>
+                    <div class="arabic">إِنَّ اللَّهَ عَزَّ وَجَلَّ لاَ يَنَامُ وَلاَ يَنْبَغِي لَهُ أَنْ يَنَامَ يَخْفِضُ الْقِسْطَ وَيَرْفَعُهُ يُرْفَعُ إِلَيْهِ عَمَلُ اللَّيْلِ قَبْلَ النَّهَارِ وَعَمَلُ النَّهَارِ قَبْلَ اللَّيْلِ حِجَابُهُ النُّورُ لَوْ كَشَفَهُ لَأَحْرَقَتْ سُبُحَاتُ وَجْهِهِ مَا انْتَهَى إِلَيْهِ بَصَرُهُ مِنْ خَلْقِهِ</div>
                     <div class="transliteration">Inna Allāha 'azza wa jalla lā yanāmu wa lā yanbaghī lahu an yanāma yakhfidu al-qista wa yarfa'uhu yurfa'u ilayhi 'amalu al-layli qabla an-nahāri wa 'amalu an-nahāri qabla al-layli hijābuhu an-nūru law kashafahu la-ahraqat subuhātu wajhihi mā intahā ilayhi basaruhu min khalqih</div>
                     <p><strong>Terjemahan:</strong> "Sesungguhnya Allah Yang Maha Perkasa lagi Maha Agung tidak tidur dan tidak layak bagi-Nya untuk tidur. Dia menurunkan timbangan dan mengangkatnya. Amal malam diangkat kepada-Nya sebelum siang, dan amal siang sebelum malam. Tabir-Nya adalah cahaya, jika Dia menyingkapnya, kemuliaan wajah-Nya akan membakar segala sesuatu dari ciptaan-Nya sejauh pandangan-Nya."</p>
                     <div class="tafsir-box">
@@ -442,7 +513,7 @@
 
                 <div class="dalil-item">
                     <strong>Hadith Reference:</strong> <a href="https://sunnah.com/muslim:179" target="_blank">Sahih Muslim 179</a>
-                    <div class="arabic">إِنَّ اللَّهَ عَزَّ وَجَلَّ لاَ يَنَامُ وَلاَ يَنْبَغِي لَهُ أَنْ يَنَامَ يَخْفِضُ الْقِسْطَ وَيَرْفَعُهُ يُرْفَعُ إِلَيْهِ عَملُ اللَّيْلِ قَبْلَ النَّهَارِ وَعَمَلُ النَّهَارِ قَبْلَ اللَّيْلِ حِجَابُهُ النُّورُ لَوْ كَشَفَهُ لَأَحْرَقَتْ سُبُحَاتُ وَجْهِهِ mَا انْتَهَى إِلَيْهِ بَصَرُهُ مِنْ خَلْقِهِ</div>
+                    <div class="arabic">إِنَّ اللَّهَ عَزَّ وَجَلَّ لاَ يَنَامُ وَلاَ يَنْبَغِي لَهُ أَنْ يَنَامَ يَخْفِضُ الْقِسْطَ وَيَرْفَعُهُ يُرْفَعُ إِلَيْهِ عَمَلُ اللَّيْلِ قَبْلَ النَّهَارِ وَعَمَلُ النَّهَارِ قَبْلَ اللَّيْلِ حِجَابُهُ النُّورُ لَوْ كَشَفَهُ لَأَحْرَقَتْ سُبُحَاتُ وَجْهِهِ مَا انْتَهَى إِلَيْهِ بَصَرُهُ مِنْ خَلْقِهِ</div>
                     <div class="transliteration">Inna Allāha 'azza wa jalla lā yanāmu wa lā yanbaghī lahu an yanāma yakhfidu al-qista wa yarfa'uhu yurfa'u ilayhi 'amalu al-layli qabla an-nahāri wa 'amalu an-nahāri qabla al-layli hijābuhu an-nūru law kashafahu la-ahraqat subuhātu wajhihi mā intahā ilayhi basaruhu min khalqih</div>
                     <p><strong>Translation:</strong> "Allah the Exalted does not sleep and it does not befit Him to sleep. He lowers the scales and raises them. The deeds of the night are taken up to Him before the day, and the deeds of the day before the night. His veil is light, and if He were to remove it, the glory of His Face would burn everything of His creation as far as His sight reaches."</p>
                     <div class="tafsir-box">
@@ -460,72 +531,72 @@
                     <li>The perfection of His attributes and actions</li>
                     <li>His supreme nobility above all creation</li>
                 </ol>
-                <p>Understanding this name helps us recognize that all glory belongs to Allah alone, and any honor we perceive in creation is merely a reflection of His perfect glory.</p>
-                <p>In Surah Al-Hadid 57:20, Allah says: <a href="https://quranwbw.com/57:20" target="_blank">"Know that the life of this world is but amusement and diversion and adornment and boasting to one another and competition in increase of wealth and children."</a> This verse teaches us not to be deceived by worldly glory, as true glory belongs only to Allah.</p>
+                <p>In his commentary on Surah Hud 11:73, Ibn Kathir states that Allah's glory is coupled with His praise, indicating that His majesty is praiseworthy and His praise is majestic. This combination shows the perfection of Allah's attributes.</p>
+                <p>The name Al-Majeed reminds believers that true glory belongs only to Allah, and any honor we possess is merely a reflection of His divine honor bestowed upon us.</p>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Du'a (Supplications)</h2>
+                <h2 class="section-title">Dua</h2>
                 <div class="dua">
-                    <div class="dua-title">Du'a for Honor</div>
+                    <div class="dua-title">Dua for Honor and Glory</div>
                     <div class="arabic">اللَّهُمَّ أَنْتَ الْعَزِيزُ الْحَكِيمُ الْمَجِيدُ</div>
                     <div class="transliteration">Allāhumma Anta al-'Azīzu al-Hakīmu al-Majīd</div>
                     <p><strong>Translation:</strong> "O Allah, You are the Almighty, the All-Wise, the Glorious."</p>
-                    <p><strong>Benefits:</strong> This du'a combines three of Allah's majestic names, invoking His power, wisdom and glory together. It's particularly recommended when seeking dignity and honor in both worldly and religious matters.</p>
+                    <p><strong>Source:</strong> Based on the combination of Allah's beautiful names. This dua is recommended for seeking honor and wisdom in one's affairs.</p>
                 </div>
 
                 <div class="dua">
-                    <div class="dua-title">Du'a for Protection</div>
+                    <div class="dua-title">Dua for Protection from Humiliation</div>
                     <div class="arabic">اللَّهُمَّ بِحَقِّ الْمَجِيدِ أَعِذْنِي مِنَ الذُّلِّ وَالْهَوَانِ</div>
                     <div class="transliteration">Allāhumma bi-ḥaqqi al-Majīdi a'idhnī min adh-dhulli wa al-hawān</div>
                     <p><strong>Translation:</strong> "O Allah, by the right of Al-Majeed, protect me from humiliation and degradation."</p>
-                    <p><strong>Source:</strong> This du'a seeks protection through Allah's attribute of glory. By invoking Al-Majeed, we acknowledge that true honor comes only from Allah and seek refuge in His perfect glory from all forms of humiliation.</p>
+                    <p><strong>Source:</strong> Traditional dua invoking Allah's glorious name to seek protection from anything that diminishes one's honor.</p>
                 </div>
 
                 <div class="dua">
-                    <div class="dua-title">Daily Wird</div>
+                    <div class="dua-title">Daily Dhikr</div>
                     <div class="arabic">يَا مَجِيدُ يَا مَجِيدُ يَا مَجِيدُ</div>
                     <div class="transliteration">Yā Majīdu yā Majīdu yā Majīd</div>
                     <p><strong>Translation:</strong> "O Glorious, O Glorious, O Glorious."</p>
-                    <p><strong>Practice:</strong> Recite this wird 100 times after Fajr prayer. This practice helps internalize Allah's attribute of glory and protects against arrogance while cultivating proper self-esteem rooted in divine honor.</p>
+                    <p><strong>Source:</strong> Recommended to recite this 100 times after Fajr prayer to seek honor and nobility in both worlds.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Practices</h2>
+                <h2 class="section-title">Practice</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Daily Wird Practice</div>
-                    <p>Recommended daily practice:</p>
+                    <div class="amalan-title">Daily Dhikr Practice</div>
+                    <p>Recommended practice:</p>
                     <ol>
-                        <li>After Fajr prayer, recite "Ya Majeed" 100 times</li>
-                        <li>Reflect on the meaning of Allah's glory for 5-10 minutes</li>
-                        <li>Make du'a for honor in both religious and worldly matters</li>
+                        <li>Recite "Ya Majeed" 100 times after Fajr prayer</li>
+                        <li>Reflect on the meaning of this name for a few minutes</li>
+                        <li>Ask Allah for honor in both religious and worldly matters</li>
                     </ol>
-                    <p><strong>Benefits:</strong> This practice helps develop consciousness of Allah's glory, protects against arrogance, and cultivates balanced self-esteem based on divine honor rather than worldly status.</p>
+                    <p><strong>Benefit:</strong> This practice helps develop consciousness of Allah's glory and protects one from both arrogance and inferiority complex.</p>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Salat al-Hajah</div>
-                    <p>Special prayer for needs:</p>
+                    <div class="amalan-title">Salat al-Hajat</div>
+                    <p>Steps for performing prayer of need:</p>
                     <ol>
-                        <li>Perform 2 rak'ahs of voluntary prayer with concentration</li>
+                        <li>Perform two rak'ahs of voluntary prayer with concentration</li>
                         <li>After salam, recite istighfar 100 times</li>
-                        <li>Make your request while invoking Allah as Al-Majeed</li>
-                        <li>Have firm conviction that Allah will respond in the best way</li>
+                        <li>Make your request while invoking the name Al-Majeed</li>
+                        <li>Have certainty that Allah will grant what is best</li>
                     </ol>
-                    <p><strong>Evidence:</strong> The Prophet ﷺ said: "Whoever performs wudu and perfects it, then prays two rak'ahs perfectly, Allah will grant him what he asks, either immediately or delayed." (Ahmad). This prayer teaches us to ask while acknowledging Allah's glorious nature.</p>
+                    <p><strong>Basis:</strong> The Prophet (peace be upon him) said: "Whoever performs wudu and perfects it, then prays two rak'ahs perfectly, Allah will grant him whatever he asks for, either sooner or later." (Ahmad). This prayer teaches us to ask while being conscious of Allah's glory.</p>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Daily Character Practice</div>
-                    <p>Practical ways to embody this attribute:</p>
+                    <div class="amalan-title">Daily Practice of Nobility</div>
+                    <p>Routine to emulate the attribute of Al-Majeed:</p>
                     <ol>
-                        <li>Maintain dignity by avoiding shameful actions</li>
+                        <li>Always maintain self-respect by avoiding shameful acts</li>
                         <li>Stay away from sins that degrade human dignity</li>
-                        <li>Treat all creation with honor and respect</li>
-                        <li>Remember that true honor comes only from Allah</li>
+                        <li>Behave nobly towards all creation</li>
+                        <li>Always remember that true honor comes only from Allah</li>
                     </ol>
-                    <p><strong>Benefits:</strong> These practices help us reflect Allah's attribute of glory in our character and protect us from both arrogance and low self-esteem by grounding our worth in divine honor.</p>
+                    <p><strong>Benefit:</strong> This practice helps us emulate the attribute of Al-Majeed in daily life and attain blessings in maintaining our dignity as Muslims.</p>
                 </div>
             </div>
 
@@ -533,21 +604,21 @@
                 <h2 class="section-title">Benefits and Wisdom</h2>
                 <p><strong>Benefits of Remembering This Name:</strong></p>
                 <ol>
-                    <li>Increases awareness of Allah's supreme glory</li>
-                    <li>Cultivates humility and proper self-esteem</li>
-                    <li>Provides comfort knowing we serve the Most Glorious</li>
-                    <li>Motivates noble character and dignified conduct</li>
+                    <li>Increases awareness of Allah's majesty</li>
+                    <li>Cultivates humility (tawadu')</li>
+                    <li>Provides tranquility through certainty in Allah's glory</li>
+                    <li>Motivates one to act nobly according to religious guidance</li>
                 </ol>
                 
-                <p><strong>Wisdom:</strong> Understanding Al-Majeed teaches us that:</p>
+                <p><strong>Wisdom:</strong> Understanding Al-Majeed helps a Muslim:</p>
                 <ol>
-                    <li>Worldly honor is temporary and limited</li>
-                    <li>True dignity comes from obedience to Allah</li>
-                    <li>We should respect all people as Allah's creation</li>
-                    <li>Our ultimate goal should be Allah's pleasure, not human praise</li>
+                    <li>Not be dazzled by worldly honor</li>
+                    <li>Always maintain personal dignity according to sharia</li>
+                    <li>Respect others without self-degradation</li>
+                    <li>Be more enthusiastic in worship to attain true honor</li>
                 </ol>
                 
-                <p>This understanding protects against both arrogance (thinking too highly of oneself) and low self-esteem (thinking too lowly of oneself), by grounding our worth in our relationship with the Most Glorious.</p>
+                <p>Belief in Allah's glory provides inner peace and protects from heart diseases like arrogance, ostentation, and self-admiration, by recognizing that all glory belongs to Allah alone.</p>
             </div>
 
             <div class="main-menu"><a href="index.html">← Back to Main</a></div>
@@ -560,50 +631,59 @@
     </div>
 
     <script>
-        // Language Toggle Functionality
+        // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
             const indonesianContent = document.getElementById('indonesian-content');
             const englishContent = document.getElementById('english-content');
             const toggleButton = document.getElementById('languageToggle');
             
             if (indonesianContent.classList.contains('hidden')) {
-                // Switch to Indonesian
                 indonesianContent.classList.remove('hidden');
                 englishContent.classList.add('hidden');
                 toggleButton.textContent = 'Switch to English';
             } else {
-                // Switch to English
                 indonesianContent.classList.add('hidden');
                 englishContent.classList.remove('hidden');
                 toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
-        // Transliteration Toggle Functionality
+        // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             const toggleButton = document.getElementById('transliterationToggle');
             
-            if (transliterations[0].style.display === 'block' || transliterations[0].style.display === '') {
-                // Hide transliterations
-                transliterations.forEach(function(el) {
-                    el.style.display = 'none';
-                });
-                toggleButton.textContent = 'Show Transliteration';
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    toggleButton.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    toggleButton.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
             } else {
-                // Show transliterations
-                transliterations.forEach(function(el) {
-                    el.style.display = 'block';
-                });
-                toggleButton.textContent = 'Hide Transliteration';
+                toggleButton.textContent = 'Dark Mode';
             }
         });
 
-        // Ensure transliterations are hidden by default
+        // Ensure all Quran references are properly linked
         document.addEventListener('DOMContentLoaded', function() {
-            const transliterations = document.querySelectorAll('.transliteration');
-            transliterations.forEach(function(el) {
-                el.style.display = 'none';
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                if (link.href.includes('quranwbw.com')) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
             });
         });
     </script>
