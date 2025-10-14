@@ -5,29 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al-Haqq - Yang Maha Benar | 99 Asmaul Husna</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --container-bg: white;
+            --text-color: #333;
+            --arabic-color: #1a5276;
+            --title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --accent-color: #3498db;
+            --dua-bg: #f8f9fa;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --container-bg: #16213e;
+            --text-color: #e6e6e6;
+            --arabic-color: #4ea8de;
+            --title-color: #e6e6e6;
+            --section-title-color: #4ea8de;
+            --accent-color: #4ea8de;
+            --dua-bg: #1f4068;
+            --tafsir-bg: #2d3047;
+            --tafsir-border: #4ea8de;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Arial Unicode MS', sans-serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
         }
         .transliteration {
@@ -40,8 +68,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--title-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -52,17 +80,18 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +102,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +110,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -103,12 +132,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -116,11 +158,12 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
+            transition: all 0.3s ease;
         }
         .hidden {
             display: none;
@@ -153,7 +196,7 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--arabic-color);
         }
         
         .back-arrow {
@@ -164,12 +207,12 @@
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -181,6 +224,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -188,7 +232,6 @@
 
             <h1 class="name-title">51. Al-Haqq (Yang Maha Benar)</h1>
             <div class="name-source"><strong>Sumber:</strong> 
-                <a href="https://myislam.org/99-names-of-allah/al-haqq/" target="_blank">myislam.org/99-names-of-allah/al-haqq/</a>,
                 <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a>
             </div>
 
@@ -222,7 +265,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/10:32" target="_blank">Surah Yunus 10:32</a>
-                    <div class="arabic">فَذَٰلِكُمُ ٱللَّهُ رَبُّكُمُ ٱلْحَقُّ ۖ فَمَاذَا بَعْدَ ٱلْحَقِّ إِلَّا ٱلضَّلَـٰلُ ۖ فَأَنَّىٰ تُصْرَفُونَ</div>
+                    <div class="arabic">فَذَٰلِكُمُ ٱللَّهُ رَبُّكُمُ ٱلْحَقُّ ۖ فَإِذَا بَعْدَ ٱلْحَقِّ إِلَّا ٱلضَّلَـٰلُ ۖ فَأَنَّىٰ تُصْرَفُونَ</div>
                     <div class="transliteration">Fa zaalikumul laahu Rabbukumul haqq; fa maaza ba'dal haqqi illad dalaal; fa annaa tusrafoon</div>
                     <p>"Yang demikian itu karena Allah, Tuhanmu, Dialah yang Maha Benar. Maka tidak ada sesudah kebenaran itu melainkan kesesatan. Maka mengapa kamu masih berpaling?"</p>
                     <div class="tafsir-box">
@@ -422,7 +465,7 @@
                     <div class="transliteration">Huwal laahul lazee laaa ilaaha illaa Huw; 'Aalimul Ghaibi wash shahaadah; Huwar Rahmaanur Raheem Huwal laahul lazee laaa ilaaha illaa Huw; Al-Malikul Quddoosus-Salaamul Muminul Muhaiminul 'Azeezul Jabbaarul Mutakabbir; Subhaanal laahi 'ammaa yushrikoon Huwal laahul Khaaliqul Baari 'ul Musawwir; laHul Asmaaa'ul Husnaa; yusabbihu lahoo maa fis samaawaati wal ard; wa Huwal 'Azeezul Hakeem</div>
                     <p>"He is Allah, other than whom there is no deity, Knower of the unseen and the witnessed. He is the Entirely Merciful, the Especially Merciful. He is Allah, other than whom there is no deity, the Sovereign, the Pure, the Perfection, the Bestower of Faith, the Overseer, the Exalted in Might, the Compeller, the Superior. Exalted is Allah above whatever they associate with Him. He is Allah, the Creator, the Inventor, the Fashioner; to Him belong the best names. Whatever is in the heavens and earth is exalting Him. And He is the Exalted in Might, the Wise."</p>
                     <div class="tafsir-box">
-                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/59/22/" target="_blank">Tafsir Ibn Kathir</a>:</strong> These comprehensive verses describe Allah's perfect attributes, establishing Him as the only true reality (Al-Haqq) worthy of worship. The verses affirm that all perfect names belong to Allah alone.
+                        <strong><a href="https://www.alim.org/quran/tafsir/ibn-kathir/surah/59/22/" target="_blank">Tafsir Ibn Kathir</a>:</strong> These verses comprehensively describe Allah's perfect attributes, establishing Him as the only true reality (Al-Haqq) worthy of worship. The passage emphasizes that all perfect names belong to Allah alone.
                     </div>
                 </div>
 
@@ -430,58 +473,58 @@
                     <strong>Hadith Reference:</strong> <a href="https://sunnah.com/bukhari:7372" target="_blank">Sahih Bukhari 7372</a>
                     <div class="arabic">عَنْ عَبْدِ اللَّهِ بْنِ مَسْعُودٍ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ عَلَيْكُمْ بِالصِّدْقِ فَإِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ وَمَا يَزَالُ الرَّجُلُ يَصْدُقُ وَيَتَحَرَّى الصِّدْقَ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ صِدِّيقًا وَإِيَّاكُمْ وَالْكَذِبَ فَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ وَإِنَّ الْفُجُورَ يَهْدِي إِلَى النَّارِ وَمَا يَزَالُ الرَّجُلُ يَكْذِبُ وَيَتَحَرَّى الْكَذِبَ حَتَّى يُكْتَبَ عِنْدَ اللَّهِ كَذَّابًا</div>
                     <div class="transliteration">'An 'Abdillāh ibn Mas'ūd qāla qāla rasūlullāh ṣallallāhu 'alayhi wa sallam: 'Alaykum biṣ-ṣidqi fa innaṣ-ṣidqa yahdī ilal-birri wa innal-birra yahdī ilal-jannah, wa mā yazālu r-rajulu yaṣduqu wa yataḥarrāṣ-ṣidqa ḥattā yuktaba 'indallāhi ṣiddīqā, wa iyyākum wal-kaḏiba fa innal-kaḏiba yahdī ilal-fujūri wa innal-fujūra yahdī ilan-nār, wa mā yazālu r-rajulu yakaḏibu wa yataḥarrāl-kaḏiba ḥattā yuktaba 'indallāhi kaḏḏābā</div>
-                    <p>"From Abdullah bin Mas'ud, the Prophet (ﷺ) said: 'You must be truthful, for truthfulness leads to righteousness and righteousness leads to Paradise. A man continues to be truthful and seeks truthfulness until he is recorded with Allah as truthful. And beware of falsehood, for falsehood leads to wickedness and wickedness leads to the Fire. A man continues to lie and seeks falsehood until he is recorded with Allah as a liar.'"</p>
+                    <p>"From Abdullah bin Mas'ud, the Messenger of Allah (ﷺ) said: 'You must be truthful, for truthfulness leads to righteousness and righteousness leads to Paradise. A man continues to be truthful and seeks truthfulness until he is recorded with Allah as truthful. And beware of falsehood, for falsehood leads to wickedness and wickedness leads to the Fire. A man continues to tell lies and seeks falsehood until he is recorded with Allah as a liar.'"</p>
                     <div class="tafsir-box">
-                        <strong>Explanation:</strong> This hadith emphasizes the importance of aligning with truth (Al-Haqq) in all aspects of life. Truthfulness as a manifestation of following divine truth leads to righteousness and ultimately Paradise.
+                        <strong>Explanation:</strong> This hadith demonstrates the importance of following truth (Al-Haqq) in all aspects of life. Truthfulness as a manifestation of following Allah's truth leads to righteousness and Paradise.
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Dua</h2>
+                <h2 class="section-title">Du'a</h2>
                 <div class="dua">
                     <div class="dua-title">Seeking Guidance to Truth</div>
                     <div class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ بِاسْمِكَ الْحَقِّ أَنْ تُرِيَنِي الْحَقَّ حَقًّا وَتَرْزُقَنِيِ اتِّبَاعَهُ، وَأَنْ تُرِيَنِي الْبَاطِلَ بَاطِلًا وَتَرْزُقَنِيِ اجْتِنَابَهُ</div>
                     <div class="transliteration">Allāhumma innī as'aluka bismikal-ḥaqqi an turiyanal-ḥaqqa ḥaqqan wa tarzuqanit-tibā'ahu, wa an turiyanal-bāṭila bāṭilan wa tarzuqanij-tinābah</div>
-                    <p><strong>Translation:</strong> "O Allah, I ask You by Your name Al-Haqq to show me truth as truth and grant me the ability to follow it, and to show me falsehood as falsehood and grant me the ability to avoid it."</p>
-                    <p><strong>Source:</strong> This dua is recommended based on hadith about the virtue of supplicating with Allah's beautiful names. It is recommended to recite after the five daily prayers for seeking guidance to truth.</p>
+                    <p><strong>Translation:</strong> "O Allah, I ask You by Your name Al-Haqq to show me the truth as truth and grant me the ability to follow it, and to show me falsehood as falsehood and grant me the ability to avoid it."</p>
+                    <p><strong>Source:</strong> This du'a is recommended based on hadith about the virtue of supplicating with Allah's beautiful names. Recommended to be recited after the five daily prayers to seek guidance to truth.</p>
                 </div>
 
                 <div class="dua">
-                    <div class="dua-title">Affirmation of Allah's Truth</div>
+                    <div class="dua-title">Acknowledgment of Allah's Truth</div>
                     <div class="arabic">يَا حَقُّ، أَنْتَ الْحَقُّ، وَقَوْلُكَ الْحَقُّ، وَوَعْدُكَ الْحَقُّ، وَلِقَاؤُكَ الْحَقُّ، وَالْجَنَّةُ حَقٌّ، وَالنَّارُ حَقٌّ، وَالسَّاعَةُ حَقٌّ</div>
                     <div class="transliteration">Yā Ḥaqqu, Antal-Ḥaqqu, wa qawlukal-ḥaqqu, wa wa'dukal-ḥaqqu, wa liqā'ukal-ḥaqqu, wal-jannatu ḥaqqun, wan-nāru ḥaqqun, was-sā'atu ḥaqqun</div>
-                    <p><strong>Translation:</strong> "O Truth, You are the Truth, Your word is truth, Your promise is truth, meeting You is truth, Paradise is truth, Hell is truth, and the Hour is truth."</p>
-                    <p><strong>Virtue:</strong> This dua is taught in devotional books as an affirmation of Allah's absolute truth. Recite it morning and evening to remind yourself of the ultimate reality.</p>
+                    <p><strong>Translation:</strong> "O Truth, You are the Truth, Your word is the truth, Your promise is the truth, meeting You is the truth, Paradise is the truth, Hell is the truth, and the Hour is the truth."</p>
+                    <p><strong>Virtue:</strong> This du'a is taught in Islamic devotional literature as an acknowledgment of Allah's absolute truth. Recited morning and evening to remind oneself of the reality of ultimate truth.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Practices</h2>
+                <h2 class="section-title">Practical Application</h2>
                 <div class="amalan">
-                    <div class="amalan-title">Practice of Seeking Truth</div>
-                    <p>Daily routine to embody the attribute of Al-Haqq:</p>
+                    <div class="amalan-title">Practicing Truth-Seeking</div>
+                    <p>Daily routine to embody the attribute Al-Haqq:</p>
                     <ol>
-                        <li>Before accepting or sharing information, verify its truthfulness first</li>
+                        <li>Before accepting or spreading information, verify its truthfulness first</li>
                         <li>Recite "Al-Haqq" 100 times every morning while contemplating its meaning</li>
-                        <li>Express gratitude when discovering truth by saying "Alhamdulillah"</li>
+                        <li>Express gratitude when discovering truth with "Alhamdulillah"</li>
                     </ol>
                     <p><strong>Islamic Basis:</strong> The Prophet (ﷺ) said: "It is enough for a man to prove himself a liar when he goes on narrating whatever he hears." (Sahih Muslim). This practice helps internalize divine truth in daily life.</p>
                 </div>
 
                 <div class="amalan">
-                    <div class="amalan-title">Truth Remembrance</div>
+                    <div class="amalan-title">Devotional Practice</div>
                     <p>Weekly practice to draw closer to Al-Haqq:</p>
                     <ol>
-                        <li>Every Friday, increase recitation of:</li>
+                        <li>Every Friday, frequently recite:</li>
                         <ul>
                             <li>"Subhanaka Allahumma wa bihamdika, asyhadu an la ilaha illa anta, astaghfiruka wa atubu ilaik" (100 times)</li>
                             <li>"Ya Haqq" (33 times)</li>
                         </ul>
-                        <li>Before remembrance, recite basmalah and salawat</li>
+                        <li>Before devotion, recite basmalah and salawat</li>
                         <li>Maintain this practice with sincerity only for Allah</li>
                     </ol>
-                    <p><strong>Virtue:</strong> This remembrance purifies the heart from falsehood and draws one closer to Allah's truth. The Prophet (ﷺ) said: "Whoever adheres to truth, truth will save him." (Sahih Bukhari)</p>
+                    <p><strong>Virtue:</strong> This devotional practice is taught in Islamic spiritual guides to purify the heart from falsehood and draw closer to Allah's truth. The Prophet (ﷺ) said: "Whoever adheres to truth, the truth will save him." (Sahih Bukhari)</p>
                 </div>
             </div>
 
@@ -498,7 +541,7 @@
                     <li><strong>Informational Truth:</strong>
                         <ul>
                             <li>Allah's word is absolute truth (<a href="https://quranwbw.com/2:147" target="_blank">2:147</a>)</li>
-                            <li>Allah's promises are certainly true (<a href="https://quranwbw.com/30:60" target="_blank">30:60</a>)</li>
+                            <li>Allah's promise is certainly true (<a href="https://quranwbw.com/30:60" target="_blank">30:60</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Legal Truth:</strong>
@@ -514,7 +557,7 @@
                         </ul>
                     </li>
                 </ol>
-                <p>Understanding Al-Haqq helps Muslims distinguish between ultimate reality and temporary appearances, guiding them to build their lives on the foundation of divine truth rather than human opinions or desires.</p>
+                <p>In classical Islamic theology, understanding Al-Haqq is fundamental to proper belief in Allah as the ultimate reality and source of all truth.</p>
             </div>
 
             <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span>Back to Main</a></div>
@@ -548,29 +591,36 @@
 
         // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
-            const transliterationElements = document.querySelectorAll('.transliteration');
+            const transliterations = document.querySelectorAll('.transliteration');
             const toggleButton = document.getElementById('transliterationToggle');
             
-            if (transliterationElements[0].style.display === 'block') {
-                // Hide transliteration
-                transliterationElements.forEach(element => {
-                    element.style.display = 'none';
-                });
+            if (transliterations[0].style.display === 'block') {
+                // Hide transliterations
+                transliterations.forEach(el => el.style.display = 'none');
                 toggleButton.textContent = 'Show Transliteration';
             } else {
-                // Show transliteration
-                transliterationElements.forEach(element => {
-                    element.style.display = 'block';
-                });
+                // Show transliterations
+                transliterations.forEach(el => el.style.display = 'block');
                 toggleButton.textContent = 'Hide Transliteration';
             }
         });
 
-        // Set default language to Indonesian
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
+            } else {
+                toggleButton.textContent = 'Dark Mode';
+            }
+        });
+
+        // Initialize transliterations as hidden
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('indonesian-content').classList.remove('hidden');
-            document.getElementById('english-content').classList.add('hidden');
-            document.getElementById('languageToggle').textContent = 'Switch to English';
+            const transliterations = document.querySelectorAll('.transliteration');
+            transliterations.forEach(el => el.style.display = 'none');
         });
     </script>
 </body>
