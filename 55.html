@@ -13,6 +13,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
         }
         .container {
             max-width: 900px;
@@ -21,15 +26,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .container {
+            background: #2d2d2d;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
-            font-family: 'Uthmanic Script', 'Amiri', 'Traditional Arabic', 'Arial Unicode MS', serif;
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4a9eda;
         }
         .transliteration {
             font-style: italic;
@@ -39,6 +52,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -46,6 +62,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e0e0e0;
+            border-bottom-color: #4a9eda;
         }
         .section {
             margin: 30px 0;
@@ -58,17 +78,29 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4a9eda;
+            border-left-color: #4a9eda;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #3a3a3a;
+            border-color: #555;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #1abc9c;
         }
         .back-to-top {
             display: block;
@@ -77,6 +109,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4a9eda;
         }
         .language-toggle {
             position: fixed;
@@ -104,17 +139,38 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 5px solid #3498db;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .bonus {
+            background-color: #2a3a4a;
+            border-left-color: #4a9eda;
         }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #555;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -122,6 +178,11 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #3a3a2a;
+            border-color: #5a5a3a;
         }
         .hidden {
             display: none;
@@ -133,6 +194,9 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
+        }
         .main-menu {
             text-align: center;
             margin: 15px 0;
@@ -143,6 +207,9 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
+        }
+        body.dark-mode footer {
+            color: #a0a0a0;
         }
 
         .audio-player {
@@ -156,15 +223,18 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4a9eda;
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -176,6 +246,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -217,7 +288,7 @@
                 <div class="dalil-item">
                     <strong>Referensi Utama Al-Quran:</strong> 
                     <a href="https://quranwbw.com/2:257" target="_blank">Surah Al-Baqarah 2:257</a>
-                    <div class="arabic">ٱللَّهُ وَلِىُّ ٱلَّذِينَ ءَامَنُوا۟ يُخْرِجُهُم مِّنَ ٱلظُّلُمَـٰتِ إِلَى ٱلنُّورِ ۖ وَٱلَّذِينَ كَفَرُوٓا۟ أَوْلِيَآؤُهُمُ ٱلطَّـٰغُوتُ يُخْرِجُونَهُم مِّنَ ٱلنُّورِ إِلَى ٱلظُّلُمَـٰتِ ۗ أُو۟لَـٰٓئِكَ أَصْحَـٰبُ ٱلنَّارِ ۖ هُمْ فِيهَا خَـٰلِدُونَ</div>
+                    <div class="arabic">ٱللَّهُ وَلِىُّ ٱلَّذِينَ ءَامَنُوا۟ يُخْرِجُهُم مِّنَ ٱلظُّلُمَـٰتِ إِلَى ٱلنُّورِ ۖ وَٱلَّذِينَ كَفَرُوٓا۟ أَوْلِيَآؤُهُمُ ٱلطَّـٰغُوتُ يُخْرِجُونَهُم م’ِنَ ٱلنُّورِ إِلَى ٱلظُّلُمَـٰتِ ۗ أُو۟لَـٰٓئِكَ أَصْحَـٰبُ ٱلنَّارِ ۖ هُمْ فِيهَا خَـٰلِدُونَ</div>
                     <div class="transliteration">Allaahu waliyyul lazeena aamanoo yukhrijuhum minaz zulumaati ilan noor; wallazeena kafarooo awliyaaa'uhumut Taaghootu yukhrijoohum minan noori ilaz zulumaat; ulaaa'ika Ashaabun Naar; hum feehaa khaalidoon</div>
                     <p>"Allah Pelindung orang yang beriman. Dia mengeluarkan mereka dari kegelapan kepada cahaya. And orang-orang kafir, pelindung-pelindungnya ialah thaghut, yang mengeluarkan mereka daripada cahaya kepada kegelapan. Mereka itu adalah penghuni neraka; mereka kekal di dalamnya."</p>
                     <div class="tafsir-box">
@@ -466,34 +537,34 @@
                     <ul>
                         <li>Strengthens connection with Allah</li>
                         <li>Grants special divine protection</li>
-                        <li>Follows the Prophet's (ﷺ) sunnah and awliya'</li>
+                        <li>Follows the Sunnah of the Prophet (ﷺ)</li>
                     </ul>
                 </div>
 
                 <div class="amalan">
                     <div class="amalan-title">Protection Dhikr</div>
-                    <p>Weekly practice to receive Allah's protection:</p>
+                    <p>Weekly practice for divine protection:</p>
                     <ol>
                         <li>Every Friday morning, recite:</li>
                         <ul>
-                            <li>Ayat al-Kursi 7x</li>
-                            <li>Al-Ikhlas, Al-Falaq, An-Nas each 3x</li>
+                            <li>Ayat al-Kursi 7 times</li>
+                            <li>Al-Ikhlas, Al-Falaq, An-Nas 3 times each</li>
                         </ul>
-                        <li>Begin with "Bismillah Al-Waliyy An-Nasir"</li>
+                        <li>Before recitation, begin with "Bismillah Al-Waliyy An-Nashir"</li>
                         <li>Ask Allah for protection for the coming week</li>
                     </ol>
-                    <p><strong>Historical Basis:</strong> The Prophet (ﷺ) said: "Whoever recites Ayat al-Kursi in the morning will be protected until evening" (Al-Hakim). This practice was developed by scholars as a way to seek protection through Allah's name Al-Waliyy.</p>
+                    <p><strong>Basis:</strong> The Prophet (ﷺ) said: "Whoever recites Ayat al-Kursi every morning, he will be protected until evening" (Al-Hakim). This practice builds on that foundation.</p>
                 </div>
             </div>
 
             <div class="section">
-                <h2 class="section-title">Tafsir Ibn Kathir</h2>
-                <p>Ibn Kathir explains Al-Waliyy through three dimensions:</p>
+                <h2 class="section-title">Tafsir</h2>
+                <p>Scholars explain Al-Waliyy through three main dimensions:</p>
                 <ol>
                     <li><strong>Physical Protection:</strong>
                         <ul>
-                            <li>Guarding from physical harm (<a href="https://quranwbw.com/8:12" target="_blank">8:12</a>)</li>
-                            <li>Sustaining provision and health (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
+                            <li>Protection from physical harm (<a href="https://quranwbw.com/8:12" target="_blank">8:12</a>)</li>
+                            <li>Provision of sustenance and health (<a href="https://quranwbw.com/11:6" target="_blank">11:6</a>)</li>
                         </ul>
                     </li>
                     <li><strong>Spiritual Protection:</strong>
@@ -509,80 +580,61 @@
                         </ul>
                     </li>
                 </ol>
-                <p>In his tafsir of Surah Yunus (<a href="https://quranwbw.com/10:62" target="_blank">10:62</a>), Ibn Kathir emphasizes that Allah's awliya' are the pious believers who will receive comprehensive divine protection in this life and the next.</p>
+                <p>In Tafsir of Surah Yunus (<a href="https://quranwbw.com/10:62" target="_blank">10:62</a>), scholars emphasize that Allah's awliya' are pious believers who will receive comprehensive divine protection in this life and the next.</p>
             </div>
 
             <div class="main-menu"><a href="index.html">← Back to Main Menu</a></div>
             <a href="#top" class="back-to-top">Back to Top</a>
         </div>
+
+        <footer>
+            © (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; (2025 AD) 1447 AH Curated and Maintained by Hermansjah. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Initialize from localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-            const englishContent = document.getElementById('english-content');
-            const indonesianContent = document.getElementById('indonesian-content');
-            const languageToggle = document.getElementById('languageToggle');
-            const transliterationToggle = document.getElementById('transliterationToggle');
-            const transliterations = document.querySelectorAll('.transliteration');
-
-            // Set language preference
-            if (localStorage.getItem('language') === 'english') {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                languageToggle.textContent = 'Switch to Indonesian';
-            } else {
-                englishContent.classList.add('hidden');
-                indonesianContent.classList.remove('hidden');
-                languageToggle.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
-            }
-
-            // Set transliteration preference
-            if (localStorage.getItem('transliteration') === 'show') {
-                transliterations.forEach(el => el.style.display = 'block');
-                transliterationToggle.textContent = 'Hide Transliteration';
-            } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                transliterationToggle.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
-            }
-        });
-
         // Language Toggle
         document.getElementById('languageToggle').addEventListener('click', function() {
-            const englishContent = document.getElementById('english-content');
             const indonesianContent = document.getElementById('indonesian-content');
+            const englishContent = document.getElementById('english-content');
+            const toggleButton = document.getElementById('languageToggle');
             
-            if (englishContent.classList.contains('hidden')) {
-                englishContent.classList.remove('hidden');
-                indonesianContent.classList.add('hidden');
-                this.textContent = 'Switch to Indonesian';
-                localStorage.setItem('language', 'english');
-            } else {
-                englishContent.classList.add('hidden');
+            if (indonesianContent.classList.contains('hidden')) {
                 indonesianContent.classList.remove('hidden');
-                this.textContent = 'Switch to English';
-                localStorage.setItem('language', 'indonesian');
+                englishContent.classList.add('hidden');
+                toggleButton.textContent = 'Switch to English';
+            } else {
+                indonesianContent.classList.add('hidden');
+                englishContent.classList.remove('hidden');
+                toggleButton.textContent = 'Switch to Indonesian';
             }
         });
 
         // Transliteration Toggle
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
+            const toggleButton = document.getElementById('transliterationToggle');
             
-            if (this.textContent === 'Show Transliteration') {
-                transliterations.forEach(el => el.style.display = 'block');
-                this.textContent = 'Hide Transliteration';
-                localStorage.setItem('transliteration', 'show');
+            transliterations.forEach(function(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                    toggleButton.textContent = 'Show Transliteration';
+                } else {
+                    element.style.display = 'block';
+                    toggleButton.textContent = 'Hide Transliteration';
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.getElementById('darkModeToggle');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Light Mode';
             } else {
-                transliterations.forEach(el => el.style.display = 'none');
-                this.textContent = 'Show Transliteration';
-                localStorage.setItem('transliteration', 'hide');
+                toggleButton.textContent = 'Dark Mode';
             }
         });
     </script>
