@@ -6,29 +6,59 @@
     <title>Al-Matin - Yang Maha Kokoh | 99 Nama Allah</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --title-color: #2c3e50;
+            --section-title-color: #2980b9;
+            --accent-color: #3498db;
+            --dua-bg: #f8f9fa;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --container-bg: #2d2d2d;
+            --arabic-color: #4a9fe3;
+            --title-color: #e0e0e0;
+            --section-title-color: #5dade2;
+            --accent-color: #3498db;
+            --dua-bg: #3a3a3a;
+            --bonus-bg: #2a4d6e;
+            --tafsir-bg: #3a3a2a;
+            --tafsir-border: #665c00;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 42px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
-            font-family: 'Uthmanic Script', 'Amiri', 'Traditional Arabic', 'Arial Unicode MS', serif;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
         }
         .transliteration {
@@ -41,8 +71,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--title-color);
+            border-bottom: 3px solid var(--accent-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -53,13 +83,13 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
@@ -74,7 +104,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -82,7 +112,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--accent-color);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -104,12 +134,25 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
-            background-color: #e8f4fc;
+            background-color: var(--bonus-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
         }
         .dalil-item {
             margin-bottom: 25px;
@@ -117,11 +160,11 @@
             border-bottom: 1px dashed #ddd;
         }
         .tafsir-box {
-            background-color: #fffde7;
+            background-color: var(--tafsir-bg);
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
-            border: 1px solid #ffe082;
+            border: 1px solid var(--tafsir-border);
         }
         .hidden {
             display: none;
@@ -154,17 +197,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--arabic-color);
         }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -176,6 +219,7 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
@@ -498,6 +542,7 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
 
             // Set language preference
@@ -520,6 +565,16 @@
                 transliterations.forEach(el => el.style.display = 'none');
                 transliterationToggle.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                document.body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
             }
         });
 
@@ -553,6 +608,19 @@
                 transliterations.forEach(el => el.style.display = 'none');
                 this.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                document.body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
             }
         });
     </script>
