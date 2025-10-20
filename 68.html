@@ -12,6 +12,11 @@
             padding: 20px;
             color: #333;
             background-color: #f5f9fc;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #1a1a2e;
+            color: #e6e6e6;
         }
         .container {
             max-width: 900px;
@@ -20,15 +25,23 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .container {
+            background: #16213e;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
         }
         .arabic {
-            font-size: 36px;
+            font-size: 40px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
             color: #1a5276;
             font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
+        }
+        body.dark-mode .arabic {
+            color: #4da8da;
         }
         .transliteration {
             font-style: italic;
@@ -38,6 +51,9 @@
             margin: -15px 0 20px;
             display: none;
         }
+        body.dark-mode .transliteration {
+            color: #a0a0a0;
+        }
         .name-title {
             font-size: 32px;
             color: #2c3e50;
@@ -45,6 +61,10 @@
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
+        }
+        body.dark-mode .name-title {
+            color: #e6e6e6;
+            border-bottom-color: #4da8da;
         }
         .section {
             margin: 30px 0;
@@ -57,17 +77,29 @@
             border-left: 5px solid #3498db;
             padding-left: 15px;
         }
+        body.dark-mode .section-title {
+            color: #4da8da;
+            border-left-color: #4da8da;
+        }
         .dua, .amalan {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
             border: 1px solid #e0e0e0;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .dua, body.dark-mode .amalan {
+            background-color: #1f4068;
+            border-color: #2d4263;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
             color: #16a085;
             margin-bottom: 10px;
+        }
+        body.dark-mode .dua-title, body.dark-mode .amalan-title {
+            color: #2ecc71;
         }
         .back-to-top {
             display: block;
@@ -76,6 +108,9 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
+        }
+        body.dark-mode .back-to-top {
+            color: #4da8da;
         }
         .language-toggle {
             position: fixed;
@@ -103,6 +138,19 @@
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
         .bonus {
             background-color: #e8f4fc;
             padding: 15px;
@@ -110,10 +158,17 @@
             margin: 20px 0;
             border-left: 5px solid #3498db;
         }
+        body.dark-mode .bonus {
+            background-color: #1f4068;
+            border-left-color: #4da8da;
+        }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px dashed #ddd;
+        }
+        body.dark-mode .dalil-item {
+            border-bottom-color: #2d4263;
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +176,10 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+        }
+        body.dark-mode .tafsir-box {
+            background-color: #2d2d1e;
+            border-color: #5d5d3a;
         }
         .hidden {
             display: none;
@@ -132,6 +191,9 @@
             color: #7f8c8d;
             font-size: 16px;
         }
+        body.dark-mode .name-source {
+            color: #a0a0a0;
+        }
         .main-menu {
             text-align: center;
             margin: 15px 0;
@@ -142,6 +204,9 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
+        }
+        body.dark-mode footer {
+            color: #a0a0a0;
         }
 
         .audio-player {
@@ -155,15 +220,18 @@
             margin-bottom: 10px;
             color: #1a5276;
         }
+        body.dark-mode .audio-title {
+            color: #4da8da;
+        }
 
         @media (max-width: 768px) {
             .arabic {
-                font-size: 28px;
+                font-size: 32px;
             }
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,13 +243,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
         <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <h1 class="name-title">68. As-Samad (Yang Maha Dibutuhkan)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/as-samad" target="_blank">myislam.org/99-names-of-allah/as-samad</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
 
             <div class="arabic">ٱلصَّمَدُ</div>
             <div class="transliteration">Transliterasi: As-Samad</div>
@@ -496,7 +565,9 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
+            const body = document.body;
 
             // Set language preference
             if (localStorage.getItem('language') === 'english') {
@@ -518,6 +589,16 @@
                 transliterations.forEach(el => el.style.display = 'none');
                 transliterationToggle.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
             }
         });
 
@@ -551,6 +632,21 @@
                 transliterations.forEach(el => el.style.display = 'none');
                 this.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            const body = document.body;
+            
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
             }
         });
     </script>
