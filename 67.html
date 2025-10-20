@@ -5,28 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>67. Al-Ahad - Yang Maha Esa</title>
     <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --section-title-color: #2980b9;
+            --dua-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --link-color: #3498db;
+            --toggle-bg: #3498db;
+            --toggle-transliteration-bg: #2ecc71;
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a2e;
+            --text-color: #e6e6e6;
+            --container-bg: #16213e;
+            --arabic-color: #4cc9f0;
+            --section-title-color: #4cc9f0;
+            --dua-bg: #1f4068;
+            --border-color: #2d4059;
+            --link-color: #4cc9f0;
+            --toggle-bg: #4cc9f0;
+            --toggle-transliteration-bg: #2ecc71;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 20px;
-            color: #333;
-            background-color: #f5f9fc;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
         }
         .arabic {
             font-size: 36px;
             text-align: right;
             direction: rtl;
             margin: 20px 0;
-            color: #1a5276;
+            color: var(--arabic-color);
             font-family: 'Uthmanic Script', 'Uthmanic Script HAFS', 'Traditional Arabic', 'Scheherazade New', serif;
             font-weight: normal;
         }
@@ -40,8 +68,8 @@
         }
         .name-title {
             font-size: 32px;
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
+            color: var(--section-title-color);
+            border-bottom: 3px solid var(--link-color);
             padding-bottom: 10px;
             text-align: center;
             margin-bottom: 25px;
@@ -52,17 +80,18 @@
         }
         .section-title {
             font-size: 24px;
-            color: #2980b9;
+            color: var(--section-title-color);
             margin-bottom: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--link-color);
             padding-left: 15px;
         }
         .dua, .amalan {
-            background-color: #f8f9fa;
+            background-color: var(--dua-bg);
             padding: 20px;
             border-radius: 8px;
             margin: 25px 0;
-            border: 1px solid #e0e0e0;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s;
         }
         .dua-title, .amalan-title {
             font-weight: bold;
@@ -73,7 +102,7 @@
             display: block;
             text-align: center;
             margin: 30px 0;
-            color: #3498db;
+            color: var(--link-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -81,7 +110,7 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #3498db;
+            background: var(--toggle-bg);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -94,7 +123,20 @@
             position: fixed;
             top: 60px;
             right: 20px;
-            background: #2ecc71;
+            background: var(--toggle-transliteration-bg);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            z-index: 100;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #9b59b6;
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -108,12 +150,12 @@
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--link-color);
         }
         .dalil-item {
             margin-bottom: 25px;
             padding-bottom: 20px;
-            border-bottom: 1px dashed #ddd;
+            border-bottom: 1px dashed var(--border-color);
         }
         .tafsir-box {
             background-color: #fffde7;
@@ -121,6 +163,10 @@
             border-radius: 5px;
             margin-top: 10px;
             border: 1px solid #ffe082;
+        }
+        .dark-mode .tafsir-box {
+            background-color: #2d2d1e;
+            border-color: #5d5d3e;
         }
         .hidden {
             display: none;
@@ -153,7 +199,17 @@
         .audio-title {
             font-weight: bold;
             margin-bottom: 10px;
-            color: #1a5276;
+            color: var(--arabic-color);
+        }
+        
+        .back-arrow {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        a {
+            color: var(--link-color);
         }
 
         @media (max-width: 768px) {
@@ -163,7 +219,7 @@
             .name-title {
                 font-size: 28px;
             }
-            .language-toggle, .transliteration-toggle {
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle {
                 position: static;
                 margin: 10px 0;
                 display: inline-block;
@@ -175,13 +231,14 @@
     <div class="container">
         <div class="language-toggle" id="languageToggle">Switch to English</div>
         <div class="transliteration-toggle" id="transliterationToggle">Show Transliteration</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">Dark Mode</div>
 
-        <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+        <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span>Kembali ke Menu Utama</a></div>
 
         <!-- Indonesian Content (Default) -->
         <div id="indonesian-content">
             <h1 class="name-title">67. Al-Ahad (Yang Maha Esa)</h1>
-            <div class="name-source"><strong>Sumber:</strong> <a href="https://myislam.org/99-names-of-allah/al-ahad" target="_blank">myislam.org/99-names-of-allah/al-ahad</a> | <a href="https://kemenag.go.id/" target="_blank">Kementerian Agama RI</a></div>
+            <div class="name-source"><strong>Sumber:</strong> <a href="https://kemenag.go.id" target="_blank">Kementerian Agama RI</a></div>
 
             <div class="arabic">ٱلْأَحَدُ</div>
             <div class="transliteration">Transliterasi: Al-Ahad</div>
@@ -322,7 +379,7 @@
                 <p>Dalam tafsir Kementerian Agama RI dijelaskan bahwa pemahaman yang benar tentang Al-Ahad akan membersihkan ibadah dari segala bentuk syirik, baik yang besar maupun yang kecil.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Kembali ke Menu Utama</a></div>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span>Kembali ke Menu Utama</a></div>
             <a href="#top" class="back-to-top">Kembali ke Atas</a>
         </div>
 
@@ -331,11 +388,8 @@
             <h1 class="name-title">67. Al-Ahad (The One and Only, The Unique)</h1>
             <div class="name-source"><strong>Source:</strong> <a href="https://myislam.org/99-names-of-allah/al-ahad" target="_blank">myislam.org/99-names-of-allah/al-ahad</a></div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
-            
-            <!-- Bonus section only in English -->
             <div class="bonus">
-                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>.
+                <strong>Bonus:</strong> Listen to the beautiful explanation of Al Asma Ul Husna at <a href="https://qfatima.com/a99-audio" target="_blank">qfatima.com</a>
 
                 <div class="audio-player">
                     <div class="audio-title">Listen to the beautiful explanation of this Ism Husna</div>
@@ -345,6 +399,8 @@
                     </audio>
                 </div>
             </div>
+
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span>Back to Main</a></div>
 
             <div class="arabic">ٱلْأَحَدُ</div>
             <div class="transliteration">Transliteration: Al-Ahad</div>
@@ -482,7 +538,7 @@
                 <p>In his tafsir of Surah Al-Ikhlas, Ibn Kathir emphasizes that proper understanding of Al-Ahad purifies worship from all forms of shirk, both major and minor.</p>
             </div>
 
-            <div class="main-menu"><a href="index.html">← Back to Main</a></div>
+            <div class="main-menu"><a href="index.html"><span class="back-arrow">←</span>Back to Main</a></div>
             <a href="#top" class="back-to-top">Back To Top</a>
         </div>
     </div>
@@ -498,7 +554,9 @@
             const indonesianContent = document.getElementById('indonesian-content');
             const languageToggle = document.getElementById('languageToggle');
             const transliterationToggle = document.getElementById('transliterationToggle');
+            const darkModeToggle = document.getElementById('darkModeToggle');
             const transliterations = document.querySelectorAll('.transliteration');
+            const body = document.body;
 
             // Set language preference
             if (localStorage.getItem('language') === 'english') {
@@ -520,6 +578,16 @@
                 transliterations.forEach(el => el.style.display = 'none');
                 transliterationToggle.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+
+            // Set dark mode preference
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = 'Light Mode';
+            } else {
+                body.classList.remove('dark-mode');
+                darkModeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
             }
         });
 
@@ -545,7 +613,7 @@
         document.getElementById('transliterationToggle').addEventListener('click', function() {
             const transliterations = document.querySelectorAll('.transliteration');
             
-            if (this.textContent === 'Show Transliteration') {
+            if (transliterations[0].style.display === 'none' || transliterations[0].style.display === '') {
                 transliterations.forEach(el => el.style.display = 'block');
                 this.textContent = 'Hide Transliteration';
                 localStorage.setItem('transliteration', 'show');
@@ -553,6 +621,21 @@
                 transliterations.forEach(el => el.style.display = 'none');
                 this.textContent = 'Show Transliteration';
                 localStorage.setItem('transliteration', 'hide');
+            }
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            const body = document.body;
+            
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                this.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            } else {
+                body.classList.add('dark-mode');
+                this.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
             }
         });
     </script>
